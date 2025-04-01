@@ -2,8 +2,363 @@
 
 <section xml:id="s_fields" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Fields</title>
+    <introduction>
+        <p>
+            Most <em>first courses</em> in linear algebra restrict their attention to vector spaces of the form <m>V=\R^n</m>. This is an example of a so-called <em>real vector space</em> (or <em><m>\R</m>-vector space</em>, or <em>vector space over the base field <m>\R</m></em>), and one of a very particular sort (consisting of real <m>n</m>-tuples).  In this, a <em>second course</em> in linear algebra, we will generalize this approach along two different directions: 
+            <ul>
+                <li>
+                    <p>
+                        we will replace the specific base field <m>\R</m> with an arbitrary field (see <xref ref="d_field"/>);
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        we will consider not just vector spaces of <m>n</m>-tuples, but general abstract vector spaces. 
+                    </p>
+                </li>
+            </ul>
+        In this section we tackle the notion of an arbitrary field; in the next we introduce the definition of an abstract vector space. 
+        </p>
+    </introduction>
+    <subsection xml:id="ss_complex">
+<title>Complex numbers</title>
+ <definition xml:id="d_complex_numbers">
+<title>Complex numbers, real and imaginary parts</title>
+<statement>
+<p>
+The <term>complex numbers</term> is the set of all formal expressions of the form <m>a+ib</m>, where <m>a,b\in \R</m>: <ie/>, 
+<me>
+    \C=\{a+ib\colon a,b\in \R\}
+</me>.
+Given a complex number <m>z=a+ib</m>, we call <m>a</m> its <term>real part</term>, denoted <m>\Re z</m>, and we call <m>b</m> its <term>imaginary part</term>, denoted <m>\Im z</m>: <ie/>, we have 
+<md>
+    <mrow>\Re z \amp = a \amp \Im z\amp = b</mrow>
+</md>.
+</p>
+</statement>
+</definition>
+
+<convention>
+    <title>Complex numbers</title>
+    <p>
+      When introducing a complex number as <m>z=a+ib</m>, unless specified otherwise, it is assumed that <m>a,b\in \R</m>. 
+    </p>
+</convention>
+<p>
+    You are justified in wondering what exactly is meant by a <q>formal expression</q>. A more correct formulation would be that a complex number is really just a pair <m>(a,b)\in \R^2</m> of real numbers that for various reasons we denote as <m>a+ib</m>. Since it is somewhat awkward to write a complex number as <m>z=(a,b)</m>, we will live with the ambiguity of <xref ref="d_complex_numbers"/>, and <em>identify</em> complex numbers <m>z=a+ib</m> as pairs of real numbers via the map 
+    <md>
+        <mrow>\C \amp \longleftrightarrow \R^2</mrow>
+        <mrow>a+ib \amp \longmapsto (a,b)</mrow>
+    </md>.
+    To ensure that this is a well-defined bijection between <m>\C</m> and <m>\R^2</m>, we make official when two of our <q>formal expressions</q> are defined to be equal.     
+</p>
+<definition xml:id="d_complex_equality">
+<title>Complex equality</title>
+<statement>
+<p>
+Complex numbers <m>z=a+ib</m> and <m>w=c+id</m> are <term>equal</term>, denoted <m>z=w</m>, if <md>
+    <mrow>a=c \text{ and } b=d</mrow>
+</md>.
+In other words, we have 
+<md>
+    <mrow>z=w \amp \iff \Re z=\Re w \text{ and } \Im z=\Im w</mrow>
+</md>.
+</p>
+</statement>
+</definition>
+<p>
+    For reasons that will be made more clear below, it is natural to identify the set of real numbers <m>\R</m> with the set of complex numbers of the form <m>a+0i</m>. This is the motivation behind the next definition. 
+</p>
+<definition xml:id="d_real_imaginary">
+<title>Real and imaginary numbers</title>
+<statement>
+<p>
+Let <m>z=a+ib</m> be a complex number. We say that <m>z</m> is <term>real</term> if <m>b=\Im z=0</m>, and <term>(purely) imaginary</term> if <m>a=\Re z=0</m>. Henceforth we identify the real numbers <m>\R</m> with the real complex numbers: <ie/>, we declare that 
+<me>
+    \R=\{z\in \C\colon \Im z=0\}=\{a+0i\colon a\in \R\}
+</me>.
+Furthermore we will use the following abbreviations for various real and purely imaginary complex numbers: 
+<md>
+    <mrow>a+i\,0 \amp =a \amp  0+ib\amp =ib</mrow>
+    <mrow>a+i(-b) \amp =a-ib \amp a+i(\pm 1)\amp = a\pm i</mrow>
+</md>.
+</p>
+</statement>
+</definition>
+ 
+
+    <definition xml:id="d_sum_product">
+        <title>Complex addition and multiplication</title>
+        <statement>
+            <p>
+                Let <m>z=a+ib</m> and <m>w=c+id</m> be complex numbers. 
+                <ul>
+                    <li>
+                        <title>Complex addition</title>
+                        <p>
+                            We define the <term>sum</term>  of <m>z</m> and <m>w</m>, denoted <m>z+w</m>, as 
+                            <mdn >
+                                <mrow xml:id="eq_sum">z+w \amp =(a+c)+i(b+d)</mrow>
+                            </mdn>.
+                        </p>
+                    </li>
+                    
+                    <li>
+                        <title>Complex multiplication</title>
+                        <p>
+                           We define the <term>product</term>  of <m>z</m> and <m>w</m>, denoted <m>z\,w</m> (or sometimes <m>z\cdot w</m>) as
+                            <mdn >
+                                <mrow xml:id="eq_product">z\,w \amp= (ac-bd)+i(ad+bc) </mrow>
+                            </mdn>.
+                        </p>
+                    </li>
+                </ul>
+            </p>
+        </statement>
+    </definition>
+    
+    <example xml:id="eg_squareroot_minusone">
+    <title><m>i^2</m></title>
+    <statement>
+    <p>
+    Compute <m>i^2</m>. 
+    </p>
+    </statement>
+    <solution>
+    <p>
+    We have, using the definition of multiplication,
+    <me>
+        i^2=(0+1\, i)(0+1\, i)=(0-1)+0i=-1
+    </me>.
+    Thus the element <m>i</m> is seen to be a square-root of <m>-1</m>! With a little more work, we can show that any complex number <m>z=a+ib</m> has a complex square-root. More on that later. 
+    </p>
+    </solution>
+    </example>
+    <remark xml:id="rem_complex_arith">
+    <title>Complex arithmetic as extension of real arithmetic</title>
+    <p>
+        Using the definition of complex multiplication, it is easy to see that given any real complex number <m>a=a+0i</m>, we have 
+        <md>
+            <mrow>a(c+di) \amp =ac+adi=(c+di)a </mrow>
+        </md>.
+        In particular, given any two real complex numbers <m>a=a+0i</m> and <m>b=b+0i</m>, we have 
+        <me>
+            (a+0i)(b+0i)=ab+0i=ab
+        </me>.
+        In other words, when we restrict complex multiplication to the real complex numbers, we recover our familiar real multiplication operation. A similar statement applies for complex addition and real addition. In this sense, complex arithmetic is understood as an <em>extension</em> of real arithmetic.
+    </p>
+         
+    </remark>
+    <convention>
+        <title><m>a+ib=a+bi</m></title>
+       <p>
+        As you will show yourself in homework, complex multiplication is commutative (<ie/>, we have <m>zw=wz</m> for all <m>z,w\in \C</m>). As a result, we are free to write a complex number <m>z=a+ib</m> as <m>z=a+bi</m>. Oftentimes one of these expressions simply looks better typographically than the other. 
+        </p>
+        <p>
+            Note that when writing <m>z=a+bi</m> and <m>w=c+di</m>, where <m>a,b,c,d\in \R</m>, it is still the case that <m>z=w</m> if and only if <m>a=b</m> and <m>c=d</m>.
+       </p> 
+    </convention>
+    <example xml:id="eg_arithmetic">
+    <title>Complex arithmetic</title>
+    <statement>
+    <p>
+    Let <m>z=-2+3i</m>, <m>w=4+i</m>. Compute the following complex numbers. Your answer must be expressed in the form <m>a+ib</m>, where <m>a,b\in \R</m>. 
+    <ol>
+        <li>
+            <p>
+                <m>z+w</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>z-w</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>z\,w</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>z/w</m>
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <solution>
+    <p>
+    <ol>
+        <li>
+            <p>
+                We have 
+                <md>
+                    <mrow>z+w \amp =(-2+4)+i(3+1)</mrow>
+                    <mrow> \amp = 2+i\,4</mrow>
+                </md>.
+            </p>
+        </li>
+        <li>
+            <p>
+                We have 
+                <md>
+                    <mrow>z-w \amp = (-2-4)+(3-1)i </mrow>
+                    <mrow> \amp = -6+i\,2</mrow>
+                </md>.
+            </p>
+        </li>
+        <li>
+            <p>
+                We have 
+                <md>
+                    <mrow>z\,w \amp = (-2\cdot 4-3\cdot 1)+i(-2\cdot 1+3\cdot 4)</mrow>
+                    <mrow> \amp = -11+i\,10</mrow>
+                </md>.
+            </p>
+        </li>
+        <li>
+            <p>
+                First observe that by definition we have 
+                <me>
+                    z/w=z\, w^{-1}
+                </me>.
+                According to the inverse formulas in <xref ref="th_complex_field"/> we have 
+                <me>
+                    w^{-1}=\frac{4}{4^2+1^2}-i\frac{1}{4^2+1^1}=\frac{1}{17}(4-i)
+                </me>.
+                We thus have 
+                <md>
+                    <mrow>z/w \amp = z\, w^{-1}</mrow>
+                    <mrow> \amp = w^{-1}\, z</mrow>
+                    <mrow> \amp = \frac{1}{17}(4-i)(-2+3i)</mrow>
+                    <mrow> \amp = \frac{1}{17}(-5+14i)</mrow>
+                    <mrow> \amp = -\frac{5}{17}+\frac{14}{17}i</mrow>
+                </md>.
+            </p>
+        </li>
+    </ol>
+    </p>
+    </solution>
+    </example>
+    <p>
+    <xref ref="d_complex_equality"/> ensures that the map 
+    <me>
+        a+ib\mapsto (a,b)
+    </me>
+    defines a bijection between <m>\C</m> and <m>\R</m>, allowing us to identify complex numbers as pairs of real numbers. This identification in turn gives rise to a visual representation of complex numbers as points in the Cartesian plane <m>\R^2</m>, called the <term>complex plane</term> in this context. To make clear that we are using <m>\R^2</m> to visualize <m>\C</m>, we label the horizontal and vertical axes as <m>\Re</m> and <m>\Im</m>. 
+</p>
+<figure xml:id="fig_complex_plane">
+    <caption>Complex plane</caption>
+    <image width="75%">
+        <shortdescription>Complex plane: points</shortdescription>
+        <sageplot>
+P=point((1,2),color="blue", size=50,axes_labels=["$\\operatorname{Re}$","$\\operatorname{Im}$"],ticks=[list(range(-1,2)),list(range(-2,3))],tick_formatter=[["-1","0","$\\operatorname{Re} z=1$"],[-2,-1,0,1,"$\\operatorname{Im} z=2$"]],aspect_ratio=.5)
+Q=point((0,-2),color="blue", size=50)
+R=point((-1,0),color="blue", size=50)
+t1=text("$z=1+2i$",(1.2,2.2),color="black",fontsize=16)
+t2=text("$w=-2i$",(0.4,-2),color="black",fontsize=16)
+t3=text("$a=-1$",(-1,0.2),color="black",fontsize=16)
+l1=line([(0,2),(1,2)],color="red",linestyle="dotted")
+l2=line([(1,0),(1,2)],color="red",linestyle="dotted")
+P+Q+R+t1+t2+t3+l1+l2
+        </sageplot>
+    </image>
+</figure>
+<p>
+Using our identification 
+<me>
+    \R=\{z\in \C\colon \Im z=0\}
+</me>,
+we see that the real numbers are represented geometrically as the <m>x</m>-axis of the complex plane. Similarly, the purely imaginary complex numbers are represented geometrically as the the <m>y</m>-axis of the complex plane. As you will see, we will get a lot of mileage out of this geometric representation of complex numbers. 
+</p>
+
+</subsection>
+<subsection xml:id="ss_modulus_conjugation">
+<title>Further complex operations</title>
+<p>
+    Two further complex operations, the <em>modulus</em> and <em>complex conjugation</em>, will prove to be invaluable when doing complex arithmetic. 
+</p>
+<definition xml:id="d_modulus">
+<title>Complex modulus</title>
+<statement>
+<p>
+The <term>modulus</term> (or <term>absolute value</term>) of a complex number <m>z=a+ib</m>, denoted <m>\abs{z}</m>, is defined as 
+<me>
+    \abs{z}=\sqrt{a^2+b^2}
+</me>.
+If <m>\abs{z}=1</m>, we say that <m>z</m> has <term>unit length</term>. 
+</p>
+</statement>
+</definition>
+<definition xml:id="d_conj">
+    <title>Complex conjugation</title>
+    <statement>
+    <p>
+        Given the complex number <m>z=a+ib</m>, its <term>(complex) conjugate</term> <m>\overline{z}</m> is defined as 
+        <me>
+            \overline{z}=a-ib
+        </me>.
+    </p>
+    </statement>
+    </definition>
+    <theorem xml:id="th_conj">
+        <title>Conjugation properties</title>
+        <statement>
+            <p>
+               Let <m>z</m> and <m>w</m> be complex numbers. 
+               <ol cols="2">
+                <li>
+                    <p>
+                        <m>\overline{z+w}=\overline{z}+\overline{w}</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>\overline{z\, w}=\overline{z}\, \overline{w}</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>\overline{\overline{z}}=z</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>\abs{\overline{z}}=\abs{z}</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>\Re z=\frac{z+\overline{z}}{2}</m> and <m>\Im z=\frac{z-\overline{z}}{2i}</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>z\in \R</m> if and only if <m>\overline{z}=z</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>z\, \overline{z}=\abs{z}^2</m>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        If <m>z\ne 0</m>, then 
+                        <m>
+                            \displaystyle z^{-1}=\frac{\overline{z}}{\abs{z}^2}=\frac{\overline{z}}{z\overline{z}}
+                        </m>.
+                    </p>
+                </li>
+               </ol> 
+            </p>
+        </statement>
+    </theorem>
+</subsection>
+
     <subsection xml:id="ss_field_def">
-    <title>Definition and first examples</title>
+    <title>Fields</title>
     
    
 <definition xml:id="d_field">
@@ -130,6 +485,27 @@ The set <m>\R</m> of all real numbers, together with the operations of real numb
 </p>
 </statement>
 </example>
+<theorem xml:id="th_complex_field">
+    <title><m>\C</m> is a field</title>
+    <statement>
+    <p>
+    The set <m>\C</m> of all complex numbers, together with the operations of complex addition and multiplication defined in <xref ref="d_sum_product"/>, constitutes a field. 
+    </p>
+    <p>
+        In more detail, with respect to these operations, the additive and multiplicative identities are <m>0=0+i\,0</m> and <m>1=1+i\,0</m>, respectively, and given any <m>z=a+ib\in \Z</m>, we have 
+        <md>
+            <mrow>-z \amp = -a-ib</mrow>
+            <mrow>z^{-1} \amp = \frac{a}{a^2+b^2}-i\frac{b}{a^2+b^2} \amp (\text{assuming } z\ne 0)</mrow>
+        </md>.
+    </p>
+    </statement>
+    <proof>
+    <p>
+        This is left as a homework exercise.
+    </p>
+    </proof>
+    </theorem>
+    
 <example xml:id="eg_Q">
 <title>Rational numbers</title>
 <statement>
@@ -347,360 +723,6 @@ Let <m>F</m> be a field, let <m>\alpha,\beta\in F</m>, and let <m>m,n\in \Z_{\ge
 
 
  </subsection>
-<subsection xml:id="ss_complex">
-<title>Complex numbers</title>
- <definition xml:id="d_complex_numbers">
-<title>Complex numbers, real and imaginary parts</title>
-<statement>
-<p>
-The <term>complex numbers</term> is the set of all formal expressions of the form <m>a+ib</m>, where <m>a,b\in \R</m>: <ie/>, 
-<me>
-    \C=\{a+ib\colon a,b\in \R\}
-</me>.
-Given a complex number <m>z=a+ib</m>, we call <m>a</m> its <term>real part</term>, denoted <m>\Re z</m>, and we call <m>b</m> its <term>imaginary part</term>, denoted <m>\Im z</m>: <ie/>, we have 
-<md>
-    <mrow>\Re z \amp = a \amp \Im z\amp = b</mrow>
-</md>.
-</p>
-</statement>
-</definition>
 
-<convention>
-    <title>Complex numbers</title>
-    <p>
-      When introducing a complex number as <m>z=a+ib</m>, unless specified otherwise, it is assumed that <m>a,b\in \R</m>. 
-    </p>
-</convention>
-<p>
-    You are justified in wondering what exactly is meant by a <q>formal expression</q>. A more correct formulation would be that a complex number is really just a pair <m>(a,b)\in \R^2</m> of real numbers that for various reasons we denote as <m>a+ib</m>. Since it is somewhat awkward to write a complex number as <m>z=(a,b)</m>, we will live with the ambiguity of <xref ref="d_complex_numbers"/>, and <em>identify</em> complex numbers <m>z=a+ib</m> as pairs of real numbers via the map 
-    <md>
-        <mrow>\C \amp \longleftrightarrow \R^2</mrow>
-        <mrow>a+ib \amp \longmapsto (a,b)</mrow>
-    </md>.
-    To ensure that this is a well-defined bijection between <m>\C</m> and <m>\R^2</m>, we make official when two of our <q>formal expressions</q> are defined to be equal.     
-</p>
-<definition xml:id="d_complex_equality">
-<title>Complex equality</title>
-<statement>
-<p>
-Complex numbers <m>z=a+ib</m> and <m>w=c+id</m> are <term>equal</term>, denoted <m>z=w</m>, if <md>
-    <mrow>a=c \text{ and } b=d</mrow>
-</md>.
-In other words, we have 
-<md>
-    <mrow>z=w \amp \iff \Re z=\Re w \text{ and } \Im z=\Im w</mrow>
-</md>.
-</p>
-</statement>
-</definition>
-<p>
-    For reasons that will be made more clear below, it is natural to identify the set of real numbers <m>\R</m> with the set of complex numbers of the form <m>a+0i</m>. This is the motivation behind the next definition. 
-</p>
-<definition xml:id="d_real_imaginary">
-<title>Real and imaginary numbers</title>
-<statement>
-<p>
-Let <m>z=a+ib</m> be a complex number. We say that <m>z</m> is <term>real</term> if <m>b=\Im z=0</m>, and <term>(purely) imaginary</term> if <m>a=\Re z=0</m>. Henceforth we identify the real numbers <m>\R</m> with the real complex numbers: <ie/>, we declare that 
-<me>
-    \R=\{z\in \C\colon \Im z=0\}=\{a+0i\colon a\in \R\}
-</me>.
-Furthermore we will use the following abbreviations for various real and purely imaginary complex numbers: 
-<md>
-    <mrow>a+i\,0 \amp =a \amp  0+ib\amp =ib</mrow>
-    <mrow>a+i(-b) \amp =a-ib \amp a+i(\pm 1)\amp = a\pm i</mrow>
-</md>.
-</p>
-</statement>
-</definition>
- 
-
-    <definition xml:id="d_sum_product">
-        <title>Complex addition and multiplication</title>
-        <statement>
-            <p>
-                Let <m>z=a+ib</m> and <m>w=c+id</m> be complex numbers. 
-                <ul>
-                    <li>
-                        <title>Complex addition</title>
-                        <p>
-                            We define the <term>sum</term>  of <m>z</m> and <m>w</m>, denoted <m>z+w</m>, as 
-                            <mdn >
-                                <mrow xml:id="eq_sum">z+w \amp =(a+c)+i(b+d)</mrow>
-                            </mdn>.
-                        </p>
-                    </li>
-                    
-                    <li>
-                        <title>Complex multiplication</title>
-                        <p>
-                           We define the <term>product</term>  of <m>z</m> and <m>w</m>, denoted <m>z\,w</m> (or sometimes <m>z\cdot w</m>) as
-                            <mdn >
-                                <mrow xml:id="eq_product">z\,w \amp= (ac-bd)+i(ad+bc) </mrow>
-                            </mdn>.
-                        </p>
-                    </li>
-                </ul>
-            </p>
-        </statement>
-    </definition>
-    <theorem xml:id="th_complex_field">
-    <title><m>\C</m> is a field</title>
-    <statement>
-    <p>
-    The set <m>\C</m> of all complex numbers, together with the operations of complex addition and multiplication defined in <xref ref="d_sum_product"/>, constitutes a field. 
-    </p>
-    <p>
-        In more detail, with respect to these operations, the additive and multiplicative identities are <m>0=0+i\,0</m> and <m>1=1+i\,0</m>, respectively, and given any <m>z=a+ib\in \Z</m>, we have 
-        <md>
-            <mrow>-z \amp = -a-ib</mrow>
-            <mrow>z^{-1} \amp = \frac{a}{a^2+b^2}-i\frac{b}{a^2+b^2} \amp (\text{assuming } z\ne 0)</mrow>
-        </md>.
-    </p>
-    </statement>
-    <proof>
-    <p>
-        This is left as a homework exercise.
-    </p>
-    </proof>
-    </theorem>
-    <convention>
-        <title><m>a+ib=a+bi</m></title>
-       <p>
-        Now that we know <m>\C</m> is a field, and in particular that complex multiplication is commutative, we are free to write a complex number <m>z=a+ib</m> as <m>z=a+bi</m>. Oftentimes one of these expressions simply looks better typographically than the other. 
-        </p>
-        <p>
-            Note that when writing <m>z=a+bi</m> and <m>w=c+di</m>, where <m>a,b,c,d\in \R</m>, it is still the case that <m>z=w</m> if and only if <m>a=b</m> and <m>c=d</m>.
-       </p> 
-    </convention>
-    <example xml:id="eg_squareroot_minusone">
-    <title><m>i^2</m></title>
-    <statement>
-    <p>
-    Compute <m>i^2</m>. 
-    </p>
-    </statement>
-    <solution>
-    <p>
-    We have, using the definition of multiplication,
-    <me>
-        i^2=(0+1\, i)(0+1\, i)=(0-1)+0i=-1
-    </me>.
-    Thus the element <m>i</m> is seen to be a square-root of <m>-1</m>! With a little more work, we can show that any complex number <m>z=a+ib</m> has a complex square-root. More on that later. 
-    </p>
-    </solution>
-    </example>
-    <remark xml:id="rem_complex_arith">
-    <title>Complex arithmetic as extension of real arithmetic</title>
-    <p>
-        Using the definition of complex multiplication, it is easy to see that given any real complex number <m>a=a+0i</m>, we have 
-        <md>
-            <mrow>a(c+di) \amp =ac+adi=(c+di)a </mrow>
-        </md>.
-        In particular, given any two real complex numbers <m>a=a+0i</m> and <m>b=b+0i</m>, we have 
-        <me>
-            (a+0i)(b+0i)=ab+0i=ab
-        </me>.
-        In other words, when we restrict complex multiplication to the real complex numbers, we recover our familiar real multiplication operation. A similar statement applies for complex addition and real addition. In this sense, complex arithmetic is understood as an <em>extension</em> of real arithmetic.
-    </p>
-         
-    </remark>
-    <example xml:id="eg_arithmetic">
-    <title>Complex arithmetic</title>
-    <statement>
-    <p>
-    Let <m>z=-2+3i</m>, <m>w=4+i</m>. Compute the following complex numbers. Your answer must be expressed in the form <m>a+ib</m>, where <m>a,b\in \R</m>. 
-    <ol>
-        <li>
-            <p>
-                <m>z+w</m>
-            </p>
-        </li>
-        <li>
-            <p>
-                <m>z-w</m>
-            </p>
-        </li>
-        <li>
-            <p>
-                <m>z\,w</m>
-            </p>
-        </li>
-        <li>
-            <p>
-                <m>z/w</m>
-            </p>
-        </li>
-    </ol>
-    </p>
-    </statement>
-    <solution>
-    <p>
-    <ol>
-        <li>
-            <p>
-                We have 
-                <md>
-                    <mrow>z+w \amp =(-2+4)+i(3+1)</mrow>
-                    <mrow> \amp = 2+i\,4</mrow>
-                </md>.
-            </p>
-        </li>
-        <li>
-            <p>
-                We have 
-                <md>
-                    <mrow>z-w \amp = (-2-4)+(3-1)i </mrow>
-                    <mrow> \amp = -6+i\,2</mrow>
-                </md>.
-            </p>
-        </li>
-        <li>
-            <p>
-                We have 
-                <md>
-                    <mrow>z\,w \amp = (-2\cdot 4-3\cdot 1)+i(-2\cdot 1+3\cdot 4)</mrow>
-                    <mrow> \amp = -11+i\,10</mrow>
-                </md>.
-            </p>
-        </li>
-        <li>
-            <p>
-                First observe that by definition we have 
-                <me>
-                    z/w=z\, w^{-1}
-                </me>.
-                According to the inverse formulas in <xref ref="th_complex_field"/> we have 
-                <me>
-                    w^{-1}=\frac{4}{4^2+1^2}-i\frac{1}{4^2+1^1}=\frac{1}{17}(4-i)
-                </me>.
-                We thus have 
-                <md>
-                    <mrow>z/w \amp = z\, w^{-1}</mrow>
-                    <mrow> \amp = w^{-1}\, z</mrow>
-                    <mrow> \amp = \frac{1}{17}(4-i)(-2+3i)</mrow>
-                    <mrow> \amp = \frac{1}{17}(-5+14i)</mrow>
-                    <mrow> \amp = -\frac{5}{17}+\frac{14}{17}i</mrow>
-                </md>.
-            </p>
-        </li>
-    </ol>
-    </p>
-    </solution>
-    </example>
-    <p>
-    <xref ref="d_complex_equality"/> ensures that the map 
-    <me>
-        a+ib\mapsto (a,b)
-    </me>
-    defines a bijection between <m>\C</m> and <m>\R</m>, allowing us to identify complex numbers as pairs of real numbers. This identification in turn gives rise to a visual representation of complex numbers as points in the Cartesian plane <m>\R^2</m>, called the <term>complex plane</term> in this context. To make clear that we are using <m>\R^2</m> to visualize <m>\C</m>, we label the horizontal and vertical axes as <m>\Re</m> and <m>\Im</m>. 
-</p>
-<figure xml:id="fig_complex_plane">
-    <caption>Complex plane</caption>
-    <image width="75%">
-        <shortdescription>Complex plane: points</shortdescription>
-        <sageplot>
-P=point((1,2),color="blue", size=50,axes_labels=["$\\operatorname{Re}$","$\\operatorname{Im}$"],ticks=[list(range(-1,2)),list(range(-2,3))],tick_formatter=[["-1","0","$\\operatorname{Re} z=1$"],[-2,-1,0,1,"$\\operatorname{Im} z=2$"]],aspect_ratio=.5)
-Q=point((0,-2),color="blue", size=50)
-R=point((-1,0),color="blue", size=50)
-t1=text("$z=1+2i$",(1.2,2.2),color="black",fontsize=16)
-t2=text("$w=-2i$",(0.4,-2),color="black",fontsize=16)
-t3=text("$a=-1$",(-1,0.2),color="black",fontsize=16)
-l1=line([(0,2),(1,2)],color="red",linestyle="dotted")
-l2=line([(1,0),(1,2)],color="red",linestyle="dotted")
-P+Q+R+t1+t2+t3+l1+l2
-        </sageplot>
-    </image>
-</figure>
-<p>
-Using our identification 
-<me>
-    \R=\{z\in \C\colon \Im z=0\}
-</me>,
-we see that the real numbers are represented geometrically as the <m>x</m>-axis of the complex plane. Similarly, the purely imaginary complex numbers are represented geometrically as the the <m>y</m>-axis of the complex plane. As you will see, we will get a lot of mileage out of this geometric representation of complex numbers. 
-</p>
-
-</subsection>
-<subsection xml:id="ss_modulus_conjugation">
-<title>Further complex operations</title>
-<p>
-    Two further complex operations, the <em>modulus</em> and <em>complex conjugation</em>, will prove to be invaluable when doing complex arithmetic. 
-</p>
-<definition xml:id="d_modulus">
-<title>Complex modulus</title>
-<statement>
-<p>
-The <term>modulus</term> (or <term>absolute value</term>) of a complex number <m>z=a+ib</m>, denoted <m>\abs{z}</m>, is defined as 
-<me>
-    \abs{z}=\sqrt{a^2+b^2}
-</me>.
-If <m>\abs{z}=1</m>, we say that <m>z</m> has <term>unit length</term>. 
-</p>
-</statement>
-</definition>
-<definition xml:id="d_conj">
-    <title>Complex conjugation</title>
-    <statement>
-    <p>
-        Given the complex number <m>z=a+ib</m>, its <term>(complex) conjugate</term> <m>\overline{z}</m> is defined as 
-        <me>
-            \overline{z}=a-ib
-        </me>.
-    </p>
-    </statement>
-    </definition>
-    <theorem xml:id="th_conj">
-        <title>Conjugation properties</title>
-        <statement>
-            <p>
-               Let <m>z</m> and <m>w</m> be complex numbers. 
-               <ol cols="2">
-                <li>
-                    <p>
-                        <m>\overline{z+w}=\overline{z}+\overline{w}</m>.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <m>\overline{z\, w}=\overline{z}\, \overline{w}</m>.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <m>\overline{\overline{z}}=z</m>.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <m>\abs{\overline{z}}=\abs{z}</m>.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <m>\Re z=\frac{z+\overline{z}}{2}</m> and <m>\Im z=\frac{z-\overline{z}}{2i}</m>.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <m>z\in \R</m> if and only if <m>\overline{z}=z</m>.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <m>z\, \overline{z}=\abs{z}^2</m>
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        If <m>z\ne 0</m>, then 
-                        <m>
-                            \displaystyle z^{-1}=\frac{\overline{z}}{\abs{z}^2}=\frac{\overline{z}}{z\overline{z}}
-                        </m>.
-                    </p>
-                </li>
-               </ol> 
-            </p>
-        </statement>
-    </theorem>
-</subsection>
 
 </section>
