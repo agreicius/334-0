@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_fields" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Fields</title>
+    <subsection xml:id="ss_field_def">
+    <title>Definition and first examples</title>
+    
+   
+<definition xml:id="d_field">
+<title>Field</title>
+<statement>
+<p>
+ A <term>field</term> is a set <m>F</m> together with two operations
+<md>
+  <mrow> +\colon F\times F \amp\rightarrow F \amp \times\colon F\times F\amp \rightarrow F </mrow> 
+  <mrow>(\alpha,\beta)\amp\mapsto \alpha+\beta \amp (\alpha,\beta)\amp \mapsto \alpha\,\beta </mrow> 
+</md>
+called <term>addition</term> and <term>multiplication</term> respectively, satisfying the following axioms.
+<ol marker="(i)">
+    <li>
+        <title>Commutativity</title>
+        <p>
+            For all <m>\alpha,\beta\in F</m> we have
+        
+        <md>
+           <mrow>\alpha+\beta \amp = \beta+\alpha \amp \alpha\beta=\beta\alpha</mrow>
+        </md>.
+        </p>
+    </li>
+
+    <li>
+        <title>Associativity</title>
+        <p>
+            For all <m>\alpha,\beta,\gamma \in F</m> we have
+        <md>
+            <mrow>\alpha+(\beta+\gamma)\amp =(\alpha+\beta)+\gamma \amp \alpha(\beta\gamma)=(\alpha\beta)\gamma</mrow>
+        </md>.
+        </p>
+    </li>
+
+    <li>
+        <title>Distributivity</title>
+        <p>
+            For all <m>\alpha,\beta,\gamma \in F</m> we have
+        <me>
+          \alpha(\beta+\gamma)=\alpha\beta+\alpha\gamma
+        </me>.
+        </p>
+    </li>
+
+    <li>
+       <title>Additive identity</title>
+        <p>
+            There is an element <m>0\in F</m> satisfying
+        <me>
+           0+\alpha=\alpha
+        </me>
+            for all <m>\alpha\in F</m>.
+            The element <m>0</m> is called the <term>additive identity</term>.
+        </p>
+    </li>
+
+    <li>
+       <title>Additive inverse</title>
+        <p>
+            For all <m>\alpha\in F</m> there is an element <m>-\alpha\in F</m> satisfying
+       
+        <me>
+            \alpha+ -\alpha=0
+        </me>.
+            The element <m>-\alpha</m> is called the <term>additive inverse</term> of <m>\alpha</m>.
+        </p>
+    </li>
+
+    <li>
+        <title>Multiplicative identity</title>
+        
+        
+
+        <p>
+            There is an element <m>1\in F</m> satisfying
+       
+        <me>
+           1\times \alpha=\alpha
+        </me>
+            for all <m>\alpha\in F</m>.
+            The element <m>1</m> is called the <term>multiplicative identity</term>.
+        </p>
+    </li>
+
+    <li>
+        <title>Multiplicative inverse</title>
+        
+        
+
+        <p>
+            For all nonzero elements <m>\alpha\in F</m> (i.e., <m>\alpha\ne 0</m>) there is an element <m>\alpha^{-1}\in F</m> satisfying
+        
+        <me>
+            \alpha\,\alpha^{-1}=1
+        </me>.
+
+            The element <m>\alpha^{-1}</m>, also denoted <m>1/\alpha</m>, is called the <term>multiplicative inverse</term> of <m>\alpha</m>.
+        </p>
+    </li>
+</ol>
+</p>
+</statement>
+</definition>
+<remark>
+    <title>Arithmetic and existential axioms</title>
+    <p>
+        We will call Axioms (i)-(iii) the <em>arithmetic axioms</em>, as they stipulate that our operations satisfy some familiar properties from arithmetic. Additionally, we will call Axioms (iv)-(vii) the <em>existential axioms</em> as they posit the existence of certain special elements inside the underlying set <m>F</m> of the field: namely, special elements denoted <m>0</m> and <m>1</m> satisfying Axioms (iv) and (vi), for each element <m>\alpha\in F</m> a special associated element <m>-\alpha</m> satisfying Axiom (v), and for each nonzero element <m>\alpha\ne 0</m> a special associated element <m>\alpha^{-1}</m> satisfying Axiom (vii). 
+    </p>
+</remark>
+<warning xml:id="warning_names_fields">
+    <title>Names and prejudices</title>
+    <p>
+        We use familiar looking notation to describe the special elements of a field <m>F</m> (<eg/>, <m>0,1,-\alpha, 1/\alpha</m>), but keep in mind that these are just <em>names</em> for certain special elements satisfying various axioms in <xref ref="d_field"/>.  
+    </p>
+    <p>
+        When verifying whether a given set <m>F</m> with given operations <m>+</m> and <m>\times</m> is a field, we make no assumptions beforehand as to which elements of <m>F</m> serve as these special elements. It is up to us to identify these special elements and verify that they satisfy the relevant axioms. As such, it is important each time we are confronted with a new potential field, that we come with no prejudices as to which elements serve as additive/multiplicate identities/inverses; these roles depend on how the operations themselves are defined. 
+    </p>
+</warning>
+<example xml:id="eg_R">
+<title>Real numbers</title>
+<statement>
+<p>
+The set <m>\R</m> of all real numbers, together with the operations of real number addition and real number multiplication, constitutes a field. 
+</p>
+</statement>
+</example>
+<example xml:id="eg_Q">
+<title>Rational numbers</title>
+<statement>
+<p>
+Let <m>\Q</m> be the set of all rational numbers: <ie/>, 
+<me>
+    \Q=\{r\in \R\colon r=m/n \text{ for some integers } m,n\in \Z \}
+</me>.
+<ol>
+    <li>
+        <p>
+            Show that the restriction of real number addition and multiplication to <m>\Q</m> gives rise to operations 
+            <md>
+                <mrow>+\colon \Q\times \Q \amp \rightarrow \Q \amp \times\colon \Q\times \Q\amp \rightarrow \Q</mrow>
+            </md>.
+        </p>
+    </li>
+    <li>
+        <p>
+            Explain why <m>\Q</m>, together with these restricted operations, constitutes a field. 
+        </p>
+    </li>
+</ol>
+
+</p>
+</statement>
+<solution>
+<p>
+<ol>
+    <li>
+        <p>
+            It is clear that we can add and multiply two rational numbers; what we need to show is that the result of applying either of these operations to two rational numbers is again a rational number. In other words, we must show that the sum of two rational numbers is a rational number, and the product of two rational numbers is a rational number. To this end, let <m>r,s\in \Q</m>, and write <m>r=m/n</m> and <m>s=p/q</m>, where <m>m,n,p,q\in \Z</m>. We then have 
+            <md>
+                <mrow>r+s \amp = \frac{mq+pn}{mn} \amp rs\amp=\frac{mp}{nq}</mrow>
+            </md>.
+            Since <m>mq+pn,mn, mp, nq\in \Z</m>, we see that <m>r+s, rs\in \Q</m>, as desired. 
+        </p>
+    </li>
+    <li>
+        <p>
+            Once we know that real number addition and multiplication restrict to well-defined operations on <m>\Q</m>, that these restricted operations satisfy the field axioms follows directly from the fact that the original operations on <m>\R</m> satisfy these axioms. For example, since addition and multiplication are satisfy Axiom (i) <em>for all real numbers</em>, they certainly satisfy Axiom (i) <em>for all rational numbers</em>. 
+        </p>
+        <p>
+            Similarly, the existential Axioms (iv)-(vii) are easily seen to be satisfied for the operations restricted to <m>\Q</m> once we observe that <m>0,1\in \Q</m>, and that given any nonzero <m>r=m/n\in \Q</m>, we have <m>r^{-1}=n/m\in \Q</m>. 
+        </p>
+    </li>
+</ol>
+</p>
+</solution>
+</example>
+<example xml:id="eg_integers">
+<title>Integers</title>
+<statement>
+<p>
+Let <m>\Z</m> be the set of all integers.
+<ol>
+    <li>
+        <p>
+            Show that the restriction of real number addition and multiplication to <m>\Z</m> gives rise to operations 
+            <md>
+                <mrow>+\colon \Z\times \Z \amp \rightarrow \Z \amp \times\colon \Z\times \Z\amp \rightarrow \Z</mrow>
+            </md>.
+        </p>
+    </li>
+    <li>
+        <p>
+            Explain why <m>\Z</m>, together with these restricted operations, does <em>not</em> constitute a field. 
+        </p>
+    </li>
+</ol>
+
+</p>
+</statement>
+<solution>
+<p>
+
+</p>
+</solution>
+</example>
+<example xml:id="eg_F2">
+<title>Field of two elements</title>
+<statement>
+<p>
+Let <m>F=\{a,b\}</m> be a set containing two distinct elements. Define addition and multiplication on <m>F</m> as follows: 
+<md>
+    <mrow>a+a \amp = a \amp a+b\amp = b \amp  b+a \amp = b \amp b+b\amp = a</mrow>
+    <mrow>aa \amp = a \amp ab\amp= a \amp ba\amp = a \amp bb=b</mrow>
+</md>.
+Verify that <m>F</m>, together with these two operations, constitutes a field. Make explicit which elements of <m>F</m> serve as the additive/multiplicative identities/inverses. 
+</p>
+</statement>
+<solution>
+<p>
+
+</p>
+</solution>
+</example>
+<definition xml:id="d_F2">
+<title>Field of two elements</title>
+<statement>
+<p>
+The set <m>\F_2=\{0,1\}</m>, together with the operations 
+<md>
+    <mrow>0+0 \amp = 0 \amp 0+1\amp=1+0=0 \amp 1+1\amp =0</mrow>
+    <mrow>0\cdot 0\amp =0\amp 0\cdot 1\amp=1\cdot 0=0 \amp 1\cdot 1\amp = 1 </mrow>
+</md>,
+is called the <term>field of two elements</term>. 
+</p>
+</statement>
+</definition>
+<remark>
+    <title>Finite fields</title>
+    <p>
+        It turns out that any <em>finite field</em> (<ie/>, a field <m>F</m> with finitely many elements) has prime cardinality. In other words if <m>F</m> is finite and we can define operations on <m>F</m> satisfying the field axioms, then <m>\abs{F}=p</m>, where <m>p</m> is a prime integer. 
+    </p>
+    <p>
+        Furthermore, given any prime integer <m>p</m>, we can define addition and multiplication operations on the set <m>\F_p=\{0,1,\dots, p-1\}</m> that satisfy the field axioms. In other words, for every prime <m>p</m> there is a field of <m>p</m> elements. (These are things you learn in the Math 330/331 sequences.) 
+    </p>
+</remark>
+<definition xml:id="d_field_subt_quot">
+<title>Subtraction, division, integer powers</title>
+<statement>
+<p>
+Let <m>F</m> be a field. 
+<ol>
+    <li>
+        <title>Subtraction</title>
+        <p>
+            Given elements <m>\alpha, \beta</m>, we define their <term>difference</term> <m>\alpha-\beta</m> as 
+            <me>
+                \alpha-\beta=\alpha+\, -\beta
+            </me>.
+        </p>
+    </li>
+    <li>
+        <title>Division</title>
+        <p>
+            Given elements <m>\alpha,\beta\in F</m> with <m>\beta\ne 0</m>, we define their <term>quotient</term> <m>\alpha/\beta</m> as 
+            <me>
+                \alpha/\beta=\alpha\, \beta^{-1}
+            </me>.
+        </p>
+    </li>
+    <li>
+        <title>Integer powers</title>
+        <p>
+            Given any <m>\alpha\in F</m>, we define <m>\alpha^0=1</m> and 
+            <me>
+                \alpha^{n}=\underset{n \text{ times}}{\underbrace{\alpha\cdot \alpha \cdots \alpha}}
+            </me>
+            where <m>n</m> is any positive integer. 
+        </p>
+        <p>
+            Furthermore, if <m>\alpha\ne 0</m> and <m>n\geq 0</m>, we define 
+            <me>
+                \alpha^{-n}=(\alpha^{-1})^n
+            </me>.
+        </p>
+    </li>
+</ol>
+</p>
+</statement>
+</definition>
+<theorem xml:id="th_field_props">
+<title>Properties of fields</title>
+<statement>
+<p>
+Let <m>F</m> be a field, let <m>\alpha,\beta\in F</m>, and let <m>m,n\in \Z_{\geq 0}</m>. 
+<ol>
+    <li>
+        <p>
+            <m>0\alpha=0</m>.
+        </p>
+    </li>
+
+    <li>
+        <p>
+            If <m>\alpha\beta=0</m>, then <m>\alpha=0</m> or <m>\beta=0</m>.
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>(\alpha\beta)^{m}=\alpha^{m}\beta^{m}</m>.
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>\alpha^{m+n}=\alpha^{m}\alpha^{n}</m>.
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>(\alpha^{m})^{n}=\alpha^{mn}</m>.
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>\alpha^{-m}=(\alpha^{m})^{-1}</m> (assuming <m>\alpha\ne 0</m>).
+        </p>
+    </li>
+
+    <li>
+        <p>
+            <m>(\alpha^{-1})^{-1}=\alpha</m> (assuming <m>\alpha\ne 0</m>).
+        </p>
+    </li>
+</ol>
+</p>
+</statement>
+<proof>
+<p>
+</p>
+</proof>
+</theorem>
+
+
+ </subsection>
+<subsection xml:id="ss_complex">
+<title>Complex numbers</title>
+ <definition xml:id="d_complex_numbers">
+<title>Complex numbers, real and imaginary parts</title>
+<statement>
+<p>
+The <term>complex numbers</term> is the set of all formal expressions of the form <m>a+ib</m>, where <m>a,b\in \R</m>: <ie/>, 
+<me>
+    \C=\{a+ib\colon a,b\in \R\}
+</me>.
+Given a complex number <m>z=a+ib</m>, we call <m>a</m> its <term>real part</term>, denoted <m>\Re z</m>, and we call <m>b</m> its <term>imaginary part</term>, denoted <m>\Im z</m>: <ie/>, we have 
+<md>
+    <mrow>\Re z \amp = a \amp \Im z\amp = b</mrow>
+</md>.
+</p>
+</statement>
+</definition>
+
+<convention>
+    <title>Complex numbers</title>
+    <p>
+      When introducing a complex number as <m>z=a+ib</m>, unless specified otherwise, it is assumed that <m>a,b\in \R</m>. 
+    </p>
+</convention>
+<p>
+    You are justified in wondering what exactly is meant by a <q>formal expression</q>. A more correct formulation would be that a complex number is really just a pair <m>(a,b)\in \R^2</m> of real numbers that for various reasons we denote as <m>a+ib</m>. Since it is somewhat awkward to write a complex number as <m>z=(a,b)</m>, we will live with the ambiguity of <xref ref="d_complex_numbers"/>, and <em>identify</em> complex numbers <m>z=a+ib</m> as pairs of real numbers via the map 
+    <md>
+        <mrow>\C \amp \longleftrightarrow \R^2</mrow>
+        <mrow>a+ib \amp \longmapsto (a,b)</mrow>
+    </md>.
+    To ensure that this is a well-defined bijection between <m>\C</m> and <m>\R^2</m>, we make official when two of our <q>formal expressions</q> are defined to be equal.     
+</p>
+<definition xml:id="d_complex_equality">
+<title>Complex equality</title>
+<statement>
+<p>
+Complex numbers <m>z=a+ib</m> and <m>w=c+id</m> are <term>equal</term>, denoted <m>z=w</m>, if <md>
+    <mrow>a=c \text{ and } b=d</mrow>
+</md>.
+In other words, we have 
+<md>
+    <mrow>z=w \amp \iff \Re z=\Re w \text{ and } \Im z=\Im w</mrow>
+</md>.
+</p>
+</statement>
+</definition>
+<p>
+    For reasons that will be made more clear below, it is natural to identify the set of real numbers <m>\R</m> with the set of complex numbers of the form <m>a+0i</m>. This is the motivation behind the next definition. 
+</p>
+<definition xml:id="d_real_imaginary">
+<title>Real and imaginary numbers</title>
+<statement>
+<p>
+Let <m>z=a+ib</m> be a complex number. We say that <m>z</m> is <term>real</term> if <m>b=\Im z=0</m>, and <term>(purely) imaginary</term> if <m>a=\Re z=0</m>. Henceforth we identify the real numbers <m>\R</m> with the real complex numbers: <ie/>, we declare that 
+<me>
+    \R=\{z\in \C\colon \Im z=0\}=\{a+0i\colon a\in \R\}
+</me>.
+Furthermore we will use the following abbreviations for various real and purely imaginary complex numbers: 
+<md>
+    <mrow>a+i\,0 \amp =a \amp  0+ib\amp =ib</mrow>
+    <mrow>a+i(-b) \amp =a-ib \amp a+i(\pm 1)\amp = a\pm i</mrow>
+</md>.
+</p>
+</statement>
+</definition>
+ 
+
+    <definition xml:id="d_sum_product">
+        <title>Complex addition and multiplication</title>
+        <statement>
+            <p>
+                Let <m>z=a+ib</m> and <m>w=c+id</m> be complex numbers. 
+                <ul>
+                    <li>
+                        <title>Complex addition</title>
+                        <p>
+                            We define the <term>sum</term>  of <m>z</m> and <m>w</m>, denoted <m>z+w</m>, as 
+                            <mdn >
+                                <mrow xml:id="eq_sum">z+w \amp =(a+c)+i(b+d)</mrow>
+                            </mdn>.
+                        </p>
+                    </li>
+                    
+                    <li>
+                        <title>Complex multiplication</title>
+                        <p>
+                           We define the <term>product</term>  of <m>z</m> and <m>w</m>, denoted <m>z\,w</m> (or sometimes <m>z\cdot w</m>) as
+                            <mdn >
+                                <mrow xml:id="eq_product">z\,w \amp= (ac-bd)+i(ad+bc) </mrow>
+                            </mdn>.
+                        </p>
+                    </li>
+                </ul>
+            </p>
+        </statement>
+    </definition>
+    <theorem xml:id="th_complex_field">
+    <title><m>\C</m> is a field</title>
+    <statement>
+    <p>
+    The set <m>\C</m> of all complex numbers, together with the operations of complex addition and multiplication defined in <xref ref="d_sum_product"/>, constitutes a field. 
+    </p>
+    <p>
+        In more detail, with respect to these operations, the additive and multiplicative identities are <m>0=0+i\,0</m> and <m>1=1+i\,0</m>, respectively, and given any <m>z=a+ib\in \Z</m>, we have 
+        <md>
+            <mrow>-z \amp = -a-ib</mrow>
+            <mrow>z^{-1} \amp = \frac{a}{a^2+b^2}-i\frac{b}{a^2+b^2} \amp (\text{assuming } z\ne 0)</mrow>
+        </md>.
+    </p>
+    </statement>
+    <proof>
+    <p>
+        This is left as a homework exercise.
+    </p>
+    </proof>
+    </theorem>
+    <convention>
+        <title><m>a+ib=a+bi</m></title>
+       <p>
+        Now that we know <m>\C</m> is a field, and in particular that complex multiplication is commutative, we are free to write a complex number <m>z=a+ib</m> as <m>z=a+bi</m>. Oftentimes one of these expressions simply looks better typographically than the other. 
+        </p>
+        <p>
+            Note that when writing <m>z=a+bi</m> and <m>w=c+di</m>, where <m>a,b,c,d\in \R</m>, it is still the case that <m>z=w</m> if and only if <m>a=b</m> and <m>c=d</m>.
+       </p> 
+    </convention>
+    <example xml:id="eg_squareroot_minusone">
+    <title><m>i^2</m></title>
+    <statement>
+    <p>
+    Compute <m>i^2</m>. 
+    </p>
+    </statement>
+    <solution>
+    <p>
+    We have, using the definition of multiplication,
+    <me>
+        i^2=(0+1\, i)(0+1\, i)=(0-1)+0i=-1
+    </me>.
+    Thus the element <m>i</m> is seen to be a square-root of <m>-1</m>! With a little more work, we can show that any complex number <m>z=a+ib</m> has a complex square-root. More on that later. 
+    </p>
+    </solution>
+    </example>
+    <remark xml:id="rem_complex_arith">
+    <title>Complex arithmetic as extension of real arithmetic</title>
+    <p>
+        Using the definition of complex multiplication, it is easy to see that given any real complex number <m>a=a+0i</m>, we have 
+        <md>
+            <mrow>a(c+di) \amp =ac+adi=(c+di)a </mrow>
+        </md>.
+        In particular, given any two real complex numbers <m>a=a+0i</m> and <m>b=b+0i</m>, we have 
+        <me>
+            (a+0i)(b+0i)=ab+0i=ab
+        </me>.
+        In other words, when we restrict complex multiplication to the real complex numbers, we recover our familiar real multiplication operation. A similar statement applies for complex addition and real addition. In this sense, complex arithmetic is understood as an <em>extension</em> of real arithmetic.
+    </p>
+         
+    </remark>
+    <example xml:id="eg_arithmetic">
+    <title>Complex arithmetic</title>
+    <statement>
+    <p>
+    Let <m>z=-2+3i</m>, <m>w=4+i</m>. Compute the following complex numbers. Your answer must be expressed in the form <m>a+ib</m>, where <m>a,b\in \R</m>. 
+    <ol>
+        <li>
+            <p>
+                <m>z+w</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>z-w</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>z\,w</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>z/w</m>
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <solution>
+    <p>
+    <ol>
+        <li>
+            <p>
+                We have 
+                <md>
+                    <mrow>z+w \amp =(-2+4)+i(3+1)</mrow>
+                    <mrow> \amp = 2+i\,4</mrow>
+                </md>.
+            </p>
+        </li>
+        <li>
+            <p>
+                We have 
+                <md>
+                    <mrow>z-w \amp = (-2-4)+(3-1)i </mrow>
+                    <mrow> \amp = -6+i\,2</mrow>
+                </md>.
+            </p>
+        </li>
+        <li>
+            <p>
+                We have 
+                <md>
+                    <mrow>z\,w \amp = (-2\cdot 4-3\cdot 1)+i(-2\cdot 1+3\cdot 4)</mrow>
+                    <mrow> \amp = -11+i\,10</mrow>
+                </md>.
+            </p>
+        </li>
+        <li>
+            <p>
+                First observe that by definition we have 
+                <me>
+                    z/w=z\, w^{-1}
+                </me>.
+                According to the inverse formulas in <xref ref="th_complex_field"/> we have 
+                <me>
+                    w^{-1}=\frac{4}{4^2+1^2}-i\frac{1}{4^2+1^1}=\frac{1}{17}(4-i)
+                </me>.
+                We thus have 
+                <md>
+                    <mrow>z/w \amp = z\, w^{-1}</mrow>
+                    <mrow> \amp = w^{-1}\, z</mrow>
+                    <mrow> \amp = \frac{1}{17}(4-i)(-2+3i)</mrow>
+                    <mrow> \amp = \frac{1}{17}(-5+14i)</mrow>
+                    <mrow> \amp = -\frac{5}{17}+\frac{14}{17}i</mrow>
+                </md>.
+            </p>
+        </li>
+    </ol>
+    </p>
+    </solution>
+    </example>
+    <p>
+    <xref ref="d_complex_equality"/> ensures that the map 
+    <me>
+        a+ib\mapsto (a,b)
+    </me>
+    defines a bijection between <m>\C</m> and <m>\R</m>, allowing us to identify complex numbers as pairs of real numbers. This identification in turn gives rise to a visual representation of complex numbers as points in the Cartesian plane <m>\R^2</m>, called the <term>complex plane</term> in this context. To make clear that we are using <m>\R^2</m> to visualize <m>\C</m>, we label the horizontal and vertical axes as <m>\Re</m> and <m>\Im</m>. 
+</p>
+<figure xml:id="fig_complex_plane">
+    <caption>Complex plane</caption>
+    <image width="75%">
+        <shortdescription>Complex plane: points</shortdescription>
+        <sageplot>
+P=point((1,2),color="blue", size=50,axes_labels=["$\\operatorname{Re}$","$\\operatorname{Im}$"],ticks=[list(range(-1,2)),list(range(-2,3))],tick_formatter=[["-1","0","$\\operatorname{Re} z=1$"],[-2,-1,0,1,"$\\operatorname{Im} z=2$"]],aspect_ratio=.5)
+Q=point((0,-2),color="blue", size=50)
+R=point((-1,0),color="blue", size=50)
+t1=text("$z=1+2i$",(1.2,2.2),color="black",fontsize=16)
+t2=text("$w=-2i$",(0.4,-2),color="black",fontsize=16)
+t3=text("$a=-1$",(-1,0.2),color="black",fontsize=16)
+l1=line([(0,2),(1,2)],color="red",linestyle="dotted")
+l2=line([(1,0),(1,2)],color="red",linestyle="dotted")
+P+Q+R+t1+t2+t3+l1+l2
+        </sageplot>
+    </image>
+</figure>
+<p>
+Using our identification 
+<me>
+    \R=\{z\in \C\colon \Im z=0\}
+</me>,
+we see that the real numbers are represented geometrically as the <m>x</m>-axis of the complex plane. Similarly, the purely imaginary complex numbers are represented geometrically as the the <m>y</m>-axis of the complex plane. As you will see, we will get a lot of mileage out of this geometric representation of complex numbers. 
+</p>
+
+</subsection>
+<subsection xml:id="ss_modulus_conjugation">
+<title>Further complex operations</title>
+<p>
+    Two further complex operations, the <em>modulus</em> and <em>complex conjugation</em>, will prove to be invaluable when doing complex arithmetic. 
+</p>
+<definition xml:id="d_modulus">
+<title>Complex modulus</title>
+<statement>
+<p>
+The <term>modulus</term> (or <term>absolute value</term>) of a complex number <m>z=a+ib</m>, denoted <m>\abs{z}</m>, is defined as 
+<me>
+    \abs{z}=\sqrt{a^2+b^2}
+</me>.
+If <m>\abs{z}=1</m>, we say that <m>z</m> has <term>unit length</term>. 
+</p>
+</statement>
+</definition>
+<definition xml:id="d_conj">
+    <title>Complex conjugation</title>
+    <statement>
+    <p>
+        Given the complex number <m>z=a+ib</m>, its <term>(complex) conjugate</term> <m>\overline{z}</m> is defined as 
+        <me>
+            \overline{z}=a-ib
+        </me>.
+    </p>
+    </statement>
+    </definition>
+    <theorem xml:id="th_conj">
+        <title>Conjugation properties</title>
+        <statement>
+            <p>
+               Let <m>z</m> and <m>w</m> be complex numbers. 
+               <ol cols="2">
+                <li>
+                    <p>
+                        <m>\overline{z+w}=\overline{z}+\overline{w}</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>\overline{z\, w}=\overline{z}\, \overline{w}</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>\overline{\overline{z}}=z</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>\abs{\overline{z}}=\abs{z}</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>\Re z=\frac{z+\overline{z}}{2}</m> and <m>\Im z=\frac{z-\overline{z}}{2i}</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>z\in \R</m> if and only if <m>\overline{z}=z</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>z\, \overline{z}=\abs{z}^2</m>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        If <m>z\ne 0</m>, then 
+                        <m>
+                            \displaystyle z^{-1}=\frac{\overline{z}}{\abs{z}^2}=\frac{\overline{z}}{z\overline{z}}
+                        </m>.
+                    </p>
+                </li>
+               </ol> 
+            </p>
+        </statement>
+    </theorem>
+</subsection>
+
+</section>
