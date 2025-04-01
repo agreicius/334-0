@@ -22,6 +22,9 @@
     </introduction>
     <subsection xml:id="ss_complex">
 <title>Complex numbers</title>
+<p>
+    Before getting to the abstract definition of a field, we introduce what ends up being an important example of a field: the complex numbers. 
+</p>
  <definition xml:id="d_complex_numbers">
 <title>Complex numbers, real and imaginary parts</title>
 <statement>
@@ -116,7 +119,53 @@ Furthermore we will use the following abbreviations for various real and purely 
             </p>
         </statement>
     </definition>
-    
+    <example xml:id="eg_arithmetic">
+    <title>Complex arithmetic</title>
+    <statement>
+    <p>
+    Let <m>z=-2+3i</m>, <m>w=4+i</m>. Compute the following complex numbers. Your answer must be expressed in the form <m>a+ib</m>, where <m>a,b\in \R</m>. 
+    <ol>
+        <li>
+            <p>
+                <m>z+w</m>
+            </p>
+        </li>
+
+        <li>
+            <p>
+                <m>z\,w</m>
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <solution>
+    <p>
+    <ol>
+        <li>
+            <p>
+                We have 
+                <md>
+                    <mrow>z+w \amp =(-2+4)+i(3+1)</mrow>
+                    <mrow> \amp = 2+i\,4</mrow>
+                </md>.
+            </p>
+        </li>
+
+        <li>
+            <p>
+                We have 
+                <md>
+                    <mrow>z\,w \amp = (-2\cdot 4-3\cdot 1)+i(-2\cdot 1+3\cdot 4)</mrow>
+                    <mrow> \amp = -11+i\,10</mrow>
+                </md>.
+            </p>
+        </li>
+        
+    </ol>
+    </p>
+    </solution>
+    </example>
     <example xml:id="eg_squareroot_minusone">
     <title><m>i^2</m></title>
     <statement>
@@ -158,89 +207,7 @@ Furthermore we will use the following abbreviations for various real and purely 
             Note that when writing <m>z=a+bi</m> and <m>w=c+di</m>, where <m>a,b,c,d\in \R</m>, it is still the case that <m>z=w</m> if and only if <m>a=b</m> and <m>c=d</m>.
        </p> 
     </convention>
-    <example xml:id="eg_arithmetic">
-    <title>Complex arithmetic</title>
-    <statement>
-    <p>
-    Let <m>z=-2+3i</m>, <m>w=4+i</m>. Compute the following complex numbers. Your answer must be expressed in the form <m>a+ib</m>, where <m>a,b\in \R</m>. 
-    <ol>
-        <li>
-            <p>
-                <m>z+w</m>
-            </p>
-        </li>
-        <li>
-            <p>
-                <m>z-w</m>
-            </p>
-        </li>
-        <li>
-            <p>
-                <m>z\,w</m>
-            </p>
-        </li>
-        <li>
-            <p>
-                <m>z/w</m>
-            </p>
-        </li>
-    </ol>
-    </p>
-    </statement>
-    <solution>
-    <p>
-    <ol>
-        <li>
-            <p>
-                We have 
-                <md>
-                    <mrow>z+w \amp =(-2+4)+i(3+1)</mrow>
-                    <mrow> \amp = 2+i\,4</mrow>
-                </md>.
-            </p>
-        </li>
-        <li>
-            <p>
-                We have 
-                <md>
-                    <mrow>z-w \amp = (-2-4)+(3-1)i </mrow>
-                    <mrow> \amp = -6+i\,2</mrow>
-                </md>.
-            </p>
-        </li>
-        <li>
-            <p>
-                We have 
-                <md>
-                    <mrow>z\,w \amp = (-2\cdot 4-3\cdot 1)+i(-2\cdot 1+3\cdot 4)</mrow>
-                    <mrow> \amp = -11+i\,10</mrow>
-                </md>.
-            </p>
-        </li>
-        <li>
-            <p>
-                First observe that by definition we have 
-                <me>
-                    z/w=z\, w^{-1}
-                </me>.
-                According to the inverse formulas in <xref ref="th_complex_field"/> we have 
-                <me>
-                    w^{-1}=\frac{4}{4^2+1^2}-i\frac{1}{4^2+1^1}=\frac{1}{17}(4-i)
-                </me>.
-                We thus have 
-                <md>
-                    <mrow>z/w \amp = z\, w^{-1}</mrow>
-                    <mrow> \amp = w^{-1}\, z</mrow>
-                    <mrow> \amp = \frac{1}{17}(4-i)(-2+3i)</mrow>
-                    <mrow> \amp = \frac{1}{17}(-5+14i)</mrow>
-                    <mrow> \amp = -\frac{5}{17}+\frac{14}{17}i</mrow>
-                </md>.
-            </p>
-        </li>
-    </ol>
-    </p>
-    </solution>
-    </example>
+    
     <p>
     <xref ref="d_complex_equality"/> ensures that the map 
     <me>
@@ -274,93 +241,13 @@ we see that the real numbers are represented geometrically as the <m>x</m>-axis 
 </p>
 
 </subsection>
-<subsection xml:id="ss_modulus_conjugation">
-<title>Further complex operations</title>
-<p>
-    Two further complex operations, the <em>modulus</em> and <em>complex conjugation</em>, will prove to be invaluable when doing complex arithmetic. 
-</p>
-<definition xml:id="d_modulus">
-<title>Complex modulus</title>
-<statement>
-<p>
-The <term>modulus</term> (or <term>absolute value</term>) of a complex number <m>z=a+ib</m>, denoted <m>\abs{z}</m>, is defined as 
-<me>
-    \abs{z}=\sqrt{a^2+b^2}
-</me>.
-If <m>\abs{z}=1</m>, we say that <m>z</m> has <term>unit length</term>. 
-</p>
-</statement>
-</definition>
-<definition xml:id="d_conj">
-    <title>Complex conjugation</title>
-    <statement>
-    <p>
-        Given the complex number <m>z=a+ib</m>, its <term>(complex) conjugate</term> <m>\overline{z}</m> is defined as 
-        <me>
-            \overline{z}=a-ib
-        </me>.
-    </p>
-    </statement>
-    </definition>
-    <theorem xml:id="th_conj">
-        <title>Conjugation properties</title>
-        <statement>
-            <p>
-               Let <m>z</m> and <m>w</m> be complex numbers. 
-               <ol cols="2">
-                <li>
-                    <p>
-                        <m>\overline{z+w}=\overline{z}+\overline{w}</m>.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <m>\overline{z\, w}=\overline{z}\, \overline{w}</m>.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <m>\overline{\overline{z}}=z</m>.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <m>\abs{\overline{z}}=\abs{z}</m>.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <m>\Re z=\frac{z+\overline{z}}{2}</m> and <m>\Im z=\frac{z-\overline{z}}{2i}</m>.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <m>z\in \R</m> if and only if <m>\overline{z}=z</m>.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <m>z\, \overline{z}=\abs{z}^2</m>
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        If <m>z\ne 0</m>, then 
-                        <m>
-                            \displaystyle z^{-1}=\frac{\overline{z}}{\abs{z}^2}=\frac{\overline{z}}{z\overline{z}}
-                        </m>.
-                    </p>
-                </li>
-               </ol> 
-            </p>
-        </statement>
-    </theorem>
-</subsection>
 
-    <subsection xml:id="ss_field_def">
-    <title>Fields</title>
-    
-   
+
+<subsection xml:id="ss_field_def">
+<title>Fields</title>
+<p>
+    It turns out that complex addition and multiplication satisfy essentially all the same useful properties as real addition and multiplication: <eg/>, both operations are commutative and associative, multiplication distributes over addition, <etc/>. As a result, arithmetic and algebra in <m>\C</m> proceeds much as it does in <m>\R</m>, making <m>\C</m> a convenient <em>number system</em> to work with. But why stop at <m>\C</m>? Are there other number systems we can build that allow us to do arithmetic and algebra in a familiar manner? Consider <xref ref="d_field"/> as an attempt to isolate precisely the properties we want a number system to satisfy in order for arithmetic and algebra to proceed essentially as it does in <m>\R</m>. A number system satisfying those properties is called a <em>field</em>, and the stipulated properties are called the <em>field axioms</em>.   
+</p>    
 <definition xml:id="d_field">
 <title>Field</title>
 <statement>
@@ -474,7 +361,7 @@ called <term>addition</term> and <term>multiplication</term> respectively, satis
         We use familiar looking notation to describe the special elements of a field <m>F</m> (<eg/>, <m>0,1,-\alpha, 1/\alpha</m>), but keep in mind that these are just <em>names</em> for certain special elements satisfying various axioms in <xref ref="d_field"/>.  
     </p>
     <p>
-        When verifying whether a given set <m>F</m> with given operations <m>+</m> and <m>\times</m> is a field, we make no assumptions beforehand as to which elements of <m>F</m> serve as these special elements. It is up to us to identify these special elements and verify that they satisfy the relevant axioms. As such, it is important each time we are confronted with a new potential field, that we come with no prejudices as to which elements serve as additive/multiplicate identities/inverses; these roles depend on how the operations themselves are defined. 
+        When verifying whether a given set <m>F</m> with given operations <m>+</m> and <m>\times</m> is a field, we make no assumptions beforehand as to which elements of <m>F</m> serve as these special elements. It is up to us to identify these special elements and verify that they satisfy the relevant axioms. As such, it is important each time we are confronted with a new potential field, that we come with no prejudices as to which elements serve as additive/multiplicate identities/inverses; these roles depend on how the operations themselves are defined.  <xref ref="eg_F2"/> is a nice illustration of this approach. 
     </p>
 </warning>
 <example xml:id="eg_R">
@@ -505,7 +392,7 @@ The set <m>\R</m> of all real numbers, together with the operations of real numb
     </p>
     </proof>
     </theorem>
-    
+
 <example xml:id="eg_Q">
 <title>Rational numbers</title>
 <statement>
@@ -581,7 +468,27 @@ Let <m>\Z</m> be the set of all integers.
 </statement>
 <solution>
 <p>
-
+<ol>
+    <li>
+        <p>
+            An argument very similar to the one in <xref ref="eg_Q"/> shows that the sum and product of two integers is again an integer, and hence that restricting these operations to <m>\Z</m> yields a well-defined operation on <m>\Z</m>. 
+        </p>
+    </li>
+    <li>
+        <p>
+            The integers fail to be a field with respect to these operations as Axiom (vii) fails. To this end, by way of counterexample, we claim that the integer <m>2</m> does not have a multiplicative inverse in <m>\Z</m>. Indeed, if there were an integer <m>n</m> such that <m>2n=1</m>, then we'd have <m>n\ne 0</m> and 
+            <me>\abs{2n}=2\abs{n}=\abs{1}=1</me>.
+            But for all nonzero integers <m>n\in \Z</m>, we have <m>\abs{n}\geq 1</m>, and hence 
+            <me>
+                2\abs{n}\geq 2\cdot 1=1&gt; 1
+            </me>,
+            a contradiction. We conclude that there is no integer <m>n</m> satisfying <m>2n=1</m>, and hence that <m>2</m> has no multiplicative inverse in <m>\Z</m>. Thus <m>\Z</m> is not a field with respect to these operations. 
+        </p>
+        <p>
+            As it turns out, Axiom (vii) is the only field axiom that <m>\Z</m> fails, making it still a pretty darn good number system to work with. In fact, we have a name for number systems that satisfy at least Axioms (i)-(vi) of the field axioms: they are called <em>rings</em>. 
+        </p>
+    </li>
+</ol>
 </p>
 </solution>
 </example>
@@ -599,10 +506,32 @@ Verify that <m>F</m>, together with these two operations, constitutes a field. M
 </statement>
 <solution>
 <p>
-
+Since <m>F</m> only has two elements, showing that Axioms (i)-(iii) hold is a simple matter of looking at all the possible cases: in other words, we can resort to a proof by exhaustion for these axioms. For example, verifying commutativity of multiplication requires looking at just 4 different cases. Furthermore, since it is trivially true that <m>a a=aa</m> and <m>bb=bb</m>, we need only look at the <q>mixed products</q> <m>ab</m> and <m>ba</m>; and in this case we see by the definition that
+<me>
+    ab=a=ba
+</me>.
+Similar arguments can be mounted for the rest of these arithmetic axioms. 
+</p>
+<p>
+    We now turn to the existential axioms. First, we claim that <m>a</m> serves as the additive identity in this case: <ie/>, we have <m>0=a</m> for this field. To verify this, we need to show that <m>a</m> satisfies the defining axiom of the additive identity: namely, that <m>a+\alpha=\alpha</m> for any <m>\alpha\in F</m>. But this follows directly from the very definition of addition on <m>F</m>, as we declared that 
+    <m>a+a=a</m> and<m>a+b=b</m>. A similar argument shows that the element <m>b</m> acts as the multiplicative identity in this field: <ie/>, we have <m>1=b</m>. 
+</p>
+<p>
+    Lastly we must show that each element of <m>F</m> has an additive inverse satisfying Axiom (v), and that each nonzero element of <m>F</m> has a multiplicative inverse satisfying Axiom (vii). Again, this is accomplished simply by inspection, building on our already established result that <m>a=0</m> and <m>b=1</m>. In detail, since <m>a+a=a=0</m> and <m>b+b=a=0</m>, we see that <m>-a=a</m> and <m>-b=b</m>. Turning at last to multiplicative inverses, note first that <m>b</m> is the only nonzero element of <m>F</m> (since <m>a=0</m>). Furthermore, since <m>bb=b=1</m>, we see that <m>b^{-1}=b</m>. 
+</p>
+<p>
+    Since the operations on <m>F</m> satisfy the field axioms, we conclude that <m>F</m> is a field with respect to these operations. Having identified <m>a=0</m> and <m>b=1</m>, we can summarize the arithemetic rules of this particular field as follows:
+    <md>
+        <mrow>0+0 \amp =0 \amp 0+1\amp=1+0=1 \amp 1+1\amp =0 </mrow>
+        <mrow>0\cdot 0 \amp = 0 \amp 0\cdot 1\amp =1\cdot 0=0 \amp 1\cdot 1\amp =1</mrow>
+        <mrow>-0 \amp =0 \amp -1\amp =1 \amp 1^{-1}\amp =1</mrow>
+    </md>.
 </p>
 </solution>
 </example>
+<p>
+    Take a moment to take in the exotic nature of the field in <xref ref="eg_F2"/>. Unlike <m>\Q</m>, <m>\R</m>, and <m>\C</m>, its underlying set is finite! Further peculiar attributes of this field is that every element is its own additive inverse. Crazy! Clearly, this example is important enough to warrant its own name. 
+</p>
 <definition xml:id="d_F2">
 <title>Field of two elements</title>
 <statement>
@@ -669,6 +598,56 @@ Let <m>F</m> be a field.
 </p>
 </statement>
 </definition>
+<example xml:id="eg_arithmetic_II">
+    <title>Complex arithmetic</title>
+    <statement>
+    <p>
+    Let <m>z=-2+3i</m>, <m>w=4+i</m>. Compute the following complex numbers. Your answer must be expressed in the form <m>a+ib</m>, where <m>a,b\in \R</m>. 
+    <ol>
+        <li>
+            <p>
+                <m>w^{-1}</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>z/w</m>
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <solution>
+    <p>
+    <ol>
+        <li>
+            <p>
+               Using the formula for multiplicative inverses in <xref ref="th_complex_field"/>, we have 
+               <me>
+                    w^{-1}=\frac{4}{4^2+1^2}-i\frac{1}{4^2+1^1}=\frac{1}{17}(4-i)
+                </me>.
+            </p>
+        </li>
+        <li>
+            <p>
+                First observe that by definition we have 
+                <me>
+                    z/w=z\, w^{-1}
+                </me>.
+                Using our computation in (1), we then conclude that 
+                <md>
+                    <mrow>z/w \amp = z\, w^{-1}</mrow>
+                    <mrow> \amp = w^{-1}\, z</mrow>
+                    <mrow> \amp = \frac{1}{17}(4-i)(-2+3i)</mrow>
+                    <mrow> \amp = \frac{1}{17}(-5+14i)</mrow>
+                    <mrow> \amp = -\frac{5}{17}+\frac{14}{17}i</mrow>
+                </md>.
+            </p>
+        </li>
+    </ol>
+    </p>
+    </solution>
+    </example>
 <theorem xml:id="th_field_props">
 <title>Properties of fields</title>
 <statement>
@@ -717,6 +696,30 @@ Let <m>F</m> be a field, let <m>\alpha,\beta\in F</m>, and let <m>m,n\in \Z_{\ge
 </statement>
 <proof>
 <p>
+    Very much in the spirit of <xref ref="warning_names_fields"/>, when proving a result like this for an <em>arbitrary</em> field, we can make no assumptions about <m>F</m> beyond the fact that its addition and multiplication operations satisfy the field axioms. This can make the proof of these very simple properties less straightforward than you might expect. We content ourselves with a proof of (1) and (2). 
+</p>
+<p>
+    To prove (1), we observe first that for any <m>\alpha\in F</m> we have 
+    <me>
+        0\alpha=(0+0)\alpha=0\alpha+0\alpha
+    </me>.
+    Here we have used the fact that <m>0</m> satisfies Axiom (iv) (and thus <m>0+0=0</m>), and that Axiom (iii) holds (distributivity). We conclude the proof by invoking the existence of additive inverses: in detail we have 
+    <md>
+        <mrow>0\alpha\amp = 0\alpha+0\alpha </mrow>
+        <mrow>-(0\alpha)+0\alpha\amp=-(0\alpha)+0\alpha+0\alpha \amp (\text{add } -(0\alpha)\text{ to both sides}) </mrow>
+        <mrow>  0\amp=0+0\alpha \amp (-(0\alpha) \text{ is add. inv. of } 0\alpha )</mrow>
+        <mrow> 0\amp=0\alpha \amp (0+\beta=\beta \text{ for any } \beta)</mrow>
+    </md>,
+    as desired.
+</p>
+<p>
+   Moving to (2), assume we have <m>\alpha\beta=0</m>. We will show that if <m>\alpha\ne 0</m>, then <m>\beta=0</m>, which is equivalent to proving <m>\alpha=0</m> or <m>\beta=0</m>. Assume <m>\alpha\ne 0</m>. By Axiom (vii) there is a multiplicative inverse <m>\alpha^{-1}\in F</m> satisfying <m>\alpha^{-1}\alpha=1</m>. But then we have 
+   <md>
+    <mrow>\alpha\beta=0 \amp \implies \alpha^{-1}\alpha\beta=\alpha^{-1}0</mrow>
+    <mrow> \amp \implies 1\beta\beta=0 \amp (\alpha^{-1}\alpha=1, \alpha^{-1}0=0\alpha^{-1}=0 \text{ by } (2))</mrow>
+    <mrow> \amp \implies \beta=0 \amp (1\beta=\beta) </mrow>
+   </md>,
+   as desired. 
 </p>
 </proof>
 </theorem>
@@ -724,5 +727,92 @@ Let <m>F</m> be a field, let <m>\alpha,\beta\in F</m>, and let <m>m,n\in \Z_{\ge
 
  </subsection>
 
+<subsection xml:id="ss_modulus_conjugation">
+<title>Further complex operations</title>
+<p>
+    Two further complex operations, the <em>modulus</em> and <em>complex conjugation</em>, will prove to be invaluable when doing complex arithmetic. 
+</p>
+<definition xml:id="d_modulus">
+<title>Complex modulus</title>
+<statement>
+<p>
+The <term>modulus</term> (or <term>absolute value</term>) of a complex number <m>z=a+ib</m>, denoted <m>\abs{z}</m>, is defined as 
+<me>
+    \abs{z}=\sqrt{a^2+b^2}
+</me>.
+If <m>\abs{z}=1</m>, we say that <m>z</m> has <term>unit length</term>. 
+</p>
+</statement>
+</definition>
+<definition xml:id="d_conj">
+    <title>Complex conjugation</title>
+    <statement>
+    <p>
+        Given the complex number <m>z=a+ib</m>, its <term>(complex) conjugate</term> <m>\overline{z}</m> is defined as 
+        <me>
+            \overline{z}=a-ib
+        </me>.
+    </p>
+    </statement>
+    </definition>
+    <theorem xml:id="th_conj">
+        <title>Conjugation properties</title>
+        <statement>
+            <p>
+               Let <m>z</m> and <m>w</m> be complex numbers. 
+               <ol cols="2">
+                <li>
+                    <p>
+                        <m>\overline{z+w}=\overline{z}+\overline{w}</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>\overline{z\, w}=\overline{z}\, \overline{w}</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>\overline{\overline{z}}=z</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>\abs{\overline{z}}=\abs{z}</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>\Re z=\frac{z+\overline{z}}{2}</m> and <m>\Im z=\frac{z-\overline{z}}{2i}</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>z\in \R</m> if and only if <m>\overline{z}=z</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>z\, \overline{z}=\abs{z}^2</m>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        If <m>z\ne 0</m>, then 
+                        <m>
+                            \displaystyle z^{-1}=\frac{\overline{z}}{\abs{z}^2}=\frac{\overline{z}}{z\overline{z}}
+                        </m>.
+                    </p>
+                </li>
+               </ol> 
+            </p>
+        </statement>
+        <proof>
+            <p>
+                This is left as a homework exercise. 
+            </p>
+        </proof>
+    </theorem>
+</subsection>
 
 </section>
