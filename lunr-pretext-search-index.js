@@ -547,7 +547,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.1",
   "title": "Fields",
-  "body": " Fields   Most first courses in linear algebra restrict their attention to vector spaces of the form . This is an example of a so-called real vector space (or -vector space , or vector space over the base field ), and one of a very particular sort (consisting of real -tuples). In this, a second course in linear algebra, we will generalize this approach along two different directions:   we will replace the specific base field with an arbitrary field (see );    we will consider not just vector spaces of -tuples, but general abstract vector spaces.   In this section we tackle the notion of an arbitrary field; in the next we introduce the definition of an abstract vector space.    Complex numbers   Complex numbers, real and imaginary parts   The complex numbers is the set of all formal expressions of the form , where : , . Given a complex number , we call its real part , denoted , and we call its imaginary part , denoted : , we have .     Complex numbers  When introducing a complex number as , unless specified otherwise, it is assumed that .   You are justified in wondering what exactly is meant by a formal expression . A more correct formulation would be that a complex number is really just a pair of real numbers that for various reasons we denote as . Since it is somewhat awkward to write a complex number as , we will live with the ambiguity of , and identify complex numbers as pairs of real numbers via the map . To ensure that this is a well-defined bijection between and , we make official when two of our formal expressions are defined to be equal.   Complex equality   Complex numbers and are equal , denoted , if . In other words, we have .    For reasons that will be made more clear below, it is natural to identify the set of real numbers with the set of complex numbers of the form . This is the motivation behind the next definition.   Real and imaginary numbers   Let be a complex number. We say that is real if , and (purely) imaginary if . Henceforth we identify the real numbers with the real complex numbers: , we declare that . Furthermore we will use the following abbreviations for various real and purely imaginary complex numbers: .     Complex addition and multiplication   Let and be complex numbers.   Complex addition  We define the sum of and , denoted , as .    Complex multiplication  We define the product of and , denoted (or sometimes ) as .          Compute .    We have, using the definition of multiplication, . Thus the element is seen to be a square-root of ! With a little more work, we can show that any complex number has a complex square-root. More on that later.     Complex arithmetic as extension of real arithmetic  Using the definition of complex multiplication, it is easy to see that given any real complex number , we have . In particular, given any two real complex numbers and , we have . In other words, when we restrict complex multiplication to the real complex numbers, we recover our familiar real multiplication operation. A similar statement applies for complex addition and real addition. In this sense, complex arithmetic is understood as an extension of real arithmetic.     As you will show yourself in homework, complex multiplication is commutative ( , we have for all ). As a result, we are free to write a complex number as . Oftentimes one of these expressions simply looks better typographically than the other.  Note that when writing and , where , it is still the case that if and only if and .    Complex arithmetic   Let , . Compute the following complex numbers. Your answer must be expressed in the form , where .                             We have .    We have .    We have .    First observe that by definition we have . According to the inverse formulas in we have . We thus have .        ensures that the map defines a bijection between and , allowing us to identify complex numbers as pairs of real numbers. This identification in turn gives rise to a visual representation of complex numbers as points in the Cartesian plane , called the complex plane in this context. To make clear that we are using to visualize , we label the horizontal and vertical axes as and .   Complex plane   Complex plane: points     Using our identification , we see that the real numbers are represented geometrically as the -axis of the complex plane. Similarly, the purely imaginary complex numbers are represented geometrically as the the -axis of the complex plane. As you will see, we will get a lot of mileage out of this geometric representation of complex numbers.    Further complex operations  Two further complex operations, the modulus and complex conjugation , will prove to be invaluable when doing complex arithmetic.   Complex modulus   The modulus (or absolute value ) of a complex number , denoted , is defined as . If , we say that has unit length .     Complex conjugation   Given the complex number , its (complex) conjugate  is defined as .     Conjugation properties   Let and be complex numbers.    .     .     .     .     and .     if and only if .         If , then .         Fields   Field   A field is a set together with two operations called addition and multiplication respectively, satisfying the following axioms.   Commutativity  For all we have .    Associativity  For all we have .    Distributivity  For all we have .    Additive identity  There is an element satisfying for all . The element is called the additive identity .    Additive inverse  For all there is an element satisfying . The element is called the additive inverse of .    Multiplicative identity  There is an element satisfying for all . The element is called the multiplicative identity .    Multiplicative inverse  For all nonzero elements (i.e., ) there is an element satisfying . The element , also denoted , is called the multiplicative inverse of .        Arithmetic and existential axioms  We will call Axioms (i)-(iii) the arithmetic axioms , as they stipulate that our operations satisfy some familiar properties from arithmetic. Additionally, we will call Axioms (iv)-(vii) the existential axioms as they posit the existence of certain special elements inside the underlying set of the field: namely, special elements denoted and satisfying Axioms (iv) and (vi), for each element a special associated element satisfying Axiom (v), and for each nonzero element a special associated element satisfying Axiom (vii).    Names and prejudices  We use familiar looking notation to describe the special elements of a field ( , ), but keep in mind that these are just names for certain special elements satisfying various axioms in .  When verifying whether a given set with given operations and is a field, we make no assumptions beforehand as to which elements of serve as these special elements. It is up to us to identify these special elements and verify that they satisfy the relevant axioms. As such, it is important each time we are confronted with a new potential field, that we come with no prejudices as to which elements serve as additive\/multiplicate identities\/inverses; these roles depend on how the operations themselves are defined.    Real numbers   The set of all real numbers, together with the operations of real number addition and real number multiplication, constitutes a field.     is a field   The set of all complex numbers, together with the operations of complex addition and multiplication defined in , constitutes a field.  In more detail, with respect to these operations, the additive and multiplicative identities are and , respectively, and given any , we have .    This is left as a homework exercise.     Rational numbers   Let be the set of all rational numbers: , .   Show that the restriction of real number addition and multiplication to gives rise to operations .    Explain why , together with these restricted operations, constitutes a field.          It is clear that we can add and multiply two rational numbers; what we need to show is that the result of applying either of these operations to two rational numbers is again a rational number. In other words, we must show that the sum of two rational numbers is a rational number, and the product of two rational numbers is a rational number. To this end, let , and write and , where . We then have . Since , we see that , as desired.    Once we know that real number addition and multiplication restrict to well-defined operations on , that these restricted operations satisfy the field axioms follows directly from the fact that the original operations on satisfy these axioms. For example, since addition and multiplication are satisfy Axiom (i) for all real numbers , they certainly satisfy Axiom (i) for all rational numbers .  Similarly, the existential Axioms (iv)-(vii) are easily seen to be satisfied for the operations restricted to once we observe that , and that given any nonzero , we have .        Integers   Let be the set of all integers.   Show that the restriction of real number addition and multiplication to gives rise to operations .    Explain why , together with these restricted operations, does not constitute a field.            Field of two elements   Let be a set containing two distinct elements. Define addition and multiplication on as follows: . Verify that , together with these two operations, constitutes a field. Make explicit which elements of serve as the additive\/multiplicative identities\/inverses.         Field of two elements   The set , together with the operations , is called the field of two elements .     Finite fields  It turns out that any finite field ( , a field with finitely many elements) has prime cardinality. In other words if is finite and we can define operations on satisfying the field axioms, then , where is a prime integer.  Furthermore, given any prime integer , we can define addition and multiplication operations on the set that satisfy the field axioms. In other words, for every prime there is a field of elements. (These are things you learn in the Math 330\/331 sequences.)    Subtraction, division, integer powers   Let be a field.   Subtraction  Given elements , we define their difference  as .    Division  Given elements with , we define their quotient  as .    Integer powers  Given any , we define and where is any positive integer.  Furthermore, if and , we define .        Properties of fields   Let be a field, let , and let .    .    If , then or .     .     .     .     (assuming ).     (assuming ).            "
+  "body": " Fields   Most first courses in linear algebra restrict their attention to vector spaces of the form . This is an example of a so-called real vector space (or -vector space , or vector space over the base field ), and one of a very particular sort (consisting of real -tuples). In this, a second course in linear algebra, we will generalize this approach along two different directions:   we will replace the specific base field with an arbitrary field (see );    we will consider not just vector spaces of -tuples, but general abstract vector spaces.   In this section we tackle the notion of an arbitrary field; in the next we introduce the definition of an abstract vector space.    Complex numbers  Before getting to the abstract definition of a field, we introduce what ends up being an important example of a field: the complex numbers.   Complex numbers, real and imaginary parts   The complex numbers is the set of all formal expressions of the form , where : , . Given a complex number , we call its real part , denoted , and we call its imaginary part , denoted : , we have .     Complex numbers  When introducing a complex number as , unless specified otherwise, it is assumed that .   You are justified in wondering what exactly is meant by a formal expression . A more correct formulation would be that a complex number is really just a pair of real numbers that for various reasons we denote as . Since it is somewhat awkward to write a complex number as , we will live with the ambiguity of , and identify complex numbers as pairs of real numbers via the map . To ensure that this is a well-defined bijection between and , we make official when two of our formal expressions are defined to be equal.   Complex equality   Complex numbers and are equal , denoted , if . In other words, we have .    For reasons that will be made more clear below, it is natural to identify the set of real numbers with the set of complex numbers of the form . This is the motivation behind the next definition.   Real and imaginary numbers   Let be a complex number. We say that is real if , and (purely) imaginary if . Henceforth we identify the real numbers with the real complex numbers: , we declare that . Furthermore we will use the following abbreviations for various real and purely imaginary complex numbers: .     Complex addition and multiplication   Let and be complex numbers.   Complex addition  We define the sum of and , denoted , as .    Complex multiplication  We define the product of and , denoted (or sometimes ) as .        Complex arithmetic   Let , . Compute the following complex numbers. Your answer must be expressed in the form , where .                   We have .    We have .          Compute .    We have, using the definition of multiplication, . Thus the element is seen to be a square-root of ! With a little more work, we can show that any complex number has a complex square-root. More on that later.     Complex arithmetic as extension of real arithmetic  Using the definition of complex multiplication, it is easy to see that given any real complex number , we have . In particular, given any two real complex numbers and , we have . In other words, when we restrict complex multiplication to the real complex numbers, we recover our familiar real multiplication operation. A similar statement applies for complex addition and real addition. In this sense, complex arithmetic is understood as an extension of real arithmetic.     As you will show yourself in homework, complex multiplication is commutative ( , we have for all ). As a result, we are free to write a complex number as . Oftentimes one of these expressions simply looks better typographically than the other.  Note that when writing and , where , it is still the case that if and only if and .    ensures that the map defines a bijection between and , allowing us to identify complex numbers as pairs of real numbers. This identification in turn gives rise to a visual representation of complex numbers as points in the Cartesian plane , called the complex plane in this context. To make clear that we are using to visualize , we label the horizontal and vertical axes as and .   Complex plane   Complex plane: points     Using our identification , we see that the real numbers are represented geometrically as the -axis of the complex plane. Similarly, the purely imaginary complex numbers are represented geometrically as the the -axis of the complex plane. As you will see, we will get a lot of mileage out of this geometric representation of complex numbers.    Fields  It turns out that complex addition and multiplication satisfy essentially all the same useful properties as real addition and multiplication: , both operations are commutative and associative, multiplication distributes over addition, . As a result, arithmetic and algebra in proceeds much as it does in , making a convenient number system to work with. But why stop at ? Are there other number systems we can build that allow us to do arithmetic and algebra in a familiar manner? Consider as an attempt to isolate precisely the properties we want a number system to satisfy in order for arithmetic and algebra to proceed essentially as it does in . A number system satisfying those properties is called a field , and the stipulated properties are called the field axioms .   Field   A field is a set together with two operations called addition and multiplication respectively, satisfying the following axioms.   Commutativity  For all we have .    Associativity  For all we have .    Distributivity  For all we have .    Additive identity  There is an element satisfying for all . The element is called the additive identity .    Additive inverse  For all there is an element satisfying . The element is called the additive inverse of .    Multiplicative identity  There is an element satisfying for all . The element is called the multiplicative identity .    Multiplicative inverse  For all nonzero elements (i.e., ) there is an element satisfying . The element , also denoted , is called the multiplicative inverse of .        Arithmetic and existential axioms  We will call Axioms (i)-(iii) the arithmetic axioms , as they stipulate that our operations satisfy some familiar properties from arithmetic. Additionally, we will call Axioms (iv)-(vii) the existential axioms as they posit the existence of certain special elements inside the underlying set of the field: namely, special elements denoted and satisfying Axioms (iv) and (vi), for each element a special associated element satisfying Axiom (v), and for each nonzero element a special associated element satisfying Axiom (vii).    Names and prejudices  We use familiar looking notation to describe the special elements of a field ( , ), but keep in mind that these are just names for certain special elements satisfying various axioms in .  When verifying whether a given set with given operations and is a field, we make no assumptions beforehand as to which elements of serve as these special elements. It is up to us to identify these special elements and verify that they satisfy the relevant axioms. As such, it is important each time we are confronted with a new potential field, that we come with no prejudices as to which elements serve as additive\/multiplicate identities\/inverses; these roles depend on how the operations themselves are defined. is a nice illustration of this approach.    Real numbers   The set of all real numbers, together with the operations of real number addition and real number multiplication, constitutes a field.     is a field   The set of all complex numbers, together with the operations of complex addition and multiplication defined in , constitutes a field.  In more detail, with respect to these operations, the additive and multiplicative identities are and , respectively, and given any , we have .    This is left as a homework exercise.     Rational numbers   Let be the set of all rational numbers: , .   Show that the restriction of real number addition and multiplication to gives rise to operations .    Explain why , together with these restricted operations, constitutes a field.          It is clear that we can add and multiply two rational numbers; what we need to show is that the result of applying either of these operations to two rational numbers is again a rational number. In other words, we must show that the sum of two rational numbers is a rational number, and the product of two rational numbers is a rational number. To this end, let , and write and , where . We then have . Since , we see that , as desired.    Once we know that real number addition and multiplication restrict to well-defined operations on , that these restricted operations satisfy the field axioms follows directly from the fact that the original operations on satisfy these axioms. For example, since addition and multiplication are satisfy Axiom (i) for all real numbers , they certainly satisfy Axiom (i) for all rational numbers .  Similarly, the existential Axioms (iv)-(vii) are easily seen to be satisfied for the operations restricted to once we observe that , and that given any nonzero , we have .        Integers   Let be the set of all integers.   Show that the restriction of real number addition and multiplication to gives rise to operations .    Explain why , together with these restricted operations, does not constitute a field.          An argument very similar to the one in shows that the sum and product of two integers is again an integer, and hence that restricting these operations to yields a well-defined operation on .    The integers fail to be a field with respect to these operations as Axiom (vii) fails. To this end, by way of counterexample, we claim that the integer does not have a multiplicative inverse in . Indeed, if there were an integer such that , then we'd have and . But for all nonzero integers , we have , and hence , a contradiction. We conclude that there is no integer satisfying , and hence that has no multiplicative inverse in . Thus is not a field with respect to these operations.  As it turns out, Axiom (vii) is the only field axiom that fails, making it still a pretty darn good number system to work with. In fact, we have a name for number systems that satisfy at least Axioms (i)-(vi) of the field axioms: they are called rings .        Field of two elements   Let be a set containing two distinct elements. Define addition and multiplication on as follows: . Verify that , together with these two operations, constitutes a field. Make explicit which elements of serve as the additive\/multiplicative identities\/inverses.    Since only has two elements, showing that Axioms (i)-(iii) hold is a simple matter of looking at all the possible cases: in other words, we can resort to a proof by exhaustion for these axioms. For example, verifying commutativity of multiplication requires looking at just 4 different cases. Furthermore, since it is trivially true that and , we need only look at the mixed products  and ; and in this case we see by the definition that . Similar arguments can be mounted for the rest of these arithmetic axioms.  We now turn to the existential axioms. First, we claim that serves as the additive identity in this case: , we have for this field. To verify this, we need to show that satisfies the defining axiom of the additive identity: namely, that for any . But this follows directly from the very definition of addition on , as we declared that and . A similar argument shows that the element acts as the multiplicative identity in this field: , we have .  Lastly we must show that each element of has an additive inverse satisfying Axiom (v), and that each nonzero element of has a multiplicative inverse satisfying Axiom (vii). Again, this is accomplished simply by inspection, building on our already established result that and . In detail, since and , we see that and . Turning at last to multiplicative inverses, note first that is the only nonzero element of (since ). Furthermore, since , we see that .  Since the operations on satisfy the field axioms, we conclude that is a field with respect to these operations. Having identified and , we can summarize the arithemetic rules of this particular field as follows: .    Take a moment to take in the exotic nature of the field in . Unlike , , and , its underlying set is finite! Further peculiar attributes of this field is that every element is its own additive inverse. Crazy! Clearly, this example is important enough to warrant its own name.   Field of two elements   The set , together with the operations , is called the field of two elements .     Finite fields  It turns out that any finite field ( , a field with finitely many elements) has prime cardinality. In other words if is finite and we can define operations on satisfying the field axioms, then , where is a prime integer.  Furthermore, given any prime integer , we can define addition and multiplication operations on the set that satisfy the field axioms. In other words, for every prime there is a field of elements. (These are things you learn in the Math 330\/331 sequences.)    Subtraction, division, integer powers   Let be a field.   Subtraction  Given elements , we define their difference  as .    Division  Given elements with , we define their quotient  as .    Integer powers  Given any , we define and where is any positive integer.  Furthermore, if and , we define .        Complex arithmetic   Let , . Compute the following complex numbers. Your answer must be expressed in the form , where .                   Using the formula for multiplicative inverses in , we have .    First observe that by definition we have . Using our computation in (1), we then conclude that .        Properties of fields   Let be a field, let , and let .    .    If , then or .     .     .     .     (assuming ).     (assuming ).       Very much in the spirit of , when proving a result like this for an arbitrary field, we can make no assumptions about beyond the fact that its addition and multiplication operations satisfy the field axioms. This can make the proof of these very simple properties less straightforward than you might expect. We content ourselves with a proof of (1) and (2).  To prove (1), we observe first that for any we have . Here we have used the fact that satisfies Axiom (iv) (and thus ), and that Axiom (iii) holds (distributivity). We conclude the proof by invoking the existence of additive inverses: in detail we have , as desired.  Moving to (2), assume we have . We will show that if , then , which is equivalent to proving or . Assume . By Axiom (vii) there is a multiplicative inverse satisfying . But then we have , as desired.      Further complex operations  Two further complex operations, the modulus and complex conjugation , will prove to be invaluable when doing complex arithmetic.   Complex modulus   The modulus (or absolute value ) of a complex number , denoted , is defined as . If , we say that has unit length .     Complex conjugation   Given the complex number , its (complex) conjugate  is defined as .     Conjugation properties   Let and be complex numbers.    .     .     .     .     and .     if and only if .         If , then .       This is left as a homework exercise.     "
 },
 {
   "id": "d_complex_numbers",
@@ -559,9 +559,9 @@ var ptx_lunr_docs = [
   "body": " Complex numbers, real and imaginary parts   The complex numbers is the set of all formal expressions of the form , where : , . Given a complex number , we call its real part , denoted , and we call its imaginary part , denoted : , we have .   "
 },
 {
-  "id": "ss_complex-3",
+  "id": "ss_complex-4",
   "level": "2",
-  "url": "s_fields.html#ss_complex-3",
+  "url": "s_fields.html#ss_complex-4",
   "type": "Convention",
   "number": "1.1.2",
   "title": "Complex numbers.",
@@ -595,11 +595,20 @@ var ptx_lunr_docs = [
   "body": " Complex addition and multiplication   Let and be complex numbers.   Complex addition  We define the sum of and , denoted , as .    Complex multiplication  We define the product of and , denoted (or sometimes ) as .      "
 },
 {
+  "id": "eg_arithmetic",
+  "level": "2",
+  "url": "s_fields.html#eg_arithmetic",
+  "type": "Example",
+  "number": "1.1.6",
+  "title": "Complex arithmetic.",
+  "body": " Complex arithmetic   Let , . Compute the following complex numbers. Your answer must be expressed in the form , where .                   We have .    We have .      "
+},
+{
   "id": "eg_squareroot_minusone",
   "level": "2",
   "url": "s_fields.html#eg_squareroot_minusone",
   "type": "Example",
-  "number": "1.1.6",
+  "number": "1.1.7",
   "title": "<span class=\"process-math\">\\(i^2\\)<\/span>.",
   "body": "   Compute .    We have, using the definition of multiplication, . Thus the element is seen to be a square-root of ! With a little more work, we can show that any complex number has a complex square-root. More on that later.   "
 },
@@ -608,32 +617,23 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_fields.html#rem_complex_arith",
   "type": "Remark",
-  "number": "1.1.7",
+  "number": "1.1.8",
   "title": "Complex arithmetic as extension of real arithmetic.",
   "body": " Complex arithmetic as extension of real arithmetic  Using the definition of complex multiplication, it is easy to see that given any real complex number , we have . In particular, given any two real complex numbers and , we have . In other words, when we restrict complex multiplication to the real complex numbers, we recover our familiar real multiplication operation. A similar statement applies for complex addition and real addition. In this sense, complex arithmetic is understood as an extension of real arithmetic.  "
-},
-{
-  "id": "ss_complex-11",
-  "level": "2",
-  "url": "s_fields.html#ss_complex-11",
-  "type": "Convention",
-  "number": "1.1.8",
-  "title": "<span class=\"process-math\">\\(a+ib=a+bi\\)<\/span>.",
-  "body": "  As you will show yourself in homework, complex multiplication is commutative ( , we have for all ). As a result, we are free to write a complex number as . Oftentimes one of these expressions simply looks better typographically than the other.  Note that when writing and , where , it is still the case that if and only if and .  "
-},
-{
-  "id": "eg_arithmetic",
-  "level": "2",
-  "url": "s_fields.html#eg_arithmetic",
-  "type": "Example",
-  "number": "1.1.9",
-  "title": "Complex arithmetic.",
-  "body": " Complex arithmetic   Let , . Compute the following complex numbers. Your answer must be expressed in the form , where .                             We have .    We have .    We have .    First observe that by definition we have . According to the inverse formulas in we have . We thus have .      "
 },
 {
   "id": "ss_complex-13",
   "level": "2",
   "url": "s_fields.html#ss_complex-13",
+  "type": "Convention",
+  "number": "1.1.9",
+  "title": "<span class=\"process-math\">\\(a+ib=a+bi\\)<\/span>.",
+  "body": "  As you will show yourself in homework, complex multiplication is commutative ( , we have for all ). As a result, we are free to write a complex number as . Oftentimes one of these expressions simply looks better typographically than the other.  Note that when writing and , where , it is still the case that if and only if and .  "
+},
+{
+  "id": "ss_complex-14",
+  "level": "2",
+  "url": "s_fields.html#ss_complex-14",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -649,47 +649,20 @@ var ptx_lunr_docs = [
   "body": " Complex plane   Complex plane: points    "
 },
 {
-  "id": "d_modulus",
-  "level": "2",
-  "url": "s_fields.html#d_modulus",
-  "type": "Definition",
-  "number": "1.1.11",
-  "title": "Complex modulus.",
-  "body": " Complex modulus   The modulus (or absolute value ) of a complex number , denoted , is defined as . If , we say that has unit length .   "
-},
-{
-  "id": "d_conj",
-  "level": "2",
-  "url": "s_fields.html#d_conj",
-  "type": "Definition",
-  "number": "1.1.12",
-  "title": "Complex conjugation.",
-  "body": " Complex conjugation   Given the complex number , its (complex) conjugate  is defined as .   "
-},
-{
-  "id": "th_conj",
-  "level": "2",
-  "url": "s_fields.html#th_conj",
-  "type": "Theorem",
-  "number": "1.1.13",
-  "title": "Conjugation properties.",
-  "body": " Conjugation properties   Let and be complex numbers.    .     .     .     .     and .     if and only if .         If , then .      "
-},
-{
   "id": "d_field",
   "level": "2",
   "url": "s_fields.html#d_field",
   "type": "Definition",
-  "number": "1.1.14",
+  "number": "1.1.11",
   "title": "Field.",
   "body": " Field   A field is a set together with two operations called addition and multiplication respectively, satisfying the following axioms.   Commutativity  For all we have .    Associativity  For all we have .    Distributivity  For all we have .    Additive identity  There is an element satisfying for all . The element is called the additive identity .    Additive inverse  For all there is an element satisfying . The element is called the additive inverse of .    Multiplicative identity  There is an element satisfying for all . The element is called the multiplicative identity .    Multiplicative inverse  For all nonzero elements (i.e., ) there is an element satisfying . The element , also denoted , is called the multiplicative inverse of .      "
 },
 {
-  "id": "ss_field_def-3",
+  "id": "ss_field_def-4",
   "level": "2",
-  "url": "s_fields.html#ss_field_def-3",
+  "url": "s_fields.html#ss_field_def-4",
   "type": "Remark",
-  "number": "1.1.15",
+  "number": "1.1.12",
   "title": "Arithmetic and existential axioms.",
   "body": " Arithmetic and existential axioms  We will call Axioms (i)-(iii) the arithmetic axioms , as they stipulate that our operations satisfy some familiar properties from arithmetic. Additionally, we will call Axioms (iv)-(vii) the existential axioms as they posit the existence of certain special elements inside the underlying set of the field: namely, special elements denoted and satisfying Axioms (iv) and (vi), for each element a special associated element satisfying Axiom (v), and for each nonzero element a special associated element satisfying Axiom (vii).  "
 },
@@ -698,16 +671,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_fields.html#warning_names_fields",
   "type": "Warning",
-  "number": "1.1.16",
+  "number": "1.1.13",
   "title": "Names and prejudices.",
-  "body": " Names and prejudices  We use familiar looking notation to describe the special elements of a field ( , ), but keep in mind that these are just names for certain special elements satisfying various axioms in .  When verifying whether a given set with given operations and is a field, we make no assumptions beforehand as to which elements of serve as these special elements. It is up to us to identify these special elements and verify that they satisfy the relevant axioms. As such, it is important each time we are confronted with a new potential field, that we come with no prejudices as to which elements serve as additive\/multiplicate identities\/inverses; these roles depend on how the operations themselves are defined.  "
+  "body": " Names and prejudices  We use familiar looking notation to describe the special elements of a field ( , ), but keep in mind that these are just names for certain special elements satisfying various axioms in .  When verifying whether a given set with given operations and is a field, we make no assumptions beforehand as to which elements of serve as these special elements. It is up to us to identify these special elements and verify that they satisfy the relevant axioms. As such, it is important each time we are confronted with a new potential field, that we come with no prejudices as to which elements serve as additive\/multiplicate identities\/inverses; these roles depend on how the operations themselves are defined. is a nice illustration of this approach.  "
 },
 {
   "id": "eg_R",
   "level": "2",
   "url": "s_fields.html#eg_R",
   "type": "Example",
-  "number": "1.1.17",
+  "number": "1.1.14",
   "title": "Real numbers.",
   "body": " Real numbers   The set of all real numbers, together with the operations of real number addition and real number multiplication, constitutes a field.   "
 },
@@ -716,7 +689,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_fields.html#th_complex_field",
   "type": "Theorem",
-  "number": "1.1.18",
+  "number": "1.1.15",
   "title": "<span class=\"process-math\">\\(\\C\\)<\/span> is a field.",
   "body": " is a field   The set of all complex numbers, together with the operations of complex addition and multiplication defined in , constitutes a field.  In more detail, with respect to these operations, the additive and multiplicative identities are and , respectively, and given any , we have .    This is left as a homework exercise.   "
 },
@@ -725,7 +698,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_fields.html#eg_Q",
   "type": "Example",
-  "number": "1.1.19",
+  "number": "1.1.16",
   "title": "Rational numbers.",
   "body": " Rational numbers   Let be the set of all rational numbers: , .   Show that the restriction of real number addition and multiplication to gives rise to operations .    Explain why , together with these restricted operations, constitutes a field.          It is clear that we can add and multiply two rational numbers; what we need to show is that the result of applying either of these operations to two rational numbers is again a rational number. In other words, we must show that the sum of two rational numbers is a rational number, and the product of two rational numbers is a rational number. To this end, let , and write and , where . We then have . Since , we see that , as desired.    Once we know that real number addition and multiplication restrict to well-defined operations on , that these restricted operations satisfy the field axioms follows directly from the fact that the original operations on satisfy these axioms. For example, since addition and multiplication are satisfy Axiom (i) for all real numbers , they certainly satisfy Axiom (i) for all rational numbers .  Similarly, the existential Axioms (iv)-(vii) are easily seen to be satisfied for the operations restricted to once we observe that , and that given any nonzero , we have .      "
 },
@@ -734,34 +707,34 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_fields.html#eg_integers",
   "type": "Example",
-  "number": "1.1.20",
+  "number": "1.1.17",
   "title": "Integers.",
-  "body": " Integers   Let be the set of all integers.   Show that the restriction of real number addition and multiplication to gives rise to operations .    Explain why , together with these restricted operations, does not constitute a field.          "
+  "body": " Integers   Let be the set of all integers.   Show that the restriction of real number addition and multiplication to gives rise to operations .    Explain why , together with these restricted operations, does not constitute a field.          An argument very similar to the one in shows that the sum and product of two integers is again an integer, and hence that restricting these operations to yields a well-defined operation on .    The integers fail to be a field with respect to these operations as Axiom (vii) fails. To this end, by way of counterexample, we claim that the integer does not have a multiplicative inverse in . Indeed, if there were an integer such that , then we'd have and . But for all nonzero integers , we have , and hence , a contradiction. We conclude that there is no integer satisfying , and hence that has no multiplicative inverse in . Thus is not a field with respect to these operations.  As it turns out, Axiom (vii) is the only field axiom that fails, making it still a pretty darn good number system to work with. In fact, we have a name for number systems that satisfy at least Axioms (i)-(vi) of the field axioms: they are called rings .      "
 },
 {
   "id": "eg_F2",
   "level": "2",
   "url": "s_fields.html#eg_F2",
   "type": "Example",
-  "number": "1.1.21",
+  "number": "1.1.18",
   "title": "Field of two elements.",
-  "body": " Field of two elements   Let be a set containing two distinct elements. Define addition and multiplication on as follows: . Verify that , together with these two operations, constitutes a field. Make explicit which elements of serve as the additive\/multiplicative identities\/inverses.       "
+  "body": " Field of two elements   Let be a set containing two distinct elements. Define addition and multiplication on as follows: . Verify that , together with these two operations, constitutes a field. Make explicit which elements of serve as the additive\/multiplicative identities\/inverses.    Since only has two elements, showing that Axioms (i)-(iii) hold is a simple matter of looking at all the possible cases: in other words, we can resort to a proof by exhaustion for these axioms. For example, verifying commutativity of multiplication requires looking at just 4 different cases. Furthermore, since it is trivially true that and , we need only look at the mixed products  and ; and in this case we see by the definition that . Similar arguments can be mounted for the rest of these arithmetic axioms.  We now turn to the existential axioms. First, we claim that serves as the additive identity in this case: , we have for this field. To verify this, we need to show that satisfies the defining axiom of the additive identity: namely, that for any . But this follows directly from the very definition of addition on , as we declared that and . A similar argument shows that the element acts as the multiplicative identity in this field: , we have .  Lastly we must show that each element of has an additive inverse satisfying Axiom (v), and that each nonzero element of has a multiplicative inverse satisfying Axiom (vii). Again, this is accomplished simply by inspection, building on our already established result that and . In detail, since and , we see that and . Turning at last to multiplicative inverses, note first that is the only nonzero element of (since ). Furthermore, since , we see that .  Since the operations on satisfy the field axioms, we conclude that is a field with respect to these operations. Having identified and , we can summarize the arithemetic rules of this particular field as follows: .   "
 },
 {
   "id": "d_F2",
   "level": "2",
   "url": "s_fields.html#d_F2",
   "type": "Definition",
-  "number": "1.1.22",
+  "number": "1.1.19",
   "title": "Field of two elements.",
   "body": " Field of two elements   The set , together with the operations , is called the field of two elements .   "
 },
 {
-  "id": "ss_field_def-11",
+  "id": "ss_field_def-13",
   "level": "2",
-  "url": "s_fields.html#ss_field_def-11",
+  "url": "s_fields.html#ss_field_def-13",
   "type": "Remark",
-  "number": "1.1.23",
+  "number": "1.1.20",
   "title": "Finite fields.",
   "body": " Finite fields  It turns out that any finite field ( , a field with finitely many elements) has prime cardinality. In other words if is finite and we can define operations on satisfying the field axioms, then , where is a prime integer.  Furthermore, given any prime integer , we can define addition and multiplication operations on the set that satisfy the field axioms. In other words, for every prime there is a field of elements. (These are things you learn in the Math 330\/331 sequences.)  "
 },
@@ -770,18 +743,54 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_fields.html#d_field_subt_quot",
   "type": "Definition",
-  "number": "1.1.24",
+  "number": "1.1.21",
   "title": "Subtraction, division, integer powers.",
   "body": " Subtraction, division, integer powers   Let be a field.   Subtraction  Given elements , we define their difference  as .    Division  Given elements with , we define their quotient  as .    Integer powers  Given any , we define and where is any positive integer.  Furthermore, if and , we define .      "
+},
+{
+  "id": "eg_arithmetic_II",
+  "level": "2",
+  "url": "s_fields.html#eg_arithmetic_II",
+  "type": "Example",
+  "number": "1.1.22",
+  "title": "Complex arithmetic.",
+  "body": " Complex arithmetic   Let , . Compute the following complex numbers. Your answer must be expressed in the form , where .                   Using the formula for multiplicative inverses in , we have .    First observe that by definition we have . Using our computation in (1), we then conclude that .      "
 },
 {
   "id": "th_field_props",
   "level": "2",
   "url": "s_fields.html#th_field_props",
   "type": "Theorem",
-  "number": "1.1.25",
+  "number": "1.1.23",
   "title": "Properties of fields.",
-  "body": " Properties of fields   Let be a field, let , and let .    .    If , then or .     .     .     .     (assuming ).     (assuming ).          "
+  "body": " Properties of fields   Let be a field, let , and let .    .    If , then or .     .     .     .     (assuming ).     (assuming ).       Very much in the spirit of , when proving a result like this for an arbitrary field, we can make no assumptions about beyond the fact that its addition and multiplication operations satisfy the field axioms. This can make the proof of these very simple properties less straightforward than you might expect. We content ourselves with a proof of (1) and (2).  To prove (1), we observe first that for any we have . Here we have used the fact that satisfies Axiom (iv) (and thus ), and that Axiom (iii) holds (distributivity). We conclude the proof by invoking the existence of additive inverses: in detail we have , as desired.  Moving to (2), assume we have . We will show that if , then , which is equivalent to proving or . Assume . By Axiom (vii) there is a multiplicative inverse satisfying . But then we have , as desired.   "
+},
+{
+  "id": "d_modulus",
+  "level": "2",
+  "url": "s_fields.html#d_modulus",
+  "type": "Definition",
+  "number": "1.1.24",
+  "title": "Complex modulus.",
+  "body": " Complex modulus   The modulus (or absolute value ) of a complex number , denoted , is defined as . If , we say that has unit length .   "
+},
+{
+  "id": "d_conj",
+  "level": "2",
+  "url": "s_fields.html#d_conj",
+  "type": "Definition",
+  "number": "1.1.25",
+  "title": "Complex conjugation.",
+  "body": " Complex conjugation   Given the complex number , its (complex) conjugate  is defined as .   "
+},
+{
+  "id": "th_conj",
+  "level": "2",
+  "url": "s_fields.html#th_conj",
+  "type": "Theorem",
+  "number": "1.1.26",
+  "title": "Conjugation properties.",
+  "body": " Conjugation properties   Let and be complex numbers.    .     .     .     .     and .     if and only if .         If , then .       This is left as a homework exercise.   "
 },
 {
   "id": "appendix-notation",

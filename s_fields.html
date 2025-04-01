@@ -307,8 +307,8 @@ eBookConfig.enable_chatcodes =  false;
 <div class="toc-title-box"><a href="s_fields.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Fields</span></a></div>
 <ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_fields.html#ss_complex" class="internal"><span class="title">Complex numbers</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_fields.html#ss_modulus_conjugation" class="internal"><span class="title">Further complex operations</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_fields.html#ss_field_def" class="internal"><span class="title">Fields</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_fields.html#ss_modulus_conjugation" class="internal"><span class="title">Further complex operations</span></a></div></li>
 </ul>
 </li></ul>
 </li>
@@ -329,13 +329,14 @@ eBookConfig.enable_chatcodes =  false;
 <section class="introduction" id="s_fields-2"><div class="para logical" id="s_fields-2-1">
 <div class="para">Most <em class="emphasis">first courses</em> in linear algebra restrict their attention to vector spaces of the form <span class="process-math">\(V=\R^n\text{.}\)</span> This is an example of a so-called <em class="emphasis">real vector space</em> (or <em class="emphasis"><span class="process-math">\(\R\)</span>-vector space</em>, or <em class="emphasis">vector space over the base field <span class="process-math">\(\R\)</span></em>), and one of a very particular sort (consisting of real <span class="process-math">\(n\)</span>-tuples).  In this, a <em class="emphasis">second course</em> in linear algebra, we will generalize this approach along two different directions:</div>
 <ul class="disc" id="s_fields-2-1-8">
-<li id="s_fields-2-1-8-1"><div class="para" id="s_fields-2-1-8-1-1">we will replace the specific base field <span class="process-math">\(\R\)</span> with an arbitrary field (see <a href="s_fields.html#d_field" class="xref" data-knowl="./knowl/xref/d_field.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.1.14: Field">Definition 1.1.14</a>);</div></li>
+<li id="s_fields-2-1-8-1"><div class="para" id="s_fields-2-1-8-1-1">we will replace the specific base field <span class="process-math">\(\R\)</span> with an arbitrary field (see <a href="s_fields.html#d_field" class="xref" data-knowl="./knowl/xref/d_field.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.1.11: Field">Definition 1.1.11</a>);</div></li>
 <li id="s_fields-2-1-8-2"><div class="para" id="s_fields-2-1-8-2-1">we will consider not just vector spaces of <span class="process-math">\(n\)</span>-tuples, but general abstract vector spaces.</div></li>
 </ul>
 <div class="para">In this section we tackle the notion of an arbitrary field; in the next we introduce the definition of an abstract vector space.</div>
 </div></section><section class="subsection" id="ss_complex"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Complex numbers</span>
 </h3>
+<div class="para" id="ss_complex-2">Before getting to the abstract definition of a field, we introduce what ends up being an important example of a field: the complex numbers.</div>
 <article class="definition definition-like" id="d_complex_numbers"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Complex numbers, real and imaginary parts.</span>
 </h4>
@@ -352,13 +353,13 @@ eBookConfig.enable_chatcodes =  false;
 \Re z \amp = a \amp \Im z\amp = b\text{.}
 \end{align*}
 </div>
-</div></article><article class="convention remark-like" id="ss_complex-3"><h4 class="heading">
+</div></article><article class="convention remark-like" id="ss_complex-4"><h4 class="heading">
 <span class="type">Convention</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Complex numbers.</span>
 </h4>
-<div class="para" id="ss_complex-3-2">When introducing a complex number as <span class="process-math">\(z=a+ib\text{,}\)</span> unless specified otherwise, it is assumed that <span class="process-math">\(a,b\in \R\text{.}\)</span>
-</div></article><div class="para logical" id="ss_complex-4">
+<div class="para" id="ss_complex-4-2">When introducing a complex number as <span class="process-math">\(z=a+ib\text{,}\)</span> unless specified otherwise, it is assumed that <span class="process-math">\(a,b\in \R\text{.}\)</span>
+</div></article><div class="para logical" id="ss_complex-5">
 <div class="para">You are justified in wondering what exactly is meant by a “formal expression”. A more correct formulation would be that a complex number is really just a pair <span class="process-math">\((a,b)\in \R^2\)</span> of real numbers that for various reasons we denote as <span class="process-math">\(a+ib\text{.}\)</span> Since it is somewhat awkward to write a complex number as <span class="process-math">\(z=(a,b)\text{,}\)</span> we will live with the ambiguity of <a href="s_fields.html#d_complex_numbers" class="xref" data-knowl="./knowl/xref/d_complex_numbers.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.1.1: Complex numbers, real and imaginary parts">Definition 1.1.1</a>, and <em class="emphasis">identify</em> complex numbers <span class="process-math">\(z=a+ib\)</span> as pairs of real numbers via the map</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/d_complex_numbers.html" id="ss_complex-4-8">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/d_complex_numbers.html" id="ss_complex-5-8">
 \begin{align*}
 \C \amp \longleftrightarrow \R^2\\
 a+ib \amp \longmapsto (a,b)\text{.}
@@ -382,7 +383,7 @@ a=c \text{ and } b=d\text{.}
 z=w \amp \iff \Re z=\Re w \text{ and } \Im z=\Im w\text{.}
 \end{align*}
 </div>
-</div></article><div class="para" id="ss_complex-6">For reasons that will be made more clear below, it is natural to identify the set of real numbers <span class="process-math">\(\R\)</span> with the set of complex numbers of the form <span class="process-math">\(a+0i\text{.}\)</span> This is the motivation behind the next definition.</div>
+</div></article><div class="para" id="ss_complex-7">For reasons that will be made more clear below, it is natural to identify the set of real numbers <span class="process-math">\(\R\)</span> with the set of complex numbers of the form <span class="process-math">\(a+0i\text{.}\)</span> This is the motivation behind the next definition.</div>
 <article class="definition definition-like" id="d_real_imaginary"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Real and imaginary numbers.</span>
 </h4>
@@ -427,52 +428,15 @@ z\,w \amp= (ac-bd)+i(ad+bc) \text{.}\tag{1.2}
 </div>
 </li>
 </ul>
-</div></article><article class="example example-like" id="eg_squareroot_minusone"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.6</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(i^2\)</span>.</span>
-</h4>
-<div class="para" id="eg_squareroot_minusone-2-1">Compute <span class="process-math">\(i^2\text{.}\)</span>
-</div>
-<div class="solutions"><details id="eg_squareroot_minusone-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_squareroot_minusone-3-1">
-<div class="para">We have, using the definition of multiplication,</div>
-<div class="displaymath process-math">
-\begin{equation*}
-i^2=(0+1\, i)(0+1\, i)=(0-1)+0i=-1\text{.}
-\end{equation*}
-</div>
-<div class="para">Thus the element <span class="process-math">\(i\)</span> is seen to be a square-root of <span class="process-math">\(-1\text{!}\)</span> With a little more work, we can show that any complex number <span class="process-math">\(z=a+ib\)</span> has a complex square-root. More on that later.</div>
-</div></div></details></div></article><article class="remark remark-like" id="rem_complex_arith"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Complex arithmetic as extension of real arithmetic.</span>
-</h4>
-<div class="para logical" id="rem_complex_arith-2">
-<div class="para">Using the definition of complex multiplication, it is easy to see that given any real complex number <span class="process-math">\(a=a+0i\text{,}\)</span> we have</div>
-<div class="displaymath process-math" id="rem_complex_arith-2-2">
-\begin{align*}
-a(c+di) \amp =ac+adi=(c+di)a \text{.}
-\end{align*}
-</div>
-<div class="para">In particular, given any two real complex numbers <span class="process-math">\(a=a+0i\)</span> and <span class="process-math">\(b=b+0i\text{,}\)</span> we have</div>
-<div class="displaymath process-math">
-\begin{equation*}
-(a+0i)(b+0i)=ab+0i=ab\text{.}
-\end{equation*}
-</div>
-<div class="para">In other words, when we restrict complex multiplication to the real complex numbers, we recover our familiar real multiplication operation. A similar statement applies for complex addition and real addition. In this sense, complex arithmetic is understood as an <em class="emphasis">extension</em> of real arithmetic.</div>
-</div></article><article class="convention remark-like" id="ss_complex-11"><h4 class="heading">
-<span class="type">Convention</span><span class="space"> </span><span class="codenumber">1.1.8</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(a+ib=a+bi\)</span>.</span>
-</h4>
-<div class="para" id="ss_complex-11-2">As you will show yourself in homework, complex multiplication is commutative (i.e., we have <span class="process-math">\(zw=wz\)</span> for all <span class="process-math">\(z,w\in \C\)</span>). As a result, we are free to write a complex number <span class="process-math">\(z=a+ib\)</span> as <span class="process-math">\(z=a+bi\text{.}\)</span> Oftentimes one of these expressions simply looks better typographically than the other.</div>
-<div class="para" id="ss_complex-11-3">Note that when writing <span class="process-math">\(z=a+bi\)</span> and <span class="process-math">\(w=c+di\text{,}\)</span> where <span class="process-math">\(a,b,c,d\in \R\text{,}\)</span> it is still the case that <span class="process-math">\(z=w\)</span> if and only if <span class="process-math">\(a=b\)</span> and <span class="process-math">\(c=d\text{.}\)</span>
 </div></article><article class="example example-like" id="eg_arithmetic"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.9</span><span class="period">.</span><span class="space"> </span><span class="title">Complex arithmetic.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Complex arithmetic.</span>
 </h4>
 <div class="para logical" id="eg_arithmetic-2-1">
 <div class="para">Let <span class="process-math">\(z=-2+3i\text{,}\)</span> <span class="process-math">\(w=4+i\text{.}\)</span> Compute the following complex numbers. Your answer must be expressed in the form <span class="process-math">\(a+ib\text{,}\)</span> where <span class="process-math">\(a,b\in \R\text{.}\)</span>
 </div>
 <ol class="decimal" id="eg_arithmetic-2-1-5">
 <li id="eg_arithmetic-2-1-5-1"><div class="para" id="eg_arithmetic-2-1-5-1-1"><span class="process-math">\(\displaystyle z+w\)</span></div></li>
-<li id="eg_arithmetic-2-1-5-2"><div class="para" id="eg_arithmetic-2-1-5-2-1"><span class="process-math">\(\displaystyle z-w\)</span></div></li>
-<li id="eg_arithmetic-2-1-5-3"><div class="para" id="eg_arithmetic-2-1-5-3-1"><span class="process-math">\(\displaystyle z\,w\)</span></div></li>
-<li id="eg_arithmetic-2-1-5-4"><div class="para" id="eg_arithmetic-2-1-5-4-1"><span class="process-math">\(\displaystyle z/w\)</span></div></li>
+<li id="eg_arithmetic-2-1-5-2"><div class="para" id="eg_arithmetic-2-1-5-2-1"><span class="process-math">\(\displaystyle z\,w\)</span></div></li>
 </ol>
 </div>
 <div class="solutions"><details id="eg_arithmetic-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_arithmetic-3-1"><ol class="decimal" id="eg_arithmetic-3-1-1">
@@ -489,45 +453,47 @@ z+w \amp =(-2+4)+i(3+1)\\
 <div class="para">We have</div>
 <div class="displaymath process-math" id="eg_arithmetic-3-1-1-2-1-1">
 \begin{align*}
-z-w \amp = (-2-4)+(3-1)i \\
-\amp = -6+i\,2\text{.}
-\end{align*}
-</div>
-</div></li>
-<li id="eg_arithmetic-3-1-1-3"><div class="para logical" id="eg_arithmetic-3-1-1-3-1">
-<div class="para">We have</div>
-<div class="displaymath process-math" id="eg_arithmetic-3-1-1-3-1-1">
-\begin{align*}
 z\,w \amp = (-2\cdot 4-3\cdot 1)+i(-2\cdot 1+3\cdot 4)\\
 \amp = -11+i\,10\text{.}
 \end{align*}
 </div>
 </div></li>
-<li id="eg_arithmetic-3-1-1-4"><div class="para logical" id="eg_arithmetic-3-1-1-4-1">
-<div class="para">First observe that by definition we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_complex_field.html">
+</ol></div></div></details></div></article><article class="example example-like" id="eg_squareroot_minusone"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.7</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(i^2\)</span>.</span>
+</h4>
+<div class="para" id="eg_squareroot_minusone-2-1">Compute <span class="process-math">\(i^2\text{.}\)</span>
+</div>
+<div class="solutions"><details id="eg_squareroot_minusone-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_squareroot_minusone-3-1">
+<div class="para">We have, using the definition of multiplication,</div>
+<div class="displaymath process-math">
 \begin{equation*}
-z/w=z\, w^{-1}\text{.}
+i^2=(0+1\, i)(0+1\, i)=(0-1)+0i=-1\text{.}
 \end{equation*}
 </div>
-<div class="para">According to the inverse formulas in <a href="s_fields.html#th_complex_field" class="xref" data-knowl="./knowl/xref/th_complex_field.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.1.18: \C is a field">Theorem 1.1.18</a> we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_complex_field.html">
-\begin{equation*}
-w^{-1}=\frac{4}{4^2+1^2}-i\frac{1}{4^2+1^1}=\frac{1}{17}(4-i)\text{.}
-\end{equation*}
-</div>
-<div class="para">We thus have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_complex_field.html" id="eg_arithmetic-3-1-1-4-1-4">
+<div class="para">Thus the element <span class="process-math">\(i\)</span> is seen to be a square-root of <span class="process-math">\(-1\text{!}\)</span> With a little more work, we can show that any complex number <span class="process-math">\(z=a+ib\)</span> has a complex square-root. More on that later.</div>
+</div></div></details></div></article><article class="remark remark-like" id="rem_complex_arith"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.1.8</span><span class="period">.</span><span class="space"> </span><span class="title">Complex arithmetic as extension of real arithmetic.</span>
+</h4>
+<div class="para logical" id="rem_complex_arith-2">
+<div class="para">Using the definition of complex multiplication, it is easy to see that given any real complex number <span class="process-math">\(a=a+0i\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="rem_complex_arith-2-2">
 \begin{align*}
-z/w \amp = z\, w^{-1}\\
-\amp = w^{-1}\, z\\
-\amp = \frac{1}{17}(4-i)(-2+3i)\\
-\amp = \frac{1}{17}(-5+14i)\\
-\amp = -\frac{5}{17}+\frac{14}{17}i\text{.}
+a(c+di) \amp =ac+adi=(c+di)a \text{.}
 \end{align*}
 </div>
-</div></li>
-</ol></div></div></details></div></article><div class="para logical" id="ss_complex-13">
+<div class="para">In particular, given any two real complex numbers <span class="process-math">\(a=a+0i\)</span> and <span class="process-math">\(b=b+0i\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(a+0i)(b+0i)=ab+0i=ab\text{.}
+\end{equation*}
+</div>
+<div class="para">In other words, when we restrict complex multiplication to the real complex numbers, we recover our familiar real multiplication operation. A similar statement applies for complex addition and real addition. In this sense, complex arithmetic is understood as an <em class="emphasis">extension</em> of real arithmetic.</div>
+</div></article><article class="convention remark-like" id="ss_complex-13"><h4 class="heading">
+<span class="type">Convention</span><span class="space"> </span><span class="codenumber">1.1.9</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(a+ib=a+bi\)</span>.</span>
+</h4>
+<div class="para" id="ss_complex-13-2">As you will show yourself in homework, complex multiplication is commutative (i.e., we have <span class="process-math">\(zw=wz\)</span> for all <span class="process-math">\(z,w\in \C\)</span>). As a result, we are free to write a complex number <span class="process-math">\(z=a+ib\)</span> as <span class="process-math">\(z=a+bi\text{.}\)</span> Oftentimes one of these expressions simply looks better typographically than the other.</div>
+<div class="para" id="ss_complex-13-3">Note that when writing <span class="process-math">\(z=a+bi\)</span> and <span class="process-math">\(w=c+di\text{,}\)</span> where <span class="process-math">\(a,b,c,d\in \R\text{,}\)</span> it is still the case that <span class="process-math">\(z=w\)</span> if and only if <span class="process-math">\(a=b\)</span> and <span class="process-math">\(c=d\text{.}\)</span>
+</div></article><div class="para logical" id="ss_complex-14">
 <div class="para">
 <a href="s_fields.html#d_complex_equality" class="xref" data-knowl="./knowl/xref/d_complex_equality.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.1.3: Complex equality">Definition 1.1.3</a> ensures that the map</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/d_complex_equality.html">
@@ -539,7 +505,7 @@ a+ib\mapsto (a,b)
 </div>
 </div>
 <figure class="figure figure-like" id="fig_complex_plane"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/sageplot/fig_complex_plane-2.svg" role="img" class="contained" alt="Complex plane: points"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.10<span class="period">.</span></span><span class="space"> </span>Complex plane</figcaption></figure><div class="para logical" id="ss_complex-15">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.10<span class="period">.</span></span><span class="space"> </span>Complex plane</figcaption></figure><div class="para logical" id="ss_complex-16">
 <div class="para">Using our identification</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -547,57 +513,12 @@ a+ib\mapsto (a,b)
 \end{equation*}
 </div>
 <div class="para">we see that the real numbers are represented geometrically as the <span class="process-math">\(x\)</span>-axis of the complex plane. Similarly, the purely imaginary complex numbers are represented geometrically as the the <span class="process-math">\(y\)</span>-axis of the complex plane. As you will see, we will get a lot of mileage out of this geometric representation of complex numbers.</div>
-</div></section><section class="subsection" id="ss_modulus_conjugation"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Further complex operations</span>
-</h3>
-<div class="para" id="ss_modulus_conjugation-2">Two further complex operations, the <em class="emphasis">modulus</em> and <em class="emphasis">complex conjugation</em>, will prove to be invaluable when doing complex arithmetic.</div>
-<article class="definition definition-like" id="d_modulus"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.11</span><span class="period">.</span><span class="space"> </span><span class="title">Complex modulus.</span>
-</h4>
-<div class="para logical" id="d_modulus-2-1">
-<div class="para">The <dfn class="terminology">modulus</dfn> (or <dfn class="terminology">absolute value</dfn>) of a complex number <span class="process-math">\(z=a+ib\text{,}\)</span> denoted <span class="process-math">\(\abs{z}\text{,}\)</span> is defined as</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\abs{z}=\sqrt{a^2+b^2}\text{.}
-\end{equation*}
-</div>
-<div class="para">If <span class="process-math">\(\abs{z}=1\text{,}\)</span> we say that <span class="process-math">\(z\)</span> has <dfn class="terminology">unit length</dfn>.</div>
-</div></article><article class="definition definition-like" id="d_conj"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.12</span><span class="period">.</span><span class="space"> </span><span class="title">Complex conjugation.</span>
-</h4>
-<div class="para logical" id="d_conj-2-1">
-<div class="para">Given the complex number <span class="process-math">\(z=a+ib\text{,}\)</span> its <dfn class="terminology">(complex) conjugate</dfn> <span class="process-math">\(\overline{z}\)</span> is defined as</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\overline{z}=a-ib\text{.}
-\end{equation*}
-</div>
-</div></article><article class="theorem theorem-like" id="th_conj"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.1.13</span><span class="period">.</span><span class="space"> </span><span class="title">Conjugation properties.</span>
-</h4>
-<div class="para logical" id="th_conj-2-1">
-<div class="para">Let <span class="process-math">\(z\)</span> and <span class="process-math">\(w\)</span> be complex numbers.</div>
-<ol class="decimal cols2" id="th_conj-2-1-3">
-<li id="th_conj-2-1-3-1"><div class="para" id="th_conj-2-1-3-1-1"><span class="process-math">\(\overline{z+w}=\overline{z}+\overline{w}\text{.}\)</span></div></li>
-<li id="th_conj-2-1-3-2"><div class="para" id="th_conj-2-1-3-2-1"><span class="process-math">\(\overline{z\, w}=\overline{z}\, \overline{w}\text{.}\)</span></div></li>
-<li id="th_conj-2-1-3-3"><div class="para" id="th_conj-2-1-3-3-1"><span class="process-math">\(\overline{\overline{z}}=z\text{.}\)</span></div></li>
-<li id="th_conj-2-1-3-4"><div class="para" id="th_conj-2-1-3-4-1"><span class="process-math">\(\abs{\overline{z}}=\abs{z}\text{.}\)</span></div></li>
-<li id="th_conj-2-1-3-5"><div class="para" id="th_conj-2-1-3-5-1">
-<span class="process-math">\(\Re z=\frac{z+\overline{z}}{2}\)</span> and <span class="process-math">\(\Im z=\frac{z-\overline{z}}{2i}\text{.}\)</span>
-</div></li>
-<li id="th_conj-2-1-3-6"><div class="para" id="th_conj-2-1-3-6-1">
-<span class="process-math">\(z\in \R\)</span> if and only if <span class="process-math">\(\overline{z}=z\text{.}\)</span>
-</div></li>
-<li id="th_conj-2-1-3-7"><div class="para" id="th_conj-2-1-3-7-1"><span class="process-math">\(\displaystyle z\, \overline{z}=\abs{z}^2\)</span></div></li>
-<li id="th_conj-2-1-3-8"><div class="para" id="th_conj-2-1-3-8-1">If <span class="process-math">\(z\ne 0\text{,}\)</span> then <span class="process-math">\(\displaystyle z^{-1}=\frac{\overline{z}}{\abs{z}^2}=\frac{\overline{z}}{z\overline{z}}
-\text{.}\)</span>
-</div></li>
-</ol>
-</div></article></section><section class="subsection" id="ss_field_def"><h3 class="heading hide-type">
+</div></section><section class="subsection" id="ss_field_def"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Fields</span>
 </h3>
+<div class="para" id="ss_field_def-2">It turns out that complex addition and multiplication satisfy essentially all the same useful properties as real addition and multiplication: e.g., both operations are commutative and associative, multiplication distributes over addition, etc.. As a result, arithmetic and algebra in <span class="process-math">\(\C\)</span> proceeds much as it does in <span class="process-math">\(\R\text{,}\)</span> making <span class="process-math">\(\C\)</span> a convenient <em class="emphasis">number system</em> to work with. But why stop at <span class="process-math">\(\C\text{?}\)</span> Are there other number systems we can build that allow us to do arithmetic and algebra in a familiar manner? Consider <a href="s_fields.html#d_field" class="xref" data-knowl="./knowl/xref/d_field.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.1.11: Field">Definition 1.1.11</a> as an attempt to isolate precisely the properties we want a number system to satisfy in order for arithmetic and algebra to proceed essentially as it does in <span class="process-math">\(\R\text{.}\)</span> A number system satisfying those properties is called a <em class="emphasis">field</em>, and the stipulated properties are called the <em class="emphasis">field axioms</em>.</div>
 <article class="definition definition-like" id="d_field"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.14</span><span class="period">.</span><span class="space"> </span><span class="title">Field.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.11</span><span class="period">.</span><span class="space"> </span><span class="title">Field.</span>
 </h4>
 <div class="para logical" id="d_field-2-1">
 <div class="para">A <dfn class="terminology">field</dfn> is a set <span class="process-math">\(F\)</span> together with two operations</div>
@@ -686,18 +607,18 @@ a+ib\mapsto (a,b)
 </div>
 </li>
 </ol>
-</div></article><article class="remark remark-like" id="ss_field_def-3"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.1.15</span><span class="period">.</span><span class="space"> </span><span class="title">Arithmetic and existential axioms.</span>
+</div></article><article class="remark remark-like" id="ss_field_def-4"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.1.12</span><span class="period">.</span><span class="space"> </span><span class="title">Arithmetic and existential axioms.</span>
 </h4>
-<div class="para" id="ss_field_def-3-2">We will call Axioms (i)-(iii) the <em class="emphasis">arithmetic axioms</em>, as they stipulate that our operations satisfy some familiar properties from arithmetic. Additionally, we will call Axioms (iv)-(vii) the <em class="emphasis">existential axioms</em> as they posit the existence of certain special elements inside the underlying set <span class="process-math">\(F\)</span> of the field: namely, special elements denoted <span class="process-math">\(0\)</span> and <span class="process-math">\(1\)</span> satisfying Axioms (iv) and (vi), for each element <span class="process-math">\(\alpha\in F\)</span> a special associated element <span class="process-math">\(-\alpha\)</span> satisfying Axiom (v), and for each nonzero element <span class="process-math">\(\alpha\ne 0\)</span> a special associated element <span class="process-math">\(\alpha^{-1}\)</span> satisfying Axiom (vii).</div></article><article class="warning remark-like" id="warning_names_fields"><h4 class="heading">
-<span class="type">Warning</span><span class="space"> </span><span class="codenumber">1.1.16</span><span class="period">.</span><span class="space"> </span><span class="title">Names and prejudices.</span>
+<div class="para" id="ss_field_def-4-2">We will call Axioms (i)-(iii) the <em class="emphasis">arithmetic axioms</em>, as they stipulate that our operations satisfy some familiar properties from arithmetic. Additionally, we will call Axioms (iv)-(vii) the <em class="emphasis">existential axioms</em> as they posit the existence of certain special elements inside the underlying set <span class="process-math">\(F\)</span> of the field: namely, special elements denoted <span class="process-math">\(0\)</span> and <span class="process-math">\(1\)</span> satisfying Axioms (iv) and (vi), for each element <span class="process-math">\(\alpha\in F\)</span> a special associated element <span class="process-math">\(-\alpha\)</span> satisfying Axiom (v), and for each nonzero element <span class="process-math">\(\alpha\ne 0\)</span> a special associated element <span class="process-math">\(\alpha^{-1}\)</span> satisfying Axiom (vii).</div></article><article class="warning remark-like" id="warning_names_fields"><h4 class="heading">
+<span class="type">Warning</span><span class="space"> </span><span class="codenumber">1.1.13</span><span class="period">.</span><span class="space"> </span><span class="title">Names and prejudices.</span>
 </h4>
-<div class="para" id="warning_names_fields-2">We use familiar looking notation to describe the special elements of a field <span class="process-math">\(F\)</span> (e.g., <span class="process-math">\(0,1,-\alpha, 1/\alpha\)</span>), but keep in mind that these are just <em class="emphasis">names</em> for certain special elements satisfying various axioms in <a href="s_fields.html#d_field" class="xref" data-knowl="./knowl/xref/d_field.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.1.14: Field">Definition 1.1.14</a>.</div>
-<div class="para" id="warning_names_fields-3">When verifying whether a given set <span class="process-math">\(F\)</span> with given operations <span class="process-math">\(+\)</span> and <span class="process-math">\(\times\)</span> is a field, we make no assumptions beforehand as to which elements of <span class="process-math">\(F\)</span> serve as these special elements. It is up to us to identify these special elements and verify that they satisfy the relevant axioms. As such, it is important each time we are confronted with a new potential field, that we come with no prejudices as to which elements serve as additive/multiplicate identities/inverses; these roles depend on how the operations themselves are defined.</div></article><article class="example example-like" id="eg_R"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.17</span><span class="period">.</span><span class="space"> </span><span class="title">Real numbers.</span>
+<div class="para" id="warning_names_fields-2">We use familiar looking notation to describe the special elements of a field <span class="process-math">\(F\)</span> (e.g., <span class="process-math">\(0,1,-\alpha, 1/\alpha\)</span>), but keep in mind that these are just <em class="emphasis">names</em> for certain special elements satisfying various axioms in <a href="s_fields.html#d_field" class="xref" data-knowl="./knowl/xref/d_field.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.1.11: Field">Definition 1.1.11</a>.</div>
+<div class="para" id="warning_names_fields-3">When verifying whether a given set <span class="process-math">\(F\)</span> with given operations <span class="process-math">\(+\)</span> and <span class="process-math">\(\times\)</span> is a field, we make no assumptions beforehand as to which elements of <span class="process-math">\(F\)</span> serve as these special elements. It is up to us to identify these special elements and verify that they satisfy the relevant axioms. As such, it is important each time we are confronted with a new potential field, that we come with no prejudices as to which elements serve as additive/multiplicate identities/inverses; these roles depend on how the operations themselves are defined.  <a href="s_fields.html#eg_F2" class="xref" data-knowl="./knowl/xref/eg_F2.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.1.18: Field of two elements">Example 1.1.18</a> is a nice illustration of this approach.</div></article><article class="example example-like" id="eg_R"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.14</span><span class="period">.</span><span class="space"> </span><span class="title">Real numbers.</span>
 </h4>
 <div class="para" id="eg_R-2-1">The set <span class="process-math">\(\R\)</span> of all real numbers, together with the operations of real number addition and real number multiplication, constitutes a field.</div></article><article class="theorem theorem-like" id="th_complex_field"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.1.18</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(\C\)</span> is a field.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.1.15</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(\C\)</span> is a field.</span>
 </h4>
 <div class="para" id="th_complex_field-2-1">The set <span class="process-math">\(\C\)</span> of all complex numbers, together with the operations of complex addition and multiplication defined in <a href="s_fields.html#d_sum_product" class="xref" data-knowl="./knowl/xref/d_sum_product.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.1.5: Complex addition and multiplication">Definition 1.1.5</a>, constitutes a field.</div> <div class="para logical" id="th_complex_field-2-2">
 <div class="para">In more detail, with respect to these operations, the additive and multiplicative identities are <span class="process-math">\(0=0+i\,0\)</span> and <span class="process-math">\(1=1+i\,0\text{,}\)</span> respectively, and given any <span class="process-math">\(z=a+ib\in \Z\text{,}\)</span> we have</div>
@@ -708,7 +629,7 @@ z^{-1} \amp = \frac{a}{a^2+b^2}-i\frac{b}{a^2+b^2} \amp (\text{assuming } z\ne 0
 \end{align*}
 </div>
 </div></article><details id="th_complex_field-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_complex_field-3-1">This is left as a homework exercise.</div></article></details><article class="example example-like" id="eg_Q"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.19</span><span class="period">.</span><span class="space"> </span><span class="title">Rational numbers.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.16</span><span class="period">.</span><span class="space"> </span><span class="title">Rational numbers.</span>
 </h4>
 <div class="para logical" id="eg_Q-2-1">
 <div class="para">Let <span class="process-math">\(\Q\)</span> be the set of all rational numbers: i.e.,</div>
@@ -745,7 +666,7 @@ r+s \amp = \frac{mq+pn}{mn} \amp rs\amp=\frac{mp}{nq}\text{.}
 </div>
 </li>
 </ol></div></div></details></div></article><article class="example example-like" id="eg_integers"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.20</span><span class="period">.</span><span class="space"> </span><span class="title">Integers.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.17</span><span class="period">.</span><span class="space"> </span><span class="title">Integers.</span>
 </h4>
 <div class="para logical" id="eg_integers-2-1">
 <div class="para">Let <span class="process-math">\(\Z\)</span> be the set of all integers.</div>
@@ -761,8 +682,29 @@ r+s \amp = \frac{mq+pn}{mn} \amp rs\amp=\frac{mp}{nq}\text{.}
 <li id="eg_integers-2-1-2-2"><div class="para" id="eg_integers-2-1-2-2-1">Explain why <span class="process-math">\(\Z\text{,}\)</span> together with these restricted operations, does <em class="emphasis">not</em> constitute a field.</div></li>
 </ol>
 </div>
-<div class="solutions"><details id="eg_integers-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_integers-3-1"></div></div></details></div></article><article class="example example-like" id="eg_F2"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.21</span><span class="period">.</span><span class="space"> </span><span class="title">Field of two elements.</span>
+<div class="solutions"><details id="eg_integers-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_integers-3-1"><ol class="decimal" id="eg_integers-3-1-1">
+<li id="eg_integers-3-1-1-1"><div class="para" id="eg_integers-3-1-1-1-1">An argument very similar to the one in <a href="s_fields.html#eg_Q" class="xref" data-knowl="./knowl/xref/eg_Q.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.1.16: Rational numbers">Example 1.1.16</a> shows that the sum and product of two integers is again an integer, and hence that restricting these operations to <span class="process-math">\(\Z\)</span> yields a well-defined operation on <span class="process-math">\(\Z\text{.}\)</span>
+</div></li>
+<li id="eg_integers-3-1-1-2">
+<div class="para logical" id="eg_integers-3-1-1-2-1">
+<div class="para">The integers fail to be a field with respect to these operations as Axiom (vii) fails. To this end, by way of counterexample, we claim that the integer <span class="process-math">\(2\)</span> does not have a multiplicative inverse in <span class="process-math">\(\Z\text{.}\)</span> Indeed, if there were an integer <span class="process-math">\(n\)</span> such that <span class="process-math">\(2n=1\text{,}\)</span> then we’d have <span class="process-math">\(n\ne 0\)</span> and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\abs{2n}=2\abs{n}=\abs{1}=1\text{.}
+\end{equation*}
+</div>
+<div class="para">But for all nonzero integers <span class="process-math">\(n\in \Z\text{,}\)</span> we have <span class="process-math">\(\abs{n}\geq 1\text{,}\)</span> and hence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+2\abs{n}\geq 2\cdot 1=1&gt; 1\text{,}
+\end{equation*}
+</div>
+<div class="para">a contradiction. We conclude that there is no integer <span class="process-math">\(n\)</span> satisfying <span class="process-math">\(2n=1\text{,}\)</span> and hence that <span class="process-math">\(2\)</span> has no multiplicative inverse in <span class="process-math">\(\Z\text{.}\)</span> Thus <span class="process-math">\(\Z\)</span> is not a field with respect to these operations.</div>
+</div>
+<div class="para" id="eg_integers-3-1-1-2-2">As it turns out, Axiom (vii) is the only field axiom that <span class="process-math">\(\Z\)</span> fails, making it still a pretty darn good number system to work with. In fact, we have a name for number systems that satisfy at least Axioms (i)-(vi) of the field axioms: they are called <em class="emphasis">rings</em>.</div>
+</li>
+</ol></div></div></details></div></article><article class="example example-like" id="eg_F2"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.18</span><span class="period">.</span><span class="space"> </span><span class="title">Field of two elements.</span>
 </h4>
 <div class="para logical" id="eg_F2-2-1">
 <div class="para">Let <span class="process-math">\(F=\{a,b\}\)</span> be a set containing two distinct elements. Define addition and multiplication on <span class="process-math">\(F\)</span> as follows:</div>
@@ -774,8 +716,33 @@ aa \amp = a \amp ab\amp= a \amp ba\amp = a \amp bb=b\text{.}
 </div>
 <div class="para">Verify that <span class="process-math">\(F\text{,}\)</span> together with these two operations, constitutes a field. Make explicit which elements of <span class="process-math">\(F\)</span> serve as the additive/multiplicative identities/inverses.</div>
 </div>
-<div class="solutions"><details id="eg_F2-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_F2-3-1"></div></div></details></div></article><article class="definition definition-like" id="d_F2"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.22</span><span class="period">.</span><span class="space"> </span><span class="title">Field of two elements.</span>
+<div class="solutions"><details id="eg_F2-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="eg_F2-3-1">
+<div class="para">Since <span class="process-math">\(F\)</span> only has two elements, showing that Axioms (i)-(iii) hold is a simple matter of looking at all the possible cases: in other words, we can resort to a proof by exhaustion for these axioms. For example, verifying commutativity of multiplication requires looking at just 4 different cases. Furthermore, since it is trivially true that <span class="process-math">\(a a=aa\)</span> and <span class="process-math">\(bb=bb\text{,}\)</span> we need only look at the “mixed products” <span class="process-math">\(ab\)</span> and <span class="process-math">\(ba\text{;}\)</span> and in this case we see by the definition that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+ab=a=ba\text{.}
+\end{equation*}
+</div>
+<div class="para">Similar arguments can be mounted for the rest of these arithmetic axioms.</div>
+</div>
+<div class="para" id="eg_F2-3-2">We now turn to the existential axioms. First, we claim that <span class="process-math">\(a\)</span> serves as the additive identity in this case: i.e., we have <span class="process-math">\(0=a\)</span> for this field. To verify this, we need to show that <span class="process-math">\(a\)</span> satisfies the defining axiom of the additive identity: namely, that <span class="process-math">\(a+\alpha=\alpha\)</span> for any <span class="process-math">\(\alpha\in F\text{.}\)</span> But this follows directly from the very definition of addition on <span class="process-math">\(F\text{,}\)</span> as we declared that <span class="process-math">\(a+a=a\)</span> and<span class="process-math">\(a+b=b\text{.}\)</span> A similar argument shows that the element <span class="process-math">\(b\)</span> acts as the multiplicative identity in this field: i.e., we have <span class="process-math">\(1=b\text{.}\)</span>
+</div>
+<div class="para" id="eg_F2-3-3">Lastly we must show that each element of <span class="process-math">\(F\)</span> has an additive inverse satisfying Axiom (v), and that each nonzero element of <span class="process-math">\(F\)</span> has a multiplicative inverse satisfying Axiom (vii). Again, this is accomplished simply by inspection, building on our already established result that <span class="process-math">\(a=0\)</span> and <span class="process-math">\(b=1\text{.}\)</span> In detail, since <span class="process-math">\(a+a=a=0\)</span> and <span class="process-math">\(b+b=a=0\text{,}\)</span> we see that <span class="process-math">\(-a=a\)</span> and <span class="process-math">\(-b=b\text{.}\)</span> Turning at last to multiplicative inverses, note first that <span class="process-math">\(b\)</span> is the only nonzero element of <span class="process-math">\(F\)</span> (since <span class="process-math">\(a=0\)</span>). Furthermore, since <span class="process-math">\(bb=b=1\text{,}\)</span> we see that <span class="process-math">\(b^{-1}=b\text{.}\)</span>
+</div>
+<div class="para logical" id="eg_F2-3-4">
+<div class="para">Since the operations on <span class="process-math">\(F\)</span> satisfy the field axioms, we conclude that <span class="process-math">\(F\)</span> is a field with respect to these operations. Having identified <span class="process-math">\(a=0\)</span> and <span class="process-math">\(b=1\text{,}\)</span> we can summarize the arithemetic rules of this particular field as follows:</div>
+<div class="displaymath process-math" id="eg_F2-3-4-5">
+\begin{align*}
+0+0 \amp =0 \amp 0+1\amp=1+0=1 \amp 1+1\amp =0 \\
+0\cdot 0 \amp = 0 \amp 0\cdot 1\amp =1\cdot 0=0 \amp 1\cdot 1\amp =1\\
+-0 \amp =0 \amp -1\amp =1 \amp 1^{-1}\amp =1\text{.}
+\end{align*}
+</div>
+</div>
+</div></details></div></article><div class="para" id="ss_field_def-11">Take a moment to take in the exotic nature of the field in <a href="s_fields.html#eg_F2" class="xref" data-knowl="./knowl/xref/eg_F2.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.1.18: Field of two elements">Example 1.1.18</a>. Unlike <span class="process-math">\(\Q\text{,}\)</span> <span class="process-math">\(\R\text{,}\)</span> and <span class="process-math">\(\C\text{,}\)</span> its underlying set is finite! Further peculiar attributes of this field is that every element is its own additive inverse. Crazy! Clearly, this example is important enough to warrant its own name.</div>
+<article class="definition definition-like" id="d_F2"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.19</span><span class="period">.</span><span class="space"> </span><span class="title">Field of two elements.</span>
 </h4>
 <div class="para logical" id="d_F2-2-1">
 <div class="para">The set <span class="process-math">\(\F_2=\{0,1\}\text{,}\)</span> together with the operations</div>
@@ -786,12 +753,12 @@ aa \amp = a \amp ab\amp= a \amp ba\amp = a \amp bb=b\text{.}
 \end{align*}
 </div>
 <div class="para">is called the <dfn class="terminology">field of two elements</dfn>.</div>
-</div></article><article class="remark remark-like" id="ss_field_def-11"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.1.23</span><span class="period">.</span><span class="space"> </span><span class="title">Finite fields.</span>
+</div></article><article class="remark remark-like" id="ss_field_def-13"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.1.20</span><span class="period">.</span><span class="space"> </span><span class="title">Finite fields.</span>
 </h4>
-<div class="para" id="ss_field_def-11-2">It turns out that any <em class="emphasis">finite field</em> (i.e., a field <span class="process-math">\(F\)</span> with finitely many elements) has prime cardinality. In other words if <span class="process-math">\(F\)</span> is finite and we can define operations on <span class="process-math">\(F\)</span> satisfying the field axioms, then <span class="process-math">\(\abs{F}=p\text{,}\)</span> where <span class="process-math">\(p\)</span> is a prime integer.</div>
-<div class="para" id="ss_field_def-11-3">Furthermore, given any prime integer <span class="process-math">\(p\text{,}\)</span> we can define addition and multiplication operations on the set <span class="process-math">\(\F_p=\{0,1,\dots, p-1\}\)</span> that satisfy the field axioms. In other words, for every prime <span class="process-math">\(p\)</span> there is a field of <span class="process-math">\(p\)</span> elements. (These are things you learn in the Math 330/331 sequences.)</div></article><article class="definition definition-like" id="d_field_subt_quot"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.24</span><span class="period">.</span><span class="space"> </span><span class="title">Subtraction, division, integer powers.</span>
+<div class="para" id="ss_field_def-13-2">It turns out that any <em class="emphasis">finite field</em> (i.e., a field <span class="process-math">\(F\)</span> with finitely many elements) has prime cardinality. In other words if <span class="process-math">\(F\)</span> is finite and we can define operations on <span class="process-math">\(F\)</span> satisfying the field axioms, then <span class="process-math">\(\abs{F}=p\text{,}\)</span> where <span class="process-math">\(p\)</span> is a prime integer.</div>
+<div class="para" id="ss_field_def-13-3">Furthermore, given any prime integer <span class="process-math">\(p\text{,}\)</span> we can define addition and multiplication operations on the set <span class="process-math">\(\F_p=\{0,1,\dots, p-1\}\)</span> that satisfy the field axioms. In other words, for every prime <span class="process-math">\(p\)</span> there is a field of <span class="process-math">\(p\)</span> elements. (These are things you learn in the Math 330/331 sequences.)</div></article><article class="definition definition-like" id="d_field_subt_quot"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.21</span><span class="period">.</span><span class="space"> </span><span class="title">Subtraction, division, integer powers.</span>
 </h4>
 <div class="para logical" id="d_field_subt_quot-2-1">
 <div class="para">Let <span class="process-math">\(F\)</span> be a field.</div>
@@ -836,8 +803,46 @@ aa \amp = a \amp ab\amp= a \amp ba\amp = a \amp bb=b\text{.}
 </div>
 </li>
 </ol>
-</div></article><article class="theorem theorem-like" id="th_field_props"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.1.25</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of fields.</span>
+</div></article><article class="example example-like" id="eg_arithmetic_II"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.22</span><span class="period">.</span><span class="space"> </span><span class="title">Complex arithmetic.</span>
+</h4>
+<div class="para logical" id="eg_arithmetic_II-2-1">
+<div class="para">Let <span class="process-math">\(z=-2+3i\text{,}\)</span> <span class="process-math">\(w=4+i\text{.}\)</span> Compute the following complex numbers. Your answer must be expressed in the form <span class="process-math">\(a+ib\text{,}\)</span> where <span class="process-math">\(a,b\in \R\text{.}\)</span>
+</div>
+<ol class="decimal" id="eg_arithmetic_II-2-1-5">
+<li id="eg_arithmetic_II-2-1-5-1"><div class="para" id="eg_arithmetic_II-2-1-5-1-1"><span class="process-math">\(\displaystyle w^{-1}\)</span></div></li>
+<li id="eg_arithmetic_II-2-1-5-2"><div class="para" id="eg_arithmetic_II-2-1-5-2-1"><span class="process-math">\(\displaystyle z/w\)</span></div></li>
+</ol>
+</div>
+<div class="solutions"><details id="eg_arithmetic_II-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_arithmetic_II-3-1"><ol class="decimal" id="eg_arithmetic_II-3-1-1">
+<li id="eg_arithmetic_II-3-1-1-1"><div class="para logical" id="eg_arithmetic_II-3-1-1-1-1">
+<div class="para">Using the formula for multiplicative inverses in <a href="s_fields.html#th_complex_field" class="xref" data-knowl="./knowl/xref/th_complex_field.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.1.15: \C is a field">Theorem 1.1.15</a>, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_complex_field.html">
+\begin{equation*}
+w^{-1}=\frac{4}{4^2+1^2}-i\frac{1}{4^2+1^1}=\frac{1}{17}(4-i)\text{.}
+\end{equation*}
+</div>
+</div></li>
+<li id="eg_arithmetic_II-3-1-1-2"><div class="para logical" id="eg_arithmetic_II-3-1-1-2-1">
+<div class="para">First observe that by definition we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+z/w=z\, w^{-1}\text{.}
+\end{equation*}
+</div>
+<div class="para">Using our computation in (1), we then conclude that</div>
+<div class="displaymath process-math" id="eg_arithmetic_II-3-1-1-2-1-2">
+\begin{align*}
+z/w \amp = z\, w^{-1}\\
+\amp = w^{-1}\, z\\
+\amp = \frac{1}{17}(4-i)(-2+3i)\\
+\amp = \frac{1}{17}(-5+14i)\\
+\amp = -\frac{5}{17}+\frac{14}{17}i\text{.}
+\end{align*}
+</div>
+</div></li>
+</ol></div></div></details></div></article><article class="theorem theorem-like" id="th_field_props"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.1.23</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of fields.</span>
 </h4>
 <div class="para logical" id="th_field_props-2-1">
 <div class="para">Let <span class="process-math">\(F\)</span> be a field, let <span class="process-math">\(\alpha,\beta\in F\text{,}\)</span> and let <span class="process-math">\(m,n\in \Z_{\geq 0}\text{.}\)</span>
@@ -854,7 +859,82 @@ aa \amp = a \amp ab\amp= a \amp ba\amp = a \amp bb=b\text{.}
 <li id="th_field_props-2-1-4-7"><div class="para" id="th_field_props-2-1-4-7-1">
 <span class="process-math">\((\alpha^{-1})^{-1}=\alpha\)</span> (assuming <span class="process-math">\(\alpha\ne 0\)</span>).</div></li>
 </ol>
-</div></article><details id="th_field_props-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_field_props-3-1"></div></article></details></section></section></div>
+</div></article><details id="th_field_props-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_field_props-3-1">Very much in the spirit of <a href="s_fields.html#warning_names_fields" class="xref" data-knowl="./knowl/xref/warning_names_fields.html" data-reveal-label="Reveal" data-close-label="Close" title="Warning 1.1.13: Names and prejudices">Warning 1.1.13</a>, when proving a result like this for an <em class="emphasis">arbitrary</em> field, we can make no assumptions about <span class="process-math">\(F\)</span> beyond the fact that its addition and multiplication operations satisfy the field axioms. This can make the proof of these very simple properties less straightforward than you might expect. We content ourselves with a proof of (1) and (2).</div>
+<div class="para logical" id="th_field_props-3-2">
+<div class="para">To prove (1), we observe first that for any <span class="process-math">\(\alpha\in F\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0\alpha=(0+0)\alpha=0\alpha+0\alpha\text{.}
+\end{equation*}
+</div>
+<div class="para">Here we have used the fact that <span class="process-math">\(0\)</span> satisfies Axiom (iv) (and thus <span class="process-math">\(0+0=0\)</span>), and that Axiom (iii) holds (distributivity). We conclude the proof by invoking the existence of additive inverses: in detail we have</div>
+<div class="displaymath process-math" id="th_field_props-3-2-5">
+\begin{align*}
+0\alpha\amp = 0\alpha+0\alpha \\
+-(0\alpha)+0\alpha\amp=-(0\alpha)+0\alpha+0\alpha \amp (\text{add } -(0\alpha)\text{ to both sides}) \\
+0\amp=0+0\alpha \amp (-(0\alpha) \text{ is add. inv. of } 0\alpha )\\
+0\amp=0\alpha \amp (0+\beta=\beta \text{ for any } \beta)\text{,}
+\end{align*}
+</div>
+<div class="para">as desired.</div>
+</div>
+<div class="para logical" id="th_field_props-3-3">
+<div class="para">Moving to (2), assume we have <span class="process-math">\(\alpha\beta=0\text{.}\)</span> We will show that if <span class="process-math">\(\alpha\ne 0\text{,}\)</span> then <span class="process-math">\(\beta=0\text{,}\)</span> which is equivalent to proving <span class="process-math">\(\alpha=0\)</span> or <span class="process-math">\(\beta=0\text{.}\)</span> Assume <span class="process-math">\(\alpha\ne 0\text{.}\)</span> By Axiom (vii) there is a multiplicative inverse <span class="process-math">\(\alpha^{-1}\in F\)</span> satisfying <span class="process-math">\(\alpha^{-1}\alpha=1\text{.}\)</span> But then we have</div>
+<div class="displaymath process-math" id="th_field_props-3-3-9">
+\begin{align*}
+\alpha\beta=0 \amp \implies \alpha^{-1}\alpha\beta=\alpha^{-1}0\\
+\amp \implies 1\beta\beta=0 \amp (\alpha^{-1}\alpha=1, \alpha^{-1}0=0\alpha^{-1}=0 \text{ by } (2))\\
+\amp \implies \beta=0 \amp (1\beta=\beta) \text{,}
+\end{align*}
+</div>
+<div class="para">as desired.</div>
+</div></article></details></section><section class="subsection" id="ss_modulus_conjugation"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Further complex operations</span>
+</h3>
+<div class="para" id="ss_modulus_conjugation-2">Two further complex operations, the <em class="emphasis">modulus</em> and <em class="emphasis">complex conjugation</em>, will prove to be invaluable when doing complex arithmetic.</div>
+<article class="definition definition-like" id="d_modulus"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.24</span><span class="period">.</span><span class="space"> </span><span class="title">Complex modulus.</span>
+</h4>
+<div class="para logical" id="d_modulus-2-1">
+<div class="para">The <dfn class="terminology">modulus</dfn> (or <dfn class="terminology">absolute value</dfn>) of a complex number <span class="process-math">\(z=a+ib\text{,}\)</span> denoted <span class="process-math">\(\abs{z}\text{,}\)</span> is defined as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\abs{z}=\sqrt{a^2+b^2}\text{.}
+\end{equation*}
+</div>
+<div class="para">If <span class="process-math">\(\abs{z}=1\text{,}\)</span> we say that <span class="process-math">\(z\)</span> has <dfn class="terminology">unit length</dfn>.</div>
+</div></article><article class="definition definition-like" id="d_conj"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.25</span><span class="period">.</span><span class="space"> </span><span class="title">Complex conjugation.</span>
+</h4>
+<div class="para logical" id="d_conj-2-1">
+<div class="para">Given the complex number <span class="process-math">\(z=a+ib\text{,}\)</span> its <dfn class="terminology">(complex) conjugate</dfn> <span class="process-math">\(\overline{z}\)</span> is defined as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\overline{z}=a-ib\text{.}
+\end{equation*}
+</div>
+</div></article><article class="theorem theorem-like" id="th_conj"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.1.26</span><span class="period">.</span><span class="space"> </span><span class="title">Conjugation properties.</span>
+</h4>
+<div class="para logical" id="th_conj-2-1">
+<div class="para">Let <span class="process-math">\(z\)</span> and <span class="process-math">\(w\)</span> be complex numbers.</div>
+<ol class="decimal cols2" id="th_conj-2-1-3">
+<li id="th_conj-2-1-3-1"><div class="para" id="th_conj-2-1-3-1-1"><span class="process-math">\(\overline{z+w}=\overline{z}+\overline{w}\text{.}\)</span></div></li>
+<li id="th_conj-2-1-3-2"><div class="para" id="th_conj-2-1-3-2-1"><span class="process-math">\(\overline{z\, w}=\overline{z}\, \overline{w}\text{.}\)</span></div></li>
+<li id="th_conj-2-1-3-3"><div class="para" id="th_conj-2-1-3-3-1"><span class="process-math">\(\overline{\overline{z}}=z\text{.}\)</span></div></li>
+<li id="th_conj-2-1-3-4"><div class="para" id="th_conj-2-1-3-4-1"><span class="process-math">\(\abs{\overline{z}}=\abs{z}\text{.}\)</span></div></li>
+<li id="th_conj-2-1-3-5"><div class="para" id="th_conj-2-1-3-5-1">
+<span class="process-math">\(\Re z=\frac{z+\overline{z}}{2}\)</span> and <span class="process-math">\(\Im z=\frac{z-\overline{z}}{2i}\text{.}\)</span>
+</div></li>
+<li id="th_conj-2-1-3-6"><div class="para" id="th_conj-2-1-3-6-1">
+<span class="process-math">\(z\in \R\)</span> if and only if <span class="process-math">\(\overline{z}=z\text{.}\)</span>
+</div></li>
+<li id="th_conj-2-1-3-7"><div class="para" id="th_conj-2-1-3-7-1"><span class="process-math">\(\displaystyle z\, \overline{z}=\abs{z}^2\)</span></div></li>
+<li id="th_conj-2-1-3-8"><div class="para" id="th_conj-2-1-3-8-1">If <span class="process-math">\(z\ne 0\text{,}\)</span> then <span class="process-math">\(\displaystyle z^{-1}=\frac{\overline{z}}{\abs{z}^2}=\frac{\overline{z}}{z\overline{z}}
+\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><details id="th_conj-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_conj-3-1">This is left as a homework exercise.</div></article></details></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="c_linear_algebra.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="advlinalgkursobjekt-6.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
