@@ -524,22 +524,42 @@
   Next we introduce the notion of a <em>tuple</em>, which will both provide a rigorous foundation for the notion of an ordered sequence (or list), and vastly generalize that notion. Interestingly, as revealed in the next definition, a tuple is just a function by another name.
 </p>
 <definition xml:id="d_Ituple">
-  <title>I-tuple</title>
+<title>Tuple</title>
   <idx><h>tuple</h><h>arbitrary</h></idx>
   <notation>
-    <usage><m>\boldx=(x_i)_{i\in I}</m></usage>
-    <description><m>I</m>-tuple</description>
+    <usage><m>f=(f(i))_{i\in I}</m></usage>
+    <description>tuple indexed by <m>I</m></description>
   </notation>
   <statement>
     <p>
-      Let <m>I</m> and <m>X</m> be sets. An <term><m>I</m>-tuple</term> with entries (or coordinates) in <m>X</m> is a function
+      Let <m>I</m> and <m>X</m> be sets. An <term><m>X</m>-valued tuple indexed by <m>I</m></term> is a function
       <m>
         f\colon I\rightarrow X
       </m>.
-      We call <m>I</m> the <term>indexing set</term> of the tuple <m>f</m>, and for all <m>i\in I</m>, we call  <m>f(i)</m> the <m>i</m>-th <term>entry</term> (or <term>coordinate</term>) of <m>f</m>. Furthermore, we will write <m>f=(x_i)_{i\in I}</m> to denote the tuple <m>f\colon I\rightarrow X</m> whose <m>i</m>-th entry is <m>f(i)=x_i</m> for all <m>i\in I</m>. 
+      We call <m>I</m> the <term>indexing set</term> of the tuple <m>f</m>, and for all <m>i\in I</m>, we call  <m>f(i)</m> the <m>i</m>-th <term>entry</term> (or <term>coordinate</term>) of <m>f</m>. Furthermore, we will write <m>f=(x_i)_{i\in I}</m> to denote the function <m>f\colon I\rightarrow X</m> defined as <m>f(i)=x_i</m> for all <m>i\in I</m>.
     </p>
   </statement>
 </definition>
+<remark>
+  <title>Tuple versus function</title>
+  <p>
+    As mentioned above, the introduction of tuple language and notation simply gives us another way of conceptualizing a function <m>f\colon I\rightarrow X</m>: one that let's us think of a function as a sort of sequence. Being able to fluently move between these two conceptions requires a little bit of practice. The following correspondence diagram can help in this regard:
+  </p>
+  <figure xml:id="fig_tuple_function">
+    <caption>Correspondence between functions and tuples</caption>
+  <image width="50%">
+      <shortdescription>Correspondence between functions and tuples</shortdescription>
+      <latex-image>
+        \begin{tikzcd}  
+ \text{Functions}\arrow[r,leftrightarrow] \amp \text{Tuples} \\
+ f \arrow[r,mapsto] \amp (f(i))_{i\in I} \\
+ f(i)=x_i \amp (x_i)_{i\in I} \arrow[l,mapsto]
+        \end{tikzcd}
+      </latex-image>
+    </image>
+  </figure>
+  
+</remark>
 <remark>
 <title>Tuple equality</title>
   <p>
