@@ -3,6 +3,6 @@
 <chapter xml:id="c_linear_algebra" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Linear algebra</title>
     <xi:include href="s_fields.ptx" />
-    <!-- <xi:include href="s_vector_space.ptx" /> -->
+    <xi:include href="s_vector_space.ptx" />
 
 </chapter>
