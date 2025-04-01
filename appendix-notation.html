@@ -303,14 +303,20 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="c_linear_algebra.html" class="internal"><span class="codenumber">1</span> <span class="title">Linear algebra</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_fields.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Fields</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_fields.html#ss_complex" class="internal"><span class="title">Complex numbers</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_fields.html#ss_field_def" class="internal"><span class="title">Fields</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_fields.html#ss_modulus_conjugation" class="internal"><span class="title">Further complex operations</span></a></div></li>
 </ul>
-</li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_vector_space.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Vector spaces</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_vector_space.html#ss_vector_space_def" class="internal"><span class="title">Definitions and examples</span></a></div></li></ul>
+</li>
+</ul>
 </li>
 <li class="toc-item toc-backmatter contains-active">
 <div class="toc-title-box"><a href="advlinalgkursobjekt-6.html" class="internal"><span class="title">Back Matter</span></a></div>
@@ -430,35 +436,35 @@ eBookConfig.enable_chatcodes =  false;
 <td><a href="s_sets_functions.html#d_function_composition" class="xref" data-knowl="./knowl/notation/d_function_composition.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 0.1.21: Function composition">Definition 0.1.21</a></td>
 </tr>
 <tr>
-<td><span class="process-math">\(\boldx=(x_i)_{i\in I}\)</span></td>
-<td>
-<span class="process-math">\(I\)</span>-tuple</td>
-<td><a href="s_sets_functions.html#d_Ituple" class="xref" data-knowl="./knowl/notation/d_Ituple.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 0.1.24: I-tuple">Definition 0.1.24</a></td>
+<td><span class="process-math">\(f=(f(i))_{i\in I}\)</span></td>
+<td>tuple indexed by <span class="process-math">\(I\)</span>
+</td>
+<td><a href="s_sets_functions.html#d_Ituple" class="xref" data-knowl="./knowl/notation/d_Ituple.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 0.1.24: Tuple">Definition 0.1.24</a></td>
 </tr>
 <tr>
 <td><span class="process-math">\(\prod_{i\in I}A_i\)</span></td>
 <td>Cartesian product of the sets <span class="process-math">\(A_i\)</span>
 </td>
-<td><a href="s_sets_functions.html#d_cartesian_product_arbitrary" class="xref" data-knowl="./knowl/notation/d_cartesian_product_arbitrary.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 0.1.31: Cartesian product">Definition 0.1.31</a></td>
+<td><a href="s_sets_functions.html#d_cartesian_product_arbitrary" class="xref" data-knowl="./knowl/notation/d_cartesian_product_arbitrary.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 0.1.33: Cartesian product">Definition 0.1.33</a></td>
 </tr>
 <tr>
 <td><span class="process-math">\(A^n\)</span></td>
 <td>
 <span class="process-math">\(n\)</span>-fold Cartesian product of <span class="process-math">\(A\)</span>
 </td>
-<td><a href="s_sets_functions.html#d_cartesian_product_arbitrary" class="xref" data-knowl="./knowl/notation/d_cartesian_product_arbitrary.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 0.1.31: Cartesian product">Definition 0.1.31</a></td>
+<td><a href="s_sets_functions.html#d_cartesian_product_arbitrary" class="xref" data-knowl="./knowl/notation/d_cartesian_product_arbitrary.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 0.1.33: Cartesian product">Definition 0.1.33</a></td>
 </tr>
 <tr>
 <td><span class="process-math">\(A^\infty\)</span></td>
 <td>Cartesian product <span class="process-math">\(A^{\Z_+}\)</span>
 </td>
-<td><a href="s_sets_functions.html#d_cartesian_product_arbitrary" class="xref" data-knowl="./knowl/notation/d_cartesian_product_arbitrary.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 0.1.31: Cartesian product">Definition 0.1.31</a></td>
+<td><a href="s_sets_functions.html#d_cartesian_product_arbitrary" class="xref" data-knowl="./knowl/notation/d_cartesian_product_arbitrary.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 0.1.33: Cartesian product">Definition 0.1.33</a></td>
 </tr>
 <tr>
 <td><span class="process-math">\(\abs{A}\)</span></td>
 <td>cardinality of set <span class="process-math">\(A\)</span>
 </td>
-<td><a href="s_sets_functions.html#d_cardinality" class="xref" data-knowl="./knowl/notation/d_cardinality.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 0.1.32: Cardinality">Definition 0.1.32</a></td>
+<td><a href="s_sets_functions.html#d_cardinality" class="xref" data-knowl="./knowl/notation/d_cardinality.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 0.1.34: Cardinality">Definition 0.1.34</a></td>
 </tr>
 </table></section></div>
 <div class="ptx-content-footer">
