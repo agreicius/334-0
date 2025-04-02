@@ -4,5 +4,6 @@
     <title>Linear algebra</title>
     <xi:include href="s_fields.ptx" />
     <xi:include href="s_vector_space.ptx" />
+    <xi:include href="s_subspace.ptx" />
 
 </chapter>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_subspace" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Subspaces</title>
+    <introduction>
+        <p>
+      In this section we will study <xref ref="d_subspace" text="custom">subspaces</xref>, which are special subsets of vector spaces that <em>respect</em> the defining structure of a vector spaces: namely, the two vector operations. <xref ref="d_subspace"/> makes precise what we mean here by <sq>respect</sq>. 
+    </p>
+    <p>
+      Subspaces arise naturally in any setting where vector spaces are at play, and are closely connected to solutions to linear systems. As we will see in <xref ref="th_subspace_vectorspace"/>, subspaces of vector spaces are vector spaces in their own right, furnishing us with yet more interesting examples of vector spaces. 
+    </p>
+    </introduction>
+    <subsection xml:id="ss_subspace_def">
+    <title>Definition and examples</title>
+    <definition xml:id="d_subspace">
+      <title>Subspace</title>
+      <statement>
+        <p>
+          Let <m>V</m> be a vector space.
+          A subset <m>W\subseteq V</m> is a
+          <term>subspace</term> of <m>V</m> if the following conditions hold.
+        <ol marker="(i)">
+          <li xml:id="d_subspace_zero">
+            <title><m>W</m> contains the zero vector</title>
+            <p>
+              <m>\boldzero\in W</m>.
+            </p>
+          </li>
+          <li xml:id="d_subspace_add" >
+            <title><m>W</m> is closed under addition</title>
+            <p> For all <m> v_1, v_2\in V</m>, if <m> v_1, v_2\in W</m>, then <m> v_1+ v_2\in W</m>. Using logical shorthand:
+            <me>
+             v_1, v_2\in W\implies  v_1+ v_2\in W
+            </me>.
+          </p>
+        </li>
+        <li xml:id="d_subspace_mult">
+          <title><m>W</m> is closed under scalar multiplication</title>
+          <p> For all <m>c\in \R</m> and <m> v\in V</m>, if <m> v\in W</m>, then <m>c v\in W</m>. Using logical shorthand:
+          <me> v\in W\Rightarrow c v\in W</me>.
+        </p>
+      </li>
+    </ol>
+    </p>
+  </statement>
+</definition>
+<example>
+  <statement>
+    <p>
+      Let <m>V=\R^2</m> and let
+      <me>W=\{(t,t)\in\R^2 \colon t\in\R\}
+      </me>.
+      Prove that <m>W</m> is a subspace.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      We must show properties (i)-(iii) hold for <m>W</m>.
+    <ol marker="i">
+      <li>
+        <p>
+          The zero element of <m>V</m> is <m>\boldzero=(0,0)</m>,
+          which is certainly of the form <m>(t,t)</m>.
+          Thus <m>\boldzero\in W</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          We must prove the implication <m> v_1,  v_2\in W\Rightarrow  v_1+ v_2\in W</m>.
+          <md>
+          <mrow> v_1, v_2\in W\amp \Rightarrow\amp   v_1=(t,t),  v_2=(s,s) \text{ for some \(t,s\in\R\) }</mrow>
+          <mrow>\amp \Rightarrow\amp  v_1+ v_2=(t+s,t+s)</mrow>
+          <mrow>\amp \Rightarrow\amp  v_1+ v_2\in W</mrow>
+          </md>.
+        </p>
+      </li>
+      <li>
+        <p>
+          We must prove the implication <m> v\in W\Rightarrow c v\in W</m>, for any <m>c\in \R</m>. We have
+          <md>
+          <mrow> v\in W\amp \Rightarrow\amp   v=(t,t)</mrow>
+          <mrow>\amp \Rightarrow\amp  c v=(ct,ct)</mrow>
+          <mrow>\amp \Rightarrow\amp  c v\in W</mrow>
+          </md>
+        </p>
+      </li>
+    </ol>
+    </p>
+  </solution>
+</example>
+<example>
+  <statement>
+    <p>
+      Let <m>V=\R^n</m> and let
+      <me>
+      W=\{(x,y)\in \R^2\colon x, y\geq 0\}
+      </me>.
+      Is <m>W</m> a vector space? Decide which of the of properties (i)-(iii) in <xref ref="d_subspace"/> (if any) are satisfied by <m>W</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <ol marker="i">
+      <li>
+        <p>
+          Clearly <m>\boldzero=(0,0)\in W</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Suppose <m> v_1=(x_1,y_1),  v_2=(x_2,y_2)\in W</m>. Then <m>x_1, x_2, y_1, y_2\geq 0</m>, in which case <m>x_1+x_2, y_1+y_2\geq 0</m>, and hence <m> v_1+ v_2\in W</m>. Thus <m>W</m> is closed under addition.
+        </p>
+      </li>
+      <li>
+        <p>
+          The set <m>W</m> is <em>not</em> closed under scalar multiplication. Indeed, let <m> v=(1,1)\in W</m>. Then <m>(-2) v=(-2,-2)\notin W</m>.
+        </p>
+      </li>
+    </ol>
+    </p>
+    
+  </solution>
+</example>
+<theorem xml:id="th_subspace_vectorspace">
+  <title>Subspaces are vector spaces</title>
+  <statement>
+    <p>
+    Let <m>W</m> be a subspace of the vector space <m>V</m>. 
+    <ol>
+      <li>
+        <p>
+          The vector operations of <m>V</m> restrict to operations on <m>W</m> that satisfy the vector space axioms. 
+        </p>
+      </li>
+      <li>
+        <p>
+          The zero vector of <m>W</m>, considered as a vector space, is the zero vector of <m>V</m>. 
+        </p>
+      </li>
+      <li>
+        <p>
+          Given an element <m>\boldw\in W</m>, its vector inverse with respect to the vector space structure of <m>W</m> is equal to its vector inverse with respect to the vector space structure of <m>V</m>.  
+        </p>
+      </li>
+    </ol>
+  </p>
+</statement>
+<proof>
+    <p>
+    It is important to understand how <xref first="d_subspace_zero" last="d_subspace_mult">Axioms</xref> of <xref ref="d_subspace"/> come into play here. Without them we would not be able to say that restricting the vector operations of <m>V</m> to elements of <m>W</m> actually gives rise to well-defined operations on <m>W</m>. To be well-defined the operations must output elements that lie not just in <m>V</m>, but in <m>W</m> itself. This is precisely what being closed under addition and scalar multiplication guarantees. In more detail, since <m>\boldw_1+\boldw_2\in W</m> for all <m>w_1,w_2\in W</m> (Axiom (ii)), the vector addition on <m>V</m> gives rise by restriction to a well-defined operation on <m>W</m>; similarly, since <m>c\boldw\in W</m> for all <m>c\in \R</m> and <m>\boldw\in W</m>, the scalar multiplication operation on <m>V</m> gives rise by restriction to a well-defined scalar multiplication on <m>W</m>. 
+  </p>
+  <p>
+    Once we know restriction gives rise to well-defined operations on <m>W</m>, verifying the <m>arithmetic axioms</m> of  <xref ref="d_vector_space"/> amounts simply to observing that if a condition is true for all <m>v</m> in <m>V</m>, it is certainly true for all <m> v</m> in the subset <m>W</m>.
+  </p>
+  <p>
+    The <q>existential axioms</q> (iii) and (iv) of <xref ref="d_vector_space"/>, however, require special consideration. By definition, a subspace <m>W</m> contains the zero vector of <m>V</m>, and clearly this still acts as the zero vector when we restrict the vector operations to <m>W</m>. What about vector inverses? We know that for any <m> v\in W</m> there is a vector inverse <m>- v</m> lying somewhere in <m>V</m>. We must show that in fact <m>- v</m> lies in <m>W</m>: <ie /> we need to show that the operation of taking the vector inverse is well-defined on <m>W</m>. We prove this as follows:
+    <md>
+    <mrow> v\in W \amp\implies (-1) v\in W \amp (<xref ref="d_subspace"/>, \text{(iii) } )</mrow>
+    <mrow> \amp\implies - v\in W \amp (<xref ref="th_vs_props"/>, (iii)) </mrow>
+    </md>.
+  </p>
+</proof>
+</theorem>
+<algorithm xml:id="proc_twostep_proof">
+  <title>Two-step proof for subspaces</title>
+  <statement>
+    <p>
+      We can merge conditions (ii)-(iii) of <xref ref="d_subspace"/> into a single statement about linear combinations, deriving the following two-step method for proving that a set <m>W</m> is a subspace of a vector space <m>V</m>.
+    <ol marker="i">
+      <li xml:id="proc_subspace_zero">
+        <p>
+          Show <m>\boldzero\in W</m>
+        </p>
+      </li>
+      <li xml:id="proc_subspace_ops">
+        <p>
+          Show that
+          <me>
+           v_1,  v_2\in W\implies c v_1+d v_2\in W
+          </me>,
+          for all <m>c,d\in F</m>.
+        </p>
+      </li>
+    </ol>
+    </p>
+  </statement>
+</algorithm>
+<p>
+  If <m>W</m> is a subspace of a vector space <m>V</m>, then it <em>inherits</em> a vector space structure from <m>V</m> by simply  <em>restricting</em> the vector operations defined on <m>V</m> to the subset <m>W</m>.
+</p>
+
+  
+    </subsection>
+
+</section>
