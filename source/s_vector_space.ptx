@@ -2,7 +2,21 @@
 
 <section xml:id="s_vector_space" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Vector spaces</title>
-
+    <introduction>
+        <p>
+            In the last section we isolated useful number system properties of <m>\R</m> and generalized them in the form of our axiomatic definition of a field (<xref ref="d_field"/>). Similarly, in this section we give a similar treatment to the type of vector spaces usually studied in a first course in linear algebra: that is, the space of real <m>n</m>-tuples <m>\R^n=\{(a_1,a_2,\dots, a_n)\colon a_i\in \R\}</m>. The two operations on <m>\R^n</m> we choose to generalize are its version of <em>vector addition</em> 
+            <md>
+                <mrow>\R^n\times \R^n \amp \rightarrow \R^n</mrow>
+                <mrow> ((a_1,a_2,\dots, a_n),(b_1,b_2,\dots, b_n))\amp\mapsto (a_1+b_1, a_2+b_2,\dots, a_n+b_n) </mrow>
+            </md>,
+            and its version of <em>scalar multiplication</em>
+            <md>
+                <mrow>\R\times \R^n \amp \rightarrow \R^n</mrow>
+                <mrow>(c,(a_1,a_2,\dots, a_n)) \amp\rightarrow (ca_1,ca_2,\dots, ca_n) </mrow>
+            </md>.
+            You should think of the axioms of <xref ref="d_vector_space"/> as an enumeration of precisely which properties of these two operations on <m>\R^n</m> we want a structure to enjoy in order to ensure that we can perform a form of vector arithmetic and algebra just as we do in <m>\R^n</m>. Note that there is an important <em>qualitative</em> difference between the two vector operations on <m>\R^n</m> that is treated carefully in <xref ref="d_vector_space"/>; namely, whereas vector addition takes as its input two vectors <m>v,w\in \R^n</m> and returns another, scalar multiplication takes a scalar <m>c\in \R</m> and a vector <m>v\in \R^n</m> and returns another vector. In this sense, scalar multiplication should be thought of as a sort of <em>hybrid</em> operation. 
+        </p>
+    </introduction>
     <subsection xml:id="ss_vector_space_def">
     <title>Definitions and examples</title>
      <assumption xml:id="fiat_F_field">
@@ -73,7 +87,7 @@
                   <m>
                     (c+d)v=cv+dv
                   </m>
-                  for all <m>c\in F</m> and <m>v, w\in V</m>.
+                  for all <m>c,d\in F</m> and <m>v\in V</m>.
                 </p>
               </li>
               <li>
@@ -105,8 +119,7 @@
             </p>
         </remark>
         <p>
-            We now proceed to a litany of examples. Each one will be stated as a definition (for reference purposes) accompanied by a proof that the given structure does indeed constitute a vector space. 
-            In a classic mathematical move, we begin with the simplest of all vector spaces, the <em>zero space</em>. Elementary as this example is, it serves well to illustrate the axiomatic nature of <xref ref="d_vector_space"/>. 
+            We now proceed to a litany of examples. Each one will be stated as a definition (for reference purposes), but nonetheless requires a proof that the given structure does indeed constitute a vector space. In a classic mathematical move, we begin with the simplest of all vector spaces, the <em>zero space</em>. Elementary as this example is, it serves well to illustrate the axiomatic nature of <xref ref="d_vector_space"/>. 
         </p>
           <definition xml:id="d_zero_space">
             <title>Zero space</title>
@@ -228,7 +241,7 @@ In each of the remaining examples below we carefully lay out the details of item
 </remark>
 
 <p>
-  Having established this general quite general result, particular choices of the index set <m>I</m> now yield some very common vector spaces. 
+ We now work our way up in complexity, considering first three examples that might already be familiar to you in some form or other. Note that (a) the vector space operations for each of <xref ref="d_ntuples"/>, <xref ref="d_infinite_sequences_space"/>, <xref ref="d_matrix_space"/> are all very similar in nature (roughly speaking the operations are always defined <q>component-wise</q>), and (b) that we postpone the verification of the vector space axioms for these examples until after <xref ref="d_tuple_space"/>. This is because each of the vector spaces in <xref first="d_ntuples" last="d_matrix_space"/> is in fact one particular example of the vastly more general vector space defined in <xref ref="d_tuple_space"/>! We will make this clear in the proof of <xref ref="th_vs_egs"/>.
 </p>
 <definition xml:id="d_ntuples">
   <title><m>n</m>-tuples</title>
@@ -270,6 +283,24 @@ In each of the remaining examples below we carefully lay out the details of item
     </p>
   </statement>
 </definition>
+<proof>
+    <p>
+        The proof that <m>F^n</m> is a vector space with respect to these operations is postponed until <xref ref="th_vs_egs"/>. 
+    </p>
+</proof>
+<example xml:id="eg_complex_pairs">
+<title>Complex pairs</title>
+<statement>
+<p>
+Consider the complex vector space <m>\C^2=\{(z,w)\colon z,w\in \C\}</m>. Given vectors <m>v=(1+i, 2i), w=(i, 5)\in \C^2</m> and scalar <m>1-i\in \C</m>, we have 
+<md>
+    <mrow>v+w \amp = (1+2i, 5+2i)</mrow>
+    <mrow>(1-i)v \amp =((1-i)(1+i),(1-i)2i)</mrow>
+    <mrow> \amp = (2,2+2i)</mrow>
+</md>.
+</p>
+</statement>
+</example>
 
 
 <definition xml:id="d_infinite_sequences_space">
@@ -311,9 +342,30 @@ In each of the remaining examples below we carefully lay out the details of item
       </p>
     </li>
   </ul>
+We call <m>F^\infty</m>, together with these vector operations, the <term>space of infinite sequences with entries in <m>F</m></term> (or the <term>space of <m>F</m>-valued infinite sequences</term>).
 </p>
 </statement>
 </definition>
+<proof>
+    <p>
+        The proof that <m>F^n</m> is a vector space with respect to these operations is postponed until <xref ref="th_vs_egs"/>. 
+    </p>
+</proof>
+<example xml:id="eg_complex_seqs">
+<title>Complex infinite sequences</title>
+<statement>
+<p>
+Consider the complex vector space <m>\C^\infty</m> of all infinite sequences with complex entries. Given sequences <m>s=(0,1,0,1,0,\dots)</m> and <m>t=(i,i,i,\dots) </m>, and scalar <m>i\in \C</m>, we have 
+<md>
+    <mrow>s+t \amp =(i,i+1,i,i+1,i,\dots)</mrow>
+    <mrow>it \amp =(i^2,i^2,\dots)</mrow>
+    <mrow> \amp =(-1,-1,\dots )</mrow>
+</md>.
+</p>
+</statement>
+</example>
+
+
 <definition xml:id="d_matrix_space">
 <title>Space of matrices</title>
 <statement>
@@ -355,20 +407,43 @@ Below we define a vector space structure on <m>F^{m,n}</m>.
   </li>
 </ul>
 We call <m>F^{m,n}</m>, together with these vector operations, the <term>space of <m>m\times n</m> matrices with entries in <m>F</m></term> (or the <term>space of <m>F</m>-valued <m>m\times n</m> matrices</term>).
-
 </p>
 </statement>
 </definition>
+<proof>
+    <p>
+        The proof that <m>F^n</m> is a vector space with respect to these operations is postponed until <xref ref="th_vs_egs"/>. 
+    </p>
+</proof>
+<example xml:id="eg_complex_matrices">
+<title>Complex matrices</title>
+<statement>
 <p>
-    Our next example, dealing as it does with tuples, represents a significant uptick in complexity and abstraction. This cost in abstraction ends up delivering a substantial payoff, however, as the more familiar examples that follow it can be seen as special cases. Recall that an <m>F</m>-valued tuple indexed by <m>I</m> is nothing more than a function <m>f\colon I\rightarrow F</m> that we conceptualize as a sequence of sorts using the notation <m>f=(f(i))_{i\in I}</m>. See <xref ref="ss_tuples_cart_prod" text="title"/> for details about tuples. 
+Consider the vector space <m>\C^{2,2}</m> of all <m>2\times 2</m> matrices with complex entries. Given matrices 
+<md>
+    <mrow>A \amp = \begin{bmatrix}2i\amp 1+i \\ 0 \amp 3\end{bmatrix} </mrow>
+    <mrow>B \amp = \begin{bmatrix}-3-i\amp 2 \\ i \amp 4+4i\end{bmatrix} </mrow>
+</md>
+and scalar <m>1+i\in \C</m>, we have 
+<md>
+    <mrow>A+B\amp = \begin{bmatrix}-3-i\amp 3+i \\ i \amp 7+4i\end{bmatrix} </mrow>
+    <mrow>(1+i)A \amp = \begin{bmatrix}-2+2i\amp 2i \\ 0 \amp 3+3i\end{bmatrix} </mrow>
+</md>.
+</p>
+</statement>
+</example>
+<p>
+    As promised, the vector space <m>F^I</m> defined in <xref ref="d_tuple_space"/> generalizes each of the vector spaces defined in <xref ref="d_ntuples"/>, <xref ref="d_infinite_sequences_space"/>, <xref ref="d_matrix_space"/>.  The objects of the vector space <m>F^I</m> can be thought of either as functions <m>f\colon I\rightarrow F</m> from the set <m>I</m> to the field <m>F</m>, or equivalently, as <m>F</m>-valued tuples <m>(a_i)_{i\in I}</m> indexed by <m>I</m>. Hence the <q>functions/tuples</q> in its name. Depending on the context, one of these two equivalent conceptions (function or tuple) may be more convenient than the other. For example, to make the connection between <m>F^I</m>, <m>F^n</m>, <m>F^\infty</m>, and <m>F^{m,n}</m>, it is most convenient to think in terms of tuples. See <xref ref="d_Ituple"/> for the general definition of tuples and <xref ref="rm_tuple_function"/> for an explication of the equivalence between functions and tuples.   
 </p>
 <definition xml:id="d_tuple_space">
 <title>Space of <m>F</m>-valued functions/tuples</title>
 <statement>
 <p>
-Let <m>F</m> be a field. Given any set <m>I</m>, recall that <m>F^I</m> is defined as the set of all functions <m>f\colon I\rightarrow F</m>, or equivalently, the set of all <m>F</m>-valued tuples indexed by <m>I</m>: <ie/>, 
+Let <m>F</m> be a field. Given any set <m>I</m>, recall that <m>F^I</m> is defined as the set of all functions <m>f\colon I\rightarrow F</m>: <ie/> 
+<me>F^I=\{f\colon I\rightarrow F\}</me>. 
+Equivalently, thinking of functions as tuples, we can describe <m>F^I</m> as the set of all <m>F</m>-valued tuples indexed by <m>I</m>: <ie/>, 
 <me>
-    F^I=\{f\colon I\rightarrow F\colon f \text{ a function}\}=\{(a_i)_{i\in I}\colon a_i\in F\}
+    F^I=\{(a_i)_{i\in I}\colon a_i\in F\}
 </me>.
 Below we define a vector space structure on <m>F^I</m>. 
 <ul>
@@ -400,20 +475,27 @@ Below we define a vector space structure on <m>F^I</m>.
         </p>
     </li>
 </ul>
-We call <m>F^I</m>, together with these vector operations, the <term>space of <m>F</m>-valued tuples indexed by <m>I</m></term>.
+We call <m>F^I</m>, together with these vector operations, the <term>space of functions from <m>I</m> to <m>F</m></term>, or, thinking in terms of tuples, the <term>space of <m>F</m>-valued tuples indexed by <m>I</m></term>.
 </p>
 </statement>
 </definition>
 <theorem xml:id="th_vs_egs">
-<title>Function spaces are vector spaces</title>
+<title>Function/tuple spaces are vector spaces</title>
 <statement>
 <p>
-Each set and accompanying vector operations in <xref first="d_ntuples" last="d_tuple_space"/> forms a vector space. 
+Each of the sets <m>F^n</m>, <m>F^\infty</m>, <m>F^{m,n}</m>, <m>F^I</m>, together with the accompanying vector operations defined above, is a vector space. 
 </p>
 </statement>
 <proof>
     <p>
-        We follow <xref ref="proc_vector_space"/>. The definition has taken care of steps (1)-(3) for us, it remains to show that the vector space axioms are satisfied. As you will see, the tuple notation for functions makes these proofs quite straightforward consequences of the field axioms satisfied by <m>F</m>.
+        First we observe, thinking in terms of tuples, that each of the sets <m>F^{n}</m>, <m>F^\infty</m>, <m>F^{m,n}</m>, along with their accompanying vector space operations, is a specific example of <m>F^I</m> together with its vector operations. This is seen by choosing an appropriate index set <m>I</m> in each case. In more detail, we have 
+        <md>
+            <mrow> F^n\amp= F^I, \text{ where } I=\{1,2,\dots, n\} </mrow>
+            <mrow> F^\infty\amp= F^I, \text{ where } I=\Z_+=\{1,2,3,\dots\} </mrow>
+            <mrow> F^{m,n}\amp= F^I, \text{ where } I=\{(i,j)\colon 1\leq i\leq m, 1\leq j\leq n\} </mrow>
+        </md>.
+        Thus it suffices to show that <m>F^I</m> is a vector space with respect to the given vector operations. 
+        To do this, we follow <xref ref="proc_vector_space"/>. Since <xref ref="d_tuple_space"/> has already taken care of steps (1)-(3) for us, it remains to show that the vector space axioms are satisfied. As you will see, the tuple notation for functions makes these proofs quite straightforward consequences of the field axioms satisfied by <m>F</m>.
         </p>
         <p> 
             Consider the arithmetic axioms first. We will verify that Axioms (i), (ii), and (v) are satisfied. Given <m>f=(f(i))_{i\in I},g=(g(i))_{i\in I},h=(h(i))_{i\in I}\in F^I</m> and <m>c\in F</m>, we have 
@@ -421,11 +503,13 @@ Each set and accompanying vector operations in <xref first="d_ntuples" last="d_t
             <mrow> f+g \amp = (f(i)+g(i))_{i\in I} \amp (\text{def. vec. add.}) </mrow>
             <mrow> \amp = (g(i)+f(i))_{i\in I} \amp (\text{field prop.})</mrow>
             <mrow> \amp = g+f \amp (\text{def. vec. add.})</mrow>
+            <mrow> \amp </mrow>
             <mrow>f+(g+h) \amp = (f(i)+(g+h)(i))_{i\in I} \amp (\text{def. vec. add.})</mrow>
             <mrow> \amp = (f(i)+(g(i)+h(i)))_{i\in I} \amp (\text{def. vec. add.})</mrow>
             <mrow> \amp = ((f(i)+g(i))+h(i))_{i\in I} \amp (\text{field prop.})</mrow>
             <mrow> \amp = ((f+g)(i)+h(i))_{i\in I} \amp  (\text{def. vec. add.})</mrow>
             <mrow> \amp = (f+g)+h \amp  (\text{def. vec. add.})</mrow>
+            <mrow> \amp </mrow>
             <mrow>c(f+g) \amp =(c(f+g)(i))_{i\in I} \amp (\text{def. scal. mult})</mrow>
             <mrow> \amp = (c(f(i)+g(i)))_{i\in I} \amp (\text{def. vec. add.})</mrow>
             <mrow> \amp = (cf(i)+cg(i))_{i\in I} \amp (\text{field prop.})</mrow>
@@ -449,15 +533,49 @@ Each set and accompanying vector operations in <xref first="d_ntuples" last="d_t
 <title>Real-valued functions</title>
 <statement>
 <p>
-Let <m>I=[a,b]\subseteq \R </m> be an interval in the real lines. Using the function interpretation <m>\R^{[a,b]}</m> is the set of all functions of the form <m>f\colon [a,b]\rightarrow \R</m>. The vector operations defined in <xref ref="d_tuple_space"/> in this setting correspond to the function-arithmetic operations you met in precalculus and calculus: <ie/>, given functions <m>f,g\in \R^{[a,b]}</m>, their vector sum <m>f+g</m> is the function defined as 
+Let <m>I=[a,b]\subseteq \R </m> be an interval in the real line. Using the function interpretation of <m>F^I</m>, <m>\R^{[a,b]}</m> is the set of all functions of the form <m>f\colon [a,b]\rightarrow \R</m>. The vector operations defined in <xref ref="d_tuple_space"/> in this setting correspond to the function-arithmetic operations you met in precalculus and calculus: <ie/>, given functions <m>f,g\in \R^{[a,b]}</m>, their vector sum <m>f+g</m> is the function defined as 
 <m>(f+g)(x)=f(x)+g(x)</m> for all <m>x\in [a,b]</m>. Similarly, given a scalar <m>c\in \R</m> and function <m>f\in \R^{[a,b]}</m>, the vector scalar multiple <m>cf</m> is the function defined as <m>(cf)(x)=cf(x)</m> for all <m>x\in \R</m>. 
 </p>
-</statement>
-<solution>
 <p>
-
+    In this context it is possible to visualize our vector operations in terms of the graphs of the functions on the interval <m>[a,b]</m>. 
 </p>
-</solution>
+<figure xml:id="fig_func_arith">
+    <caption>Visualizing function arithmetic in <m>\R^{[-1,1]}</m></caption>
+    <sidebyside>
+        <figure xml:id="fig_func_add">
+        <caption>Visualizing <m>f+g</m></caption>
+        <image>
+            <shortdescription>Visualizing function addition</shortdescription>
+           <sageplot>
+        f=plot(x,x,-1,1,color="blue")
+        g=plot(sin(pi*x),x,-1,1,color="red")
+        h=plot(x+sin(pi*x),x,-1,1,color="green")
+        s=text("$f$",(.5,.7),color="black",fontsize=16)
+        r=text("$g$",(.5,1.2),color="black",fontsize=16)
+        t=text("$f+g$",(.5,1.7),color="black",fontsize=16)
+        f+g+h+s+r+t
+        </sageplot> 
+        </image>
+        </figure>
+         <figure xml:id="fig_func_scale">
+        <caption>Visualizing <m>cf</m></caption>
+        <image>
+            <shortdescription>Visualizing function scalar multiplication</shortdescription>
+           <sageplot>
+        f=plot(sin(pi*x),x,-1,1,color="blue")
+        g=plot(.5*sin(pi*x),x,-1,1,color="red")
+        h=plot(-1.5*sin(pi*x),x,-1,1,color="green")
+        s=text("$\\frac{1}{2}\\,f$",(.5,.7),color="black",fontsize=16)
+        r=text("$f$",(.5,1.2),color="black",fontsize=16)
+        t=text("$-\\frac{3}{2}\\, f$",(.5,-1.3),color="black",fontsize=16)
+        f+g+h+s+r+t
+        </sageplot> 
+        </image>
+        </figure>
+    </sidebyside>
+</figure>
+
+</statement>
 </example>
 
 </subsection>

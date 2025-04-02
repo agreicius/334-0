@@ -540,7 +540,7 @@
     </p>
   </statement>
 </definition>
-<remark>
+<remark xml:id="rm_tuple_function">
   <title>Tuple versus function</title>
   <p>
     As mentioned above, the introduction of tuple language and notation simply gives us another way of conceptualizing a function <m>f\colon I\rightarrow X</m>: one that let's us think of a function as a sort of sequence. Being able to fluently move between these two conceptions requires a little bit of practice. The following correspondence diagram can help in this regard:
