@@ -233,11 +233,11 @@ In each of the remaining examples below we carefully lay out the details of item
 <title>Space of <m>F</m>-valued tuples indexed by <m>I</m></title>
 <statement>
 <p>
-Let <m>F</m> be a field. Given any set <m>I</m>, we define
+Let <m>F</m> be a field. Given any set <m>I</m>, recall that <m>F^I</m> is defined as the set of all functions <m>f\colon I\rightarrow F</m>, or equivalently, the set of all <m>F</m>-valued tuples indexed by <m>I</m>: <ie/>, 
 <me>
     F^I=\{f\colon I\rightarrow F\colon f \text{ a function}\}=\{(a_i)_{i\in I}\colon a_i\in F\}
-</me>, 
-the set of all functions <m>f\colon I\rightarrow F</m> from <m>I</m> to <m>F</m>, or equivalently, the set of all <m>F</m>-valued tuples indexed by <m>I</m>. The following structure makes <m>F^I</m> a vector space. 
+</me>.
+Below we define a vector space structure on <m>F^I</m>. 
 <ul>
     <li>
         <title>Vector operations</title>
@@ -257,7 +257,7 @@ the set of all functions <m>f\colon I\rightarrow F</m> from <m>I</m> to <m>F</m>
         </p>
     </li>
     <li>
-        <title>Vector inverse</title>
+        <title>Vector inverses</title>
         <p>
             Given an element <m>f=(f(i))_{i\in I}\in F^I</m> its vector inverse <m>-f</m> is defined as 
             <me>
@@ -267,6 +267,7 @@ the set of all functions <m>f\colon I\rightarrow F</m> from <m>I</m> to <m>F</m>
         </p>
     </li>
 </ul>
+We call <m>F^I</m>, together with these vector operations, the <term>space of <m>F</m>-valued tuples indexed by <m>I</m></term>.
 </p>
 </statement>
 </definition>
@@ -301,6 +302,139 @@ the set of all functions <m>f\colon I\rightarrow F</m> from <m>I</m> to <m>F</m>
         as desired. 
     </p>
 </proof>
+<p>
+  Having established this general quite general result, particular choices of the index set <m>I</m> now yield some very common vector spaces. 
+</p>
+<definition xml:id="d_ntuples">
+  <title><m>n</m>-tuples</title>
+  <statement>
+    <p>
+      Let <m>F</m> be a field. Given a positive integer <m>n</m>, recall that <m>F^n</m> is the set of all <m>F</m>-valued <m>n</m>-tuples: <ie/>, 
+      <me>
+        F^n=\{(a_1,a_2,\dots, a_n)\colon a_i\in F\}
+      </me>.
+      Below we define a vector space structure on <m>F^n</m>. 
+      <ul>
+        <li>
+          <title>Vector operations</title>
+          <p>
+            Given <m>v=(a_1,a_2,\dots, a_n), w=(b_1,b_2,\dots, b_n)\in F^n</m> and <m>c\in \F</m>, we define 
+            <md>
+              <mrow>v+w \amp =(a_1+b_1,a_2+b_2,\cdots, a_n+b_n)</mrow>
+              <mrow>cv \amp =(ca_1,ca_2,\dots, ca_n)</mrow>
+            </md>.
+          </p>
+        </li>
+        <li>
+          <title>Zero vector</title>
+          <p>
+            The zero vector of <m>F^n</m> is <m>\boldzero=(0,0,\dots, 0)</m>. 
+          </p>
+        </li>
+        <li>
+          <title>Vector inverses</title>
+          <p>
+            Given a sequence <m>v=(a_1,a_2,\dots, a_n)\in F^n</m>, its vector inverse <m>-v</m> is 
+            <me>
+              -v=(-a_1,-a_2,\dots, -a_n)
+            </me>.
+          </p>
+        </li>
+      </ul>
+    We call <m>F^n</m>, together with these vector operations, the <term>space of <m>F</m>-valued <m>n</m>-tuples</term> (or the <term>space of <m>n</m>-tuples with coordinates in <m>F</m></term>). 
+    </p>
+  </statement>
+</definition>
+
+
+<definition xml:id="d_infinite_sequences_space">
+<title>Space of infinite sequences</title>
+<statement>
+<p>
+  Let <m>F</m> be a field. Recall that <m>F^\infty</m> is the set of all <m>F</m>-valued infinite sequences: <ie/>, 
+  <me>
+    F^\infty=\{(a_i)_{i=1}^\infty\colon a_i\in F \text{ for all } i\in \Z_+\}
+  </me>.
+  Below we define a vector space structure on <m>F^\infty</m>.
+  <ul>
+    <li>
+      <title>Vector operations</title>
+      <p>
+        Given <m>s=(a_i)_{i=1}^\infty, t=(b_i)_{i=1}^\infty\in F^\infty</m> and <m>c\in F</m>, we define 
+        <md>
+          <mrow>s+t\amp=(a_i+b_i)_{i=1}^\infty=(a_1+b_1, a_2+b_2,\dots) </mrow>
+          <mrow>cs \amp =(ca_i)_{i=1}^\infty=(ca_1,ca_2,\dots) </mrow>
+        </md>.
+      </p>
+    </li>
+    <li>
+      <title>Zero vector</title>
+      <p>
+        The zero vector of <m>F^\infty</m> with respect to these operations is 
+        <me>
+          \boldzero=(0)_{i=1}^\infty=(0,0,\dots)
+        </me>.
+      </p>
+    </li>
+    <li>
+      <title>Vector inverses</title>
+      <p>
+        Given a sequence <m>s=(a_i)_{i=1}^\infty\in F^\infty</m>, its vector inverse is 
+        <md>
+          <mrow>-s \amp = (-a_i)_{i=1}^\infty=(-a_1,-a_2,\dots )</mrow>
+        </md>.
+      </p>
+    </li>
+  </ul>
+</p>
+</statement>
+</definition>
+<definition xml:id="d_matrix_space">
+<title>Space of matrices</title>
+<statement>
+<p>
+Let <m>F</m> be a field. Given positive integers <m>m,n\in\Z_+</m>, we define <m>F^{m,n}</m> to be the set of all <m>m\times n</m> matrices with entries in <m>F</m>: <ie/>, 
+<me>
+  F^{m,n}=\{\underset{m\times n}{A}=[a_{ij}]\colon a_{ij}\in F \text{ for all } (i,j)\in \{1,2\dots, m\}\times \{1,2,\dots, n\}\}
+</me>.
+Below we define a vector space structure on <m>F^{m,n}</m>. 
+<ul>
+  <title>Vector operations</title>
+  <li>
+    <p>
+      Given matrices <m>A=[a_{ij}], B=[b_{ij}]\in F^{m,n}</m> and <m>c\in F</m>, we define 
+      <md>
+        <mrow>A+B \amp =[a_{ij}+b_{ij}]</mrow>
+        <mrow>cA \amp =[ca_{ij}]</mrow>
+      </md>.
+    </p>
+  </li>
+  <li>
+    <title>Zero vector</title>
+    <p>
+      The zero vector of <m>F^{m,n}</m> is the the zero matrix 
+      <me>
+        \boldzero=[0]_{\substack{1\leq i\leq m\\ 1\leq j\leq n}}
+      </me>.
+    </p>
+  </li>
+  <li>
+    <title>Vector inverses</title>
+    <p>
+      Given a matrix <m>A=[a_{ij}]\in F^{m,n}</m> its vector inverse is
+      <me>
+        -A=[-a_{ij}]
+      </me>.
+    </p>
+  </li>
+</ul>
+We call <m>F^{m,n}</m>, together with these vector operations, the <term>space of <m>m\times n</m> matrices with entries in <m>F</m></term> (or the <term>space of <m>F</m>-valued <m>m\times n</m> matrices</term>).
+
+</p>
+</statement>
+</definition>
+
+
     </subsection>
 
 </section>

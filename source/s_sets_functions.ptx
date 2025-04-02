@@ -646,7 +646,7 @@ for some <m>a\in \Z</m>. We write <m>f=(x_i)_{i=a}^\infty</m> or <m>f=(x_a,x_{a+
       <mrow> \prod_{i\in I}A_i\amp =\{f\colon I\rightarrow X\colon f(i)\in A_i \text{ for all } i\in I\} </mrow>
       <mrow>  \amp =\{(x_i)_{i\in I}\colon x_i\in A_i \text{ for all } i\in I\}</mrow>
       </md>.
-      In other words, the Cartesian product is the set of all <m>I</m>-tuples with coordinates in <m>X</m> whose <m>i</m>-th coordinate is an element of <m>A_i</m> for all <m>i\in I</m>.
+      In other words, the Cartesian product is the set of all <m>X</m>-valued tuples whose <m>i</m>-th coordinate is an element of <m>A_i</m> for all <m>i\in I</m>.
     </p>
     <p>
      When <m>A_i=A</m> for all <m>i\in I</m>, we denote <m>\prod_{i\in I}A</m> as <m>A^I</m>.
@@ -655,6 +655,7 @@ for some <m>a\in \Z</m>. We write <m>f=(x_i)_{i=a}^\infty</m> or <m>f=(x_a,x_{a+
   Additionally, in the special case where <m>I=\{1,2,\dots, n\}</m> we write 
   <md>
     <mrow>\prod_{i\in \{1,2,\dots, n\}}A_i \amp =A_1\times A_2\times \cdots A_n \amp </mrow>
+    <mrow> \amp = \{(a_1,a_2,\dots, a_n)\colon a_i\in A_i \text{ for all } 1\leq i\leq n\}</mrow>
   </md>
   and 
   <me>
@@ -665,7 +666,8 @@ for some <m>a\in \Z</m>. We write <m>f=(x_i)_{i=a}^\infty</m> or <m>f=(x_a,x_{a+
   <p>
   Lastly, in the special case where <m>I=\Z_{+}=\{1,2,\dots\}</m> we write 
   <md>
-    <mrow>\prod_{i\in \Z_{+}}A_i \amp=A_1\times A_2\times \cdots \amp  </mrow>
+    <mrow>\prod_{i\in \Z_{+}}A_n \amp=A_1\times A_2\times \cdots \amp  </mrow>
+    <mrow> \amp = \{(a_i)_{i=1}^\infty\colon a_i\in A_i \text{ for all } i\in \Z_+\}</mrow>
   </md>
   and 
   <me>
@@ -675,9 +677,6 @@ for some <m>a\in \Z</m>. We write <m>f=(x_i)_{i=a}^\infty</m> or <m>f=(x_a,x_{a+
   </statement>
 </definition>
    
-<p>
-  The notion of a Cartesian product can be generalized to an infinite list of sets <m>A_1, A_2, \dots</m>, and indeed to any collection <m>\{A_i\}_{i\in I}</m> indexed by a set <m>I</m>.
-</p>
 
 </subsection>
 <subsection xml:id="ss_cardinality">
