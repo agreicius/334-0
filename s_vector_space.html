@@ -335,7 +335,25 @@ eBookConfig.enable_chatcodes =  false;
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:xlink="http://www.w3.org/1999/xlink" class="section" id="s_vector_space"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">1.2</span><span class="space"> </span><span class="title">Vector spaces</span>
 </h2>
-<section class="subsection" id="ss_vector_space_def"><h3 class="heading hide-type">
+<section class="introduction" id="s_vector_space-2"><div class="para logical" id="s_vector_space-2-1">
+<div class="para">In the last section we isolated useful number system properties of <span class="process-math">\(\R\)</span> and generalized them in the form of our axiomatic definition of a field (<a href="s_fields.html#d_field" class="xref" data-knowl="./knowl/xref/d_field.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.1.11: Field">Definition 1.1.11</a>). Similarly, in this section we give a similar treatment to the type of vector spaces usually studied in a first course in linear algebra: that is, the space of real <span class="process-math">\(n\)</span>-tuples <span class="process-math">\(\R^n=\{(a_1,a_2,\dots, a_n)\colon a_i\in \R\}\text{.}\)</span> The two operations on <span class="process-math">\(\R^n\)</span> we choose to generalize are its version of <em class="emphasis">vector addition</em>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/d_field.html ./knowl/xref/d_vector_space.html ./knowl/xref/d_vector_space.html" id="s_vector_space-2-1-7">
+\begin{align*}
+\R^n\times \R^n \amp \rightarrow \R^n\\
+((a_1,a_2,\dots, a_n),(b_1,b_2,\dots, b_n))\amp\mapsto (a_1+b_1, a_2+b_2,\dots, a_n+b_n) \text{,}
+\end{align*}
+</div>
+<div class="para">and its version of <em class="emphasis">scalar multiplication</em>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/d_field.html ./knowl/xref/d_vector_space.html ./knowl/xref/d_vector_space.html" id="s_vector_space-2-1-9">
+\begin{align*}
+\R\times \R^n \amp \rightarrow \R^n\\
+(c,(a_1,a_2,\dots, a_n)) \amp\rightarrow (ca_1,ca_2,\dots, ca_n) \text{.}
+\end{align*}
+</div>
+<div class="para">You should think of the axioms of <a href="s_vector_space.html#d_vector_space" class="xref" data-knowl="./knowl/xref/d_vector_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.2.2: Vector space">Definition 1.2.2</a> as an enumeration of precisely which properties of these two operations on <span class="process-math">\(\R^n\)</span> we want a structure to enjoy in order to ensure that we can perform a form of vector arithmetic and algebra just as we do in <span class="process-math">\(\R^n\text{.}\)</span> Note that there is an important <em class="emphasis">qualitative</em> difference between the two vector operations on <span class="process-math">\(\R^n\)</span> that is treated carefully in <a href="s_vector_space.html#d_vector_space" class="xref" data-knowl="./knowl/xref/d_vector_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.2.2: Vector space">Definition 1.2.2</a>; namely, whereas vector addition takes as its input two vectors <span class="process-math">\(v,w\in \R^n\)</span> and returns another, scalar multiplication takes a scalar <span class="process-math">\(c\in \R\)</span> and a vector <span class="process-math">\(v\in \R^n\)</span> and returns another vector. In this sense, scalar multiplication should be thought of as a sort of <em class="emphasis">hybrid</em> operation.</div>
+</div></section><section class="subsection" id="ss_vector_space_def"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Definitions and examples</span>
 </h3>
 <article class="assumption theorem-like" id="fiat_F_field"><h4 class="heading">
@@ -395,7 +413,7 @@ V\times V \amp \rightarrow V \amp F\times V\amp \rightarrow V\\
 </li>
 <li id="d_vector_space-6-1-9-6">
 <span class="heading"><span class="title">Distribution over scalar addition.</span></span><div class="para" id="d_vector_space-6-1-9-6-2">
-<span class="process-math">\((c+d)v=cv+dv\)</span> for all <span class="process-math">\(c\in F\)</span> and <span class="process-math">\(v, w\in V\text{.}\)</span>
+<span class="process-math">\((c+d)v=cv+dv\)</span> for all <span class="process-math">\(c,d\in F\)</span> and <span class="process-math">\(v\in V\text{.}\)</span>
 </div>
 </li>
 <li id="d_vector_space-6-1-9-7">
@@ -413,7 +431,7 @@ V\times V \amp \rightarrow V \amp F\times V\amp \rightarrow V\\
 </div></article><article class="remark remark-like" id="ss_vector_space_def-4"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Arithmetic and existential axioms.</span>
 </h4>
-<div class="para" id="ss_vector_space_def-4-2">As with the axioms in <a href="s_fields.html#d_field" class="xref" data-knowl="./knowl/xref/d_field.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.1.11: Field">Definition 1.1.11</a> we divide the vector space axioms into the <em class="emphasis">arithmetic axioms</em> (Axioms (i)-(ii),(v)-(vi),(vii)) and the <em class="emphasis">existential axioms</em> (Axioms (iii)-(iv)).</div></article><div class="para" id="ss_vector_space_def-5">We now proceed to a litany of examples. Each one will be stated as a definition (for reference purposes) accompanied by a proof that the given structure does indeed constitute a vector space. In a classic mathematical move, we begin with the simplest of all vector spaces, the <em class="emphasis">zero space</em>. Elementary as this example is, it serves well to illustrate the axiomatic nature of <a href="s_vector_space.html#d_vector_space" class="xref" data-knowl="./knowl/xref/d_vector_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.2.2: Vector space">Definition 1.2.2</a>.</div>
+<div class="para" id="ss_vector_space_def-4-2">As with the axioms in <a href="s_fields.html#d_field" class="xref" data-knowl="./knowl/xref/d_field.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.1.11: Field">Definition 1.1.11</a> we divide the vector space axioms into the <em class="emphasis">arithmetic axioms</em> (Axioms (i)-(ii),(v)-(vi),(vii)) and the <em class="emphasis">existential axioms</em> (Axioms (iii)-(iv)).</div></article><div class="para" id="ss_vector_space_def-5">We now proceed to a litany of examples. Each one will be stated as a definition (for reference purposes), but nonetheless requires a proof that the given structure does indeed constitute a vector space. In a classic mathematical move, we begin with the simplest of all vector spaces, the <em class="emphasis">zero space</em>. Elementary as this example is, it serves well to illustrate the axiomatic nature of <a href="s_vector_space.html#d_vector_space" class="xref" data-knowl="./knowl/xref/d_vector_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.2.2: Vector space">Definition 1.2.2</a>.</div>
 <article class="definition definition-like" id="d_zero_space"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Zero space.</span>
 </h4>
@@ -498,7 +516,7 @@ c(v+w)=\bot=cv+dw
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Vector space verification.</span>
 </h4>
 <div class="para" id="ss_vector_space_def-11-2">Think of steps (1)-(3) of <a href="s_vector_space.html#proc_vector_space" class="xref" data-knowl="./knowl/xref/proc_vector_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 1.2.5: Vector space verification">Procedure 1.2.5</a> as the issuing of official declarations about the makeup of our proposed vector space: “The underlying set shall be as stated”; “We declare the vector operations thusly”; “The zero vector shall be this element here, and vector inverses shall be assigned in this manner”. Step (4) is where we get down to the nitty gritty of showing that the proposed vector space structure articulated in (1)-(3) does indeed satisfy all the necessary properties.</div>
-<div class="para" id="ss_vector_space_def-11-3">In each of the remaining examples below we carefully lay out the details of items (1)-(3) while often leaving much of the work of item (4) to you. You will meet these vector spaces frequently throughout the rest of your life. Each time you do, it will be helpful for orientation purposes to mentally run through items (1)-(3). Ask yourself: What is the underlying set? What are vector operations? What acts as the zero vector, and how do I assign vector inverses?</div></article><div class="para" id="ss_vector_space_def-12">Having established this general quite general result, particular choices of the index set <span class="process-math">\(I\)</span> now yield some very common vector spaces.</div>
+<div class="para" id="ss_vector_space_def-11-3">In each of the remaining examples below we carefully lay out the details of items (1)-(3) while often leaving much of the work of item (4) to you. You will meet these vector spaces frequently throughout the rest of your life. Each time you do, it will be helpful for orientation purposes to mentally run through items (1)-(3). Ask yourself: What is the underlying set? What are vector operations? What acts as the zero vector, and how do I assign vector inverses?</div></article><div class="para" id="ss_vector_space_def-12">We now work our way up in complexity, considering first three examples that might already be familiar to you in some form or other. Note that (a) the vector space operations for each of <a href="s_vector_space.html#d_ntuples" class="xref" data-knowl="./knowl/xref/d_ntuples.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.2.7: n-tuples">Definition 1.2.7</a>, <a href="s_vector_space.html#d_infinite_sequences_space" class="xref" data-knowl="./knowl/xref/d_infinite_sequences_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.2.9: Space of infinite sequences">Definition 1.2.9</a>, <a href="s_vector_space.html#d_matrix_space" class="xref" data-knowl="./knowl/xref/d_matrix_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.2.11: Space of matrices">Definition 1.2.11</a> are all very similar in nature (roughly speaking the operations are always defined “component-wise”), and (b) that we postpone the verification of the vector space axioms for these examples until after <a href="s_vector_space.html#d_tuple_space" class="xref" data-knowl="./knowl/xref/d_tuple_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.2.13: Space of F-valued functions/tuples">Definition 1.2.13</a>. This is because each of the vector spaces in <a href="s_vector_space.html#d_ntuples" class="xref" data-knowl="./knowl/xref/d_ntuples.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.2.7: n-tuples">Definition 1.2.7–1.2.11</a> is in fact one particular example of the vastly more general vector space defined in <a href="s_vector_space.html#d_tuple_space" class="xref" data-knowl="./knowl/xref/d_tuple_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.2.13: Space of F-valued functions/tuples">Definition 1.2.13</a>! We will make this clear in the proof of <a href="s_vector_space.html#th_vs_egs" class="xref" data-knowl="./knowl/xref/th_vs_egs.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.2.14: Function/tuple spaces are vector spaces">Theorem 1.2.14</a>.</div>
 <article class="definition definition-like" id="d_ntuples"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.7</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(n\)</span>-tuples.</span>
 </h4>
@@ -539,8 +557,20 @@ cv \amp =(ca_1,ca_2,\dots, ca_n)\text{.}
 </li>
 </ul>
 <div class="para">We call <span class="process-math">\(F^n\text{,}\)</span> together with these vector operations, the <dfn class="terminology">space of <span class="process-math">\(F\)</span>-valued <span class="process-math">\(n\)</span>-tuples</dfn> (or the <dfn class="terminology">space of <span class="process-math">\(n\)</span>-tuples with coordinates in <span class="process-math">\(F\)</span></dfn>).</div>
+</div></article><details id="ss_vector_space_def-14" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="ss_vector_space_def-14-1">The proof that <span class="process-math">\(F^n\)</span> is a vector space with respect to these operations is postponed until <a href="s_vector_space.html#th_vs_egs" class="xref" data-knowl="./knowl/xref/th_vs_egs.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.2.14: Function/tuple spaces are vector spaces">Theorem 1.2.14</a>.</div></article></details><article class="example example-like" id="eg_complex_pairs"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.8</span><span class="period">.</span><span class="space"> </span><span class="title">Complex pairs.</span>
+</h4>
+<div class="para logical" id="eg_complex_pairs-2-1">
+<div class="para">Consider the complex vector space <span class="process-math">\(\C^2=\{(z,w)\colon z,w\in \C\}\text{.}\)</span> Given vectors <span class="process-math">\(v=(1+i, 2i), w=(i, 5)\in \C^2\)</span> and scalar <span class="process-math">\(1-i\in \C\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="eg_complex_pairs-2-1-4">
+\begin{align*}
+v+w \amp = (1+2i, 5+2i)\\
+(1-i)v \amp =((1-i)(1+i),(1-i)2i)\\
+\amp = (2,2+2i)\text{.}
+\end{align*}
+</div>
 </div></article><article class="definition definition-like" id="d_infinite_sequences_space"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.8</span><span class="period">.</span><span class="space"> </span><span class="title">Space of infinite sequences.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.9</span><span class="period">.</span><span class="space"> </span><span class="title">Space of infinite sequences.</span>
 </h4>
 <div class="para logical" id="d_infinite_sequences_space-2-1">
 <div class="para">Let <span class="process-math">\(F\)</span> be a field. Recall that <span class="process-math">\(F^\infty\)</span> is the set of all <span class="process-math">\(F\)</span>-valued infinite sequences: i.e.,</div>
@@ -584,8 +614,21 @@ cs \amp =(ca_i)_{i=1}^\infty=(ca_1,ca_2,\dots) \text{.}
 </div>
 </li>
 </ul>
+<div class="para">We call <span class="process-math">\(F^\infty\text{,}\)</span> together with these vector operations, the <dfn class="terminology">space of infinite sequences with entries in <span class="process-math">\(F\)</span></dfn> (or the <dfn class="terminology">space of <span class="process-math">\(F\)</span>-valued infinite sequences</dfn>).</div>
+</div></article><details id="ss_vector_space_def-17" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="ss_vector_space_def-17-1">The proof that <span class="process-math">\(F^n\)</span> is a vector space with respect to these operations is postponed until <a href="s_vector_space.html#th_vs_egs" class="xref" data-knowl="./knowl/xref/th_vs_egs.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.2.14: Function/tuple spaces are vector spaces">Theorem 1.2.14</a>.</div></article></details><article class="example example-like" id="eg_complex_seqs"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.10</span><span class="period">.</span><span class="space"> </span><span class="title">Complex infinite sequences.</span>
+</h4>
+<div class="para logical" id="eg_complex_seqs-2-1">
+<div class="para">Consider the complex vector space <span class="process-math">\(\C^\infty\)</span> of all infinite sequences with complex entries. Given sequences <span class="process-math">\(s=(0,1,0,1,0,\dots)\)</span> and <span class="process-math">\(t=(i,i,i,\dots) \text{,}\)</span> and scalar <span class="process-math">\(i\in \C\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="eg_complex_seqs-2-1-5">
+\begin{align*}
+s+t \amp =(i,i+1,i,i+1,i,\dots)\\
+it \amp =(i^2,i^2,\dots)\\
+\amp =(-1,-1,\dots )\text{.}
+\end{align*}
+</div>
 </div></article><article class="definition definition-like" id="d_matrix_space"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.9</span><span class="period">.</span><span class="space"> </span><span class="title">Space of matrices.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.11</span><span class="period">.</span><span class="space"> </span><span class="title">Space of matrices.</span>
 </h4>
 <div class="para logical" id="d_matrix_space-2-1">
 <div class="para">Let <span class="process-math">\(F\)</span> be a field. Given positive integers <span class="process-math">\(m,n\in\Z_+\text{,}\)</span> we define <span class="process-math">\(F^{m,n}\)</span> to be the set of all <span class="process-math">\(m\times n\)</span> matrices with entries in <span class="process-math">\(F\text{:}\)</span> i.e.,</div>
@@ -630,24 +673,48 @@ cA \amp =[ca_{ij}]\text{.}
 </li>
 </ul>
 <div class="para">We call <span class="process-math">\(F^{m,n}\text{,}\)</span> together with these vector operations, the <dfn class="terminology">space of <span class="process-math">\(m\times n\)</span> matrices with entries in <span class="process-math">\(F\)</span></dfn> (or the <dfn class="terminology">space of <span class="process-math">\(F\)</span>-valued <span class="process-math">\(m\times n\)</span> matrices</dfn>).</div>
-</div></article><div class="para" id="ss_vector_space_def-16">Our next example, dealing as it does with tuples, represents a significant uptick in complexity and abstraction. This cost in abstraction ends up delivering a substantial payoff, however, as the more familiar examples that follow it can be seen as special cases. Recall that an <span class="process-math">\(F\)</span>-valued tuple indexed by <span class="process-math">\(I\)</span> is nothing more than a function <span class="process-math">\(f\colon I\rightarrow F\)</span> that we conceptualize as a sequence of sorts using the notation <span class="process-math">\(f=(f(i))_{i\in I}\text{.}\)</span> See <a href="s_sets_functions.html#ss_tuples_cart_prod" class="internal" title="Subsection: Tuples and Cartesian product">Tuples and Cartesian product</a> for details about tuples.</div>
+</div></article><details id="ss_vector_space_def-20" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="ss_vector_space_def-20-1">The proof that <span class="process-math">\(F^n\)</span> is a vector space with respect to these operations is postponed until <a href="s_vector_space.html#th_vs_egs" class="xref" data-knowl="./knowl/xref/th_vs_egs.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.2.14: Function/tuple spaces are vector spaces">Theorem 1.2.14</a>.</div></article></details><article class="example example-like" id="eg_complex_matrices"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.12</span><span class="period">.</span><span class="space"> </span><span class="title">Complex matrices.</span>
+</h4>
+<div class="para logical" id="eg_complex_matrices-2-1">
+<div class="para">Consider the vector space <span class="process-math">\(\C^{2,2}\)</span> of all <span class="process-math">\(2\times 2\)</span> matrices with complex entries. Given matrices</div>
+<div class="displaymath process-math" id="eg_complex_matrices-2-1-3">
+\begin{align*}
+A \amp = \begin{bmatrix}2i\amp 1+i \\ 0 \amp 3\end{bmatrix} \\
+B \amp = \begin{bmatrix}-3-i\amp 2 \\ i \amp 4+4i\end{bmatrix} 
+\end{align*}
+</div>
+<div class="para">and scalar <span class="process-math">\(1+i\in \C\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="eg_complex_matrices-2-1-5">
+\begin{align*}
+A+B\amp = \begin{bmatrix}-3-i\amp 3+i \\ i \amp 7+4i\end{bmatrix} \\
+(1+i)A \amp = \begin{bmatrix}-2+2i\amp 2i \\ 0 \amp 3+3i\end{bmatrix} \text{.}
+\end{align*}
+</div>
+</div></article><div class="para" id="ss_vector_space_def-22">As promised, the vector space <span class="process-math">\(F^I\)</span> defined in <a href="s_vector_space.html#d_tuple_space" class="xref" data-knowl="./knowl/xref/d_tuple_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.2.13: Space of F-valued functions/tuples">Definition 1.2.13</a> generalizes each of the vector spaces defined in <a href="s_vector_space.html#d_ntuples" class="xref" data-knowl="./knowl/xref/d_ntuples.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.2.7: n-tuples">Definition 1.2.7</a>, <a href="s_vector_space.html#d_infinite_sequences_space" class="xref" data-knowl="./knowl/xref/d_infinite_sequences_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.2.9: Space of infinite sequences">Definition 1.2.9</a>, <a href="s_vector_space.html#d_matrix_space" class="xref" data-knowl="./knowl/xref/d_matrix_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.2.11: Space of matrices">Definition 1.2.11</a>.  The objects of the vector space <span class="process-math">\(F^I\)</span> can be thought of either as functions <span class="process-math">\(f\colon I\rightarrow F\)</span> from the set <span class="process-math">\(I\)</span> to the field <span class="process-math">\(F\text{,}\)</span> or equivalently, as <span class="process-math">\(F\)</span>-valued tuples <span class="process-math">\((a_i)_{i\in I}\)</span> indexed by <span class="process-math">\(I\text{.}\)</span> Hence the “functions/tuples” in its name. Depending on the context, one of these two equivalent conceptions (function or tuple) may be more convenient than the other. For example, to make the connection between <span class="process-math">\(F^I\text{,}\)</span> <span class="process-math">\(F^n\text{,}\)</span> <span class="process-math">\(F^\infty\text{,}\)</span> and <span class="process-math">\(F^{m,n}\text{,}\)</span> it is most convenient to think in terms of tuples. See <a href="s_sets_functions.html#d_Ituple" class="xref" data-knowl="./knowl/xref/d_Ituple.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 0.1.24: Tuple">Definition 0.1.24</a> for the general definition of tuples and <a href="s_sets_functions.html#rm_tuple_function" class="xref" data-knowl="./knowl/xref/rm_tuple_function.html" data-reveal-label="Reveal" data-close-label="Close" title="Remark 0.1.25: Tuple versus function">Remark 0.1.25</a> for an explication of the equivalence between functions and tuples.</div>
 <article class="definition definition-like" id="d_tuple_space"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.10</span><span class="period">.</span><span class="space"> </span><span class="title">Space of <span class="process-math">\(F\)</span>-valued functions/tuples.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.13</span><span class="period">.</span><span class="space"> </span><span class="title">Space of <span class="process-math">\(F\)</span>-valued functions/tuples.</span>
 </h4>
 <div class="para logical" id="d_tuple_space-2-1">
-<div class="para">Let <span class="process-math">\(F\)</span> be a field. Given any set <span class="process-math">\(I\text{,}\)</span> recall that <span class="process-math">\(F^I\)</span> is defined as the set of all functions <span class="process-math">\(f\colon I\rightarrow F\text{,}\)</span> or equivalently, the set of all <span class="process-math">\(F\)</span>-valued tuples indexed by <span class="process-math">\(I\text{:}\)</span> i.e.,</div>
+<div class="para">Let <span class="process-math">\(F\)</span> be a field. Given any set <span class="process-math">\(I\text{,}\)</span> recall that <span class="process-math">\(F^I\)</span> is defined as the set of all functions <span class="process-math">\(f\colon I\rightarrow F\text{:}\)</span> i.e.</div>
 <div class="displaymath process-math">
 \begin{equation*}
-F^I=\{f\colon I\rightarrow F\colon f \text{ a function}\}=\{(a_i)_{i\in I}\colon a_i\in F\}\text{.}
+F^I=\{f\colon I\rightarrow F\}\text{.}
+\end{equation*}
+</div>
+<div class="para">Equivalently, thinking of functions as tuples, we can describe <span class="process-math">\(F^I\)</span> as the set of all <span class="process-math">\(F\)</span>-valued tuples indexed by <span class="process-math">\(I\text{:}\)</span> i.e.,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F^I=\{(a_i)_{i\in I}\colon a_i\in F\}\text{.}
 \end{equation*}
 </div>
 <div class="para">Below we define a vector space structure on <span class="process-math">\(F^I\text{.}\)</span>
 </div>
-<ul class="disc" id="d_tuple_space-2-1-10">
-<li id="d_tuple_space-2-1-10-1">
-<span class="heading"><span class="title">Vector operations.</span></span><div class="para logical" id="d_tuple_space-2-1-10-1-2">
+<ul class="disc" id="d_tuple_space-2-1-13">
+<li id="d_tuple_space-2-1-13-1">
+<span class="heading"><span class="title">Vector operations.</span></span><div class="para logical" id="d_tuple_space-2-1-13-1-2">
 <div class="para">Given elements <span class="process-math">\(f=(f(i))_{i\in I}, g=(g(i))_{i\in I}\in F^I\)</span> and scalar <span class="process-math">\(c\in F\text{,}\)</span> we define</div>
-<div class="displaymath process-math" id="d_tuple_space-2-1-10-1-2-3">
+<div class="displaymath process-math" id="d_tuple_space-2-1-13-1-2-3">
 \begin{align*}
 f+g \amp = (f(i)+g(i))_{i\in I}\\
 cf \amp =(cf(i))_{i\in I}\text{.}
@@ -657,12 +724,12 @@ cf \amp =(cf(i))_{i\in I}\text{.}
 </div>
 </div>
 </li>
-<li id="d_tuple_space-2-1-10-2">
-<span class="heading"><span class="title">Zero vector.</span></span><div class="para" id="d_tuple_space-2-1-10-2-2">The zero vector of <span class="process-math">\(F^I\)</span> is the zero function <span class="process-math">\(0_I\colon I\rightarrow F\)</span> defined as <span class="process-math">\(0_I(i)=0\)</span> for all <span class="process-math">\(i\in I\text{.}\)</span> In other words, using tuple notation, we have <span class="process-math">\(\boldzero=0_I=(0)_{i\in I}\text{.}\)</span>
+<li id="d_tuple_space-2-1-13-2">
+<span class="heading"><span class="title">Zero vector.</span></span><div class="para" id="d_tuple_space-2-1-13-2-2">The zero vector of <span class="process-math">\(F^I\)</span> is the zero function <span class="process-math">\(0_I\colon I\rightarrow F\)</span> defined as <span class="process-math">\(0_I(i)=0\)</span> for all <span class="process-math">\(i\in I\text{.}\)</span> In other words, using tuple notation, we have <span class="process-math">\(\boldzero=0_I=(0)_{i\in I}\text{.}\)</span>
 </div>
 </li>
-<li id="d_tuple_space-2-1-10-3">
-<span class="heading"><span class="title">Vector inverses.</span></span><div class="para logical" id="d_tuple_space-2-1-10-3-2">
+<li id="d_tuple_space-2-1-13-3">
+<span class="heading"><span class="title">Vector inverses.</span></span><div class="para logical" id="d_tuple_space-2-1-13-3-2">
 <div class="para">Given an element <span class="process-math">\(f=(f(i))_{i\in I}\in F^I\)</span> its vector inverse <span class="process-math">\(-f\)</span> is defined as</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -674,11 +741,21 @@ cf \amp =(cf(i))_{i\in I}\text{.}
 </div>
 </li>
 </ul>
-<div class="para">We call <span class="process-math">\(F^I\text{,}\)</span> together with these vector operations, the <dfn class="terminology">space of <span class="process-math">\(F\)</span>-valued tuples indexed by <span class="process-math">\(I\)</span></dfn>.</div>
+<div class="para">We call <span class="process-math">\(F^I\text{,}\)</span> together with these vector operations, the <dfn class="terminology">space of functions from <span class="process-math">\(I\)</span> to <span class="process-math">\(F\)</span></dfn>, or, thinking in terms of tuples, the <dfn class="terminology">space of <span class="process-math">\(F\)</span>-valued tuples indexed by <span class="process-math">\(I\)</span></dfn>.</div>
 </div></article><article class="theorem theorem-like" id="th_vs_egs"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.2.11</span><span class="period">.</span><span class="space"> </span><span class="title">Function spaces are vector spaces.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.2.14</span><span class="period">.</span><span class="space"> </span><span class="title">Function/tuple spaces are vector spaces.</span>
 </h4>
-<div class="para" id="th_vs_egs-2-1">Each set and accompanying vector operations in <a href="s_vector_space.html#d_ntuples" class="xref" data-knowl="./knowl/xref/d_ntuples.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.2.7: n-tuples">Definition 1.2.7–1.2.10</a> forms a vector space.</div></article><details id="th_vs_egs-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_vs_egs-3-1">We follow <a href="s_vector_space.html#proc_vector_space" class="xref" data-knowl="./knowl/xref/proc_vector_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 1.2.5: Vector space verification">Procedure 1.2.5</a>. The definition has taken care of steps (1)-(3) for us, it remains to show that the vector space axioms are satisfied. As you will see, the tuple notation for functions makes these proofs quite straightforward consequences of the field axioms satisfied by <span class="process-math">\(F\text{.}\)</span>
+<div class="para" id="th_vs_egs-2-1">Each of the sets <span class="process-math">\(F^n\text{,}\)</span> <span class="process-math">\(F^\infty\text{,}\)</span> <span class="process-math">\(F^{m,n}\text{,}\)</span> <span class="process-math">\(F^I\text{,}\)</span> together with the accompanying vector operations defined above, is a vector space.</div></article><details id="th_vs_egs-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_vs_egs-3-1">
+<div class="para">First we observe, thinking in terms of tuples, that each of the sets <span class="process-math">\(F^{n}\text{,}\)</span> <span class="process-math">\(F^\infty\text{,}\)</span> <span class="process-math">\(F^{m,n}\text{,}\)</span> along with their accompanying vector space operations, is a specific example of <span class="process-math">\(F^I\)</span> together with its vector operations. This is seen by choosing an appropriate index set <span class="process-math">\(I\)</span> in each case. In more detail, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_vector_space.html ./knowl/xref/d_tuple_space.html" id="th_vs_egs-3-1-6">
+\begin{align*}
+F^n\amp= F^I, \text{ where } I=\{1,2,\dots, n\} \\
+F^\infty\amp= F^I, \text{ where } I=\Z_+=\{1,2,3,\dots\} \\
+F^{m,n}\amp= F^I, \text{ where } I=\{(i,j)\colon 1\leq i\leq m, 1\leq j\leq n\} \text{.}
+\end{align*}
+</div>
+<div class="para">Thus it suffices to show that <span class="process-math">\(F^I\)</span> is a vector space with respect to the given vector operations. To do this, we follow <a href="s_vector_space.html#proc_vector_space" class="xref" data-knowl="./knowl/xref/proc_vector_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 1.2.5: Vector space verification">Procedure 1.2.5</a>. Since <a href="s_vector_space.html#d_tuple_space" class="xref" data-knowl="./knowl/xref/d_tuple_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.2.13: Space of F-valued functions/tuples">Definition 1.2.13</a> has already taken care of steps (1)-(3) for us, it remains to show that the vector space axioms are satisfied. As you will see, the tuple notation for functions makes these proofs quite straightforward consequences of the field axioms satisfied by <span class="process-math">\(F\text{.}\)</span>
+</div>
 </div>
 <div class="para logical" id="th_vs_egs-3-2">
 <div class="para">Consider the arithmetic axioms first. We will verify that Axioms (i), (ii), and (v) are satisfied. Given <span class="process-math">\(f=(f(i))_{i\in I},g=(g(i))_{i\in I},h=(h(i))_{i\in I}\in F^I\)</span> and <span class="process-math">\(c\in F\text{,}\)</span> we have</div>
@@ -687,11 +764,13 @@ cf \amp =(cf(i))_{i\in I}\text{.}
 f+g \amp = (f(i)+g(i))_{i\in I} \amp (\text{def. vec. add.}) \\
 \amp = (g(i)+f(i))_{i\in I} \amp (\text{field prop.})\\
 \amp = g+f \amp (\text{def. vec. add.})\\
+\amp \\
 f+(g+h) \amp = (f(i)+(g+h)(i))_{i\in I} \amp (\text{def. vec. add.})\\
 \amp = (f(i)+(g(i)+h(i)))_{i\in I} \amp (\text{def. vec. add.})\\
 \amp = ((f(i)+g(i))+h(i))_{i\in I} \amp (\text{field prop.})\\
 \amp = ((f+g)(i)+h(i))_{i\in I} \amp  (\text{def. vec. add.})\\
 \amp = (f+g)+h \amp  (\text{def. vec. add.})\\
+\amp \\
 c(f+g) \amp =(c(f+g)(i))_{i\in I} \amp (\text{def. scal. mult})\\
 \amp = (c(f(i)+g(i)))_{i\in I} \amp (\text{def. vec. add.})\\
 \amp = (cf(i)+cg(i))_{i\in I} \amp (\text{field prop.})\\
@@ -710,15 +789,19 @@ c(f+g) \amp =(c(f+g)(i))_{i\in I} \amp (\text{def. scal. mult})\\
 </div>
 <div class="para">as desired.</div>
 </div></article></details><article class="example example-like" id="eg_real_functions"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.12</span><span class="period">.</span><span class="space"> </span><span class="title">Real-valued functions.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.15</span><span class="period">.</span><span class="space"> </span><span class="title">Real-valued functions.</span>
 </h4>
-<div class="para" id="eg_real_functions-2-1">Let <span class="process-math">\(I=[a,b]\subseteq \R \)</span> be an interval in the real lines. Using the function interpretation <span class="process-math">\(\R^{[a,b]}\)</span> is the set of all functions of the form <span class="process-math">\(f\colon [a,b]\rightarrow \R\text{.}\)</span> The vector operations defined in <a href="s_vector_space.html#d_tuple_space" class="xref" data-knowl="./knowl/xref/d_tuple_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.2.10: Space of F-valued functions/tuples">Definition 1.2.10</a> in this setting correspond to the function-arithmetic operations you met in precalculus and calculus: i.e., given functions <span class="process-math">\(f,g\in \R^{[a,b]}\text{,}\)</span> their vector sum <span class="process-math">\(f+g\)</span> is the function defined as <span class="process-math">\((f+g)(x)=f(x)+g(x)\)</span> for all <span class="process-math">\(x\in [a,b]\text{.}\)</span> Similarly, given a scalar <span class="process-math">\(c\in \R\)</span> and function <span class="process-math">\(f\in \R^{[a,b]}\text{,}\)</span> the vector scalar multiple <span class="process-math">\(cf\)</span> is the function defined as <span class="process-math">\((cf)(x)=cf(x)\)</span> for all <span class="process-math">\(x\in \R\text{.}\)</span>
-</div>
-<div class="solutions"><details id="eg_real_functions-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_real_functions-3-1"></div></div></details></div></article></section><section class="subsection" id=""><h3 class="heading hide-type">
+<div class="para" id="eg_real_functions-2-1">Let <span class="process-math">\(I=[a,b]\subseteq \R \)</span> be an interval in the real line. Using the function interpretation of <span class="process-math">\(F^I\text{,}\)</span> <span class="process-math">\(\R^{[a,b]}\)</span> is the set of all functions of the form <span class="process-math">\(f\colon [a,b]\rightarrow \R\text{.}\)</span> The vector operations defined in <a href="s_vector_space.html#d_tuple_space" class="xref" data-knowl="./knowl/xref/d_tuple_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.2.13: Space of F-valued functions/tuples">Definition 1.2.13</a> in this setting correspond to the function-arithmetic operations you met in precalculus and calculus: i.e., given functions <span class="process-math">\(f,g\in \R^{[a,b]}\text{,}\)</span> their vector sum <span class="process-math">\(f+g\)</span> is the function defined as <span class="process-math">\((f+g)(x)=f(x)+g(x)\)</span> for all <span class="process-math">\(x\in [a,b]\text{.}\)</span> Similarly, given a scalar <span class="process-math">\(c\in \R\)</span> and function <span class="process-math">\(f\in \R^{[a,b]}\text{,}\)</span> the vector scalar multiple <span class="process-math">\(cf\)</span> is the function defined as <span class="process-math">\((cf)(x)=cf(x)\)</span> for all <span class="process-math">\(x\in \R\text{.}\)</span>
+</div> <div class="para" id="eg_real_functions-2-2">In this context it is possible to visualize our vector operations in terms of the graphs of the functions on the interval <span class="process-math">\([a,b]\text{.}\)</span>
+</div> <figure class="figure figure-like" id="fig_func_arith"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:50%;"><figure class="figure figure-like" id="fig_func_add"><img src="generated/sageplot/fig_func_add-2.svg" role="img" class="contained" alt="Visualizing function addition"><figcaption><span class="codenumber">(a)</span><span class="space"> </span>Visualizing <span class="process-math">\(f+g\)</span></figcaption></figure></div>
+<div class="sbspanel top" style="width:50%;"><figure class="figure figure-like" id="fig_func_scale"><img src="generated/sageplot/fig_func_scale-2.svg" role="img" class="contained" alt="Visualizing function scalar multiplication"><figcaption><span class="codenumber">(b)</span><span class="space"> </span>Visualizing <span class="process-math">\(cf\)</span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.2.16<span class="period">.</span></span><span class="space"> </span>Visualizing function arithmetic in <span class="process-math">\(\R^{[-1,1]}\)</span></figcaption></figure></article></section><section class="subsection" id=""><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Vector space properties</span>
 </h3>
 <article class="theorem theorem-like" id="th_zero_inv_unique"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.2.13</span><span class="period">.</span><span class="space"> </span><span class="title">Uniqueness of zero vector and inverses.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.2.17</span><span class="period">.</span><span class="space"> </span><span class="title">Uniqueness of zero vector and inverses.</span>
 </h4>
 <div class="para logical" id="th_zero_inv_unique-2-1">
 <div class="para">Let <span class="process-math">\(V\)</span> be an <span class="process-math">\(F\)</span>-vector space.</div>
@@ -727,7 +810,7 @@ c(f+g) \amp =(c(f+g)(i))_{i\in I} \amp (\text{def. scal. mult})\\
 <li id="th_zero_inv_unique-2-1-3-2"><div class="para" id="th_zero_inv_unique-2-1-3-2-1">Inverse vectors are unique: i.e., for all <span class="process-math">\(\boldv\in V\)</span> there is one and only one vector <span class="process-math">\(-\boldv\)</span> satisfying <a href="s_vector_space.html#eq_vec_inv" class="xref" data-knowl="./knowl/xref/eq_vec_inv.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.4">(1.4)</a>.</div></li>
 </ol>
 </div></article><details id="th_zero_inv_unique-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_zero_inv_unique-3-1"></div></article></details><article class="theorem theorem-like" id="th_vs_props"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.2.14</span><span class="period">.</span><span class="space"> </span><span class="title">Vector space properties.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.2.18</span><span class="period">.</span><span class="space"> </span><span class="title">Vector space properties.</span>
 </h4>
 <div class="para logical" id="th_vs_props-2-1">
 <div class="para">Let <span class="process-math">\(V\)</span> be an <span class="process-math">\(F\)</span>-vector space.</div>
