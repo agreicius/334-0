@@ -324,8 +324,9 @@ Let <m>F</m> be a field. Given positive integers <m>m,n\in\Z_+</m>, we define <m
 </me>.
 Below we define a vector space structure on <m>F^{m,n}</m>. 
 <ul>
-  <title>Vector operations</title>
+  
   <li>
+    <title>Vector operations</title>
     <p>
       Given matrices <m>A=[a_{ij}], B=[b_{ij}]\in F^{m,n}</m> and <m>c\in F</m>, we define 
       <md>
@@ -448,7 +449,7 @@ Each set and accompanying vector operations in <xref first="d_ntuples" last="d_t
 <title>Real-valued functions</title>
 <statement>
 <p>
-Let <m>I=[a,b]\subseteq \R </m> be an interval in the real lines. Using the function interpretation <m>\R^{[a,b]</m> is the set of all functions of the form <m>f\colon [a,b]\rightarrow \R</m>. The vector operations defined in <xref ref="d_tuple_space"/> in this setting correspond to the function-arithmetic operations you met in precalculus and calculus: <ie/>, given functions <m>f,g\in \R^{[a,b]}</m>, their vector sum <m>f+g</m> is the function defined as 
+Let <m>I=[a,b]\subseteq \R </m> be an interval in the real lines. Using the function interpretation <m>\R^{[a,b]}</m> is the set of all functions of the form <m>f\colon [a,b]\rightarrow \R</m>. The vector operations defined in <xref ref="d_tuple_space"/> in this setting correspond to the function-arithmetic operations you met in precalculus and calculus: <ie/>, given functions <m>f,g\in \R^{[a,b]}</m>, their vector sum <m>f+g</m> is the function defined as 
 <m>(f+g)(x)=f(x)+g(x)</m> for all <m>x\in [a,b]</m>. Similarly, given a scalar <m>c\in \R</m> and function <m>f\in \R^{[a,b]}</m>, the vector scalar multiple <m>cf</m> is the function defined as <m>(cf)(x)=cf(x)</m> for all <m>x\in \R</m>. 
 </p>
 </statement>
