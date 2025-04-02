@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.2.11</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Function spaces are vector spaces.</span>
+</h4>
+<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">Each set and accompanying vector operations in <a href="s_vector_space.html#d_ntuples" class="xref" data-knowl="./knowl/xref/d_ntuples.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.2.7: n-tuples">Definition 1.2.7–1.2.10</a> forms a vector space.</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">We follow <a href="s_vector_space.html#proc_vector_space" class="xref" data-knowl="./knowl/xref/proc_vector_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 1.2.5: Vector space verification">Procedure 1.2.5</a>. The definition has taken care of steps (1)-(3) for us, it remains to show that the vector space axioms are satisfied. As you will see, the tuple notation for functions makes these proofs quite straightforward consequences of the field axioms satisfied by <span class="process-math">\(F\text{.}\)</span>
+</div>
+<div class="para logical">
+<div class="para">Consider the arithmetic axioms first. We will verify that Axioms (i), (ii), and (v) are satisfied. Given <span class="process-math">\(f=(f(i))_{i\in I},g=(g(i))_{i\in I},h=(h(i))_{i\in I}\in F^I\)</span> and <span class="process-math">\(c\in F\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+f+g \amp = (f(i)+g(i))_{i\in I} \amp (\text{def. vec. add.}) \\
+\amp = (g(i)+f(i))_{i\in I} \amp (\text{field prop.})\\
+\amp = g+f \amp (\text{def. vec. add.})\\
+f+(g+h) \amp = (f(i)+(g+h)(i))_{i\in I} \amp (\text{def. vec. add.})\\
+\amp = (f(i)+(g(i)+h(i)))_{i\in I} \amp (\text{def. vec. add.})\\
+\amp = ((f(i)+g(i))+h(i))_{i\in I} \amp (\text{field prop.})\\
+\amp = ((f+g)(i)+h(i))_{i\in I} \amp  (\text{def. vec. add.})\\
+\amp = (f+g)+h \amp  (\text{def. vec. add.})\\
+c(f+g) \amp =(c(f+g)(i))_{i\in I} \amp (\text{def. scal. mult})\\
+\amp = (c(f(i)+g(i)))_{i\in I} \amp (\text{def. vec. add.})\\
+\amp = (cf(i)+cg(i))_{i\in I} \amp (\text{field prop.})\\
+\amp =((cf)(i)+(cg)(i))_{i\in I} \amp (\text{def. scal. mult})\\
+\amp = cf+cg \amp (\text{def. vec. add.})\text{.}
+\end{align*}
+</div>
+<div class="para">Lastly we will show that <span class="process-math">\(0_I\)</span> does indeed satisfy the additive identity axiom (Axiom (iii)), leaving the verification of Axiom (iv) to the reader. Given any element <span class="process-math">\(f=(f(i))_{i\in I}\in F^I\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+0_I+f \amp =(0_I(i)+f(i))_{i\in I} \amp (\text{def. vec. add.})\\
+\amp = (0+f(i))_{i\in I}\amp (\text{def. of } 0_I)\\
+\amp = (f(i))_{i\in I} \amp (\text{field prop.})\\
+\amp = f\text{,}
+\end{align*}
+</div>
+<div class="para">as desired.</div>
+</div></article></details><span class="incontext"><a class="internal" href="s_vector_space.html#th_vs_egs">in-context</a></span>
+</body>
+</html>

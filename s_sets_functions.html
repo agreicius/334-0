@@ -314,7 +314,10 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_vector_space.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Vector spaces</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_vector_space.html#ss_vector_space_def" class="internal"><span class="title">Definitions and examples</span></a></div></li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_vector_space.html#ss_vector_space_def" class="internal"><span class="title">Definitions and examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_vector_space.html#" class="internal"><span class="title">Vector space properties</span></a></div></li>
+</ul>
 </li>
 </ul>
 </li>
@@ -705,14 +708,15 @@ f\colon I\rightarrow \mathcal{P}(X)
 \amp =\{(x_i)_{i\in I}\colon x_i\in A_i \text{ for all } i\in I\}\text{.}
 \end{align*}
 </div>
-<div class="para">In other words, the Cartesian product is the set of all <span class="process-math">\(I\)</span>-tuples with coordinates in <span class="process-math">\(X\)</span> whose <span class="process-math">\(i\)</span>-th coordinate is an element of <span class="process-math">\(A_i\)</span> for all <span class="process-math">\(i\in I\text{.}\)</span>
+<div class="para">In other words, the Cartesian product is the set of all <span class="process-math">\(X\)</span>-valued tuples whose <span class="process-math">\(i\)</span>-th coordinate is an element of <span class="process-math">\(A_i\)</span> for all <span class="process-math">\(i\in I\text{.}\)</span>
 </div>
 </div> <div class="para" id="d_cartesian_product_arbitrary-6-2">When <span class="process-math">\(A_i=A\)</span> for all <span class="process-math">\(i\in I\text{,}\)</span> we denote <span class="process-math">\(\prod_{i\in I}A\)</span> as <span class="process-math">\(A^I\text{.}\)</span>
 </div> <div class="para logical" id="d_cartesian_product_arbitrary-6-3">
 <div class="para">Additionally, in the special case where <span class="process-math">\(I=\{1,2,\dots, n\}\)</span> we write</div>
 <div class="displaymath process-math" id="d_cartesian_product_arbitrary-6-3-2">
 \begin{align*}
-\prod_{i\in \{1,2,\dots, n\}}A_i \amp =A_1\times A_2\times \cdots A_n \amp 
+\prod_{i\in \{1,2,\dots, n\}}A_i \amp =A_1\times A_2\times \cdots A_n \amp \\
+\amp = \{(a_1,a_2,\dots, a_n)\colon a_i\in A_i \text{ for all } 1\leq i\leq n\}
 \end{align*}
 </div>
 <div class="para">and</div>
@@ -726,7 +730,8 @@ A^{\{1,2,\dots, n\}}=A^n\text{,}
 <div class="para">Lastly, in the special case where <span class="process-math">\(I=\Z_{+}=\{1,2,\dots\}\)</span> we write</div>
 <div class="displaymath process-math" id="d_cartesian_product_arbitrary-6-4-2">
 \begin{align*}
-\prod_{i\in \Z_{+}}A_i \amp=A_1\times A_2\times \cdots \amp  
+\prod_{i\in \Z_{+}}A_n \amp=A_1\times A_2\times \cdots \amp  \\
+\amp = \{(a_i)_{i=1}^\infty\colon a_i\in A_i \text{ for all } i\in \Z_+\}
 \end{align*}
 </div>
 <div class="para">and</div>
@@ -735,8 +740,7 @@ A^{\{1,2,\dots, n\}}=A^n\text{,}
 A^{\Z_+}=A^\infty\text{.}
 \end{equation*}
 </div>
-</div></article><div class="para" id="ss_tuples_cart_prod-13">The notion of a Cartesian product can be generalized to an infinite list of sets <span class="process-math">\(A_1, A_2, \dots\text{,}\)</span> and indeed to any collection <span class="process-math">\(\{A_i\}_{i\in I}\)</span> indexed by a set <span class="process-math">\(I\text{.}\)</span>
-</div></section><section class="subsection" id="ss_cardinality"><h3 class="heading hide-type">
+</div></article></section><section class="subsection" id="ss_cardinality"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Cardinality and countability</span>
 </h3>
 <article class="definition definition-like" id="d_cardinality"><h4 class="heading">
