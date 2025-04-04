@@ -1000,6 +1000,132 @@ var ptx_lunr_docs = [
   "body": " Vector space properties   Let be an -vector space.   For all , we have .    For all , we have .    For all , we have .    For all and , if , then or .          "
 },
 {
+  "id": "s_subspace",
+  "level": "1",
+  "url": "s_subspace.html",
+  "type": "Section",
+  "number": "1.3",
+  "title": "Subspaces",
+  "body": " Subspaces   In this section we will study subspaces , which are special subsets of vector spaces that respect the defining structure of a vector spaces: namely, the two vector operations. makes precise what we mean here by respect .  Subspaces arise naturally in any setting where vector spaces are at play, and are closely connected to solutions to linear systems. As we will see in , subspaces of vector spaces are vector spaces in their own right, furnishing us with yet more interesting examples of vector spaces.    Definition and examples   Subspace   Let be a vector space. A subset is a subspace of if the following conditions hold.   contains the zero vector   .    is closed under addition  For all , if , then . Using logical shorthand: .    is closed under scalar multiplication  For all and , if , then . Using logical shorthand: .         Let and let . Prove that is a subspace.    We must show properties (i)-(iii) hold for .   The zero element of is , which is certainly of the form . Thus .    We must prove the implication . .    We must prove the implication , for any . We have          Let and let . Is a vector space? Decide which of the of properties (i)-(iii) in (if any) are satisfied by .       Clearly .    Suppose . Then , in which case , and hence . Thus is closed under addition.    The set is not closed under scalar multiplication. Indeed, let . Then .       As we now endeavor to show, if is a subspace of a vector space , then it inherits a vector space structure from by simply restricting the vector operations defined on to the subset .   Subspaces are vector spaces   Let be a subspace of the vector space .   The vector operations of restrict to operations on that satisfy the vector space axioms.    The zero vector of , considered as a vector space, is the zero vector of .    Given an element , its vector inverse with respect to the vector space structure of is equal to its vector inverse with respect to the vector space structure of .       It is important to understand how Axioms of come into play here. Without them we would not be able to say that restricting the vector operations of to elements of actually gives rise to well-defined operations on . To be well-defined the operations must output elements that lie not just in , but in itself. This is precisely what being closed under addition and scalar multiplication guarantees. In more detail, since for all (Axiom (ii)), the vector addition on gives rise by restriction to a well-defined operation on ; similarly, since for all and , the scalar multiplication operation on gives rise by restriction to a well-defined scalar multiplication on .  Once we know restriction gives rise to well-defined operations on , verifying the of amounts simply to observing that if a condition is true for all in , it is certainly true for all in the subset .  The existential axioms (iii) and (iv) of , however, require special consideration. By definition, a subspace contains the zero vector of , and clearly this still acts as the zero vector when we restrict the vector operations to . What about vector inverses? We know that for any there is a vector inverse lying somewhere in . We must show that in fact lies in : we need to show that the operation of taking the vector inverse is well-defined on . We prove this as follows: .    Before moving on to more examples of subspaces, we provide a procedure for determining whether something is a subspace. Note that the procedure merges the verification of Axioms (ii)-(iii) of into a single step, using the notion of a linear combination . Now is a good time to make this notion official.   Linear combination   Let be an -vector space, and let be a collection of vectors of . A linear combination of the vectors is a vector expression of the form , where for all . The scalars are called the coefficients of the linear combination. The linear combination is trivial if for all , and nontrivial if for some . A vector is a linear combination of the if we have for some choice of scalars .     Two-step proof for subspaces   We can merge conditions (ii)-(iii) of into a single statement about linear combinations, deriving the following two-step method for proving that a set is a subspace of a vector space .   Show     Show that , for all .        below serves both as an illustration of and a rich source of examples of subspaces. It tells us that the solutions to a matrix equation constitutes a subspace of . This set is called the null space of the matrix. (We will postpone an official definition of null space until we introduce linear transformations.)  The statement and proof of will make use of matrix multiplication and elementary properties that matrix multiplication satisfies. The usual definition of matrix multiplication (for real matrices) generalizes directly to an arbitrary field, and as such we will not include an official definition. Furthermore, all the usual matrix multiplication properties you know and love over the reals carry over to the more general setting of matrices over a general field . We will take this for granted and not include an official statement of those properties.  Lastly, we include another fiat that facilitates dealing with so-called column vectors  .   Tuples shall be column vectors, and vice versa   We hereby declare that all -tuples shall be equated with the corresponding column vector in : , in .     Matrix null space   Let . The set of solutions to the matrix equation is a subspace of .          Important function subspaces   Polynomials   Assume , and let be an infinite subset of . A polynomial function on is a function that can be written in the form , for some nonnegative integer and scalars . Given as in , is called the -th coefficient of ; furthermore, if , we call the leading term of , and we if , and we define the degree of , denoted to be .  Given a nonnegative integer , we define to be the set of all polynomial functions on of degree at most : , . Lastly we define to be the set of all polynomial functions on . Since any polynomial on is of the form for some , we have .     Polynomial spaces   Let , and let be an infinite subset of .    is a subspace of .     is a subspace of for all .           Although not necessary for the proof of , the result below will be useful to us for future discussions. In short, it says that the coefficients of a polynomial uniquely determine it (as long as the domain is infinite).   Polynomial equality   Let and let be an infinite subset of .   Given , we have .    Given and with and , we have .            Function subspaces over   Let be an interval of that contains at least two elements.   We denote by the set of all continuous functions on : i.e., .    Fix . A function is on if is -times differentiable on and its -th derivative is continuous. The set of all functions on is denoted .    A function is on I if is infinitely differentiable on . The set of all functions on is denoted .        Function subspaces.   Let be a an interval containing at least two elements. The sets , , , , are all subspaces of , and we have the following chain of subspaces: .     "
+},
+{
+  "id": "d_subspace",
+  "level": "2",
+  "url": "s_subspace.html#d_subspace",
+  "type": "Definition",
+  "number": "1.3.1",
+  "title": "Subspace.",
+  "body": " Subspace   Let be a vector space. A subset is a subspace of if the following conditions hold.   contains the zero vector   .    is closed under addition  For all , if , then . Using logical shorthand: .    is closed under scalar multiplication  For all and , if , then . Using logical shorthand: .      "
+},
+{
+  "id": "ss_subspace_def-3",
+  "level": "2",
+  "url": "s_subspace.html#ss_subspace_def-3",
+  "type": "Example",
+  "number": "1.3.2",
+  "title": "",
+  "body": "  Let and let . Prove that is a subspace.    We must show properties (i)-(iii) hold for .   The zero element of is , which is certainly of the form . Thus .    We must prove the implication . .    We must prove the implication , for any . We have       "
+},
+{
+  "id": "ss_subspace_def-4",
+  "level": "2",
+  "url": "s_subspace.html#ss_subspace_def-4",
+  "type": "Example",
+  "number": "1.3.3",
+  "title": "",
+  "body": "  Let and let . Is a vector space? Decide which of the of properties (i)-(iii) in (if any) are satisfied by .       Clearly .    Suppose . Then , in which case , and hence . Thus is closed under addition.    The set is not closed under scalar multiplication. Indeed, let . Then .      "
+},
+{
+  "id": "th_subspace_vectorspace",
+  "level": "2",
+  "url": "s_subspace.html#th_subspace_vectorspace",
+  "type": "Theorem",
+  "number": "1.3.4",
+  "title": "Subspaces are vector spaces.",
+  "body": " Subspaces are vector spaces   Let be a subspace of the vector space .   The vector operations of restrict to operations on that satisfy the vector space axioms.    The zero vector of , considered as a vector space, is the zero vector of .    Given an element , its vector inverse with respect to the vector space structure of is equal to its vector inverse with respect to the vector space structure of .       It is important to understand how Axioms of come into play here. Without them we would not be able to say that restricting the vector operations of to elements of actually gives rise to well-defined operations on . To be well-defined the operations must output elements that lie not just in , but in itself. This is precisely what being closed under addition and scalar multiplication guarantees. In more detail, since for all (Axiom (ii)), the vector addition on gives rise by restriction to a well-defined operation on ; similarly, since for all and , the scalar multiplication operation on gives rise by restriction to a well-defined scalar multiplication on .  Once we know restriction gives rise to well-defined operations on , verifying the of amounts simply to observing that if a condition is true for all in , it is certainly true for all in the subset .  The existential axioms (iii) and (iv) of , however, require special consideration. By definition, a subspace contains the zero vector of , and clearly this still acts as the zero vector when we restrict the vector operations to . What about vector inverses? We know that for any there is a vector inverse lying somewhere in . We must show that in fact lies in : we need to show that the operation of taking the vector inverse is well-defined on . We prove this as follows: .   "
+},
+{
+  "id": "d_linear_comb",
+  "level": "2",
+  "url": "s_subspace.html#d_linear_comb",
+  "type": "Definition",
+  "number": "1.3.5",
+  "title": "Linear combination.",
+  "body": " Linear combination   Let be an -vector space, and let be a collection of vectors of . A linear combination of the vectors is a vector expression of the form , where for all . The scalars are called the coefficients of the linear combination. The linear combination is trivial if for all , and nontrivial if for some . A vector is a linear combination of the if we have for some choice of scalars .   "
+},
+{
+  "id": "proc_subspace",
+  "level": "2",
+  "url": "s_subspace.html#proc_subspace",
+  "type": "Procedure",
+  "number": "1.3.6",
+  "title": "Two-step proof for subspaces.",
+  "body": " Two-step proof for subspaces   We can merge conditions (ii)-(iii) of into a single statement about linear combinations, deriving the following two-step method for proving that a set is a subspace of a vector space .   Show     Show that , for all .      "
+},
+{
+  "id": "fiat_col_vecs_tuples",
+  "level": "2",
+  "url": "s_subspace.html#fiat_col_vecs_tuples",
+  "type": "Fiat",
+  "number": "1.3.7",
+  "title": "Tuples shall be column vectors, and vice versa.",
+  "body": " Tuples shall be column vectors, and vice versa   We hereby declare that all -tuples shall be equated with the corresponding column vector in : , in .   "
+},
+{
+  "id": "th_matrix_null_space",
+  "level": "2",
+  "url": "s_subspace.html#th_matrix_null_space",
+  "type": "Theorem",
+  "number": "1.3.8",
+  "title": "Matrix null space.",
+  "body": " Matrix null space   Let . The set of solutions to the matrix equation is a subspace of .       "
+},
+{
+  "id": "d_polynomials",
+  "level": "2",
+  "url": "s_subspace.html#d_polynomials",
+  "type": "Definition",
+  "number": "1.3.9",
+  "title": "Polynomials.",
+  "body": " Polynomials   Assume , and let be an infinite subset of . A polynomial function on is a function that can be written in the form , for some nonnegative integer and scalars . Given as in , is called the -th coefficient of ; furthermore, if , we call the leading term of , and we if , and we define the degree of , denoted to be .  Given a nonnegative integer , we define to be the set of all polynomial functions on of degree at most : , . Lastly we define to be the set of all polynomial functions on . Since any polynomial on is of the form for some , we have .   "
+},
+{
+  "id": "th_polynomial_space",
+  "level": "2",
+  "url": "s_subspace.html#th_polynomial_space",
+  "type": "Theorem",
+  "number": "1.3.10",
+  "title": "Polynomial spaces.",
+  "body": " Polynomial spaces   Let , and let be an infinite subset of .    is a subspace of .     is a subspace of for all .          "
+},
+{
+  "id": "th_poly_equality",
+  "level": "2",
+  "url": "s_subspace.html#th_poly_equality",
+  "type": "Theorem",
+  "number": "1.3.11",
+  "title": "Polynomial equality.",
+  "body": " Polynomial equality   Let and let be an infinite subset of .   Given , we have .    Given and with and , we have .          "
+},
+{
+  "id": "d_function_subspaces",
+  "level": "2",
+  "url": "s_subspace.html#d_function_subspaces",
+  "type": "Definition",
+  "number": "1.3.12",
+  "title": "Function subspaces over <span class=\"process-math\">\\(\\R\\)<\/span>.",
+  "body": " Function subspaces over   Let be an interval of that contains at least two elements.   We denote by the set of all continuous functions on : i.e., .    Fix . A function is on if is -times differentiable on and its -th derivative is continuous. The set of all functions on is denoted .    A function is on I if is infinitely differentiable on . The set of all functions on is denoted .      "
+},
+{
+  "id": "th_function_spaces",
+  "level": "2",
+  "url": "s_subspace.html#th_function_spaces",
+  "type": "Theorem",
+  "number": "1.3.13",
+  "title": "Function subspaces..",
+  "body": " Function subspaces.   Let be a an interval containing at least two elements. The sets , , , , are all subspaces of , and we have the following chain of subspaces: .   "
+},
+{
   "id": "appendix-notation",
   "level": "1",
   "url": "appendix-notation.html",

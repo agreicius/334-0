@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Subspaces</title>
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.googleapis.com">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta xmlns:xlink="http://www.w3.org/1999/xlink" name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="og:type" content="book">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Linear algebra: second course">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Aaron Greicius">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.5.12';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.8ded03b2da8fab17.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f6bda0c0ccce4835.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.e0c6d4592e23c667.css">
+<script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="nuadvlinalg" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="advlinalgkursobjekt.html"><span class="title">Linear algebra: second course:</span> <span class="subtitle">Math 344-0</span></a></h1>
+<p class="byline">Aaron Greicius</p>
+</div></div></header><nav xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_vector_space.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_linear_algebra.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="advlinalgkursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div xmlns:xlink="http://www.w3.org/1999/xlink" id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\C}{{\mathbb C}}
+\newcommand{\T}{{\mathbb T}}
+\newcommand{\F}{{\mathbb F}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\compose}{\circ}
+\newcommand{\bolda}{{\mathbf a}}
+\newcommand{\boldb}{{\mathbf b}}
+\newcommand{\boldc}{{\mathbf c}}
+\newcommand{\boldd}{{\mathbf d}}
+\newcommand{\bolde}{{\mathbf e}}
+\newcommand{\boldi}{{\mathbf i}}
+\newcommand{\boldj}{{\mathbf j}}
+\newcommand{\boldk}{{\mathbf k}}
+\newcommand{\boldn}{{\mathbf n}}
+\newcommand{\boldp}{{\mathbf p}}
+\newcommand{\boldq}{{\mathbf q}}
+\newcommand{\boldr}{{\mathbf r}}
+\newcommand{\bolds}{{\mathbf s}}
+\newcommand{\boldt}{{\mathbf t}}
+\newcommand{\boldu}{{\mathbf u}}
+\newcommand{\boldv}{{\mathbf v}}
+\newcommand{\boldw}{{\mathbf w}}
+\newcommand{\boldx}{{\mathbf x}}
+\newcommand{\boldy}{{\mathbf y}}
+\newcommand{\boldz}{{\mathbf z}}
+\newcommand{\boldzero}{{\mathbf 0}}
+\newcommand{\boldmod}{\boldsymbol{ \bmod }}
+\newcommand{\boldT}{{\mathbf T}}
+\newcommand{\boldN}{{\mathbf N}}
+\newcommand{\boldB}{{\mathbf B}}
+\newcommand{\boldF}{{\mathbf F}}
+\newcommand{\boldS}{{\mathbf S}}
+\newcommand{\boldE}{{\mathbf E}}
+\newcommand{\boldG}{{\mathbf G}}
+\newcommand{\boldK}{{\mathbf K}}
+\newcommand{\boldL}{{\mathbf L}}
+\DeclareMathOperator{\lns}{lns}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\NS}{null}
+\DeclareMathOperator{\RS}{row}
+\DeclareMathOperator{\CS}{col}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\nullity}{nullity}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\Arg}{Arg}
+\DeclareMathOperator{\Log}{Log}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\Arcsin}{Arcsin}
+\DeclareMathOperator{\Arccos}{Arccos}
+\DeclareMathOperator{\Arctan}{Arctan}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\res}{res}
+\DeclareMathOperator{\Fix}{Fix}
+\DeclareMathOperator{\Aff}{Aff}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\mdeg}{mdeg}
+\DeclareMathOperator{\Lt}{Lt}
+\DeclareMathOperator{\Lc}{Lc}
+\DeclareMathOperator{\disc}{disc}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\curl}{curl}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\diver}{div}
+\DeclareMathOperator{\flux}{flux}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\ab}{ab}
+\newcommand{\surjects}{\twoheadrightarrow}
+\newcommand{\injects}{\hookrightarrow}
+\newcommand{\bijects}{\leftrightarrow}
+\newcommand{\isomto}{\overset{\sim}{\rightarrow}}
+\newcommand{\floor}[1]{\lfloor#1\rfloor}
+\newcommand{\ceiling}[1]{\left\lceil#1\right\rceil}
+\newcommand{\mclass}[2][m]{[#2]_{#1}}
+\newcommand{\val}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\abs}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\valuation}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\anmonic}{x^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\bmpoly}{b_mx^m+b_{m-1}x^{m-1}\cdots +b_1x+b_0}
+\newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\normalin}{\trianglelefteq}
+\newcommand{\angvec}[1]{\langle #1\rangle}
+\newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
+\newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
+\newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+\newenvironment{linsys}[2][m]{
+\begin{array}[#1]{@{}*{#2}{rc}r@{}}
+}{
+\end{array}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="c_foundations.html" class="internal"><span class="codenumber">0</span> <span class="title">Foundations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_sets_functions.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Sets and functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_functions.html#ss_sets" class="internal"><span class="title">Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_functions.html#ss_functions" class="internal"><span class="title">Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_functions.html#ss_tuples_cart_prod" class="internal"><span class="title">Tuples and Cartesian product</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_functions.html#ss_cardinality" class="internal"><span class="title">Cardinality and countability</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_logic.html" class="internal"><span class="codenumber">0.2</span> <span class="title">Logic</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_propositional_calculus" class="internal"><span class="title">Propositional logic</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_predicate_logic" class="internal"><span class="title">Predicate logic</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_proof_technique.html" class="internal"><span class="codenumber">0.3</span> <span class="title">Proof techniques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_logical_structure" class="internal"><span class="title">Logical structure</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_implication" class="internal"><span class="title">Implication</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_disjunction" class="internal"><span class="title">Disjunction</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_equivalence" class="internal"><span class="title">Equivalence</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_logical_chains" class="internal"><span class="title">Chains of implications/equivalences</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_proof_by_contradiction" class="internal"><span class="title">Proof by contradiction</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_Equalities" class="internal"><span class="title">Equalities</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_chain_equalities" class="internal"><span class="title">Chain of equalities</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_set_properties" class="internal"><span class="title">Basic set properties</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_set_inclusion" class="internal"><span class="title">Set inclusion</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_set_equality" class="internal"><span class="title">Set equality</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_function_properties" class="internal"><span class="title">Basic function properties</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_function_equality" class="internal"><span class="title">Function equality</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_injective_surjective_bijective" class="internal"><span class="title">Injective, surjective, bijective</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_mathematical_induction" class="internal"><span class="title">Mathematical induction</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_weak_induction" class="internal"><span class="title">Proof by induction</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_strong_induction" class="internal"><span class="title">Proof by strong induction</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="c_linear_algebra.html" class="internal"><span class="codenumber">1</span> <span class="title">Linear algebra</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_fields.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Fields</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_fields.html#ss_complex" class="internal"><span class="title">Complex numbers</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_fields.html#ss_field_def" class="internal"><span class="title">Fields</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_fields.html#ss_modulus_conjugation" class="internal"><span class="title">Further complex operations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_vector_space.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Vector spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_vector_space.html#ss_vector_space_def" class="internal"><span class="title">Definitions and examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_vector_space.html#" class="internal"><span class="title">Vector space properties</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="s_subspace.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Subspaces</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace.html#ss_subspace_def" class="internal"><span class="title">Definition and examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace.html#ss_function_spaces" class="internal"><span class="title">Important function subspaces</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="advlinalgkursobjekt-6.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-notation.html" class="internal"><span class="codenumber">A</span> <span class="title">Notation</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-defs.html" class="internal"><span class="codenumber">B</span> <span class="title">Definitions</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-thms.html" class="internal"><span class="codenumber">C</span> <span class="title">Theory</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-egs.html" class="internal"><span class="codenumber">D</span> <span class="title">Examples</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-vids.html" class="internal"><span class="codenumber">E</span> <span class="title">Mantras and fiats</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:xlink="http://www.w3.org/1999/xlink" class="section" id="s_subspace"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.3</span><span class="space"> </span><span class="title">Subspaces</span>
+</h2>
+<section class="introduction" id="s_subspace-2"><div class="para" id="s_subspace-2-1">In this section we will study <a href="s_subspace.html#d_subspace" class="xref" data-knowl="./knowl/xref/d_subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.3.1: Subspace">subspaces</a>, which are special subsets of vector spaces that <em class="emphasis">respect</em> the defining structure of a vector spaces: namely, the two vector operations. <a href="s_subspace.html#d_subspace" class="xref" data-knowl="./knowl/xref/d_subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.3.1: Subspace">Definition 1.3.1</a> makes precise what we mean here by ‘respect’.</div>
+<div class="para" id="s_subspace-2-2">Subspaces arise naturally in any setting where vector spaces are at play, and are closely connected to solutions to linear systems. As we will see in <a href="s_subspace.html#th_subspace_vectorspace" class="xref" data-knowl="./knowl/xref/th_subspace_vectorspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.3.4: Subspaces are vector spaces">Theorem 1.3.4</a>, subspaces of vector spaces are vector spaces in their own right, furnishing us with yet more interesting examples of vector spaces.</div></section><section class="subsection" id="ss_subspace_def"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Definition and examples</span>
+</h3>
+<article class="definition definition-like" id="d_subspace"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Subspace.</span>
+</h4>
+<div class="para logical" id="d_subspace-2-1">
+<div class="para">Let <span class="process-math">\(V\)</span> be a vector space. A subset <span class="process-math">\(W\subseteq V\)</span> is a <dfn class="terminology">subspace</dfn> of <span class="process-math">\(V\)</span> if the following conditions hold.</div>
+<ol class="lower-roman ol-marker-2" id="d_subspace-2-1-5">
+<li id="d_subspace_zero">
+<span class="heading"><span class="title"><span class="process-math">\(W\)</span> contains the zero vector.</span></span><div class="para" id="d_subspace_zero-2"><span class="process-math">\(\boldzero\in W\text{.}\)</span></div>
+</li>
+<li id="d_subspace_add">
+<span class="heading"><span class="title"><span class="process-math">\(W\)</span> is closed under addition.</span></span><div class="para logical" id="d_subspace_add-2">
+<div class="para">For all <span class="process-math">\(v_1, v_2\in V\text{,}\)</span> if <span class="process-math">\(v_1, v_2\in W\text{,}\)</span> then <span class="process-math">\(v_1+ v_2\in W\text{.}\)</span> Using logical shorthand:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+v_1, v_2\in W\implies  v_1+ v_2\in W\text{.}
+\end{equation*}
+</div>
+</div>
+</li>
+<li id="d_subspace_mult">
+<span class="heading"><span class="title"><span class="process-math">\(W\)</span> is closed under scalar multiplication.</span></span><div class="para logical" id="d_subspace_mult-2">
+<div class="para">For all <span class="process-math">\(c\in \R\)</span> and <span class="process-math">\(v\in V\text{,}\)</span> if <span class="process-math">\(v\in W\text{,}\)</span> then <span class="process-math">\(c v\in W\text{.}\)</span> Using logical shorthand:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+v\in W\Rightarrow c v\in W\text{.}
+\end{equation*}
+</div>
+</div>
+</li>
+</ol>
+</div></article><article class="example example-like" id="ss_subspace_def-3"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="ss_subspace_def-3-1-1">
+<div class="para">Let <span class="process-math">\(V=\R^2\)</span> and let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+W=\{(t,t)\in\R^2 \colon t\in\R\}\text{.}
+\end{equation*}
+</div>
+<div class="para">Prove that <span class="process-math">\(W\)</span> is a subspace.</div>
+</div>
+<div class="solutions"><details id="ss_subspace_def-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="ss_subspace_def-3-2-1">
+<div class="para">We must show properties (i)-(iii) hold for <span class="process-math">\(W\text{.}\)</span>
+</div>
+<ol class="lower-roman ol-marker-1" id="ss_subspace_def-3-2-1-2">
+<li id="ss_subspace_def-3-2-1-2-1"><div class="para" id="ss_subspace_def-3-2-1-2-1-1">The zero element of <span class="process-math">\(V\)</span> is <span class="process-math">\(\boldzero=(0,0)\text{,}\)</span> which is certainly of the form <span class="process-math">\((t,t)\text{.}\)</span> Thus <span class="process-math">\(\boldzero\in W\text{.}\)</span>
+</div></li>
+<li id="ss_subspace_def-3-2-1-2-2"><div class="para logical" id="ss_subspace_def-3-2-1-2-2-1">
+<div class="para">We must prove the implication <span class="process-math">\(v_1,  v_2\in W\Rightarrow  v_1+ v_2\in W\text{.}\)</span>
+</div>
+<div class="displaymath process-math" id="ss_subspace_def-3-2-1-2-2-1-2">
+\begin{align*}
+v_1, v_2\in W\amp \Rightarrow\amp   v_1=(t,t),  v_2=(s,s) \text{ for some \(t,s\in\R\) }\\
+\amp \Rightarrow\amp  v_1+ v_2=(t+s,t+s)\\
+\amp \Rightarrow\amp  v_1+ v_2\in W\text{.}
+\end{align*}
+</div>
+</div></li>
+<li id="ss_subspace_def-3-2-1-2-3"><div class="para logical" id="ss_subspace_def-3-2-1-2-3-1">
+<div class="para">We must prove the implication <span class="process-math">\(v\in W\Rightarrow c v\in W\text{,}\)</span> for any <span class="process-math">\(c\in \R\text{.}\)</span> We have</div>
+<div class="displaymath process-math" id="ss_subspace_def-3-2-1-2-3-1-3">
+\begin{align*}
+v\in W\amp \Rightarrow\amp   v=(t,t)\\
+\amp \Rightarrow\amp  c v=(ct,ct)\\
+\amp \Rightarrow\amp  c v\in W
+\end{align*}
+</div>
+</div></li>
+</ol>
+</div></div></details></div></article><article class="example example-like" id="ss_subspace_def-4"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.3</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="ss_subspace_def-4-1-1">
+<div class="para">Let <span class="process-math">\(V=\R^n\)</span> and let</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/d_subspace.html">
+\begin{equation*}
+W=\{(x,y)\in \R^2\colon x, y\geq 0\}\text{.}
+\end{equation*}
+</div>
+<div class="para">Is <span class="process-math">\(W\)</span> a vector space? Decide which of the of properties (i)-(iii) in <a href="s_subspace.html#d_subspace" class="xref" data-knowl="./knowl/xref/d_subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.3.1: Subspace">Definition 1.3.1</a> (if any) are satisfied by <span class="process-math">\(W\text{.}\)</span>
+</div>
+</div>
+<div class="solutions"><details id="ss_subspace_def-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="ss_subspace_def-4-2-1"><ol class="lower-roman ol-marker-1" id="ss_subspace_def-4-2-1-1">
+<li id="ss_subspace_def-4-2-1-1-1"><div class="para" id="ss_subspace_def-4-2-1-1-1-1">Clearly <span class="process-math">\(\boldzero=(0,0)\in W\text{.}\)</span>
+</div></li>
+<li id="ss_subspace_def-4-2-1-1-2"><div class="para" id="ss_subspace_def-4-2-1-1-2-1">Suppose <span class="process-math">\(v_1=(x_1,y_1),  v_2=(x_2,y_2)\in W\text{.}\)</span> Then <span class="process-math">\(x_1, x_2, y_1, y_2\geq 0\text{,}\)</span> in which case <span class="process-math">\(x_1+x_2, y_1+y_2\geq 0\text{,}\)</span> and hence <span class="process-math">\(v_1+ v_2\in W\text{.}\)</span> Thus <span class="process-math">\(W\)</span> is closed under addition.</div></li>
+<li id="ss_subspace_def-4-2-1-1-3"><div class="para" id="ss_subspace_def-4-2-1-1-3-1">The set <span class="process-math">\(W\)</span> is <em class="emphasis">not</em> closed under scalar multiplication. Indeed, let <span class="process-math">\(v=(1,1)\in W\text{.}\)</span> Then <span class="process-math">\((-2) v=(-2,-2)\notin W\text{.}\)</span>
+</div></li>
+</ol></div></div></details></div></article><div class="para" id="ss_subspace_def-5">As we now endeavor to show, if <span class="process-math">\(W\)</span> is a subspace of a vector space <span class="process-math">\(V\text{,}\)</span> then it <em class="emphasis">inherits</em> a vector space structure from <span class="process-math">\(V\)</span> by simply  <em class="emphasis">restricting</em> the vector operations defined on <span class="process-math">\(V\)</span> to the subset <span class="process-math">\(W\text{.}\)</span>
+</div>
+<article class="theorem theorem-like" id="th_subspace_vectorspace"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Subspaces are vector spaces.</span>
+</h4>
+<div class="para logical" id="th_subspace_vectorspace-2-1">
+<div class="para">Let <span class="process-math">\(W\)</span> be a subspace of the vector space <span class="process-math">\(V\text{.}\)</span>
+</div>
+<ol class="decimal" id="th_subspace_vectorspace-2-1-3">
+<li id="th_subspace_vectorspace-2-1-3-1"><div class="para" id="th_subspace_vectorspace-2-1-3-1-1">The vector operations of <span class="process-math">\(V\)</span> restrict to operations on <span class="process-math">\(W\)</span> that satisfy the vector space axioms.</div></li>
+<li id="th_subspace_vectorspace-2-1-3-2"><div class="para" id="th_subspace_vectorspace-2-1-3-2-1">The zero vector of <span class="process-math">\(W\text{,}\)</span> considered as a vector space, is the zero vector of <span class="process-math">\(V\text{.}\)</span>
+</div></li>
+<li id="th_subspace_vectorspace-2-1-3-3"><div class="para" id="th_subspace_vectorspace-2-1-3-3-1">Given an element <span class="process-math">\(\boldw\in W\text{,}\)</span> its vector inverse with respect to the vector space structure of <span class="process-math">\(W\)</span> is equal to its vector inverse with respect to the vector space structure of <span class="process-math">\(V\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><details id="th_subspace_vectorspace-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_subspace_vectorspace-3-1">It is important to understand how <a href="s_subspace.html#d_subspace_zero" class="xref" data-knowl="./knowl/xref/d_subspace_zero.html" data-reveal-label="Reveal" data-close-label="Close" title="Item i: W contains the zero vector">Axioms i–iii</a> of <a href="s_subspace.html#d_subspace" class="xref" data-knowl="./knowl/xref/d_subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.3.1: Subspace">Definition 1.3.1</a> come into play here. Without them we would not be able to say that restricting the vector operations of <span class="process-math">\(V\)</span> to elements of <span class="process-math">\(W\)</span> actually gives rise to well-defined operations on <span class="process-math">\(W\text{.}\)</span> To be well-defined the operations must output elements that lie not just in <span class="process-math">\(V\text{,}\)</span> but in <span class="process-math">\(W\)</span> itself. This is precisely what being closed under addition and scalar multiplication guarantees. In more detail, since <span class="process-math">\(\boldw_1+\boldw_2\in W\)</span> for all <span class="process-math">\(w_1,w_2\in W\)</span> (Axiom (ii)), the vector addition on <span class="process-math">\(V\)</span> gives rise by restriction to a well-defined operation on <span class="process-math">\(W\text{;}\)</span> similarly, since <span class="process-math">\(c\boldw\in W\)</span> for all <span class="process-math">\(c\in \R\)</span> and <span class="process-math">\(\boldw\in W\text{,}\)</span> the scalar multiplication operation on <span class="process-math">\(V\)</span> gives rise by restriction to a well-defined scalar multiplication on <span class="process-math">\(W\text{.}\)</span>
+</div>
+<div class="para" id="th_subspace_vectorspace-3-2">Once we know restriction gives rise to well-defined operations on <span class="process-math">\(W\text{,}\)</span> verifying the <span class="process-math">\(arithmetic axioms\)</span> of  <a href="s_vector_space.html#d_vector_space" class="xref" data-knowl="./knowl/xref/d_vector_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.2.2: Vector space">Definition 1.2.2</a> amounts simply to observing that if a condition is true for all <span class="process-math">\(v\)</span> in <span class="process-math">\(V\text{,}\)</span> it is certainly true for all <span class="process-math">\(v\)</span> in the subset <span class="process-math">\(W\text{.}\)</span>
+</div>
+<div class="para logical" id="th_subspace_vectorspace-3-3">
+<div class="para">The “existential axioms” (iii) and (iv) of <a href="s_vector_space.html#d_vector_space" class="xref" data-knowl="./knowl/xref/d_vector_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.2.2: Vector space">Definition 1.2.2</a>, however, require special consideration. By definition, a subspace <span class="process-math">\(W\)</span> contains the zero vector of <span class="process-math">\(V\text{,}\)</span> and clearly this still acts as the zero vector when we restrict the vector operations to <span class="process-math">\(W\text{.}\)</span> What about vector inverses? We know that for any <span class="process-math">\(v\in W\)</span> there is a vector inverse <span class="process-math">\(- v\)</span> lying somewhere in <span class="process-math">\(V\text{.}\)</span> We must show that in fact <span class="process-math">\(- v\)</span> lies in <span class="process-math">\(W\text{:}\)</span> i.e. we need to show that the operation of taking the vector inverse is well-defined on <span class="process-math">\(W\text{.}\)</span> We prove this as follows:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/d_vector_space.html ./knowl/xref/d_subspace.html ./knowl/xref/th_vs_props.html" id="th_subspace_vectorspace-3-3-13">
+\begin{align*}
+v\in W \amp\implies (-1) v\in W \amp (\knowl{./knowl/xref/d_subspace.html}{\text{Definition 1.3.1}}, \text{(iii) } )\\
+\amp\implies - v\in W \amp (\knowl{./knowl/xref/th_vs_props.html}{\text{Theorem 1.2.18}}, (iii)) \text{.}
+\end{align*}
+</div>
+</div></article></details><div class="para" id="ss_subspace_def-7">Before moving on to more examples of subspaces, we provide a procedure for determining whether something is a subspace. Note that the procedure merges the verification of Axioms (ii)-(iii) of <a href="s_subspace.html#d_subspace" class="xref" data-knowl="./knowl/xref/d_subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.3.1: Subspace">Definition 1.3.1</a> into a single step, using the notion of a <em class="emphasis">linear combination</em>. Now is a good time to make this notion official.</div>
+<article class="definition definition-like" id="d_linear_comb"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">Linear combination.</span>
+</h4>
+<div class="para logical" id="d_linear_comb-2-1">
+<div class="para">Let <span class="process-math">\(V\)</span> be an <span class="process-math">\(F\)</span>-vector space, and let <span class="process-math">\(v_1,v_2,\dots, v_n\)</span> be a collection of vectors of <span class="process-math">\(V\text{.}\)</span> A <dfn class="terminology">linear combination</dfn> of the vectors <span class="process-math">\(v_i\)</span> is a vector expression of the form</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_lin_comb.html" id="eq_lin_comb">
+\begin{equation}
+c_1v_1+c_2v_2+\cdots +c_nv_n\text{,}\tag{1.5}
+\end{equation}
+</div>
+<div class="para">where <span class="process-math">\(c_i\in F\)</span> for all <span class="process-math">\(1\leq i\leq n\text{.}\)</span> The scalars <span class="process-math">\(c_i\)</span> are called the <dfn class="terminology">coefficients</dfn> of the linear combination. The linear combination <a href="s_subspace.html#eq_lin_comb" class="xref" data-knowl="./knowl/xref/eq_lin_comb.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.5">(1.5)</a> is <dfn class="terminology">trivial</dfn> if <span class="process-math">\(c_i=0\)</span> for all <span class="process-math">\(1\leq i\leq n\text{,}\)</span> and <dfn class="terminology">nontrivial</dfn> if <span class="process-math">\(c_i\ne 0\)</span> for some <span class="process-math">\(1\leq i\leq n\text{.}\)</span> A vector <span class="process-math">\(v\)</span> is a <dfn class="terminology">linear combination of the <span class="process-math">\(v_i\)</span></dfn> if we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_lin_comb.html">
+\begin{equation*}
+v=c_1v_1+c_2v_2+\cdots +c_nv_n
+\end{equation*}
+</div>
+<div class="para">for some choice of scalars <span class="process-math">\(c_i\in F\text{.}\)</span>
+</div>
+</div></article><article class="algorithm theorem-like" id="proc_subspace"><h4 class="heading">
+<span class="type">Procedure</span><span class="space"> </span><span class="codenumber">1.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Two-step proof for subspaces.</span>
+</h4>
+<div class="para logical" id="proc_subspace-2-1">
+<div class="para">We can merge conditions (ii)-(iii) of <a href="s_subspace.html#d_subspace" class="xref" data-knowl="./knowl/xref/d_subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.3.1: Subspace">Definition 1.3.1</a> into a single statement about linear combinations, deriving the following two-step method for proving that a set <span class="process-math">\(W\)</span> is a subspace of a vector space <span class="process-math">\(V\text{.}\)</span>
+</div>
+<ol class="decimal" id="proc_subspace-2-1-4">
+<li id="proc_subspace_zero"><div class="para" id="proc_subspace_zero-1">Show <span class="process-math">\(\boldzero\in W\)</span>
+</div></li>
+<li id="proc_subspace_ops"><div class="para logical" id="proc_subspace_ops-1">
+<div class="para">Show that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+v_1,  v_2\in W\implies c v_1+d v_2\in W\text{,}
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(c,d\in F\text{.}\)</span>
+</div>
+</div></li>
+</ol>
+</div></article><div class="para" id="ss_subspace_def-10">
+<a href="s_subspace.html#th_matrix_null_space" class="xref" data-knowl="./knowl/xref/th_matrix_null_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.3.8: Matrix null space">Theorem 1.3.8</a> below serves both as an illustration of <a href="s_subspace.html#proc_subspace" class="xref" data-knowl="./knowl/xref/proc_subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 1.3.6: Two-step proof for subspaces">Procedure 1.3.6</a> and a rich source of examples of subspaces. It tells us that the solutions to a matrix equation <span class="process-math">\(A\boldx=\boldzero\)</span> constitutes a subspace of <span class="process-math">\(\F^n\text{.}\)</span> This set is called the <em class="emphasis">null space</em> of the matrix. (We will postpone an official definition of null space until we introduce linear transformations.)</div>
+<div class="para" id="ss_subspace_def-11">The statement and proof of <a href="s_subspace.html#th_matrix_null_space" class="xref" data-knowl="./knowl/xref/th_matrix_null_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.3.8: Matrix null space">Theorem 1.3.8</a> will make use of matrix multiplication and elementary properties that matrix multiplication satisfies. The usual definition of matrix multiplication (for real matrices) generalizes directly to an arbitrary field, and as such we will not include an official definition. Furthermore, all the usual matrix multiplication properties you know and love over the reals carry over to the more general setting of matrices over a general field <span class="process-math">\(F\text{.}\)</span> We will take this for granted and not include an official statement of those properties.</div>
+<div class="para" id="ss_subspace_def-12">Lastly, we include another fiat that facilitates dealing with so-called <em class="emphasis">column vectors</em> <span class="process-math">\(\boldx\in F^{n,1}\text{.}\)</span>
+</div>
+<article class="assumption theorem-like" id="fiat_col_vecs_tuples"><h4 class="heading">
+<span class="type">Fiat</span><span class="space"> </span><span class="codenumber">1.3.7</span><span class="period">.</span><span class="space"> </span><span class="title">Tuples shall be column vectors, and vice versa.</span>
+</h4>
+<div class="para logical" id="fiat_col_vecs_tuples-2-1">
+<div class="para">We hereby declare that all <span class="process-math">\(n\)</span>-tuples <span class="process-math">\((a_1,a_2,\dots, a_n)\in \F^n\)</span> shall be equated with the corresponding column vector in <span class="process-math">\(F^{n,1}\text{:}\)</span> i.e.,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(a_1,a_2,\dots, a_n)
+=
+\begin{bmatrix} 
+a_1\\ a_2\\ \vdots \\ a_n
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">in <span class="process-math">\(\F^{n,1}\text{.}\)</span>
+</div>
+</div></article><article class="theorem theorem-like" id="th_matrix_null_space"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.3.8</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix null space.</span>
+</h4>
+<div class="para logical" id="th_matrix_null_space-2-1">
+<div class="para">Let <span class="process-math">\(A\in F^{m,n}\text{.}\)</span> The set</div>
+<div class="displaymath process-math">
+\begin{equation*}
+W=\{\boldx\in F^n \colon \underset{m\times n}{A}\, \underset{n\times 1}{\boldx}=\underset{m\times 1}{\boldzero}\}
+\end{equation*}
+</div>
+<div class="para">of solutions to the matrix equation <span class="process-math">\(A\boldx=\boldzero\)</span> is a subspace of <span class="process-math">\(\F^n\text{.}\)</span>
+</div>
+</div></article><details id="th_matrix_null_space-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_matrix_null_space-3-1"></div></article></details></section><section class="subsection" id="ss_function_spaces"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Important function subspaces</span>
+</h3>
+<article class="definition definition-like" id="d_polynomials"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.9</span><span class="period">.</span><span class="space"> </span><span class="title">Polynomials.</span>
+</h4>
+<div class="para logical" id="d_polynomials-2-1">
+<div class="para">Assume <span class="process-math">\(F\in \{\R,\C\}\text{,}\)</span> and let <span class="process-math">\(I\)</span> be an infinite subset of <span class="process-math">\(F\text{.}\)</span> A <dfn class="terminology">polynomial function on <span class="process-math">\(I\)</span></dfn> is a function <span class="process-math">\(f\colon I\rightarrow F\)</span> that can be written in the form</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_poly.html" id="eq_poly">
+\begin{equation}
+f(x)=a_nx^n+a_{n-1}x+\cdots +a_1x+a_0\text{,}\tag{1.6}
+\end{equation}
+</div>
+<div class="para">for some nonnegative integer <span class="process-math">\(n\)</span> and scalars <span class="process-math">\(a_k\in F\text{.}\)</span> Given <span class="process-math">\(f\)</span> as in <a href="s_subspace.html#eq_poly" class="xref" data-knowl="./knowl/xref/eq_poly.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.6">(1.6)</a>, <span class="process-math">\(a_k\)</span> is called the <span class="process-math">\(k\)</span>-th <dfn class="terminology">coefficient</dfn> of <span class="process-math">\(f\text{;}\)</span> furthermore, if <span class="process-math">\(a_n\ne 0\text{,}\)</span> we call <span class="process-math">\(a_nx^n\)</span> the <dfn class="terminology">leading term</dfn> of <span class="process-math">\(f\text{,}\)</span> and we  if <span class="process-math">\(a_n\ne 0\text{,}\)</span> and we define the <dfn class="terminology">degree</dfn> of <span class="process-math">\(f\text{,}\)</span> denoted <span class="process-math">\(\deg f\)</span> to be <span class="process-math">\(n\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="d_polynomials-2-2">
+<div class="para">Given a nonnegative integer <span class="process-math">\(n\text{,}\)</span> we define <span class="process-math">\(P_n(I)\)</span> to be the set of all polynomial functions on <span class="process-math">\(I\)</span> of degree at most <span class="process-math">\(n\text{:}\)</span> i.e.,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P_n(I)=\{f\in F^I\colon f(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots +a_1x+a_0 \text{ for some } a_i\in F\}\text{.}
+\end{equation*}
+</div>
+<div class="para">Lastly we define <span class="process-math">\(P(I)\)</span> to be the set of all polynomial functions on <span class="process-math">\(I\text{.}\)</span> Since any polynomial on <span class="process-math">\(I\)</span> is of the form <span class="process-math">\(f(x)=\anpoly\)</span> for some <span class="process-math">\(n\in \Z_{\geq 0}\text{,}\)</span>  we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(I)=\bigcup_{n=0}^\infty P_n(I)\text{.}
+\end{equation*}
+</div>
+</div></article><article class="theorem theorem-like" id="th_polynomial_space"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.3.10</span><span class="period">.</span><span class="space"> </span><span class="title">Polynomial spaces.</span>
+</h4>
+<div class="para logical" id="th_polynomial_space-2-1">
+<div class="para">Let <span class="process-math">\(F\in \{\R, \C\}\text{,}\)</span> and let <span class="process-math">\(I\)</span> be an infinite subset of <span class="process-math">\(F\text{.}\)</span>
+</div>
+<ol class="decimal" id="th_polynomial_space-2-1-4">
+<li id="th_polynomial_space-2-1-4-1"><div class="para" id="th_polynomial_space-2-1-4-1-1">
+<span class="process-math">\(P(I)\)</span> is a subspace of <span class="process-math">\(F^I\text{.}\)</span>
+</div></li>
+<li id="th_polynomial_space-2-1-4-2"><div class="para" id="th_polynomial_space-2-1-4-2-1">
+<span class="process-math">\(P_n(I)\)</span> is a subspace of <span class="process-math">\(F^I\)</span> for all <span class="process-math">\(n\in \Z_{\geq 0}\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><details id="th_polynomial_space-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_polynomial_space-3-1"></div></article></details><div class="para" id="ss_function_spaces-4">Although not necessary for the proof of <a href="s_subspace.html#th_polynomial_space" class="xref" data-knowl="./knowl/xref/th_polynomial_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.3.10: Polynomial spaces">Theorem 1.3.10</a>, the result below will be useful to us for future discussions. In short, it says that the coefficients of a polynomial uniquely determine it (as long as the domain <span class="process-math">\(I\)</span> is infinite).</div>
+<article class="theorem theorem-like" id="th_poly_equality"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.3.11</span><span class="period">.</span><span class="space"> </span><span class="title">Polynomial equality.</span>
+</h4>
+<div class="para logical" id="th_poly_equality-2-1">
+<div class="para">Let <span class="process-math">\(F\in \{\R, \C\}\)</span> and let <span class="process-math">\(I\)</span> be an infinite subset of <span class="process-math">\(F\text{.}\)</span>
+</div>
+<ol class="decimal" id="th_poly_equality-2-1-4">
+<li id="th_poly_equality-2-1-4-1"><div class="para logical" id="th_poly_equality-2-1-4-1-1">
+<div class="para">Given <span class="process-math">\(f(x)=\anpoly\in P_n(I)\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f=\boldzero\iff a_k=0 \text{ for all } 1\leq k\leq n\text{.}
+\end{equation*}
+</div>
+</div></li>
+<li id="th_poly_equality-2-1-4-2"><div class="para logical" id="th_poly_equality-2-1-4-2-1">
+<div class="para">Given <span class="process-math">\(f(x)=\anpoly\in P_n(I)\)</span> and <span class="process-math">\(g(x)=\bmpoly\in P_m(I)\)</span> with <span class="process-math">\(a_n\ne 0\)</span> and <span class="process-math">\(b_m\ne 0\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f=g \iff n=m \text{ and } a_k=b_k \text{ for all } 1\leq k\leq n\text{.}
+\end{equation*}
+</div>
+</div></li>
+</ol>
+</div></article><details id="th_poly_equality-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_poly_equality-3-1"></div></article></details><article class="definition definition-like" id="d_function_subspaces"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.12</span><span class="period">.</span><span class="space"> </span><span class="title">Function subspaces over <span class="process-math">\(\R\)</span>.</span>
+</h4>
+<div class="para logical" id="d_function_subspaces-2-1">
+<div class="para">Let <span class="process-math">\(I\)</span> be an interval of <span class="process-math">\(\R\)</span> that contains at least two elements.</div>
+<ol class="decimal" id="d_function_subspaces-2-1-3">
+<li id="d_function_subspaces-2-1-3-1"><div class="para logical" id="d_function_subspaces-2-1-3-1-1">
+<div class="para">We denote by <span class="process-math">\(C(I)\)</span> the set of all continuous functions on <span class="process-math">\(I\text{:}\)</span> i.e.,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+C(I)=\{f\in \R^I\colon f \text{ is continuous on }I\}\text{.}
+\end{equation*}
+</div>
+</div></li>
+<li id="d_function_subspaces-2-1-3-2"><div class="para" id="d_function_subspaces-2-1-3-2-1">Fix <span class="process-math">\(n\geq 1\text{.}\)</span> A function <span class="process-math">\(f\colon I\rightarrow \R\)</span> is <span class="process-math">\(C^{n}\)</span> on <span class="process-math">\(I\)</span> if <span class="process-math">\(f\)</span> is <span class="process-math">\(n\)</span>-times differentiable on <span class="process-math">\(I\)</span> and its <span class="process-math">\(n\)</span>-th derivative <span class="process-math">\(f^{(n)}(x)\)</span> is continuous. The set of all <span class="process-math">\(C^{n}\)</span> functions on <span class="process-math">\(I\)</span> is denoted <span class="process-math">\(C^{n}(I)\text{.}\)</span>
+</div></li>
+<li id="d_function_subspaces-2-1-3-3"><div class="para" id="d_function_subspaces-2-1-3-3-1">A function <span class="process-math">\(f\colon I\rightarrow \R\)</span> is <span class="process-math">\(C^{\infty}\)</span> on I if <span class="process-math">\(f\)</span> is infinitely differentiable on <span class="process-math">\(I\text{.}\)</span> The set of all <span class="process-math">\(C^{\infty}\)</span> functions on <span class="process-math">\(I\)</span> is denoted <span class="process-math">\(C^{\infty}(I)\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><article class="theorem theorem-like" id="th_function_spaces"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.3.13</span><span class="period">.</span><span class="space"> </span><span class="title">Function subspaces..</span>
+</h4>
+<div class="para logical" id="th_function_spaces-2-1">
+<div class="para">Let <span class="process-math">\(I\subseteq \R\)</span> be a an interval containing at least two elements. The sets <span class="process-math">\(C(I)\text{,}\)</span> <span class="process-math">\(C^{n}(I)\text{,}\)</span> <span class="process-math">\(C^{\infty}(I)\text{,}\)</span> <span class="process-math">\(P(I)\text{,}\)</span> <span class="process-math">\(P_{n}(I)\)</span> are all subspaces of <span class="process-math">\(\R^I\text{,}\)</span> and we have the following chain of subspaces:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P_{n}(I)\subseteq P(I)\subseteq C^{\infty}(I)\subseteq C^{n}(I)\subseteq C(I)\subseteq \R^{I}\text{.}
+\end{equation*}
+</div>
+</div></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="s_vector_space.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="advlinalgkursobjekt-6.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a xmlns:xlink="http://www.w3.org/1999/xlink" class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
