@@ -190,7 +190,7 @@ for some choice of scalars <m>c_i\in F</m>.
   <statement>
     <p>
       We can merge conditions (ii)-(iii) of <xref ref="d_subspace"/> into a single statement about linear combinations, deriving the following two-step method for proving that a set <m>W</m> is a subspace of a vector space <m>V</m>.
-    <ol marker="i">
+    <ol>
       <li xml:id="proc_subspace_zero">
         <p>
           Show <m>\boldzero\in W</m>
@@ -268,7 +268,7 @@ for some nonnegative integer <m>n</m> and scalars <m>a_k\in F</m>. Given <m>f</m
   <me>
     P_n(I)=\{f\in F^I\colon f(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots +a_1x+a_0 \text{ for some } a_i\in F\}
   </me>.
-  Lastly we define <m>P(I)</m> to be the set of all polynomial functions on <m>I</m>. Since any polynomial on <m>I</m> is of the form <m>f(x)=\anpoly</m> for some <m>n\in \Z_{\geq 0\}</m>,  we have 
+  Lastly we define <m>P(I)</m> to be the set of all polynomial functions on <m>I</m>. Since any polynomial on <m>I</m> is of the form <m>f(x)=\anpoly</m> for some <m>n\in \Z_{\geq 0}</m>,  we have 
   <me>
     P(I)=\bigcup_{n=0}^\infty P_n(I)
   </me>.
@@ -342,7 +342,7 @@ Let <m>I</m> be an interval of <m>\R</m> that contains at least two elements.
     <p>
       We denote by <m>C(I)</m> the set of all continuous functions on <m>I</m>: i.e.,
     <me>
-      C(I)=\{f\in \F^{I}\colon f \text{ is continuous on }I\}
+      C(I)=\{f\in \R^I\colon f \text{ is continuous on }I\}
     </me>.
     </p>
   </li>
@@ -350,14 +350,14 @@ Let <m>I</m> be an interval of <m>\R</m> that contains at least two elements.
   <li>
     <p>
       Fix <m>n\geq 1</m>.
-      A function <m>f\in \F^{I}</m> is <m>C^{n}</m> on I if <m>f</m> is <m>n</m>-times differentiable on <m>I</m> and its <m>n</m>-th derivative <m>f^{(n)}(x)</m> is continuous.
+      A function <m>f\colon I\rightarrow \R</m> is <m>C^{n}</m> on <m>I</m> if <m>f</m> is <m>n</m>-times differentiable on <m>I</m> and its <m>n</m>-th derivative <m>f^{(n)}(x)</m> is continuous.
       The set of all <m>C^{n}</m> functions on <m>I</m> is denoted <m>C^{n}(I)</m>.
     </p>
   </li>
 
   <li>
     <p>
-      A function <m>f\in \F^{I}</m> is <m>C^{\infty}</m> on I if <m>f</m> is infinitely differentiable on <m>I</m>.
+      A function <m>f\colon I\rightarrow \R</m> is <m>C^{\infty}</m> on I if <m>f</m> is infinitely differentiable on <m>I</m>.
       The set of all <m>C^{\infty}</m> functions on <m>I</m> is denoted <m>C^{\infty}(I)</m>.
     </p>
   </li>
@@ -369,9 +369,8 @@ Let <m>I</m> be an interval of <m>\R</m> that contains at least two elements.
   <title>Function subspaces.</title>
   <statement>
     <p>
-      Let <m>I\subseteq \R</m> be a nondegenerate interval.
-      The sets <m>C(I)</m>, <m>C^{n}(I)</m>, <m>C^{\infty}(I)</m>, <m>P(I)</m>, <m>P_{n}(I)</m> are all subspaces of <m>F(I,\R)</m>.
-      Thus we have the following chain of subspaces:
+      Let <m>I\subseteq \R</m> be a an interval containing at least two elements. 
+      The sets <m>C(I)</m>, <m>C^{n}(I)</m>, <m>C^{\infty}(I)</m>, <m>P(I)</m>, <m>P_{n}(I)</m> are all subspaces of <m>\R^I</m>, and we have the following chain of subspaces:
     <me>
       P_{n}(I)\subseteq P(I)\subseteq C^{\infty}(I)\subseteq C^{n}(I)\subseteq C(I)\subseteq \R^{I}
     </me>.
