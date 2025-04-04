@@ -121,6 +121,10 @@
     
   </solution>
 </example>
+<p>
+  As we now endeavor to show, if <m>W</m> is a subspace of a vector space <m>V</m>, then it <em>inherits</em> a vector space structure from <m>V</m> by simply  <em>restricting</em> the vector operations defined on <m>V</m> to the subset <m>W</m>.
+</p>
+
 <theorem xml:id="th_subspace_vectorspace">
   <title>Subspaces are vector spaces</title>
   <statement>
@@ -161,7 +165,27 @@
   </p>
 </proof>
 </theorem>
-<algorithm xml:id="proc_twostep_proof">
+<p>
+  Before moving on to more examples of subspaces, we provide a procedure for determining whether something is a subspace. Note that the procedure merges the verification of Axioms (ii)-(iii) of <xref ref="d_subspace"/> into a single step, using the notion of a <em>linear combination</em>. Now is a good time to make this notion official. 
+</p>
+<definition xml:id="d_linear_comb">
+<title>Linear combination</title>
+<statement>
+<p>
+Let <m>V</m> be an <m>F</m>-vector space, and let <m>v_1,v_2,\dots, v_n</m> be a collection of vectors of <m>V</m>. A <term>linear combination</term> of the vectors <m>v_i</m> is a vector expression of the form 
+<men xml:id="eq_lin_comb">
+  c_1v_1+c_2v_2+\cdots +c_nv_n
+</men>,
+where <m>c_i\in F</m> for all <m>1\leq i\leq n</m>. The scalars <m>c_i</m> are called the <term>coefficients</term> of the linear combination. The linear combination <xref ref="eq_lin_comb"/> is <term>trivial</term> if <m>c_i=0</m> for all <m>1\leq i\leq n</m>, and <term>nontrivial</term> if <m>c_i\ne 0</m> for some <m>1\leq i\leq n</m>. A vector <m>v</m> is a <term>linear combination of the <m>v_i</m></term> if we have 
+<me>
+  v=c_1v_1+c_2v_2+\cdots +c_nv_n
+</me>
+for some choice of scalars <m>c_i\in F</m>. 
+</p>
+</statement>
+</definition>
+
+<algorithm xml:id="proc_subspace">
   <title>Two-step proof for subspaces</title>
   <statement>
     <p>
@@ -186,10 +210,98 @@
   </statement>
 </algorithm>
 <p>
-  If <m>W</m> is a subspace of a vector space <m>V</m>, then it <em>inherits</em> a vector space structure from <m>V</m> by simply  <em>restricting</em> the vector operations defined on <m>V</m> to the subset <m>W</m>.
+  <xref ref="th_matrix_null_space"/> below serves both as an illustration of <xref ref="proc_subspace"/> and a rich source of examples of subspaces. It tells us that the solutions to a matrix equation <m>A\boldx=\boldzero</m> constitutes a subspace of <m>\F^n</m>. This set is called the <em>null space</em> of the matrix. (We will postpone an official definition of null space until we introduce linear transformations.) 
 </p>
+<p>
+  The statement and proof of <xref ref="th_matrix_null_space"/> will make use of matrix multiplication and elementary properties that matrix multiplication satisfies. The usual definition of matrix multiplication (for real matrices) generalizes directly to an arbitrary field, and as such we will not include an official definition. Furthermore, all the usual matrix multiplication properties you know and love over the reals carry over to the more general setting of matrices over a general field <m>F</m>. We will take this for granted and not include an official statement of those properties.  
+</p>
+<p>
+  Lastly, we include another fiat that facilitates dealing with so-called <em>column vectors</em> <m>\boldx\in F^{n,1}</m>.
+</p>
+<assumption xml:id="fiat_col_vecs_tuples">
+<title>Tuples shall be column vectors, and vice versa</title>
+  <statement>
+    <p>
+      We hereby declare that all <m>n</m>-tuples <m>(a_1,a_2,\dots, a_n)\in \F^n</m> shall be equated with the corresponding column vector in <m>F^{n,1}</m>: <ie/>, 
+      <me>
+      (a_1,a_2,\dots, a_n)
+      =
+      \begin{bmatrix} 
+      a_1\\ a_2\\ \vdots \\ a_n
+      \end{bmatrix}
+      </me>
+      in <m>\F^{n,1}</m>.
+    </p>
+  </statement>
+</assumption>
+<theorem xml:id="th_matrix_null_space">
+<title>Matrix null space</title>
+<statement>
+<p>
+Let <m>A\in F^{m,n}</m>. The set 
+<me>
+  W=\{\boldx\in F^n \colon \underset{m\times n}{A}\, \underset{n\times 1}{\boldx}=\underset{m\times 1}{\boldzero}\}
+</me>
+of solutions to the matrix equation <m>A\boldx=\boldzero</m> is a subspace of <m>\F^n</m>. 
+</p>
+</statement>
+<proof>
+<p>
+</p>
+</proof>
+</theorem>
+</subsection>
+<subsection xml:id="ss_function_spaces">
+<title>Important function subspaces</title>
+<definition xml:id="d_polynomials">
+<title>Polynomials</title>
+<statement>
+<p>
+Assume <m>F\in \{\R,\C\}</m>, and let <m>I</m> be an infinite subset of <m>F</m>. A <term>polynomial function on <m>I</m></term> is a function <m>f\colon I\rightarrow F</m> that can be written in the form 
+<men xml:id="eq_poly">
+  f(x)=a_nx^n+a_{n-1}x+\cdots +a_1x+a_0
+</men>,
+for some nonnegative integer <m>n</m> and scalars <m>a_k\in F</m>. Given <m>f</m> as in <xref ref="eq_poly"/>, <m>a_k</m> is called the <m>k</m>-th <term>coefficient</term> of <m>f</m>; furthermore, if <m>a_n\ne 0</m>, we call <m>a_nx^n</m> the <term>leading term</term> of <m>f</m>, and we  if <m>a_n\ne 0</m>, and we define the <term>degree</term> of <m>f</m>, denoted <m>\deg f</m> to be <m>n</m>.
+</p>
+<p>
+  Given a nonnegative integer <m>n</m>, we define <m>P_n(I)</m> to be the set of all polynomial functions on <m>I</m> of degree at most <m>n</m>: <ie/>, 
+  <me>
+    P_n(I)=\{f\in F^I\colon f(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots +a_1x+a_0 \text{ for some } a_i\in F\}
+  </me>.
+</p>
+</statement>
+</definition>
+<theorem xml:id="th_poly_equality">
+<title>Polynomial equality</title>
+<statement>
+<p>
+Let <m>F\in \{\R, \C\}</m> and let <m>I</m> be an infinite subset of <m>F</m>.
+<ol>
+  <li>
+    <p>
+      Given <m>f(x)=\anpoly\in P_n(I)</m>, we have 
+      <me>
+        f=\boldzero\iff a_k=0 \text{ for all } 1\leq k\leq n
+      </me>.
+    </p>
+  </li>
+  <li>
+    <p>
+      Given <m>f(x)=\anpoly\in P_n(I)</m> and <m>g(x)=\bmpoly\in P_m(I)</m> with <m>a_n\ne 0</m> and <m>b_m\ne 0</m>, we have 
+      <me>
+        f=g \iff n=m \text{ and } a_k=b_k \text{ for all } 1\leq k\leq n
+      </me>.
+    </p>
+  </li>
+</ol>
+</p>
+</statement>
+<proof>
+<p>
+</p>
+</proof>
+</theorem>
 
-  
-    </subsection>
+</subsection>
 
 </section>
