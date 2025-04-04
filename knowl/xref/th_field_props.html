@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.1.23</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Properties of fields.</span>
+</h4>
+<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
+<div class="para">Let <span class="process-math">\(F\)</span> be a field, let <span class="process-math">\(\alpha,\beta\in F\text{,}\)</span> and let <span class="process-math">\(m,n\in \Z_{\geq 0}\text{.}\)</span>
+</div>
+<ol class="decimal" id="th_field_props-2-1-4">
+<li><div class="para"><span class="process-math">\(0\alpha=0\text{.}\)</span></div></li>
+<li><div class="para">If <span class="process-math">\(\alpha\beta=0\text{,}\)</span> then <span class="process-math">\(\alpha=0\)</span> or <span class="process-math">\(\beta=0\text{.}\)</span>
+</div></li>
+<li><div class="para"><span class="process-math">\((\alpha\beta)^{m}=\alpha^{m}\beta^{m}\text{.}\)</span></div></li>
+<li><div class="para"><span class="process-math">\(\alpha^{m+n}=\alpha^{m}\alpha^{n}\text{.}\)</span></div></li>
+<li><div class="para"><span class="process-math">\((\alpha^{m})^{n}=\alpha^{mn}\text{.}\)</span></div></li>
+<li><div class="para">
+<span class="process-math">\(\alpha^{-m}=(\alpha^{m})^{-1}\)</span> (assuming <span class="process-math">\(\alpha\ne 0\)</span>).</div></li>
+<li><div class="para">
+<span class="process-math">\((\alpha^{-1})^{-1}=\alpha\)</span> (assuming <span class="process-math">\(\alpha\ne 0\)</span>).</div></li>
+</ol>
+</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">Very much in the spirit of <a href="s_fields.html#warning_names_fields" class="xref" data-knowl="./knowl/xref/warning_names_fields.html" data-reveal-label="Reveal" data-close-label="Close" title="Warning 1.1.13: Names and prejudices">Warning 1.1.13</a>, when proving a result like this for an <em class="emphasis">arbitrary</em> field, we can make no assumptions about <span class="process-math">\(F\)</span> beyond the fact that its addition and multiplication operations satisfy the field axioms. This can make the proof of these very simple properties less straightforward than you might expect. We content ourselves with a proof of (1) and (2).</div>
+<div class="para logical">
+<div class="para">To prove (1), we observe first that for any <span class="process-math">\(\alpha\in F\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0\alpha=(0+0)\alpha=0\alpha+0\alpha\text{.}
+\end{equation*}
+</div>
+<div class="para">Here we have used the fact that <span class="process-math">\(0\)</span> satisfies Axiom (iv) (and thus <span class="process-math">\(0+0=0\)</span>), and that Axiom (iii) holds (distributivity). We conclude the proof by invoking the existence of additive inverses: in detail we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+0\alpha\amp = 0\alpha+0\alpha \\
+-(0\alpha)+0\alpha\amp=-(0\alpha)+0\alpha+0\alpha \amp (\text{add } -(0\alpha)\text{ to both sides}) \\
+0\amp=0+0\alpha \amp (-(0\alpha) \text{ is add. inv. of } 0\alpha )\\
+0\amp=0\alpha \amp (0+\beta=\beta \text{ for any } \beta)\text{,}
+\end{align*}
+</div>
+<div class="para">as desired.</div>
+</div>
+<div class="para logical">
+<div class="para">Moving to (2), assume we have <span class="process-math">\(\alpha\beta=0\text{.}\)</span> We will show that if <span class="process-math">\(\alpha\ne 0\text{,}\)</span> then <span class="process-math">\(\beta=0\text{,}\)</span> which is equivalent to proving <span class="process-math">\(\alpha=0\)</span> or <span class="process-math">\(\beta=0\text{.}\)</span> Assume <span class="process-math">\(\alpha\ne 0\text{.}\)</span> By Axiom (vii) there is a multiplicative inverse <span class="process-math">\(\alpha^{-1}\in F\)</span> satisfying <span class="process-math">\(\alpha^{-1}\alpha=1\text{.}\)</span> But then we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\alpha\beta=0 \amp \implies \alpha^{-1}\alpha\beta=\alpha^{-1}0\\
+\amp \implies 1\beta\beta=0 \amp (\alpha^{-1}\alpha=1, \alpha^{-1}0=0\alpha^{-1}=0 \text{ by } (2))\\
+\amp \implies \beta=0 \amp (1\beta=\beta) \text{,}
+\end{align*}
+</div>
+<div class="para">as desired.</div>
+</div></article></details><span class="incontext"><a class="internal" href="s_fields.html#th_field_props">in-context</a></span>
+</body>
+</html>

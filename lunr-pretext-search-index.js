@@ -808,7 +808,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.2",
   "title": "Vector spaces",
-  "body": " Vector spaces   In the last section we isolated useful number system properties of and generalized them in the form of our axiomatic definition of a field ( ). Similarly, in this section we give a similar treatment to the type of vector spaces usually studied in a first course in linear algebra: that is, the space of real -tuples . The two operations on we choose to generalize are its version of vector addition  , and its version of scalar multiplication  . You should think of the axioms of as an enumeration of precisely which properties of these two operations on we want a structure to enjoy in order to ensure that we can perform a form of vector arithmetic and algebra just as we do in . Note that there is an important qualitative difference between the two vector operations on that is treated carefully in ; namely, whereas vector addition takes as its input two vectors and returns another, scalar multiplication takes a scalar and a vector and returns another vector. In this sense, scalar multiplication should be thought of as a sort of hybrid operation.    Definitions and examples   stands for field   Henceforth, unless stated otherwise, will always denote a field. For any explicit example in this course the field will be either or . However, all statements of theory formulated in terms of are understood to be valid for any field.     Vector space  vector space definition  vector space zero vector  vector space vector inverse  vector space vector   Let be a field. A vector space over (or -vector space ) is a set together with two operations , called respectively vector addition and scalar multiplication , that satisfy the following vector space axioms .   Vector addition is commutative   for all .    Vector addition is associative   for all .    Zero vector  There is an element such that for all , we have . We call the zero vector of .    Vector inverses  For all , there is another element satisfying . We call the vector inverse of .    Distribution over vector addition   for all and .    Distribution over scalar addition   for all and .    Scalar multiplication is associative   for all and all .    Scalar multiplication identity   for all .   We call elements of the vector space  vectors and the elements of  scalars .     Arithmetic and existential axioms  As with the axioms in we divide the vector space axioms into the arithmetic axioms (Axioms (i)-(ii),(v)-(vi),(vii)) and the existential axioms (Axioms (iii)-(iv)).   We now proceed to a litany of examples. Each one will be stated as a definition (for reference purposes), but nonetheless requires a proof that the given structure does indeed constitute a vector space. In a classic mathematical move, we begin with the simplest of all vector spaces, the zero space . Elementary as this example is, it serves well to illustrate the axiomatic nature of .   Zero space   Let be a field, and let , a set containing exactly one element. There is a unique -vector space structure that can be given to , defined as follows.   Vector operations  Vector addition on is defined as ; scalar multiplication on is defined as for all .    Zero vector  The zero vector of is : , .    Vector inverses  The vector inverse of is : , .   Since with respect to this vector space structure, we have . Accordingly, we call a zero space .     makes two claims: that the given operations make into a vector space, and that this is the only way to make into a vector space. As with all claims in mathematics, these need to be proved, but as you will see, the proof is a very light affair.   Proof for  Since only has one item, there is no choice for what vector addition and scalar multiplication can be. They must be defined in the manner given in . Similarly, we must have and , as once again, is the only element of ! This shows that there can be at most one way of giving a vector space structure.  It is now easy to see that these choices do indeed satisfy the vector space axioms. That satisfies the identity of Axiom defining the zero vector follows from the fact that for all we have (since ), and thus . Thus is the zero vector of the space.  Similarly, to show all elements of have vector inverses amounts to showing that has a vector inverse, since this is the only element of . It is claimed that ( , is its own vector inverse), which follows from the fact that . Lastly, the identities of Axioms (i)-(ii) and (v)-(viii) in this setting all reduce to trivial statements of the form . Consider Axiom (vii), for example. For all , we have , in which case and . Thus for all and .  We leave verification of the rest of the axioms to the reader.   It is worth formalizing the proof technique used above into an official procedure for showing whether something is a vector space.   Vector space verification   To decide whether a given set and operations is a vector space, proceed as follows.   Make explicit the underlying set of the proposed vector space.    Make explicit what the scalar multiplication and vector addition operations are.    Identify an element of that serves as the zero vector ( , satisfies ) and for each show that there is a vector satisfying .    Show that the two vector operations and our choice of zero vector and vector inverses satisfy the axioms of .        Vector space verification  Think of steps (1)-(3) of as the issuing of official declarations about the makeup of our proposed vector space: The underlying set shall be as stated ; We declare the vector operations thusly ; The zero vector shall be this element here, and vector inverses shall be assigned in this manner . Step (4) is where we get down to the nitty gritty of showing that the proposed vector space structure articulated in (1)-(3) does indeed satisfy all the necessary properties.  In each of the remaining examples below we carefully lay out the details of items (1)-(3) while often leaving much of the work of item (4) to you. You will meet these vector spaces frequently throughout the rest of your life. Each time you do, it will be helpful for orientation purposes to mentally run through items (1)-(3). Ask yourself: What is the underlying set? What are vector operations? What acts as the zero vector, and how do I assign vector inverses?   We now work our way up in complexity, considering first three examples that might already be familiar to you in some form or other. Note that (a) the vector space operations for each of , , are all very similar in nature (roughly speaking the operations are always defined component-wise ), and (b) that we postpone the verification of the vector space axioms for these examples until after . This is because each of the vector spaces in is in fact one particular example of the vastly more general vector space defined in ! We will make this clear in the proof of .   -tuples   Let be a field. Given a positive integer , recall that is the set of all -valued -tuples: , . Below we define a vector space structure on .   Vector operations  Given and , we define .    Zero vector  The zero vector of is .    Vector inverses  Given a sequence , its vector inverse is .   We call , together with these vector operations, the space of -valued -tuples (or the space of -tuples with coordinates in ).     The proof that is a vector space with respect to these operations is postponed until .    Complex pairs   Consider the complex vector space . Given vectors and scalar , we have .     Space of infinite sequences   Let be a field. Recall that is the set of all -valued infinite sequences: , . Below we define a vector space structure on .   Vector operations  Given and , we define .    Zero vector  The zero vector of with respect to these operations is .    Vector inverses  Given a sequence , its vector inverse is .   We call , together with these vector operations, the space of infinite sequences with entries in (or the space of -valued infinite sequences ).     The proof that is a vector space with respect to these operations is postponed until .    Complex infinite sequences   Consider the complex vector space of all infinite sequences with complex entries. Given sequences and , and scalar , we have .     Space of matrices   Let be a field. Given positive integers , we define to be the set of all matrices with entries in : , . Below we define a vector space structure on .   Vector operations  Given matrices and , we define .    Zero vector  The zero vector of is the the zero matrix .    Vector inverses  Given a matrix its vector inverse is .   We call , together with these vector operations, the space of matrices with entries in (or the space of -valued matrices ).     The proof that is a vector space with respect to these operations is postponed until .    Complex matrices   Consider the vector space of all matrices with complex entries. Given matrices and scalar , we have .    As promised, the vector space defined in generalizes each of the vector spaces defined in , , . The objects of the vector space can be thought of either as functions from the set to the field , or equivalently, as -valued tuples indexed by . Hence the functions\/tuples in its name. Depending on the context, one of these two equivalent conceptions (function or tuple) may be more convenient than the other. For example, to make the connection between , , , and , it is most convenient to think in terms of tuples. See for the general definition of tuples and for an explication of the equivalence between functions and tuples.   Space of -valued functions\/tuples   Let be a field. Given any set , recall that is defined as the set of all functions :  . Equivalently, thinking of functions as tuples, we can describe as the set of all -valued tuples indexed by : , . Below we define a vector space structure on .   Vector operations  Given elements and scalar , we define . In other words, is the function defined as for all , and is the function defined as for all .    Zero vector  The zero vector of is the zero function defined as for all . In other words, using tuple notation, we have .    Vector inverses  Given an element its vector inverse is defined as . In other words is the function on defined as for all .   We call , together with these vector operations, the space of functions from to , or, thinking in terms of tuples, the space of -valued tuples indexed by .     Function\/tuple spaces are vector spaces   Each of the sets , , , , together with the accompanying vector operations defined above, is a vector space.    First we observe, thinking in terms of tuples, that each of the sets , , , along with their accompanying vector space operations, is a specific example of together with its vector operations. This is seen by choosing an appropriate index set in each case. In more detail, we have . Thus it suffices to show that is a vector space with respect to the given vector operations. To do this, we follow . Since has already taken care of steps (1)-(3) for us, it remains to show that the vector space axioms are satisfied. As you will see, the tuple notation for functions makes these proofs quite straightforward consequences of the field axioms satisfied by .  Consider the arithmetic axioms first. We will verify that Axioms (i), (ii), and (v) are satisfied. Given and , we have . Lastly we will show that does indeed satisfy the additive identity axiom (Axiom (iii)), leaving the verification of Axiom (iv) to the reader. Given any element , we have , as desired.     Real-valued functions   Let be an interval in the real line. Using the function interpretation of , is the set of all functions of the form . The vector operations defined in in this setting correspond to the function-arithmetic operations you met in precalculus and calculus: , given functions , their vector sum is the function defined as for all . Similarly, given a scalar and function , the vector scalar multiple is the function defined as for all .  In this context it is possible to visualize our vector operations in terms of the graphs of the functions on the interval .   Visualizing function arithmetic in    Visualizing   Visualizing function addition      Visualizing   Visualizing function scalar multiplication           Vector space properties   Uniqueness of zero vector and inverses   Let be an -vector space.   The zero vector in is unique: , there is one and only one element of that satisfies .    Inverse vectors are unique: , for all there is one and only one vector satisfying .            Vector space properties   Let be an -vector space.   For all , we have .    For all , we have .    For all , we have .    For all and , if , then or .            "
+  "body": " Vector spaces  In the last section we isolated useful number system properties of and generalized them in the form of our axiomatic definition of a field ( ). Similarly, in this section we give a similar treatment to the type of vector spaces usually studied in a first course in linear algebra: that is, the space of real -tuples . The two operations on we choose to generalize are its version of vector addition  , and its version of scalar multiplication  . You should think of the axioms of as an enumeration of precisely which properties of these two operations on we want a structure to enjoy in order to ensure that we can perform a form of vector arithmetic and algebra just as we do in . Note that there is an important qualitative difference between the two vector operations on that is treated carefully in ; namely, whereas vector addition takes as its input two vectors and returns another, scalar multiplication takes a scalar and a vector and returns another vector. In this sense, scalar multiplication should be thought of as a sort of hybrid operation.   stands for field   Henceforth, unless stated otherwise, will always denote a field. For any explicit example in this course the field will be either or . However, all statements of theory formulated in terms of are understood to be valid for any field.     Vector space  vector space definition  vector space zero vector  vector space vector inverse  vector space vector   Let be a field. A vector space over (or -vector space ) is a set together with two operations , called respectively vector addition and scalar multiplication , that satisfy the following vector space axioms .   Vector addition is commutative   for all .    Vector addition is associative   for all .    Zero vector  There is an element such that for all , we have . We call the zero vector of .    Vector inverses  For all , there is another element satisfying . We call the vector inverse of .    Distribution over vector addition   for all and .    Distribution over scalar addition   for all and .    Scalar multiplication is associative   for all and all .    Scalar multiplication identity   for all .   We call elements of the vector space  vectors and the elements of  scalars .     Arithmetic and existential axioms  As with the axioms in we divide the vector space axioms into the arithmetic axioms (Axioms (i)-(ii),(v)-(vi),(vii)) and the existential axioms (Axioms (iii)-(iv)).   We now proceed to a litany of examples. Each one will be stated as a definition (for reference purposes), but nonetheless requires a proof that the given structure does indeed constitute a vector space. In a classic mathematical move, we begin with the simplest of all vector spaces, the zero space . Elementary as this example is, it serves well to illustrate the axiomatic nature of .   Zero space   Let be a field, and let , a set containing exactly one element. There is a unique -vector space structure that can be given to , defined as follows.   Vector operations  Vector addition on is defined as ; scalar multiplication on is defined as for all .    Zero vector  The zero vector of is : , .    Vector inverses  The vector inverse of is : , .   Since with respect to this vector space structure, we have . Accordingly, we call a zero space .     makes two claims: that the given operations make into a vector space, and that this is the only way to make into a vector space. As with all claims in mathematics, these need to be proved, but as you will see, the proof is a very light affair.   Proof for  Since only has one item, there is no choice for what vector addition and scalar multiplication can be. They must be defined in the manner given in . Similarly, we must have and , as once again, is the only element of ! This shows that there can be at most one way of giving a vector space structure.  It is now easy to see that these choices do indeed satisfy the vector space axioms. That satisfies the identity of Axiom defining the zero vector follows from the fact that for all we have (since ), and thus . Thus is the zero vector of the space.  Similarly, to show all elements of have vector inverses amounts to showing that has a vector inverse, since this is the only element of . It is claimed that ( , is its own vector inverse), which follows from the fact that . Lastly, the identities of Axioms (i)-(ii) and (v)-(viii) in this setting all reduce to trivial statements of the form . Consider Axiom (vii), for example. For all , we have , in which case and . Thus for all and .  We leave verification of the rest of the axioms to the reader.   It is worth formalizing the proof technique used above into an official procedure for showing whether something is a vector space.   Vector space verification   To decide whether a given set and operations is a vector space, proceed as follows.   Make explicit the underlying set of the proposed vector space.    Make explicit what the scalar multiplication and vector addition operations are.    Identify an element of that serves as the zero vector ( , satisfies ) and for each show that there is a vector satisfying .    Show that the two vector operations and our choice of zero vector and vector inverses satisfy the axioms of .        Vector space verification  Think of steps (1)-(3) of as the issuing of official declarations about the makeup of our proposed vector space: The underlying set shall be as stated ; We declare the vector operations thusly ; The zero vector shall be this element here, and vector inverses shall be assigned in this manner . Step (4) is where we get down to the nitty gritty of showing that the proposed vector space structure articulated in (1)-(3) does indeed satisfy all the necessary properties.  In each of the remaining examples below we carefully lay out the details of items (1)-(3) while often leaving much of the work of item (4) to you. You will meet these vector spaces frequently throughout the rest of your life. Each time you do, it will be helpful for orientation purposes to mentally run through items (1)-(3). Ask yourself: What is the underlying set? What are vector operations? What acts as the zero vector, and how do I assign vector inverses?   We now work our way up in complexity, considering first three examples that might already be familiar to you in some form or other. Note that (a) the vector space operations for each of , , are all very similar in nature (roughly speaking the operations are always defined component-wise ), and (b) that we postpone the verification of the vector space axioms for these examples until in the next section! This is because each of the vector spaces in is in fact one particular example of the vastly more general vector space defined in ! We will make this clear in the proof of . For now, consider the treatment of the vector spaces below simply as a getting to know session.   -tuples   Let be a field. Given a positive integer , recall that is the set of all -valued -tuples: , . Below we define a vector space structure on .   Vector operations  Given and , we define .    Zero vector  The zero vector of is .    Vector inverses  Given a sequence , its vector inverse is .   We call , together with these vector operations, the space of -valued -tuples (or the space of -tuples with coordinates in ).     The proof that is a vector space with respect to these operations is postponed until .    Complex pairs   Consider the complex vector space . Given vectors and scalar , we have .     Space of infinite sequences   Let be a field. Recall that is the set of all -valued infinite sequences: , . Below we define a vector space structure on .   Vector operations  Given and , we define .    Zero vector  The zero vector of with respect to these operations is .    Vector inverses  Given a sequence , its vector inverse is .   We call , together with these vector operations, the space of infinite sequences with entries in (or the space of -valued infinite sequences ).     The proof that is a vector space with respect to these operations is postponed until .    Complex infinite sequences   Consider the complex vector space of all infinite sequences with complex entries. Given sequences and , and scalar , we have .     Space of matrices   Let be a field. Given positive integers , we define to be the set of all matrices with entries in : , . Below we define a vector space structure on .   Vector operations  Given matrices and , we define .    Zero vector  The zero vector of is the the zero matrix .    Vector inverses  Given a matrix its vector inverse is .   We call , together with these vector operations, the space of matrices with entries in (or the space of -valued matrices ).     The proof that is a vector space with respect to these operations is postponed until .    Complex matrices   Consider the vector space of all matrices with complex entries. Given matrices and scalar , we have .    "
 },
 {
   "id": "fiat_F_field",
@@ -829,9 +829,9 @@ var ptx_lunr_docs = [
   "body": " Vector space  vector space definition  vector space zero vector  vector space vector inverse  vector space vector   Let be a field. A vector space over (or -vector space ) is a set together with two operations , called respectively vector addition and scalar multiplication , that satisfy the following vector space axioms .   Vector addition is commutative   for all .    Vector addition is associative   for all .    Zero vector  There is an element such that for all , we have . We call the zero vector of .    Vector inverses  For all , there is another element satisfying . We call the vector inverse of .    Distribution over vector addition   for all and .    Distribution over scalar addition   for all and .    Scalar multiplication is associative   for all and all .    Scalar multiplication identity   for all .   We call elements of the vector space  vectors and the elements of  scalars .   "
 },
 {
-  "id": "ss_vector_space_def-4",
+  "id": "s_vector_space-5",
   "level": "2",
-  "url": "s_vector_space.html#ss_vector_space_def-4",
+  "url": "s_vector_space.html#s_vector_space-5",
   "type": "Remark",
   "number": "1.2.3",
   "title": "Arithmetic and existential axioms.",
@@ -847,11 +847,11 @@ var ptx_lunr_docs = [
   "body": " Zero space   Let be a field, and let , a set containing exactly one element. There is a unique -vector space structure that can be given to , defined as follows.   Vector operations  Vector addition on is defined as ; scalar multiplication on is defined as for all .    Zero vector  The zero vector of is : , .    Vector inverses  The vector inverse of is : , .   Since with respect to this vector space structure, we have . Accordingly, we call a zero space .   "
 },
 {
-  "id": "ss_vector_space_def-8",
+  "id": "s_vector_space-9",
   "level": "2",
-  "url": "s_vector_space.html#ss_vector_space_def-8",
+  "url": "s_vector_space.html#s_vector_space-9",
   "type": "Proof",
-  "number": "1",
+  "number": "1.2.1",
   "title": "Proof for Definition 1.2.4.",
   "body": " Proof for  Since only has one item, there is no choice for what vector addition and scalar multiplication can be. They must be defined in the manner given in . Similarly, we must have and , as once again, is the only element of ! This shows that there can be at most one way of giving a vector space structure.  It is now easy to see that these choices do indeed satisfy the vector space axioms. That satisfies the identity of Axiom defining the zero vector follows from the fact that for all we have (since ), and thus . Thus is the zero vector of the space.  Similarly, to show all elements of have vector inverses amounts to showing that has a vector inverse, since this is the only element of . It is claimed that ( , is its own vector inverse), which follows from the fact that . Lastly, the identities of Axioms (i)-(ii) and (v)-(viii) in this setting all reduce to trivial statements of the form . Consider Axiom (vii), for example. For all , we have , in which case and . Thus for all and .  We leave verification of the rest of the axioms to the reader.  "
 },
@@ -865,9 +865,9 @@ var ptx_lunr_docs = [
   "body": " Vector space verification   To decide whether a given set and operations is a vector space, proceed as follows.   Make explicit the underlying set of the proposed vector space.    Make explicit what the scalar multiplication and vector addition operations are.    Identify an element of that serves as the zero vector ( , satisfies ) and for each show that there is a vector satisfying .    Show that the two vector operations and our choice of zero vector and vector inverses satisfy the axioms of .      "
 },
 {
-  "id": "ss_vector_space_def-11",
+  "id": "s_vector_space-12",
   "level": "2",
-  "url": "s_vector_space.html#ss_vector_space_def-11",
+  "url": "s_vector_space.html#s_vector_space-12",
   "type": "Remark",
   "number": "1.2.6",
   "title": "Vector space verification.",
@@ -883,11 +883,11 @@ var ptx_lunr_docs = [
   "body": " -tuples   Let be a field. Given a positive integer , recall that is the set of all -valued -tuples: , . Below we define a vector space structure on .   Vector operations  Given and , we define .    Zero vector  The zero vector of is .    Vector inverses  Given a sequence , its vector inverse is .   We call , together with these vector operations, the space of -valued -tuples (or the space of -tuples with coordinates in ).   "
 },
 {
-  "id": "ss_vector_space_def-14",
+  "id": "s_vector_space-15",
   "level": "2",
-  "url": "s_vector_space.html#ss_vector_space_def-14",
+  "url": "s_vector_space.html#s_vector_space-15",
   "type": "Proof",
-  "number": "2",
+  "number": "1.2.2",
   "title": "",
   "body": " The proof that is a vector space with respect to these operations is postponed until .  "
 },
@@ -910,11 +910,11 @@ var ptx_lunr_docs = [
   "body": " Space of infinite sequences   Let be a field. Recall that is the set of all -valued infinite sequences: , . Below we define a vector space structure on .   Vector operations  Given and , we define .    Zero vector  The zero vector of with respect to these operations is .    Vector inverses  Given a sequence , its vector inverse is .   We call , together with these vector operations, the space of infinite sequences with entries in (or the space of -valued infinite sequences ).   "
 },
 {
-  "id": "ss_vector_space_def-17",
+  "id": "s_vector_space-18",
   "level": "2",
-  "url": "s_vector_space.html#ss_vector_space_def-17",
+  "url": "s_vector_space.html#s_vector_space-18",
   "type": "Proof",
-  "number": "3",
+  "number": "1.2.3",
   "title": "",
   "body": " The proof that is a vector space with respect to these operations is postponed until .  "
 },
@@ -937,11 +937,11 @@ var ptx_lunr_docs = [
   "body": " Space of matrices   Let be a field. Given positive integers , we define to be the set of all matrices with entries in : , . Below we define a vector space structure on .   Vector operations  Given matrices and , we define .    Zero vector  The zero vector of is the the zero matrix .    Vector inverses  Given a matrix its vector inverse is .   We call , together with these vector operations, the space of matrices with entries in (or the space of -valued matrices ).   "
 },
 {
-  "id": "ss_vector_space_def-20",
+  "id": "s_vector_space-21",
   "level": "2",
-  "url": "s_vector_space.html#ss_vector_space_def-20",
+  "url": "s_vector_space.html#s_vector_space-21",
   "type": "Proof",
-  "number": "4",
+  "number": "1.2.4",
   "title": "",
   "body": " The proof that is a vector space with respect to these operations is postponed until .  "
 },
@@ -955,56 +955,65 @@ var ptx_lunr_docs = [
   "body": " Complex matrices   Consider the vector space of all matrices with complex entries. Given matrices and scalar , we have .   "
 },
 {
+  "id": "s_vector_space_functions",
+  "level": "1",
+  "url": "s_vector_space_functions.html",
+  "type": "Section",
+  "number": "1.3",
+  "title": "Vector spaces (cont.)",
+  "body": " Vector spaces (cont.)   Function spaces  As promised, we now prove that sets , , , together with their indicated operations, do indeed satisfy the vector space axioms. We will do this in a somewhat indirect manner by first constructing a more general vector space , and then showing that , , and are just specific instances of this more general construction, corresponding to particular choices of the set .  The objects of the vector space defined in can be thought of either as functions from the set to the field , or equivalently, as -valued tuples indexed by . Hence the functions\/tuples in its name. Depending on the context, one of these two equivalent conceptions (function or tuple) may be more convenient than the other. For example, to make the connection between , , , and , it is most convenient to think in terms of tuples. See for the general definition of tuples and for an explication of the equivalence between functions and tuples.   Space of -valued functions\/tuples   Let be a field. Given any set , recall that is defined as the set of all functions :  . Equivalently, thinking of functions as tuples, we can describe as the set of all -valued tuples indexed by : , . Below we define a vector space structure on .   Vector operations  Given elements and scalar , we define . In other words, is the function defined as for all , and is the function defined as for all .    Zero vector  The zero vector of is the zero function defined as for all . In other words, using tuple notation, we have .    Vector inverses  Given an element its vector inverse is defined as . In other words is the function on defined as for all .   We call , together with these vector operations, the space of functions from to , or, thinking in terms of tuples, the space of -valued tuples indexed by .     Function\/tuple spaces are vector spaces   Each of the sets , , , , together with the accompanying vector operations defined above, is a vector space.    First we observe, thinking in terms of tuples, that each of the sets , , , along with their accompanying vector space operations, is a specific example of together with its vector operations. This is seen by choosing an appropriate index set in each case. In more detail, we have . Thus it suffices to show that is a vector space with respect to the given vector operations. To do this, we follow . Since has already taken care of steps (1)-(3) for us, it remains to show that the vector space axioms are satisfied. As you will see, the tuple notation for functions makes these proofs quite straightforward consequences of the field axioms satisfied by .  Consider the arithmetic axioms first. We will verify that Axioms (i), (ii), and (v) are satisfied. Given and , we have . Lastly we will show that does indeed satisfy the additive identity axiom (Axiom (iii)), leaving the verification of Axiom (iv) to the reader. Given any element , we have , as desired.     Real-valued functions   Let be an interval in the real line. Using the function interpretation of , is the set of all functions of the form . The vector operations defined in in this setting correspond to the function-arithmetic operations you met in precalculus and calculus: , given functions , their vector sum is the function defined as for all . Similarly, given a scalar and function , the vector scalar multiple is the function defined as for all .  In this context it is possible to visualize our vector operations in terms of the graphs of the functions on the interval .   Visualizing function arithmetic in    Visualizing   Visualizing function addition      Visualizing   Visualizing function scalar multiplication           Vector space properties  We end this section with a few elementary vector space properties. Since these statements involve a general vector space (as opposed to a specific type of vector space), we will make no assumptions about and the base field , other than that satisfies the vector space axioms and satisfies the field axioms.   Uniqueness of zero vector and inverses   Let be an -vector space.   The zero vector in is unique: , there is one and only one element of that satisfies .    Inverse vectors are unique: , for all there is one and only one vector satisfying .          If satisfies for all , then in particular, taking , we see that . But since (using the defining property of , we see that . We conclude that , as desired.    Let . Given we have .        Vector space properties   Let be an -vector space.   For all , we have .    For all , we have .    For all , we have .    For all and , if , then or .       We provide proofs of (1) and (3), leaving (2) and (4) to the reader.  Our proof of (1) is almost identical to a similar statement in . For any , we have . But then we have , as desired.  Let . To prove (2), we will show that satisfies the defining property of ; since each vector has a unique vector inverse ( ), it will then follow that . To show satisfies , we observe that . Thus .     "
+},
+{
   "id": "d_tuple_space",
   "level": "2",
-  "url": "s_vector_space.html#d_tuple_space",
+  "url": "s_vector_space_functions.html#d_tuple_space",
   "type": "Definition",
-  "number": "1.2.13",
+  "number": "1.3.1",
   "title": "Space of <span class=\"process-math\">\\(F\\)<\/span>-valued functions\/tuples.",
   "body": " Space of -valued functions\/tuples   Let be a field. Given any set , recall that is defined as the set of all functions :  . Equivalently, thinking of functions as tuples, we can describe as the set of all -valued tuples indexed by : , . Below we define a vector space structure on .   Vector operations  Given elements and scalar , we define . In other words, is the function defined as for all , and is the function defined as for all .    Zero vector  The zero vector of is the zero function defined as for all . In other words, using tuple notation, we have .    Vector inverses  Given an element its vector inverse is defined as . In other words is the function on defined as for all .   We call , together with these vector operations, the space of functions from to , or, thinking in terms of tuples, the space of -valued tuples indexed by .   "
 },
 {
   "id": "th_vs_egs",
   "level": "2",
-  "url": "s_vector_space.html#th_vs_egs",
+  "url": "s_vector_space_functions.html#th_vs_egs",
   "type": "Theorem",
-  "number": "1.2.14",
+  "number": "1.3.2",
   "title": "Function\/tuple spaces are vector spaces.",
   "body": " Function\/tuple spaces are vector spaces   Each of the sets , , , , together with the accompanying vector operations defined above, is a vector space.    First we observe, thinking in terms of tuples, that each of the sets , , , along with their accompanying vector space operations, is a specific example of together with its vector operations. This is seen by choosing an appropriate index set in each case. In more detail, we have . Thus it suffices to show that is a vector space with respect to the given vector operations. To do this, we follow . Since has already taken care of steps (1)-(3) for us, it remains to show that the vector space axioms are satisfied. As you will see, the tuple notation for functions makes these proofs quite straightforward consequences of the field axioms satisfied by .  Consider the arithmetic axioms first. We will verify that Axioms (i), (ii), and (v) are satisfied. Given and , we have . Lastly we will show that does indeed satisfy the additive identity axiom (Axiom (iii)), leaving the verification of Axiom (iv) to the reader. Given any element , we have , as desired.   "
 },
 {
   "id": "eg_real_functions",
   "level": "2",
-  "url": "s_vector_space.html#eg_real_functions",
+  "url": "s_vector_space_functions.html#eg_real_functions",
   "type": "Example",
-  "number": "1.2.15",
+  "number": "1.3.3",
   "title": "Real-valued functions.",
   "body": " Real-valued functions   Let be an interval in the real line. Using the function interpretation of , is the set of all functions of the form . The vector operations defined in in this setting correspond to the function-arithmetic operations you met in precalculus and calculus: , given functions , their vector sum is the function defined as for all . Similarly, given a scalar and function , the vector scalar multiple is the function defined as for all .  In this context it is possible to visualize our vector operations in terms of the graphs of the functions on the interval .   Visualizing function arithmetic in    Visualizing   Visualizing function addition      Visualizing   Visualizing function scalar multiplication        "
 },
 {
   "id": "th_zero_inv_unique",
   "level": "2",
-  "url": "s_vector_space.html#th_zero_inv_unique",
+  "url": "s_vector_space_functions.html#th_zero_inv_unique",
   "type": "Theorem",
-  "number": "1.2.17",
+  "number": "1.3.5",
   "title": "Uniqueness of zero vector and inverses.",
-  "body": " Uniqueness of zero vector and inverses   Let be an -vector space.   The zero vector in is unique: , there is one and only one element of that satisfies .    Inverse vectors are unique: , for all there is one and only one vector satisfying .          "
+  "body": " Uniqueness of zero vector and inverses   Let be an -vector space.   The zero vector in is unique: , there is one and only one element of that satisfies .    Inverse vectors are unique: , for all there is one and only one vector satisfying .          If satisfies for all , then in particular, taking , we see that . But since (using the defining property of , we see that . We conclude that , as desired.    Let . Given we have .      "
 },
 {
   "id": "th_vs_props",
   "level": "2",
-  "url": "s_vector_space.html#th_vs_props",
+  "url": "s_vector_space_functions.html#th_vs_props",
   "type": "Theorem",
-  "number": "1.2.18",
+  "number": "1.3.6",
   "title": "Vector space properties.",
-  "body": " Vector space properties   Let be an -vector space.   For all , we have .    For all , we have .    For all , we have .    For all and , if , then or .          "
+  "body": " Vector space properties   Let be an -vector space.   For all , we have .    For all , we have .    For all , we have .    For all and , if , then or .       We provide proofs of (1) and (3), leaving (2) and (4) to the reader.  Our proof of (1) is almost identical to a similar statement in . For any , we have . But then we have , as desired.  Let . To prove (2), we will show that satisfies the defining property of ; since each vector has a unique vector inverse ( ), it will then follow that . To show satisfies , we observe that . Thus .   "
 },
 {
   "id": "s_subspace",
   "level": "1",
   "url": "s_subspace.html",
   "type": "Section",
-  "number": "1.3",
+  "number": "1.4",
   "title": "Subspaces",
   "body": " Subspaces   In this section we will study subspaces , which are special subsets of vector spaces that respect the defining structure of a vector spaces: namely, the two vector operations. makes precise what we mean here by respect .  Subspaces arise naturally in any setting where vector spaces are at play, and are closely connected to solutions to linear systems. As we will see in , subspaces of vector spaces are vector spaces in their own right, furnishing us with yet more interesting examples of vector spaces.    Definition and examples   Subspace   Let be a vector space. A subset is a subspace of if the following conditions hold.   contains the zero vector   .    is closed under addition  For all , if , then . Using logical shorthand: .    is closed under scalar multiplication  For all and , if , then . Using logical shorthand: .         Let and let . Prove that is a subspace.    We must show properties (i)-(iii) hold for .   The zero element of is , which is certainly of the form . Thus .    We must prove the implication . .    We must prove the implication , for any . We have          Let and let . Is a vector space? Decide which of the of properties (i)-(iii) in (if any) are satisfied by .       Clearly .    Suppose . Then , in which case , and hence . Thus is closed under addition.    The set is not closed under scalar multiplication. Indeed, let . Then .       As we now endeavor to show, if is a subspace of a vector space , then it inherits a vector space structure from by simply restricting the vector operations defined on to the subset .   Subspaces are vector spaces   Let be a subspace of the vector space .   The vector operations of restrict to operations on that satisfy the vector space axioms.    The zero vector of , considered as a vector space, is the zero vector of .    Given an element , its vector inverse with respect to the vector space structure of is equal to its vector inverse with respect to the vector space structure of .       It is important to understand how Axioms of come into play here. Without them we would not be able to say that restricting the vector operations of to elements of actually gives rise to well-defined operations on . To be well-defined the operations must output elements that lie not just in , but in itself. This is precisely what being closed under addition and scalar multiplication guarantees. In more detail, since for all (Axiom (ii)), the vector addition on gives rise by restriction to a well-defined operation on ; similarly, since for all and , the scalar multiplication operation on gives rise by restriction to a well-defined scalar multiplication on .  Once we know restriction gives rise to well-defined operations on , verifying the of amounts simply to observing that if a condition is true for all in , it is certainly true for all in the subset .  The existential axioms (iii) and (iv) of , however, require special consideration. By definition, a subspace contains the zero vector of , and clearly this still acts as the zero vector when we restrict the vector operations to . What about vector inverses? We know that for any there is a vector inverse lying somewhere in . We must show that in fact lies in : we need to show that the operation of taking the vector inverse is well-defined on . We prove this as follows: .    Before moving on to more examples of subspaces, we provide a procedure for determining whether something is a subspace. Note that the procedure merges the verification of Axioms (ii)-(iii) of into a single step, using the notion of a linear combination . Now is a good time to make this notion official.   Linear combination   Let be an -vector space, and let be a collection of vectors of . A linear combination of the vectors is a vector expression of the form , where for all . The scalars are called the coefficients of the linear combination. The linear combination is trivial if for all , and nontrivial if for some . A vector is a linear combination of the if we have for some choice of scalars .     Two-step proof for subspaces   We can merge conditions (ii)-(iii) of into a single statement about linear combinations, deriving the following two-step method for proving that a set is a subspace of a vector space .   Show     Show that , for all .        below serves both as an illustration of and a rich source of examples of subspaces. It tells us that the solutions to a matrix equation constitutes a subspace of . This set is called the null space of the matrix. (We will postpone an official definition of null space until we introduce linear transformations.)  The statement and proof of will make use of matrix multiplication and elementary properties that matrix multiplication satisfies. The usual definition of matrix multiplication (for real matrices) generalizes directly to an arbitrary field, and as such we will not include an official definition. Furthermore, all the usual matrix multiplication properties you know and love over the reals carry over to the more general setting of matrices over a general field . We will take this for granted and not include an official statement of those properties.  Lastly, we include another fiat that facilitates dealing with so-called column vectors  .   Tuples shall be column vectors, and vice versa   We hereby declare that all -tuples shall be equated with the corresponding column vector in : , in .     Matrix null space   Let . The set of solutions to the matrix equation is a subspace of .          Important function subspaces   Polynomials   Assume , and let be an infinite subset of . A polynomial function on is a function that can be written in the form , for some nonnegative integer and scalars . Given as in , is called the -th coefficient of ; furthermore, if , we call the leading term of , and we if , and we define the degree of , denoted to be .  Given a nonnegative integer , we define to be the set of all polynomial functions on of degree at most : , . Lastly we define to be the set of all polynomial functions on . Since any polynomial on is of the form for some , we have .     Polynomial spaces   Let , and let be an infinite subset of .    is a subspace of .     is a subspace of for all .           Although not necessary for the proof of , the result below will be useful to us for future discussions. In short, it says that the coefficients of a polynomial uniquely determine it (as long as the domain is infinite).   Polynomial equality   Let and let be an infinite subset of .   Given , we have .    Given and with and , we have .            Function subspaces over   Let be an interval of that contains at least two elements.   We denote by the set of all continuous functions on : i.e., .    Fix . A function is on if is -times differentiable on and its -th derivative is continuous. The set of all functions on is denoted .    A function is on I if is infinitely differentiable on . The set of all functions on is denoted .        Function subspaces.   Let be a an interval containing at least two elements. The sets , , , , are all subspaces of , and we have the following chain of subspaces: .     "
 },
@@ -1013,7 +1022,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_subspace.html#d_subspace",
   "type": "Definition",
-  "number": "1.3.1",
+  "number": "1.4.1",
   "title": "Subspace.",
   "body": " Subspace   Let be a vector space. A subset is a subspace of if the following conditions hold.   contains the zero vector   .    is closed under addition  For all , if , then . Using logical shorthand: .    is closed under scalar multiplication  For all and , if , then . Using logical shorthand: .      "
 },
@@ -1022,7 +1031,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_subspace.html#ss_subspace_def-3",
   "type": "Example",
-  "number": "1.3.2",
+  "number": "1.4.2",
   "title": "",
   "body": "  Let and let . Prove that is a subspace.    We must show properties (i)-(iii) hold for .   The zero element of is , which is certainly of the form . Thus .    We must prove the implication . .    We must prove the implication , for any . We have       "
 },
@@ -1031,7 +1040,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_subspace.html#ss_subspace_def-4",
   "type": "Example",
-  "number": "1.3.3",
+  "number": "1.4.3",
   "title": "",
   "body": "  Let and let . Is a vector space? Decide which of the of properties (i)-(iii) in (if any) are satisfied by .       Clearly .    Suppose . Then , in which case , and hence . Thus is closed under addition.    The set is not closed under scalar multiplication. Indeed, let . Then .      "
 },
@@ -1040,7 +1049,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_subspace.html#th_subspace_vectorspace",
   "type": "Theorem",
-  "number": "1.3.4",
+  "number": "1.4.4",
   "title": "Subspaces are vector spaces.",
   "body": " Subspaces are vector spaces   Let be a subspace of the vector space .   The vector operations of restrict to operations on that satisfy the vector space axioms.    The zero vector of , considered as a vector space, is the zero vector of .    Given an element , its vector inverse with respect to the vector space structure of is equal to its vector inverse with respect to the vector space structure of .       It is important to understand how Axioms of come into play here. Without them we would not be able to say that restricting the vector operations of to elements of actually gives rise to well-defined operations on . To be well-defined the operations must output elements that lie not just in , but in itself. This is precisely what being closed under addition and scalar multiplication guarantees. In more detail, since for all (Axiom (ii)), the vector addition on gives rise by restriction to a well-defined operation on ; similarly, since for all and , the scalar multiplication operation on gives rise by restriction to a well-defined scalar multiplication on .  Once we know restriction gives rise to well-defined operations on , verifying the of amounts simply to observing that if a condition is true for all in , it is certainly true for all in the subset .  The existential axioms (iii) and (iv) of , however, require special consideration. By definition, a subspace contains the zero vector of , and clearly this still acts as the zero vector when we restrict the vector operations to . What about vector inverses? We know that for any there is a vector inverse lying somewhere in . We must show that in fact lies in : we need to show that the operation of taking the vector inverse is well-defined on . We prove this as follows: .   "
 },
@@ -1049,7 +1058,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_subspace.html#d_linear_comb",
   "type": "Definition",
-  "number": "1.3.5",
+  "number": "1.4.5",
   "title": "Linear combination.",
   "body": " Linear combination   Let be an -vector space, and let be a collection of vectors of . A linear combination of the vectors is a vector expression of the form , where for all . The scalars are called the coefficients of the linear combination. The linear combination is trivial if for all , and nontrivial if for some . A vector is a linear combination of the if we have for some choice of scalars .   "
 },
@@ -1058,7 +1067,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_subspace.html#proc_subspace",
   "type": "Procedure",
-  "number": "1.3.6",
+  "number": "1.4.6",
   "title": "Two-step proof for subspaces.",
   "body": " Two-step proof for subspaces   We can merge conditions (ii)-(iii) of into a single statement about linear combinations, deriving the following two-step method for proving that a set is a subspace of a vector space .   Show     Show that , for all .      "
 },
@@ -1067,7 +1076,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_subspace.html#fiat_col_vecs_tuples",
   "type": "Fiat",
-  "number": "1.3.7",
+  "number": "1.4.7",
   "title": "Tuples shall be column vectors, and vice versa.",
   "body": " Tuples shall be column vectors, and vice versa   We hereby declare that all -tuples shall be equated with the corresponding column vector in : , in .   "
 },
@@ -1076,7 +1085,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_subspace.html#th_matrix_null_space",
   "type": "Theorem",
-  "number": "1.3.8",
+  "number": "1.4.8",
   "title": "Matrix null space.",
   "body": " Matrix null space   Let . The set of solutions to the matrix equation is a subspace of .       "
 },
@@ -1085,7 +1094,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_subspace.html#d_polynomials",
   "type": "Definition",
-  "number": "1.3.9",
+  "number": "1.4.9",
   "title": "Polynomials.",
   "body": " Polynomials   Assume , and let be an infinite subset of . A polynomial function on is a function that can be written in the form , for some nonnegative integer and scalars . Given as in , is called the -th coefficient of ; furthermore, if , we call the leading term of , and we if , and we define the degree of , denoted to be .  Given a nonnegative integer , we define to be the set of all polynomial functions on of degree at most : , . Lastly we define to be the set of all polynomial functions on . Since any polynomial on is of the form for some , we have .   "
 },
@@ -1094,7 +1103,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_subspace.html#th_polynomial_space",
   "type": "Theorem",
-  "number": "1.3.10",
+  "number": "1.4.10",
   "title": "Polynomial spaces.",
   "body": " Polynomial spaces   Let , and let be an infinite subset of .    is a subspace of .     is a subspace of for all .          "
 },
@@ -1103,7 +1112,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_subspace.html#th_poly_equality",
   "type": "Theorem",
-  "number": "1.3.11",
+  "number": "1.4.11",
   "title": "Polynomial equality.",
   "body": " Polynomial equality   Let and let be an infinite subset of .   Given , we have .    Given and with and , we have .          "
 },
@@ -1112,7 +1121,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_subspace.html#d_function_subspaces",
   "type": "Definition",
-  "number": "1.3.12",
+  "number": "1.4.12",
   "title": "Function subspaces over <span class=\"process-math\">\\(\\R\\)<\/span>.",
   "body": " Function subspaces over   Let be an interval of that contains at least two elements.   We denote by the set of all continuous functions on : i.e., .    Fix . A function is on if is -times differentiable on and its -th derivative is continuous. The set of all functions on is denoted .    A function is on I if is infinitely differentiable on . The set of all functions on is denoted .      "
 },
@@ -1121,7 +1130,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_subspace.html#th_function_spaces",
   "type": "Theorem",
-  "number": "1.3.13",
+  "number": "1.4.13",
   "title": "Function subspaces..",
   "body": " Function subspaces.   Let be a an interval containing at least two elements. The sets , , , , are all subspaces of , and we have the following chain of subspaces: .   "
 },
