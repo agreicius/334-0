@@ -268,9 +268,40 @@ for some nonnegative integer <m>n</m> and scalars <m>a_k\in F</m>. Given <m>f</m
   <me>
     P_n(I)=\{f\in F^I\colon f(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots +a_1x+a_0 \text{ for some } a_i\in F\}
   </me>.
+  Lastly we define <m>P(I)</m> to be the set of all polynomial functions on <m>I</m>. Since any polynomial on <m>I</m> is of the form <m>f(x)=\anpoly</m> for some <m>n\in \Z_{\geq 0\}</m>,  we have 
+  <me>
+    P(I)=\bigcup_{n=0}^\infty P_n(I)
+  </me>.
 </p>
 </statement>
 </definition>
+<theorem xml:id="th_polynomial_space">
+<title>Polynomial spaces</title>
+<statement>
+<p>
+Let <m>F\in \{\R, \C\}</m>, and let <m>I</m> be an infinite subset of <m>F</m>.
+<ol>
+  <li>
+    <p>
+      <m>P(I)</m> is a subspace of <m>F^I</m>. 
+    </p>
+  </li>
+   <li>
+     <p>
+     <m>P_n(I)</m> is a subspace of <m>F^I</m> for all <m>n\in \Z_{\geq 0}</m>. 
+    </p>
+  </li>
+</ol>
+</p>
+</statement>
+<proof>
+<p>
+</p>
+</proof>
+</theorem>
+<p>
+  Although not necessary for the proof of <xref ref="th_polynomial_space"/>, the result below will be useful to us for future discussions. In short, it says that the coefficients of a polynomial uniquely determine it (as long as the domain <m>I</m> is infinite). 
+</p>
 <theorem xml:id="th_poly_equality">
 <title>Polynomial equality</title>
 <statement>
@@ -301,7 +332,52 @@ Let <m>F\in \{\R, \C\}</m> and let <m>I</m> be an infinite subset of <m>F</m>.
 </p>
 </proof>
 </theorem>
+<definition xml:id="d_function_subspaces">
+<title>Function subspaces over <m>\R</m></title>
+<statement>
+<p>
+Let <m>I</m> be an interval of <m>\R</m> that contains at least two elements. 
+<ol>
+  <li>
+    <p>
+      We denote by <m>C(I)</m> the set of all continuous functions on <m>I</m>: i.e.,
+    <me>
+      C(I)=\{f\in \F^{I}\colon f \text{ is continuous on }I\}
+    </me>.
+    </p>
+  </li>
 
+  <li>
+    <p>
+      Fix <m>n\geq 1</m>.
+      A function <m>f\in \F^{I}</m> is <m>C^{n}</m> on I if <m>f</m> is <m>n</m>-times differentiable on <m>I</m> and its <m>n</m>-th derivative <m>f^{(n)}(x)</m> is continuous.
+      The set of all <m>C^{n}</m> functions on <m>I</m> is denoted <m>C^{n}(I)</m>.
+    </p>
+  </li>
+
+  <li>
+    <p>
+      A function <m>f\in \F^{I}</m> is <m>C^{\infty}</m> on I if <m>f</m> is infinitely differentiable on <m>I</m>.
+      The set of all <m>C^{\infty}</m> functions on <m>I</m> is denoted <m>C^{\infty}(I)</m>.
+    </p>
+  </li>
+</ol>
+</p>
+</statement>
+</definition>
+<theorem xml:id="th_function_spaces">
+  <title>Function subspaces.</title>
+  <statement>
+    <p>
+      Let <m>I\subseteq \R</m> be a nondegenerate interval.
+      The sets <m>C(I)</m>, <m>C^{n}(I)</m>, <m>C^{\infty}(I)</m>, <m>P(I)</m>, <m>P_{n}(I)</m> are all subspaces of <m>F(I,\R)</m>.
+      Thus we have the following chain of subspaces:
+    <me>
+      P_{n}(I)\subseteq P(I)\subseteq C^{\infty}(I)\subseteq C^{n}(I)\subseteq C(I)\subseteq \R^{I}
+    </me>.
+    </p>
+  </statement>
+</theorem>
 </subsection>
 
 </section>
