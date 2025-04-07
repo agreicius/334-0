@@ -1158,8 +1158,8 @@ var ptx_lunr_docs = [
   "url": "s_subspace_sum.html",
   "type": "Section",
   "number": "1.5",
-  "title": "Sums and direct sums of subspaces",
-  "body": " Sums and direct sums of subspaces   Vector operations on sets   Let be an -vector space. Given subsets of , we define their sum , denoted or , as . Similarly, given a set and scalar , we define the scalar multiple  as .     Sum of subspaces   Let be subspaces of the -vector space , and let be their sum.    is a subspace of .     is the smallest subspace of satisfying for all in the following sense: if is a subspace of satisfying for all , then .          We follow .  Since for all , and since , we see that .  Assume . By definition, we have . But then for any scalars , we have , where for all . Since each is a subspace, we have for all . We conclude that , as desired.    For any , we have , where . Since for all , we see that . Since was an arbitrary element of , we conclude that for all .  Now assume is a subspace of that contains for all . We will show that . Indeed, given any , we have for some vectors , where . Since for all , we have for all ; since is closed under addition, we have , as desired.        Sums of subspaces   Let and consider the following subsets of : .   Prove that each is a subspace of .    Identify as a familiar subspace of . Justify your answer.    Identify as a familiar subspace of . Justify your answer.    Identify as a familiar subspace of . Justify your answer.       Blah d    Direct sum of subspaces   Let be subspaces of the -vector space , and let . We say is the direct sum of the the subspaces , denoted or , if the following property holds: given vectors , , we have if and only if for all .     "
+  "title": "Subspace sums",
+  "body": " Subspace sums   Vector operations on sets   Let be an -vector space. Given subsets of , we define their sum , denoted or , as . Similarly, given a set and scalar , we define the scalar multiple  as .     Sum of subspaces   Let be subspaces of the -vector space , and let be their sum.    is a subspace of .     is the smallest subspace of satisfying for all in the following sense: if is a subspace of satisfying for all , then .          We follow .  Since for all , and since , we see that .  Assume . By definition, we have . But then for any scalars , we have , where for all . Since each is a subspace, we have for all . We conclude that , as desired.    For any , we have , where . Since for all , we see that . Since was an arbitrary element of , we conclude that for all .  Now assume is a subspace of that contains for all . We will show that . Indeed, given any , we have for some vectors , where . Since for all , we have for all ; since is closed under addition, we have , as desired.        Sums of subspaces   Let and consider the following subsets of : .   Prove that each is a subspace of .    Identify as a familiar subspace of . Justify your answer.    Identify as a familiar subspace of . Justify your answer.    Identify as a familiar subspace of . Justify your answer.       Blah d     Direct sum of subspaces   Let be subspaces of the -vector space . We say is the direct sum of the subspaces , denoted , or , if the following conditions hold.    .    For each there is a unique choice of vectors such that . In other words if we have , where for all , then for all .   We call a direct sum decomposition of .     Direct sum   Let and consider the following subspaces of : .   Show that and .    Show that .            Transpose matrix   Given a matrix , its transpose is the matrix whose -th entry is -th entry of for all .     Direct sum of matrix spaces   Let , the space of all matrices with entries in , and consider the following subsets of : . In other words, is the set of all symmetric matrices of and is the set of all skew-symmetric matrices of .   Prove that and are subspaces of .    Prove that .            Direct sum of subspaces   Let be subspaces of the -vector space , and let . The following statements are equivalent.        If with for all , then for all . Using logical shorthand: .           "
 },
 {
   "id": "d_vec_ops_sets",
@@ -1186,7 +1186,52 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.5.3",
   "title": "Sums of subspaces.",
-  "body": " Sums of subspaces   Let and consider the following subsets of : .   Prove that each is a subspace of .    Identify as a familiar subspace of . Justify your answer.    Identify as a familiar subspace of . Justify your answer.    Identify as a familiar subspace of . Justify your answer.       Blah d    Direct sum of subspaces   Let be subspaces of the -vector space , and let . We say is the direct sum of the the subspaces , denoted or , if the following property holds: given vectors , , we have if and only if for all .    "
+  "body": " Sums of subspaces   Let and consider the following subsets of : .   Prove that each is a subspace of .    Identify as a familiar subspace of . Justify your answer.    Identify as a familiar subspace of . Justify your answer.    Identify as a familiar subspace of . Justify your answer.       Blah d   "
+},
+{
+  "id": "d_subspace_direct_sum",
+  "level": "2",
+  "url": "s_subspace_sum.html#d_subspace_direct_sum",
+  "type": "Definition",
+  "number": "1.5.4",
+  "title": "Direct sum of subspaces.",
+  "body": " Direct sum of subspaces   Let be subspaces of the -vector space . We say is the direct sum of the subspaces , denoted , or , if the following conditions hold.    .    For each there is a unique choice of vectors such that . In other words if we have , where for all , then for all .   We call a direct sum decomposition of .   "
+},
+{
+  "id": "eg_direct_sum_Rn",
+  "level": "2",
+  "url": "s_subspace_sum.html#eg_direct_sum_Rn",
+  "type": "Example",
+  "number": "1.5.5",
+  "title": "Direct sum.",
+  "body": " Direct sum   Let and consider the following subspaces of : .   Show that and .    Show that .          "
+},
+{
+  "id": "d_transpose",
+  "level": "2",
+  "url": "s_subspace_sum.html#d_transpose",
+  "type": "Definition",
+  "number": "1.5.6",
+  "title": "Transpose matrix.",
+  "body": " Transpose matrix   Given a matrix , its transpose is the matrix whose -th entry is -th entry of for all .   "
+},
+{
+  "id": "eg_direct_sum_matrices",
+  "level": "2",
+  "url": "s_subspace_sum.html#eg_direct_sum_matrices",
+  "type": "Example",
+  "number": "1.5.7",
+  "title": "Direct sum of matrix spaces.",
+  "body": " Direct sum of matrix spaces   Let , the space of all matrices with entries in , and consider the following subsets of : . In other words, is the set of all symmetric matrices of and is the set of all skew-symmetric matrices of .   Prove that and are subspaces of .    Prove that .          "
+},
+{
+  "id": "th_subspace_direct_sum",
+  "level": "2",
+  "url": "s_subspace_sum.html#th_subspace_direct_sum",
+  "type": "Theorem",
+  "number": "1.5.8",
+  "title": "Direct sum of subspaces.",
+  "body": " Direct sum of subspaces   Let be subspaces of the -vector space , and let . The following statements are equivalent.        If with for all , then for all . Using logical shorthand: .          "
 },
 {
   "id": "appendix-notation",
