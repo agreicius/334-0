@@ -321,7 +321,7 @@ of solutions to the matrix equation <m>A\boldx=\boldzero</m> is a subspace of <m
 </p>
 </proof>
 </theorem>
-<example xml:id="eg_subspace_hyperspace">
+<example xml:id="eg_subspace_hyperplane">
 <title>Hyperplanes of <m>\R^n</m></title>
 <statement>
 <p>
