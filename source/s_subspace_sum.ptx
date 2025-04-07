@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="s_subspace_sum" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Sums and direct sums of subspaces</title>
+    <title>Subspace sums</title>
 
     <definition xml:id="d_vec_ops_sets">
     <title>Vector operations on sets</title>
@@ -143,20 +143,133 @@
     <p>
     Let <m>W_1,W_2,\dots, W_n</m> be subspaces of the <m>F</m>-vector space <m>V</m>. We say <m>W</m> is the <term>direct sum</term> of the subspaces <m>W_i</m>, denoted 
     <men xml:id="eq_subspace_dir_sum">W=W_1\oplus W_2+\cdots \oplus W_n</men>,
-    or <m>W=\bigoplus_{i=1}^n W_i</m>,  if the following properties hold: given vectors <m>v_i, v_i'\in W_i</m>, <m>1\leq i\leq n</m>, we have 
-    <me>
-        v_1+v_2+\cdots +v_n=v_1'+v_2'+\cdots +v_n'
-    </me>
-    if and only if 
-    <me>
-        v_i=v_i'
-    </me>
-    for all <m>1\leq i\leq n</m>. 
-    
-     
+    or <m>W=\bigoplus_{i=1}^n W_i</m>,  if the following conditions hold.
+    <ol>
+        <li>
+            <p>
+                <m>W=V_1+V_2+\cdots +V_n</m>.
+            </p>
+        </li>
+        <li>
+            <p>
+                For each <m>v\in W</m> there is a unique choice of vectors <m>v_i\in W_i</m> such that 
+                <men xml:id="eq_element_dir_sum">
+                    v=v_1+v_2+\cdots +v_n
+                </men>.
+                In other words if we have 
+                <me>
+                    v_1+v_2+\cdots +v_n=v_1'+v_2'+\cdots +v_n'
+                </me>,
+                where <m>v_i,v_i'\in W_i</m> for all <m>1\leq i\leq n</m>, then 
+                <me>
+                    v_i=v_i'
+                </me>
+                for all <m>1\leq i\leq n</m>.
+            </p>
+        </li>
+    </ol>
+    We call <xref ref="eq_subspace_dir_sum"/> a <term>direct sum decomposition</term> of <m>W</m>. 
     </p>
     </statement>
     </definition>
+    <example xml:id="eg_direct_sum_Rn">
+    <title>Direct sum</title>
+    <statement>
+    <p>
+    Let <m>V=\R^3</m> and consider the following subspaces of <m>V</m>: 
+    <md>
+        <mrow>W_1 \amp = \{(r,0,0)\colon r\in \R\}</mrow>
+        <mrow>W_2 \amp = \{(0,s,0)\colon s\in \R\}</mrow>
+        <mrow>W_3 \amp = \{(t,t,0)\colon t\in \R\}</mrow>
+        <mrow>W \amp = \{(a,b,0)\colon a,b\in \R\}</mrow>
+    </md>.
+    <ol>
+        <li>
+            <p>
+                Show that <m>W=W_1\oplus W_2</m> and <m>W=W_1\oplus W_3</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                Show that <m>W\ne W_1\oplus W_2\oplus W_3</m>. 
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <solution>
+    <p>
+    
+    </p>
+    </solution>
+    </example>
+    <definition xml:id="d_transpose">
+    <title>Transpose matrix</title>
+    <statement>
+    <p>
+    Given a matrix <m>A\in F^{m,n}</m>, its <term>transpose</term> is the matrix <m>A^T\in F^{n,m}</m> whose <m>ij</m>-th entry is <m>ji</m>-th entry of <m>A</m> for all <m>1\leq i\leq n, 1\leq j\leq m</m>. 
+    </p>
+    </statement>
+    </definition>
+    
+    <example xml:id="eg_direct_sum_matrices">
+    <title>Direct sum of matrix spaces</title>
+    <statement>
+    <p>
+    Let <m>V=F^{2,2}</m>, the space of all <m>2\times 2</m> matrices with entries in <m>F</m>, and consider the following subsets of <m>V</m>: 
+    <md>
+        <mrow>W_1 \amp =\{A\in F^{2,2}\colon A^T=A\}</mrow>
+        <mrow>W_2 \amp = \{A\in F^{2,2}\colon A^T=-A\}</mrow>
+    </md>.
+    In other words, <m>W_1</m> is the set of all symmetric matrices of <m>F^{2,2}</m> and <m>W_2</m> is the set of all skew-symmetric matrices of <m>F^{2,2}</m>. 
+    <ol>
+        <li>
+            <p>
+                Prove that <m>W_1</m> and <m>W_2</m> are subspaces of <m>F^{2,2}</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                Prove that <m>F^{2,2}=W_1\oplus W_2</m>. 
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <solution>
+    <p>
+    
+    </p>
+    </solution>
+    </example>
+    <theorem xml:id="th_subspace_direct_sum">
+    <title>Direct sum of subspaces</title>
+    <statement>
+    <p>
+    Let <m>W_1,W_2,\dots, W_n</m> be subspaces of the <m>F</m>-vector space <m>V</m>, and let <m>W=\sum_{i=1}^n W_i</m>. The following statements are equivalent. 
+    <ol>
+        <li>
+            <p>
+                <m>W=\bigoplus_{i=1}^n W_i</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                If <m>\boldzero=v_1+v_2+\cdots +v_n</m> with <m>v_i\in W_i</m> for all <m>1\leq i\leq n</m>, then <m>v_i=\boldzero</m> for all <m>1\leq i\leq n</m>. Using logical shorthand: 
+                <me>
+                 \boldzero=v_1+v_2+\cdots +v_n\implies v_1=v_2\cdots =v_n=\boldzero   
+                </me>.
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <proof>
+    <p>
+    </p>
+    </proof>
+    </theorem>
+    
     
 
 </section>

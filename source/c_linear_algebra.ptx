@@ -6,5 +6,5 @@
     <xi:include href="s_vector_space.ptx" />
     <xi:include href="s_vector_space_functions.ptx" />
     <xi:include href="s_subspace.ptx" />
-    <!-- <xi:include href="s_subspace_sum.ptx" /> -->
+    <xi:include href="s_subspace_sum.ptx" />
 </chapter>
