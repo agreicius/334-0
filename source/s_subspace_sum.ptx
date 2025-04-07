@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_subspace_sum" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Sums and direct sums of subspaces</title>
+
+    <definition xml:id="d_vec_ops_sets">
+    <title>Vector operations on sets</title>
+    <statement>
+    <p>
+    Let <m>V</m> be an <m>F</m>-vector space. Given subsets <m>X_1,X_2,\dots, X_n</m> of <m>V</m>, we define their <term>sum</term>, denoted <m>X_1+X_2+\cdots +X_n</m> or <m>\sum_{i=1}^nX_i</m>, as 
+    <me>
+        X_1+X_2+\cdots +X_n=\{v_1+v_2+\cdots +v_n\colon v_i\in X_i\}
+    </me>.
+    Similarly, given a set <m>X\subseteq V</m> and scalar <m>c\in F</m>, we define the <term>scalar multiple</term> <m>cX</m> as 
+    <me>
+        cX=\{cv\colon c\in F\}
+    </me>.
+    </p>
+    </statement>
+    </definition>
+    <theorem xml:id="th_subspace_sum">
+    <title>Sum of subspaces</title>
+    <statement>
+    <p>
+    Let <m>W_1, W_2, \dots, W_n</m> be subspaces of the <m>F</m>-vector space <m>V</m>, and let <m>W=\sum_{i=1}^n W_i</m> be their sum.
+    <ol>
+        <li>
+            <p>
+                <m>W</m> is a subspace of <m>V</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>W</m> is the <em>smallest subspace</em> of <m>V</m> satisfying <m>W_i\subseteq W </m> for all <m>1\leq i\leq n</m> in the following sense: if <m>U</m> is a subspace of <m>V</m> satisfying <m>W_i\subseteq U</m> for all <m>1\leq i\leq n</m>, then <m>W\subseteq U</m>. 
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <proof>
+    <p>
+    <ol>
+        <li>
+            <p>
+                We follow <xref ref="proc_subspace"/>. 
+            </p>
+            <p>
+                Since <m>\boldzero\in W_i</m> for all <m>1\leq i\leq n</m>, and since 
+                <me>
+                    \boldzero=\underset{W_1}{\boldzero}+\underset{W_2}{\boldzero}+\cdots +\underset{W_n}{\boldzero}
+                </me>,
+                we see that <m>\boldzero\in W=\sum_{i=1}^n W_i</m>.
+            </p>
+            <p>
+                Assume <m>w_1, w_2\in W</m>. By definition, we have 
+                <md>
+                    <mrow>w_1 \amp =v_1+v_2+\cdots +v_n, v_i\in W_i</mrow>
+                    <mrow>w_2 \amp =v_1'+v_2'+\cdots +v_n', v_i'\in W_i</mrow>
+                </md>.
+                But then for any scalars <m>c,d\in F</m>, we have 
+                <md>
+                    <mrow>cw_1+dw_2 \amp = c(v_1+v_2+\cdots +v_n)+d(v_1'+v_2'+\cdots +v_n')</mrow>
+                    <mrow> \amp = cv_1+cv_2+\cdots +cv_n+dv_1'+dv_2'+\cdots +dv_n'</mrow>
+                    <mrow> \amp =(cv_1+dv_1')+(cv_2+dv_2')+\cdots +(cv_n+dv_n')</mrow>
+                    <mrow> \amp = v_1''+v_2''+\cdots v_n''</mrow>
+                </md>,
+                where <m>v_i''=cv_i+dv_i'</m> for all <m>1\leq i\leq n</m>. 
+                Since each <m>W_i</m> is a subspace, we have 
+                <me>v_i''=cv_i+dv_i'\in W_i</me>
+                for all <m>1\leq i\leq n</m>. We conclude that <m>cw_1+dw_2\in W</m>, as desired. 
+            </p>
+        </li>
+        <li>
+            <p>
+                For any <m>v\in W_i</m>, we have 
+                <me>
+                    v=v_1+v_2+\cdots +v_n
+                </me>,
+                where 
+                <me>
+                    v_j=\begin{cases}
+                    \boldzero \amp \text{if } j\ne i \\
+                    v \amp \text{if } j=i 
+                    \end{cases}
+                </me>.
+                Since <m>v_j\in W_j</m> for all <m>1\leq j\leq n</m>, we see that <m>v\in W</m>. Since <m>v</m> was an arbitrary element of <m>W_i</m>, we conclude that <m>W_i\subseteq W</m> for all <m>1\leq i\leq n</m>.
+            </p>
+            <p>
+                Now assume <m>U</m> is a subspace of <m>V</m> that contains <m>W_i</m> for all <m>1\leq i\leq n</m>. We will show that <m>W=\sum_{i=1}^n W_i\subseteq U</m>. Indeed, given any <m>v\in W</m>, we have 
+                <me>
+                    v=v_1+v_2+\cdots +v_n
+                </me>
+                for some vectors <m>v_1,v_2,\dots, v_n</m>, where <m>v_i\in W_i</m>. Since <m>W_i\subseteq U</m> for all <m>i</m>, we have <m>v_i\in U</m> for all <m>i</m>; since <m>U</m> is closed under addition, we have <m>v=v_1+v_2+\cdots +v_n\in U</m>, as desired. 
+            </p>
+        </li>
+    </ol>
+    </p>
+    </proof>
+    </theorem>
+    <example xml:id="">
+    <title>Sums of subspaces</title>
+    <statement>
+    <p>
+    Let <m>V=\R^3</m> and consider the following subsets of <m>V</m>: 
+    <md>
+        <mrow>W_1 \amp = \{(r,0,0)\colon r\in \R\}</mrow>
+        <mrow>W_2 \amp = \{(0,s,0)\colon s\in \R\}</mrow>
+        <mrow>W_3 \amp = \{(t,t,0)\colon t\in \R\}</mrow>
+    </md>.
+    <ol>
+        <li>
+            <p>
+                Prove that each <m>W_i</m> is a subspace of <m>\R^3</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                Identify <m>W_1+W_2</m> as a familiar subspace of <m>\R^3</m>. Justify your answer. 
+            </p>
+        </li>
+        <li>
+            <p>
+                Identify <m>W_1+W_3</m> as a familiar subspace of <m>\R^3</m>. Justify your answer. 
+            </p>
+        </li>
+        <li>
+            <p>
+                Identify <m>W_1+W_2+W_3</m> as a familiar subspace of <m>\R^3</m>. Justify your answer. 
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <solution>
+    <p>
+    Blah d
+    </p>
+    </solution>
+    </example>
+    <definition xml:id="d_subspace_direct_sum">
+    <title>Direct sum of subspaces</title>
+    <statement>
+    <p>
+    Let <m>W_1,W_2,\dots, W_n</m> be subspaces of the <m>F</m>-vector space <m>V</m>. We say <m>W</m> is the <term>direct sum</term> of the subspaces <m>W_i</m>, denoted 
+    <men xml:id="eq_subspace_dir_sum">W=W_1\oplus W_2+\cdots \oplus W_n</men>,
+    or <m>W=\bigoplus_{i=1}^n W_i</m>,  if the following properties hold: given vectors <m>v_i, v_i'\in W_i</m>, <m>1\leq i\leq n</m>, we have 
+    <me>
+        v_1+v_2+\cdots +v_n=v_1'+v_2'+\cdots +v_n'
+    </me>
+    if and only if 
+    <me>
+        v_i=v_i'
+    </me>
+    for all <m>1\leq i\leq n</m>. 
+    
+     
+    </p>
+    </statement>
+    </definition>
+    
+
+</section>

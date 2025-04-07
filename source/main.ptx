@@ -6,7 +6,7 @@
 
   <book xml:id="advlinalgkursobjekt">
     <title>Linear algebra: second course</title>
-    <subtitle>Math 344-0</subtitle>
+    <subtitle>Math 334-0</subtitle>
 <xi:include href="./frontmatter.ptx" />
     <xi:include href="./c_foundations.ptx" />
     <xi:include href="./c_linear_algebra.ptx" />

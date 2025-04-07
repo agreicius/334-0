@@ -36,7 +36,7 @@
         </li>
         <li xml:id="d_subspace_mult">
           <title><m>W</m> is closed under scalar multiplication</title>
-          <p> For all <m>c\in \R</m> and <m> v\in V</m>, if <m> v\in W</m>, then <m>c v\in W</m>. Using logical shorthand:
+          <p> For all <m>c\in F</m> and <m> v\in V</m>, if <m> v\in W</m>, then <m>c v\in W</m>. Using logical shorthand:
           <me> v\in W\Rightarrow c v\in W</me>.
         </p>
       </li>
