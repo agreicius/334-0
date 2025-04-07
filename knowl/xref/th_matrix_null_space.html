@@ -12,7 +12,7 @@
 </head>
 <body class="ignore-math">
 <article class="theorem theorem-like"><h4 class="heading">
-<span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.4.8</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Matrix null space.</span>
+<span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.4.9</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Matrix null space.</span>
 </h4>
 <div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
 <div class="para">Let <span class="process-math">\(A\in F^{m,n}\text{.}\)</span> The set</div>
@@ -23,6 +23,35 @@ W=\{\boldx\in F^n \colon \underset{m\times n}{A}\, \underset{n\times 1}{\boldx}=
 </div>
 <div class="para">of solutions to the matrix equation <span class="process-math">\(A\boldx=\boldzero\)</span> is a subspace of <span class="process-math">\(\F^n\text{.}\)</span>
 </div>
-</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para"></div></article></details><span class="incontext"><a class="internal" href="s_subspace.html#th_matrix_null_space">in-context</a></span>
+</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">We follow <a href="s_subspace.html#proc_subspace" class="xref" data-knowl="./knowl/xref/proc_subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 1.4.7: Two-step proof for subspaces">Procedure 1.4.7</a>.</div>
+<ol class="lower-roman ol-marker-2" id="th_matrix_null_space-3-1-2">
+<li><div class="para logical">
+<div class="para">Note that according to <a href="s_subspace.html#fiat_col_vecs_tuples" class="xref" data-knowl="./knowl/xref/fiat_col_vecs_tuples.html" data-reveal-label="Reveal" data-close-label="Close" title="Fiat 1.4.8: Tuples shall be column vectors, and vice versa">Fiat 1.4.8</a>, we have <span class="process-math">\(\boldzero=(0,0,\dots, 0)=\underset{n\times 1}{\boldzero}\text{,}\)</span> and thus</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fiat_col_vecs_tuples.html">
+\begin{equation*}
+A\boldzero=A\underset{n\times 1}{\boldzero}=\underset{m\times 1}{\boldzero}\text{.}
+\end{equation*}
+</div>
+<div class="para">This proves that <span class="process-math">\(\boldzero\in W\text{.}\)</span>
+</div>
+</div></li>
+<li>
+<div class="para">We want to show that if <span class="process-math">\(\boldx_1,\boldx_2\in W\text{,}\)</span> then so is <span class="process-math">\(c\boldx_1+d\boldx_2\)</span> for any <span class="process-math">\(c,d\in F\text{,}\)</span>
+</div>
+<div class="para logical">
+<div class="para">Assume <span class="process-math">\(\boldx_1,\boldx_2\in W\text{.}\)</span> By definition this means <span class="process-math">\(A\boldx_1=A\boldx_2=\underset{m\times 1}{\boldzero}\text{.}\)</span> But then we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+A(c\boldx_1+d\boldx_2) \amp = cA\boldx_1+dA\boldx_2 \amp (\text{matrix props.})\\
+\amp = c\underset{m\times 1}{\boldzero}+d\underset{m\times 1}{\boldzero}\\
+\amp = \underset{m\times 1}{\boldzero}\text{,}
+\end{align*}
+</div>
+<div class="para">showing that <span class="process-math">\(c\boldx_1+d\boldx_2\in W\text{,}\)</span> as desired.</div>
+</div>
+</li>
+</ol>
+</div></article></details><span class="incontext"><a class="internal" href="s_subspace.html#th_matrix_null_space">in-context</a></span>
 </body>
 </html>
