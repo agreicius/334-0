@@ -44,6 +44,51 @@
     </p>
   </statement>
 </definition>
+<example xml:id="eg_subspace_trivial">
+<title>Trivial subspaces</title>
+<statement>
+<p>
+Let <m>V</m> be an <m>F</m>-vector space. The following are subspaces of <m>V</m>: 
+<ol>
+  <li>
+    <p>
+      <m>W_1=\{\boldzero\}</m>
+    </p>
+  </li>
+  <li>
+    <p>
+      <m>W_2=V</m>
+    </p>
+  </li>
+</ol>
+In other words, the set containing just the zero vector is a subspace of <m>V</m>, as is <m>V</m> itself. These are sometimes called the <em>trivial subspaces</em> of <m>V</m>. Observe that every subspace <m>W</m> lies between these two: <ie/>, we have  <m>\{\boldzero\}\subseteq W\subseteq V</m>. 
+</p>
+</statement>
+<solution>
+<p>
+We prove that <m>W_1=\{\boldzero\}</m> is a subspace of <m>V</m>, leaving the proof for <m>W_2=V</m> to the reader. 
+<ol marker="(i)">
+  <li>
+    <p>
+      By definition, <m>\boldzero\in  W_1</m>. 
+    </p>
+  </li>
+  <li>
+    <p>
+      Since <m>\boldzero</m> is the only element of <m>W_1</m> and since <m>\boldzero+\boldzero=\boldzero\in W_1</m>, we see that <m>W_1</m> is closed under addition. 
+    </p>
+  </li>
+  <li>
+    <p>
+      Since <m>\boldzero</m> is the only element of <m>W_1</m>, we need only show that <m>c\boldzero\in W_1</m> for all scalars <m>c\in F</m>. But we have <m>c\boldzero=\boldzero</m> by <xref ref="th_vs_props"/>. Thus <m>c\boldzero\in W_1</m>, as desired. 
+    </p>
+  </li>
+</ol> 
+This proves <m>W_1=\{\boldzero\}</m> is a subspace of <m>V</m>. 
+</p>
+</solution>
+</example>
+
 <example>
   <statement>
     <p>
@@ -247,9 +292,90 @@ of solutions to the matrix equation <m>A\boldx=\boldzero</m> is a subspace of <m
 </statement>
 <proof>
 <p>
+  We follow <xref ref="proc_subspace"/>. 
+  <ol marker="(i)">
+    <li>
+      <p>
+        Note that according to <xref ref="fiat_col_vecs_tuples"/>, we have <m>\boldzero=(0,0,\dots, 0)=\underset{n\times 1}{\boldzero}</m>, and thus  
+        <me>
+          A\boldzero=A\underset{n\times 1}{\boldzero}=\underset{m\times 1}{\boldzero}
+        </me>.
+        This proves that <m>\boldzero\in W</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        We want to show that if <m>\boldx_1,\boldx_2\in W</m>, then so is <m>c\boldx_1+d\boldx_2</m> for any <m>c,d\in F</m>, 
+      </p>
+      <p>
+        Assume <m>\boldx_1,\boldx_2\in W</m>. By definition this means <m>A\boldx_1=A\boldx_2=\underset{m\times 1}{\boldzero}</m>. But then we have 
+        <md>
+          <mrow>A(c\boldx_1+d\boldx_2) \amp = cA\boldx_1+dA\boldx_2 \amp (\text{matrix props.})</mrow>
+          <mrow> \amp = c\underset{m\times 1}{\boldzero}+d\underset{m\times 1}{\boldzero}</mrow>
+          <mrow> \amp = \underset{m\times 1}{\boldzero}</mrow>
+        </md>,
+        showing that <m>c\boldx_1+d\boldx_2\in W</m>, as desired. 
+      </p>
+    </li>
+  </ol>
 </p>
 </proof>
 </theorem>
+<example xml:id="eg_subspace_hyperspace">
+<title>Hyperplanes of <m>\R^n</m></title>
+<statement>
+<p>
+A <em>hyperplane</em> of <m>\R^n</m> is a set <m>H\subseteq \R^n</m> defined as the set of solutions to a linear equation of the form 
+      <men xml:id="eq_rm_hyperplane">
+        a_1x_1+a_2x_2+\cdots +a_nx_n=b
+      </men>,
+      where <m>a_i,b\in \R</m> and <m>a_i\ne 0</m> for some <m>i</m>. (In other words <m>H</m> is the set of solutions to a <em>nontrivial</em> linear equation with coefficients in <m>\R</m>.)
+      <ol>
+        <li>
+          <p>
+            Prove that if <m>b\ne 0</m>, then <m>H</m> is not a subspace of <m>\R^n</m>. 
+          </p>
+        </li>
+        <li>
+          <p>
+            Prove that if <m>b=0</m>, then <m>H</m> is a subspace of <m>\R^n</m>. 
+          </p>
+        </li>
+      </ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol>
+  <li>
+    <p>
+      If <m>b\ne 0</m>, then clearly <m>\boldzero=(0,0,\dots, 0)\notin H</m>, since 
+      <me>
+        a_10+a_20+\cdots +a_n0=0\ne b
+      </me>.
+      It follows that <m>H</m> is not a subspace in this case, since it fails Axiom (i). 
+    </p>
+  </li>
+  <li>
+    <p>
+      Assume <m>b=0</m>. Let 
+      <me>
+        A=\begin{bmatrix}
+      a_1 \amp a_2 \amp \cdots \amp a_n
+      \end{bmatrix}
+      </me>,
+      the <m>1\times n</m> matrix consisting of the coefficients of the linear equation. We have 
+      <me>
+        H=\{\boldx\in \R^n\colon  A\boldx=[0]\}
+      </me>.
+      Thus <m>H</m> is a subspace by <xref ref="th_matrix_null_space"/>. 
+    </p>
+  </li>
+</ol>
+</p>
+</solution>
+</example>
+
 </subsection>
 <subsection xml:id="ss_function_spaces">
 <title>Important function subspaces</title>
