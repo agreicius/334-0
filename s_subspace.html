@@ -110,7 +110,7 @@ eBookConfig.enable_chatcodes =  false;
 </head>
 <body id="nuadvlinalg" class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
-<h1 class="heading"><a href="advlinalgkursobjekt.html"><span class="title">Linear algebra: second course:</span> <span class="subtitle">Math 344-0</span></a></h1>
+<h1 class="heading"><a href="advlinalgkursobjekt.html"><span class="title">Linear algebra: second course:</span> <span class="subtitle">Math 334-0</span></a></h1>
 <p class="byline">Aaron Greicius</p>
 </div></div></header><nav xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
 <button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
@@ -124,7 +124,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_vector_space_functions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_linear_algebra.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="advlinalgkursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_vector_space_functions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_linear_algebra.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s_subspace_sum.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div xmlns:xlink="http://www.w3.org/1999/xlink" id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\renewcommand{\Re}{\operatorname{Re}}
 \renewcommand{\Im}{\operatorname{Im}}
 \newcommand{\Z}{{\mathbb Z}}
@@ -327,6 +327,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace.html#ss_function_spaces" class="internal"><span class="title">Important function subspaces</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_subspace_sum.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Sums and direct sums of subspaces</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -587,10 +588,10 @@ A(c\boldx_1+d\boldx_2) \amp = cA\boldx_1+dA\boldx_2 \amp (\text{matrix props.})\
 </div>
 </li>
 </ol>
-</div></article></details><article class="example example-like" id="eg_subspace_hyperspace"><h4 class="heading">
+</div></article></details><article class="example example-like" id="eg_subspace_hyperplane"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.10</span><span class="period">.</span><span class="space"> </span><span class="title">Hyperplanes of <span class="process-math">\(\R^n\)</span>.</span>
 </h4>
-<div class="para logical" id="eg_subspace_hyperspace-2-1">
+<div class="para logical" id="eg_subspace_hyperplane-2-1">
 <div class="para">A <em class="emphasis">hyperplane</em> of <span class="process-math">\(\R^n\)</span> is a set <span class="process-math">\(H\subseteq \R^n\)</span> defined as the set of solutions to a linear equation of the form</div>
 <div class="displaymath process-math" id="eq_rm_hyperplane">
 \begin{equation}
@@ -598,15 +599,15 @@ a_1x_1+a_2x_2+\cdots +a_nx_n=b\text{,}\tag{1.6}
 \end{equation}
 </div>
 <div class="para">where <span class="process-math">\(a_i,b\in \R\)</span> and <span class="process-math">\(a_i\ne 0\)</span> for some <span class="process-math">\(i\text{.}\)</span> (In other words <span class="process-math">\(H\)</span> is the set of solutions to a <em class="emphasis">nontrivial</em> linear equation with coefficients in <span class="process-math">\(\R\text{.}\)</span>)</div>
-<ol class="decimal" id="eg_subspace_hyperspace-2-1-11">
-<li id="eg_subspace_hyperspace-2-1-11-1"><div class="para" id="eg_subspace_hyperspace-2-1-11-1-1">Prove that if <span class="process-math">\(b\ne 0\text{,}\)</span> then <span class="process-math">\(H\)</span> is not a subspace of <span class="process-math">\(\R^n\text{.}\)</span>
+<ol class="decimal" id="eg_subspace_hyperplane-2-1-11">
+<li id="eg_subspace_hyperplane-2-1-11-1"><div class="para" id="eg_subspace_hyperplane-2-1-11-1-1">Prove that if <span class="process-math">\(b\ne 0\text{,}\)</span> then <span class="process-math">\(H\)</span> is not a subspace of <span class="process-math">\(\R^n\text{.}\)</span>
 </div></li>
-<li id="eg_subspace_hyperspace-2-1-11-2"><div class="para" id="eg_subspace_hyperspace-2-1-11-2-1">Prove that if <span class="process-math">\(b=0\text{,}\)</span> then <span class="process-math">\(H\)</span> is a subspace of <span class="process-math">\(\R^n\text{.}\)</span>
+<li id="eg_subspace_hyperplane-2-1-11-2"><div class="para" id="eg_subspace_hyperplane-2-1-11-2-1">Prove that if <span class="process-math">\(b=0\text{,}\)</span> then <span class="process-math">\(H\)</span> is a subspace of <span class="process-math">\(\R^n\text{.}\)</span>
 </div></li>
 </ol>
 </div>
-<div class="solutions"><details id="eg_subspace_hyperspace-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_subspace_hyperspace-3-1"><ol class="decimal" id="eg_subspace_hyperspace-3-1-1">
-<li id="eg_subspace_hyperspace-3-1-1-1"><div class="para logical" id="eg_subspace_hyperspace-3-1-1-1-1">
+<div class="solutions"><details id="eg_subspace_hyperplane-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_subspace_hyperplane-3-1"><ol class="decimal" id="eg_subspace_hyperplane-3-1-1">
+<li id="eg_subspace_hyperplane-3-1-1-1"><div class="para logical" id="eg_subspace_hyperplane-3-1-1-1-1">
 <div class="para">If <span class="process-math">\(b\ne 0\text{,}\)</span> then clearly <span class="process-math">\(\boldzero=(0,0,\dots, 0)\notin H\text{,}\)</span> since</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -615,7 +616,7 @@ a_10+a_20+\cdots +a_n0=0\ne b\text{.}
 </div>
 <div class="para">It follows that <span class="process-math">\(H\)</span> is not a subspace in this case, since it fails Axiom (i).</div>
 </div></li>
-<li id="eg_subspace_hyperspace-3-1-1-2"><div class="para logical" id="eg_subspace_hyperspace-3-1-1-2-1">
+<li id="eg_subspace_hyperplane-3-1-1-2"><div class="para logical" id="eg_subspace_hyperplane-3-1-1-2-1">
 <div class="para">Assume <span class="process-math">\(b=0\text{.}\)</span> Let</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_matrix_null_space.html">
 \begin{equation*}
@@ -730,7 +731,7 @@ P_{n}(I)\subseteq P(I)\subseteq C^{\infty}(I)\subseteq C^{n}(I)\subseteq C(I)\su
 </div>
 </div></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="s_vector_space_functions.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="advlinalgkursobjekt-6.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="s_vector_space_functions.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_subspace_sum.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

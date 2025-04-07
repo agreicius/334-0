@@ -1099,9 +1099,9 @@ var ptx_lunr_docs = [
   "body": " Matrix null space   Let . The set of solutions to the matrix equation is a subspace of .    We follow .   Note that according to , we have , and thus . This proves that .    We want to show that if , then so is for any ,  Assume . By definition this means . But then we have , showing that , as desired.      "
 },
 {
-  "id": "eg_subspace_hyperspace",
+  "id": "eg_subspace_hyperplane",
   "level": "2",
-  "url": "s_subspace.html#eg_subspace_hyperspace",
+  "url": "s_subspace.html#eg_subspace_hyperplane",
   "type": "Example",
   "number": "1.4.10",
   "title": "Hyperplanes of <span class=\"process-math\">\\(\\R^n\\)<\/span>.",
@@ -1151,6 +1151,42 @@ var ptx_lunr_docs = [
   "number": "1.4.15",
   "title": "Function subspaces..",
   "body": " Function subspaces.   Let be a an interval containing at least two elements. The sets , , , , are all subspaces of , and we have the following chain of subspaces: .   "
+},
+{
+  "id": "s_subspace_sum",
+  "level": "1",
+  "url": "s_subspace_sum.html",
+  "type": "Section",
+  "number": "1.5",
+  "title": "Sums and direct sums of subspaces",
+  "body": " Sums and direct sums of subspaces   Vector operations on sets   Let be an -vector space. Given subsets of , we define their sum , denoted or , as . Similarly, given a set and scalar , we define the scalar multiple  as .     Sum of subspaces   Let be subspaces of the -vector space , and let be their sum.    is a subspace of .     is the smallest subspace of satisfying for all in the following sense: if is a subspace of satisfying for all , then .          We follow .  Since for all , and since , we see that .  Assume . By definition, we have . But then for any scalars , we have , where for all . Since each is a subspace, we have for all . We conclude that , as desired.    For any , we have , where . Since for all , we see that . Since was an arbitrary element of , we conclude that for all .  Now assume is a subspace of that contains for all . We will show that . Indeed, given any , we have for some vectors , where . Since for all , we have for all ; since is closed under addition, we have , as desired.        Sums of subspaces   Let and consider the following subsets of : .   Prove that each is a subspace of .    Identify as a familiar subspace of . Justify your answer.    Identify as a familiar subspace of . Justify your answer.    Identify as a familiar subspace of . Justify your answer.       Blah d    Direct sum of subspaces   Let be subspaces of the -vector space , and let . We say is the direct sum of the the subspaces , denoted or , if the following property holds: given vectors , , we have if and only if for all .     "
+},
+{
+  "id": "d_vec_ops_sets",
+  "level": "2",
+  "url": "s_subspace_sum.html#d_vec_ops_sets",
+  "type": "Definition",
+  "number": "1.5.1",
+  "title": "Vector operations on sets.",
+  "body": " Vector operations on sets   Let be an -vector space. Given subsets of , we define their sum , denoted or , as . Similarly, given a set and scalar , we define the scalar multiple  as .   "
+},
+{
+  "id": "th_subspace_sum",
+  "level": "2",
+  "url": "s_subspace_sum.html#th_subspace_sum",
+  "type": "Theorem",
+  "number": "1.5.2",
+  "title": "Sum of subspaces.",
+  "body": " Sum of subspaces   Let be subspaces of the -vector space , and let be their sum.    is a subspace of .     is the smallest subspace of satisfying for all in the following sense: if is a subspace of satisfying for all , then .          We follow .  Since for all , and since , we see that .  Assume . By definition, we have . But then for any scalars , we have , where for all . Since each is a subspace, we have for all . We conclude that , as desired.    For any , we have , where . Since for all , we see that . Since was an arbitrary element of , we conclude that for all .  Now assume is a subspace of that contains for all . We will show that . Indeed, given any , we have for some vectors , where . Since for all , we have for all ; since is closed under addition, we have , as desired.      "
+},
+{
+  "id": "",
+  "level": "2",
+  "url": "s_subspace_sum.html#",
+  "type": "Example",
+  "number": "1.5.3",
+  "title": "Sums of subspaces.",
+  "body": " Sums of subspaces   Let and consider the following subsets of : .   Prove that each is a subspace of .    Identify as a familiar subspace of . Justify your answer.    Identify as a familiar subspace of . Justify your answer.    Identify as a familiar subspace of . Justify your answer.       Blah d    Direct sum of subspaces   Let be subspaces of the -vector space , and let . We say is the direct sum of the the subspaces , denoted or , if the following property holds: given vectors , , we have if and only if for all .    "
 },
 {
   "id": "appendix-notation",
