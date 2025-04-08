@@ -13,7 +13,7 @@
     </me>.
     Similarly, given a set <m>X\subseteq V</m> and scalar <m>c\in F</m>, we define the <term>scalar multiple</term> <m>cX</m> as 
     <me>
-        cX=\{cv\colon c\in F\}
+        cX=\{cv\colon v\in X\}
     </me>.
     </p>
     </statement>
