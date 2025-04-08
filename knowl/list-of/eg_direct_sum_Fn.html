@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.5.6</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Direct sum decomposition of <span xmlns:xlink="http://www.w3.org/1999/xlink" class="process-math">\(F^n\)</span>.</span>
+</h3>
+<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
+<div class="para">Consider the space <span class="process-math">\(F^n\)</span> of <span class="process-math">\(n\)</span>-tuples with coefficients in <span class="process-math">\(F\text{.}\)</span> For each <span class="process-math">\(1\leq i\leq n\text{,}\)</span> let <span class="process-math">\(W_i\)</span> be the set of all <span class="process-math">\(n\)</span>-tuples of the form</div>
+<div class="displaymath process-math">
+\begin{equation*}
+v=(0,\dots,0,\underset{i\text{-th coor.}}{a}, 0,\dots, 0), a\in F\text{.}
+\end{equation*}
+</div>
+<div class="para">In other words <span class="process-math">\(W_i\)</span> is the set of all <span class="process-math">\(n\)</span>-tuples whose <span class="process-math">\(j\)</span>-th coordinates are equal to zero for all <span class="process-math">\(j\ne i\text{.}\)</span>
+</div>
+</div> <div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
+<div class="para">Prove that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F^n=W_1\oplus W_2\cdots \oplus W_n\text{.}
+\end{equation*}
+</div>
+<div class="para">You may take for granted that <span class="process-math">\(W_i\)</span> is a subspace of <span class="process-math">\(F^n\)</span> for all <span class="process-math">\(i\text{.}\)</span>
+</div>
+</div>
+<div class="solutions"><details xmlns:xlink="http://www.w3.org/1999/xlink" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical">
+<div class="para">Given <span class="process-math">\(v=(a_1,a_2,\dots, a_n)\in F^n\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_Fn_dir_sum.html ./knowl/xref/eq_Fn_dir_sum.html">
+\begin{equation}
+v=v_1+v_2+\cdots +v_n\text{,}\tag{1.10}
+\end{equation}
+</div>
+<div class="para">where</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_Fn_dir_sum.html ./knowl/xref/eq_Fn_dir_sum.html">
+\begin{equation*}
+v_i=(0,\dots, a_i,0,\dots, 0)\in W_i\text{.}
+\end{equation*}
+</div>
+<div class="para">It follows that <span class="process-math">\(F^n=\sum_{i=1}^n W_i\text{.}\)</span> Furthermore, the decomposition <a href="s_subspace_sum.html#eq_Fn_dir_sum" class="xref" data-knowl="./knowl/xref/eq_Fn_dir_sum.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.10">(1.10)</a> is unique: if</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_Fn_dir_sum.html ./knowl/xref/eq_Fn_dir_sum.html">
+\begin{equation*}
+(a_1,a_2,\dots, a_n)=v_1'+v_2'+\cdots +v_n'
+\end{equation*}
+</div>
+<div class="para">with <span class="process-math">\(v_i'\in W_i\)</span> for all <span class="process-math">\(i\text{,}\)</span> then since <span class="process-math">\(v_i'\)</span> is the only vector with a nonzero <span class="process-math">\(i\)</span>-th coordinate, we must have <span class="process-math">\(v_i'=(0,\dots, 0,a_i,0,\dots,0)\text{.}\)</span> Since the decompotision <a href="s_subspace_sum.html#eq_Fn_dir_sum" class="xref" data-knowl="./knowl/xref/eq_Fn_dir_sum.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.10">(1.10)</a> is unique, we conclude that <span class="process-math">\(F^n=\bigoplus_{i=1}^nW_i\text{.}\)</span>
+</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="s_subspace_sum.html#eg_direct_sum_Fn">in-context</a></span>
+</body>
+</html>

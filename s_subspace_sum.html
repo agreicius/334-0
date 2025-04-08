@@ -357,7 +357,7 @@ X_1+X_2+\cdots +X_n=\{v_1+v_2+\cdots +v_n\colon v_i\in X_i\}\text{.}
 <div class="para">Similarly, given a set <span class="process-math">\(X\subseteq V\)</span> and scalar <span class="process-math">\(c\in F\text{,}\)</span> we define the <dfn class="terminology">scalar multiple</dfn> <span class="process-math">\(cX\)</span> as</div>
 <div class="displaymath process-math">
 \begin{equation*}
-cX=\{cv\colon c\in F\}\text{.}
+cX=\{cv\colon v\in X\}\text{.}
 \end{equation*}
 </div>
 </div></article><article class="theorem theorem-like" id="th_subspace_sum"><h3 class="heading">
@@ -522,12 +522,125 @@ W \amp = \{(a,b,0)\colon a,b\in \R\}\text{.}
 </div></li>
 </ol>
 </div>
-<div class="solutions"><details id="eg_direct_sum_Rn-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_direct_sum_Rn-3-1"></div></div></details></div></article><article class="definition definition-like" id="d_transpose"><h3 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.5.6</span><span class="period">.</span><span class="space"> </span><span class="title">Transpose matrix.</span>
+<div class="solutions"><details id="eg_direct_sum_Rn-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_direct_sum_Rn-3-1"></div></div></details></div></article><article class="example example-like" id="eg_direct_sum_Fn"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.6</span><span class="period">.</span><span class="space"> </span><span class="title">Direct sum decomposition of <span class="process-math">\(F^n\)</span>.</span>
 </h3>
-<div class="para" id="d_transpose-2-1">Given a matrix <span class="process-math">\(A\in F^{m,n}\text{,}\)</span> its <dfn class="terminology">transpose</dfn> is the matrix <span class="process-math">\(A^T\in F^{n,m}\)</span> whose <span class="process-math">\(ij\)</span>-th entry is <span class="process-math">\(ji\)</span>-th entry of <span class="process-math">\(A\)</span> for all <span class="process-math">\(1\leq i\leq n, 1\leq j\leq m\text{.}\)</span>
+<div class="para logical" id="eg_direct_sum_Fn-2-1">
+<div class="para">Consider the space <span class="process-math">\(F^n\)</span> of <span class="process-math">\(n\)</span>-tuples with coefficients in <span class="process-math">\(F\text{.}\)</span> For each <span class="process-math">\(1\leq i\leq n\text{,}\)</span> let <span class="process-math">\(W_i\)</span> be the set of all <span class="process-math">\(n\)</span>-tuples of the form</div>
+<div class="displaymath process-math">
+\begin{equation*}
+v=(0,\dots,0,\underset{i\text{-th coor.}}{a}, 0,\dots, 0), a\in F\text{.}
+\end{equation*}
+</div>
+<div class="para">In other words <span class="process-math">\(W_i\)</span> is the set of all <span class="process-math">\(n\)</span>-tuples whose <span class="process-math">\(j\)</span>-th coordinates are equal to zero for all <span class="process-math">\(j\ne i\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="eg_direct_sum_Fn-2-2">
+<div class="para">Prove that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F^n=W_1\oplus W_2\cdots \oplus W_n\text{.}
+\end{equation*}
+</div>
+<div class="para">You may take for granted that <span class="process-math">\(W_i\)</span> is a subspace of <span class="process-math">\(F^n\)</span> for all <span class="process-math">\(i\text{.}\)</span>
+</div>
+</div>
+<div class="solutions"><details id="eg_direct_sum_Fn-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_direct_sum_Fn-3-1">
+<div class="para">Given <span class="process-math">\(v=(a_1,a_2,\dots, a_n)\in F^n\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_Fn_dir_sum.html ./knowl/xref/eq_Fn_dir_sum.html" id="eq_Fn_dir_sum">
+\begin{equation}
+v=v_1+v_2+\cdots +v_n\text{,}\tag{1.10}
+\end{equation}
+</div>
+<div class="para">where</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_Fn_dir_sum.html ./knowl/xref/eq_Fn_dir_sum.html">
+\begin{equation*}
+v_i=(0,\dots, a_i,0,\dots, 0)\in W_i\text{.}
+\end{equation*}
+</div>
+<div class="para">It follows that <span class="process-math">\(F^n=\sum_{i=1}^n W_i\text{.}\)</span> Furthermore, the decomposition <a href="s_subspace_sum.html#eq_Fn_dir_sum" class="xref" data-knowl="./knowl/xref/eq_Fn_dir_sum.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.10">(1.10)</a> is unique: if</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_Fn_dir_sum.html ./knowl/xref/eq_Fn_dir_sum.html">
+\begin{equation*}
+(a_1,a_2,\dots, a_n)=v_1'+v_2'+\cdots +v_n'
+\end{equation*}
+</div>
+<div class="para">with <span class="process-math">\(v_i'\in W_i\)</span> for all <span class="process-math">\(i\text{,}\)</span> then since <span class="process-math">\(v_i'\)</span> is the only vector with a nonzero <span class="process-math">\(i\)</span>-th coordinate, we must have <span class="process-math">\(v_i'=(0,\dots, 0,a_i,0,\dots,0)\text{.}\)</span> Since the decompotision <a href="s_subspace_sum.html#eq_Fn_dir_sum" class="xref" data-knowl="./knowl/xref/eq_Fn_dir_sum.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.10">(1.10)</a> is unique, we conclude that <span class="process-math">\(F^n=\bigoplus_{i=1}^nW_i\text{.}\)</span>
+</div>
+</div></div></details></div></article><article class="theorem theorem-like" id="th_subspace_direct_sum"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.5.7</span><span class="period">.</span><span class="space"> </span><span class="title">Direct sum of subspaces.</span>
+</h3>
+<div class="para logical" id="th_subspace_direct_sum-2-1">
+<div class="para">Let <span class="process-math">\(W_1,W_2,\dots, W_n\)</span> be subspaces of the <span class="process-math">\(F\)</span>-vector space <span class="process-math">\(V\text{,}\)</span> and let <span class="process-math">\(W=\sum_{i=1}^n W_i\text{.}\)</span> The following statements are equivalent.</div>
+<ol class="decimal" id="th_subspace_direct_sum-2-1-5">
+<li id="th_subspace_direct_sum-2-1-5-1"><div class="para" id="th_subspace_direct_sum-2-1-5-1-1"><span class="process-math">\(\displaystyle W=\bigoplus_{i=1}^n W_i\)</span></div></li>
+<li id="th_subspace_direct_sum-2-1-5-2"><div class="para logical" id="th_subspace_direct_sum-2-1-5-2-1">
+<div class="para">If <span class="process-math">\(\boldzero=v_1+v_2+\cdots +v_n\)</span> with <span class="process-math">\(v_i\in W_i\)</span> for all <span class="process-math">\(1\leq i\leq n\text{,}\)</span> then <span class="process-math">\(v_i=\boldzero\)</span> for all <span class="process-math">\(1\leq i\leq n\text{.}\)</span> Using logical shorthand:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\boldzero=v_1+v_2+\cdots +v_n\implies v_1=v_2\cdots =v_n=\boldzero   \text{.}
+\end{equation*}
+</div>
+</div></li>
+</ol>
+</div></article><details id="th_subspace_direct_sum-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_subspace_direct_sum-3-1"></div></article></details><article class="corollary theorem-like" id="cor_subspace_dir_sum"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.5.8</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="cor_subspace_dir_sum-1-1">
+<div class="para">Let <span class="process-math">\(W_1\)</span> and <span class="process-math">\(W_2\)</span> be subspaces of the <span class="process-math">\(F\)</span>-vector space <span class="process-math">\(V\text{,}\)</span> and let <span class="process-math">\(W=W_1+W_2\text{.}\)</span> The following statements are equivalent.</div>
+<ol class="decimal" id="cor_subspace_dir_sum-1-1-6">
+<li id="cor_subspace_dir_sum-1-1-6-1"><div class="para" id="cor_subspace_dir_sum-1-1-6-1-1"><span class="process-math">\(W=W_1\oplus W_2\text{.}\)</span></div></li>
+<li id="cor_subspace_dir_sum-1-1-6-2"><div class="para" id="cor_subspace_dir_sum-1-1-6-2-1"><span class="process-math">\(W_1\cap W_2=\{\boldzero\}\text{.}\)</span></div></li>
+</ol>
+</div></article><details id="cor_subspace_dir_sum-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="cor_subspace_dir_sum-2-1">We prove both implications separately.</div>
+<article class="case" id="cor_subspace_dir_sum-2-2"><h4 class="heading">Implication: (1)<span class="process-math">\(\implies\)</span>(2).</h4>
+<div class="para logical" id="cor_subspace_dir_sum-2-2-2">
+<div class="para">Assume <span class="process-math">\(W=W_1\oplus W_2\text{.}\)</span> Since <span class="process-math">\(0\in W_i\)</span> for <span class="process-math">\(1\leq i\leq 2\text{,}\)</span> we have <span class="process-math">\(\{\boldzero\}\subseteq W_1\cap W_2\text{.}\)</span> It remains to prove the reverse inclusion <span class="process-math">\(W_1\cap W_2\subseteq \{\boldzero\}\text{.}\)</span> Given <span class="process-math">\(v\in W_1\cap W_2\text{,}\)</span> we have <span class="process-math">\(v\in W_1\)</span> and <span class="process-math">\(-v\in W_2\text{,}\)</span> and thus</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_subspace_direct_sum.html">
+\begin{equation*}
+\boldzero=v+ (-v)
+\end{equation*}
+</div>
+<div class="para">is a decomposition of <span class="process-math">\(\boldzero\)</span> in terms of <span class="process-math">\(W_1\)</span> and <span class="process-math">\(W_2\text{.}\)</span> Since <span class="process-math">\(W=W_1\oplus W_2\text{,}\)</span> we conclude from <a href="s_subspace_sum.html#th_subspace_direct_sum" class="xref" data-knowl="./knowl/xref/th_subspace_direct_sum.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.5.7: Direct sum of subspaces">Theorem 1.5.7</a> that <span class="process-math">\(v=-v=\boldzero\text{.}\)</span> Thus <span class="process-math">\(W_1\cap W_2=\{\boldzero\}\text{.}\)</span>
+</div>
+</div></article><article class="case" id="cor_subspace_dir_sum-2-3"><h4 class="heading">Implication: (2)<span class="process-math">\(\implies\)</span>(1).</h4>
+<div class="para logical" id="cor_subspace_dir_sum-2-3-2">
+<div class="para">Now assume <span class="process-math">\(W_1\cap W_2=\{\boldzero\}\text{.}\)</span> Using <a href="s_subspace_sum.html#th_subspace_direct_sum" class="xref" data-knowl="./knowl/xref/th_subspace_direct_sum.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.5.7: Direct sum of subspaces">Theorem 1.5.7</a>, it suffices to show that if <span class="process-math">\(\boldzero=v_1+v_2\)</span> with <span class="process-math">\(v_1\in W_1\)</span> and <span class="process-math">\(v_2\in W_2\text{,}\)</span> then <span class="process-math">\(v_1=v_2=\boldzero\text{.}\)</span> If <span class="process-math">\(\boldzero=v_1+v_2\)</span> with <span class="process-math">\(v_i\in W_i\text{,}\)</span> then we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_subspace_direct_sum.html" id="cor_subspace_dir_sum-2-3-2-9">
+\begin{align*}
+v_1\amp =-v_2\in W_2 \\
+v_2 \amp =-v_1\in W_1\text{,}
+\end{align*}
+</div>
+<div class="para">and hence that <span class="process-math">\(v_1\in W_1\cap W_2\)</span> and <span class="process-math">\(v_2\in W_1\cap W_2\text{.}\)</span> Since <span class="process-math">\(W_1\cap W_2=\{\boldzero\}\text{,}\)</span> we conclude that <span class="process-math">\(v_1=v_2=\boldzero\text{,}\)</span> as desired.</div>
+</div></article></article></details><article class="definition definition-like" id="d_matrix_notation"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.5.9</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix notation.</span>
+</h3>
+<div class="para logical" id="d_matrix_notation-4-1">
+<div class="para">Let <span class="process-math">\(F\)</span> be a field.  We adopt the following notation for matrices of <span class="process-math">\(F^{m,n}\text{.}\)</span>
+</div>
+<ul class="disc" id="d_matrix_notation-4-1-3">
+<li id="d_matrix_notation-4-1-3-1">
+<span class="heading"><span class="title">Matrix-building notation.</span></span><div class="para" id="d_matrix_notation-4-1-3-1-2">The notation <span class="process-math">\([a_{ij}]_{m\times n}\)</span> denotes the matrix of <span class="process-math">\(F^{m,n}\)</span> whose <span class="process-math">\(ij\)</span>-th entry is <span class="process-math">\(a_{ij}\)</span> for all <span class="process-math">\(1\leq i\leq m\)</span> and <span class="process-math">\(1\leq j\leq n\text{.}\)</span> When there is no danger of confusion, this notation will be shortened to <span class="process-math">\([a_{ij}]\text{.}\)</span>
+</div>
+</li>
+<li id="d_matrix_notation-4-1-3-2">
+<span class="heading"><span class="title">Matrix entry notation.</span></span><div class="para" id="d_matrix_notation-4-1-3-2-2">Given a matrix <span class="process-math">\(A\in F^{m,n}\text{,}\)</span> for all <span class="process-math">\(1\leq i\leq m\)</span> and <span class="process-math">\(1\leq j\leq n\text{,}\)</span> <span class="process-math">\([A]_{ij}\)</span> denotes the <span class="process-math">\(ij\)</span>-th entry of <span class="process-math">\(A\text{.}\)</span>
+</div>
+</li>
+</ul>
+</div></article><article class="definition definition-like" id="d_transpose"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.5.10</span><span class="period">.</span><span class="space"> </span><span class="title">Transpose matrix.</span>
+</h3>
+<div class="para logical" id="d_transpose-2-1">
+<div class="para">Given a matrix <span class="process-math">\(A\in F^{m,n}\text{,}\)</span> its <dfn class="terminology">transpose</dfn> is the matrix <span class="process-math">\(A^T\in F^{n,m}\)</span> whose <span class="process-math">\(ij\)</span>-th entry is the <span class="process-math">\(ji\)</span>-th entry of <span class="process-math">\(A\)</span> for all <span class="process-math">\(1\leq i\leq n, 1\leq j\leq m\text{.}\)</span> In other words, <span class="process-math">\(A^T\)</span> is the unique matrix of <span class="process-math">\(F^{n,m}\)</span> satisfying</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[A^T]_{ij}=[A]_{ji}
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(1\leq i\leq n\)</span> and <span class="process-math">\(1\leq j\leq m\text{.}\)</span>
+</div>
 </div></article><article class="example example-like" id="eg_direct_sum_matrices"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.7</span><span class="period">.</span><span class="space"> </span><span class="title">Direct sum of matrix spaces.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.11</span><span class="period">.</span><span class="space"> </span><span class="title">Direct sum of matrix spaces.</span>
 </h3>
 <div class="para logical" id="eg_direct_sum_matrices-2-1">
 <div class="para">Let <span class="process-math">\(V=F^{2,2}\text{,}\)</span> the space of all <span class="process-math">\(2\times 2\)</span> matrices with entries in <span class="process-math">\(F\text{,}\)</span> and consider the following subsets of <span class="process-math">\(V\text{:}\)</span>
@@ -547,23 +660,7 @@ W_2 \amp = \{A\in F^{2,2}\colon A^T=-A\}\text{.}
 </div></li>
 </ol>
 </div>
-<div class="solutions"><details id="eg_direct_sum_matrices-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_direct_sum_matrices-3-1"></div></div></details></div></article><article class="theorem theorem-like" id="th_subspace_direct_sum"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.5.8</span><span class="period">.</span><span class="space"> </span><span class="title">Direct sum of subspaces.</span>
-</h3>
-<div class="para logical" id="th_subspace_direct_sum-2-1">
-<div class="para">Let <span class="process-math">\(W_1,W_2,\dots, W_n\)</span> be subspaces of the <span class="process-math">\(F\)</span>-vector space <span class="process-math">\(V\text{,}\)</span> and let <span class="process-math">\(W=\sum_{i=1}^n W_i\text{.}\)</span> The following statements are equivalent.</div>
-<ol class="decimal" id="th_subspace_direct_sum-2-1-5">
-<li id="th_subspace_direct_sum-2-1-5-1"><div class="para" id="th_subspace_direct_sum-2-1-5-1-1"><span class="process-math">\(\displaystyle W=\bigoplus_{i=1}^n W_i\)</span></div></li>
-<li id="th_subspace_direct_sum-2-1-5-2"><div class="para logical" id="th_subspace_direct_sum-2-1-5-2-1">
-<div class="para">If <span class="process-math">\(\boldzero=v_1+v_2+\cdots +v_n\)</span> with <span class="process-math">\(v_i\in W_i\)</span> for all <span class="process-math">\(1\leq i\leq n\text{,}\)</span> then <span class="process-math">\(v_i=\boldzero\)</span> for all <span class="process-math">\(1\leq i\leq n\text{.}\)</span> Using logical shorthand:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\boldzero=v_1+v_2+\cdots +v_n\implies v_1=v_2\cdots =v_n=\boldzero   \text{.}
-\end{equation*}
-</div>
-</div></li>
-</ol>
-</div></article><details id="th_subspace_direct_sum-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_subspace_direct_sum-3-1"></div></article></details></section></div>
+<div class="solutions"><details id="eg_direct_sum_matrices-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_direct_sum_matrices-3-1"></div></div></details></div></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="s_subspace.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="advlinalgkursobjekt-6.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
