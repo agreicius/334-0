@@ -203,11 +203,162 @@
     </p>
     </solution>
     </example>
+    <example xml:id="eg_direct_sum_Fn">
+    <title>Direct sum decomposition of <m>F^n</m></title>
+    <statement>
+    <p>
+    Consider the space <m>F^n</m> of <m>n</m>-tuples with coefficients in <m>F</m>. For each <m>1\leq i\leq n</m>, let <m>W_i</m> be the set of all <m>n</m>-tuples of the form 
+    <me>
+        v=(0,\dots,0,\underset{i\text{-th coor.}}{a}, 0,\dots, 0), a\in F
+    </me>.
+    In other words <m>W_i</m> is the set of all <m>n</m>-tuples whose <m>j</m>-th coordinates are equal to zero for all <m>j\ne i</m>. 
+    </p>
+    <p>
+        Prove that 
+        <me>
+            F^n=W_1\oplus W_2\cdots \oplus W_n
+        </me>.
+        You may take for granted that <m>W_i</m> is a subspace of <m>F^n</m> for all <m>i</m>. 
+    </p>
+    </statement>
+    <solution>
+    <p>
+    Given <m>v=(a_1,a_2,\dots, a_n)\in F^n</m> we have 
+    <men xml:id="eq_Fn_dir_sum">
+        v=v_1+v_2+\cdots +v_n
+    </men>,
+    where 
+    <me>
+        v_i=(0,\dots, a_i,0,\dots, 0)\in W_i
+    </me>.
+    It follows that <m>F^n=\sum_{i=1}^n W_i</m>. Furthermore, the decomposition <xref ref="eq_Fn_dir_sum"/> is unique: if 
+    <me>
+        (a_1,a_2,\dots, a_n)=v_1'+v_2'+\cdots +v_n'
+    </me>
+    with <m>v_i'\in W_i</m> for all <m>i</m>, then since <m>v_i'</m> is the only vector with a nonzero <m>i</m>-th coordinate, we must have <m>v_i'=(0,\dots, 0,a_i,0,\dots,0)</m>. Since the decompotision <xref ref="eq_Fn_dir_sum"/> is unique, we conclude that <m>F^n=\bigoplus_{i=1}^nW_i</m>. 
+    </p>
+    </solution>
+    </example>
+    
+    
+    <theorem xml:id="th_subspace_direct_sum">
+    <title>Direct sum of subspaces</title>
+    <statement>
+    <p>
+    Let <m>W_1,W_2,\dots, W_n</m> be subspaces of the <m>F</m>-vector space <m>V</m>, and let <m>W=\sum_{i=1}^n W_i</m>. The following statements are equivalent. 
+    <ol>
+        <li>
+            <p>
+                <m>W=\bigoplus_{i=1}^n W_i</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                If <m>\boldzero=v_1+v_2+\cdots +v_n</m> with <m>v_i\in W_i</m> for all <m>1\leq i\leq n</m>, then <m>v_i=\boldzero</m> for all <m>1\leq i\leq n</m>. Using logical shorthand: 
+                <me>
+                 \boldzero=v_1+v_2+\cdots +v_n\implies v_1=v_2\cdots =v_n=\boldzero   
+                </me>.
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <proof>
+    <p>
+    </p>
+    </proof>
+    </theorem>
+    <corollary xml:id="cor_subspace_dir_sum">
+        <statement>
+            <p>
+                Let <m>W_1</m> and <m>W_2</m> be subspaces of the <m>F</m>-vector space <m>V</m>, and let <m>W=W_1+W_2</m>. The following statements are equivalent. 
+                <ol>
+                    <li>
+                        <p>
+                            <m>W=W_1\oplus W_2</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>W_1\cap W_2=\{\boldzero\}</m>.
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+        <proof>
+            <p>
+                We prove both implications separately. 
+            </p>
+            <case>
+            <title>Implication: (1)<m>\implies</m>(2)</title>
+            <p>
+            Assume <m>W=W_1\oplus W_2</m>. Since <m>0\in W_i</m> for <m>1\leq i\leq 2</m>, we have <m>\{\boldzero\}\subseteq W_1\cap W_2</m>. It remains to prove the reverse inclusion <m>W_1\cap W_2\subseteq \{\boldzero\}</m>. Given <m>v\in W_1\cap W_2</m>, we have <m>v\in W_1</m> and <m>-v\in W_2</m>, and thus 
+            <me>
+                \boldzero=v+ (-v)
+            </me>
+            is a decomposition of <m>\boldzero</m> in terms of <m>W_1</m> and <m>W_2</m>. Since <m>W=W_1\oplus W_2</m>, we conclude from <xref ref="th_subspace_direct_sum"/> that <m>v=-v=\boldzero</m>. Thus <m>W_1\cap W_2=\{\boldzero\}</m>.
+            </p>
+            </case>
+            <case>
+            <title>Implication: (2)<m>\implies</m>(1)</title>
+            <p>
+            Now assume <m>W_1\cap W_2=\{\boldzero\}</m>. Using <xref ref="th_subspace_direct_sum"/>, it suffices to show that if <m>\boldzero=v_1+v_2</m> with <m>v_1\in W_1</m> and <m>v_2\in W_2</m>, then <m>v_1=v_2=\boldzero</m>. If <m>\boldzero=v_1+v_2</m> with <m>v_i\in W_i</m>, then we have 
+            <md>
+                <mrow> v_1\amp =-v_2\in W_2 </mrow>
+                <mrow>v_2 \amp =-v_1\in W_1</mrow>
+            </md>, 
+            and hence that <m>v_1\in W_1\cap W_2</m> and <m>v_2\in W_1\cap W_2</m>. 
+            Since <m>W_1\cap W_2=\{\boldzero\}</m>, we conclude that <m>v_1=v_2=\boldzero</m>, as desired. 
+            
+            </p>
+            </case>
+            
+            
+        </proof>
+    </corollary>
+    <definition xml:id="d_matrix_notation">
+<title>Matrix notation</title>
+  <notation>
+    <usage><m>[a_{ij}]_{m\times n}</m></usage>
+    <description>Matrix whose <m>ij</m>-th entry is <m>a_{ij}</m></description>
+  </notation>
+  <notation>
+    <usage><m>(A)_{ij}</m></usage>
+    <description><m>ij</m>-th entry of the matrix <m>A</m></description>
+  </notation>
+  <statement>
+    <p>
+        Let <m>F</m> be a field.  We adopt the following notation for matrices of <m>F^{m,n}</m>. 
+      <ul>
+      <li>
+        <title>Matrix-building notation</title>
+        
+        <p>
+          The notation <m>[a_{ij}]_{m\times n}</m> denotes the
+           matrix of <m>F^{m,n}</m> whose <m>ij</m>-th entry is <m>a_{ij}</m> for all <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>. When there is no danger of confusion, this notation will be shortened to <m>[a_{ij}]</m>.
+        </p>
+      </li>
+      <li>
+        <title>Matrix entry notation</title>
+        <p>
+          Given a matrix <m>A\in F^{m,n}</m>, for all <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>, 
+          <m>[A]_{ij}</m> denotes the <m>ij</m>-th entry of <m>A</m>.
+        </p>
+      </li>
+    </ul>
+    </p>
+  </statement>
+</definition>
     <definition xml:id="d_transpose">
     <title>Transpose matrix</title>
     <statement>
     <p>
-    Given a matrix <m>A\in F^{m,n}</m>, its <term>transpose</term> is the matrix <m>A^T\in F^{n,m}</m> whose <m>ij</m>-th entry is <m>ji</m>-th entry of <m>A</m> for all <m>1\leq i\leq n, 1\leq j\leq m</m>. 
+    Given a matrix <m>A\in F^{m,n}</m>, its <term>transpose</term> is the matrix <m>A^T\in F^{n,m}</m> whose <m>ij</m>-th entry is the <m>ji</m>-th entry of <m>A</m> for all <m>1\leq i\leq n, 1\leq j\leq m</m>. In other words, <m>A^T</m> is the unique matrix of <m>F^{n,m}</m> satisfying 
+    <me>
+        [A^T]_{ij}=[A]_{ji}
+    </me>
+    for all <m>1\leq i\leq n</m> and <m>1\leq j\leq m</m>. 
     </p>
     </statement>
     </definition>
@@ -242,34 +393,6 @@
     </p>
     </solution>
     </example>
-    <theorem xml:id="th_subspace_direct_sum">
-    <title>Direct sum of subspaces</title>
-    <statement>
-    <p>
-    Let <m>W_1,W_2,\dots, W_n</m> be subspaces of the <m>F</m>-vector space <m>V</m>, and let <m>W=\sum_{i=1}^n W_i</m>. The following statements are equivalent. 
-    <ol>
-        <li>
-            <p>
-                <m>W=\bigoplus_{i=1}^n W_i</m>
-            </p>
-        </li>
-        <li>
-            <p>
-                If <m>\boldzero=v_1+v_2+\cdots +v_n</m> with <m>v_i\in W_i</m> for all <m>1\leq i\leq n</m>, then <m>v_i=\boldzero</m> for all <m>1\leq i\leq n</m>. Using logical shorthand: 
-                <me>
-                 \boldzero=v_1+v_2+\cdots +v_n\implies v_1=v_2\cdots =v_n=\boldzero   
-                </me>.
-            </p>
-        </li>
-    </ol>
-    </p>
-    </statement>
-    <proof>
-    <p>
-    </p>
-    </proof>
-    </theorem>
-    
     
 
 </section>
