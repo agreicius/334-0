@@ -97,7 +97,7 @@
     </p>
     </proof>
     </theorem>
-    <example xml:id="">
+    <example xml:id="eg_sum_R3">
     <title>Sums of subspaces</title>
     <statement>
     <p>
@@ -133,7 +133,66 @@
     </statement>
     <solution>
     <p>
-    Blah d
+   <ol>
+    <li>
+        <p>
+            It is fairly clear that each <m>W_i</m> above contains the zero vector and is closed under addition and scalar multiplication. We leave a careful proof of these facts to the reader. 
+        </p>
+    </li>
+    <li>
+        <p>
+            Let <m>W=\{(a,b,0)\colon a,b\in \R\}</m>, the <m>xy</m>-plane. Claim: <m>W_1+W_2=W</m>. We prove both inclusions of this set equality separately.  
+        </p>
+        <p>
+            Given <m>v\in W_1+W_2</m>, we have <m>v=v_1+v_2</m> for some <m>v_1=(a,0,0)\in W_1</m> and <m>v_2=(0,b,0)\in W_2</m>. But then 
+            <me>
+                v=(a,0,0)+(0,b,0)=(a,b,0)\in W
+            </me>.
+            Thus <m>W_1+W_2\subseteq W</m>.
+        </p>
+        <p>
+            For the other direction, given any <m>v=(a,b,0)\in W</m>, we have 
+            <me>
+                v=(a,0,0)+(0,b,0)\in W_1+W_2
+            </me>.
+            Thus <m>W\subseteq W_1+W_2</m>, and we conclude <m>W=W_1+W_2</m>.
+        </p>
+    </li>
+    <li>
+        <p>
+            Claim: <m>W_1+W_3=W</m>, with <m>W</m> as above. The inclusion <m>W_1+W_3\subseteq W</m> is obvious and can be proved just as above. The reverse inclusion requires a little more work. 
+        </p>
+        <p>
+            Given <m>v=(a,b,0)\in W</m> we must show that there are elements <m>v_1=(r,0,0)\in W_1</m> and <m>v_2=(s,s,0)\in W_3</m> satisfying
+            <me>
+                v=(a,b,0)=(r,0,0)+(s,s,0)=(r+s,s,0)
+            </me>.
+            Equating coordinates we see that we want to find a solution <m>(r,s)</m> to the linear system
+            <md>
+                <mrow>r+s \amp = a</mrow>
+                <mrow>s \amp =b</mrow>
+            </md>,
+            where <m>a</m> and <m>b</m> are given. We easily solve to conclude that there is in fact exactly one solution: <m>r=a-b, s=b</m>. In particular we have 
+            <me>
+                v=(a,b,0)=(a-b,0,0)+(b,b,0)\in W_1+W_3
+            </me>.
+            This proves <m>W\subseteq W_1+W_3</m> and hence that <m>W=W_1+W_3</m>.
+        </p>
+    </li>
+    <li>
+        <p>
+            Claim: <m>W_1+W_2+W_3=W</m>, with <m>W</m> as above. First observe that since <m>W</m> is a subspace and <m>W_i\subseteq W</m> for all <m>1\leq i\leq 3</m>, we then have 
+            <me>
+                W_1+W_2+W_3\subseteq W
+            </me>
+            by (2) of <xref ref="th_subspace_sum"/>. For the other inclusion, observe that <m>W_1+W_2</m> by the first part, and thus 
+            <me>
+                W=W_1+W_2\subseteq W_1+W_2+W_3
+            </me>.
+            We conclude that <m>W=W_1+W_2+W_3</m>.
+        </p>
+    </li>
+   </ol>
     </p>
     </solution>
     </example>
@@ -199,7 +258,30 @@
     </statement>
     <solution>
     <p>
-    
+    <ol>
+        <li>
+            <p>
+                We know already that <m>W=W_1+W_2=W_1+W_3</m> from <xref ref="eg_sum_R3"/>. Furthermore, it is clear by inspection that the decomposition
+                <me>
+                    (a,b,0)=v_1+v_2, v_1\in W_1, v_2=W_2
+                </me>
+                if and only if <m>v_1=(a,0,0)</m> and <m>v_2=(0,b,0)</m>, showing that <m>W=W_1\oplus W_2</m>. Furthermore, in <xref ref="eg_sum_R3"/> we showed that 
+                <me>
+                    (a,b,0)=v_1+v_3, v_1\in W_1, v_3\in W_3
+                </me>
+                if and only if <m>v_1=(a-b,0,0), v_2=(b,b,0)</m>. Thus <m>W=W_1\oplus W_3</m>.
+            </p>
+        </li>
+        <li>
+            <p>
+                We know that <m>W=W_1+W_2+W_3</m> from <xref ref="eg_sum_R3"/>. To see that <m>W</m> is not the direct sum of the <m>W_i</m> it suffices to show one example of a vector <m>(a,b,0)\in W</m> that can be decomposed into a sum of elements of <m>W_1,W_2,W_3</m> in two distinct ways. Here is such an example:
+                <md>
+                    <mrow>(1,1,0) \amp =(0,0,0)+(0,0,0)+(1,1,0)</mrow>
+                    <mrow> \amp =(1,0,0)+(0,1,0)+(0,0,0)</mrow>
+                </md>.
+            </p>
+        </li>
+    </ol>
     </p>
     </solution>
     </example>
@@ -255,9 +337,9 @@
         <li>
             <p>
                 If <m>\boldzero=v_1+v_2+\cdots +v_n</m> with <m>v_i\in W_i</m> for all <m>1\leq i\leq n</m>, then <m>v_i=\boldzero</m> for all <m>1\leq i\leq n</m>. Using logical shorthand: 
-                <me>
-                 \boldzero=v_1+v_2+\cdots +v_n\implies v_1=v_2\cdots =v_n=\boldzero   
-                </me>.
+                <men xml:id="eq_dir_sum_equiv">
+                 \boldzero=v_1+v_2+\cdots +v_n, v_i\in W_i\implies v_1=v_2\cdots =v_n=\boldzero   
+                </men>.
             </p>
         </li>
     </ol>
@@ -265,6 +347,21 @@
     </statement>
     <proof>
     <p>
+        Since the premises include the assumption that <m>W=\sum_{i=1}^n W_i</m> we need only show that condition (ii) of <xref ref="d_subspace_direct_sum"/> is equivalent to condition <xref ref="eq_dir_sum_equiv"/>. We prove both implications separately.  
+    </p>
+    <p>
+        Suppose condition (ii) of <xref ref="d_subspace_direct_sum"/> is satisfied. Since <m>\boldzero=\boldzero+\boldzero+\cdots +\boldzero</m> is one decomposition of <m>\boldzero</m> into elements of the <m>W_i</m>, and since (ii) asserts such decompositions are unique, we conclude that <xref ref="eq_dir_sum_equiv"/> holds. 
+    </p>
+    <p>
+        Assume <xref ref="eq_dir_sum_equiv"/> holds, and suppose we have 
+        <me>
+            v=v_1+v_2+\cdots +v_n=v_1'+v_2'+\cdots +v_n'
+        </me>
+        with <m>v_i, v_i'\in W_i</m>. It follows, after a little algebra, that 
+        <me>
+            (v_1-v_1')+(v_2-v_2')+\cdots +(v_n-v_n')=\boldzero
+        </me>.
+        Since we assume condition <xref ref="eq_dir_sum_equiv"/>, we conclude that <m>v_i-v_i'=\boldzero</m> for all <m>1\leq i\leq n</m>, or equivalently, <m>v_i=v_i'</m> for all <m>1\leq i\leq n</m>, as desired.
     </p>
     </proof>
     </theorem>
@@ -389,7 +486,48 @@
     </statement>
     <solution>
     <p>
-    
+    <ol>
+        <li>
+            <p>
+                Using the defining conditions <m>A^T=A</m> and <m>A^T=-A</m>, it is easy to see that 
+                <md>
+                    <mrow>W_1 \amp =\left\{\begin{bmatrix}
+                    a\amp b \\ b\amp c\end{bmatrix}\colon a,b,c\in F\right\}
+                    </mrow>
+                    <mrow>W_2 \amp =\left\{\begin{bmatrix}
+                    0\amp b \\ -b\amp 0\end{bmatrix}\colon b\in F\right\}
+                    </mrow>
+                </md>.
+                From these descriptions it follows easily that <m>W_1</m> and <m>W_2</m> contain the zero matrix, and are closed under addition and scalar multiplication. We leave the details to the reader. 
+            </p>
+        </li>
+        <li>
+            <p>
+                Let <m>W=W_1+W_2</m>. First we show that <m>W=W_1\oplus W_2</m>. To do so, it suffices to show <m>W_1\cap W_2=\{\boldzero\}</m> by <xref ref="cor_subspace_dir_sum"/>. But this is clear from the parametric descriptions of <m>W_1</m> and <m>W_2</m> given above. 
+            </p>
+            <p>
+                Next we show that <m>W=F^{2,2}</m>. By definition we have <m>W=W_1+W_2\subseteq F^{2,2}</m>, so we need only show the reverse inclusion. Given an arbitrary matrix <m>A\in F^{2,2}</m>, we must show that we can write <m>A=A_1+A_2</m> where <m>A_1\in W_1</m> and <m>A_2\in W_2</m>. In other words, we must show that any matrix can be written as a sum of a symmetric matrix and a skew-symmetric matrix. This can be done essentially by inspection in this low-dimensional case (<m>n=2</m>):  we have 
+                <me>
+                   \begin{bmatrix}
+                a\amp b\\ c\amp d
+                \end{bmatrix} =\frac{1}{2}\begin{bmatrix}
+                2a\amp b+c \\ b+c \amp 2d
+                \end{bmatrix}+
+                \frac{1}{2}\begin{bmatrix}
+                0\amp b-c \\ -b+c \amp 0
+                \end{bmatrix}
+                </me>
+                for any matrix <m>A=\begin{bmatrix}
+                a\amp b\\ c\amp d
+                \end{bmatrix}</m>. This fact is true more generally, however, and so it is worth adding an argument that works for all <m>n</m>: namely, observe that <m>A=A_1+A_2</m>, where 
+                <md>
+                    <mrow>A_1 \amp =\frac{1}{2}(A+A^T)</mrow>
+                    <mrow>A_2 \amp =\frac{1}{2}(A-A^T)</mrow>
+                </md>.
+                Using elementary properties of transpose, it is now easy to show that <m>A_1^T=A_1</m> and <m>A_2^T=-A_2</m>: <ie/>, <m>A_1\in W_1</m> and <m>A_2\in W_2</m>. We will remind you of these elementary properties of the transpose operator later on. 
+            </p>
+        </li>
+    </ol>
     </p>
     </solution>
     </example>
