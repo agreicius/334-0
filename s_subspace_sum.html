@@ -96,7 +96,7 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.5.15';
+eBookConfig.runestone_version = '7.5.16';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
@@ -124,7 +124,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_subspace.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_linear_algebra.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="advlinalgkursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_subspace.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_linear_algebra.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s_span_ind.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div xmlns:xlink="http://www.w3.org/1999/xlink" id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\renewcommand{\Re}{\operatorname{Re}}
 \renewcommand{\Im}{\operatorname{Im}}
 \newcommand{\Z}{{\mathbb Z}}
@@ -328,6 +328,10 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="s_subspace_sum.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Subspace sums</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_span_ind.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Span and linear independence</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_ind.html#ss_span" class="internal"><span class="title">Span</span></a></div></li></ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -442,28 +446,95 @@ v=v_1+v_2+\cdots +v_n
 <div class="para">for some vectors <span class="process-math">\(v_1,v_2,\dots, v_n\text{,}\)</span> where <span class="process-math">\(v_i\in W_i\text{.}\)</span> Since <span class="process-math">\(W_i\subseteq U\)</span> for all <span class="process-math">\(i\text{,}\)</span> we have <span class="process-math">\(v_i\in U\)</span> for all <span class="process-math">\(i\text{;}\)</span> since <span class="process-math">\(U\)</span> is closed under addition, we have <span class="process-math">\(v=v_1+v_2+\cdots +v_n\in U\text{,}\)</span> as desired.</div>
 </div>
 </li>
-</ol></div></article></details><article class="example example-like" id=""><h3 class="heading">
+</ol></div></article></details><article class="example example-like" id="eg_sum_R3"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.3</span><span class="period">.</span><span class="space"> </span><span class="title">Sums of subspaces.</span>
 </h3>
-<div class="para logical" id="-2-1">
+<div class="para logical" id="eg_sum_R3-2-1">
 <div class="para">Let <span class="process-math">\(V=\R^3\)</span> and consider the following subsets of <span class="process-math">\(V\text{:}\)</span>
 </div>
-<div class="displaymath process-math" id="-2-1-3">
+<div class="displaymath process-math" id="eg_sum_R3-2-1-3">
 \begin{align*}
 W_1 \amp = \{(r,0,0)\colon r\in \R\}\\
 W_2 \amp = \{(0,s,0)\colon s\in \R\}\\
 W_3 \amp = \{(t,t,0)\colon t\in \R\}\text{.}
 \end{align*}
 </div>
-<ol class="decimal" id="-2-1-4">
-<li id="-2-1-4-1"><div class="para" id="-2-1-4-1-1">Prove that each <span class="process-math">\(W_i\)</span> is a subspace of <span class="process-math">\(\R^3\text{.}\)</span>
+<ol class="decimal" id="eg_sum_R3-2-1-4">
+<li id="eg_sum_R3-2-1-4-1"><div class="para" id="eg_sum_R3-2-1-4-1-1">Prove that each <span class="process-math">\(W_i\)</span> is a subspace of <span class="process-math">\(\R^3\text{.}\)</span>
 </div></li>
-<li id="-2-1-4-2"><div class="para" id="-2-1-4-2-1">Identify <span class="process-math">\(W_1+W_2\)</span> as a familiar subspace of <span class="process-math">\(\R^3\text{.}\)</span> Justify your answer.</div></li>
-<li id="-2-1-4-3"><div class="para" id="-2-1-4-3-1">Identify <span class="process-math">\(W_1+W_3\)</span> as a familiar subspace of <span class="process-math">\(\R^3\text{.}\)</span> Justify your answer.</div></li>
-<li id="-2-1-4-4"><div class="para" id="-2-1-4-4-1">Identify <span class="process-math">\(W_1+W_2+W_3\)</span> as a familiar subspace of <span class="process-math">\(\R^3\text{.}\)</span> Justify your answer.</div></li>
+<li id="eg_sum_R3-2-1-4-2"><div class="para" id="eg_sum_R3-2-1-4-2-1">Identify <span class="process-math">\(W_1+W_2\)</span> as a familiar subspace of <span class="process-math">\(\R^3\text{.}\)</span> Justify your answer.</div></li>
+<li id="eg_sum_R3-2-1-4-3"><div class="para" id="eg_sum_R3-2-1-4-3-1">Identify <span class="process-math">\(W_1+W_3\)</span> as a familiar subspace of <span class="process-math">\(\R^3\text{.}\)</span> Justify your answer.</div></li>
+<li id="eg_sum_R3-2-1-4-4"><div class="para" id="eg_sum_R3-2-1-4-4-1">Identify <span class="process-math">\(W_1+W_2+W_3\)</span> as a familiar subspace of <span class="process-math">\(\R^3\text{.}\)</span> Justify your answer.</div></li>
 </ol>
 </div>
-<div class="solutions"><details id="-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="-3-1">Blah d</div></div></details></div></article><article class="definition definition-like" id="d_subspace_direct_sum"><h3 class="heading">
+<div class="solutions"><details id="eg_sum_R3-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_sum_R3-3-1"><ol class="decimal" id="eg_sum_R3-3-1-1">
+<li id="eg_sum_R3-3-1-1-1"><div class="para" id="eg_sum_R3-3-1-1-1-1">It is fairly clear that each <span class="process-math">\(W_i\)</span> above contains the zero vector and is closed under addition and scalar multiplication. We leave a careful proof of these facts to the reader.</div></li>
+<li id="eg_sum_R3-3-1-1-2">
+<div class="para" id="eg_sum_R3-3-1-1-2-1">Let <span class="process-math">\(W=\{(a,b,0)\colon a,b\in \R\}\text{,}\)</span> the <span class="process-math">\(xy\)</span>-plane. Claim: <span class="process-math">\(W_1+W_2=W\text{.}\)</span> We prove both inclusions of this set equality separately.</div>
+<div class="para logical" id="eg_sum_R3-3-1-1-2-2">
+<div class="para">Given <span class="process-math">\(v\in W_1+W_2\text{,}\)</span> we have <span class="process-math">\(v=v_1+v_2\)</span> for some <span class="process-math">\(v_1=(a,0,0)\in W_1\)</span> and <span class="process-math">\(v_2=(0,b,0)\in W_2\text{.}\)</span> But then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+v=(a,0,0)+(0,b,0)=(a,b,0)\in W\text{.}
+\end{equation*}
+</div>
+<div class="para">Thus <span class="process-math">\(W_1+W_2\subseteq W\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="eg_sum_R3-3-1-1-2-3">
+<div class="para">For the other direction, given any <span class="process-math">\(v=(a,b,0)\in W\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+v=(a,0,0)+(0,b,0)\in W_1+W_2\text{.}
+\end{equation*}
+</div>
+<div class="para">Thus <span class="process-math">\(W\subseteq W_1+W_2\text{,}\)</span> and we conclude <span class="process-math">\(W=W_1+W_2\text{.}\)</span>
+</div>
+</div>
+</li>
+<li id="eg_sum_R3-3-1-1-3">
+<div class="para" id="eg_sum_R3-3-1-1-3-1">Claim: <span class="process-math">\(W_1+W_3=W\text{,}\)</span> with <span class="process-math">\(W\)</span> as above. The inclusion <span class="process-math">\(W_1+W_3\subseteq W\)</span> is obvious and can be proved just as above. The reverse inclusion requires a little more work.</div>
+<div class="para logical" id="eg_sum_R3-3-1-1-3-2">
+<div class="para">Given <span class="process-math">\(v=(a,b,0)\in W\)</span> we must show that there are elements <span class="process-math">\(v_1=(r,0,0)\in W_1\)</span> and <span class="process-math">\(v_2=(s,s,0)\in W_3\)</span> satisfying</div>
+<div class="displaymath process-math">
+\begin{equation*}
+v=(a,b,0)=(r,0,0)+(s,s,0)=(r+s,s,0)\text{.}
+\end{equation*}
+</div>
+<div class="para">Equating coordinates we see that we want to find a solution <span class="process-math">\((r,s)\)</span> to the linear system</div>
+<div class="displaymath process-math" id="eg_sum_R3-3-1-1-3-2-6">
+\begin{align*}
+r+s \amp = a\\
+s \amp =b\text{,}
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> are given. We easily solve to conclude that there is in fact exactly one solution: <span class="process-math">\(r=a-b, s=b\text{.}\)</span> In particular we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+v=(a,b,0)=(a-b,0,0)+(b,b,0)\in W_1+W_3\text{.}
+\end{equation*}
+</div>
+<div class="para">This proves <span class="process-math">\(W\subseteq W_1+W_3\)</span> and hence that <span class="process-math">\(W=W_1+W_3\text{.}\)</span>
+</div>
+</div>
+</li>
+<li id="eg_sum_R3-3-1-1-4"><div class="para logical" id="eg_sum_R3-3-1-1-4-1">
+<div class="para">Claim: <span class="process-math">\(W_1+W_2+W_3=W\text{,}\)</span> with <span class="process-math">\(W\)</span> as above. First observe that since <span class="process-math">\(W\)</span> is a subspace and <span class="process-math">\(W_i\subseteq W\)</span> for all <span class="process-math">\(1\leq i\leq 3\text{,}\)</span> we then have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_subspace_sum.html">
+\begin{equation*}
+W_1+W_2+W_3\subseteq W
+\end{equation*}
+</div>
+<div class="para">by (2) of <a href="s_subspace_sum.html#th_subspace_sum" class="xref" data-knowl="./knowl/xref/th_subspace_sum.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.5.2: Sum of subspaces">Theorem 1.5.2</a>. For the other inclusion, observe that <span class="process-math">\(W_1+W_2\)</span> by the first part, and thus</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_subspace_sum.html">
+\begin{equation*}
+W=W_1+W_2\subseteq W_1+W_2+W_3\text{.}
+\end{equation*}
+</div>
+<div class="para">We conclude that <span class="process-math">\(W=W_1+W_2+W_3\text{.}\)</span>
+</div>
+</div></li>
+</ol></div></div></details></div></article><article class="definition definition-like" id="d_subspace_direct_sum"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.5.4</span><span class="period">.</span><span class="space"> </span><span class="title">Direct sum of subspaces.</span>
 </h3>
 <div class="para logical" id="d_subspace_direct_sum-2-1">
@@ -522,7 +593,33 @@ W \amp = \{(a,b,0)\colon a,b\in \R\}\text{.}
 </div></li>
 </ol>
 </div>
-<div class="solutions"><details id="eg_direct_sum_Rn-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_direct_sum_Rn-3-1"></div></div></details></div></article><article class="example example-like" id="eg_direct_sum_Fn"><h3 class="heading">
+<div class="solutions"><details id="eg_direct_sum_Rn-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_direct_sum_Rn-3-1"><ol class="decimal" id="eg_direct_sum_Rn-3-1-1">
+<li id="eg_direct_sum_Rn-3-1-1-1"><div class="para logical" id="eg_direct_sum_Rn-3-1-1-1-1">
+<div class="para">We know already that <span class="process-math">\(W=W_1+W_2=W_1+W_3\)</span> from <a href="s_subspace_sum.html#eg_sum_R3" class="xref" data-knowl="./knowl/xref/eg_sum_R3.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.5.3: Sums of subspaces">Example 1.5.3</a>. Furthermore, it is clear by inspection that the decomposition</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_sum_R3.html ./knowl/xref/eg_sum_R3.html">
+\begin{equation*}
+(a,b,0)=v_1+v_2, v_1\in W_1, v_2=W_2
+\end{equation*}
+</div>
+<div class="para">if and only if <span class="process-math">\(v_1=(a,0,0)\)</span> and <span class="process-math">\(v_2=(0,b,0)\text{,}\)</span> showing that <span class="process-math">\(W=W_1\oplus W_2\text{.}\)</span> Furthermore, in <a href="s_subspace_sum.html#eg_sum_R3" class="xref" data-knowl="./knowl/xref/eg_sum_R3.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.5.3: Sums of subspaces">Example 1.5.3</a> we showed that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_sum_R3.html ./knowl/xref/eg_sum_R3.html">
+\begin{equation*}
+(a,b,0)=v_1+v_3, v_1\in W_1, v_3\in W_3
+\end{equation*}
+</div>
+<div class="para">if and only if <span class="process-math">\(v_1=(a-b,0,0), v_2=(b,b,0)\text{.}\)</span> Thus <span class="process-math">\(W=W_1\oplus W_3\text{.}\)</span>
+</div>
+</div></li>
+<li id="eg_direct_sum_Rn-3-1-1-2"><div class="para logical" id="eg_direct_sum_Rn-3-1-1-2-1">
+<div class="para">We know that <span class="process-math">\(W=W_1+W_2+W_3\)</span> from <a href="s_subspace_sum.html#eg_sum_R3" class="xref" data-knowl="./knowl/xref/eg_sum_R3.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.5.3: Sums of subspaces">Example 1.5.3</a>. To see that <span class="process-math">\(W\)</span> is not the direct sum of the <span class="process-math">\(W_i\)</span> it suffices to show one example of a vector <span class="process-math">\((a,b,0)\in W\)</span> that can be decomposed into a sum of elements of <span class="process-math">\(W_1,W_2,W_3\)</span> in two distinct ways. Here is such an example:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_sum_R3.html" id="eg_direct_sum_Rn-3-1-1-2-1-7">
+\begin{align*}
+(1,1,0) \amp =(0,0,0)+(0,0,0)+(1,1,0)\\
+\amp =(1,0,0)+(0,1,0)+(0,0,0)\text{.}
+\end{align*}
+</div>
+</div></li>
+</ol></div></div></details></div></article><article class="example example-like" id="eg_direct_sum_Fn"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.6</span><span class="period">.</span><span class="space"> </span><span class="title">Direct sum decomposition of <span class="process-math">\(F^n\)</span>.</span>
 </h3>
 <div class="para logical" id="eg_direct_sum_Fn-2-1">
@@ -574,14 +671,30 @@ v_i=(0,\dots, a_i,0,\dots, 0)\in W_i\text{.}
 <li id="th_subspace_direct_sum-2-1-5-1"><div class="para" id="th_subspace_direct_sum-2-1-5-1-1"><span class="process-math">\(\displaystyle W=\bigoplus_{i=1}^n W_i\)</span></div></li>
 <li id="th_subspace_direct_sum-2-1-5-2"><div class="para logical" id="th_subspace_direct_sum-2-1-5-2-1">
 <div class="para">If <span class="process-math">\(\boldzero=v_1+v_2+\cdots +v_n\)</span> with <span class="process-math">\(v_i\in W_i\)</span> for all <span class="process-math">\(1\leq i\leq n\text{,}\)</span> then <span class="process-math">\(v_i=\boldzero\)</span> for all <span class="process-math">\(1\leq i\leq n\text{.}\)</span> Using logical shorthand:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\boldzero=v_1+v_2+\cdots +v_n\implies v_1=v_2\cdots =v_n=\boldzero   \text{.}
-\end{equation*}
+<div class="displaymath process-math" id="eq_dir_sum_equiv">
+\begin{equation}
+\boldzero=v_1+v_2+\cdots +v_n, v_i\in W_i\implies v_1=v_2\cdots =v_n=\boldzero   \text{.}\tag{1.11}
+\end{equation}
 </div>
 </div></li>
 </ol>
-</div></article><details id="th_subspace_direct_sum-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_subspace_direct_sum-3-1"></div></article></details><article class="corollary theorem-like" id="cor_subspace_dir_sum"><h3 class="heading">
+</div></article><details id="th_subspace_direct_sum-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_subspace_direct_sum-3-1">Since the premises include the assumption that <span class="process-math">\(W=\sum_{i=1}^n W_i\)</span> we need only show that condition (ii) of <a href="s_subspace_sum.html#d_subspace_direct_sum" class="xref" data-knowl="./knowl/xref/d_subspace_direct_sum.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.5.4: Direct sum of subspaces">Definition 1.5.4</a> is equivalent to condition <a href="s_subspace_sum.html#eq_dir_sum_equiv" class="xref" data-knowl="./knowl/xref/eq_dir_sum_equiv.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.11">(1.11)</a>. We prove both implications separately.</div>
+<div class="para" id="th_subspace_direct_sum-3-2">Suppose condition (ii) of <a href="s_subspace_sum.html#d_subspace_direct_sum" class="xref" data-knowl="./knowl/xref/d_subspace_direct_sum.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.5.4: Direct sum of subspaces">Definition 1.5.4</a> is satisfied. Since <span class="process-math">\(\boldzero=\boldzero+\boldzero+\cdots +\boldzero\)</span> is one decomposition of <span class="process-math">\(\boldzero\)</span> into elements of the <span class="process-math">\(W_i\text{,}\)</span> and since (ii) asserts such decompositions are unique, we conclude that <a href="s_subspace_sum.html#eq_dir_sum_equiv" class="xref" data-knowl="./knowl/xref/eq_dir_sum_equiv.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.11">(1.11)</a> holds.</div>
+<div class="para logical" id="th_subspace_direct_sum-3-3">
+<div class="para">Assume <a href="s_subspace_sum.html#eq_dir_sum_equiv" class="xref" data-knowl="./knowl/xref/eq_dir_sum_equiv.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.11">(1.11)</a> holds, and suppose we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_dir_sum_equiv.html ./knowl/xref/eq_dir_sum_equiv.html">
+\begin{equation*}
+v=v_1+v_2+\cdots +v_n=v_1'+v_2'+\cdots +v_n'
+\end{equation*}
+</div>
+<div class="para">with <span class="process-math">\(v_i, v_i'\in W_i\text{.}\)</span> It follows, after a little algebra, that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_dir_sum_equiv.html ./knowl/xref/eq_dir_sum_equiv.html">
+\begin{equation*}
+(v_1-v_1')+(v_2-v_2')+\cdots +(v_n-v_n')=\boldzero\text{.}
+\end{equation*}
+</div>
+<div class="para">Since we assume condition <a href="s_subspace_sum.html#eq_dir_sum_equiv" class="xref" data-knowl="./knowl/xref/eq_dir_sum_equiv.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.11">(1.11)</a>, we conclude that <span class="process-math">\(v_i-v_i'=\boldzero\)</span> for all <span class="process-math">\(1\leq i\leq n\text{,}\)</span> or equivalently, <span class="process-math">\(v_i=v_i'\)</span> for all <span class="process-math">\(1\leq i\leq n\text{,}\)</span> as desired.</div>
+</div></article></details><article class="corollary theorem-like" id="cor_subspace_dir_sum"><h3 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.5.8</span><span class="period">.</span>
 </h3>
 <div class="para logical" id="cor_subspace_dir_sum-1-1">
@@ -660,9 +773,50 @@ W_2 \amp = \{A\in F^{2,2}\colon A^T=-A\}\text{.}
 </div></li>
 </ol>
 </div>
-<div class="solutions"><details id="eg_direct_sum_matrices-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_direct_sum_matrices-3-1"></div></div></details></div></article></section></div>
+<div class="solutions"><details id="eg_direct_sum_matrices-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_direct_sum_matrices-3-1"><ol class="decimal" id="eg_direct_sum_matrices-3-1-1">
+<li id="eg_direct_sum_matrices-3-1-1-1"><div class="para logical" id="eg_direct_sum_matrices-3-1-1-1-1">
+<div class="para">Using the defining conditions <span class="process-math">\(A^T=A\)</span> and <span class="process-math">\(A^T=-A\text{,}\)</span> it is easy to see that</div>
+<div class="displaymath process-math" id="eg_direct_sum_matrices-3-1-1-1-1-3">
+\begin{align*}
+W_1 \amp =\left\{\begin{bmatrix}
+a\amp b \\ b\amp c\end{bmatrix}\colon a,b,c\in F\right\}\\
+W_2 \amp =\left\{\begin{bmatrix}
+0\amp b \\ -b\amp 0\end{bmatrix}\colon b\in F\right\}\text{.}
+\end{align*}
+</div>
+<div class="para">From these descriptions it follows easily that <span class="process-math">\(W_1\)</span> and <span class="process-math">\(W_2\)</span> contain the zero matrix, and are closed under addition and scalar multiplication. We leave the details to the reader.</div>
+</div></li>
+<li id="eg_direct_sum_matrices-3-1-1-2">
+<div class="para" id="eg_direct_sum_matrices-3-1-1-2-1">Let <span class="process-math">\(W=W_1+W_2\text{.}\)</span> First we show that <span class="process-math">\(W=W_1\oplus W_2\text{.}\)</span> To do so, it suffices to show <span class="process-math">\(W_1\cap W_2=\{\boldzero\}\)</span> by <a href="s_subspace_sum.html#cor_subspace_dir_sum" class="xref" data-knowl="./knowl/xref/cor_subspace_dir_sum.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.5.8">Corollary 1.5.8</a>. But this is clear from the parametric descriptions of <span class="process-math">\(W_1\)</span> and <span class="process-math">\(W_2\)</span> given above.</div>
+<div class="para logical" id="eg_direct_sum_matrices-3-1-1-2-2">
+<div class="para">Next we show that <span class="process-math">\(W=F^{2,2}\text{.}\)</span> By definition we have <span class="process-math">\(W=W_1+W_2\subseteq F^{2,2}\text{,}\)</span> so we need only show the reverse inclusion. Given an arbitrary matrix <span class="process-math">\(A\in F^{2,2}\text{,}\)</span> we must show that we can write <span class="process-math">\(A=A_1+A_2\)</span> where <span class="process-math">\(A_1\in W_1\)</span> and <span class="process-math">\(A_2\in W_2\text{.}\)</span> In other words, we must show that any matrix can be written as a sum of a symmetric matrix and a skew-symmetric matrix. This can be done essentially by inspection in this low-dimensional case (<span class="process-math">\(n=2\)</span>):  we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}
+a\amp b\\ c\amp d
+\end{bmatrix} =\frac{1}{2}\begin{bmatrix}
+2a\amp b+c \\ b+c \amp 2d
+\end{bmatrix}+
+\frac{1}{2}\begin{bmatrix}
+0\amp b-c \\ -b+c \amp 0
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">for any matrix <span class="process-math">\(A=\begin{bmatrix}
+a\amp b\\ c\amp d
+\end{bmatrix}\text{.}\)</span> This fact is true more generally, however, and so it is worth adding an argument that works for all <span class="process-math">\(n\text{:}\)</span> namely, observe that <span class="process-math">\(A=A_1+A_2\text{,}\)</span> where</div>
+<div class="displaymath process-math" id="eg_direct_sum_matrices-3-1-1-2-2-12">
+\begin{align*}
+A_1 \amp =\frac{1}{2}(A+A^T)\\
+A_2 \amp =\frac{1}{2}(A-A^T)\text{.}
+\end{align*}
+</div>
+<div class="para">Using elementary properties of transpose, it is now easy to show that <span class="process-math">\(A_1^T=A_1\)</span> and <span class="process-math">\(A_2^T=-A_2\text{:}\)</span> i.e., <span class="process-math">\(A_1\in W_1\)</span> and <span class="process-math">\(A_2\in W_2\text{.}\)</span> We will remind you of these elementary properties of the transpose operator later on.</div>
+</div>
+</li>
+</ol></div></div></details></div></article></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="s_subspace.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="advlinalgkursobjekt-6.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="s_subspace.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_span_ind.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

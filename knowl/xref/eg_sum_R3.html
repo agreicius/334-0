@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.5.3</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Sums of subspaces.</span>
+</h3>
+<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
+<div class="para">Let <span class="process-math">\(V=\R^3\)</span> and consider the following subsets of <span class="process-math">\(V\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+W_1 \amp = \{(r,0,0)\colon r\in \R\}\\
+W_2 \amp = \{(0,s,0)\colon s\in \R\}\\
+W_3 \amp = \{(t,t,0)\colon t\in \R\}\text{.}
+\end{align*}
+</div>
+<ol class="decimal" id="eg_sum_R3-2-1-4">
+<li><div class="para">Prove that each <span class="process-math">\(W_i\)</span> is a subspace of <span class="process-math">\(\R^3\text{.}\)</span>
+</div></li>
+<li><div class="para">Identify <span class="process-math">\(W_1+W_2\)</span> as a familiar subspace of <span class="process-math">\(\R^3\text{.}\)</span> Justify your answer.</div></li>
+<li><div class="para">Identify <span class="process-math">\(W_1+W_3\)</span> as a familiar subspace of <span class="process-math">\(\R^3\text{.}\)</span> Justify your answer.</div></li>
+<li><div class="para">Identify <span class="process-math">\(W_1+W_2+W_3\)</span> as a familiar subspace of <span class="process-math">\(\R^3\text{.}\)</span> Justify your answer.</div></li>
+</ol>
+</div>
+<div class="solutions"><details xmlns:xlink="http://www.w3.org/1999/xlink" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical"><ol class="decimal" id="eg_sum_R3-3-1-1">
+<li><div class="para">It is fairly clear that each <span class="process-math">\(W_i\)</span> above contains the zero vector and is closed under addition and scalar multiplication. We leave a careful proof of these facts to the reader.</div></li>
+<li>
+<div class="para">Let <span class="process-math">\(W=\{(a,b,0)\colon a,b\in \R\}\text{,}\)</span> the <span class="process-math">\(xy\)</span>-plane. Claim: <span class="process-math">\(W_1+W_2=W\text{.}\)</span> We prove both inclusions of this set equality separately.</div>
+<div class="para logical">
+<div class="para">Given <span class="process-math">\(v\in W_1+W_2\text{,}\)</span> we have <span class="process-math">\(v=v_1+v_2\)</span> for some <span class="process-math">\(v_1=(a,0,0)\in W_1\)</span> and <span class="process-math">\(v_2=(0,b,0)\in W_2\text{.}\)</span> But then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+v=(a,0,0)+(0,b,0)=(a,b,0)\in W\text{.}
+\end{equation*}
+</div>
+<div class="para">Thus <span class="process-math">\(W_1+W_2\subseteq W\text{.}\)</span>
+</div>
+</div>
+<div class="para logical">
+<div class="para">For the other direction, given any <span class="process-math">\(v=(a,b,0)\in W\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+v=(a,0,0)+(0,b,0)\in W_1+W_2\text{.}
+\end{equation*}
+</div>
+<div class="para">Thus <span class="process-math">\(W\subseteq W_1+W_2\text{,}\)</span> and we conclude <span class="process-math">\(W=W_1+W_2\text{.}\)</span>
+</div>
+</div>
+</li>
+<li>
+<div class="para">Claim: <span class="process-math">\(W_1+W_3=W\text{,}\)</span> with <span class="process-math">\(W\)</span> as above. The inclusion <span class="process-math">\(W_1+W_3\subseteq W\)</span> is obvious and can be proved just as above. The reverse inclusion requires a little more work.</div>
+<div class="para logical">
+<div class="para">Given <span class="process-math">\(v=(a,b,0)\in W\)</span> we must show that there are elements <span class="process-math">\(v_1=(r,0,0)\in W_1\)</span> and <span class="process-math">\(v_2=(s,s,0)\in W_3\)</span> satisfying</div>
+<div class="displaymath process-math">
+\begin{equation*}
+v=(a,b,0)=(r,0,0)+(s,s,0)=(r+s,s,0)\text{.}
+\end{equation*}
+</div>
+<div class="para">Equating coordinates we see that we want to find a solution <span class="process-math">\((r,s)\)</span> to the linear system</div>
+<div class="displaymath process-math">
+\begin{align*}
+r+s \amp = a\\
+s \amp =b\text{,}
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> are given. We easily solve to conclude that there is in fact exactly one solution: <span class="process-math">\(r=a-b, s=b\text{.}\)</span> In particular we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+v=(a,b,0)=(a-b,0,0)+(b,b,0)\in W_1+W_3\text{.}
+\end{equation*}
+</div>
+<div class="para">This proves <span class="process-math">\(W\subseteq W_1+W_3\)</span> and hence that <span class="process-math">\(W=W_1+W_3\text{.}\)</span>
+</div>
+</div>
+</li>
+<li><div class="para logical">
+<div class="para">Claim: <span class="process-math">\(W_1+W_2+W_3=W\text{,}\)</span> with <span class="process-math">\(W\)</span> as above. First observe that since <span class="process-math">\(W\)</span> is a subspace and <span class="process-math">\(W_i\subseteq W\)</span> for all <span class="process-math">\(1\leq i\leq 3\text{,}\)</span> we then have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_subspace_sum.html">
+\begin{equation*}
+W_1+W_2+W_3\subseteq W
+\end{equation*}
+</div>
+<div class="para">by (2) of <a href="s_subspace_sum.html#th_subspace_sum" class="xref" data-knowl="./knowl/xref/th_subspace_sum.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.5.2: Sum of subspaces">Theorem 1.5.2</a>. For the other inclusion, observe that <span class="process-math">\(W_1+W_2\)</span> by the first part, and thus</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_subspace_sum.html">
+\begin{equation*}
+W=W_1+W_2\subseteq W_1+W_2+W_3\text{.}
+\end{equation*}
+</div>
+<div class="para">We conclude that <span class="process-math">\(W=W_1+W_2+W_3\text{.}\)</span>
+</div>
+</div></li>
+</ol></div></div></details></div></article><span class="incontext"><a class="internal" href="s_subspace_sum.html#eg_sum_R3">in-context</a></span>
+</body>
+</html>

@@ -21,12 +21,28 @@
 <li><div class="para logical">
 <div class="para">If <span class="process-math">\(\boldzero=v_1+v_2+\cdots +v_n\)</span> with <span class="process-math">\(v_i\in W_i\)</span> for all <span class="process-math">\(1\leq i\leq n\text{,}\)</span> then <span class="process-math">\(v_i=\boldzero\)</span> for all <span class="process-math">\(1\leq i\leq n\text{.}\)</span> Using logical shorthand:</div>
 <div class="displaymath process-math">
-\begin{equation*}
-\boldzero=v_1+v_2+\cdots +v_n\implies v_1=v_2\cdots =v_n=\boldzero   \text{.}
-\end{equation*}
+\begin{equation}
+\boldzero=v_1+v_2+\cdots +v_n, v_i\in W_i\implies v_1=v_2\cdots =v_n=\boldzero   \text{.}\tag{1.11}
+\end{equation}
 </div>
 </div></li>
 </ol>
-</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para"></div></article></details><span class="incontext"><a class="internal" href="s_subspace_sum.html#th_subspace_direct_sum">in-context</a></span>
+</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para">Since the premises include the assumption that <span class="process-math">\(W=\sum_{i=1}^n W_i\)</span> we need only show that condition (ii) of <a href="s_subspace_sum.html#d_subspace_direct_sum" class="xref" data-knowl="./knowl/xref/d_subspace_direct_sum.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.5.4: Direct sum of subspaces">Definition 1.5.4</a> is equivalent to condition <a href="s_subspace_sum.html#eq_dir_sum_equiv" class="xref" data-knowl="./knowl/xref/eq_dir_sum_equiv.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.11">(1.11)</a>. We prove both implications separately.</div>
+<div class="para">Suppose condition (ii) of <a href="s_subspace_sum.html#d_subspace_direct_sum" class="xref" data-knowl="./knowl/xref/d_subspace_direct_sum.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.5.4: Direct sum of subspaces">Definition 1.5.4</a> is satisfied. Since <span class="process-math">\(\boldzero=\boldzero+\boldzero+\cdots +\boldzero\)</span> is one decomposition of <span class="process-math">\(\boldzero\)</span> into elements of the <span class="process-math">\(W_i\text{,}\)</span> and since (ii) asserts such decompositions are unique, we conclude that <a href="s_subspace_sum.html#eq_dir_sum_equiv" class="xref" data-knowl="./knowl/xref/eq_dir_sum_equiv.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.11">(1.11)</a> holds.</div>
+<div class="para logical">
+<div class="para">Assume <a href="s_subspace_sum.html#eq_dir_sum_equiv" class="xref" data-knowl="./knowl/xref/eq_dir_sum_equiv.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.11">(1.11)</a> holds, and suppose we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_dir_sum_equiv.html ./knowl/xref/eq_dir_sum_equiv.html">
+\begin{equation*}
+v=v_1+v_2+\cdots +v_n=v_1'+v_2'+\cdots +v_n'
+\end{equation*}
+</div>
+<div class="para">with <span class="process-math">\(v_i, v_i'\in W_i\text{.}\)</span> It follows, after a little algebra, that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_dir_sum_equiv.html ./knowl/xref/eq_dir_sum_equiv.html">
+\begin{equation*}
+(v_1-v_1')+(v_2-v_2')+\cdots +(v_n-v_n')=\boldzero\text{.}
+\end{equation*}
+</div>
+<div class="para">Since we assume condition <a href="s_subspace_sum.html#eq_dir_sum_equiv" class="xref" data-knowl="./knowl/xref/eq_dir_sum_equiv.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.11">(1.11)</a>, we conclude that <span class="process-math">\(v_i-v_i'=\boldzero\)</span> for all <span class="process-math">\(1\leq i\leq n\text{,}\)</span> or equivalently, <span class="process-math">\(v_i=v_i'\)</span> for all <span class="process-math">\(1\leq i\leq n\text{,}\)</span> as desired.</div>
+</div></article></details><span class="incontext"><a class="internal" href="s_subspace_sum.html#th_subspace_direct_sum">in-context</a></span>
 </body>
 </html>

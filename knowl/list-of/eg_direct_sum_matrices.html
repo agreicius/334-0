@@ -32,6 +32,47 @@ W_2 \amp = \{A\in F^{2,2}\colon A^T=-A\}\text{.}
 </div></li>
 </ol>
 </div>
-<div class="solutions"><details xmlns:xlink="http://www.w3.org/1999/xlink" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para"></div></div></details></div></article><span class="incontext"><a class="internal" href="s_subspace_sum.html#eg_direct_sum_matrices">in-context</a></span>
+<div class="solutions"><details xmlns:xlink="http://www.w3.org/1999/xlink" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical"><ol class="decimal" id="eg_direct_sum_matrices-3-1-1">
+<li><div class="para logical">
+<div class="para">Using the defining conditions <span class="process-math">\(A^T=A\)</span> and <span class="process-math">\(A^T=-A\text{,}\)</span> it is easy to see that</div>
+<div class="displaymath process-math">
+\begin{align*}
+W_1 \amp =\left\{\begin{bmatrix}
+a\amp b \\ b\amp c\end{bmatrix}\colon a,b,c\in F\right\}\\
+W_2 \amp =\left\{\begin{bmatrix}
+0\amp b \\ -b\amp 0\end{bmatrix}\colon b\in F\right\}\text{.}
+\end{align*}
+</div>
+<div class="para">From these descriptions it follows easily that <span class="process-math">\(W_1\)</span> and <span class="process-math">\(W_2\)</span> contain the zero matrix, and are closed under addition and scalar multiplication. We leave the details to the reader.</div>
+</div></li>
+<li>
+<div class="para">Let <span class="process-math">\(W=W_1+W_2\text{.}\)</span> First we show that <span class="process-math">\(W=W_1\oplus W_2\text{.}\)</span> To do so, it suffices to show <span class="process-math">\(W_1\cap W_2=\{\boldzero\}\)</span> by <a href="s_subspace_sum.html#cor_subspace_dir_sum" class="xref" data-knowl="./knowl/xref/cor_subspace_dir_sum.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.5.8">Corollary 1.5.8</a>. But this is clear from the parametric descriptions of <span class="process-math">\(W_1\)</span> and <span class="process-math">\(W_2\)</span> given above.</div>
+<div class="para logical">
+<div class="para">Next we show that <span class="process-math">\(W=F^{2,2}\text{.}\)</span> By definition we have <span class="process-math">\(W=W_1+W_2\subseteq F^{2,2}\text{,}\)</span> so we need only show the reverse inclusion. Given an arbitrary matrix <span class="process-math">\(A\in F^{2,2}\text{,}\)</span> we must show that we can write <span class="process-math">\(A=A_1+A_2\)</span> where <span class="process-math">\(A_1\in W_1\)</span> and <span class="process-math">\(A_2\in W_2\text{.}\)</span> In other words, we must show that any matrix can be written as a sum of a symmetric matrix and a skew-symmetric matrix. This can be done essentially by inspection in this low-dimensional case (<span class="process-math">\(n=2\)</span>):  we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}
+a\amp b\\ c\amp d
+\end{bmatrix} =\frac{1}{2}\begin{bmatrix}
+2a\amp b+c \\ b+c \amp 2d
+\end{bmatrix}+
+\frac{1}{2}\begin{bmatrix}
+0\amp b-c \\ -b+c \amp 0
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">for any matrix <span class="process-math">\(A=\begin{bmatrix}
+a\amp b\\ c\amp d
+\end{bmatrix}\text{.}\)</span> This fact is true more generally, however, and so it is worth adding an argument that works for all <span class="process-math">\(n\text{:}\)</span> namely, observe that <span class="process-math">\(A=A_1+A_2\text{,}\)</span> where</div>
+<div class="displaymath process-math">
+\begin{align*}
+A_1 \amp =\frac{1}{2}(A+A^T)\\
+A_2 \amp =\frac{1}{2}(A-A^T)\text{.}
+\end{align*}
+</div>
+<div class="para">Using elementary properties of transpose, it is now easy to show that <span class="process-math">\(A_1^T=A_1\)</span> and <span class="process-math">\(A_2^T=-A_2\text{:}\)</span> i.e., <span class="process-math">\(A_1\in W_1\)</span> and <span class="process-math">\(A_2\in W_2\text{.}\)</span> We will remind you of these elementary properties of the transpose operator later on.</div>
+</div>
+</li>
+</ol></div></div></details></div></article><span class="incontext"><a class="internal" href="s_subspace_sum.html#eg_direct_sum_matrices">in-context</a></span>
 </body>
 </html>
