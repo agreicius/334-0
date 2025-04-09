@@ -422,6 +422,32 @@ Let <m>F\in \{\R, \C\}</m>, and let <m>I</m> be an infinite subset of <m>F</m>.
 </statement>
 <proof>
 <p>
+  We prove that <m>P_n(I)</m> is a subspace, using the 2-step technique. The proof for <m>P(I)</m> is similar. 
+  <ol marker="(i)">
+    <li>
+      <p>
+        Recall that the zero vector of <m>F^I</m> is the the zero function <m>O_I\colon I\rightarrow F</m>, defined as <m>0_I(x)=0</m> for all <m>x\in I</m>. Writing 
+        <me>
+          0_I(x)=0x^n+0x^{n-1}+\cdots +0x+0
+        </me>,
+        we see that <m>\boldzero=0_I\in P_n(I)</m>. (More generally, any constant function <m>f(x)=c</m> is an element of <m>P_n(I)</m> for all <m>n\geq 0</m>.)
+      </p>
+    </li>
+    <li>
+      <p>
+        Assume <m>f,g\in P_n(I)</m>. By definition this means that there are constants <m>a_i, b_i\in F</m>, <m>1\leq i\leq n</m>, such that 
+        <md>
+          <mrow>f(x) \amp = \anpoly</mrow>
+          <mrow>g(x) \amp = b_nx^n+b_{n-1}x^{n-1}+\cdots+b_1x+b_0</mrow>
+        </md>
+        for all <m>x\in I</m>. It follows that 
+        <md>
+          <mrow>(cf+dg)(x) \amp = (a_n+b_n)x^n+(a_{n-1}+b_{n-1})x^{n-1}+\cdots+(a_1+b_1)x+(a_0+b_0) </mrow>
+        </md>
+        for all <m>x\in I</m>, showing that <m>cf+dg\in P_n(I)</m>, as desired. 
+      </p>
+    </li>
+  </ol>
 </p>
 </proof>
 </theorem>
@@ -455,6 +481,7 @@ Let <m>F\in \{\R, \C\}</m> and let <m>I</m> be an infinite subset of <m>F</m>.
 </statement>
 <proof>
 <p>
+  This is a standard result about polynomials, and is a consequence of the fact that a polynomial of degree <m>n</m> has at most <m>n</m> distinct roots. We do not provide a proof here. 
 </p>
 </proof>
 </theorem>
@@ -503,6 +530,11 @@ Let <m>I</m> be an interval of <m>\R</m> that contains at least two elements.
     </p>
   </statement>
 </theorem>
+<proof>
+  <p>
+  This is an instance of <q>proof by calculus</q>. That each of these sets is closed under addition and scalar multiplication follows from elementary results in single-variable calculus: <eg/>, that sums and scalar multiples of continuous functions are continuous, that sums and scalar multiples of differentiable functions are differentiable, <etc/>.     
+  </p>
+</proof>
 </subsection>
 
 </section>

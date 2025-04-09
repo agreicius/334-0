@@ -44,25 +44,25 @@
     </p>
     </remark>
     <p>
-        We can now give the definition of the span of a tuple of vectors. Note that 
+        We now proceed to the definition of the <em>span</em> of a tuple <m>\boldt=(v_i)_{i\in I}</m> of vectors. The definition is broken into two cases depending on whether <m>\boldt=()</m> is the empty tuple (a list with no elements). 
     </p>
     <definition xml:id="d_span">
     <title>Span</title>
     <statement>
     <p>
-    Let <m>V</m> be an <m>F</m>-vector space, and let <m>(v_i)_{i\in I}</m> be a tuple of vectors of <m>V</m>, where <m>I</m> is a nonempty set. The <term>span</term> of <m>(v_i)_{i\in I}</m>, denoted <m>\Span (v_i)_{i\in I}</m>, is defined as follows. 
+    Let <m>V</m> be an <m>F</m>-vector space, and let <m>\boldt=(v_i)_{i\in I}</m> be a tuple of vectors of <m>V</m>, where <m>I</m> is a nonempty set. The <term>span</term> of <m>(v_i)_{i\in I}</m>, denoted <m>\Span (v_i)_{i\in I}</m>, is defined as follows. 
     <ul>
         <li>
             <p>
-                If <m>I=\emptyset</m>, so that <m>(v_i)_{i\in I}=()</m> is the empty tuple (or empty list), then we define
+                If <m>I=\emptyset</m>, and consequently<m>\boldt=()</m> is the empty tuple (or empty list), then we define
                 <men xml:id="eq_span_empty">
-                    \Span()=\{\boldzero\}
+                    \Span \boldt=\Span()=\{\boldzero\}
                 </men>.
             </p>
         </li>
         <li>
             <p>
-                Otherwise we define <m>\Span(v_i)_{i\in I}</m> as  the set of all linear combinations of <m>(v_i)_{i\in I}</m>: <ie/>, 
+                If <m>I\ne \emptyset</m>, then we define <m>\Span(v_i)_{i\in I}</m> as  the set of all linear combinations of <m>(v_i)_{i\in I}</m>: <ie/>, 
     <men xml:id="eq_span">
      \Span (v_i)_{i\in I}=\{v\in V\colon v=\sum_{k=1}^nc_{i_k}v_{i_k} \text{ for some } n\in \Z_+, c_{i_k}\in F\}  
     </men>.
@@ -72,7 +72,161 @@
     </p>
     </statement>
     </definition>
-    
+    <remark xml:id="rm_span">
+        <p>
+        Let <m>(v_i)_{i\in I}</m> be tuple of vectors in <m>V</m>. 
+        <ol>
+          <li>
+            <p>
+              The zero vector is always an element of <m>\Span(v_i)_{i\in I}</m>. We treat the cases where <m>I</m> is empty or nonempty separately.
+            </p>
+            <p>
+                If <m>I=\emptyset</m>, then <m>(v_i)_{i\in I}=()</m> is the empty tuple and <m>\Span S=\{\boldzero\}</m> by definition. 
+            </p>
+            <p>
+                If <m>I\ne \emptyset</m>, then taking any <m>i\in I</m> we have <m>0 v_i\in \Span(v_i)_{i\in I}</m>. Since <m>0v_i=\boldzero</m>, we see that <m>\boldzero\in \Span(v_i)_{i\in I}</m>.
+            </p>
+          </li>
+          <li>
+              <p>
+                The set <m>\{v_i\colon i\in I\}</m> is contained in <m>\Span(v_i)_{i\in I}</m>. Indeed, given any <m>i\in I</m>, we have <m>v_i=1v_i\in \Span(v_i)_{i\in I}</m>.
+              </p>
+          </li>
+
+          <li>
+            <p>
+              For a tuple <m>(v)</m> of length 1, we have <m>\Span(v)=\{cv\colon c\in F\}</m>, the set of all scalar multiples of <m>v</m>. 
+            </p>
+          </li>
+        </ol>
+        </p>
+      </remark>
+    <example xml:id="eg_span_2space">
+      <title>Examples in <m>\R^2</m></title>
+      <statement>
+        <p>
+        Let <m>V=\R^2</m>. For each tuple <m>\boldt=(v_i)_{i\in I}</m>, identify <m>\Span(v_i)_{i\in I}</m> as a familiar geometric object.
+        <ol>
+          <li>
+            <p>
+              <m>\boldt=()</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\boldt=(\boldzero)</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\boldt=((a,b))</m>, <m>(a,b)\ne (0,0)</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\boldt=((1,0),(0,1))</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\boldt=((1,1),(2,2))</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\boldt=((1,1),(1,2))</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\boldt=((a,b))_{(a,b)\in \R^2}</m>
+            </p>
+          </li>
+        </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+        <ol>
+          <li>
+            <p>
+              <m>\Span()=\{(0,0)\}</m>, the set containing just the origin, by definition.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\Span(\boldzero)</m> is the set of all scalar multiples of <m>\boldzero</m>. Thus <m>\Span(\boldzero)=\{\boldzero\}</m>, the set containing just the origin.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\Span((a,b))</m> is the set of all scalar multiples of the nonzero vector <m>(a,b)</m>. Geometrically, this is the line that passes through the the origin and the point <m>(a,b)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              By definition
+              <md>
+                <mrow> \Span((1,0),(0,1))\amp =\{a(1,0)+b(0,1)\colon a,b\in \R\} </mrow>
+                <mrow> \amp =\{(a,b)\colon a,b\in\R\}\amp</mrow>
+              </md>.
+            </p>
+          </li>
+          <li>
+            <p>
+              By definition
+              <md>
+                <mrow> \Span((1,1),(2,2))\amp =\{a(1,1)+b(2,2)\colon a,b\in \R\}</mrow>
+                <mrow> \amp =\{(a+2b,a+2b)\colon a,b\in\R\} \amp </mrow>
+              </md>.
+              It is easy to see that this set is equal to <m>\{(c,c)\colon t\in \R\}</m>, the line with equation <m>y=x</m>. Note that in this case we have
+              <me>
+                \Span((1,1), (2,2))=\Span ((1,1))
+              </me>,
+              and thus that the vector <m>(2,2)</m> is in some sense redundant with respect to the span operation.
+            </p>
+          </li>
+          <li>
+            <p>
+              By definition
+              <md>
+                <mrow>\Span((1,1),(1,2))\amp =\{a(1,1)+b(1,2)\colon a,b\in \R\}</mrow>
+                <mrow> \amp =\{(a+b,a+2b)\colon a,b\in\R\} \amp </mrow>
+              </md>.
+              Claim: <m>\Span((1,1),(1,2))=\R^2</m>. Proving the claim amounts to showing that for all <m>(c,d)\in \R^2</m> there exist <m>a,b\in \R</m> such that
+              <me>
+                \begin{array}{ccccc}
+                  a \amp +\amp b \amp =\amp c\\
+                  a \amp +\amp 2b \amp =\amp d
+                \end{array}
+              </me>.
+                Solving this system using Gaussian elimination, we see that the system has the unique solution
+                <md>
+                <mrow>
+                  a\amp =2c-d \amp b\amp =d-c
+                </mrow>
+                </md>,
+                and thus that
+                <me>
+                  (2c-d)(1,1)+(d-c)(1,2)=(c,d)
+                </me>.
+                This proves <m>\Span((1,1),(1,2))=\R^2</m>, as claimed.
+              </p>
+            </li>
+            <li>
+              <p>
+                Observe first that in this case the index set for our tuple is <m>I=\R^2</m>, and the tuple <m>\boldt</m> is of the form <m>\boldt=(i)_{i\in I}</m>. In other words, the tuple in this case is the <q>list</q> of all elements of <m>\R^2</m>! 
+                By <xref ref="rm_span"/>, we have <m>\{v_i\colon i\in I\}\subseteq \Span(v_i)_{i\in I}</m> for any tuple. Thus in this case 
+                <me>
+                    \{(a,b)\colon (a,b)\in \R^2\}\subseteq \Span((a,b))_{(a,b)\in \R^2}
+                </me>.
+                Since clearly <m>\{(a,b)\colon (a,b)\in \R^2\}=\R^2</m>, we see that <m>\R^2\subseteq \Span((a,b))_{(a,b)\in \R^2}</m>, from which it follows <m>\Span((a,b))_{(a,b)\in \R^2}=\R^2</m>. 
+              </p>
+            </li>
+        </ol>
+      </p>
+      </solution>
+    </example>
     
     </subsection>
 
