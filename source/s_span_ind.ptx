@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_span_ind" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Span and linear independence</title>
+    <introduction>
+        <p>
+      There are many situations in mathematics where we want to describe an infinite set in a concise manner. We saw this at work already in <xref ref="s_solving"/>, where infinite sets of solutions to linear systems were neatly described with parametric expressions.
+    </p>
+    <p>
+      A similar issue arises when describing vector spaces and their subspaces. As we know, any vector space is either the zero space or infinite (<xref ref="ex_vs_zero_or_infinite"/>). If we happen to be dealing with a subspace of <m>\R^n</m>, then there is the possibility of giving a parametric description; but how do we proceed when working in one of our more exotic vector spaces like <m>C^1(\R)</m>?
+    </p>
+    <p>
+    As we will see in the next section the relevant linear algebraic tool for this purpose is the concept of a <em>basis</em>. Loosely speaking, a basis for a vector space <m>V</m> is a set of vectors that is large enough to <em>generate</em> the entire space, and small enough to contain <em>no redundancies</em>. What exactly we mean by <q>generate</q> is captured by the rigorous notion of <em>span</em>; and what we mean by <q>no redundancies</q> is captured by <em>linear independence</em>.
+    </p>
+    </introduction>
+    <subsection xml:id="ss_span">
+    <title>Span</title>
+    <p>
+        In a nutshell we will define the span of a tuple <m>(v_i)_{i\in I}</m> of vectors to be the set of all linear combinations of those vectors. Since we allow the index set <m>I</m> of a tuple to be arbitrary (and possibly infinite), we need to first make proper sense of what a linear combination of <m>(v_i)_{i\in I}</m> is. We do so with the following somewhat technical definition. 
+    </p>
+    <definition xml:id="d_lin_comb_tuple">
+    <title>Linear combination of a tuple</title>
+    <statement>
+    <p>
+    Let <m>V</m> be an <m>F</m>-vector space, and let <m>(v_i)_{i\in I}</m> be a tuple of elements of <m>V</m>. A <term>linear combination</term> of the vectors <m>v_i</m> is an expression of the form 
+    <men xml:id="eq_lin_comb_tuple">
+        \sum_{i\in I}c_iv_i
+    </men>,
+    where <m>c_i\in I</m> for all <m>i</m>, and <m>c_i=0</m> for all but finitely many <m>i\in I</m>. 
+    </p>
+    <p>
+        Given a linear combination <m>\sum_{i\in I}c_iv_i</m>, letting <m>c_{i_1},c_{i_2},\dots, c_{i_n}</m> be the set of nonzero coefficients, we define 
+        <me>
+            \sum_{i\in I}c_iv_i=c_{i_1}v_{i_1}+c_{i_2}v_{i_2}+\cdots+c_{i_n}v_{i_n}
+        </me>.
+    </p>
+    </statement>
+    </definition>
+    <remark>
+    <title>Linear combination of tuples</title>
+    <p>
+        For the most part we will be dealing with <m>n</m>-tuples of vectors, where the index set <m>I=\{1,2,\dots, n\}</m>. In this special case, the <q>for all but finitely many</q> condition is automatic, making <xref ref="d_lin_comb_tuple"/> is very straightforward: a linear combination of a tuple <m>(v_1,v_2,\dots, v_n)</m> is just a vector of the form 
+        <me>
+            c_1v_1+c_2v_2+\cdots +c_nv_n
+        </me>,
+        where <m>c_i\in F</m>.
+    </p>
+    </remark>
+    
+    
+    </subsection>
+
+</section>
