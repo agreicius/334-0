@@ -20,14 +20,78 @@
 <li><div class="para">
 <span class="process-math">\(S\)</span> is linearly dependent.</div></li>
 <li><div class="para logical">
-<div class="para">There is an index <span class="process-math">\(i_{0}\in I\)</span> such that <span class="process-math">\(v_{i_{0}}\)</span> can be written as a linear combination of the other <span class="process-math">\(v_i\)</span>’s: i.e., there exists <span class="process-math">\(i_0\in I\)</span> such that <span class="process-math">\(v_{i_0}\in \Span(v_i)_{i\in I-\{i_0\}}\text{.}\)</span> Furthermore, in this case we have</div>
+<div class="para">There is an index <span class="process-math">\(i_{0}\in I\)</span> such that <span class="process-math">\(v_{i_{0}}\)</span> can be written as a linear combination of the other <span class="process-math">\(v_i\)</span>’s: i.e., there exists <span class="process-math">\(i_k\in I\)</span> such that <span class="process-math">\(v_{i_k}\in \Span(v_i)_{i\in I-\{i_k\}}\text{.}\)</span> Furthermore, in this case we have</div>
 <div class="displaymath process-math">
 \begin{equation}
-\Span(v_i)_{i\in I}=\Span(v_i)_{i\in I-\{i_0\}}\text{.}\tag{1.16}
+\Span(v_i)_{i\in I}=\Span(v_i)_{i\in I-\{i_k\}}\text{.}\tag{1.16}
 \end{equation}
 </div>
 </div></li>
 </ol>
-</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para"></div></article></details><span class="incontext"><a class="internal" href="s_span_ind.html#th_span_ind">in-context</a></span>
+</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">If the tuple <span class="process-math">\(S=(v_i)_{i\in I}\)</span> is linearly dependent, then there is a nontrivial linear combination</div>
+<div class="displaymath process-math">
+\begin{equation*}
+c_{i_1}v_1+c_{i_2}v_2+\cdots +c_{i_n}v_{i_n}=\boldzero\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(i_j\in I\text{.}\)</span> Since the linear combination is nontrivial, we have <span class="process-math">\(c_{i_k}\ne 0\)</span> for some <span class="process-math">\(1\leq k\leq n\text{.}\)</span> After a little vector arithmetic, we can then solve for <span class="process-math">\(v_{i_k}\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+v_{i_k}=\sum_{j\ne k}\frac{c_{i_j}}{c_{i_k}}v_{i_j}\text{.}
+\end{equation*}
+</div>
+<div class="para">This shows <span class="process-math">\(v_{i_k}\)</span> is a linear combination of the vectors <span class="process-math">\(v_i\text{,}\)</span> where <span class="process-math">\(i\ne i_k\text{,}\)</span> and thus that <span class="process-math">\(v_{i_k}\in \Span(v_i)_{i\in I-\{i_k\}}\text{.}\)</span>
+</div>
+</div>
+<div class="para logical">
+<div class="para">Conversely, if we have <span class="process-math">\(v_{i_k}\in \Span(v_i)_{i\in I-\{i_k\}}\text{,}\)</span> then we have</div>
+<div class="displaymath process-math">
+\begin{equation}
+v_{i_k}=\sum_{j=1}^nd_{i_j}v_{i_j}\tag{1.17}
+\end{equation}
+</div>
+<div class="para">for some <span class="process-math">\(i_j\in I\)</span> and <span class="process-math">\(d_{i_j}\in F\text{,}\)</span> whence it follows that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+-d_{i_1}v_{i_1}-d_{i_2}v_{i_2}-\cdots --d_{i_n}v_{i_n}+v_{i_k}=\boldzero
+\end{equation*}
+</div>
+<div class="para">is a nontrivial linear combination of the <span class="process-math">\(v_i\)</span> equal to <span class="process-math">\(\boldzero\text{.}\)</span> We conclude that <span class="process-math">\(S=(v_i)_{i\in i}\)</span> is linearly dependent.</div>
+</div>
+<div class="para logical">
+<div class="para">We have thus proved that <span class="process-math">\(S\)</span> is linearly dependent if and only if some <span class="process-math">\(v_{i_k}\)</span> can be written as a linear combination of the other vectors <span class="process-math">\(v_i\text{.}\)</span> We now prove that when this is the case, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_span.html ./knowl/xref/eq_span_ind_proof.html">
+\begin{equation*}
+\Span(v_i)_{i\in I-\{i_k\}}=\Span(v_i)_{i\in I}\text{.}
+\end{equation*}
+</div>
+<div class="para">Using statement (2) of <a href="s_span_ind.html#th_span" class="xref" data-knowl="./knowl/xref/th_span.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.6.6: Spans are subspaces">Theorem 1.6.6</a>, since <span class="process-math">\(\Span(v_i)_{i\in I}\)</span> is a subspace and contains <span class="process-math">\(v_i\)</span> for all <span class="process-math">\(i\in I-\{i_k\}\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_span.html ./knowl/xref/eq_span_ind_proof.html">
+\begin{equation*}
+\Span(v_i)_{i\in I-\{i_k\}}\subseteq \Span(v_i)_{i\in I}\text{.}
+\end{equation*}
+</div>
+<div class="para">For the other direction, take <span class="process-math">\(v\in \Span(v_i)_{i\in I}\text{.}\)</span> By definition, we can write <span class="process-math">\(v\)</span> as a finite linear combination of the vectors <span class="process-math">\(v_i\text{.}\)</span> It follows that can write</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_span.html ./knowl/xref/eq_span_ind_proof.html">
+\begin{equation*}
+v=c_{i_k}v_{i_k}+\sum_{i\in J}c_iv_i\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(J\)</span> is a finite subset of <span class="process-math">\(I\)</span> not containing <span class="process-math">\(i_k\text{.}\)</span> (Note that <span class="process-math">\(c_{i_k}\)</span> is allowed to be 0 here.) Since <span class="process-math">\(v_{i_k}\)</span> is assumed to be a linear combination of the other vectors <span class="process-math">\(v_i\text{,}\)</span> we can express <span class="process-math">\(v_{i_k}\)</span> as in <a href="s_span_ind.html#eq_span_ind_proof" class="xref" data-knowl="./knowl/xref/eq_span_ind_proof.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.17">(1.17)</a>, in which case we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_span.html ./knowl/xref/eq_span_ind_proof.html">
+\begin{equation*}
+v=\sum_{j=1}^nc_{i_k}d_{i_j}v_{i_j}+\sum_{i\in J}c_iv_i\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(i_j\ne i_k\)</span> for all <span class="process-math">\(1\leq j\leq n\text{,}\)</span> and since <span class="process-math">\(i_k\notin J\text{,}\)</span> we see that this is a linear combination of the tuple <span class="process-math">\((v_i)_{i\in I-\{i_k\}}\text{.}\)</span> Thus <span class="process-math">\(v\in \Span(v_i)_{i\in I-\{i_k\}}\text{,}\)</span> showing that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_span.html ./knowl/xref/eq_span_ind_proof.html">
+\begin{equation*}
+\Span(v_i)_{i\in I}\subseteq \Span(v_i)_{i\in I-\{i_k\}}\text{,}
+\end{equation*}
+</div>
+<div class="para">as desired.</div>
+</div></article></details><span class="incontext"><a class="internal" href="s_span_ind.html#th_span_ind">in-context</a></span>
 </body>
 </html>
