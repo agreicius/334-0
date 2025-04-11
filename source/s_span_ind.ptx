@@ -438,6 +438,9 @@
     </men>.
     We say <m>(v_i)_{i\in I}</m> is <term>linearly dependent</term> if it is not linearly independent: <ie/>, if there is a nontrivial linear combination <m>\sum_{i\in I}c_iv_i=\boldzero</m>. 
     </p>
+    <p>
+        Lastly, observe that an empty list <m>S=()</m> of vectors is linearly independent as it satisfies the implication <xref ref="eq_lin_ind"/> vacuously. 
+    </p>
     </statement>
     </definition>
     
@@ -546,6 +549,68 @@
     </p>
     </solution>
   </example>
+  <theorem xml:id="th_span_ind">
+  <title>Span and independence</title>
+  <statement>
+  <p>
+  Let <m>S=(v_i)_{i\in I}</m> be a nonempty tuple of vectors of the vector space <m>V</m>. The following statements are equivalent. 
+  <ol>
+    <li>
+        <p>
+            <m>S</m> is linearly dependent.
+        </p>
+    </li>
+    <li>
+        <p>
+            There is an index <m>i_{0}\in I</m> such that <m>v_{i_{0}}</m> can be written as a linear combination of the other <m>v_i</m>'s: <ie/>, there exists <m>i_0\in I</m> such that <m>v_{i_0}\in \Span(v_i)_{i\in I-\{i_0\}}</m>. Furthermore, in this case we have 
+            <men xml:id="eq_span_ind">
+                \Span(v_i)_{i\in I}=\Span(v_i)_{i\in I-\{i_0\}}
+            </men>.
+        </p>
+    </li>
+    
+  </ol>
+  </p>
+  </statement>
+  <proof>
+  <p>
+  </p>
+  </proof>
+  </theorem>
+  <p>
+    <xref ref="th_span_ind"/> is a precise articulation of the fact that a tuple <m>S=(v_i)_{i\in I}</m> is linearly dependent if and only if one of the vectors <m>v_{i_0}</m> is <q>redundant</q>. In more detail, it says that there is an index <m>i_0</m> such that 
+    <me>
+        v_{i_0}=c_{i_1}v_{i_1}+c_{i_2}v_{i_1}+\cdots +c_{i_n}v_{i_1}
+    </me>
+    where <m>i_k\ne i_0</m> for all <m>1\leq k\leq n</m>, and furthermore, that in terms of the span operation, this <q>redundant</q> vector <m>v_{i_0}</m> can be dropped. We will most often apply this result in the case where we have a tuple of finite length. We record the result in this special case as a corollary.
+  </p>
+  <corollary xml:id="cor_span_ind">
+    <title>Span and independence</title>
+    <statement>
+        <p>
+            Let <m>S=(v_1,v_2,\dots, v_n)</m> be an <m>n</m>-tuple of vectors of the vector space <m>V</m>. The following statements are equivalent. 
+            <ol>
+                <li>
+                    <p>
+                        <m>S</m> is linearly dependent. 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        There exists <m>k\in \{1,2,\dots, n\}</m> such that 
+                        <me>
+                            v_k=c_1v_1+c_2v_2+\cdots c_{k-1}v_{k-1}
+                        </me>.
+                        for some <m>c_i\in F</m>. Furthermore, when this is the case we have 
+                        <men xml:id="eq_span_ind_finite">
+                            \Span(v_1,v_2,\dots, v_n)=\Span(v_1,\dots, v_{k-1},v_{k+1},\dots, v_n)
+                        </men>.
+                    </p>
+                </li>
+            </ol>
+        </p>
+    </statement>
+  </corollary>
     </subsection>
 
 </section>
