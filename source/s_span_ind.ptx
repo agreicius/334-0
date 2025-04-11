@@ -289,40 +289,38 @@
     </definition>
     <remark xml:id="rm_spanning_sets">
     <title>Standard spanning sets</title>
-    <statement>
-        <p>
-        Most of the vector spaces we've introduced there is a natural spanning set that comes to mind. We will refer to these loosely as <em>standard</em> spanning sets.
-        <ul>
-          <li>
-            <title>Zero space</title>
-            <p>
-            Let <m>V=\{\boldzero\}</m>. By definition the empty list <m>S=()</m> is a spanning set of <m>V</m>.
-            </p>
-          </li>
-          <li>
-            <title>Tuples</title>
-            <p>
-            Let <m>V=F^n</m>. For <m>1\leq i\leq n</m>, define <m>\bolde_i</m> to be the <m>n</m>-tuple with a one in the <m>i</m>-th entry, and zeros elsewhere. Then <m>S=(\bolde_1, \bolde_2,\dots, \bolde_n)</m> is a spanning set for <m>F^n</m>.
-            </p>
-          </li>
-          <li>
-            <title>Matrices</title>
-            <p>
-            Let <m>V=F^{m,n}</m>. For each <m>(i,j)</m> with <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>, define <m>E(i,j)</m> to be the <m>m\times n</m> matrix with a one in the <m>ij</m>-th entry, and zeros elsewhere. Then <m>S=(E_{ij})_{\substack{1\leq i\leq m\\ 1\leq j\leq m}}</m> is a spanning set for <m>F^{m,n}</m>.
-            </p>
-          </li>
-          <li>
-            <title>Polynomials</title>
-            <p>
-            Let <m>F\in \{\R,\C\}</m>, and let <m>I</m> be an infinite subset of <m>F</m>. The tuple <m>S=(x^{i})_{i=0}^n=(1,x,x^2,\dots, x^n)</m> is a spanning set <m>P_n(I)</m>, as by definition the elements of <m>P_n(I)</m> are functions of the form <m>f(x)=\anpoly</m>. 
-            </p>
-            <p>
-              Similarly, the tuple <m>(x^i)_{i=0}^\infty=(1,x,x^2,\dots)</m> is a spanning set of <m>P(I)</m>. 
-            </p>
-          </li>
-        </ul>
-        </p>
-      </statement>
+    <p>
+      Most of the vector spaces we've introduced there is a natural spanning set that comes to mind. We will refer to these loosely as <em>standard</em> spanning sets.
+      <ul>
+        <li>
+          <title>Zero space</title>
+          <p>
+          Let <m>V=\{\boldzero\}</m>. By definition the empty list <m>S=()</m> is a spanning set of <m>V</m>.
+          </p>
+        </li>
+        <li>
+          <title>Tuples</title>
+          <p>
+          Let <m>V=F^n</m>. For <m>1\leq i\leq n</m>, define <m>\bolde_i</m> to be the <m>n</m>-tuple with a one in the <m>i</m>-th entry, and zeros elsewhere. Then <m>S=(\bolde_1, \bolde_2,\dots, \bolde_n)</m> is a spanning set for <m>F^n</m>.
+          </p>
+        </li>
+        <li>
+          <title>Matrices</title>
+          <p>
+          Let <m>V=F^{m,n}</m>. For each <m>(i,j)</m> with <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>, define <m>E(i,j)</m> to be the <m>m\times n</m> matrix with a one in the <m>ij</m>-th entry, and zeros elsewhere. Then <m>S=(E_{ij})_{\substack{1\leq i\leq m\\ 1\leq j\leq m}}</m> is a spanning set for <m>F^{m,n}</m>.
+          </p>
+        </li>
+        <li>
+          <title>Polynomials</title>
+          <p>
+          Let <m>F\in \{\R,\C\}</m>, and let <m>I</m> be an infinite subset of <m>F</m>. The tuple <m>S=(x^{i})_{i=0}^n=(1,x,x^2,\dots, x^n)</m> is a spanning set <m>P_n(I)</m>, as by definition the elements of <m>P_n(I)</m> are functions of the form <m>f(x)=\anpoly</m>. 
+          </p>
+          <p>
+            Similarly, the tuple <m>(x^i)_{i=0}^\infty=(1,x,x^2,\dots)</m> is a spanning set of <m>P(I)</m>. 
+          </p>
+        </li>
+      </ul>
+      </p>
     </remark>
     <p>
       It is important to observe that spanning sets for vector spaces are not unique. Far from it! In general, for any nonzero vector space there are infinitely many choices of spanning sets.
