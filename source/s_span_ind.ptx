@@ -562,9 +562,9 @@
     </li>
     <li>
         <p>
-            There is an index <m>i_{0}\in I</m> such that <m>v_{i_{0}}</m> can be written as a linear combination of the other <m>v_i</m>'s: <ie/>, there exists <m>i_0\in I</m> such that <m>v_{i_0}\in \Span(v_i)_{i\in I-\{i_0\}}</m>. Furthermore, in this case we have 
+            There is an index <m>i_{0}\in I</m> such that <m>v_{i_{0}}</m> can be written as a linear combination of the other <m>v_i</m>'s: <ie/>, there exists <m>i_k\in I</m> such that <m>v_{i_k}\in \Span(v_i)_{i\in I-\{i_k\}}</m>. Furthermore, in this case we have 
             <men xml:id="eq_span_ind">
-                \Span(v_i)_{i\in I}=\Span(v_i)_{i\in I-\{i_0\}}
+                \Span(v_i)_{i\in I}=\Span(v_i)_{i\in I-\{i_k\}}
             </men>.
         </p>
     </li>
@@ -574,6 +574,50 @@
   </statement>
   <proof>
   <p>
+    If the tuple <m>S=(v_i)_{i\in I}</m> is linearly dependent, then there is a nontrivial linear combination 
+    <me>
+      c_{i_1}v_1+c_{i_2}v_2+\cdots +c_{i_n}v_{i_n}=\boldzero
+    </me>,
+    where <m>i_j\in I</m>. 
+    Since the linear combination is nontrivial, we have <m>c_{i_k}\ne 0</m> for some <m>1\leq k\leq n</m>. After a little vector arithmetic, we can then solve for <m>v_{i_k}</m>: 
+    <me>
+      v_{i_k}=\sum_{j\ne k}\frac{c_{i_j}}{c_{i_k}}v_{i_j}
+    </me>.
+    This shows <m>v_{i_k}</m> is a linear combination of the vectors <m>v_i</m>, where <m>i\ne i_k</m>, and thus that <m>v_{i_k}\in \Span(v_i)_{i\in I-\{i_k\}}</m>.
+  </p>
+  <p>
+    Conversely, if we have <m>v_{i_k}\in \Span(v_i)_{i\in I-\{i_k\}}</m>, then we have 
+    <men xml:id="eq_span_ind_proof">
+      v_{i_k}=\sum_{j=1}^nd_{i_j}v_{i_j}
+    </men>
+    for some <m>i_j\in I</m> and <m>d_{i_j}\in F</m>, whence it follows that 
+    <me>
+      -d_{i_1}v_{i_1}-d_{i_2}v_{i_2}-\cdots --d_{i_n}v_{i_n}+v_{i_k}=\boldzero
+    </me>
+    is a nontrivial linear combination of the <m>v_i</m> equal to <m>\boldzero</m>. We conclude that <m>S=(v_i)_{i\in i}</m> is linearly dependent.
+  </p>
+  <p>
+    We have thus proved that <m>S</m> is linearly dependent if and only if some <m>v_{i_k}</m> can be written as a linear combination of the other vectors <m>v_i</m>. We now prove that when this is the case, we have 
+    <me>
+      \Span(v_i)_{i\in I-\{i_k\}}=\Span(v_i)_{i\in I}
+    </me>.
+    Using statement (2) of <xref ref="th_span"/>, since <m>\Span(v_i)_{i\in I}</m> is a subspace and contains <m>v_i</m> for all <m>i\in I-\{i_k\}</m>, we have 
+    <me>
+      \Span(v_i)_{i\in I-\{i_k\}}\subseteq \Span(v_i)_{i\in I}
+    </me>.
+    For the other direction, take <m>v\in \Span(v_i)_{i\in I}</m>. By definition, we can write <m>v</m> as a finite linear combination of the vectors <m>v_i</m>. It follows that can write 
+    <me>
+      v=c_{i_k}v_{i_k}+\sum_{i\in J}c_iv_i
+    </me>,
+    where <m>J</m> is a finite subset of <m>I</m> not containing <m>i_k</m>. (Note that <m>c_{i_k}</m> is allowed to be 0 here.) Since <m>v_{i_k}</m> is assumed to be a linear combination of the other vectors <m>v_i</m>, we can express <m>v_{i_k}</m> as in <xref ref="eq_span_ind_proof"/>, in which case we have 
+    <me>
+      v=\sum_{j=1}^nc_{i_k}d_{i_j}v_{i_j}+\sum_{i\in J}c_iv_i
+    </me>.
+    Since <m>i_j\ne i_k</m> for all <m>1\leq j\leq n</m>, and since <m>i_k\notin J</m>, we see that this is a linear combination of the tuple <m>(v_i)_{i\in I-\{i_k\}}</m>. Thus <m>v\in \Span(v_i)_{i\in I-\{i_k\}}</m>, showing that 
+    <me>
+      \Span(v_i)_{i\in I}\subseteq \Span(v_i)_{i\in I-\{i_k\}}
+    </me>,
+    as desired.
   </p>
   </proof>
   </theorem>
@@ -598,19 +642,58 @@
                 <li>
                     <p>
                         There exists <m>k\in \{1,2,\dots, n\}</m> such that 
-                        <me>
-                            v_k=c_1v_1+c_2v_2+\cdots c_{k-1}v_{k-1}
-                        </me>.
-                        for some <m>c_i\in F</m>. Furthermore, when this is the case we have 
-                        <men xml:id="eq_span_ind_finite">
-                            \Span(v_1,v_2,\dots, v_n)=\Span(v_1,\dots, v_{k-1},v_{k+1},\dots, v_n)
+                        <men>
+                            v_k\in \Span(v_1,v_2,\dots, v_{k-1})
                         </men>.
+                        Furthermore, when this is the case we have 
+                        <men xml:id="eq_span_ind_finite">
+                            \Span(v_1,v_2,\dots, v_n)=\Span(v_i)_{i\ne k}
+                        </men>.
+                        In other words, the span of the vectors is unchanged when we drop the <q>redundant</q> vector <m>v_k</m>. 
                     </p>
                 </li>
             </ol>
         </p>
     </statement>
   </corollary>
+  <remark>
+    <p>
+      For the case <m>k=1</m> in the statement of <xref ref="cor_span_ind"/>, we interpret the assertion 
+    <me>
+      v_k\in \Span(v_1,v_2,\dots, v_{k-1})
+    </me>
+    as <m>v_1\in \Span()</m>. In this somewhat degenerate case, it turns out that we must have <m>v_1=\boldzero</m>. See the proof below. 
+  </p>
+  </remark>
+  <proof>
+    <title>Proof of corollary</title>
+    <p>
+      The corollary is for the most part simply a special case of <xref ref="th_span_ind"/>. It remains only to prove that if <m>S=(v_1,v_2,\dots, v_n)</m> is linearly dependent, then there is a <m>1\leq k\leq n</m> such that 
+      <me>
+        v_k\in\Span(v_1,v_2,\dots, v_{k-1})
+      </me>.
+      This is proven as follows: if <m>S</m> is linearly dependent, then we have a nontrivial linear combination
+      <me>
+        c_1v_1+c_2v_2+\cdots +c_nv_n=\boldzero
+      </me>.
+      Since <m>c_i\ne 0</m> for <em>some</em> <m>i</m>, we can set <m>k</m> to be the largest such <m>i</m>: <ie/>, 
+      <me>
+        k=\max\{i\in \{1,2,\dots, n\}\colon c_i\ne 0\}
+      </me>.
+      We now treat the cases <m>k=1</m> and <m>k&gt; 1</m> separately. If <m>k=1</m>, then by definition of <m>k</m>, we have <m>c_1v_1=\boldzero</m> and <m>c_1\ne 0</m>. Using <xref ref="th_vs_props"/>, we conclude that <m>v_1=\boldzero</m> in this case, and hence that <m>v_1\in \Span()=\{\boldzero\}</m>. (When <m>k=1</m> we interpret <m>\Span(v_1,\dots, v_{k-1})</m> as <m>\Span()</m>.)
+    </p>
+      <p>
+        Now assume <m>k\geq 2</m>. By definition of <m>k</m>, we have 
+      <me>
+        c_1v_1+\cdots +c_kv_k=\boldzero
+      </me>
+      and <m>c_k\ne 0</m>, from whence it follows that  
+      <me>
+        v_k=-\frac{c_1}{c_k}v_1+\cdots -\frac{c_{k-1}}{c_k}v_{k-1}\in \Span(v_1,v_2,\dots, v_{k-1})
+      </me>,
+      as desired.
+    </p>
+  </proof>
     </subsection>
 
 </section>
