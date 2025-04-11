@@ -227,6 +227,87 @@ eBookConfig.enable_chatcodes =  false;
 \newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
 \newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
 \newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+\newcommand{\abcdmatrix}[4]{\begin{bmatrix}#1\amp #2\\ #3\amp #4 \end{bmatrix}
+}
+\newenvironment{amatrix}[1][ccc|c]{\left[\begin{array}{#1}}{\end{array}\right]}
+\newenvironment{linsys}[2][m]{
+\begin{array}[#1]{@{}*{#2}{rc}r@{}}
+}{
+\end{array}}
+\newcommand{\eqsys}{\begin{array}{rcrcrcr}
+a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
+a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \\
+a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
+\end{array}
+}
+\newcommand{\numeqsys}{\begin{array}{rrcrcrcr}
+e_1:\amp  a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
+e_2: \amp a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \\
+e_m: \amp a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
+\end{array}
+}
+\newcommand{\homsys}{\begin{array}{rcrcrcr}
+a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp 0\\
+a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp 0\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp \\
+a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp 0
+\end{array}
+}
+\newcommand{\vareqsys}[4]{
+\begin{array}{ccccccc}
+#3_{11}x_{1}\amp +\amp #3_{12}x_{2}\amp +\cdots+\amp  #3_{1#2}x_{#2}\amp =\amp #4_1\\
+#3_{21}x_{1}\amp +\amp #3_{22}x_{2}\amp +\cdots+\amp #3_{2#2}x_{#2}\amp =\amp #4_2\\
+\vdots \amp \amp \vdots \amp  \amp \vdots \amp =\amp  \\
+#3_{#1 1}x_{1}\amp +\amp #3_{#1 2}x_{2}\amp +\cdots +\amp #3_{#1 #2}x_{#2}\amp =\amp #4_{#1}
+\end{array}
+}
+\newcommand{\genmatrix}[1][a]{
+\begin{bmatrix}
+#1_{11} \amp  #1_{12} \amp  \cdots \amp  #1_{1n} \\
+#1_{21} \amp  #1_{22} \amp  \cdots \amp  #1_{2n} \\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
+#1_{m1} \amp  #1_{m2} \amp  \cdots \amp  #1_{mn}
+\end{bmatrix}
+}
+\newcommand{\varmatrix}[3]{
+\begin{bmatrix}
+#3_{11} \amp  #3_{12} \amp  \cdots \amp  #3_{1#2} \\
+#3_{21} \amp  #3_{22} \amp  \cdots \amp  #3_{2#2} \\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
+#3_{#1 1} \amp  #3_{#1 2} \amp  \cdots \amp  #3_{#1 #2}
+\end{bmatrix}
+}
+\newcommand{\augmatrix}{
+\begin{amatrix}[cccc|c]
+a_{11} \amp  a_{12} \amp  \cdots \amp  a_{1n} \amp b_{1}\\
+a_{21} \amp  a_{22} \amp  \cdots \amp  a_{2n} \amp b_{2}\\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
+a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
+\end{amatrix}
+}
+\newcommand{\varaugmatrix}[4]{
+\begin{amatrix}[cccc|c]
+#3_{11} \amp  #3_{12} \amp  \cdots \amp  #3_{1#2} \amp #4_{1}\\
+#3_{21} \amp  #3_{22} \amp  \cdots \amp  #3_{2#2} \amp #4_{2}\\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
+#3_{#1 1} \amp  #3_{#1 2} \amp  \cdots \amp  #3_{#1 #2}\amp #4_{#1}
+\end{amatrix}
+}
+\newcommand{\spaceforemptycolumn}{\makebox[\wd\boxofmathplus]{\ }}
+
+\newcommand{\generalmatrix}[3]{
+\left(
+\begin{array}{cccc}
+#1_{1,1}  \amp #1_{1,2}  \amp \ldots  \amp #1_{1,#2}  \\
+#1_{2,1}  \amp #1_{2,2}  \amp \ldots  \amp #1_{2,#2}  \\
+\amp \vdots                         \\
+#1_{#3,1} \amp #1_{#3,2} \amp \ldots  \amp #1_{#3,#2}
+\end{array}
+\right)  }
+\newcommand{\colvec}[2][c]{\begin{amatrix}[#1] #2 \end{amatrix}}
+\newcommand{\rowvec}[1]{\begin{bmatrix} #1 \end{bmatrix}}
 \newenvironment{linsys}[2][m]{
 \begin{array}[#1]{@{}*{#2}{rc}r@{}}
 }{
@@ -330,7 +411,10 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_subspace_sum.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Subspace sums</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_span_ind.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Span and linear independence</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_ind.html#ss_span" class="internal"><span class="title">Span</span></a></div></li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_ind.html#ss_span" class="internal"><span class="title">Span</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_ind.html#ss_lin_ind" class="internal"><span class="title">Linear independence</span></a></div></li>
+</ul>
 </li>
 </ul>
 </li>
@@ -679,7 +763,36 @@ P(I)=\bigcup_{n=0}^\infty P_n(I)\text{.}
 <span class="process-math">\(P_n(I)\)</span> is a subspace of <span class="process-math">\(F^I\)</span> for all <span class="process-math">\(n\in \Z_{\geq 0}\text{.}\)</span>
 </div></li>
 </ol>
-</div></article><details id="th_polynomial_space-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_polynomial_space-3-1"></div></article></details><div class="para" id="ss_function_spaces-4">Although not necessary for the proof of <a href="s_subspace.html#th_polynomial_space" class="xref" data-knowl="./knowl/xref/th_polynomial_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.4.12: Polynomial spaces">Theorem 1.4.12</a>, the result below will be useful to us for future discussions. In short, it says that the coefficients of a polynomial uniquely determine it (as long as the domain <span class="process-math">\(I\)</span> is infinite).</div>
+</div></article><details id="th_polynomial_space-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_polynomial_space-3-1">
+<div class="para">We prove that <span class="process-math">\(P_n(I)\)</span> is a subspace, using the 2-step technique. The proof for <span class="process-math">\(P(I)\)</span> is similar.</div>
+<ol class="lower-roman ol-marker-2" id="th_polynomial_space-3-1-3">
+<li id="th_polynomial_space-3-1-3-1"><div class="para logical" id="th_polynomial_space-3-1-3-1-1">
+<div class="para">Recall that the zero vector of <span class="process-math">\(F^I\)</span> is the the zero function <span class="process-math">\(O_I\colon I\rightarrow F\text{,}\)</span> defined as <span class="process-math">\(0_I(x)=0\)</span> for all <span class="process-math">\(x\in I\text{.}\)</span> Writing</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0_I(x)=0x^n+0x^{n-1}+\cdots +0x+0\text{,}
+\end{equation*}
+</div>
+<div class="para">we see that <span class="process-math">\(\boldzero=0_I\in P_n(I)\text{.}\)</span> (More generally, any constant function <span class="process-math">\(f(x)=c\)</span> is an element of <span class="process-math">\(P_n(I)\)</span> for all <span class="process-math">\(n\geq 0\text{.}\)</span>)</div>
+</div></li>
+<li id="th_polynomial_space-3-1-3-2"><div class="para logical" id="th_polynomial_space-3-1-3-2-1">
+<div class="para">Assume <span class="process-math">\(f,g\in P_n(I)\text{.}\)</span> By definition this means that there are constants <span class="process-math">\(a_i, b_i\in F\text{,}\)</span> <span class="process-math">\(1\leq i\leq n\text{,}\)</span> such that</div>
+<div class="displaymath process-math" id="th_polynomial_space-3-1-3-2-1-4">
+\begin{align*}
+f(x) \amp = \anpoly\\
+g(x) \amp = b_nx^n+b_{n-1}x^{n-1}+\cdots+b_1x+b_0
+\end{align*}
+</div>
+<div class="para">for all <span class="process-math">\(x\in I\text{.}\)</span> It follows that</div>
+<div class="displaymath process-math" id="th_polynomial_space-3-1-3-2-1-6">
+\begin{align*}
+(cf+dg)(x) \amp = (a_n+b_n)x^n+(a_{n-1}+b_{n-1})x^{n-1}+\cdots+(a_1+b_1)x+(a_0+b_0) 
+\end{align*}
+</div>
+<div class="para">for all <span class="process-math">\(x\in I\text{,}\)</span> showing that <span class="process-math">\(cf+dg\in P_n(I)\text{,}\)</span> as desired.</div>
+</div></li>
+</ol>
+</div></article></details><div class="para" id="ss_function_spaces-4">Although not necessary for the proof of <a href="s_subspace.html#th_polynomial_space" class="xref" data-knowl="./knowl/xref/th_polynomial_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.4.12: Polynomial spaces">Theorem 1.4.12</a>, the result below will be useful to us for future discussions. In short, it says that the coefficients of a polynomial uniquely determine it (as long as the domain <span class="process-math">\(I\)</span> is infinite).</div>
 <article class="theorem theorem-like" id="th_poly_equality"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.4.13</span><span class="period">.</span><span class="space"> </span><span class="title">Polynomial equality.</span>
 </h4>
@@ -704,7 +817,7 @@ f=g \iff n=m \text{ and } a_k=b_k \text{ for all } 1\leq k\leq n\text{.}
 </div>
 </div></li>
 </ol>
-</div></article><details id="th_poly_equality-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_poly_equality-3-1"></div></article></details><article class="definition definition-like" id="d_function_subspaces"><h4 class="heading">
+</div></article><details id="th_poly_equality-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_poly_equality-3-1">This is a standard result about polynomials, and is a consequence of the fact that a polynomial of degree <span class="process-math">\(n\)</span> has at most <span class="process-math">\(n\)</span> distinct roots. We do not provide a proof here.</div></article></details><article class="definition definition-like" id="d_function_subspaces"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.4.14</span><span class="period">.</span><span class="space"> </span><span class="title">Function subspaces over <span class="process-math">\(\R\)</span>.</span>
 </h4>
 <div class="para logical" id="d_function_subspaces-2-1">
@@ -733,7 +846,7 @@ C(I)=\{f\in \R^I\colon f \text{ is continuous on }I\}\text{.}
 P_{n}(I)\subseteq P(I)\subseteq C^{\infty}(I)\subseteq C^{n}(I)\subseteq C(I)\subseteq \R^{I}\text{.}
 \end{equation*}
 </div>
-</div></article></section></section></div>
+</div></article><details id="ss_function_spaces-8" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="ss_function_spaces-8-1">This is an instance of “proof by calculus”. That each of these sets is closed under addition and scalar multiplication follows from elementary results in single-variable calculus: e.g., that sums and scalar multiples of continuous functions are continuous, that sums and scalar multiples of differentiable functions are differentiable, etc..</div></article></details></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="s_vector_space_functions.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_subspace_sum.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

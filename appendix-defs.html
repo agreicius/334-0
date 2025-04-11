@@ -227,6 +227,87 @@ eBookConfig.enable_chatcodes =  false;
 \newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
 \newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
 \newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+\newcommand{\abcdmatrix}[4]{\begin{bmatrix}#1\amp #2\\ #3\amp #4 \end{bmatrix}
+}
+\newenvironment{amatrix}[1][ccc|c]{\left[\begin{array}{#1}}{\end{array}\right]}
+\newenvironment{linsys}[2][m]{
+\begin{array}[#1]{@{}*{#2}{rc}r@{}}
+}{
+\end{array}}
+\newcommand{\eqsys}{\begin{array}{rcrcrcr}
+a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
+a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \\
+a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
+\end{array}
+}
+\newcommand{\numeqsys}{\begin{array}{rrcrcrcr}
+e_1:\amp  a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
+e_2: \amp a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \\
+e_m: \amp a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
+\end{array}
+}
+\newcommand{\homsys}{\begin{array}{rcrcrcr}
+a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp 0\\
+a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp 0\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp \\
+a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp 0
+\end{array}
+}
+\newcommand{\vareqsys}[4]{
+\begin{array}{ccccccc}
+#3_{11}x_{1}\amp +\amp #3_{12}x_{2}\amp +\cdots+\amp  #3_{1#2}x_{#2}\amp =\amp #4_1\\
+#3_{21}x_{1}\amp +\amp #3_{22}x_{2}\amp +\cdots+\amp #3_{2#2}x_{#2}\amp =\amp #4_2\\
+\vdots \amp \amp \vdots \amp  \amp \vdots \amp =\amp  \\
+#3_{#1 1}x_{1}\amp +\amp #3_{#1 2}x_{2}\amp +\cdots +\amp #3_{#1 #2}x_{#2}\amp =\amp #4_{#1}
+\end{array}
+}
+\newcommand{\genmatrix}[1][a]{
+\begin{bmatrix}
+#1_{11} \amp  #1_{12} \amp  \cdots \amp  #1_{1n} \\
+#1_{21} \amp  #1_{22} \amp  \cdots \amp  #1_{2n} \\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
+#1_{m1} \amp  #1_{m2} \amp  \cdots \amp  #1_{mn}
+\end{bmatrix}
+}
+\newcommand{\varmatrix}[3]{
+\begin{bmatrix}
+#3_{11} \amp  #3_{12} \amp  \cdots \amp  #3_{1#2} \\
+#3_{21} \amp  #3_{22} \amp  \cdots \amp  #3_{2#2} \\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
+#3_{#1 1} \amp  #3_{#1 2} \amp  \cdots \amp  #3_{#1 #2}
+\end{bmatrix}
+}
+\newcommand{\augmatrix}{
+\begin{amatrix}[cccc|c]
+a_{11} \amp  a_{12} \amp  \cdots \amp  a_{1n} \amp b_{1}\\
+a_{21} \amp  a_{22} \amp  \cdots \amp  a_{2n} \amp b_{2}\\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
+a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
+\end{amatrix}
+}
+\newcommand{\varaugmatrix}[4]{
+\begin{amatrix}[cccc|c]
+#3_{11} \amp  #3_{12} \amp  \cdots \amp  #3_{1#2} \amp #4_{1}\\
+#3_{21} \amp  #3_{22} \amp  \cdots \amp  #3_{2#2} \amp #4_{2}\\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
+#3_{#1 1} \amp  #3_{#1 2} \amp  \cdots \amp  #3_{#1 #2}\amp #4_{#1}
+\end{amatrix}
+}
+\newcommand{\spaceforemptycolumn}{\makebox[\wd\boxofmathplus]{\ }}
+
+\newcommand{\generalmatrix}[3]{
+\left(
+\begin{array}{cccc}
+#1_{1,1}  \amp #1_{1,2}  \amp \ldots  \amp #1_{1,#2}  \\
+#1_{2,1}  \amp #1_{2,2}  \amp \ldots  \amp #1_{2,#2}  \\
+\amp \vdots                         \\
+#1_{#3,1} \amp #1_{#3,2} \amp \ldots  \amp #1_{#3,#2}
+\end{array}
+\right)  }
+\newcommand{\colvec}[2][c]{\begin{amatrix}[#1] #2 \end{amatrix}}
+\newcommand{\rowvec}[1]{\begin{bmatrix} #1 \end{bmatrix}}
 \newenvironment{linsys}[2][m]{
 \begin{array}[#1]{@{}*{#2}{rc}r@{}}
 }{
@@ -330,7 +411,10 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_subspace_sum.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Subspace sums</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_span_ind.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Span and linear independence</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_ind.html#ss_span" class="internal"><span class="title">Span</span></a></div></li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_ind.html#ss_span" class="internal"><span class="title">Span</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_ind.html#ss_lin_ind" class="internal"><span class="title">Linear independence</span></a></div></li>
+</ul>
 </li>
 </ul>
 </li>
@@ -469,7 +553,11 @@ eBookConfig.enable_chatcodes =  false;
 <div>
 <a href="s_span_ind.html#d_lin_comb_tuple" class="xref" data-knowl="./knowl/list-of/d_lin_comb_tuple.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.6.1: Linear combination of a tuple">Definition 1.6.1</a> Linear combination of a tuple</div>
 <div>
-<a href="s_span_ind.html#d_span" class="xref" data-knowl="./knowl/list-of/d_span.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.6.3: Span">Definition 1.6.3</a> Span</div></section></div>
+<a href="s_span_ind.html#d_span" class="xref" data-knowl="./knowl/list-of/d_span.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.6.3: Span">Definition 1.6.3</a> Span</div>
+<div>
+<a href="s_span_ind.html#d_spanning_tuple" class="xref" data-knowl="./knowl/list-of/d_spanning_tuple.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.6.7: Spanning set">Definition 1.6.7</a> Spanning set</div>
+<div>
+<a href="s_span_ind.html#d_lin_ind" class="xref" data-knowl="./knowl/list-of/d_lin_ind.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.6.10: Linear independence">Definition 1.6.10</a> Linear independence</div></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="appendix-notation.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="appendix-thms.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
