@@ -124,7 +124,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_subspace_sum.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_linear_algebra.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="advlinalgkursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_subspace_sum.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_linear_algebra.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s_basis.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div xmlns:xlink="http://www.w3.org/1999/xlink" id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\renewcommand{\Re}{\operatorname{Re}}
 \renewcommand{\Im}{\operatorname{Im}}
 \newcommand{\Z}{{\mathbb Z}}
@@ -416,6 +416,13 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_ind.html#ss_lin_ind" class="internal"><span class="title">Linear independence</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_basis.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Bases</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_basis.html#ss_basis_def" class="internal"><span class="title">Definition and examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_basis.html#ss_finite_dim" class="internal"><span class="title">Finite-dimensional vector spaces</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -645,28 +652,28 @@ cv+dw=\sum_{i\in I}(cc_i+dd_i)v_i\text{,}
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.6.7</span><span class="period">.</span><span class="space"> </span><span class="title">Spanning set.</span>
 </h4>
 <div class="para" id="d_spanning_tuple-2-1">Let <span class="process-math">\(W\)</span> be a subspace of the vector space <span class="process-math">\(V\text{.}\)</span> A <dfn class="terminology">spanning set</dfn> of <span class="process-math">\(W\)</span> is a tuple <span class="process-math">\((v_i)_{i\in I}\)</span> of vectors of <span class="process-math">\(V\)</span> such that <span class="process-math">\(W=\Span(v_i)_{i\in I}\text{.}\)</span>
-</div></article><article class="remark remark-like" id="rm_spanning_sets"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.6.8</span><span class="period">.</span><span class="space"> </span><span class="title">Standard spanning sets.</span>
+</div></article><article class="example example-like" id="eg_spanning_sets"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.8</span><span class="period">.</span><span class="space"> </span><span class="title">Standard spanning sets.</span>
 </h4>
-<div class="para logical" id="rm_spanning_sets-2">
+<div class="para logical" id="eg_spanning_sets-2">
 <div class="para">Most of the vector spaces we’ve introduced there is a natural spanning set that comes to mind. We will refer to these loosely as <em class="emphasis">standard</em> spanning sets.</div>
-<ul class="disc" id="rm_spanning_sets-2-2">
-<li id="rm_spanning_sets-2-2-1">
-<span class="heading"><span class="title">Zero space.</span></span><div class="para" id="rm_spanning_sets-2-2-1-2">Let <span class="process-math">\(V=\{\boldzero\}\text{.}\)</span> By definition the empty list <span class="process-math">\(S=()\)</span> is a spanning set of <span class="process-math">\(V\text{.}\)</span>
+<ul class="disc" id="eg_spanning_sets-2-2">
+<li id="eg_spanning_sets-2-2-1">
+<span class="heading"><span class="title">Zero space.</span></span><div class="para" id="eg_spanning_sets-2-2-1-2">Let <span class="process-math">\(V=\{\boldzero\}\text{.}\)</span> By definition the empty list <span class="process-math">\(S=()\)</span> is a spanning set of <span class="process-math">\(V\text{.}\)</span>
 </div>
 </li>
-<li id="rm_spanning_sets-2-2-2">
-<span class="heading"><span class="title">Tuples.</span></span><div class="para" id="rm_spanning_sets-2-2-2-2">Let <span class="process-math">\(V=F^n\text{.}\)</span> For <span class="process-math">\(1\leq i\leq n\text{,}\)</span> define <span class="process-math">\(\bolde_i\)</span> to be the <span class="process-math">\(n\)</span>-tuple with a one in the <span class="process-math">\(i\)</span>-th entry, and zeros elsewhere. Then <span class="process-math">\(S=(\bolde_1, \bolde_2,\dots, \bolde_n)\)</span> is a spanning set for <span class="process-math">\(F^n\text{.}\)</span>
+<li id="eg_spanning_sets-2-2-2">
+<span class="heading"><span class="title">Tuples.</span></span><div class="para" id="eg_spanning_sets-2-2-2-2">Let <span class="process-math">\(V=F^n\text{.}\)</span> For <span class="process-math">\(1\leq i\leq n\text{,}\)</span> define <span class="process-math">\(\bolde_i\)</span> to be the <span class="process-math">\(n\)</span>-tuple with a one in the <span class="process-math">\(i\)</span>-th entry, and zeros elsewhere. Then <span class="process-math">\(S=(\bolde_1, \bolde_2,\dots, \bolde_n)\)</span> is a spanning set for <span class="process-math">\(F^n\text{.}\)</span>
 </div>
 </li>
-<li id="rm_spanning_sets-2-2-3">
-<span class="heading"><span class="title">Matrices.</span></span><div class="para" id="rm_spanning_sets-2-2-3-2">Let <span class="process-math">\(V=F^{m,n}\text{.}\)</span> For each <span class="process-math">\((i,j)\)</span> with <span class="process-math">\(1\leq i\leq m\)</span> and <span class="process-math">\(1\leq j\leq n\text{,}\)</span> define <span class="process-math">\(E(i,j)\)</span> to be the <span class="process-math">\(m\times n\)</span> matrix with a one in the <span class="process-math">\(ij\)</span>-th entry, and zeros elsewhere. Then <span class="process-math">\(S=(E_{ij})_{\substack{1\leq i\leq m\\ 1\leq j\leq m}}\)</span> is a spanning set for <span class="process-math">\(F^{m,n}\text{.}\)</span>
+<li id="eg_spanning_sets-2-2-3">
+<span class="heading"><span class="title">Matrices.</span></span><div class="para" id="eg_spanning_sets-2-2-3-2">Let <span class="process-math">\(V=F^{m,n}\text{.}\)</span> For each <span class="process-math">\((i,j)\)</span> with <span class="process-math">\(1\leq i\leq m\)</span> and <span class="process-math">\(1\leq j\leq n\text{,}\)</span> define <span class="process-math">\(E(i,j)\)</span> to be the <span class="process-math">\(m\times n\)</span> matrix with a one in the <span class="process-math">\(ij\)</span>-th entry, and zeros elsewhere. Then <span class="process-math">\(S=(E_{ij})_{\substack{1\leq i\leq m\\ 1\leq j\leq m}}\)</span> is a spanning set for <span class="process-math">\(F^{m,n}\text{.}\)</span>
 </div>
 </li>
-<li id="rm_spanning_sets-2-2-4">
-<span class="heading"><span class="title">Polynomials.</span></span><div class="para" id="rm_spanning_sets-2-2-4-2">Let <span class="process-math">\(F\in \{\R,\C\}\text{,}\)</span> and let <span class="process-math">\(I\)</span> be an infinite subset of <span class="process-math">\(F\text{.}\)</span> The tuple <span class="process-math">\(S=(x^{i})_{i=0}^n=(1,x,x^2,\dots, x^n)\)</span> is a spanning set <span class="process-math">\(P_n(I)\text{,}\)</span> as by definition the elements of <span class="process-math">\(P_n(I)\)</span> are functions of the form <span class="process-math">\(f(x)=\anpoly\text{.}\)</span>
+<li id="eg_spanning_sets-2-2-4">
+<span class="heading"><span class="title">Polynomials.</span></span><div class="para" id="eg_spanning_sets-2-2-4-2">Let <span class="process-math">\(F\in \{\R,\C\}\text{,}\)</span> and let <span class="process-math">\(I\)</span> be an infinite subset of <span class="process-math">\(F\text{.}\)</span> The tuple <span class="process-math">\(S=(x^{i})_{i=0}^n=(1,x,x^2,\dots, x^n)\)</span> is a spanning set <span class="process-math">\(P_n(I)\text{,}\)</span> as by definition the elements of <span class="process-math">\(P_n(I)\)</span> are functions of the form <span class="process-math">\(f(x)=\anpoly\text{.}\)</span>
 </div>
-<div class="para" id="rm_spanning_sets-2-2-4-3">Similarly, the tuple <span class="process-math">\((x^i)_{i=0}^\infty=(1,x,x^2,\dots)\)</span> is a spanning set of <span class="process-math">\(P(I)\text{.}\)</span>
+<div class="para" id="eg_spanning_sets-2-2-4-3">Similarly, the tuple <span class="process-math">\((x^i)_{i=0}^\infty=(1,x,x^2,\dots)\)</span> is a spanning set of <span class="process-math">\(P(I)\text{.}\)</span>
 </div>
 </li>
 </ul>
@@ -1007,7 +1014,7 @@ v_k=-\frac{c_1}{c_k}v_1+\cdots -\frac{c_{k-1}}{c_k}v_{k-1}\in \Span(v_1,v_2,\dot
 <div class="para">as desired.</div>
 </div></article></details></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="s_subspace_sum.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="advlinalgkursobjekt-6.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="s_subspace_sum.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_basis.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

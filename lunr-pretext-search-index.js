@@ -1342,10 +1342,10 @@ var ptx_lunr_docs = [
   "body": " Spanning set   Let be a subspace of the vector space . A spanning set of is a tuple of vectors of such that .   "
 },
 {
-  "id": "rm_spanning_sets",
+  "id": "eg_spanning_sets",
   "level": "2",
-  "url": "s_span_ind.html#rm_spanning_sets",
-  "type": "Remark",
+  "url": "s_span_ind.html#eg_spanning_sets",
+  "type": "Example",
   "number": "1.6.8",
   "title": "Standard spanning sets.",
   "body": " Standard spanning sets  Most of the vector spaces we've introduced there is a natural spanning set that comes to mind. We will refer to these loosely as standard spanning sets.   Zero space  Let . By definition the empty list is a spanning set of .    Tuples  Let . For , define to be the -tuple with a one in the -th entry, and zeros elsewhere. Then is a spanning set for .    Matrices  Let . For each with and , define to be the matrix with a one in the -th entry, and zeros elsewhere. Then is a spanning set for .    Polynomials  Let , and let be an infinite subset of . The tuple is a spanning set , as by definition the elements of are functions of the form .  Similarly, the tuple is a spanning set of .     "
@@ -1421,6 +1421,132 @@ var ptx_lunr_docs = [
   "number": "1",
   "title": "Proof of corollary.",
   "body": " Proof of corollary  The corollary is for the most part simply a special case of . It remains only to prove that if is linearly dependent, then there is a such that . This is proven as follows: if is linearly dependent, then we have a nontrivial linear combination . Since for some  , we can set to be the largest such : , . We now treat the cases and separately. If , then by definition of , we have and . Using , we conclude that in this case, and hence that . (When we interpret as .)  Now assume . By definition of , we have and , from whence it follows that , as desired.  "
+},
+{
+  "id": "s_basis",
+  "level": "1",
+  "url": "s_basis.html",
+  "type": "Section",
+  "number": "1.7",
+  "title": "Bases",
+  "body": " Bases   Now that we have the notions of span and linear independence in place, we simply combine them to define a basis of a vector space. In the spirit of , a basis of a vector space should be understood as a minimal spanning set, or a spanning set containing no redundancies .    Definition and examples   Basis   A basis of a vector space is a tuple of vectors of satisfying the following properties.         is linearly independent.        Existence of bases  Do bases always exist: that is, given a vector space , can we find a basis of ? The answer is yes, assuming a general property about sets called the axiom of choice . (In fact you can show that the existence of bases in arbitrary vector spaces is equivalent to the axiom of choice.) This issue will not really come up in this course as for the most part our objects of study are finite-dimensional vector spaces, which by definition are assumed to have a finite basis of the form .    Some standard bases   It is easy to show that for each below, the given is a basis, which we will call the standard basis of . See for an explanation of the notation , below.    ,      ,      , , (Assume that and is infinite.)     , (Assume that and is infinite.)     ,        As with spanning sets, a nonzero vector space has many different bases: in fact, infinitely many in the case where the base field is or . This feature of vector spaces turns out to be a great virtue, and not a bug. Indeed, much of the computational power of linear algebra comes from our ability to choose a particular basis (not necessarily the standard one) that suits our needs for a given challenge.   Some nonstandard bases   For each and below, verify that is a basis of .    , .     , .       Each verification amounts to showing, using the techniques from , that the given spans the given and is linearly independent.   Since neither element of is a scalar multiple of the other, the set is linearly independent. To see that spans we show that for any we have for some . Indeed we may take and . (These formulas were obtained by solving the corresponding system of two equations in the unknowns and .)    First we show that spans . Given an arbitrary element , we must show that there exist scalars satisfying . Expanding out the left side of the above equality, we would have . Thus we have if and only if the linear system with augmented matrix is consistent. This augmented matrix row reduces to . Since there is no leading one in the last column, we see that the corresponding system is consistent, and thus , as desired.  Turning to linear independence of , we now endeavor to show that the only solution to is the trivial one . Just as above, such a solution corresponds to a solution to the linear system with augmented matrix , which row reduces to . Since the first four columns of this matrix contain leading ones, none of the unknowns is free, which means that is the unique solution to the system. This proves that , as desired.       As illustrated by the last example, proceeding directly from the definition, to show a tuple is a basis of we have to do two steps: (i) show ; (ii) show that is linearly independent. The following theorem gives rise to a convenient one-step technique for proving is a basis: show that every element of can be written as a linear combination of elements of in a unique way .   Basis equivalence   Let be a tuple of vectors of . The following statements are equivalent.    is a basis of .    For all there is a unique linear combination of such that .       We prove both implications separately.   Implication: (2) (1)  If (2) holds, then in particular for all there is at least one linear combination of the vectors equal to . Thus . Furthermore, taking , condition (2) tells us that there is exactly one linear combination , which then must be the trivial linear combination ( , for all ). This proves is linearly independent. Since is a spanning set and is linear independent, it is a basis.    Implication: (1) (2)  Assume is a basis. Since spans , for every vector there is at least one linear combination as in . Let us show that this linear combination is unique. Suppose we have , where and for all but finitely many . After some vector arithmetic, we see that . Since is linearly independent, we conclude that , and thus for all . This shows there is a unique linear combination of the equal to .      Unique basis representation   By way of illustration, we use to show that the tuple , , is a basis of . This follows from the simple observation that an arbitrary matrix can be written as a linear combination of the in a unique way. Indeed, since for each , the matrix is the only matrix in this collection that has a nonzero -th entry, and since furthermore this entry is equal to , is the unique expression of as a linear combination of the . This proves that every element of can be written as a linear combination of the in a unique way, and hence that is a basis.     yields the following one-step technique for proving a tuple is a basis.   One-step technique for bases   Let be a tuple of vectors of . To decide whether is a basis, proceed as follows.   Write out the vector equation , where is an arbitrary element of the vector space . (Typically you will give some parametric description of .)    Translate the vector equation into an equivalent linear system of equations in the unknowns .    If the system in (2) has a unique solution no matter what is chosen, then is a basis. If there is a choice of for which either the system in (2) has no solution ( , is inconsistent) or has infinitely many solutions, then is not a basis.        One-step basis technique   Use to decide whether is a basis of .    ,      ,              Finite-dimensional vector spaces  There is a glaring difference between the last vector space, , treated in and the vector spaces before it: namely, the basis is infinite, whereas the previous bases were all finite. This turns out to be an essential difference between and the other vector spaces: namely, is infinite dimensional, while the others are finite dimensional. Let's make these notions rigorous. We begin with the general definition of the length of a tuple.   Length of a tuple   Let be a tuple of elements of the set .   We say the tuple is finite (resp. infinite ) if its indexing set is finite (resp. infinite).    If is finite of cardinality , then we say is a tuple of length .        Finite\/infinite dimension   A vector space is finite dimensional if there is a finite basis of ; the vector space is infinite dimensional if there is no finite basis of . We write to indicate that is finite dimensional, and to indicate is infinite dimensional.     Finite\/infinite dimension  In the next section we give a complete definition of the dimension of a vector space. For now we are content simply to distinguish between finite- and infinite-dimensional spaces.   We showed that has an infinite basis. Does this mean that it is infinite dimensional? Not by definition alone, since we have not (as of yet) shown that does not have a finite basis. The following theorem nicely handles this issue for us.   Finite spanning set   Assume is a spanning set of the vector space of finite length . Any tuple of vectors of of length greater than (including infinite tuples) is linearly dependent. Equivalently, if is a linearly independent tuple of vectors of , then .    Axler provides a pleasant proof where one does not have to dirty one's hands with matrices. Personally, I enjoy digging in the dirt sometimes. In any case the argument below is a useful reminder about properties of linear systems.  First observe that it suffices to show that any finite tuple of length is linearly dependent, since if is an infinite tuple, then the subtuple is linearly dependent for any distinct list of indices . But then clearly the entire tuple is also linearly dependent since a nontrivial linear combination gives rise to a nontrivial linear combination of all of the vectors simply by setting for . (This argument shows that in general a tuple is linearly dependent if and only if some finite subtuple is linearly dependent.)  It remains to show that any tuple of of length is linearly dependent. Since is a spanning set of we may write, for each  where . We now show that there is a nontrivial linear combination . Indeed, we have . It follows that to produce a nontrivial linear combination of the equal to , it suffices to find a nonzero -tuple satisfying for all , or equivalently, a nonzero solution to the matrix equation , where . Since has more columns than rows ( ), our Gaussian elimination technique for solving such matrix equations gives rise to a free variable: row reduces to a matrix in row echelon form, one of whose columns does not have a leading one. The existence of a free variable in turn guarantees that there are infinitely many solutions to . In particular, there is some nontrivial solution . Our argument above implies that is then our desired nontrivial linear combination equal to .    Let's see why the theorem above implies is infinite dimensional. We give a proof by contradition. If were finite dimensional, then there would be a finite basis , and according to any tuple in of length greater than (including infinite tuples) would be linearly dependent. But we have seen that the (countably) infinite tuple is linearly independent in . Contradiction! Thus must be infinite dimensional. This type of argument applies more generally, as indicated by the following result.   Infinite-dimensional spaces   A vector space is infinite dimensional if and only if it contains an infinite linearly independent tuple .    The proof is left as an exercise.     "
+},
+{
+  "id": "d_basis",
+  "level": "2",
+  "url": "s_basis.html#d_basis",
+  "type": "Definition",
+  "number": "1.7.1",
+  "title": "Basis.",
+  "body": " Basis   A basis of a vector space is a tuple of vectors of satisfying the following properties.         is linearly independent.      "
+},
+{
+  "id": "ss_basis_def-3",
+  "level": "2",
+  "url": "s_basis.html#ss_basis_def-3",
+  "type": "Remark",
+  "number": "1.7.2",
+  "title": "Existence of bases.",
+  "body": " Existence of bases  Do bases always exist: that is, given a vector space , can we find a basis of ? The answer is yes, assuming a general property about sets called the axiom of choice . (In fact you can show that the existence of bases in arbitrary vector spaces is equivalent to the axiom of choice.) This issue will not really come up in this course as for the most part our objects of study are finite-dimensional vector spaces, which by definition are assumed to have a finite basis of the form .  "
+},
+{
+  "id": "eg_standard_bases",
+  "level": "2",
+  "url": "s_basis.html#eg_standard_bases",
+  "type": "Example",
+  "number": "1.7.3",
+  "title": "Some standard bases.",
+  "body": " Some standard bases   It is easy to show that for each below, the given is a basis, which we will call the standard basis of . See for an explanation of the notation , below.    ,      ,      , , (Assume that and is infinite.)     , (Assume that and is infinite.)     ,       "
+},
+{
+  "id": "ss_basis_def-6",
+  "level": "2",
+  "url": "s_basis.html#ss_basis_def-6",
+  "type": "Example",
+  "number": "1.7.4",
+  "title": "Some nonstandard bases.",
+  "body": " Some nonstandard bases   For each and below, verify that is a basis of .    , .     , .       Each verification amounts to showing, using the techniques from , that the given spans the given and is linearly independent.   Since neither element of is a scalar multiple of the other, the set is linearly independent. To see that spans we show that for any we have for some . Indeed we may take and . (These formulas were obtained by solving the corresponding system of two equations in the unknowns and .)    First we show that spans . Given an arbitrary element , we must show that there exist scalars satisfying . Expanding out the left side of the above equality, we would have . Thus we have if and only if the linear system with augmented matrix is consistent. This augmented matrix row reduces to . Since there is no leading one in the last column, we see that the corresponding system is consistent, and thus , as desired.  Turning to linear independence of , we now endeavor to show that the only solution to is the trivial one . Just as above, such a solution corresponds to a solution to the linear system with augmented matrix , which row reduces to . Since the first four columns of this matrix contain leading ones, none of the unknowns is free, which means that is the unique solution to the system. This proves that , as desired.      "
+},
+{
+  "id": "th_basis",
+  "level": "2",
+  "url": "s_basis.html#th_basis",
+  "type": "Theorem",
+  "number": "1.7.5",
+  "title": "Basis equivalence.",
+  "body": " Basis equivalence   Let be a tuple of vectors of . The following statements are equivalent.    is a basis of .    For all there is a unique linear combination of such that .       We prove both implications separately.   Implication: (2) (1)  If (2) holds, then in particular for all there is at least one linear combination of the vectors equal to . Thus . Furthermore, taking , condition (2) tells us that there is exactly one linear combination , which then must be the trivial linear combination ( , for all ). This proves is linearly independent. Since is a spanning set and is linear independent, it is a basis.    Implication: (1) (2)  Assume is a basis. Since spans , for every vector there is at least one linear combination as in . Let us show that this linear combination is unique. Suppose we have , where and for all but finitely many . After some vector arithmetic, we see that . Since is linearly independent, we conclude that , and thus for all . This shows there is a unique linear combination of the equal to .    "
+},
+{
+  "id": "eg_basis_unique",
+  "level": "2",
+  "url": "s_basis.html#eg_basis_unique",
+  "type": "Example",
+  "number": "1.7.6",
+  "title": "Unique basis representation.",
+  "body": " Unique basis representation   By way of illustration, we use to show that the tuple , , is a basis of . This follows from the simple observation that an arbitrary matrix can be written as a linear combination of the in a unique way. Indeed, since for each , the matrix is the only matrix in this collection that has a nonzero -th entry, and since furthermore this entry is equal to , is the unique expression of as a linear combination of the . This proves that every element of can be written as a linear combination of the in a unique way, and hence that is a basis.   "
+},
+{
+  "id": "proc_basis_onestep",
+  "level": "2",
+  "url": "s_basis.html#proc_basis_onestep",
+  "type": "Procedure",
+  "number": "1.7.7",
+  "title": "One-step technique for bases.",
+  "body": " One-step technique for bases   Let be a tuple of vectors of . To decide whether is a basis, proceed as follows.   Write out the vector equation , where is an arbitrary element of the vector space . (Typically you will give some parametric description of .)    Translate the vector equation into an equivalent linear system of equations in the unknowns .    If the system in (2) has a unique solution no matter what is chosen, then is a basis. If there is a choice of for which either the system in (2) has no solution ( , is inconsistent) or has infinitely many solutions, then is not a basis.      "
+},
+{
+  "id": "eg_basis_onestep",
+  "level": "2",
+  "url": "s_basis.html#eg_basis_onestep",
+  "type": "Example",
+  "number": "1.7.8",
+  "title": "One-step basis technique.",
+  "body": " One-step basis technique   Use to decide whether is a basis of .    ,      ,           "
+},
+{
+  "id": "d_tuple_length",
+  "level": "2",
+  "url": "s_basis.html#d_tuple_length",
+  "type": "Definition",
+  "number": "1.7.9",
+  "title": "Length of a tuple.",
+  "body": " Length of a tuple   Let be a tuple of elements of the set .   We say the tuple is finite (resp. infinite ) if its indexing set is finite (resp. infinite).    If is finite of cardinality , then we say is a tuple of length .      "
+},
+{
+  "id": "d_finite_dim",
+  "level": "2",
+  "url": "s_basis.html#d_finite_dim",
+  "type": "Definition",
+  "number": "1.7.10",
+  "title": "Finite\/infinite dimension.",
+  "body": " Finite\/infinite dimension   A vector space is finite dimensional if there is a finite basis of ; the vector space is infinite dimensional if there is no finite basis of . We write to indicate that is finite dimensional, and to indicate is infinite dimensional.   "
+},
+{
+  "id": "ss_finite_dim-5",
+  "level": "2",
+  "url": "s_basis.html#ss_finite_dim-5",
+  "type": "Remark",
+  "number": "1.7.11",
+  "title": "Finite\/infinite dimension.",
+  "body": " Finite\/infinite dimension  In the next section we give a complete definition of the dimension of a vector space. For now we are content simply to distinguish between finite- and infinite-dimensional spaces.  "
+},
+{
+  "id": "th_finite_spanning",
+  "level": "2",
+  "url": "s_basis.html#th_finite_spanning",
+  "type": "Theorem",
+  "number": "1.7.12",
+  "title": "Finite spanning set.",
+  "body": " Finite spanning set   Assume is a spanning set of the vector space of finite length . Any tuple of vectors of of length greater than (including infinite tuples) is linearly dependent. Equivalently, if is a linearly independent tuple of vectors of , then .    Axler provides a pleasant proof where one does not have to dirty one's hands with matrices. Personally, I enjoy digging in the dirt sometimes. In any case the argument below is a useful reminder about properties of linear systems.  First observe that it suffices to show that any finite tuple of length is linearly dependent, since if is an infinite tuple, then the subtuple is linearly dependent for any distinct list of indices . But then clearly the entire tuple is also linearly dependent since a nontrivial linear combination gives rise to a nontrivial linear combination of all of the vectors simply by setting for . (This argument shows that in general a tuple is linearly dependent if and only if some finite subtuple is linearly dependent.)  It remains to show that any tuple of of length is linearly dependent. Since is a spanning set of we may write, for each  where . We now show that there is a nontrivial linear combination . Indeed, we have . It follows that to produce a nontrivial linear combination of the equal to , it suffices to find a nonzero -tuple satisfying for all , or equivalently, a nonzero solution to the matrix equation , where . Since has more columns than rows ( ), our Gaussian elimination technique for solving such matrix equations gives rise to a free variable: row reduces to a matrix in row echelon form, one of whose columns does not have a leading one. The existence of a free variable in turn guarantees that there are infinitely many solutions to . In particular, there is some nontrivial solution . Our argument above implies that is then our desired nontrivial linear combination equal to .   "
+},
+{
+  "id": "cor_finite_dim",
+  "level": "2",
+  "url": "s_basis.html#cor_finite_dim",
+  "type": "Corollary",
+  "number": "1.7.13",
+  "title": "Infinite-dimensional spaces.",
+  "body": " Infinite-dimensional spaces   A vector space is infinite dimensional if and only if it contains an infinite linearly independent tuple .    The proof is left as an exercise.   "
 },
 {
   "id": "appendix-notation",
