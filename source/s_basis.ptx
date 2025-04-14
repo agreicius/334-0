@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_basis" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Bases</title>
+    <introduction>
+        <p>
+			Now that we have the notions of span and linear independence in place, we simply combine them to define a <em>basis</em> of a vector space.
+			In the spirit of <xref ref="s_span_ind"/>, a basis of a vector space <m>V</m> should be understood as a <em>minimal</em> spanning set, or a spanning set containing no <em>redundancies</em>.
+	</p>
+       
+    </introduction>
+    
+<subsection xml:id="ss_basis_def">
+<title>Definition and examples</title>
+<definition xml:id="d_basis">
+    <title>Basis</title>
+    <statement>
+    <p>
+    A <term>basis</term> of a vector space <m>V</m> is a tuple <m>B=(v_i)_{i\in I}</m> of vectors of <m>V</m> satisfying the following properties. 
+    <ol>
+        <li>
+            <p>
+                <m>\Span B=V</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>B</m> is linearly independent. 
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+</definition>
+<remark>
+    <title>Existence of bases</title>
+    <p>
+        Do bases always exist: that is, given a vector space <m>V</m>, can we find a basis <m>B=(v_i)_{i\in I}</m> of <m>V</m>?  The answer is yes, assuming a general property about sets called the <em>axiom of choice</em>. (In fact you can show that the existence of bases in arbitrary vector spaces is equivalent to the axiom of choice.) This issue will not really come up in this course as for the most part our objects of study are finite-dimensional vector spaces, which by definition are assumed to have a <em>finite basis</em> of the form <m>(v_1,v_2\dots, v_n)</m>.
+    </p>
+</remark>
+<example xml:id="eg_standard_bases">
+<title>Some standard bases</title>
+<statement>
+<p>
+It is easy to show that for each <m>V</m> below, the given <m>B</m> is a basis, which we will call the <em>standard basis</em> of <m>V</m>. See <xref ref="eg_spanning_sets"/> for an explanation of the notation <m>\bolde_i</m>, <m>E(i,j)</m> below. 
+<ol>
+    <li>
+        <p>
+            <m>V=\{\boldzero\}</m>, <m>B=()</m>
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>V=F^n</m>, <m>B=(\bolde_1,\bolde_2,\dots, \bolde_n)</m> 
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>V=F^{m,n}</m>, <m>B=(E(i,j))_{(i,j)\in I\times J}</m>, <m>I=\{1,2,\dots, m\}, J=\{1,2,\dots, n\}</m> (Assume that <m>F\in \{\R,\C\}</m> and <m>I\subseteq F</m> is infinite.)
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>V=P_n(I)</m>, <m>B=(1,x,x^2,\dots, x^{n})</m> (Assume that <m>F\in \{\R,\C\}</m> and <m>I\subseteq F</m> is infinite.)
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>V=P(I)</m>, <m>B=(x^i)_{i=0}^\infty=(1,x,x^2,\dots)</m>
+        </p>
+    </li>
+</ol>
+</p>
+</statement>
+</example>
+<p>
+    As with spanning sets, a nonzero vector space <m>V</m> has many different bases: in fact, infinitely many in the case where the base field <m>F</m> is <m>\R</m> or <m>\C</m>. This feature of vector spaces turns out to be a great virtue, and not a bug. Indeed, much of the computational power of linear algebra comes from our ability to choose a particular basis (not necessarily the <q>standard</q> one) that suits our needs for a given challenge. 
+</p>
+<example>
+    <title>Some nonstandard bases</title>
+    <statement>
+        <p>
+            For each <m>V</m> and <m>B</m> below, verify that <m>B</m> is a basis of <m>V</m>.
+            <ol>
+                <li>
+                    <p>
+                        <m>V=\R^2</m>,
+                        <m>B=((1,1), (1,-1))</m>.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        <m>V=\R^{2,2}</m>,
+                        <me>
+                            B=\left( A_1=\begin{bmatrix}0\amp 1\\ 1\amp 1 \end{bmatrix} , A_2=\begin{bmatrix}1\amp 0\\ 1\amp 1 \end{bmatrix} , A_3=\begin{bmatrix}1\amp 1\\ 0\amp 1 \end{bmatrix} , A_4=\begin{bmatrix}1\amp 1\\ 1\amp 0 \end{bmatrix} \right)
+                        </me>.
+                    </p>
+                </li>
+            </ol>
+        </p>
+    </statement>
+
+    <solution>
+        <p>
+            Each verification amounts to showing, using the techniques from <xref ref="s_span_ind"/>, that the given <m>B</m> spans the given <m>V</m> and is linearly independent.
+        <ol>
+            <li>
+                <p>
+                    Since neither element of <m>B=\{(1,1), (1,-1)\}</m> is a scalar multiple of the other, the set is linearly independent.
+                    To see that <m>B</m> spans <m>\R^2</m> we show that for any <m>(c,d)\in \R^2</m> we have
+                    <me>
+                        a(1,1)+b(1,-1)=(c,d)
+                    </me>
+                    for some <m>a,b\in \R</m>.
+                    Indeed we may take <m>a=\frac{1}{2}(c+d)</m> and <m>b=\frac{1}{2}(c-d)</m>.
+                    (These formulas were obtained by solving the corresponding system of two equations in the unknowns <m>a</m> and <m>b</m>.)
+                </p>
+            </li>
+
+            <li>
+                <p>
+                    First we show that <m>B=\{A_1,A_2,A_3,A_4\}</m> spans <m>M_{22}</m>.
+                    Given an arbitrary element
+                    <me>
+                        A=\begin{bmatrix}a\amp b\\ c\amp d\end{bmatrix}
+                    </me>,
+                    we must show that there exist scalars <m>c_1,c_2,c_3,c_4\in \R</m> satisfying
+                    <me>
+                        c_1A_1+c_2A_2+c_3A_3+c_4A_4=A
+                    </me>.
+                    Expanding out the left side of the above equality, we would have
+                    <me>
+                        \begin{bmatrix}
+                        c_2+c_3+c_4 \amp c_1+c_3+c_4\\
+                        c_1+c_2+c_4\amp c_1+c_2+c_3
+                        \end{bmatrix}=
+                        \begin{bmatrix}
+                        a\amp b\\ c\amp d
+                        \end{bmatrix}
+                    </me>.
+                    Thus we have <m>A\in \Span B</m> if and only if the linear system with augmented matrix
+                    <me>
+                        \begin{amatrix}[rrrr|r]
+                        0\amp 1\amp 1\amp 1 \amp a\\
+                        1\amp 0\amp 1\amp 1 \amp b \\
+                        1\amp 1\amp 0 \amp 1 \amp c\\
+                        1\amp 1\amp 1\amp 0\amp d
+                        \end{amatrix}
+                    </me>
+                    is consistent.
+                    This augmented matrix row reduces to
+                    <me>
+                        \begin{amatrix}[rrrr|r]
+                        \boxed{1}\amp 0\amp 1\amp 1 \amp b\\
+                        0\amp \boxed{1}\amp 1\amp 1 \amp a \\
+                        0\amp 0\amp \boxed{1} \amp 1/2 \amp \frac{1}{2}(a+b-c)\\
+                        0\amp 0\amp 0\amp \boxed{1}\amp \frac{1}{3}(a+b+c-2d)
+                        \end{amatrix}
+                    </me>.
+                    Since there is no leading one in the last column, we see that the corresponding system is consistent, and thus <m>A\in \Span B</m>, as desired.
+                </p>
+
+                <p>
+                    Turning to linear independence of <m>B</m>, we now endeavor to show that the only solution to
+                    <me>
+                        c_1A_1+c_2A_2+c_3A_3+c_4A_4=\begin{bmatrix}
+                        0\amp 0\\ 0\amp 0
+                        \end{bmatrix}
+                    </me>
+                    is the trivial one <m>c_1=c_2=c_3=c_4=0</m>.
+                    Just as above, such a solution corresponds to a solution to the linear system with augmented matrix
+                    <me>
+                        \begin{amatrix}[rrrr|r]
+                        0\amp 1\amp 1\amp 1 \amp 0\\
+                        1\amp 0\amp 1\amp 1 \amp 0 \\
+                        1\amp 1\amp 0 \amp 1 \amp 0\\
+                        1\amp 1\amp 1\amp 0\amp 0
+                        \end{amatrix}
+                    </me>,
+                    which row reduces to
+                    <me>
+                        \begin{amatrix}[rrrr|r]
+                        \boxed{1}\amp 0\amp 1\amp 1 \amp 0\\
+                        0\amp \boxed{1}\amp 1\amp 1 \amp 0 \\
+                        0\amp 0\amp \boxed{1} \amp 1/2 \amp 0\\
+                        0\amp 0\amp 0\amp \boxed{1}\amp 0
+                        \end{amatrix}
+                    </me>.
+                    Since the first four columns of this matrix contain leading ones, none of the unknowns <m>c_i</m> is free, which means that <m>(c_1,c_2,c_3,c_4)=(0,0,0,0)</m> is the unique solution to the system.
+                    This proves that
+                    <me>
+                        c_1A_1+c_2A_2+c_3A_3+c_4A_4=\boldzero\implies c_1=c_2=c_3=c_4=0
+                    </me>,
+                    as desired.
+                </p>
+            </li>
+        </ol>
+    </p>
+    </solution>
+</example>
+<p>
+    As illustrated by the last example, proceeding directly from the definition, to show a tuple <m>B</m> is a basis of <m>V</m> we have to do two steps: (i) show <m>\Span B= V</m>; (ii) show that <m>B</m> is linearly independent. The following theorem gives rise to a convenient one-step technique for proving <m>B</m> is a basis: show that every element of <m>V</m> can be written as a linear combination of elements of <m>B</m> in a <em>unique way</em>.
+</p>
+<theorem xml:id="th_basis">
+<title>Basis equivalence</title>
+<statement>
+<p>
+Let <m>B=(v_i)_{i\in I}</m> be a tuple of vectors of <m>V</m>. The following statements are equivalent. 
+<ol>
+    <li>
+        <p>
+            <m>B</m> is a basis of <m>V</m>.
+        </p>
+    </li>
+    <li>
+        <p>
+            For all <m>v\in V</m> there is a unique linear combination <m>\sum_{i\in I}c_iv_i</m> of <m>B</m> such that 
+            <men xml:id="eq_basis_unique">
+                \sum_{i\in I}c_iv_i=v
+            </men>.
+        </p>
+    </li>
+</ol>
+</p>
+</statement>
+<proof>
+<p>
+    We prove both implications separately. 
+</p>
+<case>
+<title>Implication: (2)<m>\implies</m>(1)</title>
+<p>
+If (2) holds, then in particular for all <m>v\in V</m> there is <em>at least</em> one linear combination <m>\sum_{i\in I}c_iv_i</m> of the vectors <m>v_i</m> equal to <m>v</m>. Thus <m>\Span B=V</m>. Furthermore, taking <m>v=\boldzero</m>, condition (2) tells us that there is exactly one linear combination <m>\sum_{i\in I}c_iv_i=\boldzero</m>, which then must be the trivial linear combination (<ie/>, <m>c_i=0</m> for all <m>i\in I</m>). This proves <m>B</m> is linearly independent. Since <m>B</m> is a spanning set and is linear independent, it is a basis. 
+</p>
+</case>
+<case>
+<title>Implication: (1)<m>\implies</m>(2)</title>
+<p>
+Assume <m>B</m> is a basis. Since <m>B</m> spans <m>V</m>, for every vector <m>v\in V</m> there is at least one linear combination as in <xref ref="eq_basis_unique"/>. Let us show that this linear combination is unique. Suppose we have 
+<me>
+    v=\sum_{i\in I}c_iv_i=\sum_{i\in I}d_iv_i
+</me>,
+where <m>c_i,d_i\in F</m> and <m>c_i=d_i=0</m> for all but finitely many <m>i\in I</m>. After some vector arithmetic, we see that 
+<me>
+    \sum_{i\in I}(c_i-d_i)v_i=\boldzero
+</me>.
+Since <m>B</m> is linearly independent, we conclude that <m>c_i-d_i=0</m>, and thus <m>c_i=d_i</m> for all <m>i\in I</m>. This shows there is a <em>unique</em> linear combination of the <m>v_i</m> equal to <m>v</m>. 
+</p>
+</case>
+
+
+</proof>
+</theorem>
+<example xml:id="eg_basis_unique">
+<title>Unique basis representation</title>
+<statement>
+<p>
+By way of illustration, we use <xref ref="th_basis"/> to show that the tuple <m>B=(E(i,j))_{(i,j)\in I\times J}</m>, <m>I=\{1,2,\dots, m\}</m>, <m>J=\{1,2,\dots, n\}</m> is a basis of <m>F^{m.n}</m>. This follows from the simple observation that an arbitrary matrix <m>A=[a_{ij}]\in F^{m,n}</m> can be written as a linear combination of the <m>E(i,j)</m> in a unique way. Indeed, since for each <m>(i,j)\in I\times J</m>, the matrix <m>E(i,j)</m> is the <em>only</em> matrix in this collection that has a nonzero <m>ij</m>-th entry, and since furthermore this entry is equal to <m>1</m>, 
+<me>
+    A=\sum_{(i,j)\in I\times J}a_{ij}E(i,j)
+</me>
+is the unique expression of <m>A</m> as a linear combination of the <m>E(i,j)</m>. This proves that every element of <m>F^{m,n}</m> can be written as a linear combination of the <m>E(i,j)</m> in a <em>unique</em> way, and hence that <m>B</m> is a basis. 
+</p>
+</statement>
+</example>
+
+<p>
+    <xref ref="th_basis"/> yields the following one-step technique for proving a tuple is a basis.
+</p>
+
+<algorithm xml:id="proc_basis_onestep">
+    <title>One-step technique for bases</title>
+    <statement>
+        <p>
+            Let <m>B=(v_i)_{i\in I}</m> be a tuple of vectors of <m>V</m>.  To decide whether <m>B</m> is a basis, proceed as follows. 
+            <ol>
+                <li>
+                    <p>
+                        Write out the vector equation 
+                        <men xml:id="eq_onestep_basis">
+                            \sum_{i\in I}c_iv_i=v
+                        </men>,
+                        where <m>\boldv</m> is an arbitrary element of the vector space <m>V</m>. (Typically you will give some parametric description of <m>v</m>.)
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Translate the vector equation <xref ref="eq_onestep_basis"/> into an equivalent linear system of equations in the unknowns <m>c_i</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        If the system in (2) has a <em>unique</em> solution no matter what <m>v</m> is chosen, then <m>B</m> is a basis. If there is a choice of <m>v</m> for which either the system in (2) has no solution (<ie/>, is inconsistent) or has infinitely many solutions, then <m>B</m> is not a basis.  
+                    </p>
+                </li>
+            </ol>
+        </p>
+    </statement>
+</algorithm>
+<example xml:id="eg_basis_onestep">
+<title>One-step basis technique</title>
+<statement>
+<p>
+Use <xref ref="proc_basis_onestep"/> to decide whether <m>B</m> is a basis of <m>V</m>.
+<ol>
+    <li>
+        <p>
+            <m>V=P_2(\C)</m>, <m>B=(1+x+x^2, 1+x, 1-x)</m>
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>V=F^{2,2}</m>, 
+            <m>
+                B=\left(A_1=\begin{amatrix}[rr]
+                1\amp 1\\ 1\amp 1
+                \end{amatrix},
+                A_2=\begin{amatrix}[rr]
+                0\amp 1\\ 1\amp 1
+                \end{amatrix},
+                A_3=\begin{amatrix}[rr]
+                0\amp 1\\ -1\amp 0
+                \end{amatrix}
+                \right)
+            </m>
+        </p>
+    </li>
+</ol>
+
+</p>
+</statement>
+<solution>
+<p>
+
+</p>
+</solution>
+</example>
+
+</subsection>
+<subsection xml:id="ss_finite_dim">
+<title>Finite-dimensional vector spaces</title>
+<p>
+    There is a glaring difference between the last vector space, <m>P(I)</m>, treated in <xref ref="eg_standard_bases"/> and the vector spaces before it: namely, the basis <m>(x^i)_{i\in I}</m> is infinite, whereas the previous bases were all finite. This turns out to be an essential difference between <m>P(I)</m> and the other vector spaces: namely, <m>P(I)</m> is infinite dimensional, while the others are finite dimensional. Let's make these notions rigorous. We begin with the general definition of the length of a tuple. 
+</p>
+<definition xml:id="d_tuple_length">
+<title>Length of a tuple</title>
+<statement>
+<p>
+Let <m>S=(a_i)_{i\in I}</m> be a tuple of elements of the set <m>A</m>. 
+<ul>
+    <li>
+        <p>
+            We say the tuple <m>S</m> is <term>finite</term> (resp. <term>infinite</term>) if its indexing set <m>I</m> is finite (resp. infinite). 
+        </p>
+    </li>
+    <li>
+        <p>
+            If <m>I</m> is finite of cardinality <m>\abs{I}=n</m>, then we say <m>S</m> is a tuple of length <m>n</m>.
+        </p>
+    </li>
+</ul>
+</p>
+</statement>
+</definition>
+<definition xml:id="d_finite_dim">
+<title>Finite/infinite dimension</title>
+<statement>
+<p>
+A vector space <m>V</m> is <term>finite dimensional</term> if there is a finite basis of <m>V</m>; the vector space is <term>infinite dimensional</term> if there is no finite basis of <m>V</m>. We write <m>\dim V&lt; \infty</m> to indicate that <m>V</m> is finite dimensional, and <m>\dim V=\infty</m> to indicate <m>V</m> is infinite dimensional. 
+</p>
+</statement>
+</definition>
+<remark>
+    <title>Finite/infinite dimension</title>
+    <p>
+        In the next section we give a complete definition of the dimension <m>\dim V</m> of a vector space. For now we are content simply to distinguish between finite- and infinite-dimensional spaces.   
+    </p> 
+</remark>
+<p>
+    We showed that <m>P(I)</m> has an infinite basis. Does this mean that it is infinite dimensional? Not by definition alone, since we have not (as of yet) shown that <m>P(I)</m> does not have a finite basis. The following theorem nicely handles this issue for us. 
+</p>
+<theorem xml:id="th_finite_spanning">
+<title>Finite spanning set</title>
+<statement>
+<p>
+Assume <m>B=(v_1,v_2,\dots, v_n)</m> is a spanning set of the vector space <m>V</m> of finite length <m>n</m>. Any tuple of vectors of <m>V</m> of length greater than <m>n</m> (including infinite tuples) is linearly dependent. Equivalently, if <m>S=(w_i)_{i\in I}</m> is a linearly independent tuple of vectors of <m>V</m>, then <m>\abs{I}\leq n</m>. 
+</p>
+</statement>
+<proof>
+<p>
+    Axler provides a pleasant proof where one does not have to dirty one's hands with matrices. Personally, I enjoy digging in the dirt sometimes. In any case the argument below is a useful reminder about properties of linear systems. 
+</p>
+<p>
+    First observe that it suffices to show that any <em>finite</em> tuple of length <m>m&gt; n</m> is linearly dependent, since if <m>(w_i)_{i\in I}</m> is an infinite tuple, then the subtuple <m>(w_{i_1},\dots, w_{i_{n+1}})</m> is linearly dependent for any distinct list of <m>n+1</m> indices <m>i_1,i_2,\dots, i_{n+1}</m>. But then clearly the entire tuple is also linearly dependent since a nontrivial linear combination <m>\boldzero=\sum_{k=1}^{n+1}c_{i_{k}}w_{i_k}=\boldzero</m> gives rise to a nontrivial linear combination <m>\sum_{i\in I}c_iw_i=\boldzero</m> of all of the vectors <m>v_i</m> simply by setting <m>c_i=0</m> for <m>i\ne i_k</m>. (This argument shows that in general a tuple <m>(w_i)_{i\in I}</m> is linearly dependent if and only if some finite subtuple <m>(w_{i_1}, w_{i_2},\dots, w_{i_m})</m> is linearly dependent.)
+</p>
+<p>
+    It remains to show that any tuple <m>(w_1,w_2,\dots , w_{m})</m> of <m>V</m> of length <m>m&gt; n</m> is linearly dependent. Since <m>B=(v_1,v_2,\dots, v_n)</m> is a spanning set of <m>V</m> we may write, for each <m>1\leq j\leq m</m>
+    <me>
+        w_j=\sum_{i=1}^na_{ij}v_i
+    </me>
+    where <m>a_{ij}\in F</m>. We now show that there is a nontrivial linear combination <m>\sum_{j=1}^mc_jw_j=\boldzero</m>. Indeed, we have 
+    <md>
+        <mrow> \sum_{j=1}^mc_jw_j=\boldzero \amp \iff \sum_{j=1}^mc_j(\sum_{i=1}^na_{ij}v_i)=\boldzero</mrow>
+        <mrow> \amp \iff \sum_{i=1}^n(\sum_{j=1}^ma_{ij}c_j)v_i=\boldzero</mrow>
+    </md>.
+    It follows that to produce a nontrivial linear combination of the <m>w_j</m> equal to <m>\boldzero</m>, it suffices to find a nonzero <m>m</m>-tuple <m>(c_1,c_2,\dots, c_m)</m> satisfying 
+    <me>
+        \sum_{j=1}^ma_{ij}c_j=0
+    </me>
+    for all <m>1\leq i\leq n</m>, or equivalently, a nonzero solution to the matrix equation 
+    <me>
+        \underset{n\times m}{A}\, \underset{m\times 1}{\boldx}=\underset{n\times 1}{\boldzero}
+    </me>,
+    where <m>A=[a_{ij}]</m>. Since <m>A</m> has more columns than rows (<m>m&gt; n</m>), our Gaussian elimination technique for solving such matrix equations gives rise to a free variable: <m>A</m> row reduces to a matrix <m>U</m> in row echelon form, one of whose columns does not have a leading one. The existence of a free variable in turn guarantees that there are infinitely many solutions to <m>A\boldx=\boldzero</m>. In particular, there is some <em>nontrivial</em> solution <m>\boldc=(c_1,c_2,\dots, c_m)\ne \boldzero</m>. Our argument above implies that <m>\sum_{j=1}^mc_jw_j=\boldzero</m> is then our desired nontrivial linear combination equal to <m>\boldzero</m>. 
+</p>
+</proof>
+</theorem>
+<p>
+    Let's see why the theorem above implies <m>P(I)</m> is infinite dimensional. We give a proof by contradition. If <m>P(I)</m> were finite dimensional, then there would be a finite basis <m>B=(f_1,f_2,\dots, f_n)</m>, and according to <xref ref="th_finite_spanning"/> any tuple in <m>P(I)</m> of length greater than <m>n</m> (including infinite tuples) would be linearly dependent. But we have seen that the (countably) infinite tuple <m>(1,x,x^2,\dots)</m> is linearly independent in <m>P(I)</m>. Contradiction! Thus <m>P(I)</m> must be infinite dimensional. This type of argument applies more generally, as indicated by the following result.   
+</p>
+<corollary xml:id="cor_finite_dim">
+    <title>Infinite-dimensional spaces</title>
+    <statement>
+        <p>
+           A vector space <m>V</m> is infinite dimensional if and only if it contains an infinite linearly independent tuple <m>(v_i)_{i\in I}</m>.  
+        </p>
+    </statement>
+    <proof>
+        <p>
+            The proof is left as an exercise. 
+        </p>
+    </proof>
+</corollary>
+
+</subsection>
+        
+</section>

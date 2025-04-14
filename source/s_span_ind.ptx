@@ -287,7 +287,7 @@
     </p>
     </statement>
     </definition>
-    <remark xml:id="rm_spanning_sets">
+    <example xml:id="eg_spanning_sets">
     <title>Standard spanning sets</title>
     <p>
       Most of the vector spaces we've introduced there is a natural spanning set that comes to mind. We will refer to these loosely as <em>standard</em> spanning sets.
@@ -321,7 +321,7 @@
         </li>
       </ul>
       </p>
-    </remark>
+    </example>
     <p>
       It is important to observe that spanning sets for vector spaces are not unique. Far from it! In general, for any nonzero vector space there are infinitely many choices of spanning sets.
     </p>
