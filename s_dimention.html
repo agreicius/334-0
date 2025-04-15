@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Dimension</title>
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.googleapis.com">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta xmlns:xlink="http://www.w3.org/1999/xlink" name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="og:type" content="book">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Linear algebra: second course">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Aaron Greicius">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.5.16';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.a0c870bab402ccbf.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f6bda0c0ccce4835.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.97de40e034b535c5.css">
+<script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="nuadvlinalg" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="advlinalgkursobjekt.html"><span class="title">Linear algebra: second course:</span> <span class="subtitle">Math 334-0</span></a></h1>
+<p class="byline">Aaron Greicius</p>
+</div></div></header><nav xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_basis.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_linear_algebra.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="advlinalgkursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div xmlns:xlink="http://www.w3.org/1999/xlink" id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\C}{{\mathbb C}}
+\newcommand{\T}{{\mathbb T}}
+\newcommand{\F}{{\mathbb F}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\compose}{\circ}
+\newcommand{\bolda}{{\mathbf a}}
+\newcommand{\boldb}{{\mathbf b}}
+\newcommand{\boldc}{{\mathbf c}}
+\newcommand{\boldd}{{\mathbf d}}
+\newcommand{\bolde}{{\mathbf e}}
+\newcommand{\boldi}{{\mathbf i}}
+\newcommand{\boldj}{{\mathbf j}}
+\newcommand{\boldk}{{\mathbf k}}
+\newcommand{\boldn}{{\mathbf n}}
+\newcommand{\boldp}{{\mathbf p}}
+\newcommand{\boldq}{{\mathbf q}}
+\newcommand{\boldr}{{\mathbf r}}
+\newcommand{\bolds}{{\mathbf s}}
+\newcommand{\boldt}{{\mathbf t}}
+\newcommand{\boldu}{{\mathbf u}}
+\newcommand{\boldv}{{\mathbf v}}
+\newcommand{\boldw}{{\mathbf w}}
+\newcommand{\boldx}{{\mathbf x}}
+\newcommand{\boldy}{{\mathbf y}}
+\newcommand{\boldz}{{\mathbf z}}
+\newcommand{\boldzero}{{\mathbf 0}}
+\newcommand{\boldmod}{\boldsymbol{ \bmod }}
+\newcommand{\boldT}{{\mathbf T}}
+\newcommand{\boldN}{{\mathbf N}}
+\newcommand{\boldB}{{\mathbf B}}
+\newcommand{\boldF}{{\mathbf F}}
+\newcommand{\boldS}{{\mathbf S}}
+\newcommand{\boldE}{{\mathbf E}}
+\newcommand{\boldG}{{\mathbf G}}
+\newcommand{\boldK}{{\mathbf K}}
+\newcommand{\boldL}{{\mathbf L}}
+\DeclareMathOperator{\lns}{lns}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\NS}{null}
+\DeclareMathOperator{\RS}{row}
+\DeclareMathOperator{\CS}{col}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\nullity}{nullity}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\Arg}{Arg}
+\DeclareMathOperator{\Log}{Log}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\Arcsin}{Arcsin}
+\DeclareMathOperator{\Arccos}{Arccos}
+\DeclareMathOperator{\Arctan}{Arctan}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\res}{res}
+\DeclareMathOperator{\Fix}{Fix}
+\DeclareMathOperator{\Aff}{Aff}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\mdeg}{mdeg}
+\DeclareMathOperator{\Lt}{Lt}
+\DeclareMathOperator{\Lc}{Lc}
+\DeclareMathOperator{\disc}{disc}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\curl}{curl}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\diver}{div}
+\DeclareMathOperator{\flux}{flux}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\ab}{ab}
+\DeclareMathOperator{\len}{len}
+\newcommand{\surjects}{\twoheadrightarrow}
+\newcommand{\injects}{\hookrightarrow}
+\newcommand{\bijects}{\leftrightarrow}
+\newcommand{\isomto}{\overset{\sim}{\rightarrow}}
+\newcommand{\floor}[1]{\lfloor#1\rfloor}
+\newcommand{\ceiling}[1]{\left\lceil#1\right\rceil}
+\newcommand{\mclass}[2][m]{[#2]_{#1}}
+\newcommand{\val}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\abs}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\valuation}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\anmonic}{x^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\bmpoly}{b_mx^m+b_{m-1}x^{m-1}\cdots +b_1x+b_0}
+\newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\normalin}{\trianglelefteq}
+\newcommand{\angvec}[1]{\langle #1\rangle}
+\newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
+\newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
+\newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+\newcommand{\abcdmatrix}[4]{\begin{bmatrix}#1\amp #2\\ #3\amp #4 \end{bmatrix}
+}
+\newenvironment{amatrix}[1][ccc|c]{\left[\begin{array}{#1}}{\end{array}\right]}
+\newenvironment{linsys}[2][m]{
+\begin{array}[#1]{@{}*{#2}{rc}r@{}}
+}{
+\end{array}}
+\newcommand{\eqsys}{\begin{array}{rcrcrcr}
+a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
+a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \\
+a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
+\end{array}
+}
+\newcommand{\numeqsys}{\begin{array}{rrcrcrcr}
+e_1:\amp  a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
+e_2: \amp a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \\
+e_m: \amp a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
+\end{array}
+}
+\newcommand{\homsys}{\begin{array}{rcrcrcr}
+a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp 0\\
+a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp 0\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp \\
+a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp 0
+\end{array}
+}
+\newcommand{\vareqsys}[4]{
+\begin{array}{ccccccc}
+#3_{11}x_{1}\amp +\amp #3_{12}x_{2}\amp +\cdots+\amp  #3_{1#2}x_{#2}\amp =\amp #4_1\\
+#3_{21}x_{1}\amp +\amp #3_{22}x_{2}\amp +\cdots+\amp #3_{2#2}x_{#2}\amp =\amp #4_2\\
+\vdots \amp \amp \vdots \amp  \amp \vdots \amp =\amp  \\
+#3_{#1 1}x_{1}\amp +\amp #3_{#1 2}x_{2}\amp +\cdots +\amp #3_{#1 #2}x_{#2}\amp =\amp #4_{#1}
+\end{array}
+}
+\newcommand{\genmatrix}[1][a]{
+\begin{bmatrix}
+#1_{11} \amp  #1_{12} \amp  \cdots \amp  #1_{1n} \\
+#1_{21} \amp  #1_{22} \amp  \cdots \amp  #1_{2n} \\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
+#1_{m1} \amp  #1_{m2} \amp  \cdots \amp  #1_{mn}
+\end{bmatrix}
+}
+\newcommand{\varmatrix}[3]{
+\begin{bmatrix}
+#3_{11} \amp  #3_{12} \amp  \cdots \amp  #3_{1#2} \\
+#3_{21} \amp  #3_{22} \amp  \cdots \amp  #3_{2#2} \\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
+#3_{#1 1} \amp  #3_{#1 2} \amp  \cdots \amp  #3_{#1 #2}
+\end{bmatrix}
+}
+\newcommand{\augmatrix}{
+\begin{amatrix}[cccc|c]
+a_{11} \amp  a_{12} \amp  \cdots \amp  a_{1n} \amp b_{1}\\
+a_{21} \amp  a_{22} \amp  \cdots \amp  a_{2n} \amp b_{2}\\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
+a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
+\end{amatrix}
+}
+\newcommand{\varaugmatrix}[4]{
+\begin{amatrix}[cccc|c]
+#3_{11} \amp  #3_{12} \amp  \cdots \amp  #3_{1#2} \amp #4_{1}\\
+#3_{21} \amp  #3_{22} \amp  \cdots \amp  #3_{2#2} \amp #4_{2}\\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
+#3_{#1 1} \amp  #3_{#1 2} \amp  \cdots \amp  #3_{#1 #2}\amp #4_{#1}
+\end{amatrix}
+}
+\newcommand{\spaceforemptycolumn}{\makebox[\wd\boxofmathplus]{\ }}
+
+\newcommand{\generalmatrix}[3]{
+\left(
+\begin{array}{cccc}
+#1_{1,1}  \amp #1_{1,2}  \amp \ldots  \amp #1_{1,#2}  \\
+#1_{2,1}  \amp #1_{2,2}  \amp \ldots  \amp #1_{2,#2}  \\
+\amp \vdots                         \\
+#1_{#3,1} \amp #1_{#3,2} \amp \ldots  \amp #1_{#3,#2}
+\end{array}
+\right)  }
+\newcommand{\colvec}[2][c]{\begin{amatrix}[#1] #2 \end{amatrix}}
+\newcommand{\rowvec}[1]{\begin{bmatrix} #1 \end{bmatrix}}
+\newenvironment{linsys}[2][m]{
+\begin{array}[#1]{@{}*{#2}{rc}r@{}}
+}{
+\end{array}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="c_foundations.html" class="internal"><span class="codenumber">0</span> <span class="title">Foundations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_sets_functions.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Sets and functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_functions.html#ss_sets" class="internal"><span class="title">Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_functions.html#ss_functions" class="internal"><span class="title">Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_functions.html#ss_tuples_cart_prod" class="internal"><span class="title">Tuples and Cartesian product</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_functions.html#ss_cardinality" class="internal"><span class="title">Cardinality and countability</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_logic.html" class="internal"><span class="codenumber">0.2</span> <span class="title">Logic</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_propositional_calculus" class="internal"><span class="title">Propositional logic</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_predicate_logic" class="internal"><span class="title">Predicate logic</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_proof_technique.html" class="internal"><span class="codenumber">0.3</span> <span class="title">Proof techniques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_logical_structure" class="internal"><span class="title">Logical structure</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_implication" class="internal"><span class="title">Implication</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_disjunction" class="internal"><span class="title">Disjunction</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_equivalence" class="internal"><span class="title">Equivalence</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_logical_chains" class="internal"><span class="title">Chains of implications/equivalences</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_proof_by_contradiction" class="internal"><span class="title">Proof by contradiction</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_Equalities" class="internal"><span class="title">Equalities</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_chain_equalities" class="internal"><span class="title">Chain of equalities</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_set_properties" class="internal"><span class="title">Basic set properties</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_set_inclusion" class="internal"><span class="title">Set inclusion</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_set_equality" class="internal"><span class="title">Set equality</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_function_properties" class="internal"><span class="title">Basic function properties</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_function_equality" class="internal"><span class="title">Function equality</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_injective_surjective_bijective" class="internal"><span class="title">Injective, surjective, bijective</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_mathematical_induction" class="internal"><span class="title">Mathematical induction</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_weak_induction" class="internal"><span class="title">Proof by induction</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_strong_induction" class="internal"><span class="title">Proof by strong induction</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="c_linear_algebra.html" class="internal"><span class="codenumber">1</span> <span class="title">Linear algebra</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_fields.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Fields</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_fields.html#ss_complex" class="internal"><span class="title">Complex numbers</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_fields.html#ss_field_def" class="internal"><span class="title">Fields</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_fields.html#ss_modulus_conjugation" class="internal"><span class="title">Further complex operations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_vector_space.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Vector spaces</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_vector_space_functions.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Vector spaces (cont.)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_vector_space_functions.html#" class="internal"><span class="title">Function spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_vector_space_functions.html#" class="internal"><span class="title">Vector space properties</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_subspace.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Subspaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace.html#ss_subspace_def" class="internal"><span class="title">Definition and examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace.html#ss_function_spaces" class="internal"><span class="title">Important function subspaces</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_subspace_sum.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Subspace sums</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_span_ind.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Span and linear independence</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_ind.html#ss_span" class="internal"><span class="title">Span</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_ind.html#ss_lin_ind" class="internal"><span class="title">Linear independence</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_basis.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Bases</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_basis.html#ss_basis_def" class="internal"><span class="title">Definition and examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_basis.html#ss_by_inspection" class="internal"><span class="title">Finding bases</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_basis.html#ss_finite_dim" class="internal"><span class="title">Finite-dimensional vector spaces</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="s_dimention.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Dimension</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_dimention.html#ss_dimension" class="internal"><span class="title">Definition and examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_dimention.html#ss_dimension_theory" class="internal"><span class="title">Theoretical facts about dimension</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="advlinalgkursobjekt-6.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-notation.html" class="internal"><span class="codenumber">A</span> <span class="title">Notation</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-defs.html" class="internal"><span class="codenumber">B</span> <span class="title">Definitions</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-thms.html" class="internal"><span class="codenumber">C</span> <span class="title">Theory</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-egs.html" class="internal"><span class="codenumber">D</span> <span class="title">Examples</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-vids.html" class="internal"><span class="codenumber">E</span> <span class="title">Mantras and fiats</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:xlink="http://www.w3.org/1999/xlink" class="section" id="s_dimention"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.8</span><span class="space"> </span><span class="title">Dimension</span>
+</h2>
+<section class="introduction" id="s_dimention-2"><div class="para" id="s_dimention-2-1">Intuitively, we think of <span class="process-math">\(\R^2\)</span> as a two-dimensional space, and <span class="process-math">\(\R^3\)</span> as three-dimensional one. Why? Loosely speaking this notion of dimension has something to do with the number of degrees of freedom involved in specifying a particular element of the given space: to specify an element of <span class="process-math">\(\boldv\in \R^2\)</span> we need to give its two coordinates; to specify an element of <span class="process-math">\(\R^3\)</span> we need to give its three coordinates. Clearly, this conception is too imprecise to serve as a mathematical definition. What exactly does “degrees of freedom” mean? And how do you quantify the number of “degrees of freedom” needed for a given space? For example, we also think of a plane <span class="process-math">\(W\subseteq \R^3\)</span> passing through the origin as a two-dimensional object; it is not immediately clear how to square this intuition with our vague “degrees of freedom” formulation. In this section we introduce the definition of the <em class="emphasis">dimension</em> of a vector space, which will be a rigorous expression of these notions. Our definition, which relies on the concept of bases, seems simple enough: the dimension of a vector space <span class="process-math">\(V\)</span> is defined as the number of elements contained in any basis <span class="process-math">\(B\)</span> of <span class="process-math">\(V\text{.}\)</span> However, as we will see there is  considerable work involved (a) in proving that this definition is well-defined, and (b) in showing that it captures the intuition of dimension described above.</div></section><section class="subsection" id="ss_dimension"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Definition and examples</span>
+</h3>
+<div class="para" id="ss_dimension-2">In the previous section we differentiated between finite- and infinite-dimensional vector spaces. We now elaborate on this classification by assigning to a finite-dimensional vector space a specific integer value called its <em class="emphasis">dimension</em>.</div>
+<article class="definition definition-like" id="d_dimension"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.8.1</span><span class="period">.</span><span class="space"> </span><span class="title">Dimension.</span>
+</h4>
+<div class="para logical" id="d_dimension-3-1">
+<div class="para">Let <span class="process-math">\(V\)</span> be a vector space. The <dfn class="terminology">dimension of <span class="process-math">\(V\)</span></dfn>, denoted <span class="process-math">\(\dim V\text{,}\)</span> is defined as follows:</div>
+<ul class="disc" id="d_dimension-3-1-4">
+<li id="d_dimension-3-1-4-1"><div class="para" id="d_dimension-3-1-4-1-1">If <span class="process-math">\(V\)</span> is infinite dimensional, then <span class="process-math">\(\dim V=\infty\text{,}\)</span> as before.</div></li>
+<li id="d_dimension-3-1-4-2"><div class="para" id="d_dimension-3-1-4-2-1">If <span class="process-math">\(V\)</span> is finite dimensional, then we define <span class="process-math">\(\dim V\)</span> to be the length of any basis of <span class="process-math">\(V\text{:}\)</span> i.e., if <span class="process-math">\(B=(v_i)_{i\in I}\)</span> is a basis of <span class="process-math">\(V\text{,}\)</span> then <span class="process-math">\(\dim V=\abs{I}\text{.}\)</span>
+</div></li>
+</ul>
+</div></article><article class="remark remark-like" id="ss_dimension-4"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.8.2</span><span class="period">.</span><span class="space"> </span><span class="title">Is dimension well-defined?</span>
+</h4>
+<div class="para" id="ss_dimension-4-2">The statement of <a href="s_dimention.html#d_dimension" class="xref" data-knowl="./knowl/xref/d_dimension.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.8.1: Dimension">Definition 1.8.1</a> is elegant in its simplicity, but a very serious question immediately arises: is this definition well defined? In other words, do any two bases of a vector space have the same length? Who’s to say that a vector space <span class="process-math">\(V\)</span> cannot have one basis of length two and another of length 5: or worse, one basis that is finite and another that is infinite? As we will see shortly, any two bases of a finite-dimensional space do indeed have the same length. But first we illustrate our definition with some familiar examples.</div></article><div class="para" id="ss_dimension-5">By definition, to show a vector space <span class="process-math">\(V\)</span> has dimension <span class="process-math">\(n\text{,}\)</span> we must exhibit a basis <span class="process-math">\(B\)</span> with <span class="process-math">\(\len B=n\text{.}\)</span> Similarly to show <span class="process-math">\(V\)</span> is infinite dimensional, we must show that it does not have a finite basis: or equivalently, using <a href="s_basis.html#cor_finite_dim" class="xref" data-knowl="./knowl/xref/cor_finite_dim.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.7.16: Infinite-dimensional spaces">Corollary 1.7.16</a>, we must produce an infinite linearly independent tuple. Let’s codify this with a procedure.</div>
+<article class="algorithm theorem-like" id="proc_dimension"><h4 class="heading">
+<span class="type">Procedure</span><span class="space"> </span><span class="codenumber">1.8.3</span><span class="period">.</span><span class="space"> </span><span class="title">Computing dimension.</span>
+</h4>
+<div class="para logical" id="proc_dimension-2-1">
+<div class="para">To compute the dimension of a vector space <span class="process-math">\(V\)</span> proceed as follows.</div>
+<ol class="decimal" id="proc_dimension-2-1-2">
+<li id="proc_dimension-2-1-2-1">
+<span class="heading"><span class="title">Basis.</span></span><div class="para" id="proc_dimension-2-1-2-1-2">Attempt to produce a basis of <span class="process-math">\(V\text{,}\)</span> possibly with the help of the <a href="s_basis.html#proc_provide_basis" class="xref" data-knowl="./knowl/xref/proc_provide_basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 1.7.9: By-inspection basis technique">by-inspection basis technique</a>.</div>
+</li>
+<li id="proc_dimension-2-1-2-2">
+<span class="heading"><span class="title">Dimension.</span></span><div class="para logical" id="proc_dimension-2-1-2-2-2">
+<ul class="disc" id="proc_dimension-2-1-2-2-2-1"><li id="proc_dimension-2-1-2-2-2-1-1"><div class="para" id="proc_dimension-2-1-2-2-2-1-1-1">If you found a finite basis <span class="process-math">\(B\)</span> in Step 1, then determine the cardinality <span class="process-math">\(n=\abs{B}\)</span> by counting the number of distinct elements of <span class="process-math">\(B\text{.}\)</span> We have <span class="process-math">\(\dim V=n\)</span> in this case.</div></li></ul>
+<ul class="disc" id="proc_dimension-2-1-2-2-2-2"><li id="proc_dimension-2-1-2-2-2-2-1"><div class="para" id="proc_dimension-2-1-2-2-2-2-1-1">If you found an infinite linearly independent tuple in Step 1, or were able to show that no finite basis exists, then <span class="process-math">\(\dim V=\infty\text{.}\)</span>
+</div></li></ul>
+</div>
+</li>
+</ol>
+</div></article><div class="para" id="ss_dimension-7">It is especially easy to carry out <a href="s_dimention.html#proc_dimension" class="xref" data-knowl="./knowl/xref/proc_dimension.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 1.8.3: Computing dimension">Procedure 1.8.3</a> for a vector space when we have a basis <span class="process-math">\(B\)</span> at the ready. This is the case for our list of familiar vector spaces, each of which is equipped with a standard basis.</div>
+<article class="example example-like" id="eg_dimension_familiar"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.8.4</span><span class="period">.</span><span class="space"> </span><span class="title">Dimensions of familiar spaces.</span>
+</h4>
+<div class="para logical" id="eg_dimension_familiar-2">
+<div class="para">For each <span class="process-math">\(V\)</span> below we provide its standard basis <span class="process-math">\(B\)</span> and compute <span class="process-math">\(\dim V=\len B\text{.}\)</span>
+</div>
+<ul class="disc" id="eg_dimension_familiar-2-4">
+<li id="eg_dimension_familiar-2-4-1">
+<span class="heading"><span class="title">Zero space.</span></span><div class="para" id="eg_dimension_familiar-2-4-1-2">The empty tuple <span class="process-math">\(B=()\)</span> is a basis of <span class="process-math">\(V=\{\boldzero\}\text{.}\)</span> Thus <span class="process-math">\(\dim V=\len B=0\text{.}\)</span>
+</div>
+</li>
+<li id="eg_dimension_familiar-2-4-2">
+<span class="heading"><span class="title">Tuples.</span></span><div class="para" id="eg_dimension_familiar-2-4-2-2">The tuple <span class="process-math">\(B=(\bolde_1, \bolde_2,\dots, \bolde_n)\)</span> is a basis of <span class="process-math">\(F^n\text{.}\)</span> Thus <span class="process-math">\(\dim V=\len B=n\text{.}\)</span>
+</div>
+</li>
+<li id="eg_dimension_familiar-2-4-3">
+<span class="heading"><span class="title">Matrices.</span></span><div class="para logical" id="eg_dimension_familiar-2-4-3-2">
+<div class="para">The tuple <span class="process-math">\(B=(E_{ij})_{(i,j)\in I\times J}\text{,}\)</span> <span class="process-math">\(I=\{1,2,\dots, m\}\text{,}\)</span> <span class="process-math">\(J=\{1,2,\dots, n\}\text{,}\)</span> is a basis of <span class="process-math">\(F^{m,n}\text{.}\)</span> Thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\dim V=\len B=\abs{I\times J}=m\, n\text{.}
+\end{equation*}
+</div>
+</div>
+</li>
+<li id="eg_dimension_familiar-2-4-4">
+<span class="heading"><span class="title">Polynomials of bounded degree.</span></span><div class="para" id="eg_dimension_familiar-2-4-4-2">Let <span class="process-math">\(I\)</span> be an infinite subset of <span class="process-math">\(F\text{.}\)</span> The tuple <span class="process-math">\(B=(1,x,\dots, x^n)\)</span> is a basis of <span class="process-math">\(P_n(I)\text{.}\)</span> Thus <span class="process-math">\(\dim P_n(I)=\len B=n+1\text{.}\)</span>
+</div>
+</li>
+<li id="eg_dimension_familiar-2-4-5">
+<span class="heading"><span class="title">Polynomials.</span></span><div class="para" id="eg_dimension_familiar-2-4-5-2">Let <span class="process-math">\(I\)</span> be an infinite subset of <span class="process-math">\(F\text{.}\)</span> The tuple <span class="process-math">\(B=(x^n)_{n=0}^\infty=(1,x,x^2,\dots)\)</span> is a basis of <span class="process-math">\(P(I)\text{.}\)</span> Since <span class="process-math">\(B\)</span> is a linearly independent tuple, we see that <span class="process-math">\(\dim P(I)=\infty\text{.}\)</span>
+</div>
+</li>
+</ul>
+</div></article><div class="para" id="ss_dimension-9">Even when we do not have a standard basis at our disposal, there are many situations when we can produce a basis of a space by inspection, allowing us to then easily compute the dimension.</div>
+<article class="example example-like" id="eg_dim_R5"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.8.5</span><span class="period">.</span><span class="space"> </span><span class="title">Dimension of subspace.</span>
+</h4>
+<div class="para logical" id="eg_dim_R5-2-1">
+<div class="para">Use <a href="s_dimention.html#proc_dimension" class="xref" data-knowl="./knowl/xref/proc_dimension.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 1.8.3: Computing dimension">Procedure 1.8.3</a> to compute the dimension of the subspace <span class="process-math">\(W\subseteq \R^5\)</span> defined as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_dimension.html">
+\begin{equation*}
+W=\{(x_1,x_2,x_3,x_4,x_5)\in \R^5\colon x_1+x_2=x_4-x_5=0\}\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="solutions"><details id="eg_dim_R5-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_dim_R5-3-1">
+<div class="para">We saw in <a href="s_basis.html#eg_byinspection_R5" class="xref" data-knowl="./knowl/xref/eg_byinspection_R5.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.7.10: By-inspection basis technique">Example 1.7.10</a> that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_byinspection_R5.html">
+\begin{equation*}
+B=((1,-1,0,0,0),(0,0,1,0,0),(0,0,0,1,1))
+\end{equation*}
+</div>
+<div class="para">is a basis of <span class="process-math">\(W\text{.}\)</span> Thus <span class="process-math">\(\dim W=3\text{.}\)</span>
+</div>
+</div></div></details></div></article><article class="example example-like" id="eg_dim_symm"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.8.6</span><span class="period">.</span><span class="space"> </span><span class="title">Dimension of symmetric matrices.</span>
+</h4>
+<div class="para" id="eg_dim_symm-2-1">Let <span class="process-math">\(W\subseteq M_{22}\)</span> be the space of symmetric <span class="process-math">\(2\times 2\)</span> matrices. Compute <span class="process-math">\(\dim W\)</span> using <a href="s_dimention.html#proc_dimension" class="xref" data-knowl="./knowl/xref/proc_dimension.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 1.8.3: Computing dimension">Procedure 1.8.3</a>. You may take for granted that <span class="process-math">\(W\)</span> is a subspace.</div>
+<div class="solutions"><details id="eg_dim_symm-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_dim_symm-3-1">
+<div class="para">We saw in <a href="s_basis.html#eg_byinspection_basis" class="xref" data-knowl="./knowl/xref/eg_byinspection_basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.7.11: By-inspection basis technique">Example 1.7.11</a> that <span class="process-math">\(B=(A_1, A_2, A_3)\)</span> is a basis of <span class="process-math">\(W\text{,}\)</span> where</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_byinspection_basis.html">
+\begin{equation*}
+A_1=
+\begin{bmatrix}
+1\amp 0\\ 0\amp 0
+\end{bmatrix}, A_2=\begin{bmatrix}
+0\amp 1\\ 1\amp 0
+\end{bmatrix}
+, A_3=\begin{bmatrix}
+0\amp 0\\ 0\amp 1
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">We conclude that <span class="process-math">\(\dim W=\abs{B}=3\text{.}\)</span>
+</div>
+</div></div></details></div></article></section><section class="subsection" id="ss_dimension_theory"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Theoretical facts about dimension</span>
+</h3>
+<div class="para" id="ss_dimension_theory-2">Having illustrated the definition at work with some familiar examples, we now get down to the business of showing that our definition of dimension is well-defined. The ensuing investigation will reveal a number of useful properties of dimension as it relates to bases and subspaces of vector spaces. Our first result not only ensures that our definition of dimension (<a href="s_dimention.html#d_dimension" class="xref" data-knowl="./knowl/xref/d_dimension.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.8.1: Dimension">1.8.1</a>) is well-defined, it also characterizes dimension as the minimal length of a spanning set, and the maximal length of a linearly independent tuple.</div>
+<article class="theorem theorem-like" id="th_basis_dimension"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.8.7</span><span class="period">.</span><span class="space"> </span><span class="title">Basis bounds.</span>
+</h4>
+<div class="para logical" id="th_basis_dimension-2-1">
+<div class="para">Let <span class="process-math">\(B\)</span> be a basis of the vector space <span class="process-math">\(V\text{,}\)</span> and suppose <span class="process-math">\(\len B=n&lt; \infty\text{.}\)</span> Let <span class="process-math">\(S\)</span> be a tuple of vectors of <span class="process-math">\(V\text{.}\)</span>
+</div>
+<ol class="decimal" id="th_basis_dimension-2-1-6">
+<li id="th_basis_dimension-2-1-6-1"><div class="para" id="th_basis_dimension-2-1-6-1-1">If <span class="process-math">\(S\)</span> spans <span class="process-math">\(V\text{,}\)</span> then <span class="process-math">\(\len S\geq n\text{.}\)</span>
+</div></li>
+<li id="th_basis_dimension-2-1-6-2"><div class="para" id="th_basis_dimension-2-1-6-2-1">If <span class="process-math">\(S\)</span> is linearly independent, then <span class="process-math">\(\len S\leq n\text{.}\)</span>
+</div></li>
+<li id="th_basis_dimension-2-1-6-3"><div class="para" id="th_basis_dimension-2-1-6-3-1">If <span class="process-math">\(S\)</span> is a basis for <span class="process-math">\(V\text{,}\)</span> then <span class="process-math">\(\len S=n\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><details id="th_basis_dimension-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_basis_dimension-3-1"><ol class="decimal" id="th_basis_dimension-3-1-1">
+<li id="th_basis_dimension-3-1-1-1"><div class="para" id="th_basis_dimension-3-1-1-1-1">Suppose by contradiction that <span class="process-math">\(\Span S=V\)</span> and <span class="process-math">\(\len S &lt; n\text{.}\)</span> It follows from <a href="s_span_ind.html#th_span_ind" class="xref" data-knowl="./knowl/xref/th_span_ind.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.6.13: Span and independence">Theorem 1.6.13</a> that <span class="process-math">\(B\)</span> is linearly dependent. Since this is a contradiction, we conclude that <span class="process-math">\(\len S\geq n\text{.}\)</span>
+</div></li>
+<li id="th_basis_dimension-3-1-1-2"><div class="para" id="th_basis_dimension-3-1-1-2-1">This also follows from <a href="s_span_ind.html#th_span_ind" class="xref" data-knowl="./knowl/xref/th_span_ind.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.6.13: Span and independence">Theorem 1.6.13</a>: since <span class="process-math">\(B\)</span> is a spanning set of <span class="process-math">\(V\)</span> any of length greater than <span class="process-math">\(n=\len B\)</span> must be linearly dependent.</div></li>
+<li id="th_basis_dimension-3-1-1-3"><div class="para" id="th_basis_dimension-3-1-1-3-1">This follows from (1) and (2): if <span class="process-math">\(S\)</span> is a basis, then since <span class="process-math">\(S\)</span> spans, we have <span class="process-math">\(\len S\geq n\text{;}\)</span> and since <span class="process-math">\(B\)</span> is linearly independent we have <span class="process-math">\(\len S\leq n\text{.}\)</span> We conclude that <span class="process-math">\(\len S=n\text{.}\)</span>
+</div></li>
+</ol></div></article></details><div class="para" id="ss_dimension_theory-4">The contracting and expanding theorem below is very useful theoretical consequence of <a href="s_dimention.html#th_basis_dimension" class="xref" data-knowl="./knowl/xref/th_basis_dimension.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.8.7: Basis bounds">Theorem 1.8.7</a>. It allows us to construct a customized basis starting from a given tuple <span class="process-math">\(S\text{.}\)</span> We will make heavy use of this theorem in our later theoretical developments.</div>
+<article class="theorem theorem-like" id="th_basis_contract_expand"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.8.8</span><span class="period">.</span><span class="space"> </span><span class="title">Contracting and expanding.</span>
+</h4>
+<div class="para logical" id="th_basis_contract_expand-2-1">
+<div class="para">Let <span class="process-math">\(V\)</span> be a vector space of dimension <span class="process-math">\(n\text{,}\)</span> and let <span class="process-math">\(S\)</span> be a tuple of vectors of <span class="process-math">\(V\text{.}\)</span>
+</div>
+<ol class="decimal" id="th_basis_contract_expand-2-1-5">
+<li id="th_basis_contract_expand-2-1-5-1">
+<span class="heading"><span class="title">Contract to basis.</span></span><div class="para" id="th_basis_contract_expand-2-1-5-1-2">If <span class="process-math">\(S\)</span> spans <span class="process-math">\(V\text{,}\)</span> then there is a subtuple of <span class="process-math">\(S\)</span> that is a basis of <span class="process-math">\(V\text{:}\)</span> i.e., we can <em class="emphasis">contract</em> a spanning set to a basis.</div>
+</li>
+<li id="th_basis_contract_expand-2-1-5-2">
+<span class="heading"><span class="title">Extend to basis.</span></span><div class="para" id="th_basis_contract_expand-2-1-5-2-2">If <span class="process-math">\(S\)</span> is linearly independent, then <span class="process-math">\(S\)</span> is a subtuple of a basis of <span class="process-math">\(V\text{:}\)</span> i.e., we can <em class="emphasis">extend</em> a linearly independent tuple to a basis.</div>
+</li>
+</ol>
+</div></article><details id="th_basis_contract_expand-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_basis_contract_expand-3-1"><ol class="decimal" id="th_basis_contract_expand-3-1-1">
+<li id="th_basis_contract_expand-3-1-1-1">
+<div class="para" id="th_basis_contract_expand-3-1-1-1-1">Let <span class="process-math">\(S=(v_i)_{i\in I}\)</span> and assume <span class="process-math">\(\Span S=V\text{.}\)</span> We will assume that <span class="process-math">\(S\)</span> is finite: i.e., <span class="process-math">\(\abs{I}=n&lt; \infty\text{.}\)</span> (We leave as a homework exercise the case where <span class="process-math">\(S\)</span> is infinite.) Since <span class="process-math">\(I\)</span> is finite, so too is the set <span class="process-math">\(\mathcal{P}(I)\)</span> of all subsets <span class="process-math">\(J\)</span> of <span class="process-math">\(I\text{:}\)</span> in fact, we have <span class="process-math">\(\mathcal{P}(I)=2^n\text{.}\)</span> It follows that there are <span class="process-math">\(2^n\)</span> different subtuples <span class="process-math">\((v_j)_{j\in J}\)</span>  of <span class="process-math">\(S\text{.}\)</span> Let <span class="process-math">\(\mathcal{S}=\{S_{1},S_{2},\dots, S_{r}\}\)</span> be the set of all subtuples of <span class="process-math">\(S\)</span> satisfying <span class="process-math">\(\Span S_k=V\text{,}\)</span> and let <span class="process-math">\(S'\)</span> be any element of <span class="process-math">\(\mathcal{S}\)</span> of minimal length: i.e., we have <span class="process-math">\(\Span S'=V\text{,}\)</span> and <span class="process-math">\(\Span S''\ne V\)</span> for any subtuple <span class="process-math">\(S''\)</span> of <span class="process-math">\(S\)</span> with <span class="process-math">\(\len S'' &lt; \len S'\text{.}\)</span>
+</div>
+<div class="para logical" id="th_basis_contract_expand-3-1-1-1-2">
+<div class="para">We claim that <span class="process-math">\(S'\)</span>  is linearly independent, and hence a basis of <span class="process-math">\(V\text{,}\)</span> as desired. We give a proof by contradiction. If <span class="process-math">\(S'=(v_{j})_{j\in J}\)</span> were linearly dependent, then by <a href="s_span_ind.html#th_span_ind" class="xref" data-knowl="./knowl/xref/th_span_ind.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.6.13: Span and independence">Theorem 1.6.13</a>, there is some index <span class="process-math">\(j_0\in J\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_span_ind.html">
+\begin{equation*}
+\Span (v_j)_{j\in J-\{j_0\}}=\Span(v_j)_{j\in J}=V\text{.}
+\end{equation*}
+</div>
+<div class="para">But then the subtuple <span class="process-math">\(S''=(v_j)_{j\in J-\{j_0\}}\)</span> would satisfy <span class="process-math">\(\Span S''=V\)</span> and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_span_ind.html">
+\begin{equation*}
+\len S''=\abs{J}-1=\len S'-1&lt; \len S'\text{,}
+\end{equation*}
+</div>
+<div class="para">contradicting the minimal length of <span class="process-math">\(S'\text{.}\)</span> We conclude that <span class="process-math">\(S'\)</span> must be linearly independent.</div>
+</div>
+</li>
+<li id="th_basis_contract_expand-3-1-1-2"><div class="para logical" id="th_basis_contract_expand-3-1-1-2-1">
+<div class="para">Assume <span class="process-math">\(S\)</span> is linearly independent. Since <span class="process-math">\(\dim V=n\text{,}\)</span> we must have <span class="process-math">\(\len S\leq n\text{,}\)</span> and hence we can write <span class="process-math">\(S=(v_1,v_2,\dots, v_m)\)</span> for some <span class="process-math">\(m\leq n\text{.}\)</span>  The procedure below constructs a sequence of tuples</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_span_ind.html ./knowl/xref/th_basis_dimension.html">
+\begin{equation*}
+S=S_0, S_1\dots \subseteq S_k=B
+\end{equation*}
+</div>
+<div class="para">such that <span class="process-math">\(S_i\)</span> is a subtuple of <span class="process-math">\(S_{i+1}\)</span> for all <span class="process-math">\(0\leq i\leq k\)</span> and <span class="process-math">\(B=S_k\)</span> is a basis of <span class="process-math">\(V\text{.}\)</span>
+</div>
+<ul class="disc" id="th_basis_contract_expand-3-1-1-2-1-12">
+<li id="th_basis_contract_expand-3-1-1-2-1-12-1">
+<span class="heading"><span class="title">Initialization.</span></span><div class="para" id="th_basis_contract_expand-3-1-1-2-1-12-1-2">Let <span class="process-math">\(S=S_0=(v_1,v_2,\dots, v_m)\)</span>
+</div>
+</li>
+<li id="th_basis_contract_expand-3-1-1-2-1-12-2">
+<span class="heading"><span class="title">Expansion loop.</span></span><div class="para logical" id="th_basis_contract_expand-3-1-1-2-1-12-2-2">
+<div class="para">Suppose <span class="process-math">\(S_i=(v_1,v_2,\dots, v_{m+i})\text{.}\)</span> If <span class="process-math">\(\Span S_i=V\text{,}\)</span> return <span class="process-math">\(B=S_i\text{.}\)</span> Otherwise, define</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S_{i+1}=(v_1,v_2,\dots, v_{m+i}, v_{m+i+1})\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(v_{m+i+1}\)</span> is any element of <span class="process-math">\(V\)</span> that is not contained in <span class="process-math">\(\Span S_i\text{.}\)</span>
+</div>
+</div>
+</li>
+</ul>
+<div class="para">Some observations:</div>
+<ol class="lower-roman ol-marker-1" id="th_basis_contract_expand-3-1-1-2-1-13">
+<li id="th_basis_contract_expand-3-1-1-2-1-13-1"><div class="para" id="th_basis_contract_expand-3-1-1-2-1-13-1-1">For all <span class="process-math">\(0\leq i\leq k\)</span> the tuple <span class="process-math">\(S_i\)</span> is linearly independent. This can be shown by induction, the crucial point being that if <span class="process-math">\(S_i\)</span> is linearly independent, then so is <span class="process-math">\(S_{i+1}\text{,}\)</span> precisely since <span class="process-math">\(v_{m+i+1}\notin \Span(v_1,v_2,\dots, v_{m+i})\text{.}\)</span> (This follows from <a href="s_span_ind.html#cor_span_ind" class="xref" data-knowl="./knowl/xref/cor_span_ind.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.6.14: Span and independence">Corollary 1.6.14</a>.)</div></li>
+<li id="th_basis_contract_expand-3-1-1-2-1-13-2"><div class="para" id="th_basis_contract_expand-3-1-1-2-1-13-2-1">The procedure must halt. Why? Since <span class="process-math">\(\dim V=n\text{,}\)</span> and since each <span class="process-math">\(S_i\)</span> is linearly independent, we must have <span class="process-math">\(\len S_i\leq n\)</span> for all <span class="process-math">\(i\)</span> by <a href="s_dimention.html#th_basis_dimension" class="xref" data-knowl="./knowl/xref/th_basis_dimension.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.8.7: Basis bounds">Theorem 1.8.7</a>. Since <span class="process-math">\(\len S_i=m+i\text{,}\)</span> the procedure must halt in at most <span class="process-math">\(i=n-m\)</span> steps.</div></li>
+</ol>
+<div class="para">From (ii) we may assume the procedure halts at <span class="process-math">\(S_k\)</span> for some <span class="process-math">\(k\geq 0\text{.}\)</span> From (i) we know that <span class="process-math">\(S_k\)</span> is linearly independent. Furthermore, since the procedure halts at <span class="process-math">\(S_k\text{,}\)</span> we know that <span class="process-math">\(\Span S_k=V\text{.}\)</span> It follows that <span class="process-math">\(B=S_k\)</span> is a basis containing <span class="process-math">\(S\text{,}\)</span> as desired.</div>
+</div></li>
+</ol></div></article></details><div class="para" id="ss_dimension_theory-6">The following corollary follows from <a href="s_dimention.html#th_basis_dimension" class="xref" data-knowl="./knowl/xref/th_basis_dimension.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.8.7: Basis bounds">Theorem 1.8.7</a> and <a href="s_dimention.html#th_basis_contract_expand" class="xref" data-knowl="./knowl/xref/th_basis_contract_expand.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.8.8: Contracting and expanding">Theorem 1.8.8</a>. We call it a “street smarts” result as the first two statements give us a quick and dirty way of dashing a set’s hopes of being a basis. The third statement asserts that when a finite set’s cardinality matches the dimension of a space, then to prove it is a basis it suffices to prove either one of the two defining properties of <a href="s_basis.html#d_basis" class="xref" data-knowl="./knowl/xref/d_basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.7.1: Basis">Definition 1.7.1</a>.</div>
+<article class="corollary theorem-like" id="cor_street_smarts"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.8.9</span><span class="period">.</span><span class="space"> </span><span class="title">Street smarts.</span>
+</h4>
+<div class="para logical" id="cor_street_smarts-2-1">
+<div class="para">Let <span class="process-math">\(V\)</span> be a vector space of dimension <span class="process-math">\(n\text{,}\)</span> and let <span class="process-math">\(S\)</span> be a tuple of vectors of <span class="process-math">\(V\text{.}\)</span>
+</div>
+<ol class="decimal" id="cor_street_smarts-2-1-5">
+<li id="cor_street_smarts-2-1-5-1"><div class="para" id="cor_street_smarts-2-1-5-1-1">If <span class="process-math">\(\len S&lt; n\text{,}\)</span> then <span class="process-math">\(S\)</span> does not span <span class="process-math">\(V\text{.}\)</span>
+</div></li>
+<li id="cor_street_smarts-2-1-5-2"><div class="para" id="cor_street_smarts-2-1-5-2-1">If <span class="process-math">\(\len &gt; n\text{,}\)</span> then <span class="process-math">\(S\)</span> is linearly dependent.</div></li>
+<li id="cor_street_smarts-2-1-5-3"><div class="para logical" id="cor_street_smarts-2-1-5-3-1">
+<div class="para">If <span class="process-math">\(\len =n\text{,}\)</span> then the following are equivalent:</div>
+<ol class="lower-roman ol-marker-1" id="cor_street_smarts-2-1-5-3-1-2">
+<li id="cor_street_smarts-2-1-5-3-1-2-1"><div class="para" id="cor_street_smarts-2-1-5-3-1-2-1-1">
+<span class="process-math">\(S\)</span> is a basis.</div></li>
+<li id="cor_street_smarts-2-1-5-3-1-2-2"><div class="para" id="cor_street_smarts-2-1-5-3-1-2-2-1">
+<span class="process-math">\(S\)</span> spans <span class="process-math">\(V\text{.}\)</span>
+</div></li>
+<li id="cor_street_smarts-2-1-5-3-1-2-3"><div class="para" id="cor_street_smarts-2-1-5-3-1-2-3-1">
+<span class="process-math">\(S\)</span> is linearly independent.</div></li>
+</ol>
+</div></li>
+</ol>
+</div></article><details id="cor_street_smarts-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="cor_street_smarts-3-1">Statements (1) and (2) follow directly from <a href="s_dimention.html#th_basis_dimension" class="xref" data-knowl="./knowl/xref/th_basis_dimension.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.8.7: Basis bounds">Theorem 1.8.7</a>. Statement (3) is an easy consequence of <a href="s_dimention.html#th_basis_contract_expand" class="xref" data-knowl="./knowl/xref/th_basis_contract_expand.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.8.8: Contracting and expanding">Theorem 1.8.8</a>. For example, if <span class="process-math">\(S\)</span> spans <span class="process-math">\(V\text{,}\)</span> then there is a subset <span class="process-math">\(S'\)</span> of <span class="process-math">\(S\)</span> that is a basis of <span class="process-math">\(V\text{;}\)</span> since all bases of <span class="process-math">\(V\)</span> have <span class="process-math">\(n\)</span> elements, and since <span class="process-math">\(\len =n\text{,}\)</span> we must have <span class="process-math">\(S'=S\text{;}\)</span> thus <span class="process-math">\(S\)</span> is a basis. The proof for a linear independent set <span class="process-math">\(S\)</span> is similar, and is left to the reader.</div></article></details><div class="para" id="ss_dimension_theory-8">We are often in a situation where we wish to show a given subspace of a vector space is in fact the entire space. For example, when deciding whether a set <span class="process-math">\(S\)</span> spans a vector space <span class="process-math">\(V\text{,}\)</span> we are asking whether <span class="process-math">\(W=\Span S\)</span> is all of <span class="process-math">\(V\text{.}\)</span> As the next result illustrates, dimension is a very useful tool in this regard.</div>
+<article class="corollary theorem-like" id="cor_dimension_subspace"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.8.10</span><span class="period">.</span><span class="space"> </span><span class="title">Dimension of subspaces.</span>
+</h4>
+<div class="para logical" id="cor_dimension_subspace-2-1">
+<div class="para">Let  <span class="process-math">\(V\)</span> be a vector space.</div>
+<ol class="decimal" id="cor_dimension_subspace-2-1-2">
+<li id="cor_dimension_subspace-2-1-2-1"><div class="para" id="cor_dimension_subspace-2-1-2-1-1">If <span class="process-math">\(W\subseteq V\)</span> is a subspace, then <span class="process-math">\(\dim W\leq \dim V\text{.}\)</span>
+</div></li>
+<li id="cor_dimension_subspace-2-1-2-2"><div class="para" id="cor_dimension_subspace-2-1-2-2-1">If <span class="process-math">\(W\subseteq V\)</span> is a subspace, then <span class="process-math">\(\dim W=\dim V\)</span> if and only if <span class="process-math">\(W=V\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><details id="cor_dimension_subspace-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="cor_dimension_subspace-3-1"><ol class="decimal" id="cor_dimension_subspace-3-1-1">
+<li id="cor_dimension_subspace-3-1-1-1">
+<div class="para" id="cor_dimension_subspace-3-1-1-1-1">Firstly, if <span class="process-math">\(\dim V=\infty\text{,}\)</span> then clearly <span class="process-math">\(\dim W\leq \dim V\)</span> for any subspace <span class="process-math">\(W\subseteq V\text{.}\)</span>
+</div>
+<div class="para" id="cor_dimension_subspace-3-1-1-1-2">Now assume <span class="process-math">\(\dim V=n\text{.}\)</span> Apply the extend to a basis procedure described in the proof of <a href="s_dimention.html#th_basis_contract_expand" class="xref" data-knowl="./knowl/xref/th_basis_contract_expand.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.8.8: Contracting and expanding">Theorem 1.8.8</a> to the empty list <span class="process-math">\(S=()\text{,}\)</span> which is linearly independent, considered as a tuple of vectors in <span class="process-math">\(W\text{.}\)</span> Since <span class="process-math">\(W\subseteq V\text{,}\)</span> and since <span class="process-math">\(\dim V=n\text{,}\)</span> the linearly independent tuples <span class="process-math">\(S_i\)</span> must satisfy <span class="process-math">\(i=\len S_i\leq n\text{.}\)</span> Thus the procedure must halt with a basis <span class="process-math">\(B\)</span> of <span class="process-math">\(W\)</span> satisfying <span class="process-math">\(\len B\leq n\text{.}\)</span> We conclude that <span class="process-math">\(\dim W\leq \dim V\text{.}\)</span>
+</div>
+</li>
+<li id="cor_dimension_subspace-3-1-1-2"><div class="para logical" id="cor_dimension_subspace-3-1-1-2-1">
+<div class="para">Clearly, if <span class="process-math">\(W=V\text{,}\)</span> then <span class="process-math">\(\dim W=\dim V\text{.}\)</span> For the other direction, assume <span class="process-math">\(\dim W=\dim V=n\text{.}\)</span> Let <span class="process-math">\(B\)</span> be a basis for <span class="process-math">\(W\text{.}\)</span> Since <span class="process-math">\(B\)</span> is linearly independent, it can be extended to a basis <span class="process-math">\(B'\)</span> of <span class="process-math">\(V\)</span> (<a href="s_dimention.html#th_basis_contract_expand" class="xref" data-knowl="./knowl/xref/th_basis_contract_expand.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.8.8: Contracting and expanding">1.8.8</a>). Since <span class="process-math">\(\len B=\dim W=\dim V\text{,}\)</span> and since all bases of <span class="process-math">\(V\)</span> have cardinality <span class="process-math">\(n\text{,}\)</span> we must have <span class="process-math">\(B=B'\text{.}\)</span> It follows that <span class="process-math">\(B\)</span> is also a basis of <span class="process-math">\(V\text{,}\)</span> and hence that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_basis_contract_expand.html">
+\begin{equation*}
+V=\Span B=W\text{.}
+\end{equation*}
+</div>
+</div></li>
+</ol></div></article></details><article class="example example-like" id="eg_subspace_dimension"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.8.11</span><span class="period">.</span><span class="space"> </span><span class="title">Dimension of subspace.</span>
+</h4>
+<div class="para logical" id="eg_subspace_dimension-2-1">
+<div class="para">Let <span class="process-math">\(W=\Span\{A_1, A_2, A_3\}\subseteq M_{22}\text{,}\)</span> where</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_dimension_subspace.html">
+\begin{equation*}
+A_1=
+\begin{amatrix}
+1\amp 1\\
+1\amp 0
+\end{amatrix}, 
+A_2=
+\begin{amatrix}
+0\amp 1\\
+1\amp 0
+\end{amatrix},
+A_3=
+\begin{bmatrix}
+0\amp 1\\
+1\amp 1
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Let <span class="process-math">\(W'\)</span> be the space of symmetric <span class="process-math">\(2\times 2\)</span> matrices. Use <a href="s_dimention.html#cor_dimension_subspace" class="xref" data-knowl="./knowl/xref/cor_dimension_subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.8.10: Dimension of subspaces">Corollary 1.8.10</a> and the fact that <span class="process-math">\(\dim W'=3\)</span> to prove that <span class="process-math">\(W=W'\text{.}\)</span>
+</div>
+</div>
+<div class="solutions"><details id="eg_subspace_dimension-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_subspace_dimension-3-1"><ul class="disc" id="eg_subspace_dimension-3-1-1">
+<li id="eg_subspace_dimension-3-1-1-1"><div class="para" id="eg_subspace_dimension-3-1-1-1-1">Since each <span class="process-math">\(A_i\)</span> is symmetric, and since the set of symmetric matrices <span class="process-math">\(W'\)</span> is a subspace, we have <span class="process-math">\(W=\Span(A_1, A_2,A_3)\subseteq W'\)</span> by statement (2) of <a href="s_span_ind.html#th_span" class="xref" data-knowl="./knowl/xref/th_span.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.6.6: Spans are subspaces">Theorem 1.6.6</a>.</div></li>
+<li id="eg_subspace_dimension-3-1-1-2"><div class="para logical" id="eg_subspace_dimension-3-1-1-2-1">
+<div class="para">The set <span class="process-math">\(B=(A_1, A_2, A_3)\)</span> is linearly independent:</div>
+<div class="displaymath process-math" id="eg_subspace_dimension-3-1-1-2-1-2">
+\begin{align*}
+aA_1+bA_2+cA_3=\boldzero \amp \iff \begin{bmatrix}
+a\amp a+b+c\\ 
+a+b+c\amp c
+\end{bmatrix}=
+\begin{bmatrix}
+0\amp 0\\ 0\amp 0
+\end{bmatrix}\\
+\amp \iff a=c=0 \text{ and } a+b+c=0 \\
+\amp \iff a=b=c=0\text{.}
+\end{align*}
+</div>
+<div class="para">Thus <span class="process-math">\(B\)</span> is a basis of <span class="process-math">\(W=\Span B\text{,}\)</span> and we conclude that <span class="process-math">\(\dim W=3\text{.}\)</span>
+</div>
+</div></li>
+<li id="eg_subspace_dimension-3-1-1-3"><div class="para" id="eg_subspace_dimension-3-1-1-3-1">We saw in <a href="s_dimention.html#eg_dim_symm" class="xref" data-knowl="./knowl/xref/eg_dim_symm.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.8.6: Dimension of symmetric matrices">Example 1.8.6</a> that <span class="process-math">\(\dim W'=3\text{:}\)</span> i.e., the space of symmetric <span class="process-math">\(2\times 2\)</span> is <span class="process-math">\(3\)</span>-dimensional. Since <span class="process-math">\(W\)</span> is a subspace of <span class="process-math">\(W'\)</span> and <span class="process-math">\(\dim W=\dim W'=3\text{,}\)</span> we conclude that <span class="process-math">\(W=W'\)</span> by <a href="s_dimention.html#cor_dimension_subspace" class="xref" data-knowl="./knowl/xref/cor_dimension_subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.8.10: Dimension of subspaces">Corollary 1.8.10</a>.</div></li>
+</ul></div></div></details></div></article><div class="para" id="ss_dimension_theory-11">
+<a href="s_dimention.html#cor_dimension_subspace" class="xref" data-knowl="./knowl/xref/cor_dimension_subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.8.10: Dimension of subspaces">Corollary 1.8.10</a> is also of use in situations where we wish to characterize all subspaces of a given <span class="process-math">\(n\)</span>-dimensional vector space <span class="process-math">\(V\text{.}\)</span> By the corollary, any such subspace <span class="process-math">\(W\)</span> must have dimension <span class="process-math">\(k\)</span> for some <span class="process-math">\(0\leq k\leq n\text{;}\)</span> and this in turn means that <span class="process-math">\(W\)</span> must have a basis of cardinality <span class="process-math">\(k\text{.}\)</span> We thus have the beginnings of a systematic description of all subspaces <span class="process-math">\(W\subseteq V\text{,}\)</span> organized by dimension <span class="process-math">\(k=\dim W\text{,}\)</span> for <span class="process-math">\(0\leq k\leq n\text{.}\)</span>
+</div>
+<article class="example example-like" id="eg_subspaces_R3"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.8.12</span><span class="period">.</span><span class="space"> </span><span class="title">Subspaces of <span class="process-math">\(\R^3\)</span>.</span>
+</h4>
+<div class="para logical" id="eg_subspaces_R3-2">
+<div class="para">We describe all subspaces <span class="process-math">\(W\)</span> of <span class="process-math">\(\R^3\)</span> ordered by dimension.</div>
+<ul class="disc" id="eg_subspaces_R3-2-3">
+<li id="eg_subspaces_R3-2-3-1">
+<span class="heading"><span class="title"><span class="process-math">\(\dim W=0\)</span>.</span></span><div class="para" id="eg_subspaces_R3-2-3-1-2">If <span class="process-math">\(\dim W=0\text{,}\)</span> then <span class="process-math">\(W\)</span> must have the empty list <span class="process-math">\(B=()\)</span> as a basis (by definition of dimension), and hence <span class="process-math">\(W=\Span()=\{\boldzero\}\text{,}\)</span> the zero subspace.</div>
+</li>
+<li id="eg_subspaces_R3-2-3-2">
+<span class="heading"><span class="title"><span class="process-math">\(\dim W=1\)</span>.</span></span><div class="para" id="eg_subspaces_R3-2-3-2-2">If <span class="process-math">\(\dim W=1\text{,}\)</span> then <span class="process-math">\(W\)</span> has a basis <span class="process-math">\(B=(\boldv)\)</span> consisting of a single nonzero vector <span class="process-math">\(\boldv\in \R^3\text{.}\)</span> In this case we have <span class="process-math">\(W=\Span(\boldv)=\{t\boldv\colon t\in \R\}\text{,}\)</span> which is a line passing through the origin with direction vector <span class="process-math">\(\boldv\text{.}\)</span> Thus <span class="process-math">\(1\)</span>-dimensional subspaces of <span class="process-math">\(\R^3\)</span> are lines passing through the origin.</div>
+</li>
+<li id="eg_subspaces_R3-2-3-3">
+<span class="heading"><span class="title"><span class="process-math">\(\dim W=2\)</span>.</span></span><div class="para logical" id="eg_subspaces_R3-2-3-3-2">
+<div class="para">If <span class="process-math">\(\dim W=2\text{,}\)</span> then <span class="process-math">\(W\)</span> has a basis <span class="process-math">\(B=(\boldv_1, \boldv_2)\)</span> containing two non-parallel vectors in <span class="process-math">\(\R^3\text{.}\)</span> You learn in multivariable calculus that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+W=\Span(\boldv_1, \boldv_2)=\{s\boldv_1+t\boldv_2\colon s,t\in \R\}
+\end{equation*}
+</div>
+<div class="para">is the plane in <span class="process-math">\(\R^3\)</span> passing through the origin with “direction vectors” <span class="process-math">\(\boldv_1, \boldv_2\text{.}\)</span> In fact, you can show that the <em class="emphasis">cross product</em> <span class="process-math">\(\boldn=\boldv_1\times \boldv_2\)</span> is a normal vector for the plane <span class="process-math">\(W\)</span> in this case. Thus the <span class="process-math">\(2\)</span>-dimensional subspaces of <span class="process-math">\(\R^3\)</span> are planes passing through the origin.</div>
+</div>
+</li>
+<li id="eg_subspaces_R3-2-3-4">
+<span class="heading"><span class="title"><span class="process-math">\(\dim W=3\)</span>.</span></span><div class="para" id="eg_subspaces_R3-2-3-4-2">Assume <span class="process-math">\(\dim W=3\text{.}\)</span> Since <span class="process-math">\(W\)</span> is a subspace of <span class="process-math">\(\R^3\text{,}\)</span> and since <span class="process-math">\(\dim W=\dim \R^3=3\text{,}\)</span> we must have <span class="process-math">\(W=\R^3\)</span> according to <a href="s_dimention.html#cor_dimension_subspace" class="xref" data-knowl="./knowl/xref/cor_dimension_subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.8.10: Dimension of subspaces">Corollary 1.8.10</a>. It is as simple as that! Thus <span class="process-math">\(\R^3\)</span> is the only <span class="process-math">\(3\)</span>-dimensional subspace of <span class="process-math">\(\R^3\text{.}\)</span>
+</div>
+</li>
+</ul>
+</div></article><div class="para" id="ss_dimension_theory-13">Lastly, we provide a first example illustrating the power of our expand to a basis technique.</div>
+<article class="corollary theorem-like" id="cor_direct_sum_existence"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.8.13</span><span class="period">.</span><span class="space"> </span><span class="title">Existence of direct sums.</span>
+</h4>
+<div class="para" id="cor_direct_sum_existence-2-1">Assume <span class="process-math">\(V\)</span> is a finite-dimensional vector space. Given any subspace <span class="process-math">\(W\subseteq V\)</span> there is a subpace <span class="process-math">\(W'\subseteq V\)</span> satisfying <span class="process-math">\(V=W\oplus W'\text{.}\)</span>
+</div></article><details id="cor_direct_sum_existence-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="cor_direct_sum_existence-3-1">Assume <span class="process-math">\(\dim V=n\text{.}\)</span>  Given a subspace <span class="process-math">\(W\subset V\text{,}\)</span> we know that <span class="process-math">\(\dim W\leq n\text{,}\)</span> and hence that <span class="process-math">\(W\)</span> has a finite basis <span class="process-math">\(S=(v_1,v_2,\dots, v_r)\)</span> for some <span class="process-math">\(r\leq n\text{.}\)</span> Since <span class="process-math">\(S\)</span> is linearly independent, it can be extended to a basis <span class="process-math">\(B=(v_1,v_2,\dots, v_r,v_{r+1},\cdots, v_n)\)</span> of <span class="process-math">\(V\text{.}\)</span> Define <span class="process-math">\(W'=\Span(v_{r+1}, \dots, v_n)\text{.}\)</span> We claim that <span class="process-math">\(W\oplus W'=V\text{.}\)</span>
+</div></article></details><div class="para" id="ss_dimension_theory-15">That was quite a dose of theory! For your convenience, we collect the various results on dimension, together with their nicknames, in one omnibus theorem.</div>
+<article class="theorem theorem-like" id="th_dimension_compendium"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.8.14</span><span class="period">.</span><span class="space"> </span><span class="title">Dimension theory compendium.</span>
+</h4>
+<div class="para logical" id="th_dimension_compendium-2-1">
+<div class="para">Let <span class="process-math">\(V\)</span> be a vector space of dimension <span class="process-math">\(n\text{,}\)</span> and let <span class="process-math">\(S\)</span> be a tuple of vectors of <span class="process-math">\(V\text{.}\)</span>
+</div>
+<ol class="decimal" id="th_dimension_compendium-2-1-5">
+<li id="th_dimension_compendium-2-1-5-1">
+<span class="heading"><span class="title">Contract.</span></span><div class="para" id="th_dimension_compendium-2-1-5-1-2">If <span class="process-math">\(S\)</span> spans <span class="process-math">\(V\text{,}\)</span> then <span class="process-math">\(S\)</span> can be contracted to a basis of <span class="process-math">\(V\text{.}\)</span>
+</div>
+</li>
+<li id="th_dimension_compendium-2-1-5-2">
+<span class="heading"><span class="title">Expand.</span></span><div class="para" id="th_dimension_compendium-2-1-5-2-2">If <span class="process-math">\(S\)</span> is linearly independent, then <span class="process-math">\(S\)</span> can be extended to a basis of <span class="process-math">\(V\text{.}\)</span>
+</div>
+</li>
+<li id="th_dimension_compendium-2-1-5-3">
+<span class="heading"><span class="title">Street smarts.</span></span><div class="para" id="th_dimension_compendium-2-1-5-3-2">If <span class="process-math">\(\len S&lt; n\text{,}\)</span> then <span class="process-math">\(S\)</span> does not span <span class="process-math">\(V\text{.}\)</span>
+</div>
+</li>
+<li id="th_dimension_compendium-2-1-5-4">
+<span class="heading"><span class="title">Street smarts.</span></span><div class="para" id="th_dimension_compendium-2-1-5-4-2">If  <span class="process-math">\(\len S&gt;  n\text{,}\)</span> then <span class="process-math">\(S\)</span> is linearly dependent.</div>
+</li>
+<li id="th_dimension_compendium-2-1-5-5">
+<span class="heading"><span class="title">Street smarts.</span></span><div class="para" id="th_dimension_compendium-2-1-5-5-2">If  <span class="process-math">\(\len S =n\text{,}\)</span> then <span class="process-math">\(S\)</span> is a basis if and only if <span class="process-math">\(S\)</span> spans if and only if <span class="process-math">\(S\)</span> is linearly independent.</div>
+</li>
+<li id="th_dimension_compendium-2-1-5-6">
+<span class="heading"><span class="title">Dimension of subspaces.</span></span><div class="para logical" id="th_dimension_compendium-2-1-5-6-2">
+<div class="para">If <span class="process-math">\(W\subseteq V\)</span> is a subspace, then</div>
+<ol class="lower-alpha lower-alpha-level-1" id="th_dimension_compendium-2-1-5-6-2-2">
+<li id="th_dimension_compendium-2-1-5-6-2-2-1"><div class="para" id="th_dimension_compendium-2-1-5-6-2-2-1-1">
+<span class="process-math">\(\dim W\leq \dim V\text{,}\)</span> and</div></li>
+<li id="th_dimension_compendium-2-1-5-6-2-2-2"><div class="para" id="th_dimension_compendium-2-1-5-6-2-2-2-1">
+<span class="process-math">\(\dim W=\dim V\)</span> if and only if <span class="process-math">\(W=V\text{.}\)</span>
+</div></li>
+</ol>
+</div>
+</li>
+<li id="th_dimension_compendium-2-1-5-7">
+<span class="heading"><span class="title">Existence of direct sums.</span></span><div class="para" id="th_dimension_compendium-2-1-5-7-2">Given any subspace <span class="process-math">\(W\subseteq V\text{,}\)</span> there is a subspace <span class="process-math">\(W'\)</span> satisfying <span class="process-math">\(V=W\oplus W'\text{.}\)</span>
+</div>
+</li>
+</ol>
+</div></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="s_basis.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="advlinalgkursobjekt-6.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a xmlns:xlink="http://www.w3.org/1999/xlink" class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

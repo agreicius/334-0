@@ -124,7 +124,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_span_ind.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_linear_algebra.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="advlinalgkursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_span_ind.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_linear_algebra.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s_dimention.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div xmlns:xlink="http://www.w3.org/1999/xlink" id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\renewcommand{\Re}{\operatorname{Re}}
 \renewcommand{\Im}{\operatorname{Im}}
 \newcommand{\Z}{{\mathbb Z}}
@@ -207,6 +207,7 @@ eBookConfig.enable_chatcodes =  false;
 \DeclareMathOperator{\flux}{flux}
 \DeclareMathOperator{\Hom}{Hom}
 \DeclareMathOperator{\ab}{ab}
+\DeclareMathOperator{\len}{len}
 \newcommand{\surjects}{\twoheadrightarrow}
 \newcommand{\injects}{\hookrightarrow}
 \newcommand{\bijects}{\leftrightarrow}
@@ -420,7 +421,15 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <div class="toc-title-box"><a href="s_basis.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Bases</span></a></div>
 <ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_basis.html#ss_basis_def" class="internal"><span class="title">Definition and examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_basis.html#ss_by_inspection" class="internal"><span class="title">Finding bases</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_basis.html#ss_finite_dim" class="internal"><span class="title">Finite-dimensional vector spaces</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_dimention.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Dimension</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_dimention.html#ss_dimension" class="internal"><span class="title">Definition and examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_dimention.html#ss_dimension_theory" class="internal"><span class="title">Theoretical facts about dimension</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -694,32 +703,160 @@ A_3=\begin{amatrix}[rr]
 </div></li>
 </ol>
 </div>
-<div class="solutions"><details id="eg_basis_onestep-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_basis_onestep-3-1"></div></div></details></div></article></section><section class="subsection" id="ss_finite_dim"><h3 class="heading hide-type">
+<div class="solutions"><details id="eg_basis_onestep-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_basis_onestep-3-1"></div></div></details></div></article></section><section class="subsection" id="ss_by_inspection"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Finding bases</span>
+</h3>
+<div class="para" id="ss_by_inspection-2">Besides deciding whether a given set is a basis, we will often want to come up with a basis of a given space on our own. The following “by inspection” technique often comes in handy in cases where the elements of the vector space can be described in a simple parametric manner.</div>
+<article class="algorithm theorem-like" id="proc_provide_basis"><h4 class="heading">
+<span class="type">Procedure</span><span class="space"> </span><span class="codenumber">1.7.9</span><span class="period">.</span><span class="space"> </span><span class="title">By-inspection basis technique.</span>
+</h4>
+<div class="para logical" id="proc_provide_basis-2-1">
+<div class="para">To produce a basis <span class="process-math">\(B\)</span> of a vector space <span class="process-math">\(V\)</span> “by inspection”, proceed as follows.</div>
+<ol class="decimal" id="proc_provide_basis-2-1-4">
+<li id="proc_provide_basis-2-1-4-1">
+<span class="heading"><span class="title">Parametric description.</span></span><div class="para" id="proc_provide_basis-2-1-4-1-2">Give a simple parametric description of the general element of <span class="process-math">\(V\text{.}\)</span>
+</div>
+</li>
+<li id="proc_provide_basis-2-1-4-2">
+<span class="heading"><span class="title">Spanning set.</span></span><div class="para" id="proc_provide_basis-2-1-4-2-2">If your parametric description is simple enough, you should be able to extract from it a natural spanning set <span class="process-math">\(B\)</span> of <span class="process-math">\(V\text{.}\)</span>
+</div>
+</li>
+<li id="proc_provide_basis-2-1-4-3">
+<span class="heading"><span class="title">Linear independence.</span></span><div class="para" id="proc_provide_basis-2-1-4-3-2">If your parametric description is free of redundancies, then <span class="process-math">\(B\)</span> will likely be linearly independent. Verify this using <a href="s_span_ind.html#proc_linear_independence" class="xref" data-knowl="./knowl/xref/proc_linear_independence.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 1.6.11: Linear independence of a finite set">Procedure 1.6.11</a>.</div>
+</li>
+</ol>
+</div></article><article class="example example-like" id="eg_byinspection_R5"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.10</span><span class="period">.</span><span class="space"> </span><span class="title">By-inspection basis technique.</span>
+</h4>
+<div class="para logical" id="eg_byinspection_R5-2-1">
+<div class="para">Use <a href="s_basis.html#proc_provide_basis" class="xref" data-knowl="./knowl/xref/proc_provide_basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 1.7.9: By-inspection basis technique">Procedure 1.7.9</a> to compute a basis of the subspace <span class="process-math">\(W\subseteq \R^5\)</span> defined as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_provide_basis.html">
+\begin{equation*}
+W=\{(x_1,x_2,x_3,x_4,x_5)\in \R^5\colon x_1+x_2=x_4-x_5=0\}\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="solutions"><details id="eg_byinspection_R5-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_byinspection_R5-3-1">
+<div class="para">The two equations</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_basis_R5.html" id="eg_byinspection_R5-3-1-1">
+\begin{align*}
+x_1+x_2\amp =0 \amp x_4-x_5\amp =0 
+\end{align*}
+</div>
+<div class="para">give two independent conditions on <span class="process-math">\(x_1,x_2\)</span> and <span class="process-math">\(x_4,x_5\text{,}\)</span> and no condition on <span class="process-math">\(x_3\text{.}\)</span> We see that the general element of <span class="process-math">\(W\)</span> can be described as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_basis_R5.html" id="eq_basis_R5">
+\begin{equation}
+(r,-r,s,t,t)=r\underset{\boldx_1}{\underbrace{(1,-1,0,0,0)}}+s\underset{\boldx_2}{\underbrace{(0,0,1,0,0)}}+t\underset{\boldx_3}{\underbrace{(0,0,0,1,1)}}\tag{1.22}
+\end{equation}
+</div>
+<div class="para">for arbitrary scalars <span class="process-math">\(r,s,t\text{.}\)</span> It follows immediately that <span class="process-math">\(B=(\boldx_1,\boldx_2,\boldx_3)\)</span> spans <span class="process-math">\(W\text{.}\)</span> Furthermore, using <a href="s_basis.html#eq_basis_R5" class="xref" data-knowl="./knowl/xref/eq_basis_R5.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.22">(1.22)</a>, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_basis_R5.html" id="eg_byinspection_R5-3-1-11">
+\begin{align*}
+c_1\boldx_1+c_2\boldx_2+c_3\boldx_3=\boldzero \amp\implies (c_1,-c_1,c_2,c_3,c_3)=(0,0,0,0,0,0) \\
+\amp \implies c_1=c_2=c_3=0
+\end{align*}
+</div>
+<div class="para">for any scalars <span class="process-math">\(c_1,c_2,c_3\in \R\text{.}\)</span> Thus <span class="process-math">\(B\)</span> is linearly independent. We conclude <span class="process-math">\(B\)</span> is a basis.</div>
+</div></div></details></div></article><article class="example example-like" id="eg_byinspection_basis"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.11</span><span class="period">.</span><span class="space"> </span><span class="title">By-inspection basis technique.</span>
+</h4>
+<div class="para" id="eg_byinspection_basis-2-1">Let <span class="process-math">\(W\subseteq M_{22}\)</span> be the subspace of all symmetric matrices. Use <a href="s_basis.html#proc_provide_basis" class="xref" data-knowl="./knowl/xref/proc_provide_basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 1.7.9: By-inspection basis technique">Procedure 1.7.9</a> to compute a basis of <span class="process-math">\(W\text{.}\)</span>
+</div>
+<div class="solutions"><details id="eg_byinspection_basis-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_byinspection_basis-3-1">
+<div class="para">We follow the three steps of <a href="s_basis.html#proc_provide_basis" class="xref" data-knowl="./knowl/xref/proc_provide_basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 1.7.9: By-inspection basis technique">Procedure 1.7.9</a>.</div>
+<ol class="decimal" id="eg_byinspection_basis-3-1-2">
+<li id="eg_byinspection_basis-3-1-2-1"><div class="para logical" id="eg_byinspection_basis-3-1-2-1-1">
+<div class="para">A general <span class="process-math">\(2\times 2\)</span> symmetric matrix can be described parametrically as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\begin{bmatrix}
+a\amp b\\ b\amp c
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+</div></li>
+<li id="eg_byinspection_basis-3-1-2-2"><div class="para logical" id="eg_byinspection_basis-3-1-2-2-1">
+<div class="para">We have</div>
+<div class="displaymath process-math" id="eq_provide_basis">
+\begin{equation}
+\begin{bmatrix}
+a\amp b\\ b\amp c
+\end{bmatrix}=
+a
+\begin{bmatrix}
+1\amp 0\\ 0\amp 0
+\end{bmatrix}
++
+b
+\begin{bmatrix}
+0\amp 1\\ 1\amp 0
+\end{bmatrix}
++
+c
+\begin{bmatrix}
+0\amp 0\\ 0\amp 1
+\end{bmatrix}\text{.}\tag{1.23}
+\end{equation}
+</div>
+<div class="para">It follows immediately that the tuple <span class="process-math">\(B=(A_1, A_2, A_3)\)</span> is a spanning set, where</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A_1=
+\begin{bmatrix}
+1\amp 0\\ 0\amp 0
+\end{bmatrix}, A_2=\begin{bmatrix}
+0\amp 1\\ 1\amp 0
+\end{bmatrix}
+, A_3=\begin{bmatrix}
+0\amp 0\\ 0\amp 1
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+</div></li>
+<li id="eg_byinspection_basis-3-1-2-3"><div class="para logical" id="eg_byinspection_basis-3-1-2-3-1">
+<div class="para">The expression <a href="s_basis.html#eq_provide_basis" class="xref" data-knowl="./knowl/xref/eq_provide_basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.23">(1.23)</a> tells us that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_provide_basis.html" id="eg_byinspection_basis-3-1-2-3-1-2">
+\begin{align*}
+aA_1+bA_2+cA_3 = \boldzero\amp \iff \begin{bmatrix}
+a\amp b\\ b\amp c
+\end{bmatrix}=\begin{bmatrix}
+0\amp 0\\ 0\amp 0
+\end{bmatrix} \\
+\amp\iff a=b=c=0 \text{.}
+\end{align*}
+</div>
+<div class="para">This proves <span class="process-math">\(B\)</span> is linearly independent.</div>
+</div></li>
+</ol>
+<div class="para">Since <span class="process-math">\(B\)</span> is a linearly independent spanning set of <span class="process-math">\(W\text{,}\)</span> it is a basis of <span class="process-math">\(W\text{.}\)</span>
+</div>
+</div></div></details></div></article></section><section class="subsection" id="ss_finite_dim"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Finite-dimensional vector spaces</span>
 </h3>
-<div class="para" id="ss_finite_dim-2">There is a glaring difference between the last vector space, <span class="process-math">\(P(I)\text{,}\)</span> treated in <a href="s_basis.html#eg_standard_bases" class="xref" data-knowl="./knowl/xref/eg_standard_bases.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.7.3: Some standard bases">Example 1.7.3</a> and the vector spaces before it: namely, the basis <span class="process-math">\((x^i)_{i\in I}\)</span> is infinite, whereas the previous bases were all finite. This turns out to be an essential difference between <span class="process-math">\(P(I)\)</span> and the other vector spaces: namely, <span class="process-math">\(P(I)\)</span> is infinite dimensional, while the others are finite dimensional. Let’s make these notions rigorous. We begin with the general definition of the length of a tuple.</div>
+<div class="para" id="ss_finite_dim-2">In <a href="s_basis.html#eg_standard_bases" class="xref" data-knowl="./knowl/xref/eg_standard_bases.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.7.3: Some standard bases">Example 1.7.3</a> there is a glaring difference between the last vector space, <span class="process-math">\(P(I)\text{,}\)</span> and the vector spaces before it: namely, the basis <span class="process-math">\((x^i)_{i\in I}\)</span> is infinite, whereas the previous bases were all finite. This turns out to be an essential difference between <span class="process-math">\(P(I)\)</span> and the other vector spaces: namely, <span class="process-math">\(P(I)\)</span> is infinite dimensional, while the others are finite dimensional. Let’s make these notions rigorous. We begin with the general definition of the length of a tuple.</div>
 <article class="definition definition-like" id="d_tuple_length"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.7.9</span><span class="period">.</span><span class="space"> </span><span class="title">Length of a tuple.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.7.12</span><span class="period">.</span><span class="space"> </span><span class="title">Length of a tuple.</span>
 </h4>
 <div class="para logical" id="d_tuple_length-2-1">
 <div class="para">Let <span class="process-math">\(S=(a_i)_{i\in I}\)</span> be a tuple of elements of the set <span class="process-math">\(A\text{.}\)</span>
 </div>
 <ul class="disc" id="d_tuple_length-2-1-3">
-<li id="d_tuple_length-2-1-3-1"><div class="para" id="d_tuple_length-2-1-3-1-1">We say the tuple <span class="process-math">\(S\)</span> is <dfn class="terminology">finite</dfn> (resp. <dfn class="terminology">infinite</dfn>) if its indexing set <span class="process-math">\(I\)</span> is finite (resp. infinite).</div></li>
-<li id="d_tuple_length-2-1-3-2"><div class="para" id="d_tuple_length-2-1-3-2-1">If <span class="process-math">\(I\)</span> is finite of cardinality <span class="process-math">\(\abs{I}=n\text{,}\)</span> then we say <span class="process-math">\(S\)</span> is a tuple of length <span class="process-math">\(n\text{.}\)</span>
+<li id="d_tuple_length-2-1-3-1"><div class="para" id="d_tuple_length-2-1-3-1-1">If <span class="process-math">\(I\)</span> is finite, with cardinality <span class="process-math">\(\abs{I}=n\text{,}\)</span> then we say <span class="process-math">\(S\)</span> is <dfn class="terminology">finite</dfn> and of <dfn class="terminology">length</dfn> <span class="process-math">\(n\text{,}\)</span> denoted <span class="process-math">\(\len S=n\text{.}\)</span>
+</div></li>
+<li id="d_tuple_length-2-1-3-2"><div class="para" id="d_tuple_length-2-1-3-2-1">If <span class="process-math">\(I\)</span> is infinite, then we say <span class="process-math">\(S\)</span> is <dfn class="terminology">infinite</dfn>, or of <dfn class="terminology">infinite length</dfn>, denoted <span class="process-math">\(\len S=\infty\text{.}\)</span>
 </div></li>
 </ul>
 </div></article><article class="definition definition-like" id="d_finite_dim"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.7.10</span><span class="period">.</span><span class="space"> </span><span class="title">Finite/infinite dimension.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.7.13</span><span class="period">.</span><span class="space"> </span><span class="title">Finite/infinite dimension.</span>
 </h4>
 <div class="para" id="d_finite_dim-2-1">A vector space <span class="process-math">\(V\)</span> is <dfn class="terminology">finite dimensional</dfn> if there is a finite basis of <span class="process-math">\(V\text{;}\)</span> the vector space is <dfn class="terminology">infinite dimensional</dfn> if there is no finite basis of <span class="process-math">\(V\text{.}\)</span> We write <span class="process-math">\(\dim V&lt; \infty\)</span> to indicate that <span class="process-math">\(V\)</span> is finite dimensional, and <span class="process-math">\(\dim V=\infty\)</span> to indicate <span class="process-math">\(V\)</span> is infinite dimensional.</div></article><article class="remark remark-like" id="ss_finite_dim-5"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.7.11</span><span class="period">.</span><span class="space"> </span><span class="title">Finite/infinite dimension.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.7.14</span><span class="period">.</span><span class="space"> </span><span class="title">Finite/infinite dimension.</span>
 </h4>
 <div class="para" id="ss_finite_dim-5-2">In the next section we give a complete definition of the dimension <span class="process-math">\(\dim V\)</span> of a vector space. For now we are content simply to distinguish between finite- and infinite-dimensional spaces.</div></article><div class="para" id="ss_finite_dim-6">We showed that <span class="process-math">\(P(I)\)</span> has an infinite basis. Does this mean that it is infinite dimensional? Not by definition alone, since we have not (as of yet) shown that <span class="process-math">\(P(I)\)</span> does not have a finite basis. The following theorem nicely handles this issue for us.</div>
 <article class="theorem theorem-like" id="th_finite_spanning"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.7.12</span><span class="period">.</span><span class="space"> </span><span class="title">Finite spanning set.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.7.15</span><span class="period">.</span><span class="space"> </span><span class="title">Finite spanning set.</span>
 </h4>
-<div class="para" id="th_finite_spanning-2-1">Assume <span class="process-math">\(B=(v_1,v_2,\dots, v_n)\)</span> is a spanning set of the vector space <span class="process-math">\(V\)</span> of finite length <span class="process-math">\(n\text{.}\)</span> Any tuple of vectors of <span class="process-math">\(V\)</span> of length greater than <span class="process-math">\(n\)</span> (including infinite tuples) is linearly dependent. Equivalently, if <span class="process-math">\(S=(w_i)_{i\in I}\)</span> is a linearly independent tuple of vectors of <span class="process-math">\(V\text{,}\)</span> then <span class="process-math">\(\abs{I}\leq n\text{.}\)</span>
+<div class="para" id="th_finite_spanning-2-1">Assume <span class="process-math">\(B=(v_1,v_2,\dots, v_n)\)</span> is a spanning set of the vector space <span class="process-math">\(V\)</span> of finite length <span class="process-math">\(n\text{.}\)</span> Any tuple of vectors of <span class="process-math">\(V\)</span> of length greater than <span class="process-math">\(n\)</span> (this includes infinite tuples) is linearly dependent. Equivalently, if <span class="process-math">\(S\)</span> is a linearly independent tuple of vectors of <span class="process-math">\(V\text{,}\)</span> then <span class="process-math">\(\len S\leq n\text{.}\)</span>
 </div></article><details id="th_finite_spanning-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_finite_spanning-3-1">Axler provides a pleasant proof where one does not have to dirty one’s hands with matrices. Personally, I enjoy digging in the dirt sometimes. In any case the argument below is a useful reminder about properties of linear systems.</div>
 <div class="para" id="th_finite_spanning-3-2">First observe that it suffices to show that any <em class="emphasis">finite</em> tuple of length <span class="process-math">\(m&gt; n\)</span> is linearly dependent, since if <span class="process-math">\((w_i)_{i\in I}\)</span> is an infinite tuple, then the subtuple <span class="process-math">\((w_{i_1},\dots, w_{i_{n+1}})\)</span> is linearly dependent for any distinct list of <span class="process-math">\(n+1\)</span> indices <span class="process-math">\(i_1,i_2,\dots, i_{n+1}\text{.}\)</span> But then clearly the entire tuple is also linearly dependent since a nontrivial linear combination <span class="process-math">\(\boldzero=\sum_{k=1}^{n+1}c_{i_{k}}w_{i_k}=\boldzero\)</span> gives rise to a nontrivial linear combination <span class="process-math">\(\sum_{i\in I}c_iw_i=\boldzero\)</span> of all of the vectors <span class="process-math">\(v_i\)</span> simply by setting <span class="process-math">\(c_i=0\)</span> for <span class="process-math">\(i\ne i_k\text{.}\)</span> (This argument shows that in general a tuple <span class="process-math">\((w_i)_{i\in I}\)</span> is linearly dependent if and only if some finite subtuple <span class="process-math">\((w_{i_1}, w_{i_2},\dots, w_{i_m})\)</span> is linearly dependent.)</div>
 <div class="para logical" id="th_finite_spanning-3-3">
@@ -751,14 +888,32 @@ w_j=\sum_{i=1}^na_{ij}v_i
 </div>
 <div class="para">where <span class="process-math">\(A=[a_{ij}]\text{.}\)</span> Since <span class="process-math">\(A\)</span> has more columns than rows (<span class="process-math">\(m&gt; n\)</span>), our Gaussian elimination technique for solving such matrix equations gives rise to a free variable: <span class="process-math">\(A\)</span> row reduces to a matrix <span class="process-math">\(U\)</span> in row echelon form, one of whose columns does not have a leading one. The existence of a free variable in turn guarantees that there are infinitely many solutions to <span class="process-math">\(A\boldx=\boldzero\text{.}\)</span> In particular, there is some <em class="emphasis">nontrivial</em> solution <span class="process-math">\(\boldc=(c_1,c_2,\dots, c_m)\ne \boldzero\text{.}\)</span> Our argument above implies that <span class="process-math">\(\sum_{j=1}^mc_jw_j=\boldzero\)</span> is then our desired nontrivial linear combination equal to <span class="process-math">\(\boldzero\text{.}\)</span>
 </div>
-</div></article></details><div class="para" id="ss_finite_dim-8">Let’s see why the theorem above implies <span class="process-math">\(P(I)\)</span> is infinite dimensional. We give a proof by contradition. If <span class="process-math">\(P(I)\)</span> were finite dimensional, then there would be a finite basis <span class="process-math">\(B=(f_1,f_2,\dots, f_n)\text{,}\)</span> and according to <a href="s_basis.html#th_finite_spanning" class="xref" data-knowl="./knowl/xref/th_finite_spanning.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.7.12: Finite spanning set">Theorem 1.7.12</a> any tuple in <span class="process-math">\(P(I)\)</span> of length greater than <span class="process-math">\(n\)</span> (including infinite tuples) would be linearly dependent. But we have seen that the (countably) infinite tuple <span class="process-math">\((1,x,x^2,\dots)\)</span> is linearly independent in <span class="process-math">\(P(I)\text{.}\)</span> Contradiction! Thus <span class="process-math">\(P(I)\)</span> must be infinite dimensional. This type of argument applies more generally, as indicated by the following result.</div>
+</div></article></details><div class="para" id="ss_finite_dim-8">Let’s see why the theorem above implies <span class="process-math">\(P(I)\)</span> is infinite dimensional. We give a proof by contradition. If <span class="process-math">\(P(I)\)</span> were finite dimensional, then there would be a finite basis <span class="process-math">\(B=(f_1,f_2,\dots, f_n)\text{,}\)</span> and according to <a href="s_basis.html#th_finite_spanning" class="xref" data-knowl="./knowl/xref/th_finite_spanning.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.7.15: Finite spanning set">Theorem 1.7.15</a> any tuple in <span class="process-math">\(P(I)\)</span> of length greater than <span class="process-math">\(n\)</span> (including infinite tuples) would be linearly dependent. But we have seen that the (countably) infinite tuple <span class="process-math">\((1,x,x^2,\dots)\)</span> is linearly independent in <span class="process-math">\(P(I)\text{.}\)</span> Contradiction! Thus <span class="process-math">\(P(I)\)</span> must be infinite dimensional. This type of argument applies more generally, as indicated by the following result.</div>
 <article class="corollary theorem-like" id="cor_finite_dim"><h4 class="heading">
-<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.7.13</span><span class="period">.</span><span class="space"> </span><span class="title">Infinite-dimensional spaces.</span>
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.7.16</span><span class="period">.</span><span class="space"> </span><span class="title">Infinite-dimensional spaces.</span>
 </h4>
 <div class="para" id="cor_finite_dim-2-1">A vector space <span class="process-math">\(V\)</span> is infinite dimensional if and only if it contains an infinite linearly independent tuple <span class="process-math">\((v_i)_{i\in I}\text{.}\)</span>
-</div></article><details id="cor_finite_dim-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="cor_finite_dim-3-1">The proof is left as an exercise.</div></article></details></section></section></div>
+</div></article><details id="cor_finite_dim-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="cor_finite_dim-3-1">The proof is left as an exercise.</div></article></details><div class="para" id="ss_finite_dim-10">We end with some useful facts about subtuples of linear independent/dependent tuples.</div>
+<article class="definition definition-like" id="d_subtuple"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.7.17</span><span class="period">.</span><span class="space"> </span><span class="title">Subtuples.</span>
+</h4>
+<div class="para" id="d_subtuple-2-1">Let <span class="process-math">\((a_i)_{i\in I}\)</span> be a tuple of elements of the set <span class="process-math">\(A\text{.}\)</span> Given a subset <span class="process-math">\(J\subseteq I\text{,}\)</span> we call the tuple <span class="process-math">\((a_j)_{j\in J}\)</span> a <dfn class="terminology">subtuple</dfn> of <span class="process-math">\((a_i)_{i\in I}\text{.}\)</span>
+</div> <div class="para" id="d_subtuple-2-2">Thinking in terms of functions, if <span class="process-math">\((a_i)_{i\in I}\)</span> is the tuple representation of the function <span class="process-math">\(f\colon I\rightarrow A\text{,}\)</span> then the subtuple <span class="process-math">\((a_j)_{j\in J}\)</span> is the tuple representation of the <dfn class="terminology">restriction</dfn> <span class="process-math">\(f\vert_J\colon J\rightarrow A\)</span> of <span class="process-math">\(f\)</span> to <span class="process-math">\(J\text{.}\)</span>
+</div></article><article class="theorem theorem-like" id="th_subtuples"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.7.18</span><span class="period">.</span><span class="space"> </span><span class="title">Independence and subtuples.</span>
+</h4>
+<div class="para logical" id="th_subtuples-2-1">
+<div class="para">Let <span class="process-math">\(S=(v_i)_{i\in I}\)</span> be a tuple of vectors in <span class="process-math">\(V\text{.}\)</span> The following statements are equivalent.</div>
+<ol class="decimal" id="th_subtuples-2-1-3">
+<li id="th_subtuples-2-1-3-1"><div class="para" id="th_subtuples-2-1-3-1-1">
+<span class="process-math">\(S\)</span> is linearly independent.</div></li>
+<li id="th_subtuples-2-1-3-2"><div class="para" id="th_subtuples-2-1-3-2-1">Every subtuple of <span class="process-math">\(S\)</span> is linearly independent.</div></li>
+<li id="th_subtuples-2-1-3-3"><div class="para" id="th_subtuples-2-1-3-3-1">Every finite subtuple of <span class="process-math">\(S\)</span> is linearly independent.</div></li>
+</ol>
+<div class="para">As a consequence, <span class="process-math">\(S\)</span> is linearly dependent if and only if it has a finite linearly dependent subtuple.</div>
+</div></article><details id="th_subtuples-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_subtuples-3-1">The proof is left as an exercise.</div></article></details></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="s_span_ind.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="advlinalgkursobjekt-6.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="s_span_ind.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_dimention.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
