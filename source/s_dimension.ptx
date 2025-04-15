@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_dimention" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Dimension</title>
+    <introduction>
+        <p>
+          Intuitively, we think of <m>\R^2</m> as a two-dimensional space, and <m>\R^3</m> as three-dimensional one. Why? Loosely speaking this notion of dimension has something to do with the number of degrees of freedom involved in specifying a particular element of the given space: to specify an element of <m>\boldv\in \R^2</m> we need to give its two coordinates; to specify an element of <m>\R^3</m> we need to give its three coordinates. Clearly, this conception is too imprecise to serve as a mathematical definition. What exactly does <q>degrees of freedom</q> mean? And how do you quantify the number of <q>degrees of freedom</q> needed for a given space? For example, we also think of a plane <m>W\subseteq \R^3</m> passing through the origin as a two-dimensional object; it is not immediately clear how to square this intuition with our vague <q>degrees of freedom</q> formulation. In this section we introduce the definition of the <em>dimension</em> of a vector space, which will be a rigorous expression of these notions. Our definition, which relies on the concept of bases, seems simple enough: the dimension of a vector space <m>V</m> is defined as the number of elements contained in any basis <m>B</m> of <m>V</m>. However, as we will see there is  considerable work involved (a) in proving that this definition is well-defined, and (b) in showing that it captures the intuition of dimension described above.
+        </p>
+      </introduction>
+    <subsection xml:id="ss_dimension">
+    <title>Definition and examples</title>
+    <p>
+        In the previous section we differentiated between finite- and infinite-dimensional vector spaces. We now elaborate on this classification by assigning to a finite-dimensional vector space a specific integer value called its <em>dimension</em>. 
+    </p>
+    <definition xml:id="d_dimension">
+        <title>Dimension</title>
+        <notation>
+          <usage><m>\dim V</m></usage>
+          <description>dimension of <m>V</m></description>
+        </notation>
+        <statement>
+          <p>
+            Let <m>V</m> be a vector space. The <term>dimension of <m>V</m></term>, denoted <m>\dim V</m>, is defined as follows:
+            <ul>
+                <li>
+                    <p>
+                        If <m>V</m> is infinite dimensional, then <m>\dim V=\infty</m>, as before. 
+                    </p>
+                </li>
+              <li>
+                <p>
+                If <m>V</m> is finite dimensional, then we define <m>\dim V</m> to be the length of any basis of <m>V</m>: <ie/>, if <m>B=(v_i)_{i\in I}</m> is a basis of <m>V</m>, then <m>\dim V=\abs{I}</m>.
+                </p>
+              </li>
+            </ul>
+          </p>
+        </statement>
+      </definition>
+      <remark>
+        <title>Is dimension well-defined?</title>
+        <p>
+            The statement of <xref ref="d_dimension"/> is elegant in its simplicity, but a very serious question immediately arises: is this definition well defined? In other words, do any two bases of a vector space have the same length? Who's to say that a vector space <m>V</m> cannot have one basis of length two and another of length 5: or worse, one basis that is finite and another that is infinite? As we will see shortly, any two bases of a finite-dimensional space do indeed have the same length. But first we illustrate our definition with some familiar examples. 
+        </p>
+      </remark>
+      <p>
+        By definition, to show a vector space <m>V</m> has dimension <m>n</m>, we must exhibit a basis <m>B</m> with <m>\len B=n</m>. Similarly to show <m>V</m> is infinite dimensional, we must show that it does not have a finite basis: or equivalently, using <xref ref="cor_finite_dim"/>, we must produce an infinite linearly independent tuple. Let's codify this with a procedure. 
+      </p>
+      <algorithm xml:id="proc_dimension">
+        <title>Computing dimension</title>
+        <statement>
+          <p>
+            To compute the dimension of a vector space <m>V</m> proceed as follows. 
+            <ol>
+              <li>
+                <title>Basis</title>
+                <p>
+                  Attempt to produce a basis of <m>V</m>, possibly with the help of the <xref ref="proc_provide_basis" text="custom">by-inspection basis technique</xref>.  
+                </p>
+              </li>
+              <li>
+                <title>Dimension</title>
+                <p>
+                  <ul>
+                    <li>
+                      <p>
+                        If you found a finite basis <m>B</m> in Step 1, then determine the cardinality <m>n=\abs{B}</m> by counting the number of distinct elements of <m>B</m>. We have <m>\dim V=n</m> in this case. 
+                      </p>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <p>
+                        If you found an infinite linearly independent tuple in Step 1, or were able to show that no finite basis exists, then <m>\dim V=\infty</m>. 
+                      </p>
+                    </li>
+                  </ul>
+                </p>
+              </li>
+            </ol> 
+          </p>
+        </statement>
+      </algorithm>
+      <p>
+        It is especially easy to carry out <xref ref="proc_dimension"/> for a vector space when we have a basis <m>B</m> at the ready. This is the case for our list of familiar vector spaces, each of which is equipped with a standard basis. 
+      </p>
+      <example xml:id="eg_dimension_familiar">
+        <title>Dimensions of familiar spaces</title>
+      <p>
+      For each <m>V</m> below we provide its standard basis <m>B</m> and compute <m>\dim V=\len B</m>.
+      <ul>
+      <li>
+        <title>Zero space</title>
+        <p>
+        The empty tuple <m>B=()</m> is a basis of <m>V=\{\boldzero\}</m>. Thus <m>\dim V=\len B=0</m>.
+        </p>
+      </li>
+      <li>
+        <title>Tuples</title>
+        <p>
+        The tuple <m>B=(\bolde_1, \bolde_2,\dots, \bolde_n)</m> is a basis of <m>F^n</m>. Thus <m>\dim V=\len B=n</m>.
+        </p>
+      </li>
+      <li>
+        <title>Matrices</title>
+        <p>
+        The tuple <m>B=(E_{ij})_{(i,j)\in I\times J}</m>, <m>I=\{1,2,\dots, m\}</m>, <m>J=\{1,2,\dots, n\}</m>, is a basis of <m>F^{m,n}</m>. Thus 
+          <me>\dim V=\len B=\abs{I\times J}=m\, n</me>.
+        </p>
+      </li>
+      <li>
+        <title>Polynomials of bounded degree</title>
+        <p>
+          Let <m>I</m> be an infinite subset of <m>F</m>. The tuple <m>B=(1,x,\dots, x^n)</m> is a basis of <m>P_n(I)</m>. Thus <m>\dim P_n(I)=\len B=n+1</m>. 
+        </p>
+      </li>
+      <li>
+        <title>Polynomials</title>
+        <p>
+          Let <m>I</m> be an infinite subset of <m>F</m>. The tuple <m>B=(x^n)_{n=0}^\infty=(1,x,x^2,\dots)</m> is a basis of <m>P(I)</m>. Since <m>B</m> is a linearly independent tuple, we see that <m>\dim P(I)=\infty</m>.  
+        </p>
+      </li>
+      </ul>
+    </p>
+    </example>
+    <p>
+    Even when we do not have a standard basis at our disposal, there are many situations when we can produce a basis of a space by inspection, allowing us to then easily compute the dimension. 
+    </p>
+    <example xml:id="eg_dim_R5">
+      <title>Dimension of subspace</title>
+      
+      <statement>
+        <p>
+          Use <xref ref="proc_dimension"/> to compute the dimension of the subspace <m>W\subseteq \R^5</m> defined as 
+          <me>  
+            W=\{(x_1,x_2,x_3,x_4,x_5)\in \R^5\colon x_1+x_2=x_4-x_5=0\}
+          </me>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We saw in <xref ref="eg_byinspection_R5"/> that 
+          <me>
+            B=((1,-1,0,0,0),(0,0,1,0,0),(0,0,0,1,1))
+          </me>
+          is a basis of <m>W</m>. Thus <m>\dim W=3</m>. 
+        </p>
+      </solution>
+    </example>
+    <example xml:id="eg_dim_symm">
+    <title>Dimension of symmetric matrices</title>
+    <statement>
+      <p>
+        Let <m>W\subseteq M_{22}</m> be the space of symmetric <m>2\times 2</m> matrices. Compute <m>\dim W</m> using <xref ref="proc_dimension"/>. You may take for granted that <m>W</m> is a subspace. 
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We saw in <xref ref="eg_byinspection_basis"/> that <m>B=(A_1, A_2, A_3)</m> is a basis of <m>W</m>, where 
+        <me>
+          A_1=
+          \begin{bmatrix}
+          1\amp 0\\ 0\amp 0
+          \end{bmatrix}, A_2=\begin{bmatrix}
+          0\amp 1\\ 1\amp 0
+          \end{bmatrix}
+          , A_3=\begin{bmatrix}
+          0\amp 0\\ 0\amp 1
+          \end{bmatrix}
+        </me>.
+        We conclude that <m>\dim W=\abs{B}=3</m>. 
+      </p>
+    </solution>
+    </example>
+
+    </subsection>
+    <subsection xml:id="ss_dimension_theory">
+    <title>Theoretical facts about dimension</title>
+    <p>
+      Having illustrated the definition at work with some familiar examples, we now get down to the business of showing that our definition of dimension is well-defined. The ensuing investigation will reveal a number of useful properties of dimension as it relates to bases and subspaces of vector spaces. Our first result not only ensures that our definition of dimension (<xref text="global" ref="d_dimension"/>) is well-defined, it also characterizes dimension as the minimal length of a spanning set, and the maximal length of a linearly independent tuple.
+    </p>
+    <theorem xml:id="th_basis_dimension">
+      <title>Basis bounds</title>
+      <statement>
+        <p>
+        Let <m>B</m> be a basis of the vector space <m>V</m>, and suppose <m>\len B=n&lt; \infty</m>. Let <m>S</m> be a tuple of vectors of <m>V</m>. 
+        
+        <ol>
+          <li>
+            <p>
+              If <m>S</m> spans <m>V</m>, then <m>\len S\geq n</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>S</m> is linearly independent, then <m>\len S\leq n</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>S</m> is a basis for <m>V</m>, then <m>\len S=n</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+      </statement>
+      <proof>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Suppose by contradiction that <m>\Span S=V</m> and <m>\len S &lt; n</m>. It follows from <xref ref="th_span_ind"/> that <m>B</m> is linearly dependent. Since this is a contradiction, we conclude that <m>\len S\geq n</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                This also follows from <xref ref="th_span_ind"/>: since <m>B</m> is a spanning set of <m>V</m> any of length greater than <m>n=\len B</m> must be linearly dependent.
+              </p>
+            </li>
+            <li>
+              <p>
+                This follows from (1) and (2): if <m>S</m> is a basis, then since <m>S</m> spans, we have <m>\len S\geq n</m>; and since <m>B</m> is linearly independent we have <m>\len S\leq n</m>. We conclude that <m>\len S=n</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </proof>
+    </theorem>
+    <p>
+
+      The contracting and expanding theorem below is very useful theoretical consequence of <xref ref="th_basis_dimension"/>. It allows us to construct a customized basis starting from a given tuple <m>S</m>. We will make heavy use of this theorem in our later theoretical developments. 
+      </p>
+      <theorem xml:id="th_basis_contract_expand">
+        <title>Contracting and expanding</title>
+        <statement>
+          <p>
+          Let <m>V</m> be a vector space of dimension <m>n</m>, and let <m>S</m> be a tuple of vectors of <m>V</m>.
+          <ol>
+            <li>
+              <title>Contract to basis</title>
+              <p>
+                If <m>S</m> spans <m>V</m>, then there is a subtuple of <m>S</m> that is a basis of <m>V</m>: <ie />, we can <em>contract</em> a spanning set to a basis.
+              </p>
+            </li>
+            <li>
+            <title>Extend to basis</title>
+              <p>
+                If <m>S</m> is linearly independent, then <m>S</m> is a subtuple of a basis of <m>V</m>: <ie />, we can <em>extend</em> a linearly independent tuple to a basis.
+              </p>
+            </li>
+          </ol>
+        </p>
+        </statement>
+        <proof>
+          <p> 
+            <ol>
+              <li>
+                <p>
+                Let <m>S=(v_i)_{i\in I}</m> and assume <m>\Span S=V</m>. We will assume that <m>S</m> is finite: <ie/>, <m>\abs{I}=n&lt; \infty</m>. (We leave as a homework exercise the case where <m>S</m> is infinite.) 
+                Since <m>I</m> is finite, so too is the set <m>\mathcal{P}(I)</m> of all subsets <m>J</m> of <m>I</m>: in fact, we have <m>\mathcal{P}(I)=2^n</m>. It follows that there are <m>2^n</m> different subtuples <m>(v_j)_{j\in J}</m>  of <m>S</m>. Let <m>\mathcal{S}=\{S_{1},S_{2},\dots, S_{r}\}</m> be the set of all subtuples of <m>S</m> satisfying <m>\Span S_k=V</m>, and let <m>S'</m> be any element of <m>\mathcal{S}</m> of minimal length: <ie/>, we have <m>\Span S'=V</m>, and <m>\Span S''\ne V</m> for any subtuple <m>S''</m> of <m>S</m> with <m>\len S'' &lt; \len S'</m>. 
+                </p>
+                <p>  
+                  We claim that <m>S'</m>  is linearly independent, and hence a basis of <m>V</m>, as desired. We give a proof by contradiction. If <m>S'=(v_{j})_{j\in J}</m> were linearly dependent, then by <xref ref="th_span_ind"/>, there is some index <m>j_0\in J</m> such that 
+                  <me>\Span (v_j)_{j\in J-\{j_0\}}=\Span(v_j)_{j\in J}=V</me>.
+                  But then the subtuple <m>S''=(v_j)_{j\in J-\{j_0\}}</m> would satisfy <m>\Span S''=V</m> and <me>\len S''=\abs{J}-1=\len S'-1&lt; \len S'</me>, contradicting the minimal length of <m>S'</m>. We conclude that <m>S'</m> must be linearly independent.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Assume <m>S</m> is linearly independent. Since <m>\dim V=n</m>, we must have <m>\len S\leq n</m>, and hence we can write <m>S=(v_1,v_2,\dots, v_m)</m> for some <m>m\leq n</m>.  The procedure below constructs a sequence of tuples
+                  <me>
+                    S=S_0, S_1\dots \subseteq S_k=B
+                  </me>
+                  such that <m>S_i</m> is a subtuple of <m>S_{i+1}</m> for all <m>0\leq i\leq k</m> and <m>B=S_k</m>
+                  is a basis of <m>V</m>.
+                  <ul>
+                    <li>
+                      <title>Initialization</title>
+                      <p>
+                      Let <m>S=S_0=(v_1,v_2,\dots, v_m)</m>
+                      </p>
+                    </li>
+                    <li>
+                    <title>Expansion loop</title>
+                    <p>
+                      Suppose <m>S_i=(v_1,v_2,\dots, v_{m+i})</m>.
+                      If <m>\Span S_i=V</m>, return <m>B=S_i</m>. Otherwise, define
+                      <me>
+                        S_{i+1}=(v_1,v_2,\dots, v_{m+i}, v_{m+i+1})
+                      </me>,
+                      where <m>v_{m+i+1}</m> is any element of <m>V</m> that is not contained in <m>\Span S_i</m>.
+                    </p>
+                  </li>
+                  </ul>
+                  Some observations:
+                  <ol marker="i">
+                    <li>
+                      <p>
+                      For all <m>0\leq i\leq k</m> the tuple <m>S_i</m> is linearly independent. This can be shown by induction, the crucial point being that if <m>S_i</m> is linearly independent, then so is <m>S_{i+1}</m>, precisely since <m>v_{m+i+1}\notin \Span(v_1,v_2,\dots, v_{m+i})</m>. (This follows from <xref ref="cor_span_ind"/>.)
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        The procedure must halt. Why? Since <m>\dim V=n</m>, and since each <m>S_i</m> is linearly independent, we must have <m>\len S_i\leq n</m> for all <m>i</m> by <xref ref="th_basis_dimension"/>. Since <m>\len S_i=m+i</m>, the procedure must halt in at most <m>i=n-m</m> steps.
+                      </p>
+                    </li>
+                  </ol>
+                  From (ii) we may assume the procedure halts at <m>S_k</m> for some <m>k\geq 0</m>. From (i) we know that <m>S_k</m> is linearly independent. Furthermore, since the procedure halts at <m>S_k</m>, we know that <m>\Span S_k=V</m>. It follows that <m>B=S_k</m> is a basis containing <m>S</m>, as desired.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </proof>
+      </theorem>
+      
+      <p>
+        The following corollary follows from <xref ref="th_basis_dimension"/> and <xref ref="th_basis_contract_expand"/>. We call it a <q>street smarts</q> result as the first two statements give us a quick and dirty way of dashing a set's hopes of being a basis. The third statement asserts that when a finite set's cardinality matches the dimension of a space, then to prove it is a basis it suffices to prove either one of the two defining properties of <xref ref="d_basis"/>.
+      </p>
+      <corollary xml:id="cor_street_smarts">
+        <title>Street smarts</title>
+        <statement>
+          <p>
+          Let <m>V</m> be a vector space of dimension <m>n</m>, and let <m>S</m> be a tuple of vectors of <m>V</m>. 
+          <ol>
+            <li>
+              <p>
+                If <m>\len S&lt; n</m>, then <m>S</m> does not span <m>V</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>\len &gt; n</m>, then <m>S</m> is linearly dependent.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>\len =n</m>, then the following are equivalent:
+                <ol marker="i">
+                  <li>
+                    <p>
+                      <m>S</m> is a basis.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <m>S</m> spans <m>V</m>.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                       <m>S</m> is linearly independent.
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </li>
+          </ol>
+        </p>
+        </statement>
+        <proof>
+          <p>
+            Statements (1) and (2) follow directly from <xref ref="th_basis_dimension"/>. Statement (3) is an easy consequence of <xref ref="th_basis_contract_expand"/>. For example, if <m>S</m> spans <m>V</m>, then there is a subset <m>S'</m> of <m>S</m> that is a basis of <m>V</m>; since all bases of <m>V</m> have <m>n</m> elements, and since <m>\len =n</m>, we must have <m>S'=S</m>; thus <m>S</m> is a basis. The proof for a linear independent set <m>S</m> is similar, and is left to the reader.
+          </p>
+        </proof>
+      </corollary>
+      <p>
+        We are often in a situation where we wish to show a given subspace of a vector space is in fact the entire space. For example, when deciding whether a set <m>S</m> spans a vector space <m>V</m>, we are asking whether <m>W=\Span S</m> is all of <m>V</m>. As the next result illustrates, dimension is a very useful tool in this regard.
+      </p>
+      <corollary xml:id="cor_dimension_subspace">
+        <title>Dimension of subspaces</title>
+        <statement>
+          <p>
+          Let  <m>V</m> be a vector space.
+          
+          <ol>
+            <li>
+              <p>
+                If <m>W\subseteq V</m> is a subspace, then <m>\dim W\leq \dim V</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>W\subseteq V</m> is a subspace, then <m>\dim W=\dim V</m> if and only if <m>W=V</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+        </statement>
+        <proof>
+          <p>
+            <ol>
+              <li>
+                <p>
+                  Firstly, if <m>\dim V=\infty</m>, then clearly <m>\dim W\leq \dim V</m> for any subspace <m>W\subseteq V</m>.
+                </p>
+                <p>
+                  Now assume <m>\dim V=n</m>. Apply the extend to a basis procedure described in the proof of <xref ref="th_basis_contract_expand"/> to the empty list <m>S=()</m>, which is linearly independent, considered as a tuple of vectors in <m>W</m>. Since <m>W\subseteq V</m>, and since <m>\dim V=n</m>, the linearly independent tuples <m>S_i</m> must satisfy <m>i=\len S_i\leq n</m>. Thus the procedure must halt with a basis <m>B</m> of <m>W</m> satisfying <m>\len B\leq n</m>. We conclude that <m>\dim W\leq \dim V</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Clearly, if <m>W=V</m>, then <m>\dim W=\dim V</m>. For the other direction, assume <m>\dim W=\dim V=n</m>. Let <m>B</m> be a basis for <m>W</m>. Since <m>B</m> is linearly independent, it can be extended to a basis <m>B'</m> of <m>V</m> (<xref ref="th_basis_contract_expand" text="global"/>). Since <m>\len B=\dim W=\dim V</m>, and since all bases of <m>V</m> have cardinality <m>n</m>, we must have <m>B=B'</m>. It follows that <m>B</m> is also a basis of <m>V</m>, and hence that
+                  <me>
+                    V=\Span B=W
+                  </me>.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </proof>
+      </corollary>
+      <example xml:id="eg_subspace_dimension">
+        <title>Dimension of subspace</title>
+        <statement>
+          <p>
+            Let <m>W=\Span\{A_1, A_2, A_3\}\subseteq M_{22}</m>, where 
+             <me>
+               A_1=
+               \begin{amatrix}
+               1\amp 1\\
+               1\amp 0
+               \end{amatrix}, 
+               A_2=
+               \begin{amatrix}
+               0\amp 1\\
+               1\amp 0
+               \end{amatrix},
+               A_3=
+               \begin{bmatrix}
+               0\amp 1\\
+               1\amp 1
+               \end{bmatrix}
+             </me>.
+             Let <m>W'</m> be the space of symmetric <m>2\times 2</m> matrices. Use <xref ref="cor_dimension_subspace"/> and the fact that <m>\dim W'=3</m> to prove that <m>W=W'</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <ul>
+              <li>
+                <p>
+                  Since each <m>A_i</m> is symmetric, and since the set of symmetric matrices <m>W'</m> is a subspace, we have <m>W=\Span(A_1, A_2,A_3)\subseteq W'</m> by statement (2) of <xref ref="th_span"/>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  The set <m>B=(A_1, A_2, A_3)</m> is linearly independent: 
+                  <md>
+                    <mrow>aA_1+bA_2+cA_3=\boldzero \amp \iff \begin{bmatrix}
+                    a\amp a+b+c\\ 
+                    a+b+c\amp c
+                    \end{bmatrix}=
+                    \begin{bmatrix}
+                    0\amp 0\\ 0\amp 0
+                    \end{bmatrix}
+                    </mrow>
+                    <mrow> \amp \iff a=c=0 \text{ and } a+b+c=0 </mrow>
+                    <mrow> \amp \iff a=b=c=0</mrow>
+                  </md>.
+                  Thus <m>B</m> is a basis of <m>W=\Span B</m>, and we conclude that <m>\dim W=3</m>. 
+                </p>
+              </li>
+              <li>
+                <p>
+                  We saw in <xref ref="eg_dim_symm"/> that <m>\dim W'=3</m>: <ie/>, the space of symmetric <m>2\times 2</m> is <m>3</m>-dimensional. Since <m>W</m> is a subspace of <m>W'</m> and <m>\dim W=\dim W'=3</m>, we conclude that <m>W=W'</m> by <xref ref="cor_dimension_subspace"/>. 
+                </p>
+              </li>
+            </ul>
+          </p>
+        </solution>
+      </example>
+      <p>
+        <xref ref="cor_dimension_subspace"/> is also of use in situations where we wish to characterize all subspaces of a given <m>n</m>-dimensional vector space <m>V</m>. By the corollary, any such subspace <m>W</m> must have dimension <m>k</m> for some <m>0\leq k\leq n</m>; and this in turn means that <m>W</m> must have a basis of cardinality <m>k</m>. We thus have the beginnings of a systematic description of all subspaces <m>W\subseteq V</m>, organized by dimension <m>k=\dim W</m>, for <m>0\leq k\leq n</m>. 
+      </p>
+      <example xml:id="eg_subspaces_R3">
+        <title>Subspaces of <m>\R^3</m></title>
+        <p>
+          We describe all subspaces <m>W</m> of <m>\R^3</m> ordered by dimension. 
+          <ul>
+            <li>
+              <title><m>\dim W=0</m></title>
+              <p>
+                If <m>\dim W=0</m>, then <m>W</m> must have the empty list <m>B=()</m> as a basis (by definition of dimension), and hence <m>W=\Span()=\{\boldzero\}</m>, the zero subspace. 
+              </p>
+            </li>
+            <li>
+              <title><m>\dim W=1</m></title>
+              <p>
+                If <m>\dim W=1</m>, then <m>W</m> has a basis <m>B=(\boldv)</m> consisting of a single nonzero vector <m>\boldv\in \R^3</m>. In this case we have <m>W=\Span(\boldv)=\{t\boldv\colon t\in \R\}</m>, which is a line passing through the origin with direction vector <m>\boldv</m>. Thus <m>1</m>-dimensional subspaces of <m>\R^3</m> are lines passing through the origin.  
+              </p>
+            </li>
+            <li>
+              <title><m>\dim W=2</m></title>
+              <p>
+                If <m>\dim W=2</m>, then <m>W</m> has a basis <m>B=(\boldv_1, \boldv_2)</m> containing two non-parallel vectors in <m>\R^3</m>. You learn in multivariable calculus that 
+                <me>W=\Span(\boldv_1, \boldv_2)=\{s\boldv_1+t\boldv_2\colon s,t\in \R\}</me> is the plane in <m>\R^3</m> passing through the origin with <q>direction vectors</q> <m>\boldv_1, \boldv_2</m>. In fact, you can show that the <em>cross product</em> <m>\boldn=\boldv_1\times \boldv_2</m> is a normal vector for the plane <m>W</m> in this case. Thus the <m>2</m>-dimensional subspaces of <m>\R^3</m> are planes passing through the origin.  
+              </p>
+            </li>
+            <li>
+              <title><m>\dim W=3</m></title>
+              <p>
+                Assume <m>\dim W=3</m>. Since <m>W</m> is a subspace of <m>\R^3</m>, and since <m>\dim W=\dim \R^3=3</m>, we must have <m>W=\R^3</m> according to <xref ref="cor_dimension_subspace"/>. It is as simple as that! Thus <m>\R^3</m> is the only <m>3</m>-dimensional subspace of <m>\R^3</m>.  
+              </p>
+            </li>
+          </ul>
+        </p>
+      </example>
+      <p>
+        Lastly, we provide a first example illustrating the power of our expand to a basis technique. 
+      </p>
+      <corollary xml:id="cor_direct_sum_existence">
+        <title>Existence of direct sums</title>
+        <statement>
+          <p>
+            Assume <m>V</m> is a finite-dimensional vector space. Given any subspace <m>W\subseteq V</m> there is a subpace <m>W'\subseteq V</m> satisfying <m>V=W\oplus W'</m>. 
+          </p>
+        </statement>
+        <proof>
+          <p>
+            Assume <m>\dim V=n</m>.  Given a subspace <m>W\subset V</m>, we know that <m>\dim W\leq n</m>, and hence that <m>W</m> has a finite basis <m>S=(v_1,v_2,\dots, v_r)</m> for some <m>r\leq n</m>. Since <m>S</m> is linearly independent, it can be extended to a basis <m>B=(v_1,v_2,\dots, v_r,v_{r+1},\cdots, v_n)</m> of <m>V</m>. Define <m>W'=\Span(v_{r+1}, \dots, v_n)</m>. We claim that <m>W\oplus W'=V</m>. 
+          </p>
+        </proof>
+      </corollary>
+      <p>
+        That was quite a dose of theory! For your convenience, we collect the various results on dimension, together with their nicknames, in one omnibus theorem.
+      </p>
+      <theorem xml:id="th_dimension_compendium">
+        <title>Dimension theory compendium</title>
+        <statement>
+          <p>
+          Let <m>V</m> be a vector space of dimension <m>n</m>, and let <m>S</m> be a tuple of vectors of <m>V</m>.
+          <ol>
+            <li>
+              <title>Contract</title>
+              <p>
+              If <m>S</m> spans <m>V</m>, then <m>S</m> can be contracted to a basis of <m>V</m>.
+              </p>
+            </li>
+            <li>
+              <title>Expand</title>
+              <p>
+              If <m>S</m> is linearly independent, then <m>S</m> can be extended to a basis of <m>V</m>.
+              </p>
+            </li>
+            <li>
+              <title>Street smarts</title>
+              <p>
+              If <m>\len S&lt; n</m>, then <m>S</m> does not span <m>V</m>.
+              </p>
+            </li>
+            <li>
+              <title>Street smarts</title>
+              <p>
+              If  <m>\len S&gt;  n</m>, then <m>S</m> is linearly dependent.
+              </p>
+            </li>
+            <li>
+              <title>Street smarts</title>
+              <p>
+                If  <m>\len S =n</m>, then <m>S</m> is a basis if and only if <m>S</m> spans if and only if <m>S</m> is linearly independent.
+              </p>
+            </li>
+            <li>
+              <title>Dimension of subspaces</title>
+              <p>
+              If <m>W\subseteq V</m> is a subspace, then
+              <ol>
+                <li>
+                  <p>
+                    <m>\dim W\leq \dim V</m>, and
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>\dim W=\dim V</m> if and only if <m>W=V</m>.
+                  </p>
+                </li>
+              </ol>
+              </p>
+            </li>
+            <li>
+              <title>Existence of direct sums</title>
+              <p>
+                Given any subspace <m>W\subseteq V</m>, there is a subspace <m>W'</m> satisfying <m>V=W\oplus W'</m>. 
+              </p>
+            </li>
+          </ol>
+        </p>
+        </statement>
+      </theorem>
+    </subsection>
+
+</section>

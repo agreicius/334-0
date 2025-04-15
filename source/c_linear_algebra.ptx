@@ -9,4 +9,5 @@
     <xi:include href="s_subspace_sum.ptx" />
     <xi:include href="s_span_ind.ptx" />
     <xi:include href="s_basis.ptx" />
+    <!-- <xi:include href="s_dimension.ptx" /> -->
 </chapter>

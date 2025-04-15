@@ -104,6 +104,7 @@
     \DeclareMathOperator{\flux}{flux}
     \DeclareMathOperator{\Hom}{Hom}
     \DeclareMathOperator{\ab}{ab}
+    \DeclareMathOperator{\len}{len}
     \newcommand{\surjects}{\twoheadrightarrow}
     \newcommand{\injects}{\hookrightarrow}
     \newcommand{\bijects}{\leftrightarrow}
