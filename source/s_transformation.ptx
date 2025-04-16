@@ -540,7 +540,7 @@
         </statement>
       </algorithm>
       <p>
-        Next we introduce an extremely important family of linear transformations:  so-called <em>matrix transformations</em> of the form <m>T_A\colon F^n\rightarrow F^m</m>, where <m>A</m> is a given <m>m\times n</m> matrix with entries in <m>F</m>.
+        Next we introduce an extremely important family of linear transformations: any matrix <m>A\in F^{m,n}</m> has associated to it a linear transformation <m>T_A\colon F^n\rightarrow F^m</m> called a <em>matrix transformation</em>. 
       </p>
   
       <definition xml:id="d_matrix_transform">
@@ -582,7 +582,12 @@
       </statement>
       <solution>
       <p>
-      
+      We use the 1-step technique. As you will see the proof follows directly from elementary properties of matrix multiplication. Given any <m>\boldx,\boldy\in F^n</m> and <m>c,d\in F</m>, we have 
+      <md>
+        <mrow>T_A(c\boldx+d\boldy) \amp =A(c\boldx+d\boldy) \amp (\text{def. of } T_A)</mrow>
+        <mrow> \amp = cA\boldx+dA\boldy \amp (\text{matrix mult. props.})</mrow>
+        <mrow> \amp = cT_A(\boldx)+dT_A(\boldy) \amp (\text{def. of } T_A)</mrow>
+      </md>.
       </p>
       </solution>
       </example>
@@ -672,14 +677,16 @@
     Let <m>V</m> and <m>W</m> be vector spaces, and let <m>B=(v_i)_{i\in I}</m> be a basis of <m>V</m>. 
     <ol>
         <li>
+            <title>Uniqueness</title>
             <p>
                 Give linear transformations <m>T_1,T_2\in \mathcal{L}(V,W)</m>, we have 
                 <m>T_1=T_2</m> if and only if <m>T_1(v_i)=T_2(v_i)</m> for all <m>i\in I</m>. 
             </p>
         </li>
         <li>
+            <title>Existence</title>
             <p>
-                Given any tuple <m>(w_i)_{i\in I}</m> of vectors of <m>W</m>, there is a unique linear transformation <m>T\colon V\rightarrow W</m> satisfying <m>T(v_i)=w_i</m> for all <m>i\in I</m>.
+                Given any tuple <m>(w_i)_{i\in I}</m> of vectors of <m>W</m>, there is a linear transformation <m>T\colon V\rightarrow W</m> satisfying <m>T(v_i)=w_i</m> for all <m>i\in I</m>. Furthermore, as consequence of (1) there is a unique <m>T\in \mathcal{L}(V,W)</m> satisfying this property. 
             </p>
         </li>
     </ol>
@@ -705,6 +712,41 @@
                 We have shown that <m>T_1(v)=T_2(v)</m> for all <m>v\in V</m>. By definition, this means that <m>T_1=T_2</m>.
                 </p>
             </li>
+            <li>
+                <p>
+                    Given a tuple <m>(w_i)_{i\in i}</m> of vectors of <m>W</m>, the following recipe defines a function <m>T\colon V\rightarrow W</m>:
+                    <ul>
+                        <li>
+                            <p>
+                                given <m>v\in V</m>, write <m>v=\sum_{i\in I}c_iv_i</m> as a linear combination of the vectors <m>v_i</m>;
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                define <m>T(v)=\sum_{i\in I}c_iw_i</m>.
+                            </p>
+                        </li>
+                    </ul>
+                We need to address two details of this recipe in order to convince ourselves that this determines a well-defined function <m>T</m>. Firstly, since <m>B</m> is a basis, the coefficients <m>c_i</m> in the linear combination <m>v=\sum_{i\in I}c_iv_i</m> are <em>uniquely</em> determined by <m>v</m>, making the value <m>T(v)=\sum_{i\in I}c_iw_i</m> uniquely determined. Secondly, observe that since <m>c_i=0</m> for all but finitely many <m>i\in I</m>, the expression <m>\sum_{i\in I}c_iw_i</m> is a (finite) linear combination of vectors, and thus defines an element of <m>W</m>. 
+                </p>
+                <p>
+                    From our definition of <m>T</m> it follows that <m>T(v_i)=w_i</m> for all <m>i\in I</m>. Indeed, to compute <m>T(v_i)</m> following our recipe, we write <m>v_i=1v_i</m> as a linear combination of the elements of <m>B</m>, whence it follows that <m>T(v_i)=1w_i=w_i</m>. 
+                </p>
+                <p>
+                    Lastly, we must show that <m>T</m> is linear using the 1-step technique. Given <m>v, w\in V</m> and scalars <m>c,d\in F</m>, write  
+                    <md>
+                        <mrow>v \amp =\sum_{i\in I}c_iv_i</mrow>
+                        <mrow>w \amp =\sum_{i\in I}d_iv_i</mrow>
+                    </md>
+                    as linear combinations of the <m>v_i</m>, and then compute
+                    <md>
+                        <mrow>T(cv+dw) \amp =T(\sum_{i\in i}(cc_i+dd_i)v_i)</mrow>
+                        <mrow> \amp = \sum_{i\in I}(cc_i+dd_i)v_i \amp (\text{def. of } T)</mrow>
+                        <mrow> \amp =c\sum_{i\in i}c_iv_i+d\sum_{i\in I}d_iv_i</mrow>
+                        <mrow> \amp =cT(v)+dT(w) \amp (\text{def. of } T)</mrow>
+                    </md>.
+                </p>
+            </li>
         </ol>
     </p>
     </proof>
@@ -721,12 +763,69 @@
         </li>
         <li>
             <p>
-                Consisder the second statement as a powerful <q>transformation building</q> result. In more detail, it says the following: given a basis <m>B=(v_i)_{i\in I}</m> of <m>V</m>, given any choice of values <m>w_i\in W</m>, there is a unique linear transformation <m>T\in \mathcal{L}(V,W)</m> that sends <m>v_i</m> to <m>w_i</m> for all <m>i\in I</m>. That there is a unique such <m>T</m> follows from the first statement! 
+                Consisder the second statement as a powerful <q>transformation building</q> result. In more detail, it says the following: given a basis <m>B=(v_i)_{i\in I}</m> of <m>V</m>, given any choice of values <m>w_i\in W</m>, there is a unique linear transformation <m>T\in \mathcal{L}(V,W)</m> that sends <m>v_i</m> to <m>w_i</m> for all <m>i\in I</m>. 
             </p>
         </li>
     </ol>
     </p>
     </remark>
+    <corollary xml:id="cor_matrix_transformation">
+        <title>Matrix transformations</title>
+        <statement>
+            <p>
+                Let <m>T\colon F^n\rightarrow F_m</m> be a linear transformation. There is a unique matrix <m>A\in F^{m,n}</m> such that <m>T=T_A</m>. In particular, all linear transformations from <m>F^n</m> to <m>F^m</m> are matrix transformations. 
+            </p>
+        </statement>
+        <proof>
+            <p>
+                The proof is left as an exercise. 
+            </p>
+        </proof>
+    </corollary>
+    </subsection>
+    <subsection xml:id="ss_vs_of_lin_transformations">
+    <title><m>\mathcal{L}(V,W)</m> as a vector space</title>
+    <p>
+       We end this section by providing a vector space structure to the set <m>\mathcal{L}(V,W)</m> of all linear transformations from <m>V</m> to <m>W</m>. As in <xref ref="s_vector_space"/>, we state the result as a definition with proof. 
+    </p>
+    <definition xml:id="d_linear_transformations">
+    <title>Space of linear transformations</title>
+    <statement>
+    <p>
+    Let <m>V</m> and <m>W</m> be vector spaces. Below we define a vector space structure on <m>\mathcal{L}(V,W)</m>. 
+    <ul>
+        <li>
+            <title>Vector operations</title>
+            <p>
+                Given linear transformations <m>T,S\in \mathcal{L}(V,W)</m> and scalar <m>c\in F</m>, we define linear transformations <m>T+S, cT\in \mathcal{L}(V,W)</m> as follows: 
+                <md>
+                    <mrow>(T+S)(v) \amp= T(v)+S(v) \text{ for all } v\in V </mrow>
+                    <mrow>(cT)(v) \amp =cT(v) \text{ for all } v\in V</mrow>
+                </md>.
+            </p>
+        </li>
+        <li>
+            <title>Zero vector</title>
+            <p>
+                The zero vector of <m>\mathcal{L}(V,W)</m> is the zero transformation <m>0_{V,W}\colon V\rightarrow W</m> defined <m>0_{V,W}(v)=\boldzero</m> for all <m>v\in V</m>. 
+            </p>
+        </li>
+        <li>
+            <title>Vector inverses</title>
+            <p>
+                Given a linear transformation <m>T\in \mathcal{L}(V,W)</m>, its vector inverse is the linear transformation <m>-T\in \mathcal{V,W}</m> defined as <m>(-T)(v)=-T(v)</m> for all <m>v\in V</m>. 
+            </p>
+        </li>
+    </ul>
+    We call <m>\mathcal{L}(V,W)</m>, together with these vector operations, the <term>space of linear transformations</term> from <m>V</m> to <m>W</m>. 
+    </p>
+    </statement>
+    </definition>
+    <proof>
+        <p>
+            The proof is left as an exercises. Note that before verifying the vector space axioms (i)-(viii) you must first verify that the given operations are well-defined: <ie/>, you must show that if <m>T</m> and <m>S</m> are linear transformations from <m>V</m> to <m>W</m>, then so are the functions <m>T+S</m> and <m>cT</m>.
+        </p>
+    </proof>
     
     </subsection>
 
