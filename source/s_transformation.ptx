@@ -230,7 +230,7 @@
             <title>Notational quirk</title>
       
             <p>
-              <xref ref="eg_nonlinear"/> brings to light a notational quirk when dealing with functions of the form <m>T\colon F^n\rightarrow W</m>. Technically speaking, given an input <m>\boldx=(x_1,x_2,\dots, x_n)\in \R^n</m> we should write
+              <xref ref="eg_nonlinear"/> brings to light a notational quirk when dealing with functions of the form <m>T\colon F^n\rightarrow W</m>. Technically speaking, given an input <m>\boldx=(x_1,x_2,\dots, x_n)\in F^n</m> we should write
               <me>
                 T(\boldx)=T((x_1,x_2,\dots, x_n))
               </me>.
@@ -507,7 +507,7 @@
             <title>Transformations distribute over combinations</title>
       
             <p>
-              <xref ref="th_trans_prop_combo">Statement</xref> of <xref ref="th_transform_basic_props"/> combines and extends our distributive interpretations of <xref ref="rm_lin_trans"/>. It says that  the application of a linear transformation <em>distributes</em> over linear combinations of vectors.
+              <xref ref="th_trans_prop_combo">Statement</xref> of <xref ref="th_transform_basic_props"/> combines and extends our distributive interpretations of <xref ref="rm_lin_trans"/>. It says that  the application of a linear transformation distributes over arbitrary linear combinations of vectors.
             </p>
           </remark>
       
@@ -677,16 +677,17 @@
     Let <m>V</m> and <m>W</m> be vector spaces, and let <m>B=(v_i)_{i\in I}</m> be a basis of <m>V</m>. 
     <ol>
         <li>
-            <title>Uniqueness</title>
             <p>
                 Give linear transformations <m>T_1,T_2\in \mathcal{L}(V,W)</m>, we have 
                 <m>T_1=T_2</m> if and only if <m>T_1(v_i)=T_2(v_i)</m> for all <m>i\in I</m>. 
             </p>
         </li>
         <li>
-            <title>Existence</title>
             <p>
-                Given any tuple <m>(w_i)_{i\in I}</m> of vectors of <m>W</m>, there is a linear transformation <m>T\colon V\rightarrow W</m> satisfying <m>T(v_i)=w_i</m> for all <m>i\in I</m>. Furthermore, as consequence of (1) there is a unique <m>T\in \mathcal{L}(V,W)</m> satisfying this property. 
+                Given any tuple <m>(w_i)_{i\in I}</m> of vectors of <m>W</m>, there is a linear transformation <m>T\colon V\rightarrow W</m> satisfying 
+                <men xml:id="eq_trans_basis">
+                    T(v_i)=w_i
+                </men> for all <m>i\in I</m>. Furthermore, as a consequence of (1), this linear transformation <m>T</m> is unique. 
             </p>
         </li>
     </ol>
@@ -773,7 +774,7 @@
         <title>Matrix transformations</title>
         <statement>
             <p>
-                Let <m>T\colon F^n\rightarrow F_m</m> be a linear transformation. There is a unique matrix <m>A\in F^{m,n}</m> such that <m>T=T_A</m>. In particular, all linear transformations from <m>F^n</m> to <m>F^m</m> are matrix transformations. 
+                Let <m>T\colon F^n\rightarrow F^m</m> be a linear transformation. There is a unique matrix <m>A\in F^{m,n}</m> such that <m>T=T_A</m>. In particular, all linear transformations from <m>F^n</m> to <m>F^m</m> are matrix transformations. 
             </p>
         </statement>
         <proof>
@@ -807,13 +808,13 @@
         <li>
             <title>Zero vector</title>
             <p>
-                The zero vector of <m>\mathcal{L}(V,W)</m> is the zero transformation <m>0_{V,W}\colon V\rightarrow W</m> defined <m>0_{V,W}(v)=\boldzero</m> for all <m>v\in V</m>. 
+                The zero vector of <m>\mathcal{L}(V,W)</m> is the zero transformation <m>0_{V,W}\colon V\rightarrow W</m> defined as <m>0_{V,W}(v)=\boldzero</m> for all <m>v\in V</m>. 
             </p>
         </li>
         <li>
             <title>Vector inverses</title>
             <p>
-                Given a linear transformation <m>T\in \mathcal{L}(V,W)</m>, its vector inverse is the linear transformation <m>-T\in \mathcal{V,W}</m> defined as <m>(-T)(v)=-T(v)</m> for all <m>v\in V</m>. 
+                Given a linear transformation <m>T\in \mathcal{L}(V,W)</m>, its vector inverse is the linear transformation <m>-T\in \mathcal{L}(V,W)</m> defined as <m>(-T)(v)=-T(v)</m> for all <m>v\in V</m>. 
             </p>
         </li>
     </ul>
