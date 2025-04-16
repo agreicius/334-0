@@ -29,7 +29,7 @@
                 </li>
               <li>
                 <p>
-                If <m>V</m> is finite dimensional, then we define <m>\dim V</m> to be the length of any basis of <m>V</m>: <ie/>, if <m>B=(v_i)_{i\in I}</m> is a basis of <m>V</m>, then <m>\dim V=\abs{I}</m>.
+                If <m>V</m> is finite dimensional, then we define <m>\dim V</m> to be the length of any basis of <m>V</m>: <ie/>, if <m>B=(v_i)_{i\in I}</m> is a basis of <m>V</m>, then <m>\dim V=\len B=\abs{I}</m>.
                 </p>
               </li>
             </ul>
@@ -43,7 +43,7 @@
         </p>
       </remark>
       <p>
-        By definition, to show a vector space <m>V</m> has dimension <m>n</m>, we must exhibit a basis <m>B</m> with <m>\len B=n</m>. Similarly to show <m>V</m> is infinite dimensional, we must show that it does not have a finite basis: or equivalently, using <xref ref="cor_finite_dim"/>, we must produce an infinite linearly independent tuple. Let's codify this with a procedure. 
+        By definition, to show a vector space <m>V</m> has dimension <m>n</m>, we must exhibit a basis <m>B</m> with <m>\len B=n</m>. Similarly, to show <m>V</m> is infinite dimensional, we must show that it does not have a finite basis: or equivalently, using <xref ref="cor_finite_dim"/>, we must produce an infinite linearly independent tuple. Let's codify this with a procedure. 
       </p>
       <algorithm xml:id="proc_dimension">
         <title>Computing dimension</title>
@@ -238,13 +238,13 @@
             <li>
               <title>Contract to basis</title>
               <p>
-                If <m>S</m> spans <m>V</m>, then there is a subtuple of <m>S</m> that is a basis of <m>V</m>: <ie />, we can <em>contract</em> a spanning set to a basis.
+                If <m>S</m> spans <m>V</m>, then there is a subtuple of <m>S</m> that is a basis of <m>V</m>: <ie />, we can <term>contract</term> a spanning set to a basis.
               </p>
             </li>
             <li>
             <title>Extend to basis</title>
               <p>
-                If <m>S</m> is linearly independent, then <m>S</m> is a subtuple of a basis of <m>V</m>: <ie />, we can <em>extend</em> a linearly independent tuple to a basis.
+                If <m>S</m> is linearly independent, then <m>S</m> is a subtuple of a basis of <m>V</m>: <ie />, we can <term>extend</term> a linearly independent tuple to a basis.
               </p>
             </li>
           </ol>
@@ -313,7 +313,7 @@
       </theorem>
       
       <p>
-        The following corollary follows from <xref ref="th_basis_dimension"/> and <xref ref="th_basis_contract_expand"/>. We call it a <q>street smarts</q> result as the first two statements give us a quick and dirty way of dashing a set's hopes of being a basis. The third statement asserts that when a finite set's cardinality matches the dimension of a space, then to prove it is a basis it suffices to prove either one of the two defining properties of <xref ref="d_basis"/>.
+        The following corollary follows from <xref ref="th_basis_dimension"/> and <xref ref="th_basis_contract_expand"/>. We call it a <q>street smarts</q> result as the first two statements give us a quick and dirty way of dashing a tuple's hopes of being a basis. The third statement asserts that when a finite set's cardinality matches the dimension of a space, then to prove it is a basis it suffices to prove either one of the two defining properties of <xref ref="d_basis"/>.
       </p>
       <corollary xml:id="cor_street_smarts">
         <title>Street smarts</title>
@@ -505,13 +505,39 @@
         </p>
       </example>
       <p>
-        Lastly, we provide a first example illustrating the power of our expand to a basis technique. 
+        Statement (1) of the next theorem is an excellent first example illustrating the power of our expand to a basis technique. As mentioned above, you will see this trick many times throughout the course. 
       </p>
-      <corollary xml:id="cor_direct_sum_existence">
-        <title>Existence of direct sums</title>
+      <theorem xml:id="th_direct_sum_dim">
+        <title>Direct sums</title>
         <statement>
           <p>
-            Assume <m>V</m> is a finite-dimensional vector space. Given any subspace <m>W\subseteq V</m> there is a subpace <m>W'\subseteq V</m> satisfying <m>V=W\oplus W'</m>. 
+            Assume <m>V</m> is a finite-dimensional vector space. 
+            <ol>
+              <li>
+                <p>
+                  Given any subspace <m>W\subseteq V</m> there is a subpace <m>W'\subseteq V</m> satisfying <m>V=W\oplus W'</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Let <m>W=\sum_{i=1}^r W_i</m>, where <m>W_i</m> is a subspace of <m>V</m> for all <m>1\leq i\leq r</m>. The following statements are equivalent.
+                  <ol marker="(i)">
+                    <li>
+                      <p>
+                        <m>W=\bigoplus_{i=1}^r W_i</m>.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        <m>\dim W=\sum_{i=1}^r\dim W_i</m>. 
+                      </p>
+                    </li>
+
+                  </ol>
+                </p>
+              </li>
+            </ol>
+            Given any subspace <m>W\subseteq V</m> there is a subpace <m>W'\subseteq V</m> satisfying <m>V=W\oplus W'</m>. 
           </p>
         </statement>
         <proof>
@@ -519,7 +545,7 @@
             Assume <m>\dim V=n</m>.  Given a subspace <m>W\subset V</m>, we know that <m>\dim W\leq n</m>, and hence that <m>W</m> has a finite basis <m>S=(v_1,v_2,\dots, v_r)</m> for some <m>r\leq n</m>. Since <m>S</m> is linearly independent, it can be extended to a basis <m>B=(v_1,v_2,\dots, v_r,v_{r+1},\cdots, v_n)</m> of <m>V</m>. Define <m>W'=\Span(v_{r+1}, \dots, v_n)</m>. We claim that <m>W\oplus W'=V</m>. 
           </p>
         </proof>
-      </corollary>
+      </theorem>
       <p>
         That was quite a dose of theory! For your convenience, we collect the various results on dimension, together with their nicknames, in one omnibus theorem.
       </p>
@@ -529,18 +555,7 @@
           <p>
           Let <m>V</m> be a vector space of dimension <m>n</m>, and let <m>S</m> be a tuple of vectors of <m>V</m>.
           <ol>
-            <li>
-              <title>Contract</title>
-              <p>
-              If <m>S</m> spans <m>V</m>, then <m>S</m> can be contracted to a basis of <m>V</m>.
-              </p>
-            </li>
-            <li>
-              <title>Expand</title>
-              <p>
-              If <m>S</m> is linearly independent, then <m>S</m> can be extended to a basis of <m>V</m>.
-              </p>
-            </li>
+            
             <li>
               <title>Street smarts</title>
               <p>
@@ -557,6 +572,18 @@
               <title>Street smarts</title>
               <p>
                 If  <m>\len S =n</m>, then <m>S</m> is a basis if and only if <m>S</m> spans if and only if <m>S</m> is linearly independent.
+              </p>
+            </li>
+            <li>
+              <title>Contract</title>
+              <p>
+              If <m>S</m> spans <m>V</m>, then <m>S</m> can be contracted to a basis of <m>V</m>.
+              </p>
+            </li>
+            <li>
+              <title>Expand</title>
+              <p>
+              If <m>S</m> is linearly independent, then <m>S</m> can be extended to a basis of <m>V</m>.
               </p>
             </li>
             <li>
@@ -581,6 +608,17 @@
               <title>Existence of direct sums</title>
               <p>
                 Given any subspace <m>W\subseteq V</m>, there is a subspace <m>W'</m> satisfying <m>V=W\oplus W'</m>. 
+              </p>
+            </li>
+            <li>
+              <title>Dimension of direct sums</title>
+              
+              
+              <p>
+                Given <m>W=\sum_{i=1}^r W_i</m>, where <m>W_i</m> is a subspace of <m>V</m> for all <m>1\leq i\leq k</m>, we have 
+                <me>
+                  W=\bigoplus_{i=1}^rW_i \iff \dim W=\sum_{i=1}^r\dim W_i
+                </me>.
               </p>
             </li>
           </ol>
