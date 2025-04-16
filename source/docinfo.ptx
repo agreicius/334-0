@@ -206,25 +206,22 @@
     \right)  }
     \newcommand{\colvec}[2][c]{\begin{amatrix}[#1] #2 \end{amatrix}}
     \newcommand{\rowvec}[1]{\begin{bmatrix} #1 \end{bmatrix}}
-    \newenvironment{linsys}[2][m]{
-    \begin{array}[#1]{@{}*{#2}{rc}r@{}}
-    }{
-    \end{array}}
   </macros>
   <!-- If you put any latex-image elements you can include preambles  --> <!-- for those in the next element.                                 -->
-  <latex-image-preamble>
+  <latex-image-preamble>  
     \usepackage{tikz}
     \usepackage{tikz-cd}
     \usepackage{tkz-graph}
     \usepackage{tkz-euclide}
     \usepackage{pgfplots}
-    \usetikzlibrary{matrix,shapes,decorations.pathreplacing,fit,backgrounds}
+    \usetikzlibrary{matrix,shapes,decorations.pathreplacing,fit,backgrounds,positioning}
     \usetikzlibrary{patterns}
     \usetikzlibrary{positioning}
     \usetikzlibrary{arrows}
     \usetikzlibrary{calc}
     \usetikzlibrary{through,intersections,decorations,shadows,fadings}
-  </latex-image-preamble> 
+  </latex-image-preamble>
+
   <!-- Renamings --> 
   <!-- <rename element="convention">Notation</rename>  -->
   <rename element="algorithm">Procedure</rename> 
