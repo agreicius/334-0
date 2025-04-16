@@ -459,13 +459,13 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <div class="para">Let <span class="process-math">\(V\)</span> be a vector space. The <dfn class="terminology">dimension of <span class="process-math">\(V\)</span></dfn>, denoted <span class="process-math">\(\dim V\text{,}\)</span> is defined as follows:</div>
 <ul class="disc" id="d_dimension-3-1-4">
 <li id="d_dimension-3-1-4-1"><div class="para" id="d_dimension-3-1-4-1-1">If <span class="process-math">\(V\)</span> is infinite dimensional, then <span class="process-math">\(\dim V=\infty\text{,}\)</span> as before.</div></li>
-<li id="d_dimension-3-1-4-2"><div class="para" id="d_dimension-3-1-4-2-1">If <span class="process-math">\(V\)</span> is finite dimensional, then we define <span class="process-math">\(\dim V\)</span> to be the length of any basis of <span class="process-math">\(V\text{:}\)</span> i.e., if <span class="process-math">\(B=(v_i)_{i\in I}\)</span> is a basis of <span class="process-math">\(V\text{,}\)</span> then <span class="process-math">\(\dim V=\abs{I}\text{.}\)</span>
+<li id="d_dimension-3-1-4-2"><div class="para" id="d_dimension-3-1-4-2-1">If <span class="process-math">\(V\)</span> is finite dimensional, then we define <span class="process-math">\(\dim V\)</span> to be the length of any basis of <span class="process-math">\(V\text{:}\)</span> i.e., if <span class="process-math">\(B=(v_i)_{i\in I}\)</span> is a basis of <span class="process-math">\(V\text{,}\)</span> then <span class="process-math">\(\dim V=\len B=\abs{I}\text{.}\)</span>
 </div></li>
 </ul>
 </div></article><article class="remark remark-like" id="ss_dimension-4"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.8.2</span><span class="period">.</span><span class="space"> </span><span class="title">Is dimension well-defined?</span>
 </h4>
-<div class="para" id="ss_dimension-4-2">The statement of <a href="s_dimention.html#d_dimension" class="xref" data-knowl="./knowl/xref/d_dimension.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.8.1: Dimension">Definition 1.8.1</a> is elegant in its simplicity, but a very serious question immediately arises: is this definition well defined? In other words, do any two bases of a vector space have the same length? Who’s to say that a vector space <span class="process-math">\(V\)</span> cannot have one basis of length two and another of length 5: or worse, one basis that is finite and another that is infinite? As we will see shortly, any two bases of a finite-dimensional space do indeed have the same length. But first we illustrate our definition with some familiar examples.</div></article><div class="para" id="ss_dimension-5">By definition, to show a vector space <span class="process-math">\(V\)</span> has dimension <span class="process-math">\(n\text{,}\)</span> we must exhibit a basis <span class="process-math">\(B\)</span> with <span class="process-math">\(\len B=n\text{.}\)</span> Similarly to show <span class="process-math">\(V\)</span> is infinite dimensional, we must show that it does not have a finite basis: or equivalently, using <a href="s_basis.html#cor_finite_dim" class="xref" data-knowl="./knowl/xref/cor_finite_dim.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.7.16: Infinite-dimensional spaces">Corollary 1.7.16</a>, we must produce an infinite linearly independent tuple. Let’s codify this with a procedure.</div>
+<div class="para" id="ss_dimension-4-2">The statement of <a href="s_dimention.html#d_dimension" class="xref" data-knowl="./knowl/xref/d_dimension.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.8.1: Dimension">Definition 1.8.1</a> is elegant in its simplicity, but a very serious question immediately arises: is this definition well defined? In other words, do any two bases of a vector space have the same length? Who’s to say that a vector space <span class="process-math">\(V\)</span> cannot have one basis of length two and another of length 5: or worse, one basis that is finite and another that is infinite? As we will see shortly, any two bases of a finite-dimensional space do indeed have the same length. But first we illustrate our definition with some familiar examples.</div></article><div class="para" id="ss_dimension-5">By definition, to show a vector space <span class="process-math">\(V\)</span> has dimension <span class="process-math">\(n\text{,}\)</span> we must exhibit a basis <span class="process-math">\(B\)</span> with <span class="process-math">\(\len B=n\text{.}\)</span> Similarly, to show <span class="process-math">\(V\)</span> is infinite dimensional, we must show that it does not have a finite basis: or equivalently, using <a href="s_basis.html#cor_finite_dim" class="xref" data-knowl="./knowl/xref/cor_finite_dim.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.7.16: Infinite-dimensional spaces">Corollary 1.7.16</a>, we must produce an infinite linearly independent tuple. Let’s codify this with a procedure.</div>
 <article class="algorithm theorem-like" id="proc_dimension"><h4 class="heading">
 <span class="type">Procedure</span><span class="space"> </span><span class="codenumber">1.8.3</span><span class="period">.</span><span class="space"> </span><span class="title">Computing dimension.</span>
 </h4>
@@ -593,10 +593,10 @@ A_1=
 </div>
 <ol class="decimal" id="th_basis_contract_expand-2-1-5">
 <li id="th_basis_contract_expand-2-1-5-1">
-<span class="heading"><span class="title">Contract to basis.</span></span><div class="para" id="th_basis_contract_expand-2-1-5-1-2">If <span class="process-math">\(S\)</span> spans <span class="process-math">\(V\text{,}\)</span> then there is a subtuple of <span class="process-math">\(S\)</span> that is a basis of <span class="process-math">\(V\text{:}\)</span> i.e., we can <em class="emphasis">contract</em> a spanning set to a basis.</div>
+<span class="heading"><span class="title">Contract to basis.</span></span><div class="para" id="th_basis_contract_expand-2-1-5-1-2">If <span class="process-math">\(S\)</span> spans <span class="process-math">\(V\text{,}\)</span> then there is a subtuple of <span class="process-math">\(S\)</span> that is a basis of <span class="process-math">\(V\text{:}\)</span> i.e., we can <dfn class="terminology">contract</dfn> a spanning set to a basis.</div>
 </li>
 <li id="th_basis_contract_expand-2-1-5-2">
-<span class="heading"><span class="title">Extend to basis.</span></span><div class="para" id="th_basis_contract_expand-2-1-5-2-2">If <span class="process-math">\(S\)</span> is linearly independent, then <span class="process-math">\(S\)</span> is a subtuple of a basis of <span class="process-math">\(V\text{:}\)</span> i.e., we can <em class="emphasis">extend</em> a linearly independent tuple to a basis.</div>
+<span class="heading"><span class="title">Extend to basis.</span></span><div class="para" id="th_basis_contract_expand-2-1-5-2-2">If <span class="process-math">\(S\)</span> is linearly independent, then <span class="process-math">\(S\)</span> is a subtuple of a basis of <span class="process-math">\(V\text{:}\)</span> i.e., we can <dfn class="terminology">extend</dfn> a linearly independent tuple to a basis.</div>
 </li>
 </ol>
 </div></article><details id="th_basis_contract_expand-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_basis_contract_expand-3-1"><ol class="decimal" id="th_basis_contract_expand-3-1-1">
@@ -653,7 +653,7 @@ S_{i+1}=(v_1,v_2,\dots, v_{m+i}, v_{m+i+1})\text{,}
 </ol>
 <div class="para">From (ii) we may assume the procedure halts at <span class="process-math">\(S_k\)</span> for some <span class="process-math">\(k\geq 0\text{.}\)</span> From (i) we know that <span class="process-math">\(S_k\)</span> is linearly independent. Furthermore, since the procedure halts at <span class="process-math">\(S_k\text{,}\)</span> we know that <span class="process-math">\(\Span S_k=V\text{.}\)</span> It follows that <span class="process-math">\(B=S_k\)</span> is a basis containing <span class="process-math">\(S\text{,}\)</span> as desired.</div>
 </div></li>
-</ol></div></article></details><div class="para" id="ss_dimension_theory-6">The following corollary follows from <a href="s_dimention.html#th_basis_dimension" class="xref" data-knowl="./knowl/xref/th_basis_dimension.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.8.7: Basis bounds">Theorem 1.8.7</a> and <a href="s_dimention.html#th_basis_contract_expand" class="xref" data-knowl="./knowl/xref/th_basis_contract_expand.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.8.8: Contracting and expanding">Theorem 1.8.8</a>. We call it a “street smarts” result as the first two statements give us a quick and dirty way of dashing a set’s hopes of being a basis. The third statement asserts that when a finite set’s cardinality matches the dimension of a space, then to prove it is a basis it suffices to prove either one of the two defining properties of <a href="s_basis.html#d_basis" class="xref" data-knowl="./knowl/xref/d_basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.7.1: Basis">Definition 1.7.1</a>.</div>
+</ol></div></article></details><div class="para" id="ss_dimension_theory-6">The following corollary follows from <a href="s_dimention.html#th_basis_dimension" class="xref" data-knowl="./knowl/xref/th_basis_dimension.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.8.7: Basis bounds">Theorem 1.8.7</a> and <a href="s_dimention.html#th_basis_contract_expand" class="xref" data-knowl="./knowl/xref/th_basis_contract_expand.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.8.8: Contracting and expanding">Theorem 1.8.8</a>. We call it a “street smarts” result as the first two statements give us a quick and dirty way of dashing a tuple’s hopes of being a basis. The third statement asserts that when a finite set’s cardinality matches the dimension of a space, then to prove it is a basis it suffices to prove either one of the two defining properties of <a href="s_basis.html#d_basis" class="xref" data-knowl="./knowl/xref/d_basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.7.1: Basis">Definition 1.7.1</a>.</div>
 <article class="corollary theorem-like" id="cor_street_smarts"><h4 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.8.9</span><span class="period">.</span><span class="space"> </span><span class="title">Street smarts.</span>
 </h4>
@@ -783,12 +783,26 @@ W=\Span(\boldv_1, \boldv_2)=\{s\boldv_1+t\boldv_2\colon s,t\in \R\}
 </div>
 </li>
 </ul>
-</div></article><div class="para" id="ss_dimension_theory-13">Lastly, we provide a first example illustrating the power of our expand to a basis technique.</div>
-<article class="corollary theorem-like" id="cor_direct_sum_existence"><h4 class="heading">
-<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.8.13</span><span class="period">.</span><span class="space"> </span><span class="title">Existence of direct sums.</span>
+</div></article><div class="para" id="ss_dimension_theory-13">Statement (1) of the next theorem is an excellent first example illustrating the power of our expand to a basis technique. As mentioned above, you will see this trick many times throughout the course.</div>
+<article class="theorem theorem-like" id="th_direct_sum_dim"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.8.13</span><span class="period">.</span><span class="space"> </span><span class="title">Direct sums.</span>
 </h4>
-<div class="para" id="cor_direct_sum_existence-2-1">Assume <span class="process-math">\(V\)</span> is a finite-dimensional vector space. Given any subspace <span class="process-math">\(W\subseteq V\)</span> there is a subpace <span class="process-math">\(W'\subseteq V\)</span> satisfying <span class="process-math">\(V=W\oplus W'\text{.}\)</span>
-</div></article><details id="cor_direct_sum_existence-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="cor_direct_sum_existence-3-1">Assume <span class="process-math">\(\dim V=n\text{.}\)</span>  Given a subspace <span class="process-math">\(W\subset V\text{,}\)</span> we know that <span class="process-math">\(\dim W\leq n\text{,}\)</span> and hence that <span class="process-math">\(W\)</span> has a finite basis <span class="process-math">\(S=(v_1,v_2,\dots, v_r)\)</span> for some <span class="process-math">\(r\leq n\text{.}\)</span> Since <span class="process-math">\(S\)</span> is linearly independent, it can be extended to a basis <span class="process-math">\(B=(v_1,v_2,\dots, v_r,v_{r+1},\cdots, v_n)\)</span> of <span class="process-math">\(V\text{.}\)</span> Define <span class="process-math">\(W'=\Span(v_{r+1}, \dots, v_n)\text{.}\)</span> We claim that <span class="process-math">\(W\oplus W'=V\text{.}\)</span>
+<div class="para logical" id="th_direct_sum_dim-2-1">
+<div class="para">Assume <span class="process-math">\(V\)</span> is a finite-dimensional vector space.</div>
+<ol class="decimal" id="th_direct_sum_dim-2-1-2">
+<li id="th_direct_sum_dim-2-1-2-1"><div class="para" id="th_direct_sum_dim-2-1-2-1-1">Given any subspace <span class="process-math">\(W\subseteq V\)</span> there is a subpace <span class="process-math">\(W'\subseteq V\)</span> satisfying <span class="process-math">\(V=W\oplus W'\text{.}\)</span>
+</div></li>
+<li id="th_direct_sum_dim-2-1-2-2"><div class="para logical" id="th_direct_sum_dim-2-1-2-2-1">
+<div class="para">Let <span class="process-math">\(W=\sum_{i=1}^r W_i\text{,}\)</span> where <span class="process-math">\(W_i\)</span> is a subspace of <span class="process-math">\(V\)</span> for all <span class="process-math">\(1\leq i\leq r\text{.}\)</span> The following statements are equivalent.</div>
+<ol class="lower-roman ol-marker-2" id="th_direct_sum_dim-2-1-2-2-1-5">
+<li id="th_direct_sum_dim-2-1-2-2-1-5-1"><div class="para" id="th_direct_sum_dim-2-1-2-2-1-5-1-1"><span class="process-math">\(W=\bigoplus_{i=1}^r W_i\text{.}\)</span></div></li>
+<li id="th_direct_sum_dim-2-1-2-2-1-5-2"><div class="para" id="th_direct_sum_dim-2-1-2-2-1-5-2-1"><span class="process-math">\(\dim W=\sum_{i=1}^r\dim W_i\text{.}\)</span></div></li>
+</ol>
+</div></li>
+</ol>
+<div class="para">Given any subspace <span class="process-math">\(W\subseteq V\)</span> there is a subpace <span class="process-math">\(W'\subseteq V\)</span> satisfying <span class="process-math">\(V=W\oplus W'\text{.}\)</span>
+</div>
+</div></article><details id="th_direct_sum_dim-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_direct_sum_dim-3-1">Assume <span class="process-math">\(\dim V=n\text{.}\)</span>  Given a subspace <span class="process-math">\(W\subset V\text{,}\)</span> we know that <span class="process-math">\(\dim W\leq n\text{,}\)</span> and hence that <span class="process-math">\(W\)</span> has a finite basis <span class="process-math">\(S=(v_1,v_2,\dots, v_r)\)</span> for some <span class="process-math">\(r\leq n\text{.}\)</span> Since <span class="process-math">\(S\)</span> is linearly independent, it can be extended to a basis <span class="process-math">\(B=(v_1,v_2,\dots, v_r,v_{r+1},\cdots, v_n)\)</span> of <span class="process-math">\(V\text{.}\)</span> Define <span class="process-math">\(W'=\Span(v_{r+1}, \dots, v_n)\text{.}\)</span> We claim that <span class="process-math">\(W\oplus W'=V\text{.}\)</span>
 </div></article></details><div class="para" id="ss_dimension_theory-15">That was quite a dose of theory! For your convenience, we collect the various results on dimension, together with their nicknames, in one omnibus theorem.</div>
 <article class="theorem theorem-like" id="th_dimension_compendium"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.8.14</span><span class="period">.</span><span class="space"> </span><span class="title">Dimension theory compendium.</span>
@@ -798,22 +812,22 @@ W=\Span(\boldv_1, \boldv_2)=\{s\boldv_1+t\boldv_2\colon s,t\in \R\}
 </div>
 <ol class="decimal" id="th_dimension_compendium-2-1-5">
 <li id="th_dimension_compendium-2-1-5-1">
-<span class="heading"><span class="title">Contract.</span></span><div class="para" id="th_dimension_compendium-2-1-5-1-2">If <span class="process-math">\(S\)</span> spans <span class="process-math">\(V\text{,}\)</span> then <span class="process-math">\(S\)</span> can be contracted to a basis of <span class="process-math">\(V\text{.}\)</span>
+<span class="heading"><span class="title">Street smarts.</span></span><div class="para" id="th_dimension_compendium-2-1-5-1-2">If <span class="process-math">\(\len S&lt; n\text{,}\)</span> then <span class="process-math">\(S\)</span> does not span <span class="process-math">\(V\text{.}\)</span>
 </div>
 </li>
 <li id="th_dimension_compendium-2-1-5-2">
-<span class="heading"><span class="title">Expand.</span></span><div class="para" id="th_dimension_compendium-2-1-5-2-2">If <span class="process-math">\(S\)</span> is linearly independent, then <span class="process-math">\(S\)</span> can be extended to a basis of <span class="process-math">\(V\text{.}\)</span>
-</div>
+<span class="heading"><span class="title">Street smarts.</span></span><div class="para" id="th_dimension_compendium-2-1-5-2-2">If  <span class="process-math">\(\len S&gt;  n\text{,}\)</span> then <span class="process-math">\(S\)</span> is linearly dependent.</div>
 </li>
 <li id="th_dimension_compendium-2-1-5-3">
-<span class="heading"><span class="title">Street smarts.</span></span><div class="para" id="th_dimension_compendium-2-1-5-3-2">If <span class="process-math">\(\len S&lt; n\text{,}\)</span> then <span class="process-math">\(S\)</span> does not span <span class="process-math">\(V\text{.}\)</span>
-</div>
+<span class="heading"><span class="title">Street smarts.</span></span><div class="para" id="th_dimension_compendium-2-1-5-3-2">If  <span class="process-math">\(\len S =n\text{,}\)</span> then <span class="process-math">\(S\)</span> is a basis if and only if <span class="process-math">\(S\)</span> spans if and only if <span class="process-math">\(S\)</span> is linearly independent.</div>
 </li>
 <li id="th_dimension_compendium-2-1-5-4">
-<span class="heading"><span class="title">Street smarts.</span></span><div class="para" id="th_dimension_compendium-2-1-5-4-2">If  <span class="process-math">\(\len S&gt;  n\text{,}\)</span> then <span class="process-math">\(S\)</span> is linearly dependent.</div>
+<span class="heading"><span class="title">Contract.</span></span><div class="para" id="th_dimension_compendium-2-1-5-4-2">If <span class="process-math">\(S\)</span> spans <span class="process-math">\(V\text{,}\)</span> then <span class="process-math">\(S\)</span> can be contracted to a basis of <span class="process-math">\(V\text{.}\)</span>
+</div>
 </li>
 <li id="th_dimension_compendium-2-1-5-5">
-<span class="heading"><span class="title">Street smarts.</span></span><div class="para" id="th_dimension_compendium-2-1-5-5-2">If  <span class="process-math">\(\len S =n\text{,}\)</span> then <span class="process-math">\(S\)</span> is a basis if and only if <span class="process-math">\(S\)</span> spans if and only if <span class="process-math">\(S\)</span> is linearly independent.</div>
+<span class="heading"><span class="title">Expand.</span></span><div class="para" id="th_dimension_compendium-2-1-5-5-2">If <span class="process-math">\(S\)</span> is linearly independent, then <span class="process-math">\(S\)</span> can be extended to a basis of <span class="process-math">\(V\text{.}\)</span>
+</div>
 </li>
 <li id="th_dimension_compendium-2-1-5-6">
 <span class="heading"><span class="title">Dimension of subspaces.</span></span><div class="para logical" id="th_dimension_compendium-2-1-5-6-2">
@@ -829,6 +843,16 @@ W=\Span(\boldv_1, \boldv_2)=\{s\boldv_1+t\boldv_2\colon s,t\in \R\}
 </li>
 <li id="th_dimension_compendium-2-1-5-7">
 <span class="heading"><span class="title">Existence of direct sums.</span></span><div class="para" id="th_dimension_compendium-2-1-5-7-2">Given any subspace <span class="process-math">\(W\subseteq V\text{,}\)</span> there is a subspace <span class="process-math">\(W'\)</span> satisfying <span class="process-math">\(V=W\oplus W'\text{.}\)</span>
+</div>
+</li>
+<li id="th_dimension_compendium-2-1-5-8">
+<span class="heading"><span class="title">Dimension of direct sums.</span></span><div class="para logical" id="th_dimension_compendium-2-1-5-8-2">
+<div class="para">Given <span class="process-math">\(W=\sum_{i=1}^r W_i\text{,}\)</span> where <span class="process-math">\(W_i\)</span> is a subspace of <span class="process-math">\(V\)</span> for all <span class="process-math">\(1\leq i\leq k\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+W=\bigoplus_{i=1}^rW_i \iff \dim W=\sum_{i=1}^r\dim W_i\text{.}
+\end{equation*}
+</div>
 </div>
 </li>
 </ol>
