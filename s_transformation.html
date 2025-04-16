@@ -434,6 +434,7 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_transformation.html#ss_transformations_def" class="internal"><span class="title">Definition and examples</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_transformation.html#ss_transform_interesting" class="internal"><span class="title">Interesting examples</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_transformation.html#ss_transformations_bases" class="internal"><span class="title">Transformations and bases</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_transformation.html#ss_vs_of_lin_transformations" class="internal"><span class="title"><span class="process-math">\(\mathcal{L}(V,W)\)</span> as a vector space</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -785,8 +786,7 @@ T(cv_1+dv_2)=cT(v_1)+dT(v_2)
 </div>
 <div class="para">for all scalars <span class="process-math">\(c, d\in R\)</span> and all vectors <span class="process-math">\(v_1,v_2\in V\text{.}\)</span>
 </div>
-</div></article><div class="para" id="ss_transform_interesting-4">Next we introduce an extremely important family of linear transformations:  so-called <em class="emphasis">matrix transformations</em> of the form <span class="process-math">\(T_A\colon F^n\rightarrow F^m\text{,}\)</span> where <span class="process-math">\(A\)</span> is a given <span class="process-math">\(m\times n\)</span> matrix with entries in <span class="process-math">\(F\text{.}\)</span>
-</div>
+</div></article><div class="para" id="ss_transform_interesting-4">Next we introduce an extremely important family of linear transformations: any matrix <span class="process-math">\(A\in F^{m,n}\)</span> has associated to it a linear transformation <span class="process-math">\(T_A\colon F^n\rightarrow F^m\)</span> called a <em class="emphasis">matrix transformation</em>.</div>
 <article class="definition definition-like" id="d_matrix_transform"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.9.12</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix transformations.</span>
 </h4>
@@ -813,7 +813,16 @@ T_A(\boldx)=A\boldx
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.9.14</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix transformation.</span>
 </h4>
 <div class="para" id="eg_matrix_transformation-2-1">Let <span class="process-math">\(A\in F^{m,n}\text{.}\)</span> Prove that <span class="process-math">\(T_A\colon F^n\rightarrow F^m\)</span> is a linear transformation.</div>
-<div class="solutions"><details id="eg_matrix_transformation-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_matrix_transformation-3-1"></div></div></details></div></article><article class="example example-like" id="eg_diff_linear"><h4 class="heading">
+<div class="solutions"><details id="eg_matrix_transformation-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_matrix_transformation-3-1">
+<div class="para">We use the 1-step technique. As you will see the proof follows directly from elementary properties of matrix multiplication. Given any <span class="process-math">\(\boldx,\boldy\in F^n\)</span> and <span class="process-math">\(c,d\in F\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="eg_matrix_transformation-3-1-3">
+\begin{align*}
+T_A(c\boldx+d\boldy) \amp =A(c\boldx+d\boldy) \amp (\text{def. of } T_A)\\
+\amp = cA\boldx+dA\boldy \amp (\text{matrix mult. props.})\\
+\amp = cT_A(\boldx)+dT_A(\boldy) \amp (\text{def. of } T_A)\text{.}
+\end{align*}
+</div>
+</div></div></details></div></article><article class="example example-like" id="eg_diff_linear"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.9.15</span><span class="period">.</span><span class="space"> </span><span class="title">Differentiation.</span>
 </h4>
 <div class="para logical" id="eg_diff_linear-2-1">
@@ -875,28 +884,119 @@ T_\ell\colon F^\infty \amp \rightarrow F^\infty \amp T_r\colon F^\infty\amp \rig
 <div class="para">Let <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> be vector spaces, and let <span class="process-math">\(B=(v_i)_{i\in I}\)</span> be a basis of <span class="process-math">\(V\text{.}\)</span>
 </div>
 <ol class="decimal" id="th_trans_basis-2-1-5">
-<li id="th_trans_basis-2-1-5-1"><div class="para" id="th_trans_basis-2-1-5-1-1">Give linear transformations <span class="process-math">\(T_1,T_2\in \mathcal{L}(V,W)\text{,}\)</span> we have <span class="process-math">\(T_1=T_2\)</span> if and only if <span class="process-math">\(T_1(v_i)=T_2(v_i)\)</span> for all <span class="process-math">\(i\in I\text{.}\)</span>
-</div></li>
-<li id="th_trans_basis-2-1-5-2"><div class="para" id="th_trans_basis-2-1-5-2-1">Given any tuple <span class="process-math">\((w_i)_{i\in I}\)</span> of vectors of <span class="process-math">\(W\text{,}\)</span> there is a unique linear transformation <span class="process-math">\(T\colon V\rightarrow W\)</span> satisfying <span class="process-math">\(T(v_i)=w_i\)</span> for all <span class="process-math">\(i\in I\text{.}\)</span>
-</div></li>
+<li id="th_trans_basis-2-1-5-1">
+<span class="heading"><span class="title">Uniqueness.</span></span><div class="para" id="th_trans_basis-2-1-5-1-2">Give linear transformations <span class="process-math">\(T_1,T_2\in \mathcal{L}(V,W)\text{,}\)</span> we have <span class="process-math">\(T_1=T_2\)</span> if and only if <span class="process-math">\(T_1(v_i)=T_2(v_i)\)</span> for all <span class="process-math">\(i\in I\text{.}\)</span>
+</div>
+</li>
+<li id="th_trans_basis-2-1-5-2">
+<span class="heading"><span class="title">Existence.</span></span><div class="para" id="th_trans_basis-2-1-5-2-2">Given any tuple <span class="process-math">\((w_i)_{i\in I}\)</span> of vectors of <span class="process-math">\(W\text{,}\)</span> there is a linear transformation <span class="process-math">\(T\colon V\rightarrow W\)</span> satisfying <span class="process-math">\(T(v_i)=w_i\)</span> for all <span class="process-math">\(i\in I\text{.}\)</span> Furthermore, as consequence of (1) there is a unique <span class="process-math">\(T\in \mathcal{L}(V,W)\)</span> satisfying this property.</div>
+</li>
 </ol>
-</div></article><details id="th_trans_basis-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_trans_basis-3-1"><ol class="decimal" id="th_trans_basis-3-1-1"><li id="th_trans_basis-3-1-1-1"><div class="para logical" id="th_trans_basis-3-1-1-1-1">
-<div class="para">Assume <span class="process-math">\(T_1,T_2\in \mathcal{L}(V,W)\)</span> and that <span class="process-math">\(T_1(v_i)=T_2(v_i)\)</span> for all <span class="process-math">\(i\in I\text{.}\)</span> Given any <span class="process-math">\(v\in V\text{,}\)</span> we can write</div>
+</div></article><details id="th_trans_basis-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_trans_basis-3-1">
+<div class="para">We assume <span class="process-math">\(B=(v_i)_{i\in I}\)</span> is a basis of <span class="process-math">\(V\text{.}\)</span>
+</div>
+<ol class="decimal" id="th_trans_basis-3-1-3">
+<li id="th_trans_basis-3-1-3-1"><div class="para logical" id="th_trans_basis-3-1-3-1-1">
+<div class="para">Assume <span class="process-math">\(T_1,T_2\in \mathcal{L}(V,W)\)</span> and that <span class="process-math">\(T_1(v_i)=T_2(v_i)\)</span> for all <span class="process-math">\(i\in I\text{.}\)</span> Since <span class="process-math">\(B\)</span> is a basis, given any <span class="process-math">\(v\in V\)</span> we can write <span class="process-math">\(v\)</span> as a linear combination</div>
 <div class="displaymath process-math">
 \begin{equation*}
-v=\sum_{j=1}^n c_{i_1}v_{i_1}+
+v=\sum_{i\in I}c_iv_i
 \end{equation*}
 </div>
-</div></li></ol></div></article></details><article class="remark remark-like" id="ss_transformations_bases-3"><h4 class="heading">
+<div class="para">for some <span class="process-math">\(c_i\in F\text{,}\)</span> in which case we have</div>
+<div class="displaymath process-math" id="th_trans_basis-3-1-3-1-1-9">
+\begin{align*}
+T_1(v) \amp =\sum_{i\in I}c_iT_1(v_i) \amp (T_1 \text{ is linear})\\
+\amp = \sum_{i\in I}c_iT_2(v_i) \amp (T_1(v_i)=T_2(v_i))\\
+\amp = T_2(v) \amp (T_2 \text{ is linear})\text{.}
+\end{align*}
+</div>
+<div class="para">We have shown that <span class="process-math">\(T_1(v)=T_2(v)\)</span> for all <span class="process-math">\(v\in V\text{.}\)</span> By definition, this means that <span class="process-math">\(T_1=T_2\text{.}\)</span>
+</div>
+</div></li>
+<li id="th_trans_basis-3-1-3-2">
+<div class="para logical" id="th_trans_basis-3-1-3-2-1">
+<div class="para">Given a tuple <span class="process-math">\((w_i)_{i\in i}\)</span> of vectors of <span class="process-math">\(W\text{,}\)</span> the following recipe defines a function <span class="process-math">\(T\colon V\rightarrow W\text{:}\)</span>
+</div>
+<ul class="disc" id="th_trans_basis-3-1-3-2-1-4">
+<li id="th_trans_basis-3-1-3-2-1-4-1"><div class="para" id="th_trans_basis-3-1-3-2-1-4-1-1">given <span class="process-math">\(v\in V\text{,}\)</span> write <span class="process-math">\(v=\sum_{i\in I}c_iv_i\)</span> as a linear combination of the vectors <span class="process-math">\(v_i\text{;}\)</span>
+</div></li>
+<li id="th_trans_basis-3-1-3-2-1-4-2"><div class="para" id="th_trans_basis-3-1-3-2-1-4-2-1">define <span class="process-math">\(T(v)=\sum_{i\in I}c_iw_i\text{.}\)</span>
+</div></li>
+</ul>
+<div class="para">We need to address two details of this recipe in order to convince ourselves that this determines a well-defined function <span class="process-math">\(T\text{.}\)</span> Firstly, since <span class="process-math">\(B\)</span> is a basis, the coefficients <span class="process-math">\(c_i\)</span> in the linear combination <span class="process-math">\(v=\sum_{i\in I}c_iv_i\)</span> are <em class="emphasis">uniquely</em> determined by <span class="process-math">\(v\text{,}\)</span> making the value <span class="process-math">\(T(v)=\sum_{i\in I}c_iw_i\)</span> uniquely determined. Secondly, observe that since <span class="process-math">\(c_i=0\)</span> for all but finitely many <span class="process-math">\(i\in I\text{,}\)</span> the expression <span class="process-math">\(\sum_{i\in I}c_iw_i\)</span> is a (finite) linear combination of vectors, and thus defines an element of <span class="process-math">\(W\text{.}\)</span>
+</div>
+</div>
+<div class="para" id="th_trans_basis-3-1-3-2-2">From our definition of <span class="process-math">\(T\)</span> it follows that <span class="process-math">\(T(v_i)=w_i\)</span> for all <span class="process-math">\(i\in I\text{.}\)</span> Indeed, to compute <span class="process-math">\(T(v_i)\)</span> following our recipe, we write <span class="process-math">\(v_i=1v_i\)</span> as a linear combination of the elements of <span class="process-math">\(B\text{,}\)</span> whence it follows that <span class="process-math">\(T(v_i)=1w_i=w_i\text{.}\)</span>
+</div>
+<div class="para logical" id="th_trans_basis-3-1-3-2-3">
+<div class="para">Lastly, we must show that <span class="process-math">\(T\)</span> is linear using the 1-step technique. Given <span class="process-math">\(v, w\in V\)</span> and scalars <span class="process-math">\(c,d\in F\text{,}\)</span> write</div>
+<div class="displaymath process-math" id="th_trans_basis-3-1-3-2-3-4">
+\begin{align*}
+v \amp =\sum_{i\in I}c_iv_i\\
+w \amp =\sum_{i\in I}d_iv_i
+\end{align*}
+</div>
+<div class="para">as linear combinations of the <span class="process-math">\(v_i\text{,}\)</span> and then compute</div>
+<div class="displaymath process-math" id="th_trans_basis-3-1-3-2-3-6">
+\begin{align*}
+T(cv+dw) \amp =T(\sum_{i\in i}(cc_i+dd_i)v_i)\\
+\amp = \sum_{i\in I}(cc_i+dd_i)v_i \amp (\text{def. of } T)\\
+\amp =c\sum_{i\in i}c_iv_i+d\sum_{i\in I}d_iv_i\\
+\amp =cT(v)+dT(w) \amp (\text{def. of } T)\text{.}
+\end{align*}
+</div>
+</div>
+</li>
+</ol>
+</div></article></details><article class="remark remark-like" id="ss_transformations_bases-3"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.9.20</span><span class="period">.</span><span class="space"> </span><span class="title">Transformations and bases.</span>
 </h4>
 <div class="para logical" id="ss_transformations_bases-3-2">
-<div class="para">The two statements <a href="s_transformation.html#th_trans_basis" class="xref" data-knowl="./knowl/xref/th_trans_basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.9.19: Transformations and bases">Theorem 1.9.19</a> deserve some elaboration and interpretation.</div>
+<div class="para">The two statements of <a href="s_transformation.html#th_trans_basis" class="xref" data-knowl="./knowl/xref/th_trans_basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.9.19: Transformations and bases">Theorem 1.9.19</a> deserve some elaboration and interpretation.</div>
 <ol class="decimal" id="ss_transformations_bases-3-2-2">
 <li id="ss_transformations_bases-3-2-2-1"><div class="para" id="ss_transformations_bases-3-2-2-1-1">The first statement tells us that a linear transformation <span class="process-math">\(T\colon V\rightarrow W\)</span> is uniqueley determined by its values <span class="process-math">\(T(v_i)\)</span> for any basis <span class="process-math">\(B=(v_i)_{i\in I}\text{.}\)</span> In other words, if you know that <span class="process-math">\(T\)</span> is linear, and you know where it sends each element of a basis, then you know <span class="process-math">\(T\)</span> completeley! Put another way, a linear transformation is uniquely determined by its action on any given basis.</div></li>
-<li id="ss_transformations_bases-3-2-2-2"><div class="para" id="ss_transformations_bases-3-2-2-2-1">Consisder the second statement as a powerful “transformation building” result. In more detail, it says the following: given a basis <span class="process-math">\(B=(v_i)_{i\in I}\)</span> of <span class="process-math">\(V\text{,}\)</span> given any choice of values <span class="process-math">\(w_i\in W\text{,}\)</span> there is a unique linear transformation <span class="process-math">\(T\in \mathcal{L}(V,W)\)</span> that sends <span class="process-math">\(v_i\)</span> to <span class="process-math">\(w_i\)</span> for all <span class="process-math">\(i\in I\text{.}\)</span> That there is a unique such <span class="process-math">\(T\)</span> follows from the first statement!</div></li>
+<li id="ss_transformations_bases-3-2-2-2"><div class="para" id="ss_transformations_bases-3-2-2-2-1">Consisder the second statement as a powerful “transformation building” result. In more detail, it says the following: given a basis <span class="process-math">\(B=(v_i)_{i\in I}\)</span> of <span class="process-math">\(V\text{,}\)</span> given any choice of values <span class="process-math">\(w_i\in W\text{,}\)</span> there is a unique linear transformation <span class="process-math">\(T\in \mathcal{L}(V,W)\)</span> that sends <span class="process-math">\(v_i\)</span> to <span class="process-math">\(w_i\)</span> for all <span class="process-math">\(i\in I\text{.}\)</span>
+</div></li>
 </ol>
-</div></article></section></section></div>
+</div></article><article class="corollary theorem-like" id="cor_matrix_transformation"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.9.21</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix transformations.</span>
+</h4>
+<div class="para" id="cor_matrix_transformation-2-1">Let <span class="process-math">\(T\colon F^n\rightarrow F_m\)</span> be a linear transformation. There is a unique matrix <span class="process-math">\(A\in F^{m,n}\)</span> such that <span class="process-math">\(T=T_A\text{.}\)</span> In particular, all linear transformations from <span class="process-math">\(F^n\)</span> to <span class="process-math">\(F^m\)</span> are matrix transformations.</div></article><details id="cor_matrix_transformation-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="cor_matrix_transformation-3-1">The proof is left as an exercise.</div></article></details></section><section class="subsection" id="ss_vs_of_lin_transformations"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title"><span class="process-math">\(\mathcal{L}(V,W)\)</span> as a vector space</span>
+</h3>
+<div class="para" id="ss_vs_of_lin_transformations-2">We end this section by providing a vector space structure to the set <span class="process-math">\(\mathcal{L}(V,W)\)</span> of all linear transformations from <span class="process-math">\(V\)</span> to <span class="process-math">\(W\text{.}\)</span> As in <a href="s_vector_space.html" class="internal" title="Section 1.2: Vector spaces">Section 1.2</a>, we state the result as a definition with proof.</div>
+<article class="definition definition-like" id="d_linear_transformations"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.9.22</span><span class="period">.</span><span class="space"> </span><span class="title">Space of linear transformations.</span>
+</h4>
+<div class="para logical" id="d_linear_transformations-2-1">
+<div class="para">Let <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> be vector spaces. Below we define a vector space structure on <span class="process-math">\(\mathcal{L}(V,W)\text{.}\)</span>
+</div>
+<ul class="disc" id="d_linear_transformations-2-1-4">
+<li id="d_linear_transformations-2-1-4-1">
+<span class="heading"><span class="title">Vector operations.</span></span><div class="para logical" id="d_linear_transformations-2-1-4-1-2">
+<div class="para">Given linear transformations <span class="process-math">\(T,S\in \mathcal{L}(V,W)\)</span> and scalar <span class="process-math">\(c\in F\text{,}\)</span> we define linear transformations <span class="process-math">\(T+S, cT\in \mathcal{L}(V,W)\)</span> as follows:</div>
+<div class="displaymath process-math" id="d_linear_transformations-2-1-4-1-2-4">
+\begin{align*}
+(T+S)(v) \amp= T(v)+S(v) \text{ for all } v\in V \\
+(cT)(v) \amp =cT(v) \text{ for all } v\in V\text{.}
+\end{align*}
+</div>
+</div>
+</li>
+<li id="d_linear_transformations-2-1-4-2">
+<span class="heading"><span class="title">Zero vector.</span></span><div class="para" id="d_linear_transformations-2-1-4-2-2">The zero vector of <span class="process-math">\(\mathcal{L}(V,W)\)</span> is the zero transformation <span class="process-math">\(0_{V,W}\colon V\rightarrow W\)</span> defined <span class="process-math">\(0_{V,W}(v)=\boldzero\)</span> for all <span class="process-math">\(v\in V\text{.}\)</span>
+</div>
+</li>
+<li id="d_linear_transformations-2-1-4-3">
+<span class="heading"><span class="title">Vector inverses.</span></span><div class="para" id="d_linear_transformations-2-1-4-3-2">Given a linear transformation <span class="process-math">\(T\in \mathcal{L}(V,W)\text{,}\)</span> its vector inverse is the linear transformation <span class="process-math">\(-T\in \mathcal{V,W}\)</span> defined as <span class="process-math">\((-T)(v)=-T(v)\)</span> for all <span class="process-math">\(v\in V\text{.}\)</span>
+</div>
+</li>
+</ul>
+<div class="para">We call <span class="process-math">\(\mathcal{L}(V,W)\text{,}\)</span> together with these vector operations, the <dfn class="terminology">space of linear transformations</dfn> from <span class="process-math">\(V\)</span> to <span class="process-math">\(W\text{.}\)</span>
+</div>
+</div></article><details id="ss_vs_of_lin_transformations-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="ss_vs_of_lin_transformations-4-1">The proof is left as an exercises. Note that before verifying the vector space axioms (i)-(viii) you must first verify that the given operations are well-defined: i.e., you must show that if <span class="process-math">\(T\)</span> and <span class="process-math">\(S\)</span> are linear transformations from <span class="process-math">\(V\)</span> to <span class="process-math">\(W\text{,}\)</span> then so are the functions <span class="process-math">\(T+S\)</span> and <span class="process-math">\(cT\text{.}\)</span>
+</div></article></details></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="s_dimention.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="advlinalgkursobjekt-6.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
