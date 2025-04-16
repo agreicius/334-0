@@ -1729,6 +1729,195 @@ var ptx_lunr_docs = [
   "body": " Dimension theory compendium   Let be a vector space of dimension , and let be a tuple of vectors of .   Street smarts  If , then does not span .    Street smarts  If , then is linearly dependent.    Street smarts  If , then is a basis if and only if spans if and only if is linearly independent.    Contract  If spans , then can be contracted to a basis of .    Expand  If is linearly independent, then can be extended to a basis of .    Dimension of subspaces  If is a subspace, then    , and     if and only if .       Existence of direct sums  Given any subspace , there is a subspace satisfying .    Dimension of direct sums  Given , where is a subspace of for all , we have .      "
 },
 {
+  "id": "s_transformation",
+  "level": "1",
+  "url": "s_transformation.html",
+  "type": "Section",
+  "number": "1.9",
+  "title": "Linear transformations",
+  "body": " Linear transformations   As detailed in a linear transformation is a special type of function between two vector spaces: one that respects in some sense the vector operations of both spaces.  This manner of theorizing is typical in mathematics: first we introduce a special class of objects defined axiomatically, then we introduce special functions or maps between these objects. Since the original objects of study (e.g. vector spaces) come equipped with special structural properties (e.g. vector operations), the functions we wish to study are the ones that somehow acknowledge this structure.  You have already seen this principle at work in your study of calculus. First we give some structure by defining a notion of proximity (i.e., is close to if is small), then we introduce a special family of functions that somehow respects this structure: these are precisely the continuous functions!  As you will see, linear transformations are not just interesting objects of study in their own right, they also serve as invaluable tools in our continued exploration of the intrinsic properties of vector spaces.  In the meantime rejoice in the fact that we can now give a succinct definition of linear algebra: it is the theory of vector spaces and the linear transformations between them. Go shout it from the rooftops!    Definition and examples   Linear transformation   Let and be -vector spaces. A linear transformation from to is a function satisfying the following properties.    for all .     for all and .   We let denote the set of all linear transformations from to : , .     Linear transformations  So what exactly do we mean when we say that a linear transformation respects the vector space structures? In plain English, the two axioms defining a linear transformation read as follows: the image of a sum is the sum of the images, and the image of a scalar multiple is the scalar multiple of the image. Alternatively, we could say that the application of a linear transformation to input vectors distributes over vector addition and scalar multiplication.   Before getting to examples of linear transformations, it will perhaps be enlightening to consider how a function between two vector spaces could fail to be a linear transformation. is an attempt at visualizing what it means for a function could fail one of the two linear transformation axioms. We will often fall back on these types of conceptual visualizations as a means of organizing our thinking about linear transformations.    Visualizing the failure of linear transformation axioms     fails Axiom : .         fails Axiom : .   T fails axiom ii         A nonlinear example   Let be defined as .   Does satisfy Axiom ? If so, prove it. Otherwise, give an explicit counterexample.    Does satisfy Axiom ? If so, prove it. Otherwise, give an explicit counterexample.           does not satisfy Axiom . Let and . We have . We thus see that .     does not satisfy Axiom . Let and . We have . We thus see that .        Notational quirk   brings to light a notational quirk when dealing with functions of the form . Technically speaking, given an input we should write . And yet our inner aesthete cries out at the unnecessary nested parentheses, and pleads that the notational laws be relaxed in this specific setting. We shall make it so.    Parentheses shall be dropped   In the special case where the domain of function is a subset of , then given input we may write for .    We now turn to functions that do satisfy the linear transformation axioms. As our first examples of linear transformations, we define zero transformations and identity transformations .   Zero, identity, and scaling transformations   Let and be vector spaces.   Zero transformation  The zero transformation from to , denoted , is defined as follows: . In other words, is the function that maps all elements of to the zero vector of .    Identity transformation  The identity transformation of , denoted , is defined as follows: . In other words, for all . When the underlying vector space is clear from the context, we will drop the subscript and write for .    Dilation (or scaling transformation)  Let be a fixed scalar. The function is called a dilation (or scaling transformation ) with scaling factor  .  Observe that since for all , we have .        Zero, identity, and scaling transformations   Let and be vector spaces.   The zero transformation is a linear transformation.    For all scalars the dilation is a linear transformation. In particular, is a linear transformation.          Let be the zero function. We verify each defining property separately.   Given , we have .    Given and , we have .   This proves that is a linear transformation.    Fix a scalar and let be the scaling transformation defined as for all .   Given , we have .    Given and , we have .   This proves that is a linear transformation.        Basic properties of linear transformations   Let be a linear transformation.   We have . In other words, maps the zero vector of to the zero vector of .    For all , we have .    Let be a tuple of vectors of . Given any linear combination of the , we have .          We employ some similar trickery to what was done in the proof of . Assuming is linear: . Thus, whatever may be, it satisfies . Canceling on both sides using , we conclude .    The argument is similar: . Since , adding to both sides of the equation yields .    Recall that by definition that there is a subset such that for all , in which case we have we can write . An easy induction argument on , using the two defining properties of a linear transformation, shows that . Since for all , we have , as desired.        Transformations distribute over combinations   Statement of combines and extends our distributive interpretations of . It says that the application of a linear transformation distributes over linear combinations of vectors.     Interesting examples  As a sort of converse to statement of , observe that if satisfies for all and , then is linear. Indeed, taking the special case yields Axiom of ; and choosing yields Axiom of . As a consequence, we have the following one-step procedure for proving whether a function between vector spaces is a linear transformation.   One-step technique for transformations   Let be a function between vector spaces. To prove is a linear transformation, show that for all scalars and all vectors .    Next we introduce an extremely important family of linear transformations: so-called matrix transformations of the form , where is a given matrix with entries in .   Matrix transformations    the matrix transformation associated to     Let . The matrix transformation associated to is the function defined as for all . We call the standard matrix of .     Matrix transformation  Observe how comes into play in the definition of : given a tuple , in order to make sense of the expression , we must think of as the column vector .    Matrix transformation   Let . Prove that is a linear transformation.         Differentiation   Let be an interval of . Prove that is a linear transformation.         Integration   Let be a closed interval of . Prove that the function is a linear transformation.         Function evaluation   Let be a nonempty set, and let a list of elements of . Prove that the function is a linear transformation.         Shift transformations   Prove that the functions and defined as are linear transformations.          Transformations and bases   Transformations and bases   Let and be vector spaces, and let be a basis of .   Give linear transformations , we have if and only if for all .    Given any tuple of vectors of , there is a unique linear transformation satisfying for all .          Assume and that for all . Given any , we can write         Transformations and bases  The two statements deserve some elaboration and interpretation.   The first statement tells us that a linear transformation is uniqueley determined by its values for any basis . In other words, if you know that is linear, and you know where it sends each element of a basis, then you know completeley! Put another way, a linear transformation is uniquely determined by its action on any given basis.    Consisder the second statement as a powerful transformation building result. In more detail, it says the following: given a basis of , given any choice of values , there is a unique linear transformation that sends to for all . That there is a unique such follows from the first statement!       "
+},
+{
+  "id": "d_transformation",
+  "level": "2",
+  "url": "s_transformation.html#d_transformation",
+  "type": "Definition",
+  "number": "1.9.1",
+  "title": "Linear transformation.",
+  "body": " Linear transformation   Let and be -vector spaces. A linear transformation from to is a function satisfying the following properties.    for all .     for all and .   We let denote the set of all linear transformations from to : , .   "
+},
+{
+  "id": "rm_lin_trans",
+  "level": "2",
+  "url": "s_transformation.html#rm_lin_trans",
+  "type": "Remark",
+  "number": "1.9.2",
+  "title": "Linear transformations.",
+  "body": " Linear transformations  So what exactly do we mean when we say that a linear transformation respects the vector space structures? In plain English, the two axioms defining a linear transformation read as follows: the image of a sum is the sum of the images, and the image of a scalar multiple is the scalar multiple of the image. Alternatively, we could say that the application of a linear transformation to input vectors distributes over vector addition and scalar multiplication.  "
+},
+{
+  "id": "fig_nonlinear",
+  "level": "2",
+  "url": "s_transformation.html#fig_nonlinear",
+  "type": "Figure",
+  "number": "1.9.3",
+  "title": "",
+  "body": " Visualizing the failure of linear transformation axioms     fails Axiom : .         fails Axiom : .   T fails axiom ii       "
+},
+{
+  "id": "eg_nonlinear",
+  "level": "2",
+  "url": "s_transformation.html#eg_nonlinear",
+  "type": "Example",
+  "number": "1.9.4",
+  "title": "A nonlinear example.",
+  "body": " A nonlinear example   Let be defined as .   Does satisfy Axiom ? If so, prove it. Otherwise, give an explicit counterexample.    Does satisfy Axiom ? If so, prove it. Otherwise, give an explicit counterexample.           does not satisfy Axiom . Let and . We have . We thus see that .     does not satisfy Axiom . Let and . We have . We thus see that .      "
+},
+{
+  "id": "ss_transformations_def-7",
+  "level": "2",
+  "url": "s_transformation.html#ss_transformations_def-7",
+  "type": "Remark",
+  "number": "1.9.5",
+  "title": "Notational quirk.",
+  "body": " Notational quirk   brings to light a notational quirk when dealing with functions of the form . Technically speaking, given an input we should write . And yet our inner aesthete cries out at the unnecessary nested parentheses, and pleads that the notational laws be relaxed in this specific setting. We shall make it so.  "
+},
+{
+  "id": "fiat_paren_drop",
+  "level": "2",
+  "url": "s_transformation.html#fiat_paren_drop",
+  "type": "Fiat",
+  "number": "1.9.6",
+  "title": "Parentheses shall be dropped.",
+  "body": " Parentheses shall be dropped   In the special case where the domain of function is a subset of , then given input we may write for .   "
+},
+{
+  "id": "d_transform_zero_identity",
+  "level": "2",
+  "url": "s_transformation.html#d_transform_zero_identity",
+  "type": "Definition",
+  "number": "1.9.7",
+  "title": "Zero, identity, and scaling transformations.",
+  "body": " Zero, identity, and scaling transformations   Let and be vector spaces.   Zero transformation  The zero transformation from to , denoted , is defined as follows: . In other words, is the function that maps all elements of to the zero vector of .    Identity transformation  The identity transformation of , denoted , is defined as follows: . In other words, for all . When the underlying vector space is clear from the context, we will drop the subscript and write for .    Dilation (or scaling transformation)  Let be a fixed scalar. The function is called a dilation (or scaling transformation ) with scaling factor  .  Observe that since for all , we have .      "
+},
+{
+  "id": "th_transform_zero_identity_scaling",
+  "level": "2",
+  "url": "s_transformation.html#th_transform_zero_identity_scaling",
+  "type": "Theorem",
+  "number": "1.9.8",
+  "title": "Zero, identity, and scaling transformations.",
+  "body": " Zero, identity, and scaling transformations   Let and be vector spaces.   The zero transformation is a linear transformation.    For all scalars the dilation is a linear transformation. In particular, is a linear transformation.          Let be the zero function. We verify each defining property separately.   Given , we have .    Given and , we have .   This proves that is a linear transformation.    Fix a scalar and let be the scaling transformation defined as for all .   Given , we have .    Given and , we have .   This proves that is a linear transformation.      "
+},
+{
+  "id": "th_transform_basic_props",
+  "level": "2",
+  "url": "s_transformation.html#th_transform_basic_props",
+  "type": "Theorem",
+  "number": "1.9.9",
+  "title": "Basic properties of linear transformations.",
+  "body": " Basic properties of linear transformations   Let be a linear transformation.   We have . In other words, maps the zero vector of to the zero vector of .    For all , we have .    Let be a tuple of vectors of . Given any linear combination of the , we have .          We employ some similar trickery to what was done in the proof of . Assuming is linear: . Thus, whatever may be, it satisfies . Canceling on both sides using , we conclude .    The argument is similar: . Since , adding to both sides of the equation yields .    Recall that by definition that there is a subset such that for all , in which case we have we can write . An easy induction argument on , using the two defining properties of a linear transformation, shows that . Since for all , we have , as desired.      "
+},
+{
+  "id": "rm_transform_dist",
+  "level": "2",
+  "url": "s_transformation.html#rm_transform_dist",
+  "type": "Remark",
+  "number": "1.9.10",
+  "title": "Transformations distribute over combinations.",
+  "body": " Transformations distribute over combinations   Statement of combines and extends our distributive interpretations of . It says that the application of a linear transformation distributes over linear combinations of vectors.  "
+},
+{
+  "id": "proc_transform_onestep",
+  "level": "2",
+  "url": "s_transformation.html#proc_transform_onestep",
+  "type": "Procedure",
+  "number": "1.9.11",
+  "title": "One-step technique for transformations.",
+  "body": " One-step technique for transformations   Let be a function between vector spaces. To prove is a linear transformation, show that for all scalars and all vectors .   "
+},
+{
+  "id": "d_matrix_transform",
+  "level": "2",
+  "url": "s_transformation.html#d_matrix_transform",
+  "type": "Definition",
+  "number": "1.9.12",
+  "title": "Matrix transformations.",
+  "body": " Matrix transformations    the matrix transformation associated to     Let . The matrix transformation associated to is the function defined as for all . We call the standard matrix of .   "
+},
+{
+  "id": "ss_transform_interesting-6",
+  "level": "2",
+  "url": "s_transformation.html#ss_transform_interesting-6",
+  "type": "Remark",
+  "number": "1.9.13",
+  "title": "Matrix transformation.",
+  "body": " Matrix transformation  Observe how comes into play in the definition of : given a tuple , in order to make sense of the expression , we must think of as the column vector .  "
+},
+{
+  "id": "eg_matrix_transformation",
+  "level": "2",
+  "url": "s_transformation.html#eg_matrix_transformation",
+  "type": "Example",
+  "number": "1.9.14",
+  "title": "Matrix transformation.",
+  "body": " Matrix transformation   Let . Prove that is a linear transformation.       "
+},
+{
+  "id": "eg_diff_linear",
+  "level": "2",
+  "url": "s_transformation.html#eg_diff_linear",
+  "type": "Example",
+  "number": "1.9.15",
+  "title": "Differentiation.",
+  "body": " Differentiation   Let be an interval of . Prove that is a linear transformation.       "
+},
+{
+  "id": "eg_integration_trans",
+  "level": "2",
+  "url": "s_transformation.html#eg_integration_trans",
+  "type": "Example",
+  "number": "1.9.16",
+  "title": "Integration.",
+  "body": " Integration   Let be a closed interval of . Prove that the function is a linear transformation.       "
+},
+{
+  "id": "eg_evaluation_trans",
+  "level": "2",
+  "url": "s_transformation.html#eg_evaluation_trans",
+  "type": "Example",
+  "number": "1.9.17",
+  "title": "Function evaluation.",
+  "body": " Function evaluation   Let be a nonempty set, and let a list of elements of . Prove that the function is a linear transformation.       "
+},
+{
+  "id": "eg_shift_transform",
+  "level": "2",
+  "url": "s_transformation.html#eg_shift_transform",
+  "type": "Example",
+  "number": "1.9.18",
+  "title": "Shift transformations.",
+  "body": " Shift transformations   Prove that the functions and defined as are linear transformations.       "
+},
+{
+  "id": "th_trans_basis",
+  "level": "2",
+  "url": "s_transformation.html#th_trans_basis",
+  "type": "Theorem",
+  "number": "1.9.19",
+  "title": "Transformations and bases.",
+  "body": " Transformations and bases   Let and be vector spaces, and let be a basis of .   Give linear transformations , we have if and only if for all .    Given any tuple of vectors of , there is a unique linear transformation satisfying for all .          Assume and that for all . Given any , we can write       "
+},
+{
+  "id": "ss_transformations_bases-3",
+  "level": "2",
+  "url": "s_transformation.html#ss_transformations_bases-3",
+  "type": "Remark",
+  "number": "1.9.20",
+  "title": "Transformations and bases.",
+  "body": " Transformations and bases  The two statements deserve some elaboration and interpretation.   The first statement tells us that a linear transformation is uniqueley determined by its values for any basis . In other words, if you know that is linear, and you know where it sends each element of a basis, then you know completeley! Put another way, a linear transformation is uniquely determined by its action on any given basis.    Consisder the second statement as a powerful transformation building result. In more detail, it says the following: given a basis of , given any choice of values , there is a unique linear transformation that sends to for all . That there is a unique such follows from the first statement!     "
+},
+{
   "id": "appendix-notation",
   "level": "1",
   "url": "appendix-notation.html",
