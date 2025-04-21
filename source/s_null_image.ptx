@@ -288,11 +288,6 @@
         <ol>
           <li>
             <p>
-              Prove that <m>T</m> is linear.
-            </p>
-          </li>
-          <li>
-            <p>
               Identify <m>\NS T</m> as a familiar function subspace.
             </p>
           </li>
