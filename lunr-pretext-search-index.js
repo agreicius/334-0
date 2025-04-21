@@ -1951,7 +1951,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.10",
   "title": "Null space and image",
-  "body": " Null space and image   In this section we introduce two subspaces associated to a linear transformation : the null space and image.    Definition and examples   Null space and image   Let be a linear transformation.   Null space of  The null space of is the subset of defined as .    Image of  The image (or range ) of is the subset of defined as .        Null space and image  We gather a few simple observations about the null space and image of a linear map    Let . It is useful to keep in mind where and  live in this picture: we have and . In other words, the null space is a subset of the domain, and the image is a subset of the codomain. See .    Note that the image of a linear transformation is just its image when considered simply as a function of sets. (See .)    The notion of a null space is analogous to the set of zeros (or roots) of a real-valued function , , and the zeros of is a useful English shorthand for . However, there is an important difference between the null space of a linear transformation and the zeros of an arbitrary real-valued function: the null space of a linear transformation comes with the added structure of a vector space ( ), whereas the zeros of an arbitrary function in general do not.  The same observation can be made about the image of a linear transformation ( ), in comparison to the image of an arbitrary function.       Null space and image  Null space and image     Null space lives in the domain; image lives in the codomain.         The entire null space gets mapped to .         The entire domain is mapped to .         Before getting to examples we make official what we hinted at above: the null space and image of a linear transformation are subspaces.   Null space and image   If is a linear transformation, then is a subspace of , and is a subspace of .     Null space of  We use the two-step technique to prove is a subspace.   Since ( ), we see that .    Suppose . Given any , we have . This shows that , completing our proof.       Image of  The proof proceeds in a similar manner, using the two-step technique.   Since ( ), we see that is hit by , and hence is a member of .    Assume vectors are elements of . By definition, this means there are vectors such that for . Now given any linear combination , we have . This shows that for any linear combination , there is an element such that . We conclude that if , then for any , as desired.          Define as .    Prove that is linear.    Identify as a familiar matrix subspace.    Identify as a familiar matrix subspace.         Linearity is an easy consequence of transpose properties. For any and , we have .    We have . Thus is the subspace of symmetric matrices!    Let , subspace of skew-symmetric matrices. We claim . As this is a set equality, we prove it by showing the two set inclusions and . (See )  The inclusion is the easier of the two. If , then for some . Using various properties of transposition, we have , showing that is skew-symmetric, and thus , as desired.  The inclusion is trickier: we must show that if is skew-symmetric, then there is an such that . Assume we have a with . Letting we have . Thus we have found a matrix satisfying . It follows that .        Subspace as null space  As illustrated by , provides an alternative technique for proving that a subset of is in fact a subspace: namely, find a linear transformation such that .    "
+  "body": " Null space and image   In this section we introduce two subspaces associated to a linear transformation : the null space and image.    Definition and examples   Null space and image   Let be a linear transformation.   Null space of  The null space of is the subset of defined as .    Image of  The image (or range ) of is the subset of defined as .        Null space and image  We gather a few simple observations about the null space and image of a linear map    Let . It is useful to keep in mind where and  live in this picture: we have and . In other words, the null space is a subset of the domain, and the image is a subset of the codomain. See .    Note that the image of a linear transformation is just its image when considered simply as a function of sets. (See .)    The notion of a null space is analogous to the set of zeros (or roots) of a real-valued function , , and the zeros of is a useful English shorthand for . However, there is an important difference between the null space of a linear transformation and the zeros of an arbitrary real-valued function: the null space of a linear transformation comes with the added structure of a vector space ( ), whereas the zeros of an arbitrary function in general do not.  The same observation can be made about the image of a linear transformation ( ), in comparison to the image of an arbitrary function.       Null space and image  Null space and image     Null space lives in the domain; image lives in the codomain.         The entire null space gets mapped to .         The entire domain is mapped to .         Before getting to examples we make official what we hinted at above: the null space and image of a linear transformation are subspaces.   Null space and image   If is a linear transformation, then is a subspace of , and is a subspace of .     Null space of  We use the two-step technique to prove is a subspace.   Since ( ), we see that .    Suppose . Given any , we have . This shows that , completing our proof.       Image of  The proof proceeds in a similar manner, using the two-step technique.   Since ( ), we see that is hit by , and hence is a member of .    Assume vectors are elements of . By definition, this means there are vectors such that for . Now given any linear combination , we have . This shows that for any linear combination , there is an element such that . We conclude that if , then for any , as desired.          Define as .   Prove that is linear.    Identify as a familiar matrix subspace.    Identify as a familiar matrix subspace.          Linearity is an easy consequence of transpose properties. For any and , we have .  Alternatively, since we already showed that the transpose operator is linear on , and since , it follows that is linear.    We have . Thus is the subspace of symmetric matrices!    Let , subspace of skew-symmetric matrices. We claim . As this is a set equality, we prove it by showing the two set inclusions and . (See )  The inclusion is the easier of the two. If , then for some . Using various properties of transposition, we have , showing that is skew-symmetric, and thus , as desired.  The inclusion is trickier: we must show that if is skew-symmetric, then there is an such that . Assume we have a with . Letting we have . Thus we have found a matrix satisfying . It follows that .        Differential operator   Let be an interval of . Define as .   Prove that is linear.    Identify as a familiar function subspace.    Identify as a familiar function subspace.           As illustrated by , provides an alternative technique for proving that a subset of is in fact a subspace: namely, find a linear transformation such that . Let's codify this in the form of a procedure.   Subspaces as null space   Let be a vector space, and let be a subset of . The following procedure provides an indirect way of proving that is a subspace of .   Produce a linear transformation .    Show that .        Homogeneous linear differential equation   Let be an interval of , let be continuous functions on ( , ) for all , and define as the set of functions satisfying the linear homogeneous differential equation . Prove that is a subspace of .         Matrix transformation   Let be an matrix, and let be the columns of , considered as elements of . The null space and image of the corresponding matrix transformation can be identified with the following fundamental spaces of : .          Rank-nullity and friends   Injective, surjective, bijective   Let be a linear transformation.    is injective if and only if .     is surjective if and only if .     is bijective if and only if and .            Rank-nullity theorem   Let be a finite-dimensional vector space. If is a linear transformation, then .         Injective, surjective, bijective   Let be a finite-dimensional vector space, and let be a linear transformation.   If , then is not injective.    If , then is not surjective.    Assume further that . The following statements are equivalent.    is bijective.     is injective.     is surjective.           Polynomial evaluation   Let be a positive integer, and let be a choice of complex inputs. Prove that for any choice of complex outputs there is a unique polynomial satisfying . In other words, given any choice of values , we can construct a unique polynomia whose value at is for all .         "
 },
 {
   "id": "d_null_image",
@@ -1996,16 +1996,79 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.10.5",
   "title": "",
-  "body": "  Define as .    Prove that is linear.    Identify as a familiar matrix subspace.    Identify as a familiar matrix subspace.         Linearity is an easy consequence of transpose properties. For any and , we have .    We have . Thus is the subspace of symmetric matrices!    Let , subspace of skew-symmetric matrices. We claim . As this is a set equality, we prove it by showing the two set inclusions and . (See )  The inclusion is the easier of the two. If , then for some . Using various properties of transposition, we have , showing that is skew-symmetric, and thus , as desired.  The inclusion is trickier: we must show that if is skew-symmetric, then there is an such that . Assume we have a with . Letting we have . Thus we have found a matrix satisfying . It follows that .      "
+  "body": "  Define as .   Prove that is linear.    Identify as a familiar matrix subspace.    Identify as a familiar matrix subspace.          Linearity is an easy consequence of transpose properties. For any and , we have .  Alternatively, since we already showed that the transpose operator is linear on , and since , it follows that is linear.    We have . Thus is the subspace of symmetric matrices!    Let , subspace of skew-symmetric matrices. We claim . As this is a set equality, we prove it by showing the two set inclusions and . (See )  The inclusion is the easier of the two. If , then for some . Using various properties of transposition, we have , showing that is skew-symmetric, and thus , as desired.  The inclusion is trickier: we must show that if is skew-symmetric, then there is an such that . Assume we have a with . Letting we have . Thus we have found a matrix satisfying . It follows that .      "
 },
 {
-  "id": "rm_subspace_as_nullspace",
+  "id": "",
   "level": "2",
-  "url": "s_null_image.html#rm_subspace_as_nullspace",
-  "type": "Remark",
+  "url": "s_null_image.html#",
+  "type": "Example",
   "number": "1.10.6",
-  "title": "Subspace as null space.",
-  "body": " Subspace as null space  As illustrated by , provides an alternative technique for proving that a subset of is in fact a subspace: namely, find a linear transformation such that .  "
+  "title": "Differential operator.",
+  "body": " Differential operator   Let be an interval of . Define as .   Prove that is linear.    Identify as a familiar function subspace.    Identify as a familiar function subspace.          "
+},
+{
+  "id": "proc_subspace_as_null",
+  "level": "2",
+  "url": "s_null_image.html#proc_subspace_as_null",
+  "type": "Procedure",
+  "number": "1.10.7",
+  "title": "Subspaces as null space.",
+  "body": " Subspaces as null space   Let be a vector space, and let be a subset of . The following procedure provides an indirect way of proving that is a subspace of .   Produce a linear transformation .    Show that .      "
+},
+{
+  "id": "eg_homog_diff_eqn",
+  "level": "2",
+  "url": "s_null_image.html#eg_homog_diff_eqn",
+  "type": "Example",
+  "number": "1.10.8",
+  "title": "Homogeneous linear differential equation.",
+  "body": " Homogeneous linear differential equation   Let be an interval of , let be continuous functions on ( , ) for all , and define as the set of functions satisfying the linear homogeneous differential equation . Prove that is a subspace of .       "
+},
+{
+  "id": "eg_null_im_matrix",
+  "level": "2",
+  "url": "s_null_image.html#eg_null_im_matrix",
+  "type": "Example",
+  "number": "1.10.9",
+  "title": "Matrix transformation.",
+  "body": " Matrix transformation   Let be an matrix, and let be the columns of , considered as elements of . The null space and image of the corresponding matrix transformation can be identified with the following fundamental spaces of : .       "
+},
+{
+  "id": "th_inj_surj_bij",
+  "level": "2",
+  "url": "s_null_image.html#th_inj_surj_bij",
+  "type": "Theorem",
+  "number": "1.10.10",
+  "title": "Injective, surjective, bijective.",
+  "body": " Injective, surjective, bijective   Let be a linear transformation.    is injective if and only if .     is surjective if and only if .     is bijective if and only if and .          "
+},
+{
+  "id": "th_rank_nullity",
+  "level": "2",
+  "url": "s_null_image.html#th_rank_nullity",
+  "type": "Theorem",
+  "number": "1.10.11",
+  "title": "Rank-nullity theorem.",
+  "body": " Rank-nullity theorem   Let be a finite-dimensional vector space. If is a linear transformation, then .       "
+},
+{
+  "id": "cor_inj_surj_bij",
+  "level": "2",
+  "url": "s_null_image.html#cor_inj_surj_bij",
+  "type": "Corollary",
+  "number": "1.10.12",
+  "title": "Injective, surjective, bijective.",
+  "body": " Injective, surjective, bijective   Let be a finite-dimensional vector space, and let be a linear transformation.   If , then is not injective.    If , then is not surjective.    Assume further that . The following statements are equivalent.    is bijective.     is injective.     is surjective.         "
+},
+{
+  "id": "eg_rank_null_polys",
+  "level": "2",
+  "url": "s_null_image.html#eg_rank_null_polys",
+  "type": "Example",
+  "number": "1.10.13",
+  "title": "Polynomial evaluation.",
+  "body": " Polynomial evaluation   Let be a positive integer, and let be a choice of complex inputs. Prove that for any choice of complex outputs there is a unique polynomial satisfying . In other words, given any choice of values , we can construct a unique polynomia whose value at is for all .       "
 },
 {
   "id": "appendix-notation",
