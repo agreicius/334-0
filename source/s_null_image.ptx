@@ -21,7 +21,7 @@
             <p>
                 The <term>null space</term> of <m>T</m> is the subset <m>\NS T</m> of <m>V</m> defined as 
                 <men xml:id="eq_null">
-                    \NS T=\{v\in V\colon T(v)=\boldzero}
+                    \NS T=\{v\in V\colon T(v)=\boldzero\}
                 </men>.
             </p>
         </li>
@@ -135,6 +135,7 @@
       </figure>
     <p>
         Before getting to examples we make official what we hinted at above: the null space and image of a linear transformation are subspaces. 
+    </p>
         <theorem xml:id="th_nullspace_image">
             <title>Null space and image</title>
             <statement>
@@ -147,7 +148,7 @@
                  <title>Null space of <m>T</m></title>
                 <p>
                 We use the two-step technique to prove <m>\NS T</m> is a subspace.
-                </p>
+                
                 <ol>
                   <li>
                     <p>
@@ -158,7 +159,7 @@
                     <p>
                       Suppose <m>\boldv_1, \boldv_2\in \NS T</m>. Given any <m>c,d\in \R</m>, we have
                       <md>
-                        <mrow>T(c\boldv_1+d\boldv_2) \amp=cT(\boldv_1)+dT(\boldv_2) \amp (T \text{ is linear, } <xref ref="th_trans_props"/>)</mrow>
+                        <mrow>T(c\boldv_1+d\boldv_2) \amp=cT(\boldv_1)+dT(\boldv_2) \amp (T \text{ is linear, } <xref ref="th_transform_basic_props"/>)</mrow>
                         <mrow> \amp=c\boldzero_W+d\boldzero_W \amp (\boldv_1, \boldv_2\in \NS T) </mrow>
                         <mrow>  \amp = \boldzero_W</mrow>
                       </md>.
@@ -166,12 +167,13 @@
                     </p>
                   </li>
                 </ol>
+              </p>
                 </case>
                 <case>
                  <title>Image of <m>T</m></title>
                 <p>
                   The proof proceeds in a similar manner, using the two-step technique. 
-                </p>
+                
                 <ol>
                   <li>
                     <p>
@@ -190,10 +192,10 @@
                     </p>
                   </li>
                 </ol>
+              </p>
                 </case>
             </proof>
           </theorem>
-    </p>
     <example xml:id="eg_nullspace_image_transposition">
         <statement>
           <p>
@@ -225,7 +227,7 @@
                   Linearity is an easy consequence of transpose properties. For any <m>A_1, A_2\in M_{nn}</m> and <m>c_1,c_2\in \R</m>, we have
                   <md>
                     <mrow>F(c_1A_1+c_2A_2)  \amp= (c_1A_1+c_2A_2)^T-(c_1A_1+c_2A_2)  </mrow>
-                    <mrow> \amp = c_1A_1^T+c_2A_2^T-c_1A_1-c_2A_2\amp (<xref ref="th_transp_linear" text="global"/>) </mrow>
+                    <mrow> \amp = c_1A_1^T+c_2A_2^T-c_1A_1-c_2A_2\amp (\text{transp. props}) </mrow>
                     <mrow>  \amp =c_1(A_1^T-A_1)+c_2(A_2^T-A_2)</mrow>
                     <mrow>  \amp =c_1F(A_1)+c_2F(A_2)</mrow>
                   </md>.
