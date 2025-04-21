@@ -68,71 +68,75 @@
           </li>
         </ol>
     </p>
-      </remark>
-      <figure xml:id="fig_null_image">
-        <title>Null space and image</title>
-        <caption>Null space and image</caption>
-        <sbsgroup>
-        <sidebyside>
-            <figure xml:id="fig_null_image_ambient">
-            <caption>Null space lives in the domain; image lives in the codomain.</caption>
-            <image xml:id="im_null_image">
-            <latex-image>
-      \begin{tikzpicture}
-        \node[name=V,shape=ellipse,draw, thick,minimum width=1.75in, minimum height=2.5in, label={135:$V$}] at (0,0) {};
-        \node[name=W,shape=ellipse,draw, thick,minimum width=1.75in, minimum height=2.5in, label={45:$W$}] at (8,0) {};
-        \draw (0,0)  node[diamond,draw, minimum width=1.5in,minimum height=1.5in, rotate=0,fill=red!25, label={115:$\operatorname{null} T$}] (null) {};
-        \draw (8,0)  node[minimum width=1.5in, minimum height=1.5in,diamond,draw,label={45:$\text{im} T$},fill=blue!25] (im) {};
-        \path[->] (1.2,3.2) edge[bend left] node[above]{$T$}  (6.8,3.2);
-      \end{tikzpicture}
+    </remark>
     
-            </latex-image>
-          </image>
+    <figure xml:id="fig_null_image">
+      <title>Null space and image</title>
+      <caption>Null space and image</caption>
+      <sbsgroup>
+      <sidebyside>
+          <figure xml:id="fig_null_image_ambient">
+          <caption>Null space lives in the domain; image lives in the codomain.</caption>
+          <image xml:id="im_null_image">
+          <latex-image>
+    \begin{tikzpicture}
+      \node[name=V,shape=ellipse,draw, thick,minimum width=1.75in, minimum height=2.5in, label={135:$V$}] at (0,0) {};
+      \node[name=W,shape=ellipse,draw, thick,minimum width=1.75in, minimum height=2.5in, label={45:$W$}] at (8,0) {};
+      \draw (0,0)  node[diamond,draw, minimum width=1.5in,minimum height=1.5in, rotate=0,fill=red!25, label={115:$\operatorname{null} T$}] (null) {};
+      \draw (8,0)  node[minimum width=1.5in, minimum height=1.5in,diamond,draw,label={45:$\text{im} T$},fill=blue!25] (im) {};
+      \path[->] (1.2,3.2) edge[bend left] node[above]{$T$}  (6.8,3.2);
+    \end{tikzpicture}
+  
+          </latex-image>
+        </image>
+        </figure>
+      </sidebyside>
+  
+        <sidebyside>
+          <figure xml:id="fig_nullspace_to_zero">
+            <caption>The entire null space gets mapped to <m>\boldzero_W</m>.</caption>
+            <image xml:id="im_nullspace_to_zero">
+              <latex-image>
+            \begin{tikzpicture}
+            \filldraw [black] (8,0) circle (3pt);
+            \node[name=V,shape=ellipse,draw, thick,minimum width=1.75in, minimum height=2.5in, label={135:$V$}] at (0,0) {};
+            \draw (0,0)  node[diamond,draw, minimum width=1.5in,minimum height=1.5in, rotate=0,fill=red!25, label={115:$\operatorname{null} T$}] (null) {};
+            \node[name=W,shape=ellipse,draw, thick,minimum width=1.75in, minimum height=2.5in, label={45:$W$}] at (8,0) {};
+            \draw node[above right] at (8,0) {$\mathbf{0}_W$};
+            <!-- \filldraw [black] (10,0) circle (2pt); -->
+            \path (null.east) edge[-{Latex[length=4mm, width=1.2mm]}] node[below] {$T$} (7.8,0){};
+            \path (null.north) edge[-{Latex[length=4mm, width=1.2mm]}] node[above] {$T$} (7.8,0){};
+            \path (null.south) edge[-{Latex[length=4mm, width=1.2mm]}]  node[below] {$T$} (7.8,0){};
+            \end{tikzpicture}
+            
+              </latex-image>
+            </image>
           </figure>
         </sidebyside>
-    
-          <sidebyside>
-            <figure xml:id="fig_nullspace_to_zero">
-              <caption>The entire null space gets mapped to <m>\boldzero_W</m>.</caption>
-              <image xml:id="im_nullspace_to_zero">
-                <latex-image>
-              \begin{tikzpicture}
-              \filldraw [black] (8,0) circle (3pt);
-              \node[name=V,shape=ellipse,draw, thick,minimum width=1.75in, minimum height=2.5in, label={135:$V$}] at (0,0) {};
-              \draw (0,0)  node[diamond,draw, minimum width=1.5in,minimum height=1.5in, rotate=0,fill=red!25, label={115:$\operatorname{null} T$}] (null) {};
-              \node[name=W,shape=ellipse,draw, thick,minimum width=1.75in, minimum height=2.5in, label={45:$W$}] at (8,0) {};
-              \draw node[above right] at (8,0) {$\mathbf{0}_W$};
-              <!-- \filldraw [black] (10,0) circle (2pt); -->
-              \path (null.east) edge[-{Latex[length=4mm, width=1.2mm]}] node[below] {$T$} (7.8,0){};
-              \path (null.north) edge[-{Latex[length=4mm, width=1.2mm]}] node[above] {$T$} (7.8,0){};
-              \path (null.south) edge[-{Latex[length=4mm, width=1.2mm]}]  node[below] {$T$} (7.8,0){};
-              \end{tikzpicture}
-              
-                </latex-image>
-              </image>
-            </figure>
-          </sidebyside>
-          <sidebyside>
-            <figure xml:id="fig_domain_to_image">
-              <caption>The entire domain is mapped to <m>\im T</m>.</caption>
-              <image xml:id="im_domain_to_image">
-                <latex-image>
-                  \begin{tikzpicture}
-                  \node[name=V,shape=ellipse,draw, thick,minimum width=1.75in, minimum height=2.5in, fill=green!25,label={135:$V$}] at (0,0) {};
-                  \node[name=W,shape=ellipse,draw, thick,minimum width=1.75in, minimum height=2.5in, label={45:$W$}] at (8,0) {};
-                  \begin{scope}[on background layer]%
-                  \draw (8,0)  node[minimum width=1.5in, minimum height=1.5in,diamond,draw,label={45:$\text{im} T$},fill=blue!25] (im) {};
-                  \end{scope}
-                  \path (V.north) edge[-{Latex[length=3mm, width=2mm]}] node[below] {$T$} (im.north)[left]{};
-                  \path (V.east) edge[-{Latex[length=3mm, width=2mm]}] node[below] {$T$} (im.west)[left]{};
-                  \path (V.south) edge[-{Latex[length=3mm, width=2mm]}] node[below] {$T$} (im.south){};
-                  \end{tikzpicture}              
-                </latex-image>
-              </image>
-            </figure>
-          </sidebyside>
-        </sbsgroup>
-      </figure>
+        <sidebyside>
+          <figure xml:id="fig_domain_to_image">
+            <caption>The entire domain is mapped to <m>\im T</m>.</caption>
+            <image xml:id="im_domain_to_image">
+              <latex-image>
+                \begin{tikzpicture}
+                \node[name=V,shape=ellipse,draw, thick,minimum width=1.75in, minimum height=2.5in, fill=green!25,label={135:$V$}] at (0,0) {};
+                \node[name=W,shape=ellipse,draw, thick,minimum width=1.75in, minimum height=2.5in, label={45:$W$}] at (8,0) {};
+                \begin{scope}[on background layer]%
+                \draw (8,0)  node[minimum width=1.5in, minimum height=1.5in,diamond,draw,label={45:$\text{im} T$},fill=blue!25] (im) {};
+                \end{scope}
+                \path (V.north) edge[-{Latex[length=3mm, width=2mm]}] node[below] {$T$} (im.north)[left]{};
+                \path (V.east) edge[-{Latex[length=3mm, width=2mm]}] node[below] {$T$} (im.west)[left]{};
+                \path (V.south) edge[-{Latex[length=3mm, width=2mm]}] node[below] {$T$} (im.south){};
+                \end{tikzpicture}              
+              </latex-image>
+            </image>
+          </figure>
+        </sidebyside>
+      </sbsgroup>
+    </figure>
+
+
+
     <p>
         Before getting to examples we make official what we hinted at above: the null space and image of a linear transformation are subspaces. 
     </p>
@@ -199,8 +203,7 @@
     <example xml:id="eg_nullspace_image_transposition">
         <statement>
           <p>
-            Define <m>F\colon M_{nn}\rightarrow M_{nn}</m> as <m>F(A)=A^T-A</m>.
-          </p>
+            Define <m>F\colon F^{n,n}\rightarrow F^{n,n}</m> as <m>F(A)=A^T-A</m>.
           <ol>
             <li>
               <p>
@@ -218,13 +221,14 @@
               </p>
             </li>
           </ol>
+        </p>
         </statement>
         <solution>
           <p>
             <ol>
               <li>
                 <p>
-                  Linearity is an easy consequence of transpose properties. For any <m>A_1, A_2\in M_{nn}</m> and <m>c_1,c_2\in \R</m>, we have
+                  Linearity is an easy consequence of transpose properties. For any <m>A_1, A_2\in F^{n,n}</m> and <m>c_1,c_2\in F</m>, we have
                   <md>
                     <mrow>F(c_1A_1+c_2A_2)  \amp= (c_1A_1+c_2A_2)^T-(c_1A_1+c_2A_2)  </mrow>
                     <mrow> \amp = c_1A_1^T+c_2A_2^T-c_1A_1-c_2A_2\amp (\text{transp. props}) </mrow>
@@ -232,24 +236,32 @@
                     <mrow>  \amp =c_1F(A_1)+c_2F(A_2)</mrow>
                   </md>.
                 </p>
+                <p>
+                  Alternatively, since we already showed that the transpose operator
+                  <md>
+                    <mrow>S\colon F^{nn} \amp \rightarrow F^{nn}</mrow>
+                    <mrow>A \amp \mapsto A^T</mrow>
+                  </md>
+                  is linear on <m>V=F^{nn}</m>, and since <m>F=S-I_V</m>, it follows that <m>F</m> is linear. 
+                </p>
               </li>
               <li>
                 <p>
                   We have
                   <md>
-                    <mrow>\NS F \amp= \{A\in M_{nn}\colon F(A)=\boldzero\} </mrow>
-                    <mrow> \amp=\{A\in M_{22}\colon A^T-A=\boldzero\} </mrow>
-                    <mrow>  \amp=\{A\in M_{22}\colon A^T=A\} </mrow>
+                    <mrow>\NS F \amp= \{A\in F^{n,n}\colon F(A)=\boldzero\} </mrow>
+                    <mrow> \amp=\{A\in F^{n,n}\colon A^T-A=\boldzero\} </mrow>
+                    <mrow>  \amp=\{A\in F^{n,n}\colon A^T=A\} </mrow>
                   </md>.
                   Thus <m>\NS F</m> is the subspace of symmetric <m>n\times n</m> matrices!
                 </p>
               </li>
               <li>
                 <p>
-                  Let <m>W=\{B\in M_{nn}\colon B^T=-B\}</m>, subspace of skew-symmetric <m>n\times n</m> matrices. We claim <m>\im F=W</m>. As this is a set equality, we prove it by showing the two set inclusions <m>\im F\subseteq W</m> and <m>W\subseteq \im F</m>. (See <xref ref="ss_set_properties" text="title"/>)
+                  Let <m>W=\{B\in F^{n,n}\colon B^T=-B\}</m>, subspace of skew-symmetric <m>n\times n</m> matrices. We claim <m>\im F=W</m>. As this is a set equality, we prove it by showing the two set inclusions <m>\im F\subseteq W</m> and <m>W\subseteq \im F</m>. (See <xref ref="ss_set_properties" text="title"/>)
                 </p>
                 <p>
-                  The inclusion <m>\im F\subseteq W</m> is the easier of the two. If <m>B\in \im F</m>, then <m>B=F(A)=A^T-A</m> for some <m>A\in M_{nn}</m>. Using various properties of transposition, we have
+                  The inclusion <m>\im F\subseteq W</m> is the easier of the two. If <m>B\in \im F</m>, then <m>B=F(A)=A^T-A</m> for some <m>A\in F^{n,n}</m>. Using various properties of transposition, we have
                   <me>
                     B^T=(A^T-A)^T=(A^T)^T-A^T=-(A^T-A)=-B
                   </me>,
@@ -267,11 +279,207 @@
           </p>
         </solution>
       </example>
-      <remark xml:id="rm_subspace_as_nullspace">
-        <title>Subspace as null space</title>
+
+      <example xml:id="">
+      <title>Differential operator</title>
+      <statement>
         <p>
-          As illustrated by <xref ref="eg_nullspace_image_transposition"/>, <xref ref="th_nullspace_image"/> provides an alternative technique for proving that a subset of <m>W\subseteq V</m> is in fact a subspace: namely, find a linear transformation <m>T\colon V\rightarrow Z</m> such that <m>W=\NS T</m>.   
+          Let <m>I</m> be an interval of <m>\R</m>.  Define <m>T\colon C^1(I)\rightarrow C(I)</m> as <m>F(f)=f'</m>.
+        <ol>
+          <li>
+            <p>
+              Prove that <m>T</m> is linear.
+            </p>
+          </li>
+          <li>
+            <p>
+              Identify <m>\NS T</m> as a familiar function subspace.
+            </p>
+          </li>
+          <li>
+            <p>
+              Identify <m>\im T</m> as a familiar function subspace.
+            </p>
+          </li>
+        </ol>
+      </p>
+      </statement>
+      <solution>
+      <p>
+      
+      </p>
+      </solution>
+      </example>
+      <p>
+        As illustrated by <xref ref="eg_nullspace_image_transposition"/>, <xref ref="th_nullspace_image"/> provides an alternative technique for proving that a subset of <m>W\subseteq V</m> is in fact a subspace: namely, find a linear transformation <m>T\colon V\rightarrow U</m> such that <m>W=\NS T</m>. Let's codify this in the form of a procedure.   
+      </p>
+      <algorithm xml:id="proc_subspace_as_null">
+        <title>Subspaces as null space</title>
+        <statement>
+          <p>
+            Let <m>V</m> be a vector space, and let <m>W</m> be a subset of <m>V</m>. The following procedure provides an indirect way of proving that <m>W</m> is a subspace of <m>V</m>. 
+            <ol>
+              <li>
+                <p>
+                  Produce a linear transformation <m>T\colon V\rightarrow U</m>. 
+                </p>
+              </li>
+              <li>
+                <p>
+                  Show that <m>W=\NS T</m>. 
+                </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+      </algorithm>
+      <example xml:id="eg_homog_diff_eqn">
+      <title>Homogeneous linear differential equation</title>
+      <statement>
+      <p>
+      Let <m>I</m> be an interval of <m>\R</m>, let <m>q_{n-1},q_{n-2},\dots, q_0</m> be continuous functions on <m>I</m> (<ie/>, <m>q_i\in C(I)</m>) for all <m>1\leq i\leq n-1</m>, and define <m>W</m> as the set of functions <m>f\in C^n(I)</m> satisfying the linear homogeneous differential equation 
+      <men xml:id="eq_lin_homog_diff_eq">
+        f^{(n)}(x)+q_{n-1}(x)f^{(n-1)}(x)+\cdots +q_1(x)f(x)+q_0(x)=0 \text{ for all } x\in I
+      </men>. 
+      Prove that <m>W</m> is a subspace of <m>C^n(I)</m>. 
+      </p>
+      </statement>
+      <solution>
+      <p>
+      
+      </p>
+      </solution>
+      </example>
+      <example xml:id="eg_null_im_matrix">
+      <title>Matrix transformation</title>
+      <statement>
+      <p>
+      Let <m>A</m> be an <m>m\times n</m> matrix, and let <m>\bolda_1,\bolda_2,\dots, \bolda_n</m> be the <m>n</m> columns of <m>A</m>, considered as elements of <m>F^m</m>.   The null space and image of the corresponding matrix transformation <m>T_A\colon F^n\rightarrow F^m</m> can be identified with the following <em>fundamental spaces</em> of <m>A</m>:
+      <md>
+        <mrow>\NS T_A \amp = \NS A=\{\boldx\in F^n\colon A\boldx=\boldzero\}</mrow>
+        <mrow>\im T_A \amp =\CS A=\Span(\bolda_1,\bolda_2,\dots, \bolda_n)</mrow>
+      </md>.
+      </p>
+      </statement>
+      <solution>
+      <p>
+      
+      </p>
+      </solution>
+      </example>
+      
+      
+    </subsection>
+    <subsection xml:id="ss_rank_nullity">
+    <title>Rank-nullity and friends</title>
+      <theorem xml:id="th_inj_surj_bij">
+      <title>Injective, surjective, bijective</title>
+      <statement>
+      <p>
+      Let <m>T\colon V\rightarrow W</m> be a linear transformation. 
+      <ol>
+        <li>
+          <p>
+            <m>T</m> is injective if and only if <m>\NS T=\{\boldzero\}</m>. 
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>T</m> is surjective if and only if <m>\im T=W</m>. 
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>T</m> is bijective if and only if <m>\NS T=\{\boldzero\}</m> and <m>\im T=W</m>. 
+          </p>
+        </li>
+      </ol>
+      </p>
+      </statement>
+      <proof>
+      <p>
+      </p>
+      </proof>
+      </theorem>
+    
+    <theorem xml:id="th_rank_nullity">
+    <title>Rank-nullity theorem</title>
+    <statement>
+    <p>
+    Let <m>V</m> be a finite-dimensional vector space. If <m>T\colon V\rightarrow W</m> is a linear transformation, then 
+    <men xml:id="eq_rank_null">
+      \dim V=\dim\NS T+\dim W
+    </men>.
+    
+    </p>
+    </statement>
+    <proof>
+    <p>
+    </p>
+    </proof>
+    </theorem>
+    <corollary xml:id="cor_inj_surj_bij">
+      <title>Injective, surjective, bijective</title>
+      <statement>
+        <p>
+          Let <m>V</m> be a finite-dimensional vector space, and  let <m>T\colon V\rightarrow W</m> be a linear transformation.
+          <ol>
+            <li>
+              <p>
+                If <m>\dim V&gt; \dim W</m>, then <m>T</m> is not injective. 
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>\dim V&lt; \dim W</m>, then <m>T</m> is not surjective. 
+              </p>
+            </li>
+            <li>
+              <p>
+                Assume further that <m>\dim V=\dim W</m>. The following statements are equivalent. 
+                <ol>
+                  <li>
+                    <p>
+                      <m>T</m> is bijective. 
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <m>T</m> is injective.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <m>T</m> is surjective.
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </li>
+          </ol>
         </p>
-      </remark>
+      </statement>
+    </corollary>
+    <example xml:id="eg_rank_null_polys">
+    <title>Polynomial evaluation</title>
+    <statement>
+    <p>
+    Let <m>n</m> be a positive integer, and let <m>\boldc=(c_1,c_2,\dots, c_{n+1})\in \C^{n+1}</m> be a choice of <m>n+1</m> complex inputs. Prove that for any choice <m>\boldd=(d_1,d_2,\dots, d_{n+1})\in \C^{n+1}</m> of <m>n+1</m> complex outputs there is a unique polynomial <m>f\in P_n(\C)</m> satisfying 
+    <md>
+      <mrow>f(c_1) \amp = d_1</mrow>
+      <mrow>f(c_2) \amp = d_2</mrow>
+      <mrow> \amp \vdots </mrow>
+      <mrow>f(c_n) \amp = d_n</mrow>
+    </md>.
+    In other words, given any choice of values <m>d_k</m>, we can construct a unique polynomia <m>f\in P_n(\C)</m> whose value at <m>c_k</m> is <m>d_k</m> for all <m>1\leq k\leq n</m>. 
+    </p>
+    </statement>
+    <solution>
+    <p>
+    
+    </p>
+    </solution>
+    </example>
+    
     </subsection>
 </section>

@@ -43,7 +43,7 @@
         <ol marker="(i)">
             <li xml:id="d_lin_trans_add">
                 <p>
-                    <m>T(v_1+v_2)=T(v)+T(v')</m> for all <m>v,v'\in V</m>.
+                    <m>T(v+v')=T(v)+T(v')</m> for all <m>v,v'\in V</m>.
                 </p>
             </li>
             <li xml:id="d_lin_trans_mult">
@@ -54,7 +54,7 @@
         </ol>
         We let <m>\mathcal{L}(V,W)</m> denote  the set of all linear transformations from <m>V</m> to <m>W</m>: <ie/>, 
         <me>
-            \mathcal{L}(V,W)=\{f\colon V\rightarrow W\colon f \text{ is a linear transformation}\}
+            \mathcal{L}(V,W)=\{T\colon V\rightarrow W\colon T \text{ is a linear transformation}\}
         </me>.
         
         </p>
@@ -741,9 +741,10 @@
                     </md>
                     as linear combinations of the <m>v_i</m>, and then compute
                     <md>
-                        <mrow>T(cv+dw) \amp =T(\sum_{i\in i}(cc_i+dd_i)v_i)</mrow>
-                        <mrow> \amp = \sum_{i\in I}(cc_i+dd_i)v_i \amp (\text{def. of } T)</mrow>
-                        <mrow> \amp =c\sum_{i\in i}c_iv_i+d\sum_{i\in I}d_iv_i</mrow>
+                        <mrow>T(cv+dw) \amp =T\left(\sum_{i\in i}cc_iv_i+\sum_{i\in I}dd_iv_i\right)</mrow>
+                        <mrow>\amp= T\left(\sum_{i\in i}(cc_i+dd_i)v_i\right)</mrow>
+                        <mrow> \amp = \sum_{i\in I}(cc_i+dd_i)w_i \amp (\text{def. of } T)</mrow>
+                        <mrow> \amp =c\sum_{i\in i}c_iw_i+d\sum_{i\in I}d_iw_i</mrow>
                         <mrow> \amp =cT(v)+dT(w) \amp (\text{def. of } T)</mrow>
                     </md>.
                 </p>
