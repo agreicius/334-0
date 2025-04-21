@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Vector spaces (cont.)</title>
+<title>Null space and image</title>
 <link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.googleapis.com">
 <link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link xmlns:xlink="http://www.w3.org/1999/xlink" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
@@ -124,7 +124,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_vector_space.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_linear_algebra.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s_subspace.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_transformation.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_linear_algebra.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="advlinalgkursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div xmlns:xlink="http://www.w3.org/1999/xlink" id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\renewcommand{\Re}{\operatorname{Re}}
 \renewcommand{\Im}{\operatorname{Im}}
 \newcommand{\Z}{{\mathbb Z}}
@@ -391,9 +391,9 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 </ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_vector_space.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Vector spaces</span></a></div></li>
-<li class="toc-item toc-section contains-active">
+<li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_vector_space_functions.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Vector spaces (cont.)</span></a></div>
-<ul class="structural toc-item-list active">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_vector_space_functions.html#" class="internal"><span class="title">Function spaces</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_vector_space_functions.html#" class="internal"><span class="title">Vector space properties</span></a></div></li>
 </ul>
@@ -437,9 +437,9 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_transformation.html#ss_vs_of_lin_transformations" class="internal"><span class="title"><span class="process-math">\(\mathcal{L}(V,W)\)</span> as a vector space</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section">
+<li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="s_null_image.html" class="internal"><span class="codenumber">1.10</span> <span class="title">Null space and image</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_null_image.html#ss_null_image_def" class="internal"><span class="title">Definition and examples</span></a></div></li></ul>
+<ul class="structural toc-item-list active"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_null_image.html#ss_null_image_def" class="internal"><span class="title">Definition and examples</span></a></div></li></ul>
 </li>
 </ul>
 </li>
@@ -454,204 +454,169 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:xlink="http://www.w3.org/1999/xlink" class="section" id="s_vector_space_functions"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.3</span><span class="space"> </span><span class="title">Vector spaces (cont.)</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:xlink="http://www.w3.org/1999/xlink" class="section" id="s_null_image"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.10</span><span class="space"> </span><span class="title">Null space and image</span>
 </h2>
-<section class="subsection" id=""><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Function spaces</span>
+<section class="introduction" id="s_null_image-2"><div class="para" id="s_null_image-2-1">In this section we introduce two subspaces associated to a linear transformation <span class="process-math">\(T\colon V\rightarrow W\text{:}\)</span> the null space and image.</div></section><section class="subsection" id="ss_null_image_def"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Definition and examples</span>
 </h3>
-<div class="para" id="-2">As promised, we now prove that sets <span class="process-math">\(F^n\text{,}\)</span> <span class="process-math">\(F^\infty\text{,}\)</span> <span class="process-math">\(F^{m,n}\text{,}\)</span> together with their indicated operations, do indeed satisfy the vector space axioms. We will do this in a somewhat indirect manner by first constructing a more general vector space <span class="process-math">\(F^I\text{,}\)</span> and then showing that <span class="process-math">\(F^n\text{,}\)</span> <span class="process-math">\(F^\infty\text{,}\)</span> and <span class="process-math">\(F^{m,n}\)</span> are just specific instances of this more general construction, corresponding to particular choices of the set <span class="process-math">\(I\text{.}\)</span>
-</div>
-<div class="para" id="-3">The objects of the vector space <span class="process-math">\(F^I\)</span> defined in <a href="s_vector_space_functions.html#d_tuple_space" class="xref" data-knowl="./knowl/xref/d_tuple_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.3.1: Space of F-valued functions/tuples">Definition 1.3.1</a> can be thought of either as functions <span class="process-math">\(f\colon I\rightarrow F\)</span> from the set <span class="process-math">\(I\)</span> to the field <span class="process-math">\(F\text{,}\)</span> or equivalently, as <span class="process-math">\(F\)</span>-valued tuples <span class="process-math">\((a_i)_{i\in I}\)</span> indexed by <span class="process-math">\(I\text{.}\)</span> Hence the “functions/tuples” in its name. Depending on the context, one of these two equivalent conceptions (function or tuple) may be more convenient than the other. For example, to make the connection between <span class="process-math">\(F^I\text{,}\)</span> <span class="process-math">\(F^n\text{,}\)</span> <span class="process-math">\(F^\infty\text{,}\)</span> and <span class="process-math">\(F^{m,n}\text{,}\)</span> it is most convenient to think in terms of tuples. See <a href="s_sets_functions.html#d_Ituple" class="xref" data-knowl="./knowl/xref/d_Ituple.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 0.1.24: Tuple">Definition 0.1.24</a> for the general definition of tuples and <a href="s_sets_functions.html#rm_tuple_function" class="xref" data-knowl="./knowl/xref/rm_tuple_function.html" data-reveal-label="Reveal" data-close-label="Close" title="Remark 0.1.25: Tuple versus function">Remark 0.1.25</a> for an explication of the equivalence between functions and tuples.</div>
-<article class="definition definition-like" id="d_tuple_space"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Space of <span class="process-math">\(F\)</span>-valued functions/tuples.</span>
+<article class="definition definition-like" id="d_null_image"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.10.1</span><span class="period">.</span><span class="space"> </span><span class="title">Null space and image.</span>
 </h4>
-<div class="para logical" id="d_tuple_space-2-1">
-<div class="para">Let <span class="process-math">\(F\)</span> be a field. Given any set <span class="process-math">\(I\text{,}\)</span> recall that <span class="process-math">\(F^I\)</span> is defined as the set of all functions <span class="process-math">\(f\colon I\rightarrow F\text{:}\)</span> i.e.</div>
-<div class="displaymath process-math">
-\begin{equation*}
-F^I=\{f\colon I\rightarrow F\}\text{.}
-\end{equation*}
-</div>
-<div class="para">Equivalently, thinking of functions as tuples, we can describe <span class="process-math">\(F^I\)</span> as the set of all <span class="process-math">\(F\)</span>-valued tuples indexed by <span class="process-math">\(I\text{:}\)</span> i.e.,</div>
-<div class="displaymath process-math">
-\begin{equation*}
-F^I=\{(a_i)_{i\in I}\colon a_i\in F\}\text{.}
-\end{equation*}
-</div>
-<div class="para">Below we define a vector space structure on <span class="process-math">\(F^I\text{.}\)</span>
-</div>
-<ul class="disc" id="d_tuple_space-2-1-13">
-<li id="d_tuple_space-2-1-13-1">
-<span class="heading"><span class="title">Vector operations.</span></span><div class="para logical" id="d_tuple_space-2-1-13-1-2">
-<div class="para">Given elements <span class="process-math">\(f=(f(i))_{i\in I}, g=(g(i))_{i\in I}\in F^I\)</span> and scalar <span class="process-math">\(c\in F\text{,}\)</span> we define</div>
-<div class="displaymath process-math" id="d_tuple_space-2-1-13-1-2-3">
-\begin{align*}
-f+g \amp = (f(i)+g(i))_{i\in I}\\
-cf \amp =(cf(i))_{i\in I}\text{.}
-\end{align*}
-</div>
-<div class="para">In other words, <span class="process-math">\(f+g\)</span> is the function defined as <span class="process-math">\((f+g)(i)=f(i)+g(i)\)</span> for all <span class="process-math">\(i\in I\text{,}\)</span> and <span class="process-math">\(cf\)</span> is the function defined as <span class="process-math">\((cf)(i)=cf(i)\)</span> for all <span class="process-math">\(i\in I\text{.}\)</span>
+<div class="para logical" id="d_null_image-2-1">
+<div class="para">Let <span class="process-math">\(T\colon V\rightarrow W\)</span> be a linear transformation.</div>
+<ul class="disc" id="d_null_image-2-1-2">
+<li id="d_null_image-2-1-2-1">
+<span class="heading"><span class="title">Null space of <span class="process-math">\(T\)</span>.</span></span><div class="para logical" id="d_null_image-2-1-2-1-2">
+<div class="para">The <dfn class="terminology">null space</dfn> of <span class="process-math">\(T\)</span> is the subset <span class="process-math">\(\NS T\)</span> of <span class="process-math">\(V\)</span> defined as</div>
+<div class="displaymath process-math" id="eq_null">
+\begin{equation}
+\NS T=\{v\in V\colon T(v)=\boldzero\}\text{.}\tag{1.25}
+\end{equation}
 </div>
 </div>
 </li>
-<li id="d_tuple_space-2-1-13-2">
-<span class="heading"><span class="title">Zero vector.</span></span><div class="para" id="d_tuple_space-2-1-13-2-2">The zero vector of <span class="process-math">\(F^I\)</span> is the zero function <span class="process-math">\(0_I\colon I\rightarrow F\)</span> defined as <span class="process-math">\(0_I(i)=0\)</span> for all <span class="process-math">\(i\in I\text{.}\)</span> In other words, using tuple notation, we have <span class="process-math">\(\boldzero=0_I=(0)_{i\in I}\text{.}\)</span>
-</div>
-</li>
-<li id="d_tuple_space-2-1-13-3">
-<span class="heading"><span class="title">Vector inverses.</span></span><div class="para logical" id="d_tuple_space-2-1-13-3-2">
-<div class="para">Given an element <span class="process-math">\(f=(f(i))_{i\in I}\in F^I\)</span> its vector inverse <span class="process-math">\(-f\)</span> is defined as</div>
-<div class="displaymath process-math">
-\begin{equation*}
--f=(-f(i))_{i\in I}\text{.}
-\end{equation*}
-</div>
-<div class="para">In other words <span class="process-math">\(-f\)</span> is the function on <span class="process-math">\(I\)</span> defined as <span class="process-math">\((-f)(i)=-f(i)\)</span> for all <span class="process-math">\(i\in I\text{.}\)</span>
+<li id="d_null_image-2-1-2-2">
+<span class="heading"><span class="title">Image of <span class="process-math">\(T\)</span>.</span></span><div class="para logical" id="d_null_image-2-1-2-2-2">
+<div class="para">The <dfn class="terminology">image</dfn> (or <dfn class="terminology">range</dfn>) of <span class="process-math">\(T\)</span> is the subset <span class="process-math">\(\im T\)</span> of <span class="process-math">\(W\)</span> defined as</div>
+<div class="displaymath process-math" id="eq_image">
+\begin{equation}
+\im T=\{w\in W\colon w=T(v) \text{ for some } v\in V\}\text{.}\tag{1.26}
+\end{equation}
 </div>
 </div>
 </li>
 </ul>
-<div class="para">We call <span class="process-math">\(F^I\text{,}\)</span> together with these vector operations, the <dfn class="terminology">space of functions from <span class="process-math">\(I\)</span> to <span class="process-math">\(F\)</span></dfn>, or, thinking in terms of tuples, the <dfn class="terminology">space of <span class="process-math">\(F\)</span>-valued tuples indexed by <span class="process-math">\(I\)</span></dfn>.</div>
-</div></article><article class="theorem theorem-like" id="th_vs_egs"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Function/tuple spaces are vector spaces.</span>
+</div></article><article class="remark remark-like" id="rm_nullspace_image"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.10.2</span><span class="period">.</span><span class="space"> </span><span class="title">Null space and image.</span>
 </h4>
-<div class="para" id="th_vs_egs-2-1">Each of the sets <span class="process-math">\(F^n\text{,}\)</span> <span class="process-math">\(F^\infty\text{,}\)</span> <span class="process-math">\(F^{m,n}\text{,}\)</span> <span class="process-math">\(F^I\text{,}\)</span> together with the accompanying vector operations defined above, is a vector space.</div></article><details id="th_vs_egs-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_vs_egs-3-1">
-<div class="para">First we observe, thinking in terms of tuples, that each of the sets <span class="process-math">\(F^{n}\text{,}\)</span> <span class="process-math">\(F^\infty\text{,}\)</span> <span class="process-math">\(F^{m,n}\text{,}\)</span> along with their accompanying vector space operations, is a specific example of <span class="process-math">\(F^I\)</span> together with its vector operations. This is seen by choosing an appropriate index set <span class="process-math">\(I\)</span> in each case. In more detail, we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_vector_space.html ./knowl/xref/d_tuple_space.html" id="th_vs_egs-3-1-6">
-\begin{align*}
-F^n\amp= F^I, \text{ where } I=\{1,2,\dots, n\} \\
-F^\infty\amp= F^I, \text{ where } I=\Z_+=\{1,2,3,\dots\} \\
-F^{m,n}\amp= F^I, \text{ where } I=\{(i,j)\colon 1\leq i\leq m, 1\leq j\leq n\} \text{.}
-\end{align*}
+<div class="para logical" id="rm_nullspace_image-2">
+<div class="para">We gather a few simple observations about the null space and image of a linear map <span class="process-math">\(T\colon V\rightarrow W\)</span>
 </div>
-<div class="para">Thus it suffices to show that <span class="process-math">\(F^I\)</span> is a vector space with respect to the given vector operations. To do this, we follow <a href="s_vector_space.html#proc_vector_space" class="xref" data-knowl="./knowl/xref/proc_vector_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 1.2.5: Vector space verification">Procedure 1.2.5</a>. Since <a href="s_vector_space_functions.html#d_tuple_space" class="xref" data-knowl="./knowl/xref/d_tuple_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.3.1: Space of F-valued functions/tuples">Definition 1.3.1</a> has already taken care of steps (1)-(3) for us, it remains to show that the vector space axioms are satisfied. As you will see, the tuple notation for functions makes these proofs quite straightforward consequences of the field axioms satisfied by <span class="process-math">\(F\text{.}\)</span>
+<ol class="decimal" id="rm_nullspace_image-2-2">
+<li id="rm_nullspace_image-2-2-1"><div class="para" id="rm_nullspace_image-2-2-1-1">Let <span class="process-math">\(T\colon V\rightarrow W\text{.}\)</span> It is useful to keep in mind where <span class="process-math">\(\NS T\)</span> and <span class="process-math">\(\im T\)</span> “live” in this picture: we have <span class="process-math">\(\NS T\subseteq V\)</span> and <span class="process-math">\(\im T\subseteq W\text{.}\)</span> In other words, the null space is a subset of the domain, and the image is a subset of the codomain. See <a href="s_null_image.html#fig_null_image" class="xref" data-knowl="./knowl/xref/fig_null_image.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.10.3: Null space and image">Figure 1.10.3</a>.</div></li>
+<li id="rm_nullspace_image-2-2-2"><div class="para" id="rm_nullspace_image-2-2-2-1">Note that the image <span class="process-math">\(\im T\)</span> of a linear transformation is just its image when considered simply as a function of sets. (See <a href="s_sets_functions.html#d_image" class="xref" data-knowl="./knowl/xref/d_image.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 0.1.17: Image of a set">Definition 0.1.17</a>.)</div></li>
+<li id="rm_nullspace_image-2-2-3">
+<div class="para logical" id="rm_nullspace_image-2-2-3-1">
+<div class="para">The notion of a null space is analogous to the set of zeros (or roots) of a real-valued function <span class="process-math">\(f\colon X\rightarrow \R\text{,}\)</span>
 </div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_nullspace_image.html">
+\begin{equation*}
+\{x\in X\colon f(x)=0\}\text{,}
+\end{equation*}
 </div>
-<div class="para logical" id="th_vs_egs-3-2">
-<div class="para">Consider the arithmetic axioms first. We will verify that Axioms (i), (ii), and (v) are satisfied. Given <span class="process-math">\(f=(f(i))_{i\in I},g=(g(i))_{i\in I},h=(h(i))_{i\in I}\in F^I\)</span> and <span class="process-math">\(c\in F\text{,}\)</span> we have</div>
-<div class="displaymath process-math" id="th_vs_egs-3-2-3">
-\begin{align*}
-f+g \amp = (f(i)+g(i))_{i\in I} \amp (\text{def. vec. add.}) \\
-\amp = (g(i)+f(i))_{i\in I} \amp (\text{field prop.})\\
-\amp = g+f \amp (\text{def. vec. add.})\\
-\amp \\
-f+(g+h) \amp = (f(i)+(g+h)(i))_{i\in I} \amp (\text{def. vec. add.})\\
-\amp = (f(i)+(g(i)+h(i)))_{i\in I} \amp (\text{def. vec. add.})\\
-\amp = ((f(i)+g(i))+h(i))_{i\in I} \amp (\text{field prop.})\\
-\amp = ((f+g)(i)+h(i))_{i\in I} \amp  (\text{def. vec. add.})\\
-\amp = (f+g)+h \amp  (\text{def. vec. add.})\\
-\amp \\
-c(f+g) \amp =(c(f+g)(i))_{i\in I} \amp (\text{def. scal. mult})\\
-\amp = (c(f(i)+g(i)))_{i\in I} \amp (\text{def. vec. add.})\\
-\amp = (cf(i)+cg(i))_{i\in I} \amp (\text{field prop.})\\
-\amp =((cf)(i)+(cg)(i))_{i\in I} \amp (\text{def. scal. mult})\\
-\amp = cf+cg \amp (\text{def. vec. add.})\text{.}
-\end{align*}
+<div class="para">and “the zeros of <span class="process-math">\(T\)</span>” is a useful English shorthand for <span class="process-math">\(\NS T\text{.}\)</span> However, there is an important difference between the null space of a linear transformation and the zeros of an arbitrary real-valued function: the null space of a linear transformation comes with the added structure of a vector space (<a href="s_null_image.html#th_nullspace_image" class="xref" data-knowl="./knowl/xref/th_nullspace_image.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.10.4: Null space and image">Theorem 1.10.4</a>), whereas the zeros of an arbitrary function in general do not.</div>
 </div>
-<div class="para">Lastly we will show that <span class="process-math">\(0_I\)</span> does indeed satisfy the additive identity axiom (Axiom (iii)), leaving the verification of Axiom (iv) to the reader. Given any element <span class="process-math">\(f=(f(i))_{i\in I}\in F^I\text{,}\)</span> we have</div>
-<div class="displaymath process-math" id="th_vs_egs-3-2-6">
-\begin{align*}
-0_I+f \amp =(0_I(i)+f(i))_{i\in I} \amp (\text{def. vec. add.})\\
-\amp = (0+f(i))_{i\in I}\amp (\text{def. of } 0_I)\\
-\amp = (f(i))_{i\in I} \amp (\text{field prop.})\\
-\amp = f\text{,}
-\end{align*}
-</div>
-<div class="para">as desired.</div>
-</div></article></details><article class="example example-like" id="eg_real_functions"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Real-valued functions.</span>
-</h4>
-<div class="para" id="eg_real_functions-2-1">Let <span class="process-math">\(I=[a,b]\subseteq \R \)</span> be an interval in the real line. Using the function interpretation of <span class="process-math">\(F^I\text{,}\)</span> <span class="process-math">\(\R^{[a,b]}\)</span> is the set of all functions of the form <span class="process-math">\(f\colon [a,b]\rightarrow \R\text{.}\)</span> The vector operations defined in <a href="s_vector_space_functions.html#d_tuple_space" class="xref" data-knowl="./knowl/xref/d_tuple_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.3.1: Space of F-valued functions/tuples">Definition 1.3.1</a> in this setting correspond to the function-arithmetic operations you met in precalculus and calculus: i.e., given functions <span class="process-math">\(f,g\in \R^{[a,b]}\text{,}\)</span> their vector sum <span class="process-math">\(f+g\)</span> is the function defined as <span class="process-math">\((f+g)(x)=f(x)+g(x)\)</span> for all <span class="process-math">\(x\in [a,b]\text{.}\)</span> Similarly, given a scalar <span class="process-math">\(c\in \R\)</span> and function <span class="process-math">\(f\in \R^{[a,b]}\text{,}\)</span> the vector scalar multiple <span class="process-math">\(cf\)</span> is the function defined as <span class="process-math">\((cf)(x)=cf(x)\)</span> for all <span class="process-math">\(x\in \R\text{.}\)</span>
-</div> <div class="para" id="eg_real_functions-2-2">In this context it is possible to visualize our vector operations in terms of the graphs of the functions on the interval <span class="process-math">\([a,b]\text{.}\)</span>
-</div> <figure class="figure figure-like" id="fig_func_arith"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel top" style="width:50%;"><figure class="figure figure-like" id="fig_func_add"><img src="generated/sageplot/fig_func_add-2.svg" role="img" class="contained" alt="Visualizing function addition"><figcaption><span class="codenumber">(a)</span><span class="space"> </span>Visualizing <span class="process-math">\(f+g\)</span></figcaption></figure></div>
-<div class="sbspanel top" style="width:50%;"><figure class="figure figure-like" id="fig_func_scale"><img src="generated/sageplot/fig_func_scale-2.svg" role="img" class="contained" alt="Visualizing function scalar multiplication"><figcaption><span class="codenumber">(b)</span><span class="space"> </span>Visualizing <span class="process-math">\(cf\)</span></figcaption></figure></div>
-</div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.3.4<span class="period">.</span></span><span class="space"> </span>Visualizing function arithmetic in <span class="process-math">\(\R^{[-1,1]}\)</span></figcaption></figure></article></section><section class="subsection" id=""><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Vector space properties</span>
-</h3>
-<div class="para" id="-2">We end this section with a few elementary vector space properties. Since these statements involve a general vector space (as opposed to a specific type of vector space), we will make no assumptions about <span class="process-math">\(V\)</span> and the base field <span class="process-math">\(F\text{,}\)</span> other than that <span class="process-math">\(V\)</span> satisfies the vector space axioms and <span class="process-math">\(F\)</span> satisfies the field axioms.</div>
-<article class="theorem theorem-like" id="th_zero_inv_unique"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">Uniqueness of zero vector and inverses.</span>
-</h4>
-<div class="para logical" id="th_zero_inv_unique-2-1">
-<div class="para">Let <span class="process-math">\(V\)</span> be an <span class="process-math">\(F\)</span>-vector space.</div>
-<ol class="decimal" id="th_zero_inv_unique-2-1-3">
-<li id="th_zero_inv_unique-2-1-3-1"><div class="para" id="th_zero_inv_unique-2-1-3-1-1">The zero vector in <span class="process-math">\(V\)</span> is unique: i.e., there is one and only one element of <span class="process-math">\(V\)</span> that satisfies <a href="s_vector_space.html#eq_zero_vector" class="xref" data-knowl="./knowl/xref/eq_zero_vector.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.3">(1.3)</a>.</div></li>
-<li id="th_zero_inv_unique-2-1-3-2"><div class="para" id="th_zero_inv_unique-2-1-3-2-1">Inverse vectors are unique: i.e., for all <span class="process-math">\(v\in V\)</span> there is one and only one vector <span class="process-math">\(-v\)</span> satisfying <a href="s_vector_space.html#eq_vec_inv" class="xref" data-knowl="./knowl/xref/eq_vec_inv.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.4">(1.4)</a>.</div></li>
+<div class="para" id="rm_nullspace_image-2-2-3-2">The same observation can be made about the image of a linear transformation (<a href="s_null_image.html#th_nullspace_image" class="xref" data-knowl="./knowl/xref/th_nullspace_image.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.10.4: Null space and image">Theorem 1.10.4</a>), in comparison to the image of an arbitrary function.</div>
+</li>
 </ol>
-</div></article><details id="th_zero_inv_unique-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_zero_inv_unique-3-1"><ol class="decimal" id="th_zero_inv_unique-3-1-1">
-<li id="th_zero_inv_unique-3-1-1-1"><div class="para logical" id="th_zero_inv_unique-3-1-1-1-1">
-<div class="para">If <span class="process-math">\(w\in V\)</span> satisfies <span class="process-math">\(w+v=v\)</span> for all <span class="process-math">\(v\in V\text{,}\)</span> then in particular, taking <span class="process-math">\(v=\boldzero\text{,}\)</span> we see that <span class="process-math">\(w+\boldzero=\boldzero\text{.}\)</span> But since <span class="process-math">\(w+\boldzero=w\)</span> (using the defining property of <span class="process-math">\(\boldzero)\text{,}\)</span> we see that</div>
-<div class="displaymath process-math" id="th_zero_inv_unique-3-1-1-1-1-8">
-\begin{align*}
-w+\boldzero=\boldzero \amp \implies w=\boldzero\text{.}
-\end{align*}
+</div></article><figure class="figure figure-like" id="fig_null_image"><div class="sbsgroup">
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel top" style="width:100%;"><figure class="figure figure-like" id="fig_null_image_ambient"><img src="generated/latex-image/im_null_image.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span>Null space lives in the domain; image lives in the codomain.</figcaption></figure></div></div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel top" style="width:100%;"><figure class="figure figure-like" id="fig_nullspace_to_zero"><img src="generated/latex-image/im_nullspace_to_zero.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span>The entire null space gets mapped to <span class="process-math">\(\boldzero_W\text{.}\)</span></figcaption></figure></div></div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel top" style="width:100%;"><figure class="figure figure-like" id="fig_domain_to_image"><img src="generated/latex-image/im_domain_to_image.svg" role="img" class="contained"><figcaption><span class="codenumber">(c)</span><span class="space"> </span>The entire domain is mapped to <span class="process-math">\(\im T\text{.}\)</span></figcaption></figure></div></div></div>
 </div>
-<div class="para">We conclude that <span class="process-math">\(w=\boldzero\text{,}\)</span> as desired.</div>
-</div></li>
-<li id="th_zero_inv_unique-3-1-1-2"><div class="para logical" id="th_zero_inv_unique-3-1-1-2-1">
-<div class="para">Let <span class="process-math">\(v\in V\text{.}\)</span> Given <span class="process-math">\(w\in V\)</span> we have</div>
-<div class="displaymath process-math" id="th_zero_inv_unique-3-1-1-2-1-3">
-\begin{align*}
-w+v =\boldzero \amp \implies w+v=-v+v \amp (-v+v=\boldzero) \\
-\amp \implies w+v+(-v)=-v+v+(-v)\\
-\amp \implies w+\boldzero=-v+\boldzero \amp (v+(-v)=\boldzero)\\
-\amp \implies w=-v \amp (\text{prop. of } \boldzero)\text{.}
-\end{align*}
-</div>
-</div></li>
-</ol></div></article></details><article class="theorem theorem-like" id="th_vs_props"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Vector space properties.</span>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.10.3<span class="period">.</span></span><span class="space"> </span>Null space and image</figcaption></figure><div class="para" id="ss_null_image_def-5">Before getting to examples we make official what we hinted at above: the null space and image of a linear transformation are subspaces.</div>
+<article class="theorem theorem-like" id="th_nullspace_image"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.10.4</span><span class="period">.</span><span class="space"> </span><span class="title">Null space and image.</span>
 </h4>
-<div class="para logical" id="th_vs_props-2-1">
-<div class="para">Let <span class="process-math">\(V\)</span> be an <span class="process-math">\(F\)</span>-vector space.</div>
-<ol class="decimal" id="th_vs_props-2-1-3">
-<li id="th_vs_props-2-1-3-1"><div class="para" id="th_vs_props-2-1-3-1-1">For all <span class="process-math">\(v\in V\text{,}\)</span> we have <span class="process-math">\(0\boldv=\boldzero\text{.}\)</span>
+<div class="para" id="th_nullspace_image-2-1">If <span class="process-math">\(T\colon V\rightarrow W\)</span> is a linear transformation, then <span class="process-math">\(\NS T\)</span> is a subspace of <span class="process-math">\(V\text{,}\)</span> and <span class="process-math">\(\im T\)</span> is a subspace of <span class="process-math">\(W\text{.}\)</span>
+</div></article><details id="th_nullspace_image-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><article class="case" id="th_nullspace_image-3-1"><h5 class="heading">Null space of <span class="process-math">\(T\)</span>.</h5>
+<div class="para logical" id="th_nullspace_image-3-1-2">
+<div class="para">We use the two-step technique to prove <span class="process-math">\(\NS T\)</span> is a subspace.</div>
+<ol class="decimal" id="th_nullspace_image-3-1-2-2">
+<li id="th_nullspace_image-3-1-2-2-1"><div class="para" id="th_nullspace_image-3-1-2-2-1-1">Since <span class="process-math">\(T(\boldzero_V)=\boldzero_W\)</span> (<a href="s_transformation.html#th_transform_basic_props" class="xref" data-knowl="./knowl/xref/th_transform_basic_props.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.9.9: Basic properties of linear transformations">Theorem 1.9.9</a>), we see that <span class="process-math">\(\boldzero_V\in \NS T\text{.}\)</span>
 </div></li>
-<li id="th_vs_props-2-1-3-2"><div class="para" id="th_vs_props-2-1-3-2-1">For all <span class="process-math">\(c\in F\text{,}\)</span> we have <span class="process-math">\(c\boldzero=\boldzero\text{.}\)</span>
-</div></li>
-<li id="th_vs_props-2-1-3-3"><div class="para" id="th_vs_props-2-1-3-3-1">For all <span class="process-math">\(v\in V\text{,}\)</span> we have <span class="process-math">\((-1)\boldv=-\boldv\text{.}\)</span>
-</div></li>
-<li id="th_vs_props-2-1-3-4"><div class="para" id="th_vs_props-2-1-3-4-1">For all <span class="process-math">\(v\in V\)</span> and <span class="process-math">\(c\in F\text{,}\)</span> if <span class="process-math">\(cv=\boldzero\text{,}\)</span> then <span class="process-math">\(c=0\)</span> or <span class="process-math">\(v=\boldzero\text{.}\)</span>
+<li id="th_nullspace_image-3-1-2-2-2"><div class="para logical" id="th_nullspace_image-3-1-2-2-2-1">
+<div class="para">Suppose <span class="process-math">\(\boldv_1, \boldv_2\in \NS T\text{.}\)</span> Given any <span class="process-math">\(c,d\in \R\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_transform_basic_props.html" id="th_nullspace_image-3-1-2-2-2-1-3">
+\begin{align*}
+T(c\boldv_1+d\boldv_2) \amp=cT(\boldv_1)+dT(\boldv_2) \amp (T \text{ is linear, } \knowl{./knowl/xref/th_transform_basic_props.html}{\text{Theorem 1.9.9}})\\
+\amp=c\boldzero_W+d\boldzero_W \amp (\boldv_1, \boldv_2\in \NS T) \\
+\amp = \boldzero_W\text{.}
+\end{align*}
+</div>
+<div class="para">This shows that <span class="process-math">\(c\boldv_1+d\boldv_2\in \NS T\text{,}\)</span> completing our proof.</div>
 </div></li>
 </ol>
-</div></article><details id="th_vs_props-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_vs_props-3-1">We provide proofs of (1) and (3), leaving (2) and (4) to the reader.</div>
-<div class="para logical" id="th_vs_props-3-2">
-<div class="para">Our proof of (1) is almost identical to a similar statement in <a href="s_fields.html#th_field_props" class="xref" data-knowl="./knowl/xref/th_field_props.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.1.23: Properties of fields">Theorem 1.1.23</a>. For any <span class="process-math">\(v\in V\text{,}\)</span> we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_field_props.html" id="th_vs_props-3-2-3">
+</div></article><article class="case" id="th_nullspace_image-3-2"><h5 class="heading">Image of <span class="process-math">\(T\)</span>.</h5>
+<div class="para logical" id="th_nullspace_image-3-2-2">
+<div class="para">The proof proceeds in a similar manner, using the two-step technique.</div>
+<ol class="decimal" id="th_nullspace_image-3-2-2-1">
+<li id="th_nullspace_image-3-2-2-1-1"><div class="para" id="th_nullspace_image-3-2-2-1-1-1">Since <span class="process-math">\(T(\boldzero_V)=\boldzero_W\)</span> (<a href="s_transformation.html#th_transform_basic_props" class="xref" data-knowl="./knowl/xref/th_transform_basic_props.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.9.9: Basic properties of linear transformations">Theorem 1.9.9</a>), we see that <span class="process-math">\(\boldzero_W\)</span> is “hit” by <span class="process-math">\(T\text{,}\)</span> and hence is a member of <span class="process-math">\(\im T\text{.}\)</span>
+</div></li>
+<li id="th_nullspace_image-3-2-2-1-2"><div class="para logical" id="th_nullspace_image-3-2-2-1-2-1">
+<div class="para">Assume vectors <span class="process-math">\(\boldw_1, \boldw_2\in W\)</span> are elements of <span class="process-math">\(\im T\text{.}\)</span> By definition, this means there are vectors <span class="process-math">\(\boldv_1, \boldv_2\in V\)</span> such that <span class="process-math">\(T(\boldv_i)=\boldw_i\)</span> for <span class="process-math">\(1\leq i\leq 2\text{.}\)</span> Now given any linear combination <span class="process-math">\(\boldw=c\boldw_1+d\boldw_2\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="th_nullspace_image-3-2-2-1-2-1-7">
 \begin{align*}
-0v \amp = (0+0)v \amp (\text{field prop. of } F)\\
-\amp 0v+0v \amp (\text{dist. prop. of } V)\text{.}
+T(c\boldv_1+d\boldv_2) \amp = cT(\boldv_1)+dT(\boldv_2)\\
+\amp =c\boldw_1+d\boldw_2\\
+\amp =\boldw\text{.}
 \end{align*}
 </div>
-<div class="para">But then we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_field_props.html" id="th_vs_props-3-2-4">
+<div class="para">This shows that for any linear combination <span class="process-math">\(\boldw=c\boldw_1+d\boldw_2\text{,}\)</span> there is an element <span class="process-math">\(\boldv=c\boldv_1+d\boldv_2\)</span> such that <span class="process-math">\(T(\boldv)=\boldw\text{.}\)</span> We conclude that if  <span class="process-math">\(\boldw_1, \boldw_2\in \im T\text{,}\)</span> then <span class="process-math">\(\boldw=c\boldw_1+d\boldw_2\in \im T\)</span> for any <span class="process-math">\(c,d\in \R\text{,}\)</span> as desired.</div>
+</div></li>
+</ol>
+</div></article></article></details><article class="example example-like" id="eg_nullspace_image_transposition"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.10.5</span><span class="period">.</span>
+</h4>
+<div class="para" id="eg_nullspace_image_transposition-1-1">Define <span class="process-math">\(F\colon M_{nn}\rightarrow M_{nn}\)</span> as <span class="process-math">\(F(A)=A^T-A\text{.}\)</span>
+</div> <ol class="decimal" id="eg_nullspace_image_transposition-1-2">
+<li id="eg_nullspace_image_transposition-1-2-1"><div class="para" id="eg_nullspace_image_transposition-1-2-1-1">Prove that <span class="process-math">\(F\)</span> is linear.</div></li>
+<li id="eg_nullspace_image_transposition-1-2-2"><div class="para" id="eg_nullspace_image_transposition-1-2-2-1">Identify <span class="process-math">\(\NS F\)</span> as a familiar matrix subspace.</div></li>
+<li id="eg_nullspace_image_transposition-1-2-3"><div class="para" id="eg_nullspace_image_transposition-1-2-3-1">Identify <span class="process-math">\(\im F\)</span> as a familiar matrix subspace.</div></li>
+</ol>
+<div class="solutions"><details id="eg_nullspace_image_transposition-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_nullspace_image_transposition-2-1"><ol class="decimal" id="eg_nullspace_image_transposition-2-1-1">
+<li id="eg_nullspace_image_transposition-2-1-1-1"><div class="para logical" id="eg_nullspace_image_transposition-2-1-1-1-1">
+<div class="para">Linearity is an easy consequence of transpose properties. For any <span class="process-math">\(A_1, A_2\in M_{nn}\)</span> and <span class="process-math">\(c_1,c_2\in \R\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="eg_nullspace_image_transposition-2-1-1-1-1-3">
 \begin{align*}
-0v\amp = 0v+0v \\
--(0v)+0v\amp=-(0v)+0v+0v \amp (\text{add } -(0v)\text{ to both sides}) \\
-\boldzero\amp=\boldzero+0v \amp (\text{vec. inv. prop.})\\
-\boldzero\amp=0v \amp (\text{prop. of } \boldzero)\text{,}
+F(c_1A_1+c_2A_2)  \amp= (c_1A_1+c_2A_2)^T-(c_1A_1+c_2A_2)  \\
+\amp = c_1A_1^T+c_2A_2^T-c_1A_1-c_2A_2\amp (\text{transp. props}) \\
+\amp =c_1(A_1^T-A_1)+c_2(A_2^T-A_2)\\
+\amp =c_1F(A_1)+c_2F(A_2)\text{.}
 \end{align*}
 </div>
-<div class="para">as desired.</div>
-</div>
-<div class="para logical" id="th_vs_props-3-3">
-<div class="para">Let <span class="process-math">\(v\in V\text{.}\)</span> To prove (2), we will show that <span class="process-math">\((-1)v\)</span> satisfies the defining property <a href="s_vector_space.html#eq_vec_inv" class="xref" data-knowl="./knowl/xref/eq_vec_inv.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.4">(1.4)</a> of <span class="process-math">\(-v\text{;}\)</span> since each vector has a unique vector inverse (<a href="s_vector_space_functions.html#th_zero_inv_unique" class="xref" data-knowl="./knowl/xref/th_zero_inv_unique.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.3.5: Uniqueness of zero vector and inverses">Theorem 1.3.5</a>), it will then follow that <span class="process-math">\((-1)v=-v\text{.}\)</span> To show <span class="process-math">\((-1)v\)</span> satisfies <a href="s_vector_space.html#eq_vec_inv" class="xref" data-knowl="./knowl/xref/eq_vec_inv.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.4">(1.4)</a>, we observe that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_vec_inv.html ./knowl/xref/th_zero_inv_unique.html ./knowl/xref/eq_vec_inv.html" id="th_vs_props-3-3-9">
+</div></li>
+<li id="eg_nullspace_image_transposition-2-1-1-2"><div class="para logical" id="eg_nullspace_image_transposition-2-1-1-2-1">
+<div class="para">We have</div>
+<div class="displaymath process-math" id="eg_nullspace_image_transposition-2-1-1-2-1-1">
 \begin{align*}
-(-1)v+v \amp =(-1)v+1v \amp (\text{Axiom (viii)})\\
-\amp = (-1+1)v \amp (\text{Axiom (vii)})\\
-\amp =0v\\
-\amp = \boldzero (\text{by (1)})\text{.}
+\NS F \amp= \{A\in M_{nn}\colon F(A)=\boldzero\} \\
+\amp=\{A\in M_{22}\colon A^T-A=\boldzero\} \\
+\amp=\{A\in M_{22}\colon A^T=A\} \text{.}
 \end{align*}
 </div>
-<div class="para">Thus <span class="process-math">\((-1)v=-v\text{.}\)</span>
+<div class="para">Thus <span class="process-math">\(\NS F\)</span> is the subspace of symmetric <span class="process-math">\(n\times n\)</span> matrices!</div>
+</div></li>
+<li id="eg_nullspace_image_transposition-2-1-1-3">
+<div class="para" id="eg_nullspace_image_transposition-2-1-1-3-1">Let <span class="process-math">\(W=\{B\in M_{nn}\colon B^T=-B\}\text{,}\)</span> subspace of skew-symmetric <span class="process-math">\(n\times n\)</span> matrices. We claim <span class="process-math">\(\im F=W\text{.}\)</span> As this is a set equality, we prove it by showing the two set inclusions <span class="process-math">\(\im F\subseteq W\)</span> and <span class="process-math">\(W\subseteq \im F\text{.}\)</span> (See <a href="s_proof_technique.html#ss_set_properties" class="internal" title="Subsection: Basic set properties">Basic set properties</a>)</div>
+<div class="para logical" id="eg_nullspace_image_transposition-2-1-1-3-2">
+<div class="para">The inclusion <span class="process-math">\(\im F\subseteq W\)</span> is the easier of the two. If <span class="process-math">\(B\in \im F\text{,}\)</span> then <span class="process-math">\(B=F(A)=A^T-A\)</span> for some <span class="process-math">\(A\in M_{nn}\text{.}\)</span> Using various properties of transposition, we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+B^T=(A^T-A)^T=(A^T)^T-A^T=-(A^T-A)=-B\text{,}
+\end{equation*}
 </div>
-</div></article></details></section></section></div>
+<div class="para">showing that <span class="process-math">\(B\)</span> is skew-symmetric, and thus <span class="process-math">\(B\in W\text{,}\)</span> as desired.</div>
+</div>
+<div class="para logical" id="eg_nullspace_image_transposition-2-1-1-3-3">
+<div class="para">The inclusion <span class="process-math">\(W\subseteq \im F\)</span> is trickier: we must show that if <span class="process-math">\(B\)</span> is skew-symmetric, then there is an <span class="process-math">\(A\)</span> such that <span class="process-math">\(B=F(A)=A^T-A\text{.}\)</span> Assume we have a <span class="process-math">\(B\)</span> with <span class="process-math">\(B^T=-B\text{.}\)</span> Letting <span class="process-math">\(A=-\frac{1}{2}B\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A^T-A=(-\frac{1}{2}B)^T+\frac{1}{2}B=\frac{1}{2}(-B^T+B)=\frac{1}{2}(B+B)=B\text{.}
+\end{equation*}
+</div>
+<div class="para">Thus we have found a matrix <span class="process-math">\(A\)</span> satisfying <span class="process-math">\(F(A)=B\text{.}\)</span> It follows that <span class="process-math">\(B\in\im T\text{.}\)</span>
+</div>
+</div>
+</li>
+</ol></div></div></details></div></article><article class="remark remark-like" id="rm_subspace_as_nullspace"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.10.6</span><span class="period">.</span><span class="space"> </span><span class="title">Subspace as null space.</span>
+</h4>
+<div class="para" id="rm_subspace_as_nullspace-2">As illustrated by <a href="s_null_image.html#eg_nullspace_image_transposition" class="xref" data-knowl="./knowl/xref/eg_nullspace_image_transposition.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.10.5">Example 1.10.5</a>, <a href="s_null_image.html#th_nullspace_image" class="xref" data-knowl="./knowl/xref/th_nullspace_image.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.10.4: Null space and image">Theorem 1.10.4</a> provides an alternative technique for proving that a subset of <span class="process-math">\(W\subseteq V\)</span> is in fact a subspace: namely, find a linear transformation <span class="process-math">\(T\colon V\rightarrow Z\)</span> such that <span class="process-math">\(W=\NS T\text{.}\)</span>
+</div></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="s_vector_space.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_subspace.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="s_transformation.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="advlinalgkursobjekt-6.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

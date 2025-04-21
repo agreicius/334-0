@@ -1945,6 +1945,69 @@ var ptx_lunr_docs = [
   "body": " The proof is left as an exercises. Note that before verifying the vector space axioms (i)-(viii) you must first verify that the given operations are well-defined: , you must show that if and are linear transformations from to , then so are the functions and .  "
 },
 {
+  "id": "s_null_image",
+  "level": "1",
+  "url": "s_null_image.html",
+  "type": "Section",
+  "number": "1.10",
+  "title": "Null space and image",
+  "body": " Null space and image   In this section we introduce two subspaces associated to a linear transformation : the null space and image.    Definition and examples   Null space and image   Let be a linear transformation.   Null space of  The null space of is the subset of defined as .    Image of  The image (or range ) of is the subset of defined as .        Null space and image  We gather a few simple observations about the null space and image of a linear map    Let . It is useful to keep in mind where and  live in this picture: we have and . In other words, the null space is a subset of the domain, and the image is a subset of the codomain. See .    Note that the image of a linear transformation is just its image when considered simply as a function of sets. (See .)    The notion of a null space is analogous to the set of zeros (or roots) of a real-valued function , , and the zeros of is a useful English shorthand for . However, there is an important difference between the null space of a linear transformation and the zeros of an arbitrary real-valued function: the null space of a linear transformation comes with the added structure of a vector space ( ), whereas the zeros of an arbitrary function in general do not.  The same observation can be made about the image of a linear transformation ( ), in comparison to the image of an arbitrary function.       Null space and image  Null space and image     Null space lives in the domain; image lives in the codomain.         The entire null space gets mapped to .         The entire domain is mapped to .         Before getting to examples we make official what we hinted at above: the null space and image of a linear transformation are subspaces.   Null space and image   If is a linear transformation, then is a subspace of , and is a subspace of .     Null space of  We use the two-step technique to prove is a subspace.   Since ( ), we see that .    Suppose . Given any , we have . This shows that , completing our proof.       Image of  The proof proceeds in a similar manner, using the two-step technique.   Since ( ), we see that is hit by , and hence is a member of .    Assume vectors are elements of . By definition, this means there are vectors such that for . Now given any linear combination , we have . This shows that for any linear combination , there is an element such that . We conclude that if , then for any , as desired.          Define as .    Prove that is linear.    Identify as a familiar matrix subspace.    Identify as a familiar matrix subspace.         Linearity is an easy consequence of transpose properties. For any and , we have .    We have . Thus is the subspace of symmetric matrices!    Let , subspace of skew-symmetric matrices. We claim . As this is a set equality, we prove it by showing the two set inclusions and . (See )  The inclusion is the easier of the two. If , then for some . Using various properties of transposition, we have , showing that is skew-symmetric, and thus , as desired.  The inclusion is trickier: we must show that if is skew-symmetric, then there is an such that . Assume we have a with . Letting we have . Thus we have found a matrix satisfying . It follows that .        Subspace as null space  As illustrated by , provides an alternative technique for proving that a subset of is in fact a subspace: namely, find a linear transformation such that .    "
+},
+{
+  "id": "d_null_image",
+  "level": "2",
+  "url": "s_null_image.html#d_null_image",
+  "type": "Definition",
+  "number": "1.10.1",
+  "title": "Null space and image.",
+  "body": " Null space and image   Let be a linear transformation.   Null space of  The null space of is the subset of defined as .    Image of  The image (or range ) of is the subset of defined as .      "
+},
+{
+  "id": "rm_nullspace_image",
+  "level": "2",
+  "url": "s_null_image.html#rm_nullspace_image",
+  "type": "Remark",
+  "number": "1.10.2",
+  "title": "Null space and image.",
+  "body": " Null space and image  We gather a few simple observations about the null space and image of a linear map    Let . It is useful to keep in mind where and  live in this picture: we have and . In other words, the null space is a subset of the domain, and the image is a subset of the codomain. See .    Note that the image of a linear transformation is just its image when considered simply as a function of sets. (See .)    The notion of a null space is analogous to the set of zeros (or roots) of a real-valued function , , and the zeros of is a useful English shorthand for . However, there is an important difference between the null space of a linear transformation and the zeros of an arbitrary real-valued function: the null space of a linear transformation comes with the added structure of a vector space ( ), whereas the zeros of an arbitrary function in general do not.  The same observation can be made about the image of a linear transformation ( ), in comparison to the image of an arbitrary function.     "
+},
+{
+  "id": "fig_null_image",
+  "level": "2",
+  "url": "s_null_image.html#fig_null_image",
+  "type": "Figure",
+  "number": "1.10.3",
+  "title": "Null space and image",
+  "body": " Null space and image  Null space and image     Null space lives in the domain; image lives in the codomain.         The entire null space gets mapped to .         The entire domain is mapped to .        "
+},
+{
+  "id": "th_nullspace_image",
+  "level": "2",
+  "url": "s_null_image.html#th_nullspace_image",
+  "type": "Theorem",
+  "number": "1.10.4",
+  "title": "Null space and image.",
+  "body": " Null space and image   If is a linear transformation, then is a subspace of , and is a subspace of .     Null space of  We use the two-step technique to prove is a subspace.   Since ( ), we see that .    Suppose . Given any , we have . This shows that , completing our proof.       Image of  The proof proceeds in a similar manner, using the two-step technique.   Since ( ), we see that is hit by , and hence is a member of .    Assume vectors are elements of . By definition, this means there are vectors such that for . Now given any linear combination , we have . This shows that for any linear combination , there is an element such that . We conclude that if , then for any , as desired.       "
+},
+{
+  "id": "eg_nullspace_image_transposition",
+  "level": "2",
+  "url": "s_null_image.html#eg_nullspace_image_transposition",
+  "type": "Example",
+  "number": "1.10.5",
+  "title": "",
+  "body": "  Define as .    Prove that is linear.    Identify as a familiar matrix subspace.    Identify as a familiar matrix subspace.         Linearity is an easy consequence of transpose properties. For any and , we have .    We have . Thus is the subspace of symmetric matrices!    Let , subspace of skew-symmetric matrices. We claim . As this is a set equality, we prove it by showing the two set inclusions and . (See )  The inclusion is the easier of the two. If , then for some . Using various properties of transposition, we have , showing that is skew-symmetric, and thus , as desired.  The inclusion is trickier: we must show that if is skew-symmetric, then there is an such that . Assume we have a with . Letting we have . Thus we have found a matrix satisfying . It follows that .      "
+},
+{
+  "id": "rm_subspace_as_nullspace",
+  "level": "2",
+  "url": "s_null_image.html#rm_subspace_as_nullspace",
+  "type": "Remark",
+  "number": "1.10.6",
+  "title": "Subspace as null space.",
+  "body": " Subspace as null space  As illustrated by , provides an alternative technique for proving that a subset of is in fact a subspace: namely, find a linear transformation such that .  "
+},
+{
   "id": "appendix-notation",
   "level": "1",
   "url": "appendix-notation.html",
