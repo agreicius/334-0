@@ -84,6 +84,33 @@
             
         </proof>
         </theorem>
+        <remark>
+          <title>Rank-nullity theorem</title>
+          <p>
+            Some textbooks will define the <em>rank</em> and <em>nullity</em> of a linear transformation <m>T</m> as <m>\dim \im T</m> and <m>\dim \NS T</m>, respectively. This is where the name of this theorem comes from. 
+          </p>
+        </remark>
+        <p>
+          The rank-nullity theorem relates the size (measured by dimension) of the two spaces <m>\NS T</m> and <m>\im T</m>. This can be useful in computations when one of these two spaces is easy to compute. 
+        </p>
+        <example xml:id="eg_rank_nullity">
+        <title>Rank-nullity: image from null space</title>
+        <statement>
+        <p>
+        Let <m>T\colon \R^4\rightarrow \R^3</m> be defined as 
+        <me>
+          T(x_1,x_2,x_3,x_4)=(x_1+x_4, x_2+x_3+x_4, x_3+x_4)
+        </me>.
+        Use the rank-nullity theorem to prove that <m>T</m> is surjective.
+        </p>
+        </statement>
+        <solution>
+        <p>
+        
+        </p>
+        </solution>
+        </example>
+        
         <corollary xml:id="cor_inj_surj_bij">
           <title>Injective, surjective, bijective</title>
           <statement>
@@ -102,7 +129,7 @@
                 </li>
                 <li>
                   <p>
-                    Assume further that <m>\dim V=\dim W</m>. The following statements are equivalent. 
+                    Assume further that <m>\dim V=\dim W&lt; \infty</m>. The following statements are equivalent. 
                     <ol>
                       <li>
                         <p>
@@ -125,6 +152,60 @@
               </ol>
             </p>
           </statement>
+          <proof>
+            <p>
+              <ol>
+                <li>
+                  <p>
+                    First assume <m>\dim V=n&lt; \infty</m>. 
+                    We have 
+                    <md>
+                      <mrow>\dim \NS T \amp =\dim V-\dim\im T \amp (\text{rank-nullity})</mrow>
+                      <mrow> \amp &gt; \dim W-\dim \im T \amp (\dim V&gt; \dim W)</mrow>
+                      <mrow> \amp \geq 0 \amp (\dim \im T\leq \dim W)</mrow>
+                    </md>.
+                    It follows that <m>\dim \NS T&gt; 0</m>, and hence that <m>\NS T\ne \{\boldzero\}</m>, and thus <m>T</m> is not injective. 
+                  </p>
+                  <p>
+                    Now assume that <m>\dim V=\infty</m> and <m>\dim W=m&lt; \infty</m>. Pick an infinite linearly independent tuple <m>(v_i)_{i\in i}</m> in <m>V</m>, and let <m>B=(v_{i_1}, v_{i_2},\dots, v_{i_n})</m> be any finite subtuple of length <m>n&gt; m</m>. We know from a homework exercise that <m>B</m> is linearly independent. Thus <m>V'=\Span B</m> is an <m>n</m>-dimensional subspace of <m>V</m> and satisfies <m>\dim V'&gt; \dim W</m>. Applying the previous argument to the restriction <m>T\vert_{V'}\colon V'\rightarrow W</m>, we conclude that <m>\NS T\vert_{V'}\ne\{\boldzero\}</m>. Since <m>\NS T\vert_{V'}\subseteq \NS T</m>, we conclude that <m>\NS T\ne \{\boldzero\}</m>, and thus <m>T</m> is not injective. 
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    We assume <m>\dim V=n&lt; \dim W</m>. Since 
+                    <me>
+                      \dim \im T=\dim V-\dim \NS T\leq \dim V&lt; \dim W
+                    </me>
+                    we cannot have have <m>\im T=\dim W</m>. Thus <m>T</m> is not surjective. 
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    We assume <m>\dim V=\dim W=n&lt; \infty</m>. We prove a cycle of implications (a)<m>\implies</m>(b)<m>\implies</m>(c)<m>\implies</m>(d).
+                  </p>
+                  <p>
+                    We have (a) implies (b) by definition. 
+                  </p>
+                  <p>
+                    Assume <m>T</m> is injective. By <xref ref="th_inj_surj_bij"/>, this implies <m>\NS T=\{\boldzero\}</m> and hence <m>\dim \NS T=0</m>. It follows that 
+                    <me>
+                      \dim \im T=\dim V-\dim \NS T=\dim V-0=\dim W
+                    </me>.
+                    Since <m>\im W\subseteq W</m> and <m>\dim \im W=\dim W</m>, we have <m>\im T=W</m> by <xref ref="cor_dimension_subspace"/>. Thus <m>T</m> is surjective. This proves that (b) implies (c). 
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    If <m>T</m> is surjective, then <m>\im T=W</m> in which case <m>\dim \im T=\dim W=n</m>. It follows that 
+                    <me>
+                      \dim \NS T=\dim V-\dim \im T=n-n=0
+                    </me>.
+                    Hence <m>\dim \NS T=0</m>, or equivalently, <m>\NS T=\{\boldzero\}</m>. It follows that <m>T</m> is injective. Since <m>T</m> is injective and surjective, it is bijective. This proves that (c) implies (a).
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </proof>
         </corollary>
         <example xml:id="eg_rank_null_polys">
         <title>Polynomial evaluation</title>
