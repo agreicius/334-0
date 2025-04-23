@@ -5,7 +5,7 @@
 
     <introduction>
         <p>
-            In this section we introduce two subspaces associated to a linear transformation <m>T\colon V\rightarrow W</m>: the null space and image. 
+            Having introduced linear transformations, we now begin to investigate them as important mathematical objects in their own right. In this section we introduce two subspaces associated to a linear transformation <m>T\colon V\rightarrow W</m> that will aid this investigation. These are the <em>null space</em> and <em>image</em> of a transformation. 
         </p>
     </introduction>
     <subsection xml:id="ss_null_image_def">
@@ -203,21 +203,21 @@
     <example xml:id="eg_nullspace_image_transposition">
         <statement>
           <p>
-            Define <m>F\colon F^{n,n}\rightarrow F^{n,n}</m> as <m>F(A)=A^T-A</m>.
+            Define <m>S\colon F^{n,n}\rightarrow F^{n,n}</m> as <m>S(A)=A^T-A</m>.
           <ol>
             <li>
               <p>
-                Prove that <m>F</m> is linear.
+                Prove that <m>S</m> is linear.
               </p>
             </li>
             <li>
               <p>
-                Identify <m>\NS F</m> as a familiar matrix subspace.
+                Identify <m>\NS S</m> as a familiar matrix subspace.
               </p>
             </li>
             <li>
               <p>
-                Identify <m>\im F</m> as a familiar matrix subspace.
+                Identify <m>\im S</m> as a familiar matrix subspace.
               </p>
             </li>
           </ol>
@@ -230,26 +230,26 @@
                 <p>
                   Linearity is an easy consequence of transpose properties. For any <m>A_1, A_2\in F^{n,n}</m> and <m>c_1,c_2\in F</m>, we have
                   <md>
-                    <mrow>F(c_1A_1+c_2A_2)  \amp= (c_1A_1+c_2A_2)^T-(c_1A_1+c_2A_2)  </mrow>
+                    <mrow>S(c_1A_1+c_2A_2)  \amp= (c_1A_1+c_2A_2)^T-(c_1A_1+c_2A_2)  </mrow>
                     <mrow> \amp = c_1A_1^T+c_2A_2^T-c_1A_1-c_2A_2\amp (\text{transp. props}) </mrow>
                     <mrow>  \amp =c_1(A_1^T-A_1)+c_2(A_2^T-A_2)</mrow>
-                    <mrow>  \amp =c_1F(A_1)+c_2F(A_2)</mrow>
+                    <mrow>  \amp =c_1S(A_1)+c_2S(A_2)</mrow>
                   </md>.
                 </p>
                 <p>
                   Alternatively, since we already showed that the transpose operator
                   <md>
-                    <mrow>S\colon F^{nn} \amp \rightarrow F^{nn}</mrow>
+                    <mrow>G\colon F^{nn} \amp \rightarrow F^{nn}</mrow>
                     <mrow>A \amp \mapsto A^T</mrow>
                   </md>
-                  is linear on <m>V=F^{nn}</m>, and since <m>F=S-I_V</m>, it follows that <m>F</m> is linear. 
+                  is linear on <m>V=F^{nn}</m>, and since <m>S=G-I_V</m>, it follows that <m>G</m> is linear. 
                 </p>
               </li>
               <li>
                 <p>
                   We have
                   <md>
-                    <mrow>\NS F \amp= \{A\in F^{n,n}\colon F(A)=\boldzero\} </mrow>
+                    <mrow>\NS S \amp= \{A\in F^{n,n}\colon S(A)=\boldzero\} </mrow>
                     <mrow> \amp=\{A\in F^{n,n}\colon A^T-A=\boldzero\} </mrow>
                     <mrow>  \amp=\{A\in F^{n,n}\colon A^T=A\} </mrow>
                   </md>.
@@ -258,21 +258,21 @@
               </li>
               <li>
                 <p>
-                  Let <m>W=\{B\in F^{n,n}\colon B^T=-B\}</m>, subspace of skew-symmetric <m>n\times n</m> matrices. We claim <m>\im F=W</m>. As this is a set equality, we prove it by showing the two set inclusions <m>\im F\subseteq W</m> and <m>W\subseteq \im F</m>. (See <xref ref="ss_set_properties" text="title"/>)
+                  Let <m>W=\{B\in F^{n,n}\colon B^T=-B\}</m>, subspace of skew-symmetric <m>n\times n</m> matrices. We claim <m>\im S=W</m>. As this is a set equality, we prove it by showing the two set inclusions <m>\im S\subseteq W</m> and <m>W\subseteq \im S</m>. (See <xref ref="ss_set_properties" text="title"/>)
                 </p>
                 <p>
-                  The inclusion <m>\im F\subseteq W</m> is the easier of the two. If <m>B\in \im F</m>, then <m>B=F(A)=A^T-A</m> for some <m>A\in F^{n,n}</m>. Using various properties of transposition, we have
+                  The inclusion <m>\im S\subseteq W</m> is the easier of the two. If <m>B\in \im S</m>, then <m>B=S(A)=A^T-A</m> for some <m>A\in F^{n,n}</m>. Using various properties of transposition, we have
                   <me>
                     B^T=(A^T-A)^T=(A^T)^T-A^T=-(A^T-A)=-B
                   </me>,
                   showing that <m>B</m> is skew-symmetric, and thus <m>B\in W</m>, as desired.
                 </p>
                 <p>
-                  The inclusion <m>W\subseteq \im F</m> is trickier: we must show that if <m>B</m> is skew-symmetric, then there is an <m>A</m> such that <m>B=F(A)=A^T-A</m>. Assume we have a <m>B</m> with <m>B^T=-B</m>. Letting <m>A=-\frac{1}{2}B</m> we have
+                  The inclusion <m>W\subseteq \im S</m> is trickier: we must show that if <m>B</m> is skew-symmetric, then there is an <m>A</m> such that <m>B=S(A)=A^T-A</m>. Assume we have a <m>B</m> with <m>B^T=-B</m>. Letting <m>A=-\frac{1}{2}B</m> we have
                   <me>
                     A^T-A=(-\frac{1}{2}B)^T+\frac{1}{2}B=\frac{1}{2}(-B^T+B)=\frac{1}{2}(B+B)=B
                   </me>.
-                  Thus we have found a matrix <m>A</m> satisfying <m>F(A)=B</m>. It follows that <m>B\in\im T</m>.
+                  Thus we have found a matrix <m>A</m> satisfying <m>S(A)=B</m>. It follows that <m>B\in\im S</m>.
                 </p>
               </li>
             </ol>
@@ -284,7 +284,7 @@
       <title>Differential operator</title>
       <statement>
         <p>
-          Let <m>I</m> be an interval of <m>\R</m>.  Define <m>T\colon C^1(I)\rightarrow C(I)</m> as <m>F(f)=f'</m>.
+          Let <m>I=[a,b]</m> be a closed finite interval of <m>\R</m>.  Define <m>T\colon C^1(I)\rightarrow C(I)</m> as <m>F(f)=f'</m>.
         <ol>
           <li>
             <p>
@@ -301,7 +301,25 @@
       </statement>
       <solution>
       <p>
-      
+      <ol>
+        <li>
+            <p>
+                By definition, we have 
+                <md>
+                    <mrow>\NS T \amp = \{f\in C^1([a,b])\colon f'=\boldzero\} </mrow>
+                    <mrow> \amp = \{f\in C^1([a,b])\colon f'(x)=0 \text{ for all } x\in [a,b]\} </mrow>
+                </md>.
+                From calculus, we know that <m>f'(x)=0</m> for all <m>x\in [a,b]</m> if and only if <m>f</m> is a constant function. Thus $\NS T$ is the set of all constant functions on <m>[a,b]</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                By definition 
+                <me>\im T=\{g\in C^1([a,b])\colon g=f' \text{ for some } f\in C^1([a,b])\}</me>.
+                Equivalently, using some calculus terminology, <m>\im T</m> is the set of continuous functions <m>g</m> on <m>[a,b]</m> that have an <em>antiderivative</em>. It follows from the fundamental theorem of calculus that in fact <em>all</em> continuous function on <m>[a,b]</m> have an antiderivative. Thus <m>\im T=C([a,b])</m>. 
+            </p>
+        </li>
+      </ol>
       </p>
       </solution>
       </example>
@@ -328,20 +346,51 @@
           </p>
         </statement>
       </algorithm>
+
+      <example xml:id="eg_poly_eval">
+      <title>Polynomial evaluation</title>
+      <statement>
+      <p>
+      Show that <m>W=\{f\in P_7(\C)\colon f(-1)=f(2i)=f(6)\}</m> is a subspace of <m>P_7(\C)</m> using <xref ref="proc_subspace_as_null"/>. 
+      </p>
+      </statement>
+      <solution>
+      <p>
+      We make use of the <xref ref="eg_evaluation_trans" text="custom">evaluation linear transformations</xref> introduced earlier. Define the linear transformations 
+      <md>
+        <mrow>T\colon P_7(\C) \amp\rightarrow \C^2 \amp S\colon P_7(\C)\amp \rightarrow \C^2 </mrow>
+        <mrow>f \amp \longmapsto (f(-1),f(-1)) \amp f\amp \longmapsto (f(2i),f(6))</mrow>
+      </md>.
+      We see that <m>f\in W</m> if and only if <m>T(f)=S(f)</m>, or equivalently, if and only if <m>(T-S)(f)=\boldzero</m>. Thus <m>W=\NS(T-S)</m>, the null space of the linear transformation <m>T-S</m>. It follows that <m>W</m> is a linear transformation. 
+      </p>
+      </solution>
+      </example>
+      
+
       <example xml:id="eg_homog_diff_eqn">
       <title>Homogeneous linear differential equation</title>
       <statement>
       <p>
-      Let <m>I</m> be an interval of <m>\R</m>, let <m>q_{n-1},q_{n-2},\dots, q_0</m> be continuous functions on <m>I</m> (<ie/>, <m>q_i\in C(I)</m>) for all <m>1\leq i\leq n-1</m>, and define <m>W</m> as the set of functions <m>f\in C^n(I)</m> satisfying the linear homogeneous differential equation 
+      Let <m>I</m> be an interval of <m>\R</m>, let <m>q_{n-1},q_{n-2},\dots, q_1</m> be continuous functions on <m>I</m> (<ie/>, <m>q_i\in C(I)</m>) for all <m>1\leq i\leq n-1</m>, and define <m>W</m> as the set of functions <m>f\in C^n(I)</m> satisfying the linear homogeneous differential equation 
       <men xml:id="eq_lin_homog_diff_eq">
-        f^{(n)}(x)+q_{n-1}(x)f^{(n-1)}(x)+\cdots +q_1(x)f(x)+q_0(x)=0 \text{ for all } x\in I
+        f^{(n)}(x)+q_{n-1}(x)f^{(n-1)}(x)+\cdots +q_1(x)f(x)=0 \text{ for all } x\in I
       </men>. 
       Prove that <m>W</m> is a subspace of <m>C^n(I)</m>. 
       </p>
       </statement>
       <solution>
       <p>
-      
+      Define <m>T\colon C^n(I) \rightarrow C(I)</m> as 
+      <me>
+        T(f)=f^{(n)}+q_{n-1}f^{(n-1)}+\cdots +q_1f
+      </me>.
+      We have
+      <md>
+        <mrow>T(cf+dg) \amp = (f+g)^{(n)}+q_{n-1}(f+g)^{(n-1)}+\cdots +q_1(f+g)</mrow>
+        <mrow> \amp = c(f^{(n)}+q_{n-1}f^{(n-1)}+\cdots +q_1f)+d(g^{(n)}+q_{n-1}g^{(n-1)}+\cdots +q_1g)</mrow>
+        <mrow> \amp =cT(f)+dT(g)</mrow>
+      </md>,
+      showing that <m>T</m> is a linear transformation. The set of solutions to <xref ref="eq_lin_homog_diff_eq"/> is precisely <m>\NS T</m>, making this set a subspace of <m>C^n(I)</m>. 
       </p>
       </solution>
       </example>
@@ -349,7 +398,7 @@
       <title>Matrix transformation</title>
       <statement>
       <p>
-      Let <m>A</m> be an <m>m\times n</m> matrix, and let <m>\bolda_1,\bolda_2,\dots, \bolda_n</m> be the <m>n</m> columns of <m>A</m>, considered as elements of <m>F^m</m>.   The null space and image of the corresponding matrix transformation <m>T_A\colon F^n\rightarrow F^m</m> can be identified with the following <em>fundamental spaces</em> of <m>A</m>:
+      Let <m>A</m> be an <m>m\times n</m> matrix, and let <m>\bolda_1,\bolda_2,\dots, \bolda_n</m> be the <m>n</m> columns of <m>A</m>, considered as elements of <m>F^m</m>.   Show that the null space and image of the corresponding matrix transformation <m>T_A\colon F^n\rightarrow F^m</m> can be identified with the following <em>fundamental spaces</em> of <m>A</m>:
       <md>
         <mrow>\NS T_A \amp = \NS A=\{\boldx\in F^n\colon A\boldx=\boldzero\}</mrow>
         <mrow>\im T_A \amp =\CS A=\Span(\bolda_1,\bolda_2,\dots, \bolda_n)</mrow>
@@ -358,123 +407,94 @@
       </statement>
       <solution>
       <p>
-      
+        For the null space, we have 
+        <md>
+            <mrow>\NS T_A \amp =\{\boldx\in F^n\colon T_A(\boldx)=\boldzero\}</mrow>
+            <mrow> \amp = \{\boldx\in F^n\colon A\boldx=\boldzero\}</mrow>
+            <mrow> \amp = \NS A</mrow>
+        </md>.
+        The statment about <m>\im T_A</m> follows from the following observation about matrix equations: we can solve <m>A\boldx=\boldy</m> if and only if <m>\boldy</m> can be expressed as a linear combination of the columns <m>\bolda_j</m> of <m>A</m>. (This observation, in turn, follows from the <url href="https://agreicius.github.io/euc-vec-spaces/s_matrix.html#th_column_method">column method description of matrix multiplication</url>.) Taking this for granted, we then have 
+        <md>
+            <mrow>\im T_A \amp =\{\boldy\in F^m\colon y=T_A(\boldx) \text{ for some } \boldx\in F^n\}</mrow>
+            <mrow> \amp =\{\boldy\in F^m\colon y=A\boldx \text{ for some } \boldx\in F^n\}</mrow>
+            <mrow> \amp =\{\boldy\in F^m\colon y=\sum_{j=1}^nc_j\bolda_j \text{ for some } c_j\in F\}</mrow>
+            <mrow> \amp =\Span(\bolda_1,\bolda_2,\dots, \bolda_n)</mrow>
+            <mrow> \amp = \CS A</mrow>
+        </md>. 
       </p>
       </solution>
       </example>
       
       
     </subsection>
-    <subsection xml:id="ss_rank_nullity">
-    <title>Rank-nullity and friends</title>
-      <theorem xml:id="th_inj_surj_bij">
-      <title>Injective, surjective, bijective</title>
-      <statement>
-      <p>
-      Let <m>T\colon V\rightarrow W</m> be a linear transformation. 
-      <ol>
-        <li>
-          <p>
-            <m>T</m> is injective if and only if <m>\NS T=\{\boldzero\}</m>. 
-          </p>
-        </li>
-        <li>
-          <p>
-            <m>T</m> is surjective if and only if <m>\im T=W</m>. 
-          </p>
-        </li>
-        <li>
-          <p>
-            <m>T</m> is bijective if and only if <m>\NS T=\{\boldzero\}</m> and <m>\im T=W</m>. 
-          </p>
-        </li>
-      </ol>
-      </p>
-      </statement>
-      <proof>
-      <p>
-      </p>
-      </proof>
-      </theorem>
-    
-    <theorem xml:id="th_rank_nullity">
-    <title>Rank-nullity theorem</title>
-    <statement>
+    <subsection xml:id="ss_inj_sur_bij">
+    <title>Injective, surjective, bijective</title>
     <p>
-    Let <m>V</m> be a finite-dimensional vector space. If <m>T\colon V\rightarrow W</m> is a linear transformation, then 
-    <men xml:id="eq_rank_null">
-      \dim V=\dim\NS T+\dim W
-    </men>.
-    
+        As with any function, one thing we wish to be able to determine about a linear transformation is whether it  is <xref ref="d_injective_surjective_bijective" text="custom">injective</xref>, <xref ref="d_injective_surjective_bijective" text="custom">surjective</xref>, and <xref ref="d_injective_surjective_bijective" text="custom">bijective</xref>. The theorem below describes how <m>\NS T</m> and <m>\im T</m> answer these questions for us. 
     </p>
-    </statement>
-    <proof>
-    <p>
-    </p>
-    </proof>
-    </theorem>
-    <corollary xml:id="cor_inj_surj_bij">
-      <title>Injective, surjective, bijective</title>
-      <statement>
+    <theorem xml:id="th_inj_surj_bij">
+        <title>Injective, surjective, bijective</title>
+        <statement>
         <p>
-          Let <m>V</m> be a finite-dimensional vector space, and  let <m>T\colon V\rightarrow W</m> be a linear transformation.
+        Let <m>T\colon V\rightarrow W</m> be a linear transformation. 
+        <ol>
+          <li>
+            <p>
+              <m>T</m> is injective if and only if <m>\NS T=\{\boldzero\}</m>. 
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>T</m> is surjective if and only if <m>\im T=W</m>. 
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>T</m> is bijective if and only if <m>\NS T=\{\boldzero\}</m> and <m>\im T=W</m>. 
+            </p>
+          </li>
+        </ol>
+        </p>
+        </statement>
+        <proof>
+        <p>
           <ol>
-            <li>
-              <p>
-                If <m>\dim V&gt; \dim W</m>, then <m>T</m> is not injective. 
-              </p>
-            </li>
-            <li>
-              <p>
-                If <m>\dim V&lt; \dim W</m>, then <m>T</m> is not surjective. 
-              </p>
-            </li>
-            <li>
-              <p>
-                Assume further that <m>\dim V=\dim W</m>. The following statements are equivalent. 
-                <ol>
-                  <li>
-                    <p>
-                      <m>T</m> is bijective. 
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <m>T</m> is injective.
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <m>T</m> is surjective.
-                    </p>
-                  </li>
-                </ol>
-              </p>
-            </li>
+              <li>
+                  <p>
+                      We prove both implications separately. 
+                  </p>
+                  <p>
+                      First observe that if <m>T(v)=\boldzero</m>, then <m>T(v)=T(\boldzero)</m>, since <m>T(\boldzero)=\boldzero</m>. Thus, if <m>T</m> is injective, then we have 
+                      <me>
+                          T(v)=\boldzero\implies T(v)=T(\boldzero)\implies v=\boldzero
+                      </me>.
+                      It follows that <m>\NS T=\{\boldzero\}</m>. 
+                  </p>
+                  <p>
+                      Now assume that <m>\NS T=\{\boldzero\}</m>. Given <m>v,v'\in V</m>, we have 
+                      <md>
+                          <mrow>T(v)=T(v') \amp \implies T(v)-T(v')=\boldzero</mrow>
+                          <mrow> \amp \implies T(v-v')=\boldzero \amp (T \text{ linear})</mrow>
+                          <mrow> \amp \implies v-v'\in \NS T</mrow>
+                          <mrow> \amp \implies v-v'=\boldzero \amp (\NS T=\{\boldzero\})</mrow>
+                          <mrow> \amp \implies v=v'</mrow>
+                      </md>.
+                      We conclude that <m>T</m> is injective in this case. 
+                  </p>
+              </li>
+              <li>
+                  <p>
+                      This is a purely set-theoretic result. 
+                  </p>
+              </li>
+              <li>
+                  <p>
+                      This is an elementary consequence of (1) and (2). 
+                  </p>
+              </li>
           </ol>
         </p>
-      </statement>
-    </corollary>
-    <example xml:id="eg_rank_null_polys">
-    <title>Polynomial evaluation</title>
-    <statement>
-    <p>
-    Let <m>n</m> be a positive integer, and let <m>\boldc=(c_1,c_2,\dots, c_{n+1})\in \C^{n+1}</m> be a choice of <m>n+1</m> complex inputs. Prove that for any choice <m>\boldd=(d_1,d_2,\dots, d_{n+1})\in \C^{n+1}</m> of <m>n+1</m> complex outputs there is a unique polynomial <m>f\in P_n(\C)</m> satisfying 
-    <md>
-      <mrow>f(c_1) \amp = d_1</mrow>
-      <mrow>f(c_2) \amp = d_2</mrow>
-      <mrow> \amp \vdots </mrow>
-      <mrow>f(c_n) \amp = d_n</mrow>
-    </md>.
-    In other words, given any choice of values <m>d_k</m>, we can construct a unique polynomia <m>f\in P_n(\C)</m> whose value at <m>c_k</m> is <m>d_k</m> for all <m>1\leq k\leq n</m>. 
-    </p>
-    </statement>
-    <solution>
-    <p>
-    
-    </p>
-    </solution>
-    </example>
-    
+        </proof>
+        </theorem>
     </subsection>
 </section>

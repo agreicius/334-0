@@ -12,4 +12,5 @@
     <xi:include href="s_dimension.ptx" />
     <xi:include href="s_transformation.ptx" />
     <xi:include href="s_null_image.ptx" />
+    <xi:include href="s_rank_nullity.ptx" />
 </chapter>
