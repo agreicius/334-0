@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.10.11</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Injective, surjective, bijective.</span>
+</h4>
+<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
+<div class="para">Let <span class="process-math">\(T\colon V\rightarrow W\)</span> be a linear transformation.</div>
+<ol class="decimal" id="th_inj_surj_bij-2-1-2">
+<li><div class="para">
+<span class="process-math">\(T\)</span> is injective if and only if <span class="process-math">\(\NS T=\{\boldzero\}\text{.}\)</span>
+</div></li>
+<li><div class="para">
+<span class="process-math">\(T\)</span> is surjective if and only if <span class="process-math">\(\im T=W\text{.}\)</span>
+</div></li>
+<li><div class="para">
+<span class="process-math">\(T\)</span> is bijective if and only if <span class="process-math">\(\NS T=\{\boldzero\}\)</span> and <span class="process-math">\(\im T=W\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical"><ol class="decimal" id="th_inj_surj_bij-3-1-1">
+<li>
+<div class="para">We prove both implications separately.</div>
+<div class="para logical">
+<div class="para">First observe that if <span class="process-math">\(T(v)=\boldzero\text{,}\)</span> then <span class="process-math">\(T(v)=T(\boldzero)\text{,}\)</span> since <span class="process-math">\(T(\boldzero)=\boldzero\text{.}\)</span> Thus, if <span class="process-math">\(T\)</span> is injective, then we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T(v)=\boldzero\implies T(v)=T(\boldzero)\implies v=\boldzero\text{.}
+\end{equation*}
+</div>
+<div class="para">It follows that <span class="process-math">\(\NS T=\{\boldzero\}\text{.}\)</span>
+</div>
+</div>
+<div class="para logical">
+<div class="para">Now assume that <span class="process-math">\(\NS T=\{\boldzero\}\text{.}\)</span> Given <span class="process-math">\(v,v'\in V\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+T(v)=T(v') \amp \implies T(v)-T(v')=\boldzero\\
+\amp \implies T(v-v')=\boldzero \amp (T \text{ linear})\\
+\amp \implies v-v'\in \NS T\\
+\amp \implies v-v'=\boldzero \amp (\NS T=\{\boldzero\})\\
+\amp \implies v=v'\text{.}
+\end{align*}
+</div>
+<div class="para">We conclude that <span class="process-math">\(T\)</span> is injective in this case.</div>
+</div>
+</li>
+<li><div class="para">This is a purely set-theoretic result.</div></li>
+<li><div class="para">This is an elementary consequence of (1) and (2).</div></li>
+</ol></div></article></details><span class="incontext"><a class="internal" href="s_null_image.html#th_inj_surj_bij">in-context</a></span>
+</body>
+</html>

@@ -547,8 +547,24 @@ w=c_{k+1}T(v_{k+1})+\cdots c_nT(v_n)\in \Span B''\text{,}
 </div>
 <div class="para">proving that <span class="process-math">\(\im T\subseteq \Span B''\text{.}\)</span>
 </div>
-</div></article></article></details><article class="corollary theorem-like" id="cor_inj_surj_bij"><h3 class="heading">
-<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.11.2</span><span class="period">.</span><span class="space"> </span><span class="title">Injective, surjective, bijective.</span>
+</div></article></article></details><article class="remark remark-like" id="s_rank_nullity-4"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.11.2</span><span class="period">.</span><span class="space"> </span><span class="title">Rank-nullity theorem.</span>
+</h3>
+<div class="para" id="s_rank_nullity-4-2">Some textbooks will define the <em class="emphasis">rank</em> and <em class="emphasis">nullity</em> of a linear transformation <span class="process-math">\(T\)</span> as <span class="process-math">\(\dim \im T\)</span> and <span class="process-math">\(\dim \NS T\text{,}\)</span> respectively. This is where the name of this theorem comes from.</div></article><div class="para" id="s_rank_nullity-5">The rank-nullity theorem relates the size (measured by dimension) of the two spaces <span class="process-math">\(\NS T\)</span> and <span class="process-math">\(\im T\text{.}\)</span> This can be useful in computations when one of these two spaces is easy to compute.</div>
+<article class="example example-like" id="eg_rank_nullity"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.11.3</span><span class="period">.</span><span class="space"> </span><span class="title">Rank-nullity: image from null space.</span>
+</h3>
+<div class="para logical" id="eg_rank_nullity-2-1">
+<div class="para">Let <span class="process-math">\(T\colon \R^4\rightarrow \R^3\)</span> be defined as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T(x_1,x_2,x_3,x_4)=(x_1+x_4, x_2+x_3+x_4, x_3+x_4)\text{.}
+\end{equation*}
+</div>
+<div class="para">Use the rank-nullity theorem to prove that <span class="process-math">\(T\)</span> is surjective.</div>
+</div>
+<div class="solutions"><details id="eg_rank_nullity-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_rank_nullity-3-1"></div></div></details></div></article><article class="corollary theorem-like" id="cor_inj_surj_bij"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.11.4</span><span class="period">.</span><span class="space"> </span><span class="title">Injective, surjective, bijective.</span>
 </h3>
 <div class="para logical" id="cor_inj_surj_bij-2-1">
 <div class="para">Let <span class="process-math">\(V\)</span> be a finite-dimensional vector space, and  let <span class="process-math">\(T\colon V\rightarrow W\)</span> be a linear transformation.</div>
@@ -556,7 +572,7 @@ w=c_{k+1}T(v_{k+1})+\cdots c_nT(v_n)\in \Span B''\text{,}
 <li id="cor_inj_surj_bij-2-1-3-1"><div class="para" id="cor_inj_surj_bij-2-1-3-1-1">If <span class="process-math">\(\dim V&gt; \dim W\text{,}\)</span> then <span class="process-math">\(T\)</span> is not injective.</div></li>
 <li id="cor_inj_surj_bij-2-1-3-2"><div class="para" id="cor_inj_surj_bij-2-1-3-2-1">If <span class="process-math">\(\dim V&lt; \dim W\text{,}\)</span> then <span class="process-math">\(T\)</span> is not surjective.</div></li>
 <li id="cor_inj_surj_bij-2-1-3-3"><div class="para logical" id="cor_inj_surj_bij-2-1-3-3-1">
-<div class="para">Assume further that <span class="process-math">\(\dim V=\dim W\text{.}\)</span> The following statements are equivalent.</div>
+<div class="para">Assume further that <span class="process-math">\(\dim V=\dim W&lt; \infty\text{.}\)</span> The following statements are equivalent.</div>
 <ol class="lower-alpha lower-alpha-level-1" id="cor_inj_surj_bij-2-1-3-3-1-2">
 <li id="cor_inj_surj_bij-2-1-3-3-1-2-1"><div class="para" id="cor_inj_surj_bij-2-1-3-3-1-2-1-1">
 <span class="process-math">\(T\)</span> is bijective.</div></li>
@@ -567,8 +583,54 @@ w=c_{k+1}T(v_{k+1})+\cdots c_nT(v_n)\in \Span B''\text{,}
 </ol>
 </div></li>
 </ol>
-</div></article><article class="example example-like" id="eg_rank_null_polys"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.11.3</span><span class="period">.</span><span class="space"> </span><span class="title">Polynomial evaluation.</span>
+</div></article><details id="cor_inj_surj_bij-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="cor_inj_surj_bij-3-1"><ol class="decimal" id="cor_inj_surj_bij-3-1-1">
+<li id="cor_inj_surj_bij-3-1-1-1">
+<div class="para logical" id="cor_inj_surj_bij-3-1-1-1-1">
+<div class="para">First assume <span class="process-math">\(\dim V=n&lt; \infty\text{.}\)</span> We have</div>
+<div class="displaymath process-math" id="cor_inj_surj_bij-3-1-1-1-1-2">
+\begin{align*}
+\dim \NS T \amp =\dim V-\dim\im T \amp (\text{rank-nullity})\\
+\amp &gt; \dim W-\dim \im T \amp (\dim V&gt; \dim W)\\
+\amp \geq 0 \amp (\dim \im T\leq \dim W)\text{.}
+\end{align*}
+</div>
+<div class="para">It follows that <span class="process-math">\(\dim \NS T&gt; 0\text{,}\)</span> and hence that <span class="process-math">\(\NS T\ne \{\boldzero\}\text{,}\)</span> and thus <span class="process-math">\(T\)</span> is not injective.</div>
+</div>
+<div class="para" id="cor_inj_surj_bij-3-1-1-1-2">Now assume that <span class="process-math">\(\dim V=\infty\)</span> and <span class="process-math">\(\dim W=m&lt; \infty\text{.}\)</span> Pick an infinite linearly independent tuple <span class="process-math">\((v_i)_{i\in i}\)</span> in <span class="process-math">\(V\text{,}\)</span> and let <span class="process-math">\(B=(v_{i_1}, v_{i_2},\dots, v_{i_n})\)</span> be any finite subtuple of length <span class="process-math">\(n&gt; m\text{.}\)</span> We know from a homework exercise that <span class="process-math">\(B\)</span> is linearly independent. Thus <span class="process-math">\(V'=\Span B\)</span> is an <span class="process-math">\(n\)</span>-dimensional subspace of <span class="process-math">\(V\)</span> and satisfies <span class="process-math">\(\dim V'&gt; \dim W\text{.}\)</span> Applying the previous argument to the restriction <span class="process-math">\(T\vert_{V'}\colon V'\rightarrow W\text{,}\)</span> we conclude that <span class="process-math">\(\NS T\vert_{V'}\ne\{\boldzero\}\text{.}\)</span> Since <span class="process-math">\(\NS T\vert_{V'}\subseteq \NS T\text{,}\)</span> we conclude that <span class="process-math">\(\NS T\ne \{\boldzero\}\text{,}\)</span> and thus <span class="process-math">\(T\)</span> is not injective.</div>
+</li>
+<li id="cor_inj_surj_bij-3-1-1-2"><div class="para logical" id="cor_inj_surj_bij-3-1-1-2-1">
+<div class="para">We assume <span class="process-math">\(\dim V=n&lt; \dim W\text{.}\)</span> Since</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\dim \im T=\dim V-\dim \NS T\leq \dim V&lt; \dim W
+\end{equation*}
+</div>
+<div class="para">we cannot have have <span class="process-math">\(\im T=\dim W\text{.}\)</span> Thus <span class="process-math">\(T\)</span> is not surjective.</div>
+</div></li>
+<li id="cor_inj_surj_bij-3-1-1-3">
+<div class="para" id="cor_inj_surj_bij-3-1-1-3-1">We assume <span class="process-math">\(\dim V=\dim W=n&lt; \infty\text{.}\)</span> We prove a cycle of implications (a)<span class="process-math">\(\implies\)</span>(b)<span class="process-math">\(\implies\)</span>(c)<span class="process-math">\(\implies\)</span>(d).</div>
+<div class="para" id="cor_inj_surj_bij-3-1-1-3-2">We have (a) implies (b) by definition.</div>
+<div class="para logical" id="cor_inj_surj_bij-3-1-1-3-3">
+<div class="para">Assume <span class="process-math">\(T\)</span> is injective. By <a href="s_null_image.html#th_inj_surj_bij" class="xref" data-knowl="./knowl/xref/th_inj_surj_bij.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.10.11: Injective, surjective, bijective">Theorem 1.10.11</a>, this implies <span class="process-math">\(\NS T=\{\boldzero\}\)</span> and hence <span class="process-math">\(\dim \NS T=0\text{.}\)</span> It follows that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_inj_surj_bij.html ./knowl/xref/cor_dimension_subspace.html">
+\begin{equation*}
+\dim \im T=\dim V-\dim \NS T=\dim V-0=\dim W\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\im W\subseteq W\)</span> and <span class="process-math">\(\dim \im W=\dim W\text{,}\)</span> we have <span class="process-math">\(\im T=W\)</span> by <a href="s_dimention.html#cor_dimension_subspace" class="xref" data-knowl="./knowl/xref/cor_dimension_subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.8.10: Dimension of subspaces">Corollary 1.8.10</a>. Thus <span class="process-math">\(T\)</span> is surjective. This proves that (b) implies (c).</div>
+</div>
+</li>
+<li id="cor_inj_surj_bij-3-1-1-4"><div class="para logical" id="cor_inj_surj_bij-3-1-1-4-1">
+<div class="para">If <span class="process-math">\(T\)</span> is surjective, then <span class="process-math">\(\im T=W\)</span> in which case <span class="process-math">\(\dim \im T=\dim W=n\text{.}\)</span> It follows that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\dim \NS T=\dim V-\dim \im T=n-n=0\text{.}
+\end{equation*}
+</div>
+<div class="para">Hence <span class="process-math">\(\dim \NS T=0\text{,}\)</span> or equivalently, <span class="process-math">\(\NS T=\{\boldzero\}\text{.}\)</span> It follows that <span class="process-math">\(T\)</span> is injective. Since <span class="process-math">\(T\)</span> is injective and surjective, it is bijective. This proves that (c) implies (a).</div>
+</div></li>
+</ol></div></article></details><article class="example example-like" id="eg_rank_null_polys"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.11.5</span><span class="period">.</span><span class="space"> </span><span class="title">Polynomial evaluation.</span>
 </h3>
 <div class="para logical" id="eg_rank_null_polys-2-1">
 <div class="para">Let <span class="process-math">\(I\)</span> be an infinite subset of the field <span class="process-math">\(F\text{,}\)</span> let <span class="process-math">\(n\)</span> be a positive integer, and let <span class="process-math">\(\boldc=(c_1,c_2,\dots, c_{n+1})\in F^{n+1}\)</span> be a choice of <span class="process-math">\(n+1\)</span> scalars that we think of as inputs. Prove that for any choice <span class="process-math">\(\boldd=(d_1,d_2,\dots, d_{n+1})\in F^{n+1}\)</span> of <span class="process-math">\(n+1\)</span> outputs there is a unique polynomial <span class="process-math">\(f\in P_n(I)\)</span> satisfying</div>
