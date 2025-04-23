@@ -12,18 +12,35 @@
 </head>
 <body class="ignore-math">
 <article class="example example-like"><h4 class="heading">
-<span class="type">Example</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.10.8</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Homogeneous linear differential equation.</span>
+<span class="type">Example</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.10.9</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Homogeneous linear differential equation.</span>
 </h4>
 <div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
-<div class="para">Let <span class="process-math">\(I\)</span> be an interval of <span class="process-math">\(\R\text{,}\)</span> let <span class="process-math">\(q_{n-1},q_{n-2},\dots, q_0\)</span> be continuous functions on <span class="process-math">\(I\)</span> (i.e., <span class="process-math">\(q_i\in C(I)\)</span>) for all <span class="process-math">\(1\leq i\leq n-1\text{,}\)</span> and define <span class="process-math">\(W\)</span> as the set of functions <span class="process-math">\(f\in C^n(I)\)</span> satisfying the linear homogeneous differential equation</div>
+<div class="para">Let <span class="process-math">\(I\)</span> be an interval of <span class="process-math">\(\R\text{,}\)</span> let <span class="process-math">\(q_{n-1},q_{n-2},\dots, q_1\)</span> be continuous functions on <span class="process-math">\(I\)</span> (i.e., <span class="process-math">\(q_i\in C(I)\)</span>) for all <span class="process-math">\(1\leq i\leq n-1\text{,}\)</span> and define <span class="process-math">\(W\)</span> as the set of functions <span class="process-math">\(f\in C^n(I)\)</span> satisfying the linear homogeneous differential equation</div>
 <div class="displaymath process-math">
 \begin{equation}
-f^{(n)}(x)+q_{n-1}(x)f^{(n-1)}(x)+\cdots +q_1(x)f(x)+q_0(x)=0 \text{ for all } x\in I\text{.}\tag{1.27}
+f^{(n)}(x)+q_{n-1}(x)f^{(n-1)}(x)+\cdots +q_1(x)f(x)=0 \text{ for all } x\in I\text{.}\tag{1.27}
 \end{equation}
 </div>
 <div class="para">Prove that <span class="process-math">\(W\)</span> is a subspace of <span class="process-math">\(C^n(I)\text{.}\)</span>
 </div>
 </div>
-<div class="solutions"><details xmlns:xlink="http://www.w3.org/1999/xlink" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para"></div></div></details></div></article><span class="incontext"><a class="internal" href="s_null_image.html#eg_homog_diff_eqn">in-context</a></span>
+<div class="solutions"><details xmlns:xlink="http://www.w3.org/1999/xlink" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical">
+<div class="para">Define <span class="process-math">\(T\colon C^n(I) \rightarrow C(I)\)</span> as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_lin_homog_diff_eq.html">
+\begin{equation*}
+T(f)=f^{(n)}+q_{n-1}f^{(n-1)}+\cdots +q_1f\text{.}
+\end{equation*}
+</div>
+<div class="para">We have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_lin_homog_diff_eq.html">
+\begin{align*}
+T(cf+dg) \amp = (f+g)^{(n)}+q_{n-1}(f+g)^{(n-1)}+\cdots +q_1(f+g)\\
+\amp = c(f^{(n)}+q_{n-1}f^{(n-1)}+\cdots +q_1f)+d(g^{(n)}+q_{n-1}g^{(n-1)}+\cdots +q_1g)\\
+\amp =cT(f)+dT(g)\text{,}
+\end{align*}
+</div>
+<div class="para">showing that <span class="process-math">\(T\)</span> is a linear transformation. The set of solutions to <a href="s_null_image.html#eq_lin_homog_diff_eq" class="xref" data-knowl="./knowl/xref/eq_lin_homog_diff_eq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.27">(1.27)</a> is precisely <span class="process-math">\(\NS T\text{,}\)</span> making this set a subspace of <span class="process-math">\(C^n(I)\text{.}\)</span>
+</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="s_null_image.html#eg_homog_diff_eqn">in-context</a></span>
 </body>
 </html>

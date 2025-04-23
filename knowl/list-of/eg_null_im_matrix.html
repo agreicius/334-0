@@ -12,10 +12,10 @@
 </head>
 <body class="ignore-math">
 <article class="example example-like"><h4 class="heading">
-<span class="type">Example</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.10.9</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Matrix transformation.</span>
+<span class="type">Example</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.10.10</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Matrix transformation.</span>
 </h4>
 <div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
-<div class="para">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(m\times n\)</span> matrix, and let <span class="process-math">\(\bolda_1,\bolda_2,\dots, \bolda_n\)</span> be the <span class="process-math">\(n\)</span> columns of <span class="process-math">\(A\text{,}\)</span> considered as elements of <span class="process-math">\(F^m\text{.}\)</span>   The null space and image of the corresponding matrix transformation <span class="process-math">\(T_A\colon F^n\rightarrow F^m\)</span> can be identified with the following <em class="emphasis">fundamental spaces</em> of <span class="process-math">\(A\text{:}\)</span>
+<div class="para">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(m\times n\)</span> matrix, and let <span class="process-math">\(\bolda_1,\bolda_2,\dots, \bolda_n\)</span> be the <span class="process-math">\(n\)</span> columns of <span class="process-math">\(A\text{,}\)</span> considered as elements of <span class="process-math">\(F^m\text{.}\)</span>   Show that the null space and image of the corresponding matrix transformation <span class="process-math">\(T_A\colon F^n\rightarrow F^m\)</span> can be identified with the following <em class="emphasis">fundamental spaces</em> of <span class="process-math">\(A\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{align*}
@@ -24,6 +24,25 @@
 \end{align*}
 </div>
 </div>
-<div class="solutions"><details xmlns:xlink="http://www.w3.org/1999/xlink" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para"></div></div></details></div></article><span class="incontext"><a class="internal" href="s_null_image.html#eg_null_im_matrix">in-context</a></span>
+<div class="solutions"><details xmlns:xlink="http://www.w3.org/1999/xlink" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical">
+<div class="para">For the null space, we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\NS T_A \amp =\{\boldx\in F^n\colon T_A(\boldx)=\boldzero\}\\
+\amp = \{\boldx\in F^n\colon A\boldx=\boldzero\}\\
+\amp = \NS A\text{.}
+\end{align*}
+</div>
+<div class="para">The statment about <span class="process-math">\(\im T_A\)</span> follows from the following observation about matrix equations: we can solve <span class="process-math">\(A\boldx=\boldy\)</span> if and only if <span class="process-math">\(\boldy\)</span> can be expressed as a linear combination of the columns <span class="process-math">\(\bolda_j\)</span> of <span class="process-math">\(A\text{.}\)</span> (This observation, in turn, follows from the <a class="external" href="https://agreicius.github.io/euc-vec-spaces/s_matrix.html#th_column_method" target="_blank">column method description of matrix multiplication</a><details class="ptx-footnote" aria-live="polite" id="eg_null_im_matrix-3-1-8"><summary class="ptx-footnote__number" title="Footnote 1.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="eg_null_im_matrix-3-1-8"><code class="code-inline tex2jax_ignore">agreicius.github.io/euc-vec-spaces/s_matrix.html#th_column_method</code></div></details>.) Taking this for granted, we then have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\im T_A \amp =\{\boldy\in F^m\colon y=T_A(\boldx) \text{ for some } \boldx\in F^n\}\\
+\amp =\{\boldy\in F^m\colon y=A\boldx \text{ for some } \boldx\in F^n\}\\
+\amp =\{\boldy\in F^m\colon y=\sum_{j=1}^nc_j\bolda_j \text{ for some } c_j\in F\}\\
+\amp =\Span(\bolda_1,\bolda_2,\dots, \bolda_n)\\
+\amp = \CS A\text{.}
+\end{align*}
+</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="s_null_image.html#eg_null_im_matrix">in-context</a></span>
 </body>
 </html>
