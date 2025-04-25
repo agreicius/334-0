@@ -2059,7 +2059,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.11",
   "title": "Rank-nullity theorem",
-  "body": " Rank-nullity theorem  We now prove the rank-nullity theorem , sometimes called the fundamental theorem of linear algebra . This theorem relates the dimensions of the null space and image of a linear transformation , assuming is finite dimensional. Roughly speaking, it says that the bigger the null space, the smaller the image. More precisely, it tells us that . As we will see, this elegant result can be used to significantly simplify computations with linear transformations. For example, in a situation where we wish to compute explicitly both the null space and image of a given linear transformation, we can often get away with just computing one of the two spaces and using the rank-nullity theorem (and a dimension argument) to easily determine the other. Additionally, the rank-nullity theorem will directly imply some intuitively obvious properties of linear transformations. For example, suppose is a finite-dimensional vector space. It seems obvious that if , then there is no linear transformation mapping surjectively onto : , you should not be able to map a smaller vector space onto a bigger one. Similarly, if , then we expect that there is no injective linear transformation mapping injectively into . Both these results are easy consequences of the rank-nullity theorem .   Rank-nullity theorem   Let be a finite-dimensional vector space. If is a linear transformation, then .    Choose a basis of and extend to a basis , using . From the proof of it follows that , where . We claim that is a basis of . Once this is established, follows easily, since then we have , and thus . We will prove is a basis of by proving that it is linearly independent and a spanning set.   Proof that is linearly independent  Assume . Since is linear, this implies that and hence that . On the other hand, we have . Since , we have , and hence . Lastly, since is linearly independent, we conclude that for all , as desired.    Proof that  We prove and separately.  Since is a subspace, and since for all , it follows that from statement (2) of .  For the other inclusion, we have , since for all . But then , proving that .      Rank-nullity theorem  Some textbooks will define the rank and nullity of a linear transformation as and , respectively. This is where the name of this theorem comes from.   The rank-nullity theorem relates the size (measured by dimension) of the two spaces and . This can be useful in computations when one of these two spaces is easy to compute.   Rank-nullity: image from null space   Let be defined as . Use the rank-nullity theorem to prove that is surjective.         Injective, surjective, bijective   Let be a finite-dimensional vector space, and let be a linear transformation.   If , then is not injective.    If , then is not surjective.    Assume further that . The following statements are equivalent.    is bijective.     is injective.     is surjective.             First assume . We have . It follows that , and hence that , and thus is not injective.  Now assume that and . Pick an infinite linearly independent tuple in , and let be any finite subtuple of length . We know from a homework exercise that is linearly independent. Thus is an -dimensional subspace of and satisfies . Applying the previous argument to the restriction , we conclude that . Since , we conclude that , and thus is not injective.    We assume . Since we cannot have have . Thus is not surjective.    We assume . We prove a cycle of implications (a) (b) (c) (d).  We have (a) implies (b) by definition.  Assume is injective. By , this implies and hence . It follows that . Since and , we have by . Thus is surjective. This proves that (b) implies (c).    If is surjective, then in which case . It follows that . Hence , or equivalently, . It follows that is injective. Since is injective and surjective, it is bijective. This proves that (c) implies (a).        Polynomial evaluation   Let be an infinite subset of the field , let be a positive integer, and let be a choice of scalars that we think of as inputs. Prove that for any choice of outputs there is a unique polynomial satisfying . In other words, given any choice of values , we can construct a unique polynomial whose value at is for all .        "
+  "body": " Rank-nullity theorem  We now prove the rank-nullity theorem , sometimes called the fundamental theorem of linear algebra . This theorem relates the dimensions of the null space and image of a linear transformation , assuming is finite dimensional. Roughly speaking, it says that the bigger the null space, the smaller the image. More precisely, it tells us that . As we will see, this elegant result can be used to significantly simplify computations with linear transformations. For example, in a situation where we wish to compute explicitly both the null space and image of a given linear transformation, we can often get away with just computing one of the two spaces and using the rank-nullity theorem (and a dimension argument) to easily determine the other. Additionally, the rank-nullity theorem will directly imply some intuitively obvious properties of linear transformations. For example, suppose is a finite-dimensional vector space. It seems obvious that if , then there is no linear transformation mapping surjectively onto : , you should not be able to map a smaller vector space onto a bigger one. Similarly, if , then we expect that there is no injective linear transformation mapping injectively into . Both these results are easy consequences of the rank-nullity theorem .   Rank-nullity theorem   Let be a finite-dimensional vector space. If is a linear transformation, then .    Choose a basis of and extend to a basis , using . From the proof of it follows that , where . We claim that is a basis of . Once this is established, follows easily, since then we have , and thus . We will prove is a basis of by proving that it is linearly independent and a spanning set.   Proof that is linearly independent  Assume . Since is linear, this implies that and hence that . On the other hand, we have . Since , we have , and hence . Lastly, since is linearly independent, we conclude that for all , as desired.    Proof that  We prove and separately.  Since is a subspace, and since for all , it follows that from statement (2) of .  For the other inclusion, we have , since for all . But then , proving that .      Rank-nullity theorem  Some textbooks will define the rank and nullity of a linear transformation as and , respectively. This is where the name of this theorem comes from.   The rank-nullity theorem relates the size (measured by dimension) of the two spaces and . This can be useful in computations when one of these two spaces is easy to compute.   Rank-nullity: image from null space   Let be defined as . Use the rank-nullity theorem to prove that is surjective.         Injective, surjective, bijective   Let be a finite-dimensional vector space, and let be a linear transformation.   If , then is not injective.    If , then is not surjective.    Assume further that . The following statements are equivalent.    is bijective.     is injective.     is surjective.             First assume . We have . It follows that , and hence that , and thus is not injective.  Now assume that and . Pick an infinite linearly independent tuple in , and let be any finite subtuple of length . We know from a homework exercise that is linearly independent. Thus is an -dimensional subspace of and satisfies . Applying the previous argument to the restriction , we conclude that . Since , we conclude that , and thus is not injective.    We assume . Since we cannot have have . Thus is not surjective.    We assume . We prove a cycle of implications (a) (b) (c) (d).  We have (a) implies (b) by definition.  Assume is injective. By , this implies and hence . It follows that . Since and , we have by . Thus is surjective. This proves that (b) implies (c).    If is surjective, then in which case . It follows that . Hence , or equivalently, . It follows that is injective. Since is injective and surjective, it is bijective. This proves that (c) implies (a).        Polynomial evaluation   Let be an infinite subset of the field , let be a positive integer, and let be a choice of distinct scalars that we think of as inputs. Prove that for any choice of outputs there is a unique polynomial satisfying . In other words, given any choice of values , we can construct a unique polynomial whose value at is for all .        "
 },
 {
   "id": "th_rank_nullity",
@@ -2104,7 +2104,133 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.11.5",
   "title": "Polynomial evaluation.",
-  "body": " Polynomial evaluation   Let be an infinite subset of the field , let be a positive integer, and let be a choice of scalars that we think of as inputs. Prove that for any choice of outputs there is a unique polynomial satisfying . In other words, given any choice of values , we can construct a unique polynomial whose value at is for all .       "
+  "body": " Polynomial evaluation   Let be an infinite subset of the field , let be a positive integer, and let be a choice of distinct scalars that we think of as inputs. Prove that for any choice of outputs there is a unique polynomial satisfying . In other words, given any choice of values , we can construct a unique polynomial whose value at is for all .       "
+},
+{
+  "id": "s_isom",
+  "level": "1",
+  "url": "s_isom.html",
+  "type": "Section",
+  "number": "1.12",
+  "title": "Isomorphisms",
+  "body": " Isomorphisms   Composition of linear transformations  Given linear transformations and , we will denote their composition as .    Composition of linear transformations   Let , , and .   The composition is a linear transformation.          and .     and .            Isomorphism   A linear map is an isomorphism if there is a linear transformation satisfying and . When this is the case we call the inverse of , and write . Two vector spaces and are isomorphic if there is an isomorphism .     Inverse functions  Using the language of inverse functions, we see that a linear transformation is an isomorphism if (a) it is invertible, and (b) its inverse is itself a linear transformation. As we will see in the next theorem, this second condition is automatic.    Isomorphisms   Let . The following statements are equivalent.    is an isomorphism.     is invertible.     is bijective.            Isomorphisms   Assume is a linear transformation. Below you find three separate approaches for deciding whether is an isomorphism. Depending on the context, one approach may be more convenient than the others.   Invertibility  Provide an inverse function , or prove that no such inverse function exists. By , an inverse function is automatically linear.    Bijection  Determine whether is bijective. This can be accomplished by computing and .     If , then the following statements are equivalent.    is an isomorphism.     is injective (equivalently, ).     is surjective (equivalently, ).           Matrix transformations   Prove that a matrix transformation is an isomorphism if and only if is invertible.         Transposition   Define as . Prove that is an isomorphism.         Evaluation   Let be an infinite subset of the field , let be a positive integer, and let be a choice of distinct scalars ( , for ). Prove that the evaluation map is an isomorphism.         Isomorphisms preserve structure   Let be an isomorphism.   A tuple of vectors in is linearly independent if and only if its image is linearly independent.    Let , where is a tuple in . We have .     is a basis of if and only if is a basis of .     is finite-dimensional if and only if is finite-dimensional, and in this case we have .     is a subspace of if and only if is a subspace of .    We have for subspaces if and only if .            Finite-dimensional spaces   Let and be finite dimensional vector spaces. The following statements are equivalent.    is isomorphic to .     .        Coordinate vectors   Let be a basis of the vector space . Given , let be the unique expression of as a linear combination of the . We define the tuple of scalars to be the coordinate vector of with respect to , denoted : , .     Coordinate vector map   Let be a basis of the vector space and define .   Show that is an injective linear transformation.    Prove that if , then is an isomorphism.    Given an example where is not an isomorphism.           "
+},
+{
+  "id": "s_isom-2",
+  "level": "2",
+  "url": "s_isom.html#s_isom-2",
+  "type": "Convention",
+  "number": "1.12.1",
+  "title": "Composition of linear transformations.",
+  "body": " Composition of linear transformations  Given linear transformations and , we will denote their composition as .  "
+},
+{
+  "id": "th_composition",
+  "level": "2",
+  "url": "s_isom.html#th_composition",
+  "type": "Theorem",
+  "number": "1.12.2",
+  "title": "Composition of linear transformations.",
+  "body": " Composition of linear transformations   Let , , and .   The composition is a linear transformation.          and .     and .          "
+},
+{
+  "id": "d_isom",
+  "level": "2",
+  "url": "s_isom.html#d_isom",
+  "type": "Definition",
+  "number": "1.12.3",
+  "title": "Isomorphism.",
+  "body": " Isomorphism   A linear map is an isomorphism if there is a linear transformation satisfying and . When this is the case we call the inverse of , and write . Two vector spaces and are isomorphic if there is an isomorphism .   "
+},
+{
+  "id": "s_isom-5",
+  "level": "2",
+  "url": "s_isom.html#s_isom-5",
+  "type": "Remark",
+  "number": "1.12.4",
+  "title": "Inverse functions.",
+  "body": " Inverse functions  Using the language of inverse functions, we see that a linear transformation is an isomorphism if (a) it is invertible, and (b) its inverse is itself a linear transformation. As we will see in the next theorem, this second condition is automatic.  "
+},
+{
+  "id": "th_isom",
+  "level": "2",
+  "url": "s_isom.html#th_isom",
+  "type": "Theorem",
+  "number": "1.12.5",
+  "title": "Isomorphisms.",
+  "body": " Isomorphisms   Let . The following statements are equivalent.    is an isomorphism.     is invertible.     is bijective.          "
+},
+{
+  "id": "proc_isomorphism",
+  "level": "2",
+  "url": "s_isom.html#proc_isomorphism",
+  "type": "Procedure",
+  "number": "1.12.6",
+  "title": "Isomorphisms.",
+  "body": " Isomorphisms   Assume is a linear transformation. Below you find three separate approaches for deciding whether is an isomorphism. Depending on the context, one approach may be more convenient than the others.   Invertibility  Provide an inverse function , or prove that no such inverse function exists. By , an inverse function is automatically linear.    Bijection  Determine whether is bijective. This can be accomplished by computing and .     If , then the following statements are equivalent.    is an isomorphism.     is injective (equivalently, ).     is surjective (equivalently, ).         "
+},
+{
+  "id": "eg_isom_matrix",
+  "level": "2",
+  "url": "s_isom.html#eg_isom_matrix",
+  "type": "Example",
+  "number": "1.12.7",
+  "title": "Matrix transformations.",
+  "body": " Matrix transformations   Prove that a matrix transformation is an isomorphism if and only if is invertible.       "
+},
+{
+  "id": "eg_isom_transposition",
+  "level": "2",
+  "url": "s_isom.html#eg_isom_transposition",
+  "type": "Example",
+  "number": "1.12.8",
+  "title": "Transposition.",
+  "body": " Transposition   Define as . Prove that is an isomorphism.       "
+},
+{
+  "id": "eg_isom_evaluation",
+  "level": "2",
+  "url": "s_isom.html#eg_isom_evaluation",
+  "type": "Example",
+  "number": "1.12.9",
+  "title": "Evaluation.",
+  "body": " Evaluation   Let be an infinite subset of the field , let be a positive integer, and let be a choice of distinct scalars ( , for ). Prove that the evaluation map is an isomorphism.       "
+},
+{
+  "id": "th_isom_structure",
+  "level": "2",
+  "url": "s_isom.html#th_isom_structure",
+  "type": "Theorem",
+  "number": "1.12.10",
+  "title": "Isomorphisms preserve structure.",
+  "body": " Isomorphisms preserve structure   Let be an isomorphism.   A tuple of vectors in is linearly independent if and only if its image is linearly independent.    Let , where is a tuple in . We have .     is a basis of if and only if is a basis of .     is finite-dimensional if and only if is finite-dimensional, and in this case we have .     is a subspace of if and only if is a subspace of .    We have for subspaces if and only if .          "
+},
+{
+  "id": "cor_isom_finite_dim",
+  "level": "2",
+  "url": "s_isom.html#cor_isom_finite_dim",
+  "type": "Corollary",
+  "number": "1.12.11",
+  "title": "Finite-dimensional spaces.",
+  "body": " Finite-dimensional spaces   Let and be finite dimensional vector spaces. The following statements are equivalent.    is isomorphic to .     .      "
+},
+{
+  "id": "d_coor_vect",
+  "level": "2",
+  "url": "s_isom.html#d_coor_vect",
+  "type": "Definition",
+  "number": "1.12.12",
+  "title": "Coordinate vectors.",
+  "body": " Coordinate vectors   Let be a basis of the vector space . Given , let be the unique expression of as a linear combination of the . We define the tuple of scalars to be the coordinate vector of with respect to , denoted : , .   "
+},
+{
+  "id": "eg_coor_vec",
+  "level": "2",
+  "url": "s_isom.html#eg_coor_vec",
+  "type": "Example",
+  "number": "1.12.13",
+  "title": "Coordinate vector map.",
+  "body": " Coordinate vector map   Let be a basis of the vector space and define .   Show that is an injective linear transformation.    Prove that if , then is an isomorphism.    Given an example where is not an isomorphism.          "
 },
 {
   "id": "appendix-notation",
