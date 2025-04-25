@@ -211,7 +211,7 @@
         <title>Polynomial evaluation</title>
         <statement>
         <p>
-        Let <m>I</m> be an infinite subset of the field <m>F</m>, let <m>n</m> be a positive integer, and let <m>\boldc=(c_1,c_2,\dots, c_{n+1})\in F^{n+1}</m> be a choice of <m>n+1</m> scalars that we think of as inputs. Prove that for any choice <m>\boldd=(d_1,d_2,\dots, d_{n+1})\in F^{n+1}</m> of <m>n+1</m> outputs there is a unique polynomial <m>f\in P_n(I)</m> satisfying 
+        Let <m>I</m> be an infinite subset of the field <m>F</m>, let <m>n</m> be a positive integer, and let <m>\boldc=(c_1,c_2,\dots, c_{n+1})\in F^{n+1}</m> be a choice of <m>n+1</m> distinct scalars that we think of as inputs. Prove that for any choice <m>\boldd=(d_1,d_2,\dots, d_{n+1})\in F^{n+1}</m> of <m>n+1</m> outputs there is a unique polynomial <m>f\in P_n(I)</m> satisfying 
         <md>
           <mrow>f(c_1) \amp = d_1</mrow>
           <mrow>f(c_2) \amp = d_2</mrow>
