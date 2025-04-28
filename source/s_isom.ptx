@@ -245,50 +245,6 @@ Let <m>T\colon V\rightarrow W</m> be an isomorphism.
         </p>
     </statement>
 </corollary>
-<definition xml:id="d_coor_vect">
-<title>Coordinate vectors</title>
-<statement>
-<p>
-Let <m>B=(v_i)_{i\in I}</m> be a basis of the vector space <m>V</m>. Given <m>v\in V</m>, let <m>v=\sum_{i\in I}c_iv_i</m> be the unique expression of <m>v</m> as a linear combination of the <m>v_i</m>. We define the tuple of scalars <m>(c_i)_{i\in I}\in F^I</m> to be the <term>coordinate vector</term> of <m>v</m> with respect to <m>B</m>, denoted <m>[v]_B</m>: <ie/>, 
-<men xml:id="eq_coor_vec">
-    [v]_B=(c_i)_{i\in I}
-</men>.
-</p>
-</statement>
-</definition>
-<example xml:id="eg_coor_vec">
-<title>Coordinate vector map</title>
-<statement>
-<p>
-Let <m>B=(v_i)_{i\in I}</m> be a basis of the vector space <m>V</m> and define 
-<md>
-    <mrow>T\colon V\amp \rightarrow F^I</mrow>
-    <mrow>v \amp \longmapsto [v]_B</mrow>
-</md>.
-<ol>
-    <li>
-        <p>
-            Show that <m>T</m> is an injective linear transformation. 
-        </p>
-    </li>
-    <li>
-        <p>
-            Prove that if <m>\dim V&lt; \infty</m>, then <m>T</m> is an isomorphism. 
-        </p>
-    </li>
-    <li>
-        <p>
-            Given an example where <m>T</m> is not an isomorphism. 
-        </p>
-    </li>
-</ol>
-</p>
-</statement>
-<solution>
-<p>
 
-</p>
-</solution>
-</example>
 
 </section>
