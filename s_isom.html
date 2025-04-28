@@ -96,15 +96,15 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.5.16';
+eBookConfig.runestone_version = '7.6.0';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.a0c870bab402ccbf.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f6bda0c0ccce4835.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.97de40e034b535c5.css">
+<script src="_static/prefix-runtime.33e494184ef307b3.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f7a03b209751032d.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.541c9106f2c605b9.css">
 <script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
@@ -124,7 +124,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_rank_nullity.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_linear_algebra.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="advlinalgkursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_rank_nullity.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_linear_algebra.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s_matrix_reps.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div xmlns:xlink="http://www.w3.org/1999/xlink" id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\renewcommand{\Re}{\operatorname{Re}}
 \renewcommand{\Im}{\operatorname{Im}}
 \newcommand{\Z}{{\mathbb Z}}
@@ -446,6 +446,13 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_rank_nullity.html" class="internal"><span class="codenumber">1.11</span> <span class="title">Rank-nullity theorem</span></a></div></li>
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="s_isom.html" class="internal"><span class="codenumber">1.12</span> <span class="title">Isomorphisms</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_matrix_reps.html" class="internal"><span class="codenumber">1.13</span> <span class="title">Coordinate vectors and matrix representations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix_reps.html#ss_coordinate_vectors" class="internal"><span class="title">Coordinate vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix_reps.html#ss_matrix_reps" class="internal"><span class="title">Matrix representations</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -588,36 +595,9 @@ T(W)=T(\Span S)=\Span T(S)=\Span (T(v_i))_{i\in I}\text{.}\tag{1.29}
 </div></li>
 <li id="cor_isom_finite_dim-2-1-3-2"><div class="para" id="cor_isom_finite_dim-2-1-3-2-1"><span class="process-math">\(\dim V=\dim W\text{.}\)</span></div></li>
 </ol>
-</div></article><article class="definition definition-like" id="d_coor_vect"><h3 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.12.12</span><span class="period">.</span><span class="space"> </span><span class="title">Coordinate vectors.</span>
-</h3>
-<div class="para logical" id="d_coor_vect-2-1">
-<div class="para">Let <span class="process-math">\(B=(v_i)_{i\in I}\)</span> be a basis of the vector space <span class="process-math">\(V\text{.}\)</span> Given <span class="process-math">\(v\in V\text{,}\)</span> let <span class="process-math">\(v=\sum_{i\in I}c_iv_i\)</span> be the unique expression of <span class="process-math">\(v\)</span> as a linear combination of the <span class="process-math">\(v_i\text{.}\)</span> We define the tuple of scalars <span class="process-math">\((c_i)_{i\in I}\in F^I\)</span> to be the <dfn class="terminology">coordinate vector</dfn> of <span class="process-math">\(v\)</span> with respect to <span class="process-math">\(B\text{,}\)</span> denoted <span class="process-math">\([v]_B\text{:}\)</span> i.e.,</div>
-<div class="displaymath process-math" id="eq_coor_vec">
-\begin{equation}
-[v]_B=(c_i)_{i\in I}\text{.}\tag{1.30}
-\end{equation}
-</div>
-</div></article><article class="example example-like" id="eg_coor_vec"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.12.13</span><span class="period">.</span><span class="space"> </span><span class="title">Coordinate vector map.</span>
-</h3>
-<div class="para logical" id="eg_coor_vec-2-1">
-<div class="para">Let <span class="process-math">\(B=(v_i)_{i\in I}\)</span> be a basis of the vector space <span class="process-math">\(V\)</span> and define</div>
-<div class="displaymath process-math" id="eg_coor_vec-2-1-3">
-\begin{align*}
-T\colon V\amp \rightarrow F^I\\
-v \amp \longmapsto [v]_B\text{.}
-\end{align*}
-</div>
-<ol class="decimal" id="eg_coor_vec-2-1-4">
-<li id="eg_coor_vec-2-1-4-1"><div class="para" id="eg_coor_vec-2-1-4-1-1">Show that <span class="process-math">\(T\)</span> is an injective linear transformation.</div></li>
-<li id="eg_coor_vec-2-1-4-2"><div class="para" id="eg_coor_vec-2-1-4-2-1">Prove that if <span class="process-math">\(\dim V&lt; \infty\text{,}\)</span> then <span class="process-math">\(T\)</span> is an isomorphism.</div></li>
-<li id="eg_coor_vec-2-1-4-3"><div class="para" id="eg_coor_vec-2-1-4-3-1">Given an example where <span class="process-math">\(T\)</span> is not an isomorphism.</div></li>
-</ol>
-</div>
-<div class="solutions"><details id="eg_coor_vec-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_coor_vec-3-1"></div></div></details></div></article></section></div>
+</div></article></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="s_rank_nullity.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="advlinalgkursobjekt-6.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="s_rank_nullity.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_matrix_reps.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

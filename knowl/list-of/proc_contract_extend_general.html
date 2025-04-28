@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="algorithm theorem-like"><h4 class="heading">
+<span class="type">Procedure</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.13.7</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Contracting and extending to bases in general spaces.</span>
+</h4>
+<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
+<div class="para">Let <span class="process-math">\(V\)</span> be a vector space of dimension <span class="process-math">\(n\text{,}\)</span> and let <span class="process-math">\(S=(v_1, v_2,\dots, v_r)\)</span> be a tuple of vectors of <span class="process-math">\(V\text{.}\)</span>
+</div>
+<ol class="decimal" id="proc_contract_extend_general-2-1-5">
+<li>
+<span class="heading"><span class="title">Contracting to a basis.</span></span><div class="para logical">
+<div class="para">Let <span class="process-math">\(W=\Span S\text{.}\)</span> To contract <span class="process-math">\(S\)</span> to a basis <span class="process-math">\(W\text{,}\)</span> proceed as follows.</div>
+<ol class="lower-alpha lower-alpha-level-1" id="proc_contract_extend_general-2-1-5-1-2-4">
+<li><div class="para">Pick any ordered basis <span class="process-math">\(B\)</span> of <span class="process-math">\(V\)</span> and let <span class="process-math">\(S'=\{[v_1]_B, [v_2]_B, \dots, [v_r]_B\}\subseteq \R^n\text{.}\)</span>
+</div></li>
+<li><div class="para">Use a the column space algorithm to contract <span class="process-math">\(S'\)</span> to a basis <span class="process-math">\(B'=([v_{i_1}]_B, [v_{i_2}]_B, \dots, [v_{i_k}]_B)\)</span> of <span class="process-math">\(\Span S'\text{.}\)</span>
+</div></li>
+<li><div class="para">The tuple <span class="process-math">\(B=(v_{i_1}, v_{i_2}, \dots, v_{i_k})\)</span> is a basis for <span class="process-math">\(W=\Span S\text{.}\)</span>
+</div></li>
+</ol>
+</div>
+</li>
+<li>
+<span class="heading"><span class="title">Extending to a basis.</span></span><div class="para logical">
+<div class="para">Assume <span class="process-math">\(S\)</span> is linearly independent. To extend <span class="process-math">\(S\)</span> to a basis of <span class="process-math">\(V\)</span> proceed as follows.</div>
+<ol class="lower-alpha lower-alpha-level-1" id="proc_contract_extend_general-2-1-5-2-2-4">
+<li><div class="para">Pick any ordered basis <span class="process-math">\(B\)</span> of <span class="process-math">\(V\)</span> and let <span class="process-math">\(S'=([v_1]_B, [v_2]_B, \dots, [v_r]_B)\text{,}\)</span> the corresponding tuple in <span class="process-math">\(F^n\text{.}\)</span>
+</div></li>
+<li><div class="para">Use an appropriate fundamental space algorithm  to extend <span class="process-math">\(S'\)</span> to a basis <span class="process-math">\(B'=([v_1]_B, [v_2]_B, \dots, [v_r]_B, \boldx_{r+1}, \dots, \boldx_n)\)</span> of <span class="process-math">\(F^n\text{.}\)</span>
+</div></li>
+<li><div class="para">For all <span class="process-math">\(r+1\leq i\leq n\)</span> find vectors <span class="process-math">\(v_{i}\in V\)</span> satisfying <span class="process-math">\([v_i]_B=\boldx_i\text{.}\)</span> The tuple <span class="process-math">\(B=(v_1,\dots, v_r,v_{r+1},\dots,v_n)\)</span> is a basis of <span class="process-math">\(V\text{.}\)</span>
+</div></li>
+</ol>
+</div>
+</li>
+</ol>
+</div></article><span class="incontext"><a class="internal" href="s_matrix_reps.html#proc_contract_extend_general">in-context</a></span>
+</body>
+</html>
