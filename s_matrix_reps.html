@@ -926,8 +926,40 @@ T(\bolde_3) \amp = T(0,0,1)=\begin{bmatrix}1\amp -1 \\ 0 \amp -1\end{bmatrix} \t
 [T]_{B}^{B'}=\begin{amatrix}[rrr] 1\amp 1\ \amp 1\\ 1\amp 0\amp -1\\ 1\amp 2\amp 0\\ 0\amp 1\amp -1\end{amatrix}\text{.}
 \end{equation*}
 </div>
+</div></div></details></div></article><article class="example example-like" id="eg_matrix_rep_differentiation"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.13.12</span><span class="period">.</span><span class="space"> </span><span class="title">Differentiation.</span>
+</h4>
+<div class="para" id="eg_matrix_rep_differentiation-2-1">Let <span class="process-math">\(I\)</span> be an infinite subset of <span class="process-math">\(\R\text{,}\)</span> and define <span class="process-math">\(T\colon P_n(I)\rightarrow P_{n-1}(I)\)</span> as <span class="process-math">\(T(f)=f'\text{.}\)</span> Compute <span class="process-math">\([T]_B^{B'}\text{,}\)</span> where <span class="process-math">\(B\)</span> and <span class="process-math">\(B'\)</span> are the standard bases of <span class="process-math">\(P_n(I)\)</span> and <span class="process-math">\(P_{n-1}(I)\)</span>
+</div>
+<div class="solutions"><details id="eg_matrix_rep_differentiation-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_matrix_rep_differentiation-3-1">
+<div class="para">Let <span class="process-math">\(B=(1,x,x^2,\dots, x^n)\)</span> and <span class="process-math">\(B'=(1,x,x^2,\dots, x^n)\text{.}\)</span> We have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_matrixrep_formula.html">
+\begin{equation*}
+T(x^k)=\frac{d}{dx}(x^k)=kx^{k-1}
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(0\leq k\leq n\text{.}\)</span> Since <span class="process-math">\(B'\)</span> is standard, we easily compute</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_matrixrep_formula.html">
+\begin{equation*}
+[T(x^k)]_{B'}=(0,0,\dots, \underset{(k-1)-\text{th coor.}}{k},0,\dots, 0)\text{.}
+\end{equation*}
+</div>
+<div class="para">Using recipe <a href="s_matrix_reps.html#eq_matrixrep_formula" class="xref" data-knowl="./knowl/xref/eq_matrixrep_formula.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.34">(1.34)</a> we conclude that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_matrixrep_formula.html">
+\begin{equation*}
+[T]_B^{B'}=
+\begin{bmatrix}
+0\amp 1\amp 0 \amp 0\amp  \dots \amp 0  \\
+0\amp 0\amp 2 \amp 0 \amp    \amp 0 \\
+0\amp 0\amp 0 \amp 3 \amp 0 \amp \vdots  \\
+\vdots \\
+0\amp  0 \amp 0 \amp 0 \amp  \dots  \amp n  
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">In more detail, <span class="process-math">\([T]_B^{B'}\)</span> is the <span class="process-math">\((n-1)\times n\)</span> matrix whose first column is the zero column vector, and whose <span class="process-math">\(k\)</span>-th column for <span class="process-math">\(2\leq k\leq n\)</span> is the column vector that has <span class="process-math">\(k\)</span> in the  <span class="process-math">\((k-1)\)</span>-th entry and zeros elsewhere.</div>
 </div></div></details></div></article><article class="example example-like" id="eg_matrixreps_different_bases"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.13.12</span><span class="period">.</span><span class="space"> </span><span class="title">Different choice of bases.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.13.13</span><span class="period">.</span><span class="space"> </span><span class="title">Different choice of bases.</span>
 </h4>
 <div class="para logical" id="eg_matrixreps_different_bases-2-1">
 <div class="para">Define <span class="process-math">\(T\colon \R^2\rightarrow \R^2\)</span> as  <span class="process-math">\(T(x,y)=(4x-3y,2x-y)\text{.}\)</span>
@@ -942,7 +974,7 @@ T(\bolde_3) \amp = T(0,0,1)=\begin{bmatrix}1\amp -1 \\ 0 \amp -1\end{bmatrix} \t
 <div class="solutions"><details id="eg_matrixreps_different_bases-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_matrixreps_different_bases-3-1">
 <ol class="decimal" id="eg_matrixreps_different_bases-3-1-1">
 <li id="eg_matrixreps_different_bases-3-1-1-1"><div class="para logical" id="eg_matrixreps_different_bases-3-1-1-1-1">
-<div class="para">According to <a href="s_matrix_reps.html#eg_std_matrix" class="xref" data-knowl="./knowl/xref/eg_std_matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.13.14: Standard matrix">Example 1.13.14</a>, since <span class="process-math">\(B\)</span> is the standard basis <span class="process-math">\([T]_B\)</span> is the matrix <span class="process-math">\(A\)</span> such that <span class="process-math">\(T=T_A\text{:}\)</span>
+<div class="para">According to <a href="s_matrix_reps.html#eg_std_matrix" class="xref" data-knowl="./knowl/xref/eg_std_matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.13.16: Standard matrix">Example 1.13.16</a>, since <span class="process-math">\(B\)</span> is the standard basis <span class="process-math">\([T]_B\)</span> is the matrix <span class="process-math">\(A\)</span> such that <span class="process-math">\(T=T_A\text{:}\)</span>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_std_matrix.html" id="eg_matrixreps_different_bases-3-1-1-1-1-6">
 \begin{align*}
@@ -983,7 +1015,7 @@ T(\bolde_1)\amp T(\bolde_2)\\
 </ol>
 <div class="para">So we have <span class="process-math">\([T]_B=\begin{amatrix}[rr]4\amp -1\\ 2\amp -1  \end{amatrix}\)</span> and <span class="process-math">\([T]_{B'}=\begin{amatrix}[rr]1\amp 5\\ 0\amp 2  \end{amatrix}\text{.}\)</span> Moral: different choices of bases yield different matrix representations.</div>
 </div></div></details></div></article><article class="theorem theorem-like" id="th_matrixrep"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.13.13</span><span class="period">.</span><span class="space"> </span><span class="title">Defining property of matrix representation.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.13.14</span><span class="period">.</span><span class="space"> </span><span class="title">Defining property of matrix representation.</span>
 </h4>
 <div class="para logical" id="th_matrixrep-2-1">
 <div class="para">Let <span class="process-math">\(T\colon V\rightarrow W\)</span> be a linear transformation, where <span class="process-math">\(\dim V=n\)</span> and <span class="process-math">\(\dim W=m\text{,}\)</span> and let <span class="process-math">\(B, B'\)</span> be ordered bases for <span class="process-math">\(V\)</span> and <span class="process-math">\(W\text{,}\)</span> respectively.</div>
@@ -1055,12 +1087,25 @@ A[v_i]_B=A\bolde_i=\boldc_i,
 <div class="para">where <span class="process-math">\(\boldc_i\)</span> is the <span class="process-math">\(i\)</span>-th column of <span class="process-math">\(A\text{.}\)</span> Thus <a href="s_matrix_reps.html#eq_matrixrep_proof" class="xref" data-knowl="./knowl/xref/eq_matrixrep_proof.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.36">(1.36)</a> implies that the <span class="process-math">\(i\)</span>-th column of <span class="process-math">\(A\)</span> is equal to <span class="process-math">\([T(v_i)]_{B}\text{,}\)</span> the <span class="process-math">\(i\)</span>-th column of <span class="process-math">\([T]_B^{B'}\text{,}\)</span> for all <span class="process-math">\(1\leq i\leq n\text{.}\)</span> Since <span class="process-math">\(A\)</span> and <span class="process-math">\([T]_{B}^{B'}\)</span> have identical columns, we conclude that <span class="process-math">\(A=[T]_{B}^{B'}\text{,}\)</span> as desired.</div>
 </div></li>
 </ol>
-</div></article></details><article class="example example-like" id="eg_std_matrix"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.13.14</span><span class="period">.</span><span class="space"> </span><span class="title">Standard matrix.</span>
+</div></article></details><article class="remark remark-like" id="rm_matrixreps_uniqueness"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.13.15</span><span class="period">.</span><span class="space"> </span><span class="title">Uniqueness of <span class="process-math">\([T]_B^{B'}\)</span>.</span>
+</h4>
+<div class="para logical" id="rm_matrixreps_uniqueness-2">
+<div class="para">The uniqueness property described in (2) of  <a href="s_matrix_reps.html#th_matrixrep" class="xref" data-knowl="./knowl/xref/th_matrixrep.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.13.14: Defining property of matrix representation">Theorem 1.13.14</a> provides an alternative way of computing <span class="process-math">\([T]_{B}^{B'}\)</span> that can be useful in certain situations: namely, if we can produce an <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\)</span> that satisfies the defining property</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_matrixrep.html">
+\begin{equation*}
+A[v]_B=[T(v)]_{B'}
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(v\in V\text{,}\)</span> then by uniqueness we must have <span class="process-math">\(A=[T]_B^{B'}\text{.}\)</span>
+</div>
+</div>
+<div class="para" id="rm_matrixreps_uniqueness-3">We illustrate this technique in the examples and proofs below.</div></article><article class="example example-like" id="eg_std_matrix"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.13.16</span><span class="period">.</span><span class="space"> </span><span class="title">Standard matrix.</span>
 </h4>
 <div class="para" id="eg_std_matrix-2-1">Let <span class="process-math">\(T\colon F^n\rightarrow F^m\)</span> be a linear transformation. Recall that there is a unique matrix <span class="process-math">\(A\in F^{m,n}\text{,}\)</span> the standard matrix of <span class="process-math">\(T\text{,}\)</span> such that <span class="process-math">\(T=T_A\text{.}\)</span> Prove that <span class="process-math">\(A=[T]_B^{B'}\text{,}\)</span> where <span class="process-math">\(B\)</span> and <span class="process-math">\(B'\)</span> are the standard bases of <span class="process-math">\(F^m\)</span> and <span class="process-math">\(F^n\text{,}\)</span> respectively. In other words, the standard matrix of <span class="process-math">\(T\)</span> is precisely the matrix representation of <span class="process-math">\(T\)</span> with respect to the standard bases.</div>
 <div class="solutions"><details id="eg_std_matrix-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_std_matrix-3-1">
-<div class="para">Let <span class="process-math">\(A\)</span> be the standard matrix of <span class="process-math">\(T\text{.}\)</span> By definition, this means <span class="process-math">\(A\boldx=T(\boldx)\)</span> for all <span class="process-math">\(\boldx\in F^n\text{.}\)</span>  Using the uniqueness claim of <a href="s_matrix_reps.html#th_matrixrep" class="xref" data-knowl="./knowl/xref/th_matrixrep.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.13.13: Defining property of matrix representation">Theorem 1.13.13</a>, to show that <span class="process-math">\(A=[T]_{B}^{B'}\text{,}\)</span> it suffices to show that <span class="process-math">\(A\)</span> satisfies <a href="s_matrix_reps.html#eq_matrixrep_prop" class="xref" data-knowl="./knowl/xref/eq_matrixrep_prop.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.35">(1.35)</a>: i.e.,</div>
+<div class="para">Let <span class="process-math">\(A\)</span> be the standard matrix of <span class="process-math">\(T\text{.}\)</span> By definition, this means <span class="process-math">\(A\boldx=T(\boldx)\)</span> for all <span class="process-math">\(\boldx\in F^n\text{.}\)</span>  Using the uniqueness claim of <a href="s_matrix_reps.html#th_matrixrep" class="xref" data-knowl="./knowl/xref/th_matrixrep.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.13.14: Defining property of matrix representation">Theorem 1.13.14</a>, to show that <span class="process-math">\(A=[T]_{B}^{B'}\text{,}\)</span> it suffices to show that <span class="process-math">\(A\)</span> satisfies <a href="s_matrix_reps.html#eq_matrixrep_prop" class="xref" data-knowl="./knowl/xref/eq_matrixrep_prop.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.35">(1.35)</a>: i.e.,</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_matrixrep.html ./knowl/xref/eq_matrixrep_prop.html" id="eg_std_matrix-3-1-10">
 \begin{align*}
 A[\boldx]_B \amp = [T(\boldx)]_{B'} 
@@ -1074,23 +1119,7 @@ A\boldx=T(\boldx)\text{,}
 </div>
 <div class="para">which is precisely the defining property of the standard matrix of <span class="process-math">\(T\text{.}\)</span> Thus <span class="process-math">\(A=[T]_B^{B'}\text{.}\)</span>
 </div>
-</div></div></details></div></article><article class="remark remark-like" id="rm_matrixreps_uniqueness"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.13.15</span><span class="period">.</span><span class="space"> </span><span class="title">Uniqueness of <span class="process-math">\([T]_B^{B'}\)</span>.</span>
-</h4>
-<div class="para logical" id="rm_matrixreps_uniqueness-2">
-<div class="para">The uniqueness property described in (2) of  <a href="s_matrix_reps.html#th_matrixrep" class="xref" data-knowl="./knowl/xref/th_matrixrep.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.13.13: Defining property of matrix representation">Theorem 1.13.13</a> provides an alternative way of computing <span class="process-math">\([T]_{B}^{B'}\)</span> that can be useful in certain situations: namely, if we can produce an <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\)</span> that satisfies the defining property</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_matrixrep.html">
-\begin{equation*}
-A[v]_B=[T(v)]_{B'}
-\end{equation*}
-</div>
-<div class="para">for all <span class="process-math">\(v\in V\text{,}\)</span> then by uniqueness we must have <span class="process-math">\(A=[T]_B^{B'}\text{.}\)</span>
-</div>
-</div></article><div class="para" id="ss_matrix_reps-9">Let <span class="process-math">\(T\colon V\rightarrow W\text{,}\)</span> <span class="process-math">\(B\text{,}\)</span> and <span class="process-math">\(B'\)</span> be as in <a href="s_matrix_reps.html#th_matrixrep" class="xref" data-knowl="./knowl/xref/th_matrixrep.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.13.13: Defining property of matrix representation">Theorem 1.13.13</a>. The defining property <a href="s_matrix_reps.html#eq_matrixrep_prop" class="xref" data-knowl="./knowl/xref/eq_matrixrep_prop.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.35">(1.35)</a> of <span class="process-math">\([T]_B^{B'}\)</span> can be summarized by saying that the following diagram is <em class="emphasis">commutative</em>.</div>
-<figure class="figure figure-like" id="fig_comm_diag"><div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="generated/latex-image/im_comm_diag.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.13.16<span class="period">.</span></span><span class="space"> </span>Commutative diagram for <span class="process-math">\([T]_B^{B'}\)</span></figcaption></figure><div class="para" id="ss_matrix_reps-11">The diagram being commutative here means that starting with an element <span class="process-math">\(v\in V\)</span> in the top left of the diagram, whether we travel to the bottom right of the diagram either by first applying <span class="process-math">\(T\)</span> and then applying <span class="process-math">\([\hspace{5pt}]_{B'}\)</span> (“go right, then down”), or else by first applying <span class="process-math">\([\hspace{5pt}]_B\)</span> and then applying <span class="process-math">\([T]_B^{B'}\)</span> (“go down, then right”), we get the same result! (The bottom map should technically be labeled <span class="process-math">\(T_A\text{,}\)</span> where <span class="process-math">\(A=[T]_B^{B'}\text{,}\)</span> but this would detract from the elegance of the diagram.)</div>
-<div class="para" id="ss_matrix_reps-12">Besides commutativity, the other import feature of <a href="s_matrix_reps.html#fig_comm_diag" class="xref" data-knowl="./knowl/xref/fig_comm_diag.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.13.16: Commutative diagram for [T]_B^{B'}">Figure 1.13.16</a> is that the two vertical coordinate transformations identify the domain and codomain of <span class="process-math">\(T\)</span> with the familiar spaces <span class="process-math">\(F^n\)</span> and <span class="process-math">\(F^m\)</span> isomorphically. These properties together allow us to translate any linear algebraic question about <span class="process-math">\(T\)</span> to an equivalent question about the matrix <span class="process-math">\(A\text{,}\)</span> as the following theorem indicates.</div>
-<article class="corollary theorem-like" id="cor_matrix_reps_comp"><h4 class="heading">
+</div></div></details></div></article><article class="corollary theorem-like" id="cor_matrix_reps_comp"><h4 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.13.17</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix representations of composition.</span>
 </h4>
 <div class="para logical" id="cor_matrix_reps_comp-2-1">
@@ -1100,8 +1129,35 @@ A[v]_B=[T(v)]_{B'}
 [ST]_{B}^{B''}=[S]_{B'}^{B''}[T]_{B}^{B'}.
 \end{equation*}
 </div>
-</div></article><article class="theorem theorem-like" id="th_matrix_reps_isom"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.13.18</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix representation isomorphism.</span>
+</div></article><details id="cor_matrix_reps_comp-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="cor_matrix_reps_comp-3-1">
+<div class="para">Let <span class="process-math">\(C=[S]_{B'}^{B''}[T]_{B}^{B'}\text{.}\)</span> We prove that <span class="process-math">\([ST]_{B}^{B''}=C\)</span> by showing that <span class="process-math">\(C\)</span> satisfies the defining equation of <span class="process-math">\([ST]_{B}^{B''}\text{:}\)</span> i.e., that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+C[u]_B=[ST(u)]_{B''}
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(u\in U\text{.}\)</span> To this end, we have</div>
+<div class="displaymath process-math" id="cor_matrix_reps_comp-3-1-8">
+\begin{align*}
+C[u]_B \amp =[S]_{B'}^{B''}[T]_{B}^{B'}[u]_B \\
+\amp = [S]_{B'}^{B''}[T(u)]_{B'}\\
+\amp [S(T(u))]_{B''}\\
+\amp = [ST(u)]_{B''}
+\end{align*}
+</div>
+<div class="para">for all <span class="process-math">\(u\in U\text{.}\)</span> We conclude that <span class="process-math">\(C=[ST]_{B}^{B''}\)</span> and thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[S]_{B'}^{B''}[T]_{B}^{B'}=[ST]_B^{B''}\text{,}
+\end{equation*}
+</div>
+<div class="para">as desired.</div>
+</div></article></details><div class="para" id="ss_matrix_reps-11">Let <span class="process-math">\(T\colon V\rightarrow W\text{,}\)</span> <span class="process-math">\(B\text{,}\)</span> and <span class="process-math">\(B'\)</span> be as in <a href="s_matrix_reps.html#th_matrixrep" class="xref" data-knowl="./knowl/xref/th_matrixrep.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.13.14: Defining property of matrix representation">Theorem 1.13.14</a>. The defining property <a href="s_matrix_reps.html#eq_matrixrep_prop" class="xref" data-knowl="./knowl/xref/eq_matrixrep_prop.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.35">(1.35)</a> of <span class="process-math">\([T]_B^{B'}\)</span> can be summarized by saying that the following diagram is <em class="emphasis">commutative</em>.</div>
+<figure class="figure figure-like" id="fig_comm_diag"><div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="generated/latex-image/im_comm_diag.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.13.18<span class="period">.</span></span><span class="space"> </span>Commutative diagram for <span class="process-math">\([T]_B^{B'}\)</span></figcaption></figure><div class="para" id="ss_matrix_reps-13">The diagram being commutative here means that starting with an element <span class="process-math">\(v\in V\)</span> in the top left of the diagram, whether we travel to the bottom right of the diagram either by first applying <span class="process-math">\(T\)</span> and then applying <span class="process-math">\([\hspace{5pt}]_{B'}\)</span> (“go right, then down”), or else by first applying <span class="process-math">\([\hspace{5pt}]_B\)</span> and then applying <span class="process-math">\([T]_B^{B'}\)</span> (“go down, then right”), we get the same result! (The bottom map should technically be labeled <span class="process-math">\(T_A\text{,}\)</span> where <span class="process-math">\(A=[T]_B^{B'}\text{,}\)</span> but this would detract from the elegance of the diagram.)</div>
+<div class="para" id="ss_matrix_reps-14">Besides commutativity, the other import feature of <a href="s_matrix_reps.html#fig_comm_diag" class="xref" data-knowl="./knowl/xref/fig_comm_diag.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.13.18: Commutative diagram for [T]_B^{B'}">Figure 1.13.18</a> is that the two vertical coordinate transformations identify the domain and codomain of <span class="process-math">\(T\)</span> with the familiar spaces <span class="process-math">\(F^n\)</span> and <span class="process-math">\(F^m\)</span> isomorphically. These properties together allow us to translate any linear algebraic question about <span class="process-math">\(T\)</span> to an equivalent question about the matrix <span class="process-math">\(A\text{,}\)</span> as the following theorem indicates.</div>
+<article class="theorem theorem-like" id="th_matrix_reps_isom"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.13.19</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix representation isomorphism.</span>
 </h4>
 <div class="para logical" id="th_matrix_reps_isom-2-1">
 <div class="para">Let <span class="process-math">\(B\)</span> and <span class="process-math">\(B'\)</span> be bases of the vector spaces <span class="process-math">\(V\)</span> and <span class="process-math">\(W\text{,}\)</span> respectively, where <span class="process-math">\(\dim V=n\)</span> and <span class="process-math">\(\dim W=m\text{.}\)</span>
@@ -1179,7 +1235,7 @@ A'[v_i]_B=[T]_B^{B'}[v_i]=[T(v_i)]_{B'}=[w_i]_{B'}=A[v_i]_B
 </div>
 <div class="para">for all <span class="process-math">\(1\leq i\leq n\text{.}\)</span> Since <span class="process-math">\(B\)</span> is a basis and <span class="process-math">\([\phantom{v}]_B\)</span> is an isomorphism, <span class="process-math">\(B''=([v_1]_B, [v_2]_B, \dots, [v_n]_B)\)</span> is a basis of <span class="process-math">\(F^n\text{.}\)</span> The equation above proves that <span class="process-math">\(T_{A'}\)</span> and <span class="process-math">\(T_{A}\)</span> agree on the basis <span class="process-math">\(B''\text{.}\)</span> It follows from <a href="s_transformation.html#th_trans_basis" class="xref" data-knowl="./knowl/xref/th_trans_basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.9.19: Transformations and bases">Theorem 1.9.19</a> (again) that <span class="process-math">\(T_{A'}=T_A\text{,}\)</span> and hence that <span class="process-math">\(A'=A\text{,}\)</span> as desired.</div>
 </div></article></details><article class="theorem theorem-like" id="th_matrix_rep_null_im"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.13.19</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix representations of.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.13.20</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix representations of.</span>
 </h4>
 <div class="para logical" id="th_matrix_rep_null_im-2-1">
 <div class="para">Let <span class="process-math">\(B\)</span> and <span class="process-math">\(B'\)</span> be bases of the vector spaces <span class="process-math">\(V\)</span> and <span class="process-math">\(W\text{,}\)</span> respectively, where <span class="process-math">\(\dim V=n\)</span> and <span class="process-math">\(\dim W=m\text{,}\)</span> let <span class="process-math">\(T\in \mathcal{L}(V,W)\text{,}\)</span> and let <span class="process-math">\(A=[T]_{B}^{B'}\text{.}\)</span>
@@ -1191,9 +1247,9 @@ A'[v_i]_B=[T]_B^{B'}[v_i]=[T(v_i)]_{B'}=[w_i]_{B'}=A[v_i]_B
 </div></li>
 </ol>
 </div></article><details id="th_matrix_rep_null_im-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_matrix_rep_null_im-3-1">This proof is left as a homework exercise.</div></article></details><figure class="figure figure-like" id="fig_matrix_reps_null_im"><div class="image-box" style="width: 65%; margin-left: 17.5%; margin-right: 17.5%;"><img src="generated/latex-image/fig_matrix_reps_null_im-2.svg" role="img" class="contained" alt="Commutative diagram including null space and image"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.13.20<span class="period">.</span></span><span class="space"> </span>Matrix representation of null space and image</figcaption></figure><div class="para" id="ss_matrix_reps-17">Having made explicit the connection between the important subspaces associtated to a linear transformation  and its matrix representation, we end with a corollary that connects invertibility of a matrix transformations <span class="process-math">\(T_A\colon F^n\rightarrow F^n\)</span> and its standard matrix <span class="process-math">\(A\text{.}\)</span> Recall (<a href="s_matrix_reps.html#eg_std_matrix" class="xref" data-knowl="./knowl/xref/eg_std_matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.13.14: Standard matrix">1.13.14</a>) that in this case we have <span class="process-math">\(A=[T]_B\text{,}\)</span> where <span class="process-math">\(B\)</span> is the standard basis of <span class="process-math">\(F^n\text{.}\)</span> The corollary lists 9 equivalent formulations for a matrix <span class="process-math">\(A\)</span> (or its matrix transformation <span class="process-math">\(T_A\)</span>) to be invertible. The statements within each column should be fairly easily seen to be equivalent; equivalence connections between the columns are easily made using the rank-nullity theorem.</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.13.21<span class="period">.</span></span><span class="space"> </span>Matrix representation of null space and image</figcaption></figure><div class="para" id="ss_matrix_reps-18">Having made explicit the connection between the important subspaces associtated to a linear transformation  and its matrix representation, we end with a corollary that connects invertibility of a matrix transformations <span class="process-math">\(T_A\colon F^n\rightarrow F^n\)</span> and its standard matrix <span class="process-math">\(A\text{.}\)</span> Recall (<a href="s_matrix_reps.html#eg_std_matrix" class="xref" data-knowl="./knowl/xref/eg_std_matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.13.16: Standard matrix">1.13.16</a>) that in this case we have <span class="process-math">\(A=[T]_B\text{,}\)</span> where <span class="process-math">\(B\)</span> is the standard basis of <span class="process-math">\(F^n\text{.}\)</span> The corollary lists 9 equivalent formulations for a matrix <span class="process-math">\(A\)</span> (or its matrix transformation <span class="process-math">\(T_A\)</span>) to be invertible. The statements within each column should be fairly easily seen to be equivalent; equivalence connections between the columns are easily made using the rank-nullity theorem.</div>
 <article class="corollary theorem-like" id="cor_inv_theorem"><h4 class="heading">
-<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.13.21</span><span class="period">.</span><span class="space"> </span><span class="title">Invertible matrix theorem.</span>
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.13.22</span><span class="period">.</span><span class="space"> </span><span class="title">Invertible matrix theorem.</span>
 </h4>
 <div class="para logical" id="cor_inv_theorem-2-1">
 <div class="para">Let <span class="process-math">\(A\in F^{n,n}\)</span> and let <span class="process-math">\(T_A\colon F^n\rightarrow F^n\)</span> be its corresponding matrix transformation. The following statements are equivalent.</div>
