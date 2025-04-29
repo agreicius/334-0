@@ -700,11 +700,11 @@
           <figure xml:id="fig_comm_diag">
             <title>Commutative diagram for <m>[T]_B^{B'}</m></title>
             <caption>Commutative diagram for <m>[T]_B^{B'}</m></caption>
-            <image xml:id="im_comm_diag" width="50%">
+            <image xml:id="im_comm_diag" width="30%">
               <latex-image>
                 \begin{tikzcd}
                 V \arrow[r, "T"] \arrow[d, leftrightarrow,"{[\hspace{.1in}]}_B"'] \amp W \arrow[d,leftrightarrow,"{[\hspace{.1in}]}_{B'}"] \\
-                \R^n \arrow[r, "{[T]_B^{B'}}"'] \amp \R^m
+                F^n \arrow[r, "{[T]_B^{B'}}"'] \amp F^m
                 \end{tikzcd}
               </latex-image>
             </image>
