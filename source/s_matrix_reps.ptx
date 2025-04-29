@@ -763,10 +763,155 @@ We have
     </statement>
     <proof>
     <p>
+      Statement (2) follows directly from (1) since <m>\dim F^{m,n}=mn</m>. (Alternatively, you showed on a homework that <m>\mathcal{L}(V,W)</m> has a basis <m>B=(T_{ij})</m> of length <m>mn</m>.) To prove (1), we will show that <m>[\phantom{AA}]_{B}^{B'}</m> is linear and bijective. 
+    </p>
+    <p>
+      The linearity of <m>[\phantom{AA}]_{B}^{B'}</m> can be proved by direct appeal to the formula <xref ref="eq_matrixrep_formula"/> and the fact that the coordinate vector map <m>[\phantom{v}]_{B'}</m> is linear. Readers are invited to pursue this proof on their own. We will instead take the opportunity to make use of the defining property <xref ref="eq_matrixrep_prop"/> within a 1-step proof. Given linear maps <m>T,S\in \mathcal{L}(V,W)</m> and scalars <m>c,d\in F</m>, we will show that 
+      <me>[cT+dS]_{B}^{B'}=c[T]_{B}^{B'}+d[S]_{B}^{B'}</me>
+      by showing that the matrix <m>C=c[T]_{B}^{B'}+d[S]_{B}^{B'}</m> satisfies the relevant defining property
+      <me>
+        C[v]_V=[(cT+dS)(v)]_{B'}
+      </me>
+      for all <m>v\in V</m>. Here goes: 
+      <md>
+        <mrow> C[v]_B \amp(c[T]_{B}^{B'}+d[S]_B^{B'})[v]_B</mrow>
+        <mrow> \amp =c[T]_{B}^{B'}[v]_B+d[S]_B^{B'}[v]_B </mrow>
+        <mrow> \amp =c[T(v)]_{B'}+d[S(v)]_{B'}</mrow>
+        <mrow> \amp =[cT(v)+dS(v)]_{B'} \amp (\text{coor. map is lin.}) </mrow>
+        <mrow> \amp =[(cT+dS)(v)]_{B'}</mrow>
+      </md>.
+      Since <m>C</m> satisfies the relevant property, we conclude that 
+      <me>
+        C=c[T]_{B}^{B'}+d[T]_{B}^{B'}=[cT+dS]_{B}^{B'}
+      </me>,
+      as desired. 
+    </p>
+    <p>
+      We now show directly that <m>[\phantom{AA}]_B^{B'}</m> is bijective: <ie/>, given any matrix <m>A\in F^{m,n}</m>, we will show that there is a <em>unique</em> linear transformation <m>T\in \mathcal{L}(V,W)</m> satisfying <m>[T]_B^{B'}</m>. Let <m>B=(v_1,v_2,\dots, v_n)</m>. Given <m>A\in F^{m,n}</m>, let 
+      <me>
+        \boldy_i=A[\boldv_i]_B
+      </me>
+      for all <m>1\leq i\leq n</m>, and let <m>(w_1,w_2,\dots, w_n)</m> be the unique tuple of vectors in <m>W</m> satisfying <m>[w_i]_{B'}=\boldy_i</m>. (There is such a unique tuple as <m>[\phantom{v}]_{B'}</m> is an isomorphism.) By <xref ref="th_trans_basis"/> there is a <em>unique</em> linear map <m>T\in \mathcal{L}(V,W)</m> satisfying 
+      <me>
+        T(v_i)=w_i
+      </me>
+      for all <m>1\leq i\leq n</m>. We claim that <m>[T]_B^{B'}=A</m>: indeed, letting <m>A'=[T]_B^{B'}</m> and using the defining property <xref ref="eq_matrixrep_prop"/>, we see that 
+      <me>
+        A'[v_i]_B=[T]_B^{B'}[v_i]=[T(v_i)]_{B'}=[w_i]_{B'}=A[v_i]_B
+      </me>
+      for all <m>1\leq i\leq n</m>. Since <m>B</m> is a basis and <m>[\phantom{v}]_B</m> is an isomorphism, <m>B''=([v_1]_B, [v_2]_B, \dots, [v_n]_B)</m> is a basis of <m>F^n</m>. The equation above proves that <m>T_{A'}</m> and <m>T_{A}</m> agree on the basis <m>B''</m>. It follows from <xref ref="th_trans_basis"/> (again) that <m>T_{A'}=T_A</m>, and hence that <m>A'=A</m>, as desired. 
     </p>
     </proof>
     </theorem>
-    
+    <theorem xml:id="th_matrix_rep_null_im">
+    <title>Matrix representations of </title>
+    <statement>
+    <p>
+      Let <m>B</m> and <m>B'</m> be bases of the vector spaces <m>V</m> and <m>W</m>, respectively, where <m>\dim V=n</m> and <m>\dim W=m</m>, let <m>T\in \mathcal{L}(V,W)</m>, and let <m>A=[T]_{B}^{B'}</m>.
+<ol>
+  <li>
+    <p>
+      The restriction of <m>[\phantom{v}]_{B}</m> to <m>\NS T</m> defines an isomorphism <m>[\phantom{v}]_{B}\colon \NS T\rightarrow \NS T_{A}.</m> As a result, <m>\boldv\in \NS T</m> if and only if <m>[\boldv]_{B}\in \NS A</m>, and <m>\dim \NS T=\dim\NS A</m>.
+    </p>
+  </li>
+
+  <li>
+    <p>
+      The restriction of <m>[\phantom{v}]_{B'}</m> to <m>\range T\subseteq W</m> defines an isomorphism <m>[\phantom{v}]_{B'}\colon \range T\rightarrow \range T_{A}</m>.
+      As a result, <m>\boldw\in \range T</m> if and only if <m>[\boldw]_{B'}\in \CS A</m>, and <m>\dim \range T=\dim \CS A=\rank A</m>.
+    </p>
+  </li>
+</ol>
+    </p>
+    </statement>
+    <proof>
+    <p>
+      This proof is left as a homework exercise. 
+    </p>
+    </proof>
+    </theorem>
+    <figure xml:id="fig_matrix_reps_null_im">
+      <caption>Matrix representation of null space and image</caption>
+      <image width="65%">
+        <shortdescription>Commutative diagram including null space and image</shortdescription>
+        <latex-image>
+          \begin{tikzcd}
+    \NS T \arrow[hookrightarrow]{r} \arrow[leftrightarrow]{d}{[\phantom{v}]_{B}}
+    \amp V \arrow{r}{T} \arrow[leftrightarrow]{d}{[\phantom{v}]_B}
+    \amp W \arrow[hookleftarrow]{r} \arrow[leftrightarrow]{d}{[\phantom{v}]_{B'}}
+    \amp \im T \arrow[leftrightarrow]{d}{[\phantom{v}]_{B'}} \\
+    \NS A \arrow[hookrightarrow]{r}
+    \amp F^n \arrow{r}{T_A}
+    \amp F^m \arrow[hookleftarrow]{r}
+    \amp \CS A
+  \end{tikzcd}
+        </latex-image>
+      </image>
+      
+    </figure>
+    <p>
+      Having made explicit the connection between the important subspaces associtated to a linear transformation  and its matrix representation, we end with a corollary that connects invertibility of a matrix transformations <m>T_A\colon F^n\rightarrow F^n</m> and its standard matrix <m>A</m>. Recall (<xref ref="eg_std_matrix" text="global"/>) that in this case we have <m>A=[T]_B</m>, where <m>B</m> is the standard basis of <m>F^n</m>. The corollary lists 9 equivalent formulations for a matrix <m>A</m> (or its matrix transformation <m>T_A</m>) to be invertible. The statements within each column should be fairly easily seen to be equivalent; equivalence connections between the columns are easily made using the rank-nullity theorem. 
+    </p>
+    <corollary xml:id="cor_inv_theorem">
+      <title>Invertible matrix theorem</title>
+      <statement>
+        <p>
+          Let <m>A\in F^{n,n}</m> and let <m>T_A\colon F^n\rightarrow F^n</m> be its corresponding matrix transformation. The following statements are equivalent. 
+          <ol cols="3">
+            <li>
+              <p>
+                <m>T_A</m> is an isomorphism.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\NS T_A=\{\boldzero\}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\im T_A=F^n</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A</m> is invertible.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\NS A=\{\boldzero\}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\CS A=F^n</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A\boldx=\boldy</m> has a unique solution for all <m>\boldy\in F^n</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A\boldx=\boldzero</m> has a unique solution (viz., <m>\boldx=\boldzero</m>).
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A\boldx=\boldy</m> has a  solution for all <m>\boldy\in F^n</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          We don't have the heart to provide a proof; this would spoil the fun of charting a path of implications around the <m>3\times 3</m> grid above! 
+        </p>
+      </proof>
+    </corollary>
     </subsection>
 
 </section>
