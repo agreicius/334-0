@@ -519,6 +519,38 @@
         </p>
       </solution>
     </example>
+    <example xml:id="eg_matrix_rep_differentiation">
+    <title>Differentiation</title>
+    <statement>
+    <p>
+    Let <m>I</m> be an infinite subset of <m>\R</m>, and define <m>T\colon P_n(I)\rightarrow P_{n-1}(I)</m> as <m>T(f)=f'</m>. Compute <m>[T]_B^{B'}</m>, where <m>B</m> and <m>B'</m> are the standard bases of <m>P_n(I)</m> and <m>P_{n-1}(I)</m>
+    </p>
+    </statement>
+    <solution>
+    <p>
+    Let <m>B=(1,x,x^2,\dots, x^n)</m> and <m>B'=(1,x,x^2,\dots, x^n)</m>. We have 
+    <me>
+      T(x^k)=\frac{d}{dx}(x^k)=kx^{k-1}
+    </me>
+    for all <m>0\leq k\leq n</m>. Since <m>B'</m> is standard, we easily compute 
+    <me>
+      [T(x^k)]_{B'}=(0,0,\dots, \underset{(k-1)-\text{th coor.}}{k},0,\dots, 0)
+    </me>.
+    Using recipe <xref ref="eq_matrixrep_formula"/> we conclude that 
+    <me>
+      [T]_B^{B'}=
+      \begin{bmatrix}
+      0\amp 1\amp 0 \amp 0\amp  \dots \amp 0  \\
+      0\amp 0\amp 2 \amp 0 \amp    \amp 0 \\
+      0\amp 0\amp 0 \amp 3 \amp 0 \amp \vdots  \\
+      \vdots \\
+      0\amp  0 \amp 0 \amp 0 \amp  \dots  \amp n  
+      \end{bmatrix}
+    </me>.
+    In more detail, <m>[T]_B^{B'}</m> is the <m>(n-1)\times n</m> matrix whose first column is the zero column vector, and whose <m>k</m>-th column for <m>2\leq k\leq n</m> is the column vector that has <m>k</m> in the  <m>(k-1)</m>-th entry and zeros elsewhere. 
+    </p>
+    </solution>
+    </example>
     
     <example xml:id="eg_matrixreps_different_bases">
         <title>Different choice of bases</title>
@@ -662,6 +694,20 @@
         </p>
       </proof>
       </theorem>
+      
+      <remark xml:id="rm_matrixreps_uniqueness">
+        <title>Uniqueness of <m>[T]_B^{B'}</m></title>
+        <p>
+          The uniqueness property described in (2) of  <xref ref="th_matrixrep"/> provides an alternative way of computing <m>[T]_{B}^{B'}</m> that can be useful in certain situations: namely, if we can produce an <m>m\times n</m> matrix <m>A</m> that satisfies the defining property
+          <me>
+            A[v]_B=[T(v)]_{B'}
+          </me>
+          for all <m>v\in V</m>, then by uniqueness we must have <m>A=[T]_B^{B'}</m>.
+        </p>
+        <p>
+          We illustrate this technique in the examples and proofs below. 
+        </p>
+      </remark>
       <example xml:id="eg_std_matrix">
         <title>Standard matrix</title>
         <statement>
@@ -684,16 +730,38 @@
         </p>
         </solution>
         </example>
-      <remark xml:id="rm_matrixreps_uniqueness">
-        <title>Uniqueness of <m>[T]_B^{B'}</m></title>
-        <p>
-          The uniqueness property described in (2) of  <xref ref="th_matrixrep"/> provides an alternative way of computing <m>[T]_{B}^{B'}</m> that can be useful in certain situations: namely, if we can produce an <m>m\times n</m> matrix <m>A</m> that satisfies the defining property
+        <corollary xml:id="cor_matrix_reps_comp">
+          <title>Matrix representations of composition</title>
+          <statement>
+              <p>
+                  Let <m>T\in \mathcal{L}(U,V)</m> and <m>S\in \mathcal{L}(V,W)</m>, and let <m>B, B', B''</m> be bases for <m>U</m>, <m>V</m>, and <m>W</m>, respectively.
+          We have
           <me>
-            A[v]_B=[T(v)]_{B'}
+            [ST]_{B}^{B''}=[S]_{B'}^{B''}[T]_{B}^{B'}.
           </me>
-          for all <m>v\in V</m>, then by uniqueness we must have <m>A=[T]_B^{B'}</m>.
-        </p>
-      </remark>
+              </p>
+          </statement>
+          <proof>
+            <p>
+            Let <m>C=[S]_{B'}^{B''}[T]_{B}^{B'}</m>. We prove that <m>[ST]_{B}^{B''}=C</m> by showing that <m>C</m> satisfies the defining equation of <m>[ST]_{B}^{B''}</m>: <ie/>, that 
+            <me>
+              C[u]_B=[ST(u)]_{B''}
+            </me>
+            for all <m>u\in U</m>. To this end, we have 
+            <md>
+              <mrow>C[u]_B \amp =[S]_{B'}^{B''}[T]_{B}^{B'}[u]_B </mrow>
+              <mrow> \amp = [S]_{B'}^{B''}[T(u)]_{B'}</mrow>
+              <mrow> \amp [S(T(u))]_{B''}</mrow>
+              <mrow> \amp = [ST(u)]_{B''}</mrow>
+            </md>
+            for all <m>u\in U</m>. We conclude that <m>C=[ST]_{B}^{B''}</m> and thus 
+            <me>
+              [S]_{B'}^{B''}[T]_{B}^{B'}=[ST]_B^{B''}
+            </me>,
+            as desired.
+            </p>
+          </proof>
+        </corollary>
           <p>
             Let <m>T\colon V\rightarrow W</m>, <m>B</m>, and <m>B'</m> be as in <xref ref="th_matrixrep"/>. The defining property <xref ref="eq_matrixrep_prop"/> of <m>[T]_B^{B'}</m> can be summarized by saying that the following diagram is <em>commutative</em>.
           </p>
@@ -720,18 +788,7 @@
             Besides commutativity, the other import feature of <xref ref="fig_comm_diag"/> is that the two vertical coordinate transformations identify the domain and codomain of <m>T</m> with the familiar spaces <m>F^n</m> and <m>F^m</m> isomorphically.
             These properties together allow us to translate any linear algebraic question about <m>T</m> to an equivalent question about the matrix <m>A</m>, as the following theorem indicates.
           </p>
-          <corollary xml:id="cor_matrix_reps_comp">
-            <title>Matrix representations of composition</title>
-            <statement>
-                <p>
-                    Let <m>T\in \mathcal{L}(U,V)</m> and <m>S\in \mathcal{L}(V,W)</m>, and let <m>B, B', B''</m> be bases for <m>U</m>, <m>V</m>, and <m>W</m>, respectively.
-We have
-<me>
-    [ST]_{B}^{B''}=[S]_{B'}^{B''}[T]_{B}^{B'}.
-</me>
-                </p>
-            </statement>
-          </corollary>
+          
 
     <theorem xml:id="th_matrix_reps_isom">
     <title>Matrix representation isomorphism</title>
