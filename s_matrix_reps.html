@@ -1126,7 +1126,96 @@ T \amp \longmapsto [T]_B^{B'}
 </div>
 </div></li>
 </ol>
-</div></article><details id="th_matrix_reps_isom-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_matrix_reps_isom-3-1"></div></article></details></section></section></div>
+</div></article><details id="th_matrix_reps_isom-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_matrix_reps_isom-3-1">Statement (2) follows directly from (1) since <span class="process-math">\(\dim F^{m,n}=mn\text{.}\)</span> (Alternatively, you showed on a homework that <span class="process-math">\(\mathcal{L}(V,W)\)</span> has a basis <span class="process-math">\(B=(T_{ij})\)</span> of length <span class="process-math">\(mn\text{.}\)</span>) To prove (1), we will show that <span class="process-math">\([\phantom{AA}]_{B}^{B'}\)</span> is linear and bijective.</div>
+<div class="para logical" id="th_matrix_reps_isom-3-2">
+<div class="para">The linearity of <span class="process-math">\([\phantom{AA}]_{B}^{B'}\)</span> can be proved by direct appeal to the formula <a href="s_matrix_reps.html#eq_matrixrep_formula" class="xref" data-knowl="./knowl/xref/eq_matrixrep_formula.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.34">(1.34)</a> and the fact that the coordinate vector map <span class="process-math">\([\phantom{v}]_{B'}\)</span> is linear. Readers are invited to pursue this proof on their own. We will instead take the opportunity to make use of the defining property <a href="s_matrix_reps.html#eq_matrixrep_prop" class="xref" data-knowl="./knowl/xref/eq_matrixrep_prop.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.35">(1.35)</a> within a 1-step proof. Given linear maps <span class="process-math">\(T,S\in \mathcal{L}(V,W)\)</span> and scalars <span class="process-math">\(c,d\in F\text{,}\)</span> we will show that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_matrixrep_formula.html ./knowl/xref/eq_matrixrep_prop.html">
+\begin{equation*}
+[cT+dS]_{B}^{B'}=c[T]_{B}^{B'}+d[S]_{B}^{B'}
+\end{equation*}
+</div>
+<div class="para">by showing that the matrix <span class="process-math">\(C=c[T]_{B}^{B'}+d[S]_{B}^{B'}\)</span> satisfies the relevant defining property</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_matrixrep_formula.html ./knowl/xref/eq_matrixrep_prop.html">
+\begin{equation*}
+C[v]_V=[(cT+dS)(v)]_{B'}
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(v\in V\text{.}\)</span> Here goes:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_matrixrep_formula.html ./knowl/xref/eq_matrixrep_prop.html" id="th_matrix_reps_isom-3-2-11">
+\begin{align*}
+C[v]_B \amp(c[T]_{B}^{B'}+d[S]_B^{B'})[v]_B\\
+\amp =c[T]_{B}^{B'}[v]_B+d[S]_B^{B'}[v]_B \\
+\amp =c[T(v)]_{B'}+d[S(v)]_{B'}\\
+\amp =[cT(v)+dS(v)]_{B'} \amp (\text{coor. map is lin.}) \\
+\amp =[(cT+dS)(v)]_{B'}\text{.}
+\end{align*}
+</div>
+<div class="para">Since <span class="process-math">\(C\)</span> satisfies the relevant property, we conclude that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_matrixrep_formula.html ./knowl/xref/eq_matrixrep_prop.html">
+\begin{equation*}
+C=c[T]_{B}^{B'}+d[T]_{B}^{B'}=[cT+dS]_{B}^{B'}\text{,}
+\end{equation*}
+</div>
+<div class="para">as desired.</div>
+</div>
+<div class="para logical" id="th_matrix_reps_isom-3-3">
+<div class="para">We now show directly that <span class="process-math">\([\phantom{AA}]_B^{B'}\)</span> is bijective: i.e., given any matrix <span class="process-math">\(A\in F^{m,n}\text{,}\)</span> we will show that there is a <em class="emphasis">unique</em> linear transformation <span class="process-math">\(T\in \mathcal{L}(V,W)\)</span> satisfying <span class="process-math">\([T]_B^{B'}\text{.}\)</span> Let <span class="process-math">\(B=(v_1,v_2,\dots, v_n)\text{.}\)</span> Given <span class="process-math">\(A\in F^{m,n}\text{,}\)</span> let</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_trans_basis.html ./knowl/xref/eq_matrixrep_prop.html ./knowl/xref/th_trans_basis.html">
+\begin{equation*}
+\boldy_i=A[\boldv_i]_B
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(1\leq i\leq n\text{,}\)</span> and let <span class="process-math">\((w_1,w_2,\dots, w_n)\)</span> be the unique tuple of vectors in <span class="process-math">\(W\)</span> satisfying <span class="process-math">\([w_i]_{B'}=\boldy_i\text{.}\)</span> (There is such a unique tuple as <span class="process-math">\([\phantom{v}]_{B'}\)</span> is an isomorphism.) By <a href="s_transformation.html#th_trans_basis" class="xref" data-knowl="./knowl/xref/th_trans_basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.9.19: Transformations and bases">Theorem 1.9.19</a> there is a <em class="emphasis">unique</em> linear map <span class="process-math">\(T\in \mathcal{L}(V,W)\)</span> satisfying</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_trans_basis.html ./knowl/xref/eq_matrixrep_prop.html ./knowl/xref/th_trans_basis.html">
+\begin{equation*}
+T(v_i)=w_i
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(1\leq i\leq n\text{.}\)</span> We claim that <span class="process-math">\([T]_B^{B'}=A\text{:}\)</span> indeed, letting <span class="process-math">\(A'=[T]_B^{B'}\)</span> and using the defining property <a href="s_matrix_reps.html#eq_matrixrep_prop" class="xref" data-knowl="./knowl/xref/eq_matrixrep_prop.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.35">(1.35)</a>, we see that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_trans_basis.html ./knowl/xref/eq_matrixrep_prop.html ./knowl/xref/th_trans_basis.html">
+\begin{equation*}
+A'[v_i]_B=[T]_B^{B'}[v_i]=[T(v_i)]_{B'}=[w_i]_{B'}=A[v_i]_B
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(1\leq i\leq n\text{.}\)</span> Since <span class="process-math">\(B\)</span> is a basis and <span class="process-math">\([\phantom{v}]_B\)</span> is an isomorphism, <span class="process-math">\(B''=([v_1]_B, [v_2]_B, \dots, [v_n]_B)\)</span> is a basis of <span class="process-math">\(F^n\text{.}\)</span> The equation above proves that <span class="process-math">\(T_{A'}\)</span> and <span class="process-math">\(T_{A}\)</span> agree on the basis <span class="process-math">\(B''\text{.}\)</span> It follows from <a href="s_transformation.html#th_trans_basis" class="xref" data-knowl="./knowl/xref/th_trans_basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.9.19: Transformations and bases">Theorem 1.9.19</a> (again) that <span class="process-math">\(T_{A'}=T_A\text{,}\)</span> and hence that <span class="process-math">\(A'=A\text{,}\)</span> as desired.</div>
+</div></article></details><article class="theorem theorem-like" id="th_matrix_rep_null_im"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.13.19</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix representations of.</span>
+</h4>
+<div class="para logical" id="th_matrix_rep_null_im-2-1">
+<div class="para">Let <span class="process-math">\(B\)</span> and <span class="process-math">\(B'\)</span> be bases of the vector spaces <span class="process-math">\(V\)</span> and <span class="process-math">\(W\text{,}\)</span> respectively, where <span class="process-math">\(\dim V=n\)</span> and <span class="process-math">\(\dim W=m\text{,}\)</span> let <span class="process-math">\(T\in \mathcal{L}(V,W)\text{,}\)</span> and let <span class="process-math">\(A=[T]_{B}^{B'}\text{.}\)</span>
+</div>
+<ol class="decimal" id="th_matrix_rep_null_im-2-1-9">
+<li id="th_matrix_rep_null_im-2-1-9-1"><div class="para" id="th_matrix_rep_null_im-2-1-9-1-1">The restriction of <span class="process-math">\([\phantom{v}]_{B}\)</span> to <span class="process-math">\(\NS T\)</span> defines an isomorphism <span class="process-math">\([\phantom{v}]_{B}\colon \NS T\rightarrow \NS T_{A}.\)</span> As a result, <span class="process-math">\(\boldv\in \NS T\)</span> if and only if <span class="process-math">\([\boldv]_{B}\in \NS A\text{,}\)</span> and <span class="process-math">\(\dim \NS T=\dim\NS A\text{.}\)</span>
+</div></li>
+<li id="th_matrix_rep_null_im-2-1-9-2"><div class="para" id="th_matrix_rep_null_im-2-1-9-2-1">The restriction of <span class="process-math">\([\phantom{v}]_{B'}\)</span> to <span class="process-math">\(\range T\subseteq W\)</span> defines an isomorphism <span class="process-math">\([\phantom{v}]_{B'}\colon \range T\rightarrow \range T_{A}\text{.}\)</span> As a result, <span class="process-math">\(\boldw\in \range T\)</span> if and only if <span class="process-math">\([\boldw]_{B'}\in \CS A\text{,}\)</span> and <span class="process-math">\(\dim \range T=\dim \CS A=\rank A\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><details id="th_matrix_rep_null_im-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_matrix_rep_null_im-3-1">This proof is left as a homework exercise.</div></article></details><figure class="figure figure-like" id="fig_matrix_reps_null_im"><div class="image-box" style="width: 65%; margin-left: 17.5%; margin-right: 17.5%;"><img src="generated/latex-image/fig_matrix_reps_null_im-2.svg" role="img" class="contained" alt="Commutative diagram including null space and image"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.13.20<span class="period">.</span></span><span class="space"> </span>Matrix representation of null space and image</figcaption></figure><div class="para" id="ss_matrix_reps-17">Having made explicit the connection between the important subspaces associtated to a linear transformation  and its matrix representation, we end with a corollary that connects invertibility of a matrix transformations <span class="process-math">\(T_A\colon F^n\rightarrow F^n\)</span> and its standard matrix <span class="process-math">\(A\text{.}\)</span> Recall (<a href="s_matrix_reps.html#eg_std_matrix" class="xref" data-knowl="./knowl/xref/eg_std_matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.13.14: Standard matrix">1.13.14</a>) that in this case we have <span class="process-math">\(A=[T]_B\text{,}\)</span> where <span class="process-math">\(B\)</span> is the standard basis of <span class="process-math">\(F^n\text{.}\)</span> The corollary lists 9 equivalent formulations for a matrix <span class="process-math">\(A\)</span> (or its matrix transformation <span class="process-math">\(T_A\)</span>) to be invertible. The statements within each column should be fairly easily seen to be equivalent; equivalence connections between the columns are easily made using the rank-nullity theorem.</div>
+<article class="corollary theorem-like" id="cor_inv_theorem"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.13.21</span><span class="period">.</span><span class="space"> </span><span class="title">Invertible matrix theorem.</span>
+</h4>
+<div class="para logical" id="cor_inv_theorem-2-1">
+<div class="para">Let <span class="process-math">\(A\in F^{n,n}\)</span> and let <span class="process-math">\(T_A\colon F^n\rightarrow F^n\)</span> be its corresponding matrix transformation. The following statements are equivalent.</div>
+<ol class="decimal cols3" id="cor_inv_theorem-2-1-3">
+<li id="cor_inv_theorem-2-1-3-1"><div class="para" id="cor_inv_theorem-2-1-3-1-1">
+<span class="process-math">\(T_A\)</span> is an isomorphism.</div></li>
+<li id="cor_inv_theorem-2-1-3-2"><div class="para" id="cor_inv_theorem-2-1-3-2-1"><span class="process-math">\(\displaystyle \NS T_A=\{\boldzero\}\)</span></div></li>
+<li id="cor_inv_theorem-2-1-3-3"><div class="para" id="cor_inv_theorem-2-1-3-3-1"><span class="process-math">\(\displaystyle \im T_A=F^n\)</span></div></li>
+<li id="cor_inv_theorem-2-1-3-4"><div class="para" id="cor_inv_theorem-2-1-3-4-1">
+<span class="process-math">\(A\)</span> is invertible.</div></li>
+<li id="cor_inv_theorem-2-1-3-5"><div class="para" id="cor_inv_theorem-2-1-3-5-1"><span class="process-math">\(\displaystyle \NS A=\{\boldzero\}\)</span></div></li>
+<li id="cor_inv_theorem-2-1-3-6"><div class="para" id="cor_inv_theorem-2-1-3-6-1"><span class="process-math">\(\displaystyle \CS A=F^n\)</span></div></li>
+<li id="cor_inv_theorem-2-1-3-7"><div class="para" id="cor_inv_theorem-2-1-3-7-1">
+<span class="process-math">\(A\boldx=\boldy\)</span> has a unique solution for all <span class="process-math">\(\boldy\in F^n\text{.}\)</span>
+</div></li>
+<li id="cor_inv_theorem-2-1-3-8"><div class="para" id="cor_inv_theorem-2-1-3-8-1">
+<span class="process-math">\(A\boldx=\boldzero\)</span> has a unique solution (viz., <span class="process-math">\(\boldx=\boldzero\)</span>).</div></li>
+<li id="cor_inv_theorem-2-1-3-9"><div class="para" id="cor_inv_theorem-2-1-3-9-1">
+<span class="process-math">\(A\boldx=\boldy\)</span> has a  solution for all <span class="process-math">\(\boldy\in F^n\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><details id="cor_inv_theorem-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="cor_inv_theorem-3-1">We don’t have the heart to provide a proof; this would spoil the fun of charting a path of implications around the <span class="process-math">\(3\times 3\)</span> grid above!</div></article></details></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="s_isom.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="advlinalgkursobjekt-6.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
