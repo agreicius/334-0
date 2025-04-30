@@ -15,4 +15,5 @@
     <xi:include href="s_rank_nullity.ptx" />
     <xi:include href="s_isom.ptx" />
     <xi:include href="s_matrix_reps.ptx" />
+    <xi:include href="s_change_basis.ptx" />
 </chapter>
