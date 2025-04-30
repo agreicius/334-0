@@ -512,7 +512,7 @@ According to <xref ref="eg_std_matrix"/> we have <m>A=[T]_B</m>: <ie />, the sta
 <title>Computing the standard matrix using change of basis</title>
 <statement>
 <p>
-  Let <m>T\colon \R^n\rightarrow \R^n</m> be a linear transformation, and let <m>A</m> be its standard matrix. To compute <m>A</m> using the change of basis formula <xref ref="eq_changebasis_transform"/>, proceed as follows.
+  Let <m>T\colon F^n\rightarrow F^n</m> be a linear transformation, and let <m>A</m> be its standard matrix. To compute <m>A</m> using the change of basis formula <xref ref="eq_changebasis_transform"/>, proceed as follows.
 
 <ol>
   <li>

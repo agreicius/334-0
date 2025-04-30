@@ -15,7 +15,7 @@
         <p>
         Let <m>V</m> be a finite-dimensional vector space. If <m>T\colon V\rightarrow W</m> is a linear transformation, then 
         <men xml:id="eq_rank_null">
-          \dim V=\dim\NS T+\dim W
+          \dim V=\dim\NS T+\dim \im T
         </men>.
         
         </p>
