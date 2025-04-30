@@ -12,34 +12,34 @@
 </head>
 <body class="ignore-math">
 <article class="theorem theorem-like"><h4 class="heading">
-<span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.14.10</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Change of basis for transformations.</span>
+<span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.14.11</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Change of basis for transformations.</span>
 </h4>
 <div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
 <div class="para">Let <span class="process-math">\(V\)</span> be finite-dimensional, let <span class="process-math">\(T\colon V\rightarrow V\)</span> be linear, and let <span class="process-math">\(B\)</span> and <span class="process-math">\(B'\)</span> be two ordered bases for <span class="process-math">\(V\text{.}\)</span> We have</div>
 <div class="displaymath process-math">
 \begin{equation}
-[T]_{B'}=\underset{B\rightarrow B'}{P}\, [T]_B\, \underset{B'\rightarrow B}{P}\text{,}\tag{1.40}
+[T]_{B'}=\underset{B\rightarrow B'}{P}\, [T]_B\, \underset{B'\rightarrow B}{P}\text{,}\tag{1.41}
 \end{equation}
 </div>
 <div class="para">or equivalently</div>
 <div class="displaymath process-math">
 \begin{equation}
-[T]_{B'}=\underset{B'\rightarrow B}{P}^{-1}\, [T]_B\, \underset{B'\rightarrow B}{P}\text{.}\tag{1.41}
+[T]_{B'}=\underset{B'\rightarrow B}{P}^{-1}\, [T]_B\, \underset{B'\rightarrow B}{P}\text{.}\tag{1.42}
 \end{equation}
 </div>
 </div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
-<div class="para">First observe that <a href="s_change_basis.html#eq_changebasis_transform_inverse" class="xref" data-knowl="./knowl/xref/eq_changebasis_transform_inverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.41">(1.41)</a> follows from <a href="s_change_basis.html#eq_changebasis_transform" class="xref" data-knowl="./knowl/xref/eq_changebasis_transform.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.40">(1.40)</a> and (2) of <a href="s_change_basis.html#th_change_basis_props" class="xref" data-knowl="./knowl/xref/th_change_basis_props.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.14.2: Change of basis matrix">Theorem 1.14.2</a>. Next, to prove <a href="s_change_basis.html#eq_changebasis_transform" class="xref" data-knowl="./knowl/xref/eq_changebasis_transform.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.40">(1.40)</a>, it suffices by (2) of <a href="s_matrix_reps.html#th_matrixrep" class="xref" data-knowl="./knowl/xref/th_matrixrep.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.13.14: Defining property of matrix representation">Theorem 1.13.14</a> to show that the matrix <span class="process-math">\(A=\underset{B\rightarrow B'}{P}\, [T]_B\, \underset{B'\rightarrow B}{P}\)</span> satisfies</div>
+<div class="para">First observe that <a href="s_change_basis.html#eq_changebasis_transform_inverse" class="xref" data-knowl="./knowl/xref/eq_changebasis_transform_inverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.42">(1.42)</a> follows from <a href="s_change_basis.html#eq_changebasis_transform" class="xref" data-knowl="./knowl/xref/eq_changebasis_transform.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.41">(1.41)</a> and (3) of <a href="s_change_basis.html#th_change_basis_props" class="xref" data-knowl="./knowl/xref/th_change_basis_props.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.14.2: Change of basis matrix">Theorem 1.14.2</a>. Next, to prove <a href="s_change_basis.html#eq_changebasis_transform" class="xref" data-knowl="./knowl/xref/eq_changebasis_transform.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.41">(1.41)</a>, it suffices by (2) of <a href="s_matrix_reps.html#th_matrixrep" class="xref" data-knowl="./knowl/xref/th_matrixrep.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.13.14: Defining property of matrix representation">Theorem 1.13.14</a> to show that the matrix <span class="process-math">\(A=\underset{B\rightarrow B'}{P}\, [T]_B\, \underset{B'\rightarrow B}{P}\)</span> satisfies</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_changebasis_transform_inverse.html ./knowl/xref/eq_changebasis_transform.html ./knowl/xref/th_change_basis_props.html ./knowl/xref/eq_changebasis_transform.html ./knowl/xref/th_matrixrep.html ./knowl/xref/th_change_basis_props.html ./knowl/xref/th_matrixrep.html ./knowl/xref/th_change_basis_props.html">
 \begin{equation*}
-A[\boldv]_{B'}=[T(\boldv)]_{B'}
+A[v]_{B'}=[T(v)]_{B'}
 \end{equation*}
 </div>
-<div class="para">for all <span class="process-math">\(\boldv\in V\text{.}\)</span> To this end, given any <span class="process-math">\(\boldv\in V\text{,}\)</span> we have</div>
+<div class="para">for all <span class="process-math">\(v\in V\text{.}\)</span> To this end, given any <span class="process-math">\(v\in V\text{,}\)</span> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_changebasis_transform_inverse.html ./knowl/xref/eq_changebasis_transform.html ./knowl/xref/th_change_basis_props.html ./knowl/xref/eq_changebasis_transform.html ./knowl/xref/th_matrixrep.html ./knowl/xref/th_change_basis_props.html ./knowl/xref/th_matrixrep.html ./knowl/xref/th_change_basis_props.html">
 \begin{align*}
-A[\boldv]_{B'}=\underset{B\rightarrow B'}{P}\, [T]_B\, \underset{B'\rightarrow B}{P}[\boldv]_{B'} \amp= \underset{B\rightarrow B'}{P}\, [T]_B [\boldv]_B \amp (\knowl{./knowl/xref/th_change_basis_props.html}{\text{Theorem 1.14.2}})\\
-\amp= \underset{B\rightarrow B'}{P}[T(\boldv)]_{B} \amp (\knowl{./knowl/xref/th_matrixrep.html}{\text{Theorem 1.13.14}}, (1)) \\
-\amp = [\boldv]_{B'} \amp (\knowl{./knowl/xref/th_change_basis_props.html}{\text{Theorem 1.14.2}})\text{.}
+A[v]_{B'}=\underset{B\rightarrow B'}{P}\, [T]_B\, \underset{B'\rightarrow B}{P}[v]_{B'} \amp= \underset{B\rightarrow B'}{P}\, [T]_B [v]_B \amp (\knowl{./knowl/xref/th_change_basis_props.html}{\text{Theorem 1.14.2}})\\
+\amp= \underset{B\rightarrow B'}{P}[T(v)]_{B} \amp (\knowl{./knowl/xref/th_matrixrep.html}{\text{Theorem 1.13.14}}, (1)) \\
+\amp = [v]_{B'} \amp (\knowl{./knowl/xref/th_change_basis_props.html}{\text{Theorem 1.14.2}})\text{.}
 \end{align*}
 </div>
 </div></article></details><span class="incontext"><a class="internal" href="s_change_basis.html#th_change_of_basis_transformations">in-context</a></span>
