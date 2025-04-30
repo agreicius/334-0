@@ -11,7 +11,7 @@
             <p>
               Given <m>V</m> and two ordered bases <m>B</m> and <m>B'</m>,
               what is the algebraic relation between
-              <m>[\boldv]_B</m> and <m>[\boldv]_{B'}</m>?
+              <m>[v]_B</m> and <m>[v]_{B'}</m>?
             </p>
           </li>
           <li>
@@ -29,7 +29,6 @@
         <em>change of basis matrix</em>
         <m>\underset{B\rightarrow B'}{P}</m>.
       </p>
-  
     </introduction>
     <subsection xml:id="ss_change_basis_matrix">
     <title>Change of basis matrix</title>
@@ -51,7 +50,7 @@ In other words, the <m>j</m>-th column of <m>\underset{B\rightarrow B'}{P}</m> i
 <title>Change of basis matrix</title>
 <statement>
 <p>
-    Let <m>B</m> and <m>B'</m> be two ordered bases of the finite-dimensional vector space <m>V</m>.
+    Let <m>B</m>, <m>B'</m>, and <m>B''</m> be bases of the finite-dimensional vector space <m>V</m>.
 <ol>
     <li>
         <p>
@@ -67,12 +66,26 @@ In other words, the <m>j</m>-th column of <m>\underset{B\rightarrow B'}{P}</m> i
         </men>
     In other words, to convert the <m>B</m>-coordinates of a vector <m>v\in V</m> to <m>B'</m>-coordinates, simply multiply on the left by the matrix <m>\underset{B\rightarrow B'}{P}</m>.
         </p>
+        <p>
+          Furthermore, the matrix <m>\underset{B\rightarrow B'}{P}</m> is the unique matrix satisfying <xref ref="eq_change_basis_prop"/>: i.e., if <m>A[v]_{B}=[v]_{B'}</m> for all <m>v\in V</m>, then <m>A=\underset{B\rightarrow B'}{P}</m>.
+      </p>
     </li>
     <li>
-        <p>
-            The matrix <m>\underset{B\rightarrow B'}{P}</m> is the unique matrix satisfying <xref ref="eq_change_basis_prop"/>: i.e., if <m>A[v]_{B}=[v]_{B'}</m> for all <m>v\in V</m>, then <m>A=\underset{B\rightarrow B'}{P}</m>.
+      <p>
+        The matrix <m>\underset{B\to B'}{P}</m> is invertible and satisfies 
+        <men xml:id="eq_change_basis_inverse">
+          \left(\underset{B\rightarrow B'}{P}\right)^{-1}=\underset{B'\rightarrow B}{P}
+          </men>.
         </p>
-    </li>
+      </li>
+      <li>
+        <p>
+          We have
+          <me>
+          \underset{B\rightarrow B''}{P}=\underset{B'\rightarrow B''}{P}\, \underset{B\rightarrow B'}{P}
+          </me>.
+        </p>
+      </li>
 </ol>
 </p>
 </statement>
@@ -95,28 +108,109 @@ In other words, the <m>j</m>-th column of <m>\underset{B\rightarrow B'}{P}</m> i
         <p>
           This follows from (1) and <xref ref="th_matrixrep"/>:
           <md>
-            <mrow> \underset{B\rightarrow B'}{P}[v]_B \amp = [\id_V]_{B}^{B'}[v]_B </mrow>
-            <mrow>  \amp = [\id_V(v)]_{B'} \amp (<xref ref="th_matrixrep"/>)</mrow>
+            <mrow> \underset{B\rightarrow B'}{P}[v]_B \amp = [I_V]_{B}^{B'}[v]_B </mrow>
+            <mrow>  \amp = [I_V(v)]_{B'} \amp (<xref ref="th_matrixrep"/>)</mrow>
             <mrow> \amp =[v]_{B'} </mrow>
           </md>.
+          The uniqueness claim follows from the uniqueness of matrix representations described in <xref ref="th_matrixrep"/>. 
         </p>
       </li>
       <li>
         <p>
-          By (2) of <xref ref="th_matrixrep"/> (the uniqueness claim), if <m>A</m> satisfies <m>A[v]_B=[v]_{B'}</m> for all <m>v\in \R^n</m>, then <m>A=[\id_V]_{B}^{B'}</m>. Since <m>[\id_V]_{B}^{B'}=\underset{B\rightarrow B'}{P}</m>, we conclude <m>A=\underset{B\rightarrow B'}{P}</m>.
+         Let <m>A=\underset{B'\to B}{P}\underset{B\to B'}{P}</m>. For any vector <m>v\in V</m>, we have 
+         <md>
+          <mrow>A[v]_B \amp =\underset{B'\to B}{P}\underset{B\to B'}{P}[v]_{B}</mrow>
+          <mrow> \amp \underset{B'\to B}{P}[v]_{B'}</mrow>
+          <mrow> \amp =[v]_B</mrow>
+         </md>.
+         Since <m>[\phantom{v}]_B</m> is an isomorphism, it follows that <m>A\boldx=\boldx</m> for all <m>\boldx\in F^n</m>, from whence it easily follows that <m>A=I</m>. Thus <me>
+          \underset{B'\to B}{P}\,\underset{B\to B'}{P}=I
+         </me>.
+         A similar argument shows 
+         <me>
+          \underset{B\to B'}{P}\underset{B'\to B}{P}=I
+         </me>
+         and thus that <m>(\underset{B\to B'}{P})^{-1}=\underset{B'\to B}{P}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>C=\underset{B'\to B''}{P}\underset{B\to B'}{P}</m>. We show that <m>C=\underset{B\to B''}{P}</m> by showing that it satisfies the defining property <xref ref="eq_change_basis_prop"/>. For any <m>v\in V</m>, we have 
+          <md>
+            <mrow>C[v]_B \amp =\underset{B'\to B''}{P}\underset{B\to B'}{P}[v]_B</mrow>
+            <mrow> \amp =\underset{B'\to B''}{P}[v]_{B'}</mrow>
+            <mrow> \amp = [v]_{B''}</mrow>
+          </md>.
+          Since <m>C=\underset{B'\to B''}{P}\underset{B\to B'}{P}</m> satisfies the defining property of <m>\underset{B\to B''}{P}</m>, we conclude that 
+          <me>
+            \underset{B\to B''}{P}=\underset{B'\to B''}{P}\underset{B\to B'}{P}
+          </me>.
         </p>
       </li>
     </ol>
 </p>
   </proof>
 </theorem>
+<example xml:base="eg_change_basis_elem">
+  <title>Bases in <m>\R^2</m></title>
+  <statement>
+    <p>
+      Let <m>V=\R^2</m>, <m>B=(\boldv_1=(1,1),\boldv_2=(1,-1))</m>, and <m>B'=(\boldw_1=(1,2), \boldw_2=(2,-1))</m>. 
+      <ol>
+        <li>
+          <p>
+            Compute <m>\underset{B\rightarrow B'}{P}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Let <m>\boldx=(4,-2)</m>. Compute <m>[\boldx]_{B'}</m> using the change of basis formula <xref ref="eq_change_basis_prop"/>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <ol>
+      <li>
+        <p>
+          Using <xref ref="d_change_basis_matrix"/>, we have
+          <md>
+          <mrow>\underset{B\rightarrow B'}{P}\amp = \begin{bmatrix}\vert \amp \vert \\ \hspace{7pt}[\boldv_1]_{B'} \amp \hspace{7pt}[\boldv_2]_{B'}\\ \vert \amp \vert \end{bmatrix}</mrow>
+          <mrow>\amp = \begin{bmatrix}\frac{3}{5}\amp -\frac{1}{5}\\ \frac{1}{5}\amp \frac{3}{5} \end{bmatrix}  </mrow>
+          </md>.
+          The two coordinate vector computations <m>[(1,1)]_{B'}=(3/5, 1/5)</m> and <m>[(1,-1)]_{B'}=(-1/5,3/5)</m> were done as usual using <xref ref="proc_coor_vec"/>: that is,  by setting up in turn the vector equations 
+          <md>
+            <mrow>(1,1) \amp = c_1(1,2)+c_2(2,-1) \amp (1,-1)\amp =c_1(1,2)+c_2(2,-1)</mrow>
+          </md>
+          and solving for <m>c_1,c_2</m> using Gaussian elimination. 
+        </p>
+      </li>
+      <li>
+        <p>
+          The usual application of <xref ref="proc_coor_vec"/> produces the coordinate vector <m>[\boldx]_{B}=(1, 3)</m>. We leave the details to you. To compute <m>[\boldv]_{B'}</m>, we use the change of basis formula <xref ref="eq_change_basis_prop"/>: 
+          <md>
+            <mrow> [\boldx]_{B'} \amp =\underset{B\rightarrow B'}{P}[\boldx]_B </mrow>
+            <mrow> \amp = \begin{bmatrix}\frac{3}{5}\amp -\frac{1}{5}\\ \frac{1}{5}\amp \frac{3}{5} \end{bmatrix} \begin{amatrix}[c]1 \\ 3  \end{amatrix}</mrow>
+            <mrow>  \amp = \begin{amatrix}[r]0\\ 2   \end{amatrix}</mrow>
+          </md>.
+          This should come as now surprise since
+          <me>\boldx=(4,-2)=2(2,-1)=0\boldw_1+2\boldw_2
+          </me>.
+        </p>
+      </li>
+    </ol>
+  </p>
+  </solution>
+</example>
 <example xml:id="eg_changebasis_standard">
     <title><m>V=F^n</m>, <m>B</m> standard basis</title>
     <statement>
       <p>
         Consider the special situation where <m>V=F^n</m>,
         <m>B</m> is the standard basis,
-        and <m>B'=\{v_1,\dots,v_n\}</m> is some nonstandard basis.
+        and <m>B'=(v_1,\dots,v_n)</m> is some nonstandard basis.
         In this case we have
       <md>
         <mrow> \underset{B'\rightarrow B}{P}\amp =\begin{bmatrix}\vert\amp\vert\amp  \amp \vert \\ [v_1]_B\amp [v_2]_B \amp \cdots\amp [v_n]_B\\ \vert\amp \vert\amp  \amp \vert \end{bmatrix}
@@ -128,31 +222,48 @@ In other words, the <m>j</m>-th column of <m>\underset{B\rightarrow B'}{P}</m> i
     </statement>
   </example>
   
-  <example>
-    <title>Change of basis, <m>B</m> standard</title>
-    
-    
-    <statement>
-      <p>
-        Let <m>V=\R^2</m>, <m>B=((1,0),(0,1))</m>, <m>B'=\{(1,\sqrt{3}),(-\sqrt{3},1)\}</m>. Compute <m>\underset{B\rightarrow B'}{P}</m> and <m>\underset{B'\rightarrow B}{P}</m>.
-      </p>
-    </statement>
-    <solution>
-      <p>
-        According to <xref ref="eg_changebasis_standard"/> we have
-        <me>\underset{B'\rightarrow B}{P}=\begin{bmatrix}1\amp -\sqrt{3}\\ \sqrt{3}\amp 1 \end{bmatrix}</me>. We then compute
-        <me>
-        \underset{B\rightarrow B'}{P}=(\underset{B'\rightarrow B}{P})^{-1}=\left(\begin{bmatrix}1\amp -\sqrt{3}\\ \sqrt{3}\amp 1 \end{bmatrix} \right)^{-1}=\frac{1}{4}\begin{bmatrix}1\amp \sqrt{3}\\ -\sqrt{3}\amp 1 \end{bmatrix}
-        </me>.
-      </p>
-    </solution>
-  </example>
+  
   <remark xml:id="rm_changebasis_standard">
   <title><m>B</m> standard basis of <m>V</m></title>
       <p>
         The observation from <xref ref="eg_changebasis_standard"/> applies more generally when <m>B</m> is the standard basis of the given vector space <m>V</m> and <m>B'=(v_1, v_2, \dots, v_n)</m> is nonstandard. In this case computing <m>\underset{B'\rightarrow B}{P}</m> will be easy as the coordinate vectors <m>[v_j]_{B}</m> can be produced by inspection. See <xref ref="eg_changebasis_standard_mat"/>.
       </p>
   </remark>
+  <li>
+    <p>
+      This follows from (1) and <xref ref="th_matrixrep"/>:
+      <md>
+        <mrow> \underset{B\rightarrow B'}{P}[\boldv]_B \amp = [\id_V]_{B}^{B'}[\boldv]_B </mrow>
+        <mrow>  \amp = [\id_V(\boldv)]_{B'} \amp (<xref ref="th_matrixrep"/>)</mrow>
+        <mrow> \amp =[\boldv]_{B'} </mrow>
+      </md>.
+    </p>
+  </li>
+  <li>
+    <p>
+      By (2) of <xref ref="th_matrixrep"/> (the uniqueness claim), if <m>A</m> satisfies <m>A[\boldv]_B=[\boldv]_{B'}</m> for all <m>\boldv\in \R^n</m>, then <m>A=[\id_V]_{B}^{B'}</m>. Since <m>[\id_V]_{B}^{B'}=\underset{B\rightarrow B'}{P}</m>, we conclude <m>A=\underset{B\rightarrow B'}{P}</m>.
+    </p>
+  </li>
+<p>
+  We have seen that computing <m>\underset{B'\rightarrow B}{P}</m> is easy when <m>B</m> is a standard matrix; according to <xref ref="th_change_basis_props"/>, in that situation we can then compute <m>\underset{B\rightarrow B'}{P}</m> as the inverse of <m>\underset{B'\rightarrow B}{P}</m>. 
+</p>
+    <example>
+      <title>Change of basis, <m>B</m> standard</title>
+      <statement>
+        <p>
+          Let <m>V=\R^2</m>, <m>B=((1,0),(0,1))</m>, <m>B'=\{(1,\sqrt{3}),(-\sqrt{3},1)\}</m>. Compute <m>\underset{B\rightarrow B'}{P}</m> and <m>\underset{B'\rightarrow B}{P}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          According to <xref ref="eg_changebasis_standard"/> we have
+          <me>\underset{B'\rightarrow B}{P}=\begin{bmatrix}1\amp -\sqrt{3}\\ \sqrt{3}\amp 1 \end{bmatrix}</me>. We then compute
+          <me>
+          \underset{B\rightarrow B'}{P}=(\underset{B'\rightarrow B}{P})^{-1}=\left(\begin{bmatrix}1\amp -\sqrt{3}\\ \sqrt{3}\amp 1 \end{bmatrix} \right)^{-1}=\frac{1}{4}\begin{bmatrix}1\amp \sqrt{3}\\ -\sqrt{3}\amp 1 \end{bmatrix}
+          </me>.
+        </p>
+      </solution>
+    </example>
   <example xml:id="eg_changebasis_standard_mat">
     <title>Change of basis, <m>B</m> standard</title>
     <statement>
@@ -169,7 +280,7 @@ In other words, the <m>j</m>-th column of <m>\underset{B\rightarrow B'}{P}</m> i
       -1\amp 1\\ 1\amp -1
   \end{amatrix}
     </me>.
-      Compute <m>\underset{B'\rightarrow B}{P}</m>.
+      Compute <m>\underset{B'\rightarrow B}{P}</m> and <m>\underset{B\rightarrow B'}{P}</m>.
       </p>
     </statement>
     <solution>
@@ -350,15 +461,15 @@ In other words, the <m>j</m>-th column of <m>\underset{B\rightarrow B'}{P}</m> i
   </statement>
   <proof>
     <p>
-      First observe that <xref ref="eq_changebasis_transform_inverse"/> follows from <xref ref="eq_changebasis_transform"/> and (2) of <xref ref="th_change_basis_props"/>. Next, to prove <xref ref="eq_changebasis_transform"/>, it suffices by (2) of <xref ref="th_matrixrep"/> to show that the matrix <m>A=\underset{B\rightarrow B'}{P}\, [T]_B\, \underset{B'\rightarrow B}{P}</m> satisfies
+      First observe that <xref ref="eq_changebasis_transform_inverse"/> follows from <xref ref="eq_changebasis_transform"/> and (3) of <xref ref="th_change_basis_props"/>. Next, to prove <xref ref="eq_changebasis_transform"/>, it suffices by (2) of <xref ref="th_matrixrep"/> to show that the matrix <m>A=\underset{B\rightarrow B'}{P}\, [T]_B\, \underset{B'\rightarrow B}{P}</m> satisfies
       <me>
-        A[\boldv]_{B'}=[T(\boldv)]_{B'}
+        A[v]_{B'}=[T(v)]_{B'}
       </me>
-      for all <m>\boldv\in V</m>. To this end, given any <m>\boldv\in V</m>, we have
+      for all <m>v\in V</m>. To this end, given any <m>v\in V</m>, we have
       <md>
-        <mrow>A[\boldv]_{B'}=\underset{B\rightarrow B'}{P}\, [T]_B\, \underset{B'\rightarrow B}{P}[\boldv]_{B'} \amp= \underset{B\rightarrow B'}{P}\, [T]_B [\boldv]_B \amp (<xref ref="th_change_basis_props"/>)</mrow>
-        <mrow> \amp= \underset{B\rightarrow B'}{P}[T(\boldv)]_{B} \amp (<xref ref="th_matrixrep"/>, (1)) </mrow>
-        <mrow>  \amp = [\boldv]_{B'} \amp (<xref ref="th_change_basis_props"/>)</mrow>
+        <mrow>A[v]_{B'}=\underset{B\rightarrow B'}{P}\, [T]_B\, \underset{B'\rightarrow B}{P}[v]_{B'} \amp= \underset{B\rightarrow B'}{P}\, [T]_B [v]_B \amp (<xref ref="th_change_basis_props"/>)</mrow>
+        <mrow> \amp= \underset{B\rightarrow B'}{P}[T(v)]_{B} \amp (<xref ref="th_matrixrep"/>, (1)) </mrow>
+        <mrow>  \amp = [v]_{B'} \amp (<xref ref="th_change_basis_props"/>)</mrow>
       </md>.
     </p>
   </proof>
@@ -502,7 +613,7 @@ In other words, the <m>j</m>-th column of <m>\underset{B\rightarrow B'}{P}</m> i
 </solution>
 </example>
 <p>
-Consider the special case where <m>T\colon \R^n\rightarrow \R^n</m>: that is, when <m>V=\R^n</m> is a space of <m>n</m>-tuples. We know from <xref ref="cor_matrix_transformation"/> that <m>T=T_A</m> for a unique <m>n\times n</m> matrix <m>A</m>: the standard matrix of <m>T</m>. The standard matrix of <m>T</m> is useful, as it  provides a convenient matrix formula for <m>T</m>.
+Consider the special case where <m>T\colon F^n\rightarrow F^n</m>: that is, when <m>V=F^n</m> is a space of <m>n</m>-tuples. We know from <xref ref="cor_matrix_transformation"/> that <m>T=T_A</m> for a unique <m>n\times n</m> matrix <m>A</m>: the standard matrix of <m>T</m>. The standard matrix of <m>T</m> is useful, as it  provides a convenient matrix formula for <m>T</m>.
 To compute <m>A</m> <em>directly</em> using the recipe in <xref ref="cor_matrix_transformation" text="global"/>, we must compute <m>T(\bolde_j)</m> for each of the standard basis elements <m>\bolde_j</m>. For many naturally occurring transformations <m>T</m>, this is often not so easy to do. <xref ref="th_change_of_basis_transformations"/> provides an indirect method in such cases, as we now explain.
 </p>
 <p>
@@ -689,7 +800,7 @@ Let <m>T\colon \R^2\rightarrow \R^2</m> be reflection through the line <m>\ell</
         </proof>
       </theorem>
         <p>
-        We will soon that similar matrices are indeed similar algebraically speaking: <ie />, they share many of the same properties. <xref ref="th_similarity_matrixreps"/> provides the theoretical foundation to understand why this should be so: if <m>A</m> and <m>A'</m> are similar, then they are two matrix representations of a common linear transformation <m>T</m>; their many shared properties are simply inherited from the single overlying linear transformation that they both represent! This circle of ideas is neatly encompassed by <xref ref="fig_comm_tent"/>.
+        We will soon see that similar matrices are indeed similar algebraically speaking: <ie />, they share many of the same properties. <xref ref="th_similarity_matrixreps"/> provides the theoretical foundation to understand why this should be so: if <m>A</m> and <m>A'</m> are similar, then they are two matrix representations of a common linear transformation <m>T</m>; their many shared properties are simply inherited from the single overlying linear transformation that they both represent! This circle of ideas is neatly encompassed by <xref ref="fig_comm_tent"/>.
       </p>
       <figure xml:id="fig_comm_tent">
         <title>The holy commutative tent of linear algebra</title>
@@ -714,7 +825,7 @@ Let <m>T\colon \R^2\rightarrow \R^2</m> be reflection through the line <m>\ell</
       <p>
       The commutativity of the two slanted sides of the tent is a consequence of <xref ref="th_matrixrep"/>:
       <md>
-        <mrow>[T(\boldv)]_B[\boldv]_B \amp = [T(\boldv)]_B  \amp [T]_{B'}[\boldv]_{B'}\amp =[T(\boldv)]_{B'}</mrow>
+        <mrow>[T(v)]_B[v]_B \amp = [T(v)]_B  \amp [T]_{B'}[v]_{B'}\amp =[T(v)]_{B'}</mrow>
       </md>.
       </p>
       </case>
@@ -723,8 +834,8 @@ Let <m>T\colon \R^2\rightarrow \R^2</m> be reflection through the line <m>\ell</
       <p>
       Let <m>P=\underset{B'\rightarrow B}{P}</m>, so that <m>P^{-1}=\underset{B\rightarrow B'}{P}</m>. The commutativity of the two triangular ends of the tent are consequences of <xref ref="th_change_basis_props"/>:
       <md>
-        <mrow>P[\boldv]_{B'} \amp=[\boldv]_B \amp
-        P^{-1}[\boldv]_B\amp=[\boldv]_{B'} </mrow>
+        <mrow>P[v]_{B'} \amp=[v]_B \amp
+        P^{-1}[v]_B\amp=[v]_{B'} </mrow>
       </md>.
       </p>
       </case>
