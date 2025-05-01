@@ -85,7 +85,7 @@
                   <mrow>[cv+dw]_{B} \amp =[\sum_{i\in I}(cc_i+dd_i)v_i \amp (\text{vect. arith.})</mrow>
                   <mrow> \amp =(cc_i+dd_i)_{i\in I} \amp (\text{def. of } [\phantom{v}]_B)</mrow>
                   <mrow> \amp = c(c_i)_{i\in I}+d(d_i)_{i\in I}\amp (\text{vect. arith.}) </mrow>
-                  <mrow> \amp =c[\boldv]_B+d[\boldw]_B \amp (\text{def. of } [\phantom{v}]_B)</mrow>
+                  <mrow> \amp =c[v]_B+d[w]_B \amp (\text{def. of } [\phantom{v}]_B)</mrow>
                 </md>.
                 Next, we prove <m>[\phantom{v}]_B</m> is injective by showing that its null space is trivial. We have 
                 Given any <m>v\in V</m>, writing <m>v=\sum_{i\in i}c_iv_i</m> as a linear combination of the elements of <m>B</m>, we see that 
@@ -94,7 +94,7 @@
                   <mrow> \amp \iff \sum_{i\in I}c_iv_i=\boldzero \amp (B \text{ lin. ind.})</mrow>
                   <mrow> \amp \iff v=\boldzero</mrow>
                 </md>.
-                Thus <m>\NS [\phanotom{v}]_B=\{\boldzero\}</m>.
+                Thus <m>\NS [\phantom{v}]_B=\{\boldzero\}</m>.
               </p>
             </li>
             <li>
@@ -846,7 +846,7 @@
     <p>
       We now show directly that <m>[\phantom{AA}]_B^{B'}</m> is bijective: <ie/>, given any matrix <m>A\in F^{m,n}</m>, we will show that there is a <em>unique</em> linear transformation <m>T\in \mathcal{L}(V,W)</m> satisfying <m>[T]_B^{B'}</m>. Let <m>B=(v_1,v_2,\dots, v_n)</m>. Given <m>A\in F^{m,n}</m>, let 
       <me>
-        \boldy_i=A[\boldv_i]_B
+        \boldy_i=A[v_i]_B
       </me>
       for all <m>1\leq i\leq n</m>, and let <m>(w_1,w_2,\dots, w_n)</m> be the unique tuple of vectors in <m>W</m> satisfying <m>[w_i]_{B'}=\boldy_i</m>. (There is such a unique tuple as <m>[\phantom{v}]_{B'}</m> is an isomorphism.) By <xref ref="th_trans_basis"/> there is a <em>unique</em> linear map <m>T\in \mathcal{L}(V,W)</m> satisfying 
       <me>
@@ -868,7 +868,7 @@
 <ol>
   <li>
     <p>
-      The restriction of <m>[\phantom{v}]_{B}</m> to <m>\NS T</m> defines an isomorphism <m>[\phantom{v}]_{B}\colon \NS T\rightarrow \NS T_{A}.</m> As a result, <m>\boldv\in \NS T</m> if and only if <m>[\boldv]_{B}\in \NS A</m>, and <m>\dim \NS T=\dim\NS A</m>.
+      The restriction of <m>[\phantom{v}]_{B}</m> to <m>\NS T</m> defines an isomorphism <m>[\phantom{v}]_{B}\colon \NS T\rightarrow \NS T_{A}.</m> As a result, <m>v\in \NS T</m> if and only if <m>[v]_{B}\in \NS A</m>, and <m>\dim \NS T=\dim\NS A</m>.
     </p>
   </li>
 
