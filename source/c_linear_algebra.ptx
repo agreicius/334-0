@@ -16,4 +16,5 @@
     <xi:include href="s_isom.ptx" />
     <xi:include href="s_matrix_reps.ptx" />
     <xi:include href="s_change_basis.ptx" />
+    <xi:include href="s_eigenvector.ptx" />
 </chapter>

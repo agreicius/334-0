@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_eigenvector" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Eigenvectors</title>
+<introduction>
+    <p>
+        For the rest of this course we will focus our investigation on linear transformations of the form <m>T\colon V\rightarrow V</m>: that is, transformations from a space <m>V</m> into itself. When <m>V</m> is finite-dimensional we can get a computational grip on <m>T</m> by choosing an ordered basis <m>B</m> and considering the matrix representation <m>[T]_B</m>. As was illustrated in <xref ref="eg_changebasis_reflection"/>, different matrix representations <m>[T]_B</m> and <m>[T]_{B'}</m> provide different insights into the nature of <m>T</m>. Furthermore, we see from this example that if the action of <m>T</m> on a chosen basis is simple to describe, then so too is the matrix representation of <m>T</m> with respect to that basis.
+      </p>
+      <p>
+        A particularly agreeable situation arises when the basis <m>B=(v_1, v_2, \dots, v_n)</m> satisfies
+        <me>
+          T(v_i)=c_iv_i, c_i\in \R
+        </me>
+        for all <m>1\leq i\leq n</m>. Using recipe <xref ref="eq_matrixrep_formula"/> we in this case that the corresponding matrix representation
+        <me>
+          [T]_B=\begin{bmatrix}
+            c_1 \amp 0\amp \dots \amp \amp 0\\
+            0   \amp c_2\amp 0\amp \dots \amp 0\\
+            0\amp 0\amp \ddots \amp \amp 0\\
+            \vdots  \amp \amp \amp \amp \vdots \\
+            0\amp 0\amp \dots \amp 0\amp c_n
+        \end{bmatrix}
+        </me>
+        is diagonal! Diagonal matrices are about as simple as they come: they wear all of their properties (rank, nullity, invertibility, <etc />) on their sleeve.  If we hope to find a diagonal matrix representation of <m>T</m>, then we should seek nonzero vectors <m>v</m> satisfying <m>T(v)=cv</m> for some <m>c\in \R</m>: these are called <em>eigenvectors</em> of <m>T</m>.
+      </p>
+</introduction>
+    <subsection xml:id="ss_eigenvectors">
+    <title>Definition and examples</title>
+    <definition xml:id="d_eigenvectors">
+        <idx><h>eigenvector</h></idx>
+        <idx><h>eigenvalue</h></idx>
+        <title>Eigenvectors and eigenvalues</title>
+        <statement>
+          <p>
+            Let <m>T\colon V\rightarrow V</m> be a linear transformation.
+            A nonzero vector <m>v\in V</m> satisfying
+            <men xml:id="eq_eigenvector_def">
+              T(v)=\lambda v
+            </men> for some <m>\lambda\in F</m> is called an <term>eigenvector</term> of <m>T</m> with <term>eigenvalue</term> <m>\lambda</m>, or more concisely, a <term><m>\lambda</m>-eigenvector</term>.
+          </p>
+        </statement>
+      </definition>
+      <convention>
+        <title>Eigenvectors of matrix transformations</title>
+        <p>
+            Let <m>A\in F^{n,n}</m> be a square matrix. As a form of conflation of <m>A</m> with its corresponding matrix transformation <m>T_A\colon F^n\rightarrow F^n</m>, we will call <m>\boldx</m> an eigenvector of <m>A</m> if it is an eigenvalue of <m>T_A</m>; similarly, we will call <m>\lambda</m> an eigenvalue of <m>A</m> if it is an eigenvalue of <m>T_A</m>.
+        </p>
+      </convention>
+        <remark xml:id="rm_eigenvector_lambda">
+        <p>
+          You ask: Why use <m>\lambda</m> instead of <m>c</m> or <m>k</m>? My answer: tradition!
+        </p>
+      </remark>
+          <remark xml:id="rm_eigenvector_nonzero">
+        <p>
+         Note well the important condition that an eigenvector must be nonzero. This means the zero vector <m>\boldzero</m> by definition is <em>not</em> an eigenvector. If we allowed <m>\boldzero</m> as an eigenvector, then the notion of the eigenvalue <em>of an eigenvector</em> would no longer be well-defined. This is because for any linear transformation we have
+         <me>
+           T(\boldzero)=\boldzero,
+         </me>
+         which implies that
+         <me>
+           T(\boldzero)=\lambda\boldzero
+         </me>
+         for all <m>\lambda\in \R</m>.
+        </p>
+      </remark>
+      <example xml:id="eg_eigenvectors_zerotransform">
+        <title>Dilations, zero and identity transformations</title>
+        <statement>
+          <p>
+            Assume <m>V</m> is nonzero. Recall that given a scalar <m>c\in F</m>, we define the dilation <m>c_V\colon V\rightarrow V</m> as <m>c_V(v)=cv</m> for all <m>v\in V</m>. Note that the zero transformation <m>0_V\colon V\rightarrow V</m> and identity transformation  <m>I_V\colon V\rightarrow V</m> are examples of dilations, taking <m>c=0</m> and <m>c=1</m>, respectively.  
+          </p>
+          <p>
+            Find all eigenvalues and eigenvectors of a dilation <m>c_V\colon V\rightarrow V</m>. 
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Since <m>c_V(v)=cv</m> for all <m>v\in V</m>, we see that all <em>nonzero</em> vectors <m>v\in V</m> are eigenvectors of eigenvalue <m>c</m>, and thus that <m>c</m> is the only eigenvalue of <m>c_V</m>. 
+          </p>
+          <p>
+            In particular, consider the cases <m>c=0</m> and <m>c=1</m>, we see that <m>0</m> is the only eigenvalue of the zero transformation, and <m>1</m> is the only eigenvalue of the identity transformation. 
+          </p>
+        </solution>
+      </example>
+      <example xml:id="eg_eigenvector_adhoc_reflection">
+        <title>Reflection</title>
+        <statement>
+          <p>
+          Let <m>\ell</m> be a line in <m>\R^2</m> passing through the origin, and define <m>T\colon \R^2\rightarrow \R^2</m> to be reflection through <m>\ell</m>. (See <xref ref="eg_changebasis_reflection"/>.) Find all eigenvectors and eigenvalues of <m>T</m>. Use a geometric argument. You may assume that <m>T</m> is linear. 
+          </p>
+        </statement>
+        <solution>
+          <p>
+          Since the reflection operator fixes all elements of the line <m>\ell</m>, we have <m>T(\boldx)=\boldx</m> for any <m>\boldx\in \ell</m>. This shows that any nonzero element of <m>\ell</m> is an eigenvectors of <m>T</m> with eigenvalue <m>1</m>.
+        </p>
+        <p>
+          Similarly, since <m>\ell^\perp</m> is orthogonal to <m>\ell</m>, reflection through <m>\ell</m> takes any element <m>\boldx=(x,y)\in \ell^\perp</m> and maps it to <m>-\boldx=(-x,-y)</m>. Thus any nonzero element <m>\boldx\in \ell^\perp</m> is  an eigenvector of <m>T</m> with eigenvalue <m>-1</m>.
+        </p>
+        <p>
+          We claim that these two cases exhaust all eigenvectors of <m>T</m>. Indeed, in general a nonzero vector <m>\boldv</m> lies in the line <m>\ell'=\Span\{\boldx\}</m>, and its reflection <m>T(\boldx)</m> lies in the line <m>\ell''=\Span\{T(\boldx)\}</m>, which itself is the result of reflecting the line <m>\ell'</m> through <m>\ell</m>. Now assume <m>T(\boldx)=\lambda\boldx</m>. We must have <m>\lambda\ne 0</m>, since <m>T(\boldv)\ne \boldzero</m> if <m>\boldx\ne \boldzero</m>;
+          but if <m>\lambda\ne 0</m> it follows that the line <m>\ell=\Span\{\boldx\}</m> and its reflection <m>\ell''=\Span\{T(\boldv)\}</m> are equal. Clearly the only lines that are mapped to themselves by reflection through <m>\ell</m> are <m>\ell</m> and <m>\ell^\perp</m>. Thus if <m>\boldx</m> is an eigenvector of <m>T</m> it must lie in <m>\ell</m> or <m>\ell^\perp</m>.
+        </p>
+        </solution>
+      </example>
+      
+      <example xml:id="eg_eigenvector_adhoc_transposition">
+        <title>Transposition</title>
+        <statement>
+          <p>
+            Consider the linear transformation
+            <md>
+              <mrow>S\colon M_{22} \amp\rightarrow M_{22} </mrow>
+              <mrow> A \amp\mapsto A^T </mrow>
+            </md>.
+            Determine all eigenvectors and eigenvalues of <m>S</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            To be an eigenvector of <m>S</m> a nonzero matrix <m>A</m> must satisfy <m>S(A)=\lambda A</m> for some <m>\lambda\in \R</m>. Using the definition of <m>S</m>, this means
+            <men xml:id="eq_eigenvectors_adhoc_transposition">
+              A^T=\lambda A
+            </men>.
+            We ask for which scalars <m>\lambda\in \R</m> does there exist a nonzero matrix <m>A</m> satisfying <xref ref="eq_eigenvectors_adhoc_transposition"/>. Let's consider some specific choices of <m>\lambda</m>.
+          </p>
+          <case>
+           <title>Case: <m>\lambda=1</m></title>
+          <p>
+          In this case <xref ref="eq_eigenvectors_adhoc_transposition"/> reads <m>A^T=A</m>. Thus the eigenvectors of <m>S</m> with eigenvalue <m>1</m> are precisely the nonzero  <em>symmetric</em> matrices: <ie />,
+          <me>
+            A=\begin{amatrix}[rr]a\amp b\\ b\amp c  \end{amatrix}
+          </me>.
+          </p>
+          </case>
+          <case>
+           <title>Case: <m>\lambda= -1</m></title>
+          <p>
+          For this choice of <m>\lambda</m> we seek nonzero matrices satisfying <m>S(A)=A^T=(-1)A=-A</m>. These are precisely the nonzero <em>skew-symmetric</em> matrices: <ie />,
+          <me>
+            A=\begin{amatrix}[rr]0\amp a\\ -a \amp 0  \end{amatrix}
+          </me>.
+          </p>
+          </case>
+          <case>
+           <title>Case: <m>\lambda\ne \pm 1</m></title>
+          <p>
+          Suppose <m>A=\begin{amatrix}[cc]a\amp b \\ c\amp d  \end{amatrix}</m> satisfies <m>A^T=\lambda A</m>. Equating the entries of these two matrices yields the system
+          <md>
+            <mrow> a \amp =\lambda a </mrow>
+            <mrow> d \amp = \lambda d</mrow>
+            <mrow> b \amp =\lambda c </mrow>
+            <mrow> c \amp =\lambda b </mrow>
+          </md>.
+          The first two equations imply <m>a=d=0</m>, using the fact that <m>\lambda\ne 1</m>. The second two equations imply further that <m>b=\lambda^2 b</m> and <m>c=\lambda^2 c</m>. Since <m>\lambda\ne \pm 1</m>, <m>\lambda^2\ne 1</m>. It follows that <m>b=c=0</m>. We conclude that for <m>\lambda\ne \pm 1</m>, if <m>A^T=\lambda A</m>, then <m>A=\boldzero</m>. It follows that <m>\lambda</m> is not an eigenvalue of <m>S</m> in this case.
+          </p>
+          </case>
+          <p>
+            In summation, our analysis shows that the transposition operator <m>S</m> has exactly two eigenvalues, <m>\lambda_1=1</m> and <m>\lambda_2=-1</m>, that the eigenvectors of <m>S</m> with eigenvalue 1 are the nonzero symmetric matrices, and that the eigenvalues of <m>S</m> with eigenvalue <m>-1</m> are the nonzero skew-symmetric matrices.
+          </p>
+        </solution>
+      </example>
+      <example xml:id="eg_eigenvectors_adhoc_derivative">
+        <title>Differentiation</title>
+        <statement>
+          <p>
+            Let <m>T\colon C^\infty(\R)\rightarrow C^\infty(\R)</m> be defined as <m>T(f)=f'</m>. Find all eigenvalues and eigenvectors of <m>T</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            An eigenvector of <m>T</m> is a nonzero function <m>f</m> satisfying <m>T(f)=\lambda f</m> for some <m>\lambda</m>. By definition, this means
+            <men xml:id="eq_eigenvectors_adhoc_derivative">
+              f'=\lambda f
+            </men>
+            for some <m>\lambda\in\R</m>. Thus <m>\lambda</m> is an eigenvalue of <m>T</m> if and only if the differential equation <xref ref="eq_eigenvectors_adhoc_derivative"/> has a nonzero solution. This is true for all <m>\lambda\in \R</m>! Indeed for any <m>\lambda</m> the exponential function <m>f(x)=e^{\lambda x}</m> satisfies <m>f'(x)=\lambda e^{\lambda x}=\lambda f(x)</m> for all <m>x\in \R</m>. Furthermore, any solution to <xref ref="eq_eigenvectors_adhoc_derivative"/> is of the form <m>f(x)=ce^{\lambda x}</m> for some <m>c\in \R</m>.
+            We conclude that (a) every <m>\lambda\in \R</m> is an eigenvalue of <m>T</m>, and (b) for a given <m>\lambda</m>, the <m>\lambda</m>-eigenvectors of <m>T</m> are precisely the functions of the form <m>f(x)=ce^{\lambda x}</m> for some <m>c\ne 0</m>.
+          </p>
+        </solution>
+      </example>
+    </subsection>
+    <subsection xml:id="ss_">
+    <title>Eigenspaces</title>
+    <p>
+        The next theorem and its corollary turn out to be crucial for computing eigenvalues and eigenvectors. They are simple consequences of the observation that <m>v</m> satisfies <m>T(v)=\lambda v</m> if and only if <m>(T-\lambda I_V)(v)=\boldzero</m>. 
+    </p>
+    <theorem xml:id="th_eigenvalues">
+    <title>Eigenvalues and null spaces</title>
+    <statement>
+    <p>
+    Let <m>T\in \mathcal{L}(V)</m>, and let <m>\lambda \in F</m>. The following statements are equivalent. 
+    <ol>
+        <li>
+            <p>
+                <m>\lambda</m> is an eigenvalue of <m>T</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>T-\lambda I_V</m> is not injective. 
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>\NS (T-\lambda I_V)\ne \{\boldzero\}</m>. 
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <proof>
+    <p>
+        We have 
+        <md>
+            <mrow>\lambda \text{ eigenvalue of } T \amp  \iff T(v)=\lambda v \text{ for some nonzero} v\in V</mrow>
+            <mrow> \amp\iff T(v)=\lambdaI_V(v) \text{ for some nonzero} v\in V </mrow>
+            <mrow> \amp \iff (T-\lambda I_V)(v)=\boldzero \text{ for some nonzero} v\in V</mrow>
+            <mrow> \amp \iff \NS(T-\lambda I_V)\ne \{\boldzero\}</mrow>
+            <mrow> \amp \iff T-\lambda I_V \text{ not injective}</mrow> 
+        </md>.
+    </p>
+    </proof>
+    </theorem>
+    <p>
+        The following corollary elaborates on <xref ref="th_eigenvalues"/> in the special case where <m>V</m> is finite dimensional. 
+    </p>
+    <corollary xml:id="cor_eigenvalues">
+        <statement>
+            <p>
+                Let <m>V</m> be finite dimensional, let <m>T\in\mathcal{L}(V)</m>, and let <m>\lambda\in F</m>. The following statements are equivalent. 
+            <ol>
+                <li>
+                    <p>
+                        <m>\lambda</m> is an eigenvalue of <m>T</m>. 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>T-\lambda I_V</m> is not injective. (Equivalently, <m>\NS (T-\lambda I_V)\ne \{\boldzero\}</m>.) 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>T-\lambda I_V</m> is not surjective. (Equivalently, <m>\im (T-\lambda I_V)\ne V</m>.)
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>T-\lambda I_V</m> is not invertible. 
+                    </p>
+                </li>
+            </ol>
+            </p>
+        </statement>
+        <proof>
+            <p>
+                Let <m>S=T-\lambda I_V</m>. The additional equivalent statements we obtain when <m>\dim V&lt;\infty</m> are the result of the fact (special to this setting) that <m>S</m> is invertible if and only if it is injective if and only if it is surjective. 
+            </p>
+        </proof>
+    </corollary>
+    <p>
+        From <xref ref="th_eigenvalues"/> and its proof, we see that the <m>\lambda</m>-eigenvectors of a linear operator <m>T\in \mathcal{L}(V)</m> are precisely the <em>nonzero</em> elements of <m>\NS(T-\lambda I_V)</m>. This motivates the following definition. 
+    </p>
+    <definition xml:id="d_eigenspaces">
+    <title>Eigenspaces</title>
+    <statement>
+    <p>
+    Let <m>T\in \mathcal{L}(V)</m>. For all <m>\lambda\in F</m> we define the <term><m>\lambda</m>-eigenspace of <m>T</m></term>, denoted <m>E(\lambda, T)</m>, as 
+    <men xml:id="eq_eigenspace">E(\lambda, T)=\NS(T-\lambda I_V)</men>. 
+    Note that the nonzero elements of <m>E(\lambda, T)</m> are precisely the <m>\lambda</m>-eigenvectors of <m>T</m>, and in particular, that <m>\lambda</m> is an eigenvalue of <m>T</m> if and only if <m>E(\lambda, T)</m> is a nonzero subspace of <m>V</m>. 
+    </p>
+    </statement>
+    </definition>
+    <remark xml:id="rm_eigenspaces">
+        <title>Eigenspaces as packets of eigenvectors</title>
+        <p>
+          It is important to realize that if <m>\lambda</m> is an eigenvalue of a linear operator <m>T</m>, then there is not just one <m>\lambda</m>-eigenvector, but rather an entire subspace <m>E(\lambda, T)</m> of eigenvectors: that is, each of the nonzero elements of <m>E(\lambda, T)</m> is an eigenvector with eigenvalue <m>\lambda</m>. Thus every linear operator has associated to it various <q>packets</q> of eigenvectors <m>E(\lambda, T)</m> of varying size, as measured by <m>\dim E(\lambda, T)</m>. 
+        </p>
+      </remark>
+      <example xml:id="eg_transposition_eigenspace">
+      <title>Eigenspaces of transposition</title>
+      <statement>
+      <p>
+      Let <m>S\colon F^{n,n}\rightarrow F^{n,n}</m> be defined as <m>S(A)=A^T</m>. From our analysis in <xref ref="eg_eigenvector_adhoc_transposition"/> we see that the eigenspaces of <m>S</m> are described as follows: 
+      <md>
+        <mrow>E(1,S) \amp =\{A\in F^{n,n}\colon A^T=A\}</mrow>
+        <mrow>E(-1,S) \amp =\{A\in F^{n,n}\colon A^T=-A\}</mrow>
+        <mrow>E(\lambda, S) \amp =\{\boldzero\} \text{ for } \lambda\ne \pm 1</mrow>
+      </md>.
+      Since <m>E(1,S)</m> and <m>E(-1,S)</m> are the only <em>nonzero</em> eigenspaces of <m>S</m>, we see (again) that <m>1</m> and <m>-1</m> are the only eigenvalues of <m>S</m>. 
+      </p>
+      </statement>
+      </example>
+      <example xml:id="eg_diff_eigenspace">
+      <title>Eigenspaces of differentiation</title>
+      <statement>
+      <p>
+      Let <m>I</m> be an interval in <m>\R</m>, and let <m>T\colon C^\infty(I)\rightarrow C^{\infty}(I)</m> be defined as <m>T(f)=f'</m>. From our analysis in <xref ref="eg_eigenvectors_adhoc_derivative"/> we conclude that for all <m>\lambda\in \R</m>, we have 
+      <me>
+        E(\lambda, T)=\{f\in C^\infty(I)\colon f(x)=ce^{\lambda x} \text{ for some } c\in \R\}=\Span (f_\lambda)
+      </me>,
+      where <m>f_\lambda(x)=e^{\lambda x}</m>. Since <m>f_\lambda\ne 0</m> for all <m>\lambda</m>, we see that each eigenspace of <m>T</m> is 1-dimensional, spanned by <m>f_\lambda</m>. Thus the eigenvectors of <m>T</m> are packaged in the uncountably many eigenspaces <m>E(\lambda, T)=\Span(f_\lamnda)</m>.
+      </p>
+      </statement>
+      
+      </example>
+      
+      
+    </subsection>
+
+</section>
