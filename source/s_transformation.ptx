@@ -591,6 +591,25 @@
       </p>
       </solution>
       </example>
+      <example xml:id="eg_transposition">
+      <title>Matrix transpose</title>
+      <statement>
+      <p>
+      Define <m>S\colon F^{m,n}\rightarrow F^{n,m}</m> as <m>S(A)=A^T</m>: <ie/>, <m>S</m> is the transpose operation. Prove that <m>S</m> is a linear transformation. 
+      </p>
+      </statement>
+      <solution>
+      <p>
+      The linearity of <m>S</m> follows from elementary properties of the transpose operator. Using the one-step technique, for any <m>A,A'\in F^{m,n}</m> and scalars <m>c,d\in F</m>, we have 
+      <md>
+        <mrow>S(cA+dA') \amp =(cA+dA')^T</mrow>
+        <mrow> \amp =cA^T+d(A')^T \amp (\text{prop. of transp.})</mrow>
+        <mrow> \amp =cS(A)+dS(A')</mrow>
+      </md>.
+      This proves <m>S</m> is linear. 
+      </p>
+      </solution>
+      </example>
       
       <example xml:id="eg_diff_linear">
       <title>Differentiation</title>
@@ -606,7 +625,13 @@
       </statement>
       <solution>
       <p>
-      
+      The linearity of <m>T</m> follows from elementary properties of differentiation. We use the one-step technique. For any <m>f,g\in C^1(I)</m> and scalars <m>c,d\in \R</m>, we have 
+      <md>
+        <mrow>T(cf+dg) \amp = (cf+dg)'</mrow>
+        <mrow> \amp =cf'+dg' \amp (\text{props. of diff.})</mrow>
+        <mrow> \amp =cT(f)+dT(g)</mrow>
+      </md>.
+      This proves <m>T</m> is linear. 
       </p>
       </solution>
     </example>
@@ -624,7 +649,12 @@
       </statement>
       <solution>
       <p>
-      
+      Similarly to the above examples, the linearity of <m>T</m> follows from familiar properties of the integral: for all <m>f,g\in C([a,b])</m> and <m>c,d\in \R</m>, we have 
+      <md>
+        <mrow>T(cf+dg) \amp =\int_a^b cf+dg\, dx</mrow>
+        <mrow> \amp =c\int_a^bf\, dx+d\int_a^bg\, dx</mrow>
+        <mrow> \amp =cT(f)+dT(g)</mrow>
+      </md>. 
       </p>
       </solution>
       </example>
@@ -642,7 +672,13 @@
       </statement>
       <solution>
       <p>
-      
+      For all <m>f,g\in F^X</m> and scalars <m>c,d\in F</m>, we have 
+      <md>
+        <mrow>T(cf+dg) \amp =((cf+dg)(x_1),(cf+dg)(x_2),\dots, (cf+dg)(x_n))</mrow>
+        <mrow> \amp = (cf(x_1)+dg(x_1),cf(x_2)+dg(x_2),\dots, cf(x_n)+dg(x_n))</mrow>
+        <mrow> \amp =c(f(x_1),f(x_2),\dots, f(x_n))+d(g(x_1),g(x_2),\dots, g(x_n))</mrow>
+        <mrow> \amp =cT(f)+dT(g)</mrow>
+      </md>.
       </p>
       </solution>
       </example>
@@ -660,7 +696,13 @@
         </statement>
         <solution>
         <p>
-        
+        We prove that <m>T_\ell</m> is a linear transformation, leaving the proof for <m>T_r</m> to the reader. Using tuple notation, we have <m>T_\ell((a_n)_{n=1}^\infty)=(a_{n+1})_{n=1}^\infty</m>. Thus, for any tuples <m>(a_n)_{n=1}^\infty, (b_n)_{n=1}^\infty\in F^\infty</m> and scalars <m>c,d\in F</m>, we have 
+        <md>
+          <mrow>T_\ell(c(a_n)_{n=1}^\infty+d(b_n)_{n=1}^\infty) \amp = T_\ell(ca_n+db_n)_{n=1}^\infty</mrow>
+          <mrow> \amp =(ca_{n+1}+db_{n+1})_{n=1}^{\infty}</mrow>
+          <mrow> \amp =c(a_{n+1})_{n=1}^\infty+d(b_{n+1})_{n=1}^\infty</mrow>
+          <mrow> \amp =cT_\ell((a_n)_{n=1}^\infty)+dT((b_n)_{n=1}^\infty)</mrow>
+        </md>.
         </p>
         </solution>
         </example>

@@ -2,7 +2,13 @@
 
 <section xml:id="s_isom" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Isomorphisms</title>
-<convention>
+    <p>
+        The word <q>isomorphism</q> is derived from the Greek terms <foreign>iso</foreign>, meaning <q>same</q>, and <foreign>morphe</foreign>, meaning <q>form</q>. As we will see, two isomorphic vector spaces <m>V</m> and <m>W</m> are essentially the same creature, at least as far as linear algebraic properties are concerned. Furthermore, an isomorphism <m>T\colon V\rightarrow W</m> provides a one-to-one correspondence between them: a dictionary that allows us to translate statements about <m>V</m> to statements about <m>W</m>, and vice versa. 
+    </p>
+    <p>
+        The definition of an isomorphism will involve the function composition operation. As such, we begin with some notational conventions and elementary properties of compositions of linear maps. 
+    </p>
+    <convention>
     <title>Composition of linear transformations</title>
     <p>
         Given linear transformations <m>T\colon U\rightarrow V</m> and <m>S\colon V\rightarrow W</m>, we will denote their composition <m>S\circ T\colon U\rightarrow W</m> as <m>ST</m>. 
@@ -40,6 +46,13 @@ Let <m>T,T_1,T_2\in \mathcal{L}(U,V)</m>, <m>S,S_1,S_2\in \mathcal{L}(V,W)</m>, 
 </statement>
 <proof>
 <p>
+    The proofs of (2)-(4) follow pretty much directly from the definitions of the function operations involved and basic set-theoretic properties of functions and their compositions. As such we content ourselves with a proof only of (1). Assume <m>T\in\mathcal{L}(U,V)</m> and <m>S\in \mathcal{L}(V,W)</m>. We use the one-step technique to show the composition <m>ST\colon U\rightarrow W</m> is linear. Given any <m>v,v'\in V</m> and scalars <m>c,d\in F</m>, we have 
+    <md>
+        <mrow>ST(cv+dv') \amp = S(T(cv+dv')) \amp (\text{def. of comp.})</mrow>
+        <mrow> \amp =S(cT(v)+dT(v')) \amp (T \text{ linear}) </mrow>
+        <mrow> \amp = cS(T(v))+dS(T(v')) \amp (S \text{ linear})</mrow>
+        <mrow> \amp =cST(v)+dST(v')</mrow>
+    </md>.
 </p>
 </proof>
 </theorem>
@@ -86,9 +99,27 @@ Let <m>T\in \mathcal{L}(V,W)</m>. The following statements are equivalent.
 </statement>
 <proof>
 <p>
+    The implication (1)<m>\implies</m>(2) follows directly from the definition. Furthermore, the equivalence (2)<m>\iff</m>(3) is a purely set-theoretic result relating invertible and bijective functions. It remains then only to show that (2)<m>\implies</m>(1): <ie/>, that if <m>T</m> is linear and invertible, then its inverse <m>T^{-1}</m> is itself linear. 
+</p>
+<p>
+    Assume <m>T</m> is linear and invertible. We will use the one-step technique to prove <m>T^{-1}</m> is linear. First, given any <m>w,w'\in W</m>, since <m>T</m> and <m>T^{-1}</m> are inverses of one another, there are vectors <m>v,v'\in V</m> satisfying 
+    <md>
+        <mrow>T(v) \amp =w \amp T^{-1}(w)\amp= v</mrow>
+        <mrow>T(v') \amp =w' \amp T^{-1}(w')\amp= v'</mrow>
+    </md>.
+    It then follows that given any scalars <m>c,d\in F</m>, we have 
+    <md>
+        <mrow>T^{-1}(cw+dw') \amp = T^{-1}(cT(v)+dT(v'))</mrow>
+        <mrow> \amp =T^{-1}(T(cv+dv')) \amp (T \text{ linear})</mrow>
+        <mrow> \amp =cv+dv' \amp (T^{-1}T=I_V)</mrow>
+        <mrow> \amp =cT^{-1}(w)+dT^{-1}(w')</mrow>
+    </md>.
 </p>
 </proof>
 </theorem>
+<p>
+    The equivalences in <xref ref="th_isom"/> give us a number of potential approaches to deciding whether a linear transformation is an isomorphism, as we detail in the next procedure. 
+</p>
 <algorithm xml:id="proc_isomorphism">
     <title>Isomorphisms</title>
     <statement>
@@ -134,19 +165,7 @@ Let <m>T\in \mathcal{L}(V,W)</m>. The following statements are equivalent.
         </p>
     </statement>
 </algorithm>
-<example xml:id="eg_isom_matrix">
-<title>Matrix transformations</title>
-<statement>
-<p>
-Prove that a matrix transformation <m>T_A\colon F^n\rightarrow F^m</m> is an isomorphism if and only if <m>A</m> is invertible. 
-</p>
-</statement>
-<solution>
-<p>
 
-</p>
-</solution>
-</example>
 <example xml:id="eg_isom_transposition">
 <title>Transposition</title>
 <statement>
@@ -156,7 +175,12 @@ Define <m>S\colon F^{m,n}\rightarrow F^{n,m}</m> as <m>S(A)=A^T</m>. Prove that 
 </statement>
 <solution>
 <p>
-
+We saw in <xref ref="eg_transposition"/> the the transposition operation is linear. To show it is an isomorphism, we produce an inverse. Define <m>S^{-1}\colon F^{n,m}\rightarrow F^{m,n}</m> as <m>S^{-1}(B)=A^T</m>. (Note that even though the rule for <m>S^{-1}</m> is the same as that for <m>S</m> (<ie/>, take the transpose), we do not necessarily have <m>S=S^{-1}</m> as functions since their domains (and codomains) are not necessarily equal.) We have 
+<md>
+    <mrow>SS^{-1}(B) \amp =S(B^T)=(B^T)^T=B \text{ for all } B\in F^{n,m}</mrow>
+    <mrow>S^{-1}S(A) \amp =S(A^T)=(A^T)^T=A \text{ for all } A\in F^{m,n}</mrow>
+</md>,
+proving that the two maps are indeed inverses of one another. We conclude that <m>S</m> is invertible, and hence an isomorphism. 
 </p>
 </solution>
 </example>
@@ -174,7 +198,7 @@ Define <m>S\colon F^{m,n}\rightarrow F^{n,m}</m> as <m>S(A)=A^T</m>. Prove that 
 </statement>
 <solution>
 <p>
-
+We showed in <xref ref="eg_poly_eval"/> that this linear transformation is bijective, and hence an isomorphism. 
 </p>
 </solution>
 </example>
@@ -222,6 +246,18 @@ Let <m>T\colon V\rightarrow W</m> be an isomorphism.
 </statement>
 <proof>
 <p>
+    Most of the statements of this theorem follow almost immediately from the observation that since <m>T</m> is an isomorphism we have 
+    <me>
+        \sum_{i\in I}c_iv_i=v \iff \sum_{i\in I}c_iT(v_i)=T(v)
+    </me>
+    for any linear combination expression <m>\sum_{i\in I}c_iv_i=v</m> in <m>V</m>, along with the analogous statement for <m>T^{-1}</m>. Thus, for example, we have 
+    <md>
+        <mrow>w\in T(\Span S) \amp \iff w=T(v) \text{ for some } v\in \Span S</mrow>
+        <mrow> \amp \iff w=T(\sum_{j=1}^nc_{i_j}v_{i_j})=\sum_{j=1}^nc_{i_j}T(v_{i_j}) </mrow>
+        <mrow> \amp \iff w\in \Span T(S)</mrow>
+    </md>.
+    This proves (2). The proof of (1) is similar, and (3) and (4) follow immediately from (1) and (2). Statement (5) is a result of the fact that <m>T(U)=\im T\vert_U</m> and <m>U=\im T^{-1}\vert_{T(U)}</m>. We leave (6) as an exercise for the reader. 
+    
 </p>
 </proof>
 </theorem>
@@ -245,6 +281,36 @@ Let <m>T\colon V\rightarrow W</m> be an isomorphism.
         </p>
     </statement>
 </corollary>
-
+<example xml:id="eg_isom_matrix">
+    <title>Matrix transformations</title>
+    <statement>
+    <p>
+    Prove that a matrix transformation <m>T_A\colon F^n\rightarrow F^m</m> is an isomorphism if and only if <m>m=n</m> and <m>A\in F^{n,n}</m> is invertible. 
+    </p>
+    </statement>
+    <solution>
+    <p>
+    We know from <xref ref="eg_matrix_transformation"/> that matrix transformations are linear. 
+    </p>
+    <p>
+        Assume <m>m=n</m> and  <m>A\in F^{n,n}</m> is invertible. We claim that <m>T_{A^{-1}}=T_A^{-1}</m>. Indeed, for all <m>\boldx\in F^n</m>, we have 
+        <md>
+            <mrow>T_AT_{A^{-1}}\boldx \amp =T_A(A^{-1}\boldx)</mrow>
+            <mrow> \amp =AA^{-1}\boldx=\boldx</mrow>
+            <mrow>T_{A^{-1}}T_{A}\boldx \amp =T_{A^{-1}}(A\boldx)</mrow>
+            <mrow> \amp =A^{-1}A\boldx=\boldx</mrow>
+        </md>.
+        This proves that <m>T_AT_{A^{-1}}=T_{A^{-1}}T_A=I_V</m> and thus that <m>T_{A^{-1}}=T_A^{-1}</m>, as claimed. We conclude <m>T_A</m> is an isomorphism. 
+    </p>
+    <p>
+        Lastly assume <m>T_A</m> is an isomorphism. By <xref ref="cor_isom_finite_dim"/>, we conclude that <m>\dim F^n=\dim F^m</m>, and hence that <m>n=m</m>. Since <m>T_A</m> is an isomorphism, it has a linear inverse <m>S\colon F^n\rightarrow F^n</m>; since all linear transformations of <m>F^n</m> are matrix transformations, we have <m>S=T_B</m> for some matrix <m>B\in F^{n,n}</m>. We have 
+        <md>
+            <mrow>T_AT_B=I_{F^n} \amp \implies AB\boldx=\boldx \text{ for all } \boldx\in F^n\implies AB=I</mrow>
+            <mrow>T_BT_A=I_{F^n} \amp \implies BA\boldx=\boldx \text{ for all } \boldx\in F^n\implies BA=I</mrow>
+        </md>.
+        Thus <m>B=A^{-1}</m>, showing that <m>A</m> is invertible. 
+    </p>
+    </solution>
+    </example>
 
 </section>
