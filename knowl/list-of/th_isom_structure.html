@@ -12,7 +12,7 @@
 </head>
 <body class="ignore-math">
 <article class="theorem theorem-like"><h3 class="heading">
-<span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.12.10</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Isomorphisms preserve structure.</span>
+<span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.12.9</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Isomorphisms preserve structure.</span>
 </h3>
 <div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
 <div class="para">Let <span class="process-math">\(T\colon V\rightarrow W\)</span> be an isomorphism.</div>
@@ -38,6 +38,22 @@ T(W)=T(\Span S)=\Span T(S)=\Span (T(v_i))_{i\in I}\text{.}\tag{1.29}
 <li><div class="para">We have <span class="process-math">\(V=V_1\oplus V_2\)</span> for subspaces <span class="process-math">\(V_i\subseteq V\)</span> if and only if <span class="process-math">\(W=T(V_1)\oplus T(V_2)\text{.}\)</span>
 </div></li>
 </ol>
-</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para"></div></article></details><span class="incontext"><a class="internal" href="s_isom.html#th_isom_structure">in-context</a></span>
+</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">Most of the statements of this theorem follow almost immediately from the observation that since <span class="process-math">\(T\)</span> is an isomorphism we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{i\in I}c_iv_i=v \iff \sum_{i\in I}c_iT(v_i)=T(v)
+\end{equation*}
+</div>
+<div class="para">for any linear combination expression <span class="process-math">\(\sum_{i\in I}c_iv_i=v\)</span> in <span class="process-math">\(V\text{,}\)</span> along with the analogous statement for <span class="process-math">\(T^{-1}\text{.}\)</span> Thus, for example, we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+w\in T(\Span S) \amp \iff w=T(v) \text{ for some } v\in \Span S\\
+\amp \iff w=T(\sum_{j=1}^nc_{i_j}v_{i_j})=\sum_{j=1}^nc_{i_j}T(v_{i_j}) \\
+\amp \iff w\in \Span T(S)\text{.}
+\end{align*}
+</div>
+<div class="para">This proves (2). The proof of (1) is similar, and (3) and (4) follow immediately from (1) and (2). Statement (5) is a result of the fact that <span class="process-math">\(T(U)=\im T\vert_U\)</span> and <span class="process-math">\(U=\im T^{-1}\vert_{T(U)}\text{.}\)</span> We leave (6) as an exercise for the reader.</div>
+</div></article></details><span class="incontext"><a class="internal" href="s_isom.html#th_isom_structure">in-context</a></span>
 </body>
 </html>

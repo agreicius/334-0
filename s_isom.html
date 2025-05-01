@@ -477,10 +477,12 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:xlink="http://www.w3.org/1999/xlink" class="section" id="s_isom"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">1.12</span><span class="space"> </span><span class="title">Isomorphisms</span>
 </h2>
-<article class="convention remark-like" id="s_isom-2"><h3 class="heading">
+<div class="para" id="s_isom-2">The word “isomorphism” is derived from the Greek terms <i class="foreign">iso</i>, meaning “same”, and <i class="foreign">morphe</i>, meaning “form”. As we will see, two isomorphic vector spaces <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> are essentially the same creature, at least as far as linear algebraic properties are concerned. Furthermore, an isomorphism <span class="process-math">\(T\colon V\rightarrow W\)</span> provides a one-to-one correspondence between them: a dictionary that allows us to translate statements about <span class="process-math">\(V\)</span> to statements about <span class="process-math">\(W\text{,}\)</span> and vice versa.</div>
+<div class="para" id="s_isom-3">The definition of an isomorphism will involve the function composition operation. As such, we begin with some notational conventions and elementary properties of compositions of linear maps.</div>
+<article class="convention remark-like" id="s_isom-4"><h3 class="heading">
 <span class="type">Convention</span><span class="space"> </span><span class="codenumber">1.12.1</span><span class="period">.</span><span class="space"> </span><span class="title">Composition of linear transformations.</span>
 </h3>
-<div class="para" id="s_isom-2-2">Given linear transformations <span class="process-math">\(T\colon U\rightarrow V\)</span> and <span class="process-math">\(S\colon V\rightarrow W\text{,}\)</span> we will denote their composition <span class="process-math">\(S\circ T\colon U\rightarrow W\)</span> as <span class="process-math">\(ST\text{.}\)</span>
+<div class="para" id="s_isom-4-2">Given linear transformations <span class="process-math">\(T\colon U\rightarrow V\)</span> and <span class="process-math">\(S\colon V\rightarrow W\text{,}\)</span> we will denote their composition <span class="process-math">\(S\circ T\colon U\rightarrow W\)</span> as <span class="process-math">\(ST\text{.}\)</span>
 </div></article><article class="theorem theorem-like" id="th_composition"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.12.2</span><span class="period">.</span><span class="space"> </span><span class="title">Composition of linear transformations.</span>
 </h3>
@@ -497,14 +499,24 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <span class="process-math">\(TI_U=T\)</span> and <span class="process-math">\(I_VT=T\text{.}\)</span>
 </div></li>
 </ol>
-</div></article><details id="th_composition-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_composition-3-1"></div></article></details><article class="definition definition-like" id="d_isom"><h3 class="heading">
+</div></article><details id="th_composition-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_composition-3-1">
+<div class="para">The proofs of (2)-(4) follow pretty much directly from the definitions of the function operations involved and basic set-theoretic properties of functions and their compositions. As such we content ourselves with a proof only of (1). Assume <span class="process-math">\(T\in\mathcal{L}(U,V)\)</span> and <span class="process-math">\(S\in \mathcal{L}(V,W)\text{.}\)</span> We use the one-step technique to show the composition <span class="process-math">\(ST\colon U\rightarrow W\)</span> is linear. Given any <span class="process-math">\(v,v'\in V\)</span> and scalars <span class="process-math">\(c,d\in F\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="th_composition-3-1-6">
+\begin{align*}
+ST(cv+dv') \amp = S(T(cv+dv')) \amp (\text{def. of comp.})\\
+\amp =S(cT(v)+dT(v')) \amp (T \text{ linear}) \\
+\amp = cS(T(v))+dS(T(v')) \amp (S \text{ linear})\\
+\amp =cST(v)+dST(v')\text{.}
+\end{align*}
+</div>
+</div></article></details><article class="definition definition-like" id="d_isom"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.12.3</span><span class="period">.</span><span class="space"> </span><span class="title">Isomorphism.</span>
 </h3>
 <div class="para" id="d_isom-2-1">A linear map <span class="process-math">\(T\in \mathcal{L}(V,W)\)</span> is an <dfn class="terminology">isomorphism</dfn> if there is a linear transformation <span class="process-math">\(S\in \mathcal{L}(W,V)\)</span> satisfying <span class="process-math">\(ST=I_V\)</span> and <span class="process-math">\(TS=I_W\text{.}\)</span> When this is the case we call <span class="process-math">\(S\)</span> the <dfn class="terminology">inverse</dfn> of <span class="process-math">\(T\text{,}\)</span> and write <span class="process-math">\(S=T^{-1}\text{.}\)</span> Two vector spaces <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> are <dfn class="terminology">isomorphic</dfn> if there is an isomorphism <span class="process-math">\(T\colon V\rightarrow W\text{.}\)</span>
-</div></article><article class="remark remark-like" id="s_isom-5"><h3 class="heading">
+</div></article><article class="remark remark-like" id="s_isom-7"><h3 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.12.4</span><span class="period">.</span><span class="space"> </span><span class="title">Inverse functions.</span>
 </h3>
-<div class="para" id="s_isom-5-2">Using the language of inverse functions, we see that a linear transformation <span class="process-math">\(T\colon V\rightarrow W\)</span> is an isomorphism if (a) it is invertible, and (b) its inverse <span class="process-math">\(T^{-1}\colon W\rightarrow V\)</span> is itself a linear transformation. As we will see in the next theorem, this second condition is automatic.</div></article><article class="theorem theorem-like" id="th_isom"><h3 class="heading">
+<div class="para" id="s_isom-7-2">Using the language of inverse functions, we see that a linear transformation <span class="process-math">\(T\colon V\rightarrow W\)</span> is an isomorphism if (a) it is invertible, and (b) its inverse <span class="process-math">\(T^{-1}\colon W\rightarrow V\)</span> is itself a linear transformation. As we will see in the next theorem, this second condition is automatic.</div></article><article class="theorem theorem-like" id="th_isom"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.12.5</span><span class="period">.</span><span class="space"> </span><span class="title">Isomorphisms.</span>
 </h3>
 <div class="para logical" id="th_isom-2-1">
@@ -517,7 +529,26 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <li id="th_isom-2-1-2-3"><div class="para" id="th_isom-2-1-2-3-1">
 <span class="process-math">\(T\)</span> is bijective.</div></li>
 </ol>
-</div></article><details id="th_isom-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_isom-3-1"></div></article></details><article class="algorithm theorem-like" id="proc_isomorphism"><h3 class="heading">
+</div></article><details id="th_isom-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_isom-3-1">The implication (1)<span class="process-math">\(\implies\)</span>(2) follows directly from the definition. Furthermore, the equivalence (2)<span class="process-math">\(\iff\)</span>(3) is a purely set-theoretic result relating invertible and bijective functions. It remains then only to show that (2)<span class="process-math">\(\implies\)</span>(1): i.e., that if <span class="process-math">\(T\)</span> is linear and invertible, then its inverse <span class="process-math">\(T^{-1}\)</span> is itself linear.</div>
+<div class="para logical" id="th_isom-3-2">
+<div class="para">Assume <span class="process-math">\(T\)</span> is linear and invertible. We will use the one-step technique to prove <span class="process-math">\(T^{-1}\)</span> is linear. First, given any <span class="process-math">\(w,w'\in W\text{,}\)</span> since <span class="process-math">\(T\)</span> and <span class="process-math">\(T^{-1}\)</span> are inverses of one another, there are vectors <span class="process-math">\(v,v'\in V\)</span> satisfying</div>
+<div class="displaymath process-math" id="th_isom-3-2-7">
+\begin{align*}
+T(v) \amp =w \amp T^{-1}(w)\amp= v\\
+T(v') \amp =w' \amp T^{-1}(w')\amp= v'\text{.}
+\end{align*}
+</div>
+<div class="para">It then follows that given any scalars <span class="process-math">\(c,d\in F\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="th_isom-3-2-9">
+\begin{align*}
+T^{-1}(cw+dw') \amp = T^{-1}(cT(v)+dT(v'))\\
+\amp =T^{-1}(T(cv+dv')) \amp (T \text{ linear})\\
+\amp =cv+dv' \amp (T^{-1}T=I_V)\\
+\amp =cT^{-1}(w)+dT^{-1}(w')\text{.}
+\end{align*}
+</div>
+</div></article></details><div class="para" id="s_isom-9">The equivalences in <a href="s_isom.html#th_isom" class="xref" data-knowl="./knowl/xref/th_isom.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.12.5: Isomorphisms">Theorem 1.12.5</a> give us a number of potential approaches to deciding whether a linear transformation is an isomorphism, as we detail in the next procedure.</div>
+<article class="algorithm theorem-like" id="proc_isomorphism"><h3 class="heading">
 <span class="type">Procedure</span><span class="space"> </span><span class="codenumber">1.12.6</span><span class="period">.</span><span class="space"> </span><span class="title">Isomorphisms.</span>
 </h3>
 <div class="para logical" id="proc_isomorphism-2-1">
@@ -544,16 +575,21 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 </div>
 </li>
 </ol>
-</div></article><article class="example example-like" id="eg_isom_matrix"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.12.7</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix transformations.</span>
-</h3>
-<div class="para" id="eg_isom_matrix-2-1">Prove that a matrix transformation <span class="process-math">\(T_A\colon F^n\rightarrow F^m\)</span> is an isomorphism if and only if <span class="process-math">\(A\)</span> is invertible.</div>
-<div class="solutions"><details id="eg_isom_matrix-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_isom_matrix-3-1"></div></div></details></div></article><article class="example example-like" id="eg_isom_transposition"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.12.8</span><span class="period">.</span><span class="space"> </span><span class="title">Transposition.</span>
+</div></article><article class="example example-like" id="eg_isom_transposition"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.12.7</span><span class="period">.</span><span class="space"> </span><span class="title">Transposition.</span>
 </h3>
 <div class="para" id="eg_isom_transposition-2-1">Define <span class="process-math">\(S\colon F^{m,n}\rightarrow F^{n,m}\)</span> as <span class="process-math">\(S(A)=A^T\text{.}\)</span> Prove that <span class="process-math">\(S\)</span> is an isomorphism.</div>
-<div class="solutions"><details id="eg_isom_transposition-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_isom_transposition-3-1"></div></div></details></div></article><article class="example example-like" id="eg_isom_evaluation"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.12.9</span><span class="period">.</span><span class="space"> </span><span class="title">Evaluation.</span>
+<div class="solutions"><details id="eg_isom_transposition-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_isom_transposition-3-1">
+<div class="para">We saw in <a href="s_transformation.html#eg_transposition" class="xref" data-knowl="./knowl/xref/eg_transposition.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.9.15: Matrix transpose">Example 1.9.15</a> the the transposition operation is linear. To show it is an isomorphism, we produce an inverse. Define <span class="process-math">\(S^{-1}\colon F^{n,m}\rightarrow F^{m,n}\)</span> as <span class="process-math">\(S^{-1}(B)=A^T\text{.}\)</span> (Note that even though the rule for <span class="process-math">\(S^{-1}\)</span> is the same as that for <span class="process-math">\(S\)</span> (i.e., take the transpose), we do not necessarily have <span class="process-math">\(S=S^{-1}\)</span> as functions since their domains (and codomains) are not necessarily equal.) We have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_transposition.html" id="eg_isom_transposition-3-1-8">
+\begin{align*}
+SS^{-1}(B) \amp =S(B^T)=(B^T)^T=B \text{ for all } B\in F^{n,m}\\
+S^{-1}S(A) \amp =S(A^T)=(A^T)^T=A \text{ for all } A\in F^{m,n}\text{,}
+\end{align*}
+</div>
+<div class="para">proving that the two maps are indeed inverses of one another. We conclude that <span class="process-math">\(S\)</span> is invertible, and hence an isomorphism.</div>
+</div></div></details></div></article><article class="example example-like" id="eg_isom_evaluation"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.12.8</span><span class="period">.</span><span class="space"> </span><span class="title">Evaluation.</span>
 </h3>
 <div class="para logical" id="eg_isom_evaluation-2-1">
 <div class="para">Let <span class="process-math">\(I\)</span> be an infinite subset of the field <span class="process-math">\(F\text{,}\)</span> let <span class="process-math">\(n\)</span> be a positive integer, and let <span class="process-math">\(\boldc=(c_1,c_2,\dots, c_{n+1})\in F^{n+1}\)</span> be a choice of <span class="process-math">\(n+1\)</span> distinct scalars (i.e., <span class="process-math">\(c_i\ne c_j\)</span> for <span class="process-math">\(i\ne j\)</span>). Prove that the evaluation map</div>
@@ -565,8 +601,8 @@ f \amp \longmapsto (f(c_1),f(c_2),\dots, f(c_{n+1}))
 </div>
 <div class="para">is an isomorphism.</div>
 </div>
-<div class="solutions"><details id="eg_isom_evaluation-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_isom_evaluation-3-1"></div></div></details></div></article><article class="theorem theorem-like" id="th_isom_structure"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.12.10</span><span class="period">.</span><span class="space"> </span><span class="title">Isomorphisms preserve structure.</span>
+<div class="solutions"><details id="eg_isom_evaluation-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_isom_evaluation-3-1">We showed in <a href="s_null_image.html#eg_poly_eval" class="xref" data-knowl="./knowl/xref/eg_poly_eval.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.10.8: Polynomial evaluation">Example 1.10.8</a> that this linear transformation is bijective, and hence an isomorphism.</div></div></details></div></article><article class="theorem theorem-like" id="th_isom_structure"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.12.9</span><span class="period">.</span><span class="space"> </span><span class="title">Isomorphisms preserve structure.</span>
 </h3>
 <div class="para logical" id="th_isom_structure-2-1">
 <div class="para">Let <span class="process-math">\(T\colon V\rightarrow W\)</span> be an isomorphism.</div>
@@ -592,8 +628,24 @@ T(W)=T(\Span S)=\Span T(S)=\Span (T(v_i))_{i\in I}\text{.}\tag{1.29}
 <li id="th_isom_structure-2-1-2-6"><div class="para" id="th_isom_structure-2-1-2-6-1">We have <span class="process-math">\(V=V_1\oplus V_2\)</span> for subspaces <span class="process-math">\(V_i\subseteq V\)</span> if and only if <span class="process-math">\(W=T(V_1)\oplus T(V_2)\text{.}\)</span>
 </div></li>
 </ol>
-</div></article><details id="th_isom_structure-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_isom_structure-3-1"></div></article></details><article class="corollary theorem-like" id="cor_isom_finite_dim"><h3 class="heading">
-<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.12.11</span><span class="period">.</span><span class="space"> </span><span class="title">Finite-dimensional spaces.</span>
+</div></article><details id="th_isom_structure-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_isom_structure-3-1">
+<div class="para">Most of the statements of this theorem follow almost immediately from the observation that since <span class="process-math">\(T\)</span> is an isomorphism we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{i\in I}c_iv_i=v \iff \sum_{i\in I}c_iT(v_i)=T(v)
+\end{equation*}
+</div>
+<div class="para">for any linear combination expression <span class="process-math">\(\sum_{i\in I}c_iv_i=v\)</span> in <span class="process-math">\(V\text{,}\)</span> along with the analogous statement for <span class="process-math">\(T^{-1}\text{.}\)</span> Thus, for example, we have</div>
+<div class="displaymath process-math" id="th_isom_structure-3-1-6">
+\begin{align*}
+w\in T(\Span S) \amp \iff w=T(v) \text{ for some } v\in \Span S\\
+\amp \iff w=T(\sum_{j=1}^nc_{i_j}v_{i_j})=\sum_{j=1}^nc_{i_j}T(v_{i_j}) \\
+\amp \iff w\in \Span T(S)\text{.}
+\end{align*}
+</div>
+<div class="para">This proves (2). The proof of (1) is similar, and (3) and (4) follow immediately from (1) and (2). Statement (5) is a result of the fact that <span class="process-math">\(T(U)=\im T\vert_U\)</span> and <span class="process-math">\(U=\im T^{-1}\vert_{T(U)}\text{.}\)</span> We leave (6) as an exercise for the reader.</div>
+</div></article></details><article class="corollary theorem-like" id="cor_isom_finite_dim"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.12.10</span><span class="period">.</span><span class="space"> </span><span class="title">Finite-dimensional spaces.</span>
 </h3>
 <div class="para logical" id="cor_isom_finite_dim-2-1">
 <div class="para">Let <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> be finite dimensional vector spaces. The following statements are equivalent.</div>
@@ -603,7 +655,35 @@ T(W)=T(\Span S)=\Span T(S)=\Span (T(v_i))_{i\in I}\text{.}\tag{1.29}
 </div></li>
 <li id="cor_isom_finite_dim-2-1-3-2"><div class="para" id="cor_isom_finite_dim-2-1-3-2-1"><span class="process-math">\(\dim V=\dim W\text{.}\)</span></div></li>
 </ol>
-</div></article></section></div>
+</div></article><article class="example example-like" id="eg_isom_matrix"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.12.11</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix transformations.</span>
+</h3>
+<div class="para" id="eg_isom_matrix-2-1">Prove that a matrix transformation <span class="process-math">\(T_A\colon F^n\rightarrow F^m\)</span> is an isomorphism if and only if <span class="process-math">\(m=n\)</span> and <span class="process-math">\(A\in F^{n,n}\)</span> is invertible.</div>
+<div class="solutions"><details id="eg_isom_matrix-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="eg_isom_matrix-3-1">We know from <a href="s_transformation.html#eg_matrix_transformation" class="xref" data-knowl="./knowl/xref/eg_matrix_transformation.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.9.14: Matrix transformation">Example 1.9.14</a> that matrix transformations are linear.</div>
+<div class="para logical" id="eg_isom_matrix-3-2">
+<div class="para">Assume <span class="process-math">\(m=n\)</span> and  <span class="process-math">\(A\in F^{n,n}\)</span> is invertible. We claim that <span class="process-math">\(T_{A^{-1}}=T_A^{-1}\text{.}\)</span> Indeed, for all <span class="process-math">\(\boldx\in F^n\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="eg_isom_matrix-3-2-5">
+\begin{align*}
+T_AT_{A^{-1}}\boldx \amp =T_A(A^{-1}\boldx)\\
+\amp =AA^{-1}\boldx=\boldx\\
+T_{A^{-1}}T_{A}\boldx \amp =T_{A^{-1}}(A\boldx)\\
+\amp =A^{-1}A\boldx=\boldx\text{.}
+\end{align*}
+</div>
+<div class="para">This proves that <span class="process-math">\(T_AT_{A^{-1}}=T_{A^{-1}}T_A=I_V\)</span> and thus that <span class="process-math">\(T_{A^{-1}}=T_A^{-1}\text{,}\)</span> as claimed. We conclude <span class="process-math">\(T_A\)</span> is an isomorphism.</div>
+</div>
+<div class="para logical" id="eg_isom_matrix-3-3">
+<div class="para">Lastly assume <span class="process-math">\(T_A\)</span> is an isomorphism. By <a href="s_isom.html#cor_isom_finite_dim" class="xref" data-knowl="./knowl/xref/cor_isom_finite_dim.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.12.10: Finite-dimensional spaces">Corollary 1.12.10</a>, we conclude that <span class="process-math">\(\dim F^n=\dim F^m\text{,}\)</span> and hence that <span class="process-math">\(n=m\text{.}\)</span> Since <span class="process-math">\(T_A\)</span> is an isomorphism, it has a linear inverse <span class="process-math">\(S\colon F^n\rightarrow F^n\text{;}\)</span> since all linear transformations of <span class="process-math">\(F^n\)</span> are matrix transformations, we have <span class="process-math">\(S=T_B\)</span> for some matrix <span class="process-math">\(B\in F^{n,n}\text{.}\)</span> We have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_isom_finite_dim.html" id="eg_isom_matrix-3-3-10">
+\begin{align*}
+T_AT_B=I_{F^n} \amp \implies AB\boldx=\boldx \text{ for all } \boldx\in F^n\implies AB=I\\
+T_BT_A=I_{F^n} \amp \implies BA\boldx=\boldx \text{ for all } \boldx\in F^n\implies BA=I\text{.}
+\end{align*}
+</div>
+<div class="para">Thus <span class="process-math">\(B=A^{-1}\text{,}\)</span> showing that <span class="process-math">\(A\)</span> is invertible.</div>
+</div>
+</div></details></div></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="s_rank_nullity.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_matrix_reps.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

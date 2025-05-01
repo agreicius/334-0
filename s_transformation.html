@@ -846,8 +846,22 @@ T_A(c\boldx+d\boldy) \amp =A(c\boldx+d\boldy) \amp (\text{def. of } T_A)\\
 \amp = cT_A(\boldx)+dT_A(\boldy) \amp (\text{def. of } T_A)\text{.}
 \end{align*}
 </div>
+</div></div></details></div></article><article class="example example-like" id="eg_transposition"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.9.15</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix transpose.</span>
+</h4>
+<div class="para" id="eg_transposition-2-1">Define <span class="process-math">\(S\colon F^{m,n}\rightarrow F^{n,m}\)</span> as <span class="process-math">\(S(A)=A^T\text{:}\)</span> i.e., <span class="process-math">\(S\)</span> is the transpose operation. Prove that <span class="process-math">\(S\)</span> is a linear transformation.</div>
+<div class="solutions"><details id="eg_transposition-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_transposition-3-1">
+<div class="para">The linearity of <span class="process-math">\(S\)</span> follows from elementary properties of the transpose operator. Using the one-step technique, for any <span class="process-math">\(A,A'\in F^{m,n}\)</span> and scalars <span class="process-math">\(c,d\in F\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="eg_transposition-3-1-4">
+\begin{align*}
+S(cA+dA') \amp =(cA+dA')^T\\
+\amp =cA^T+d(A')^T \amp (\text{prop. of transp.})\\
+\amp =cS(A)+dS(A')\text{.}
+\end{align*}
+</div>
+<div class="para">This proves <span class="process-math">\(S\)</span> is linear.</div>
 </div></div></details></div></article><article class="example example-like" id="eg_diff_linear"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.9.15</span><span class="period">.</span><span class="space"> </span><span class="title">Differentiation.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.9.16</span><span class="period">.</span><span class="space"> </span><span class="title">Differentiation.</span>
 </h4>
 <div class="para logical" id="eg_diff_linear-2-1">
 <div class="para">Let <span class="process-math">\(I\)</span> be an interval of <span class="process-math">\(\R\text{.}\)</span> Prove that</div>
@@ -859,8 +873,18 @@ f \amp \longmapsto f'
 </div>
 <div class="para">is a linear transformation.</div>
 </div>
-<div class="solutions"><details id="eg_diff_linear-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_diff_linear-3-1"></div></div></details></div></article><article class="example example-like" id="eg_integration_trans"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.9.16</span><span class="period">.</span><span class="space"> </span><span class="title">Integration.</span>
+<div class="solutions"><details id="eg_diff_linear-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_diff_linear-3-1">
+<div class="para">The linearity of <span class="process-math">\(T\)</span> follows from elementary properties of differentiation. We use the one-step technique. For any <span class="process-math">\(f,g\in C^1(I)\)</span> and scalars <span class="process-math">\(c,d\in F\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="eg_diff_linear-3-1-4">
+\begin{align*}
+T(cf+dg) \amp = (cf+dg)'\\
+\amp =cf'+dg' \amp (\text{props. of diff.})\\
+\amp =cT(f)+dT(g)\text{.}
+\end{align*}
+</div>
+<div class="para">This proves <span class="process-math">\(T\)</span> is linear.</div>
+</div></div></details></div></article><article class="example example-like" id="eg_integration_trans"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.9.17</span><span class="period">.</span><span class="space"> </span><span class="title">Integration.</span>
 </h4>
 <div class="para logical" id="eg_integration_trans-2-1">
 <div class="para">Let <span class="process-math">\([a,b]\)</span> be a closed interval of <span class="process-math">\(\R\text{.}\)</span> Prove that the function</div>
@@ -872,8 +896,17 @@ f \amp \longmapsto \int_a^bf\, dx
 </div>
 <div class="para">is a linear transformation.</div>
 </div>
-<div class="solutions"><details id="eg_integration_trans-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_integration_trans-3-1"></div></div></details></div></article><article class="example example-like" id="eg_evaluation_trans"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.9.17</span><span class="period">.</span><span class="space"> </span><span class="title">Function evaluation.</span>
+<div class="solutions"><details id="eg_integration_trans-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_integration_trans-3-1">
+<div class="para">Similarly to the above examples, the linearity of <span class="process-math">\(T\)</span> follows from familiar properties of the integral: for all <span class="process-math">\(f,g\in C([a,b])\)</span> and <span class="process-math">\(c,d\in \R\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="eg_integration_trans-3-1-4">
+\begin{align*}
+T(cf+dg) \amp =\int_a^b cf+dg\, dx\\
+\amp =c\int_a^bf\, dx+d\int_a^bg\, dx\\
+\amp =cT(f)+dT(g)\text{.}
+\end{align*}
+</div>
+</div></div></details></div></article><article class="example example-like" id="eg_evaluation_trans"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.9.18</span><span class="period">.</span><span class="space"> </span><span class="title">Function evaluation.</span>
 </h4>
 <div class="para logical" id="eg_evaluation_trans-2-1">
 <div class="para">Let <span class="process-math">\(X\)</span> be a nonempty set, and let <span class="process-math">\((x_1,x_2,\dots, x_n)\)</span> a list of <span class="process-math">\(n\)</span> elements of <span class="process-math">\(X\text{.}\)</span> Prove that the function</div>
@@ -885,8 +918,18 @@ f \amp \mapsto (f(x_1),f(x_2),\dots, f(x_n))
 </div>
 <div class="para">is a linear transformation.</div>
 </div>
-<div class="solutions"><details id="eg_evaluation_trans-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_evaluation_trans-3-1"></div></div></details></div></article><article class="example example-like" id="eg_shift_transform"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.9.18</span><span class="period">.</span><span class="space"> </span><span class="title">Shift transformations.</span>
+<div class="solutions"><details id="eg_evaluation_trans-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_evaluation_trans-3-1">
+<div class="para">For all <span class="process-math">\(f,g\in F^X\)</span> and scalars <span class="process-math">\(c,d\in F\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="eg_evaluation_trans-3-1-3">
+\begin{align*}
+T(cf+dg) \amp =((cf+dg)(x_1),(cf+dg)(x_2),\dots, (cf+dg)(x_n))\\
+\amp = (cf(x_1)+dg(x_1),cf(x_2)+dg(x_2),\dots, cf(x_n)+dg(x_n))\\
+\amp =c(f(x_1),f(x_2),\dots, f(x_n))+d(g(x_1),g(x_2),\dots, g(x_n))\\
+\amp =cT(f)+dT(g)\text{.}
+\end{align*}
+</div>
+</div></div></details></div></article><article class="example example-like" id="eg_shift_transform"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.9.19</span><span class="period">.</span><span class="space"> </span><span class="title">Shift transformations.</span>
 </h4>
 <div class="para logical" id="eg_shift_transform-2-1">
 <div class="para">Prove that the functions <span class="process-math">\(T_\ell\)</span> and <span class="process-math">\(T_r\)</span> defined as</div>
@@ -898,11 +941,21 @@ T_\ell\colon F^\infty \amp \rightarrow F^\infty \amp T_r\colon F^\infty\amp \rig
 </div>
 <div class="para">are linear transformations.</div>
 </div>
-<div class="solutions"><details id="eg_shift_transform-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_shift_transform-3-1"></div></div></details></div></article></section><section class="subsection" id="ss_transformations_bases"><h3 class="heading hide-type">
+<div class="solutions"><details id="eg_shift_transform-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_shift_transform-3-1">
+<div class="para">We prove that <span class="process-math">\(T_\ell\)</span> is a linear transformation, leaving the proof for <span class="process-math">\(T_r\)</span> to the reader. Using tuple notation, we have <span class="process-math">\(T_\ell((a_n)_{n=1}^\infty)=(a_{n+1})_{n=1}^\infty\text{.}\)</span> Thus, for any tuples <span class="process-math">\((a_n)_{n=1}^\infty, (b_n)_{n=1}^\infty\in F^\infty\)</span> and scalars <span class="process-math">\(c,d\in F\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="eg_shift_transform-3-1-6">
+\begin{align*}
+T_\ell(c(a_n)_{n=1}^\infty+d(b_n)_{n=1}^\infty) \amp = T_\ell(ca_n+db_n)_{n=1}^\infty\\
+\amp =(ca_{n+1}+db_{n+1})_{n=1}^{\infty}\\
+\amp =c(a_{n+1})_{n=1}^\infty+d(b_{n+1})_{n=1}^\infty\\
+\amp =cT_\ell((a_n)_{n=1}^\infty)+dT((b_n)_{n=1}^\infty)\text{.}
+\end{align*}
+</div>
+</div></div></details></div></article></section><section class="subsection" id="ss_transformations_bases"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Transformations and bases</span>
 </h3>
 <article class="theorem theorem-like" id="th_trans_basis"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.9.19</span><span class="period">.</span><span class="space"> </span><span class="title">Transformations and bases.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.9.20</span><span class="period">.</span><span class="space"> </span><span class="title">Transformations and bases.</span>
 </h4>
 <div class="para logical" id="th_trans_basis-2-1">
 <div class="para">Let <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> be vector spaces, and let <span class="process-math">\(B=(v_i)_{i\in I}\)</span> be a basis of <span class="process-math">\(V\text{.}\)</span>
@@ -979,24 +1032,24 @@ T(cv+dw) \amp =T\left(\sum_{i\in i}cc_iv_i+\sum_{i\in I}dd_iv_i\right)\\
 </li>
 </ol>
 </div></article></details><article class="remark remark-like" id="ss_transformations_bases-3"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.9.20</span><span class="period">.</span><span class="space"> </span><span class="title">Transformations and bases.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.9.21</span><span class="period">.</span><span class="space"> </span><span class="title">Transformations and bases.</span>
 </h4>
 <div class="para logical" id="ss_transformations_bases-3-2">
-<div class="para">The two statements of <a href="s_transformation.html#th_trans_basis" class="xref" data-knowl="./knowl/xref/th_trans_basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.9.19: Transformations and bases">Theorem 1.9.19</a> deserve some elaboration and interpretation.</div>
+<div class="para">The two statements of <a href="s_transformation.html#th_trans_basis" class="xref" data-knowl="./knowl/xref/th_trans_basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.9.20: Transformations and bases">Theorem 1.9.20</a> deserve some elaboration and interpretation.</div>
 <ol class="decimal" id="ss_transformations_bases-3-2-2">
 <li id="ss_transformations_bases-3-2-2-1"><div class="para" id="ss_transformations_bases-3-2-2-1-1">The first statement tells us that a linear transformation <span class="process-math">\(T\colon V\rightarrow W\)</span> is uniqueley determined by its values <span class="process-math">\(T(v_i)\)</span> for any basis <span class="process-math">\(B=(v_i)_{i\in I}\text{.}\)</span> In other words, if you know that <span class="process-math">\(T\)</span> is linear, and you know where it sends each element of a basis, then you know <span class="process-math">\(T\)</span> completeley! Put another way, a linear transformation is uniquely determined by its action on any given basis.</div></li>
 <li id="ss_transformations_bases-3-2-2-2"><div class="para" id="ss_transformations_bases-3-2-2-2-1">Consisder the second statement as a powerful “transformation building” result. In more detail, it says the following: given a basis <span class="process-math">\(B=(v_i)_{i\in I}\)</span> of <span class="process-math">\(V\text{,}\)</span> given any choice of values <span class="process-math">\(w_i\in W\text{,}\)</span> there is a unique linear transformation <span class="process-math">\(T\in \mathcal{L}(V,W)\)</span> that sends <span class="process-math">\(v_i\)</span> to <span class="process-math">\(w_i\)</span> for all <span class="process-math">\(i\in I\text{.}\)</span>
 </div></li>
 </ol>
 </div></article><article class="corollary theorem-like" id="cor_matrix_transformation"><h4 class="heading">
-<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.9.21</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix transformations.</span>
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.9.22</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix transformations.</span>
 </h4>
 <div class="para" id="cor_matrix_transformation-2-1">Let <span class="process-math">\(T\colon F^n\rightarrow F^m\)</span> be a linear transformation. There is a unique matrix <span class="process-math">\(A\in F^{m,n}\)</span> such that <span class="process-math">\(T=T_A\text{.}\)</span> In particular, all linear transformations from <span class="process-math">\(F^n\)</span> to <span class="process-math">\(F^m\)</span> are matrix transformations.</div></article><details id="cor_matrix_transformation-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="cor_matrix_transformation-3-1">The proof is left as an exercise.</div></article></details></section><section class="subsection" id="ss_vs_of_lin_transformations"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title"><span class="process-math">\(\mathcal{L}(V,W)\)</span> as a vector space</span>
 </h3>
 <div class="para" id="ss_vs_of_lin_transformations-2">We end this section by providing a vector space structure to the set <span class="process-math">\(\mathcal{L}(V,W)\)</span> of all linear transformations from <span class="process-math">\(V\)</span> to <span class="process-math">\(W\text{.}\)</span> As in <a href="s_vector_space.html" class="internal" title="Section 1.2: Vector spaces">Section 1.2</a>, we state the result as a definition with proof.</div>
 <article class="definition definition-like" id="d_linear_transformations"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.9.22</span><span class="period">.</span><span class="space"> </span><span class="title">Space of linear transformations.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.9.23</span><span class="period">.</span><span class="space"> </span><span class="title">Space of linear transformations.</span>
 </h4>
 <div class="para logical" id="d_linear_transformations-2-1">
 <div class="para">Let <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> be vector spaces. Below we define a vector space structure on <span class="process-math">\(\mathcal{L}(V,W)\text{.}\)</span>
