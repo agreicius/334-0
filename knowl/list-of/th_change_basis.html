@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.14.2</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Change of basis matrix.</span>
+</h4>
+<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
+<div class="para">Let <span class="process-math">\(B\)</span> and <span class="process-math">\(B'\)</span> be two ordered bases of the finite-dimensional vector space <span class="process-math">\(V\text{.}\)</span>
+</div>
+<ol class="decimal" id="th_change_basis-2-1-4">
+<li><div class="para"><span class="process-math">\(\underset{B\rightarrow B'}{P}=[I_{V}]_{B}^{B'}\text{.}\)</span></div></li>
+<li><div class="para logical">
+<div class="para">For all <span class="process-math">\(v\in V\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation}
+\underset{B\rightarrow B'}{P}[v]_{B}=[v]_{B'}\tag{1.38}
+\end{equation}
+</div>
+<div class="para">In other words, to convert the <span class="process-math">\(B\)</span>-coordinates of a vector <span class="process-math">\(v\in V\)</span> to <span class="process-math">\(B'\)</span>-coordinates, simply multiply on the left by the matrix <span class="process-math">\(\underset{B\rightarrow B'}{P}\text{.}\)</span>
+</div>
+</div></li>
+<li><div class="para">The matrix <span class="process-math">\(\underset{B\rightarrow B'}{P}\)</span> is the unique matrix satisfying <a href="s_change_basis.html#eq_change_basis_prop" class="xref" data-knowl="./knowl/xref/eq_change_basis_prop.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.38">(1.38)</a>: i.e., if <span class="process-math">\(A[v]_{B}=[v]_{B'}\)</span> for all <span class="process-math">\(v\in V\text{,}\)</span> then <span class="process-math">\(A=\underset{B\rightarrow B'}{P}\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical"><ol class="decimal" id="th_change_basis-3-1-1">
+<li><div class="para logical">
+<div class="para">Let <span class="process-math">\(B=(v_1, v_2,\dots, v_n)\text{.}\)</span> From formula <a href="s_matrix_reps.html#eq_matrixrep_formula" class="xref" data-knowl="./knowl/xref/eq_matrixrep_formula.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.34">(1.34)</a> applied to <span class="process-math">\(I_v\text{,}\)</span> we see that the <span class="process-math">\(j\)</span>-th column of <span class="process-math">\([I_V]_B^{B'}\)</span> is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_matrixrep_formula.html ./knowl/xref/eq_change_basis_matrix.html ./knowl/xref/d_change_basis_matrix.html">
+\begin{equation*}
+[v_j]_{B'}
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(1\leq j\leq n\text{.}\)</span> Using formula <a href="s_change_basis.html#eq_change_basis_matrix" class="xref" data-knowl="./knowl/xref/eq_change_basis_matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.37">(1.37)</a> from <a href="s_change_basis.html#d_change_basis_matrix" class="xref" data-knowl="./knowl/xref/d_change_basis_matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.14.1: Change of basis matrix">Definition 1.14.1</a> this is precisely the <span class="process-math">\(j\)</span>-th column of <span class="process-math">\(\underset{B\rightarrow B'}{P}\)</span> for all <span class="process-math">\(1\leq j\leq n\text{.}\)</span> We conclude that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_matrixrep_formula.html ./knowl/xref/eq_change_basis_matrix.html ./knowl/xref/d_change_basis_matrix.html">
+\begin{equation*}
+[I_V]_B^{B'} = \underset{B\rightarrow B'}{P}\text{.}
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">This follows from (1) and <a href="s_matrix_reps.html#th_matrixrep" class="xref" data-knowl="./knowl/xref/th_matrixrep.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.13.14: Defining property of matrix representation">Theorem 1.13.14</a>:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_matrixrep.html ./knowl/xref/th_matrixrep.html">
+\begin{align*}
+\underset{B\rightarrow B'}{P}[v]_B \amp = [\id_V]_{B}^{B'}[v]_B \\
+\amp = [\id_V(v)]_{B'} \amp (\knowl{./knowl/xref/th_matrixrep.html}{\text{Theorem 1.13.14}})\\
+\amp =[v]_{B'} \text{.}
+\end{align*}
+</div>
+</div></li>
+<li><div class="para">By (2) of <a href="s_matrix_reps.html#th_matrixrep" class="xref" data-knowl="./knowl/xref/th_matrixrep.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.13.14: Defining property of matrix representation">Theorem 1.13.14</a> (the uniqueness claim), if <span class="process-math">\(A\)</span> satisfies <span class="process-math">\(A[v]_B=[v]_{B'}\)</span> for all <span class="process-math">\(v\in \R^n\text{,}\)</span> then <span class="process-math">\(A=[\id_V]_{B}^{B'}\text{.}\)</span> Since <span class="process-math">\([\id_V]_{B}^{B'}=\underset{B\rightarrow B'}{P}\text{,}\)</span> we conclude <span class="process-math">\(A=\underset{B\rightarrow B'}{P}\text{.}\)</span>
+</div></li>
+</ol></div></article></details><span class="incontext"><a class="internal" href="s_change_basis.html#th_change_basis">in-context</a></span>
+</body>
+</html>
