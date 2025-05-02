@@ -229,21 +229,7 @@ In other words, the <m>j</m>-th column of <m>\underset{B\rightarrow B'}{P}</m> i
         The observation from <xref ref="eg_changebasis_standard"/> applies more generally when <m>B</m> is the standard basis of the given vector space <m>V</m> and <m>B'=(v_1, v_2, \dots, v_n)</m> is nonstandard. In this case computing <m>\underset{B'\rightarrow B}{P}</m> will be easy as the coordinate vectors <m>[v_j]_{B}</m> can be produced by inspection. See <xref ref="eg_changebasis_standard_mat"/>.
       </p>
   </remark>
-  <li>
-    <p>
-      This follows from (1) and <xref ref="th_matrixrep"/>:
-      <md>
-        <mrow> \underset{B\rightarrow B'}{P}[\boldv]_B \amp = [\id_V]_{B}^{B'}[\boldv]_B </mrow>
-        <mrow>  \amp = [\id_V(\boldv)]_{B'} \amp (<xref ref="th_matrixrep"/>)</mrow>
-        <mrow> \amp =[\boldv]_{B'} </mrow>
-      </md>.
-    </p>
-  </li>
-  <li>
-    <p>
-      By (2) of <xref ref="th_matrixrep"/> (the uniqueness claim), if <m>A</m> satisfies <m>A[\boldv]_B=[\boldv]_{B'}</m> for all <m>\boldv\in \R^n</m>, then <m>A=[\id_V]_{B}^{B'}</m>. Since <m>[\id_V]_{B}^{B'}=\underset{B\rightarrow B'}{P}</m>, we conclude <m>A=\underset{B\rightarrow B'}{P}</m>.
-    </p>
-  </li>
+  
 <p>
   We have seen that computing <m>\underset{B'\rightarrow B}{P}</m> is easy when <m>B</m> is a standard matrix; according to <xref ref="th_change_basis_props"/>, in that situation we can then compute <m>\underset{B\rightarrow B'}{P}</m> as the inverse of <m>\underset{B'\rightarrow B}{P}</m>. 
 </p>
@@ -757,6 +743,79 @@ Let <m>T\colon \R^2\rightarrow \R^2</m> be reflection through the line <m>\ell</
 </solution>
 
 </example>
+<example xml:id="eg_changebasis_reflection_gen">
+<title>Reflection in <m>\R^2</m>: general</title>
+<statement>
+<p>
+Let <m>\ell=\Span((a,b))</m> be the line in <m>\R^2</m> passing through the origin with nonzero direction vector <m>(a,b)</m>, and let <m>T\colon \R^2\rightarrow \R^2</m> be reflection through <m>\ell</m>: <ie/>, given point <m>P=(x,y)</m>, <m>T(P)</m> is the point <m>P'=(x',y')</m> obtained by reflecting <m>P</m> through <m>\ell</m>.
+<ol>
+  <li>
+    <p>
+      Generalize the technique in <xref ref="eg_changebasis_reflection"/> to derive the standard matrix <m>A</m> of <m>T</m>.
+    </p>
+  </li>
+  <li>
+    <p>
+      Give the formula for <m>T(x,y)</m> and verify that it computes the reflection of <m>(a,b)</m> and <m>(b,-a)</m> correctly. 
+    </p>
+  </li>
+</ol>
+  </p>
+</statement>
+  <solution>
+  <p>
+  The standard matrix of <m>T</m> is just <m>A=[T]_B</m>, where <m>B</m> is the standard basis of <m>\R^2</m>. Let <m>B'=(\boldv_1=(a,b),\boldv_2=(b,-a))</m>. Since <m>(a,b)\in \ell</m>, we have <m>T(a,b)=(a,b)</m>; since <m>(b,-a)</m> is perpendicular to <m>\ell</m>, we have <m>T(b,-a)=-(b,-a)</m>. It follows that 
+  <md>
+    <mrow>[T]_{B'} \amp = \begin{bmatrix}
+    \vert \amp \vert\\
+    [T(\boldv_1)]_{B'}\amp [T(\boldv_2)]_{B'}\\
+    \vert \amp \vert
+    \end{bmatrix}=
+    \begin{bmatrix}
+    \vert \amp \vert\\
+    [\boldv_1]_{B'}\amp [-\boldv_2]_{B'}\\
+    \vert \amp \vert
+    \end{bmatrix}=
+  \begin{bmatrix}
+  1\amp 0 \\
+  0\amp -1
+  \end{bmatrix}</mrow>
+  </md>.
+  Computing the relevant change of basis matrices and using the change of basis formula <xref ref="eq_changebasis_transform"/>, we have 
+  <md>
+    <mrow>A=[T]_B \amp = \underset{B'\to B}{P}\, [T]_{B'}\,\underset{B\to B'}{P}</mrow>
+    <mrow> \amp = \frac{1}{a^2+b^2}\begin{amatrix}[rr]
+    a\amp b\\
+    b\amp -a
+    \end{amatrix}\begin{bmatrix}
+    1\amp 0\\ 0\amp -1  
+    \end{bmatrix}
+    \begin{amatrix}
+    a\amp b \\
+    b\amp -a
+    \end{amatrix} </mrow>
+    <mrow> \amp =\frac{1}{a^2+b^2}\begin{amatrix}
+    a^2-b^2\amp 2ab\\
+    2ab \amp b^2-a^2
+    \end{amatrix}</mrow>
+  </md>.
+  Since <m>T=T_A</m>, we derive the formula
+  <me>
+    T(x,y)=\frac{1}{a^2+b^2}((a^2-b^2)x+2aby, 2abx+(b^2-a^2)y)
+  </me>
+  for all <m>(x,y)\in\R^2</m>. 
+  In particular, we have 
+  <md>
+    <mrow>T(a,b) \amp =\frac{1}{a^2+b^2}((a^2-b^2)a+2ab^2, 2a^2b+(b^2-a^2)b)</mrow>
+    <mrow> \amp =(a,b)</mrow>
+    <mrow>T(b,-a) \amp =\frac{1}{a^2+b^2}((a^2-b^2)b-2a^2b, 2ab^2-(b^2-a^2)a)</mrow>
+    <mrow> \amp =-(b,-a)</mrow>
+  </md>,
+  as expected. 
+  </p>
+  </solution>
+</example>
+
 </subsection>
 <subsection xml:id="ss_changebasis_similarity">
   <title>Similarity and the holy commutative tent of linear algebra</title>
