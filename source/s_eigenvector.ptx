@@ -26,6 +26,11 @@
 </introduction>
     <subsection xml:id="ss_eigenvectors">
     <title>Definition and examples</title>
+    <convention>
+      <p>
+        Henceforth we will focus on the study of linear transformations <m>T\colon V\rightarrow V</m> from a vector space <em>to itself</em>. Recall that in this setting we denote <m>\mathcal{L}(V,V)=\mathcal{L}(V)</m> and <m>[T]_B^B=[T]_B</m> (in the case where <m>V</m> has a finite basis <m>B</m>). Furthermore, we call a linear transformation <m>T\in \mathcal{L}(V)</m> a <term>linear operator</term> on <m>V</m>. 
+      </p>
+    </convention>
     <definition xml:id="d_eigenvectors">
         <idx><h>eigenvector</h></idx>
         <idx><h>eigenvalue</h></idx>
@@ -102,6 +107,24 @@
           but if <m>\lambda\ne 0</m> it follows that the line <m>\ell=\Span\{\boldx\}</m> and its reflection <m>\ell''=\Span\{T(\boldv)\}</m> are equal. Clearly the only lines that are mapped to themselves by reflection through <m>\ell</m> are <m>\ell</m> and <m>\ell^\perp</m>. Thus if <m>\boldx</m> is an eigenvector of <m>T</m> it must lie in <m>\ell</m> or <m>\ell^\perp</m>.
         </p>
         </solution>
+      </example>
+      
+      <example xml:id="eg_eigenvector_rotation">
+      <title>Rotation in <m>\R^2</m></title>
+      <statement>
+      <p>
+      Fix an angle <m>\theta\in [0,2\pi)</m> and consider the linear transformation <m>T_A\colon \R^2\rightarrow \R^2</m>, where <me>A=\begin{amatrix}[rr]
+      \cos\theta\amp -\sin \theta \\
+      \sin\theta \amp \cos\theta
+      \end{amatrix}</me>. 
+      Geometrically, <m>T_A</m> is rotation by <m>\theta</m> about the origin.  Find all eigenvalues and eigenvectors of <m>T_A</m>. You should treat three separate cases: <m>\theta=0</m>, <m>\theta=\pi</m>, <m>\theta\ne 0,\pi</m>.
+      </p>
+      </statement>
+      <solution>
+      <p>
+      
+      </p>
+      </solution>
       </example>
       
       <example xml:id="eg_eigenvector_adhoc_transposition">
@@ -299,7 +322,7 @@
       <me>
         E(\lambda, T)=\{f\in C^\infty(I)\colon f(x)=ce^{\lambda x} \text{ for some } c\in \R\}=\Span (f_\lambda)
       </me>,
-      where <m>f_\lambda(x)=e^{\lambda x}</m>. Since <m>f_\lambda\ne 0</m> for all <m>\lambda</m>, we see that each eigenspace of <m>T</m> is 1-dimensional, spanned by <m>f_\lambda</m>. Thus the eigenvectors of <m>T</m> are packaged in the uncountably many eigenspaces <m>E(\lambda, T)=\Span(f_\lamnda)</m>.
+      where <m>f_\lambda(x)=e^{\lambda x}</m>. Since <m>f_\lambda\ne 0</m> for all <m>\lambda</m>, we see that each eigenspace of <m>T</m> is 1-dimensional, spanned by <m>f_\lambda</m>. Thus the eigenvectors of <m>T</m> are packaged in the uncountably many eigenspaces <m>E(\lambda, T)=\Span(f_\lambda)</m>.
       </p>
       </statement>
       
