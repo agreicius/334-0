@@ -17,4 +17,5 @@
     <xi:include href="s_matrix_reps.ptx" />
     <xi:include href="s_change_basis.ptx" />
     <xi:include href="s_eigenvector.ptx" />
+    <xi:include href="s_char_poly.ptx" />
 </chapter>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_char_poly" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Characteristic polynomial</title>
+
+    <introduction>
+        <p>
+            In this section we introduce a valuable computational tool, the <em>characteristic polynomial</em>, that will help us determine the eigenvalues of a linear operator on a finite-dimensional space. The definition of the characteristic polynomial makes use of the determinant of a matrix. You can find a detailed treatment of the determinant in <url href="https://agreicius.github.io/linear-algebra/s_det.html">Section 2.5</url> of my  <url href="https://agreicius.github.io/linear-algebra">first course in linear algebra textbook</url>. Our introduction of the determinant at this point marks a major divergence from Axler's exposition in <em>Linear algebra done right</em>, which deliberately avoids using the determinant to push the theory of eigenspaces forward. Are we engaging here in some naughtiness; perhaps pursuing a <q>linear algebra done wrong</q>? I don't think so. Personally, I find the theory of determinants quite elegant, and the characteristic polynomial will allow us to compute interesting examples in the small-dimensional case. In the words of the great Luther Ingram, <q>if loving you is wrong, I don't want to be right</q>. 
+        </p>
+        <video youtube="FvJj7SN9EWI?si=OOFgsqAoAYYX0O1V"/>
+    </introduction>
+
+</section>
