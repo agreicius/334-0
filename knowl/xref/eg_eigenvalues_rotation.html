@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.16.8</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Rotation (again).</span>
+</h4>
+<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
+<div class="para">Fix an angle <span class="process-math">\(\theta\in [0,2\pi)\text{,}\)</span> and let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\begin{amatrix}[rr]
+\cos\theta\amp -\sin \theta \\
+\sin\theta \amp \cos\theta
+\end{amatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">As mentioned earlier, the linear operator <span class="process-math">\(T_A\in\mathcal{L}(\R^2)\)</span> is rotation about the origin by the angle <span class="process-math">\(\theta\text{.}\)</span>
+</div>
+<ol class="decimal" id="eg_eigenvalues_rotation-2-1-5">
+<li><div class="para">Compute the characteristic polynomial of <span class="process-math">\(A\text{.}\)</span>
+</div></li>
+<li><div class="para">Find all eigenvalues of <span class="process-math">\(T_A\in \mathcal{L}(\R^2)\text{.}\)</span> Consider the cases <span class="process-math">\(\theta=0\text{,}\)</span> <span class="process-math">\(\theta=\pi\text{,}\)</span> and <span class="process-math">\(\theta\ne 0,\pi\)</span> separately.</div></li>
+</ol>
+</div>
+<div class="solutions"><details xmlns:xlink="http://www.w3.org/1999/xlink" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical">
+<div class="para">The characteristic polynomial of <span class="process-math">\(A\)</span> is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_eigenvector_rotation.html">
+\begin{align*}
+f(x)=\det(xI-A) \amp= \det \begin{bmatrix}
+x-\cos\theta\amp \sin\theta\\ -\sin\theta\amp x-\cos\theta
+\end{bmatrix} \\
+\amp=x^2-2(\cos\theta)x+1\text{.}
+\end{align*}
+</div>
+<div class="para">We can use the quadratic formula to find the real roots of <span class="process-math">\(f\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_eigenvector_rotation.html">
+\begin{align*}
+x \amp = \frac{2\cos\theta\pm \sqrt{4\cos^2\theta-4}}{2}\\
+\amp = \cos\theta\pm \sqrt{\cos^2\theta-1}\\
+\amp = \cos\theta\pm \sqrt{-\sin^2\theta}\text{.}
+\end{align*}
+</div>
+<div class="para">When <span class="process-math">\(\theta=0\text{,}\)</span> this reduces to <span class="process-math">\(x=\cos 0=1\text{;}\)</span> similarly, when <span class="process-math">\(\theta=\pi\text{,}\)</span> this reduces to <span class="process-math">\(x=\cos\pi=-1\text{.}\)</span> This confirms our our conclusion in <a href="s_eigenvector.html#eg_eigenvector_rotation" class="xref" data-knowl="./knowl/xref/eg_eigenvector_rotation.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.15.8: Rotation in \R^2">Example 1.15.8</a> that when <span class="process-math">\(\theta=\pi\)</span> the only eigenvalue of <span class="process-math">\(A\)</span> is <span class="process-math">\(0\text{;}\)</span> and that when <span class="process-math">\(\theta=\pi\text{,}\)</span> the only eigenvalue of <span class="process-math">\(A\)</span> is  <span class="process-math">\(-1\text{.}\)</span>
+</div>
+</div>
+<div class="para">When <span class="process-math">\(\theta\in [0\2pi)-\{0,\pi\}\text{,}\)</span> <span class="process-math">\(-\sin^2\theta&lt; 0\)</span> and we see that <span class="process-math">\(f(x)\)</span> has no real roots. This confirms our conclusion in <a href="s_eigenvector.html#eg_eigenvector_rotation" class="xref" data-knowl="./knowl/xref/eg_eigenvector_rotation.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.15.8: Rotation in \R^2">Example 1.15.8</a> that such rotations have no eigenvalues.</div>
+</div></details></div></article><span class="incontext"><a class="internal" href="s_char_poly.html#eg_eigenvalues_rotation">in-context</a></span>
+</body>
+</html>

@@ -2779,7 +2779,88 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.16",
   "title": "Characteristic polynomial",
-  "body": " Characteristic polynomial   In this section we introduce a valuable computational tool, the characteristic polynomial , that will help us determine the eigenvalues of a linear operator on a finite-dimensional space. The definition of the characteristic polynomial makes use of the determinant of a matrix. You can find a detailed treatment of the determinant in Section 2.5 of my first course in linear algebra textbook . Our introduction of the determinant at this point marks a major divergence from Axler's exposition in Linear algebra done right , which deliberately avoids using the determinant to push the theory of eigenspaces forward. Are we engaging here in some naughtiness; perhaps pursuing a linear algebra done wrong ? I don't think so. Personally, I find the theory of determinants quite elegant, and the characteristic polynomial will allow us to compute interesting examples in the small-dimensional case. In the words of the great Luther Ingram, if loving you is wrong, I don't want to be right .    "
+  "body": " Characteristic polynomial   In this section we introduce a valuable computational tool, the characteristic polynomial , that will help us determine the eigenvalues of a linear operator on a finite-dimensional space. The definition of the characteristic polynomial makes use of the determinant of a matrix. You can find a detailed treatment of the determinant in Section 2.5 of my first course in linear algebra textbook . Our introduction of the determinant at this point marks a major divergence from Axler's exposition in Linear algebra done right , which deliberately avoids using the determinant to push the theory of eigenspaces forward. Are we engaging here in some naughtiness; perhaps pursuing a linear algebra done wrong ? I don't think so. Personally, I find the theory of determinants quite elegant, and the characteristic polynomial will allow us to compute interesting examples in the small-dimensional case. In the words of the great Luther Ingram, if loving you is wrong, I don't want to be right .     Computing eigenspaces  The overarching goal of this section is to develop computational techniques for (a) determining all eigenvalues of a linear operator , and (b) for each eigenvalue compute a basis for . We will only describe a systematic approach in the case where is a linear operator on a finite-dimensional vector space . In this case, it turns out that the computations for can be reduced to the analogous computations for for any choice of basis . This is articulated in the next theorem, and nicely summarized by .   Eigenspaces and matrix representations   Let , where , let be a basis for , and let .    is an eigenvalue of if and only if is an eigenvalue of .    For all , the restriction of the coordinate vector map to yields an isomorphism . As a result we can produce a basis of by computing a basis of and lifting this to a basis of using the inverse map .       Since is an eigenvalue of (resp., ) if and only if (resp., )) is nonzero, we see that (1) follows directly from (2).  Furthermore, since , statement (2) follows from (applied to and ) and the fact that .     Matrix representations and eigenspaces: . The coordinate vector map defines an isomorphism between and .   Commutative diagram relating eigenspaces of T and its matrix representation       Characteristic polynomial  Given a finite-dimensional space and linear operator , reduces the computation of eigenspaces of to the computation of eigenspaces of the matrix transformation , where is any matrix representation of . The question thus becomes, how do we compute the eigenspaces of a matrix transformation ? We tackle this question now, beginning with a tool that allows us to find the eigenvalues of .   Characteristic polynomial of a matrix   Let . The characteristic polynomial of is the function defined as .    The next theorem illustrates how the characteristic polynomial can be used to find eigenvalues of . It also lists some additional useful properties of , one of which involves the trace of a matrix.   Trace of a matrix   Let . The trace  of is the sum of its diagonal entries: , .     Characteristic polynomial of a matrix   Let , and let be its characteristic polynomial.    is an eigenvalue of if and only if .     is a monic polynomial of degree , and we have , where .    If for some invertible matrix , then and have the same characteristic polynomial. In other words, similar matrices have the same characteristic polynomial.            Characteristic polynomial of a matrix   Let , and let be the characteristic polynomial of .    is an eigenvalue of of if and only if factors over as , for some .     has at most distinct eigenvalues.        Reflection, again   Let be a nonzero element of , let , and let be reflection through . We saw in that , where .   Compute the characteristic polynomial of .    Find all eigenvalue of .          Instead of computing directly, we make use of statement (2) of : . In computing above, we make use of the fact that for an matrix as follows: .    Since factors as , we see that the only eigenvalues of are and .        Rotation (again)   Fix an angle , and let . As mentioned earlier, the linear operator is rotation about the origin by the angle .   Compute the characteristic polynomial of .    Find all eigenvalues of . Consider the cases , , and separately.       The characteristic polynomial of is . We can use the quadratic formula to find the real roots of : . When , this reduces to ; similarly, when , this reduces to . This confirms our our conclusion in that when the only eigenvalue of is ; and that when , the only eigenvalue of is .  When , and we see that has no real roots. This confirms our conclusion in that such rotations have no eigenvalues.    Since , and hence for any positive integer , any matrix with real coefficients can also be considered as a a matrix with complex coefficients:  . In this situation there are two different linear transformations we can associate to : . By abuse of notation, we denote both of these transformations as , but as the next example illustrates, these two transformations can be very different in nature.   Complex matrix transformation   Let , let , and let be the corresponding matrix transformation.   Compute the characteristic polynomial of .    Determine the eigenvalue of .          We compute the characteristic polynomial , exactly as in .    Using the complex version of the quadratic formula, we can factor over as , where . Note that since we have , from whence it follows that the two complex square-roots of are and . Using the Euler formula , we can further express these eigenvalues as . Finally, observe that in contrast to the linear operator , which has no eigenvalues ( ), the linear operator has two distinct (non-real) eigenvalues.        "
+},
+{
+  "id": "th_matrixreps_eigenspace",
+  "level": "2",
+  "url": "s_char_poly.html#th_matrixreps_eigenspace",
+  "type": "Theorem",
+  "number": "1.16.1",
+  "title": "Eigenspaces and matrix representations.",
+  "body": " Eigenspaces and matrix representations   Let , where , let be a basis for , and let .    is an eigenvalue of if and only if is an eigenvalue of .    For all , the restriction of the coordinate vector map to yields an isomorphism . As a result we can produce a basis of by computing a basis of and lifting this to a basis of using the inverse map .       Since is an eigenvalue of (resp., ) if and only if (resp., )) is nonzero, we see that (1) follows directly from (2).  Furthermore, since , statement (2) follows from (applied to and ) and the fact that .   "
+},
+{
+  "id": "fig_matrix_reps_eigen",
+  "level": "2",
+  "url": "s_char_poly.html#fig_matrix_reps_eigen",
+  "type": "Figure",
+  "number": "1.16.2",
+  "title": "",
+  "body": " Matrix representations and eigenspaces: . The coordinate vector map defines an isomorphism between and .   Commutative diagram relating eigenspaces of T and its matrix representation    "
+},
+{
+  "id": "d_char_poly_matrix",
+  "level": "2",
+  "url": "s_char_poly.html#d_char_poly_matrix",
+  "type": "Definition",
+  "number": "1.16.3",
+  "title": "Characteristic polynomial of a matrix.",
+  "body": " Characteristic polynomial of a matrix   Let . The characteristic polynomial of is the function defined as .   "
+},
+{
+  "id": "d_trace",
+  "level": "2",
+  "url": "s_char_poly.html#d_trace",
+  "type": "Definition",
+  "number": "1.16.4",
+  "title": "Trace of a matrix.",
+  "body": " Trace of a matrix   Let . The trace  of is the sum of its diagonal entries: , .   "
+},
+{
+  "id": "th_char_poly",
+  "level": "2",
+  "url": "s_char_poly.html#th_char_poly",
+  "type": "Theorem",
+  "number": "1.16.5",
+  "title": "Characteristic polynomial of a matrix.",
+  "body": " Characteristic polynomial of a matrix   Let , and let be its characteristic polynomial.    is an eigenvalue of if and only if .     is a monic polynomial of degree , and we have , where .    If for some invertible matrix , then and have the same characteristic polynomial. In other words, similar matrices have the same characteristic polynomial.          "
+},
+{
+  "id": "cor_char_poly_matrix",
+  "level": "2",
+  "url": "s_char_poly.html#cor_char_poly_matrix",
+  "type": "Corollary",
+  "number": "1.16.6",
+  "title": "Characteristic polynomial of a matrix.",
+  "body": " Characteristic polynomial of a matrix   Let , and let be the characteristic polynomial of .    is an eigenvalue of of if and only if factors over as , for some .     has at most distinct eigenvalues.      "
+},
+{
+  "id": "eg_eigenvalues_reflection",
+  "level": "2",
+  "url": "s_char_poly.html#eg_eigenvalues_reflection",
+  "type": "Example",
+  "number": "1.16.7",
+  "title": "Reflection, again.",
+  "body": " Reflection, again   Let be a nonzero element of , let , and let be reflection through . We saw in that , where .   Compute the characteristic polynomial of .    Find all eigenvalue of .          Instead of computing directly, we make use of statement (2) of : . In computing above, we make use of the fact that for an matrix as follows: .    Since factors as , we see that the only eigenvalues of are and .      "
+},
+{
+  "id": "eg_eigenvalues_rotation",
+  "level": "2",
+  "url": "s_char_poly.html#eg_eigenvalues_rotation",
+  "type": "Example",
+  "number": "1.16.8",
+  "title": "Rotation (again).",
+  "body": " Rotation (again)   Fix an angle , and let . As mentioned earlier, the linear operator is rotation about the origin by the angle .   Compute the characteristic polynomial of .    Find all eigenvalues of . Consider the cases , , and separately.       The characteristic polynomial of is . We can use the quadratic formula to find the real roots of : . When , this reduces to ; similarly, when , this reduces to . This confirms our our conclusion in that when the only eigenvalue of is ; and that when , the only eigenvalue of is .  When , and we see that has no real roots. This confirms our conclusion in that such rotations have no eigenvalues.   "
+},
+{
+  "id": "eg_complex_matrix_transformation",
+  "level": "2",
+  "url": "s_char_poly.html#eg_complex_matrix_transformation",
+  "type": "Example",
+  "number": "1.16.9",
+  "title": "Complex matrix transformation.",
+  "body": " Complex matrix transformation   Let , let , and let be the corresponding matrix transformation.   Compute the characteristic polynomial of .    Determine the eigenvalue of .          We compute the characteristic polynomial , exactly as in .    Using the complex version of the quadratic formula, we can factor over as , where . Note that since we have , from whence it follows that the two complex square-roots of are and . Using the Euler formula , we can further express these eigenvalues as . Finally, observe that in contrast to the linear operator , which has no eigenvalues ( ), the linear operator has two distinct (non-real) eigenvalues.      "
 },
 {
   "id": "appendix-notation",
