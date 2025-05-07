@@ -2773,6 +2773,15 @@ var ptx_lunr_docs = [
   "body": " Eigenspaces of differentiation   Let be an interval in , and let be defined as . From our analysis in we conclude that for all , we have , where . Since for all , we see that each eigenspace of is 1-dimensional, spanned by . Thus the eigenvectors of are packaged in the uncountably many eigenspaces .   "
 },
 {
+  "id": "s_char_poly",
+  "level": "1",
+  "url": "s_char_poly.html",
+  "type": "Section",
+  "number": "1.16",
+  "title": "Characteristic polynomial",
+  "body": " Characteristic polynomial   In this section we introduce a valuable computational tool, the characteristic polynomial , that will help us determine the eigenvalues of a linear operator on a finite-dimensional space. The definition of the characteristic polynomial makes use of the determinant of a matrix. You can find a detailed treatment of the determinant in Section 2.5 of my first course in linear algebra textbook . Our introduction of the determinant at this point marks a major divergence from Axler's exposition in Linear algebra done right , which deliberately avoids using the determinant to push the theory of eigenspaces forward. Are we engaging here in some naughtiness; perhaps pursuing a linear algebra done wrong ? I don't think so. Personally, I find the theory of determinants quite elegant, and the characteristic polynomial will allow us to compute interesting examples in the small-dimensional case. In the words of the great Luther Ingram, if loving you is wrong, I don't want to be right .    "
+},
+{
   "id": "appendix-notation",
   "level": "1",
   "url": "appendix-notation.html",
