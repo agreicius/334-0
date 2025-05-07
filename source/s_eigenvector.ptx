@@ -220,12 +220,12 @@
         </li>
         <li>
             <p>
-                <m>T-\lambda I_V</m> is not injective. 
+                <m>\lambda I_V-T</m> is not injective. 
             </p>
         </li>
         <li>
             <p>
-                <m>\NS (T-\lambda I_V)\ne \{\boldzero\}</m>. 
+                <m>\NS (\lambda I_V-T)\ne \{\boldzero\}</m>. 
             </p>
         </li>
     </ol>
@@ -237,9 +237,9 @@
         <md>
             <mrow>\lambda \text{ eigenvalue of } T \amp  \iff T(v)=\lambda v \text{ for some nonzero} v\in V</mrow>
             <mrow> \amp\iff T(v)=\lambdaI_V(v) \text{ for some nonzero} v\in V </mrow>
-            <mrow> \amp \iff (T-\lambda I_V)(v)=\boldzero \text{ for some nonzero} v\in V</mrow>
-            <mrow> \amp \iff \NS(T-\lambda I_V)\ne \{\boldzero\}</mrow>
-            <mrow> \amp \iff T-\lambda I_V \text{ not injective}</mrow> 
+            <mrow> \amp \iff (\lambda I_V-T)(v)=\boldzero \text{ for some nonzero} v\in V</mrow>
+            <mrow> \amp \iff \NS(\lambda I_V-T)\ne \{\boldzero\}</mrow>
+            <mrow> \amp \iff \lambda I_V-T \text{ not injective}</mrow> 
         </md>.
     </p>
     </proof>
@@ -259,17 +259,17 @@
                 </li>
                 <li>
                     <p>
-                        <m>T-\lambda I_V</m> is not injective. (Equivalently, <m>\NS (T-\lambda I_V)\ne \{\boldzero\}</m>.) 
+                        <m>\lambda I_V-T</m> is not injective. (Equivalently, <m>\NS (T-\lambda I_V)\ne \{\boldzero\}</m>.) 
                     </p>
                 </li>
                 <li>
                     <p>
-                        <m>T-\lambda I_V</m> is not surjective. (Equivalently, <m>\im (T-\lambda I_V)\ne V</m>.)
+                        <m>\lambda I_V-T</m> is not surjective. (Equivalently, <m>\im (T-\lambda I_V)\ne V</m>.)
                     </p>
                 </li>
                 <li>
                     <p>
-                        <m>T-\lambda I_V</m> is not invertible. 
+                        <m>\lambda I_V-T</m> is not invertible. 
                     </p>
                 </li>
             </ol>
@@ -277,19 +277,19 @@
         </statement>
         <proof>
             <p>
-                Let <m>S=T-\lambda I_V</m>. The additional equivalent statements we obtain when <m>\dim V&lt;\infty</m> are the result of the fact (special to this setting) that <m>S</m> is invertible if and only if it is injective if and only if it is surjective. 
+                Let <m>S=\lambda I_V-T</m>. The additional equivalent statements we obtain when <m>\dim V&lt;\infty</m> are the result of the fact (special to this setting) that <m>S</m> is invertible if and only if it is injective if and only if it is surjective. 
             </p>
         </proof>
     </corollary>
     <p>
-        From <xref ref="th_eigenvalues"/> and its proof, we see that the <m>\lambda</m>-eigenvectors of a linear operator <m>T\in \mathcal{L}(V)</m> are precisely the <em>nonzero</em> elements of <m>\NS(T-\lambda I_V)</m>. This motivates the following definition. 
+        From <xref ref="th_eigenvalues"/> and its proof, we see that the <m>\lambda</m>-eigenvectors of a linear operator <m>T\in \mathcal{L}(V)</m> are precisely the <em>nonzero</em> elements of <m>\NS(\lambda I_V-T)</m>. This motivates the following definition. 
     </p>
     <definition xml:id="d_eigenspaces">
     <title>Eigenspaces</title>
     <statement>
     <p>
     Let <m>T\in \mathcal{L}(V)</m>. For all <m>\lambda\in F</m> we define the <term><m>\lambda</m>-eigenspace of <m>T</m></term>, denoted <m>E(\lambda, T)</m>, as 
-    <men xml:id="eq_eigenspace">E(\lambda, T)=\NS(T-\lambda I_V)</men>. 
+    <men xml:id="eq_eigenspace">E(\lambda, T)=\NS(\lambda I_V-T)</men>. 
     Note that the nonzero elements of <m>E(\lambda, T)</m> are precisely the <m>\lambda</m>-eigenvectors of <m>T</m>, and in particular, that <m>\lambda</m> is an eigenvalue of <m>T</m> if and only if <m>E(\lambda, T)</m> is a nonzero subspace of <m>V</m>. 
     </p>
     </statement>
