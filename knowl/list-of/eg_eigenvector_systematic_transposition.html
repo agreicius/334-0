@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.16.14</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Transposition (again).</span>
+</h4>
+<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
+<div class="para">Let <span class="process-math">\(S\colon M_{22}\rightarrow M_{22}\)</span> be defined as <span class="process-math">\(S(A)=A^T\text{.}\)</span>
+</div>
+<ol class="decimal" id="eg_eigenvector_systematic_transposition-2-1-3">
+<li><div class="para">Find all eigenvalues of <span class="process-math">\(S\text{.}\)</span>
+</div></li>
+<li><div class="para">For each eigenvalue <span class="process-math">\(\lambda\)</span> of <span class="process-math">\(S\)</span> compute a basis for <span class="process-math">\(E(\lambda,S)\text{.}\)</span>
+</div></li>
+</ol>
+</div>
+<div class="solutions"><details xmlns:xlink="http://www.w3.org/1999/xlink" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical">
+<div class="para">Let <span class="process-math">\(B=(E_{11},E_{12},E_{21},E_{22})\text{,}\)</span> the standard basis of <span class="process-math">\(F^{2,2}\text{.}\)</span> We let <span class="process-math">\(A=[S]_B\text{,}\)</span> where</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_eigenvector_adhoc_transposition.html">
+\begin{align*}
+[S]_B \amp =\begin{bmatrix}
+\vert \amp \vert\amp \vert\amp \vert \\
+[S(E_{11})]_B\amp [S(E_{12})]_B \amp [S(E_{21})]_B \amp [S(E_{22})]_B\\
+\vert \amp \vert \amp \vert\amp \vert
+\end{bmatrix} \\
+\amp =\begin{bmatrix}
+\vert \amp \vert\amp \vert\amp \vert \\
+[E_{11}]_B\amp [E_{21}]_B \amp [E_{12}]_B \amp [E_{22}]_B \\
+\vert \amp \vert \amp \vert\amp \vert
+\end{bmatrix}
+\hspace{10pt} (E_{11}^T=E_{11}, E_{12}^T=E_{21}, \text{etc.})\\
+\amp =\begin{bmatrix}
+1\amp 0\amp 0\amp 0\\
+0\amp 0\amp 1\amp 0\\
+0\amp 1\amp 0\amp 0\\
+0\amp 0\amp 0\amp 1
+\end{bmatrix} \text{.}
+\end{align*}
+</div>
+<div class="para">Now compute the the eigenvalues and eigenspaces of <span class="process-math">\(A\text{.}\)</span> We leave it to you to verify that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_eigenvector_adhoc_transposition.html">
+\begin{equation*}
+f(x)=\det(xI-A)=(x-1)^2(x^2-1)=(x-1)^3(x+1)\text{.}
+\end{equation*}
+</div>
+<div class="para">We conclude that <span class="process-math">\(1\)</span> and <span class="process-math">\(-1\)</span> are the only eigenvalues of <span class="process-math">\(A\)</span> (and hence also <span class="process-math">\(S\)</span>). Bases for the corresponding eigenspaces of <span class="process-math">\(A\)</span> are readily computed (using the null space algorithm for matrices) as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_eigenvector_adhoc_transposition.html">
+\begin{align*}
+E(1,T_A)\amp=\NS(I-A) = \Span\underset{C_1}{\underbrace{\left((1,0,0,0), (0,1,1,0), (0,0,0,1)\right)}} \\
+E(-1,T_A)\amp=\NS(-I-A)  =\Span\underset{C_2}{\underbrace{\left((0,1,-1,0)\right)}} \text{.}
+\end{align*}
+</div>
+<div class="para">Now “lift” these up to bases of the eigenspaces <span class="process-math">\(E(1,S)\)</span> and <span class="process-math">\(E(-1,S)\)</span> of <span class="process-math">\(S\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_eigenvector_adhoc_transposition.html">
+\begin{align*}
+E(1,S) \amp=\Span\underset{B_1}{\underbrace{\left(\begin{bmatrix}
+1\amp 0\\ 0 \amp 0
+\end{bmatrix},
+\begin{bmatrix}
+0\amp 1\\ 1 \amp 0
+\end{bmatrix},
+\begin{bmatrix}
+0\amp 0\\ 0 \amp 1
+\end{bmatrix} \right)}} \\
+E(-1,S)\amp= \Span\underset{B_2}{\underbrace{\left(
+\begin{amatrix}[rr]
+0\amp 1\\ -1 \amp 0
+\end{amatrix} \right)}} \text{.}
+\end{align*}
+</div>
+<div class="para">It is easy to see that <span class="process-math">\(E(1,S)\)</span> and <span class="process-math">\(E(-1,S)\)</span> are the subspaces of symmetric and skew-symmetric matrices, respectively. This is consistent with our analysis in <a href="s_eigenvector.html#eg_eigenvector_adhoc_transposition" class="xref" data-knowl="./knowl/xref/eg_eigenvector_adhoc_transposition.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.15.9: Transposition">Example 1.15.9</a>.</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="s_char_poly.html#eg_eigenvector_systematic_transposition">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="algorithm theorem-like"><h4 class="heading">
+<span class="type">Procedure</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.16.13</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Computing eigenspaces of operators.</span>
+</h4>
+<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
+<div class="para">Let <span class="process-math">\(T\in\mathcal{L}(V)\text{,}\)</span> where <span class="process-math">\(\dim V=n&lt; \infty\text{.}\)</span> To compute the eigenvalues and eigenspaces of <span class="process-math">\(T\text{,}\)</span> proceed as follows.</div>
+<ol class="decimal" id="proc_eigenspaces_transformation-2-1-4">
+<li><div class="para">Pick <em class="emphasis">any</em> basis <span class="process-math">\(B\)</span> of <span class="process-math">\(V\)</span> and compute <span class="process-math">\(A=[T]_B\text{.}\)</span>
+</div></li>
+<li><div class="para">Compute <span class="process-math">\(f(x)=\det(xI-A)\text{,}\)</span> the characteristic polynomial of <span class="process-math">\(T\)</span> and factor <span class="process-math">\(f\)</span> as in <a href="s_char_poly.html#th_char_poly_operator-2-1-5-1-1-3" class="xref" data-knowl="./knowl/xref/eq_char_poly_factored.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.48">(1.48)</a> to find the distinct eigenvalues <span class="process-math">\(\lambda_1,\lambda_2,\dots, \lambda_r\)</span> of <span class="process-math">\(T\text{.}\)</span>
+</div></li>
+<li><div class="para">For each <span class="process-math">\(1\leq i\leq r\)</span> compute a basis <span class="process-math">\(C_i\)</span> of <span class="process-math">\(E(\lambda_i, T_A)=\NS(\lambda I-A)\)</span> using the null space algorithm for matrices.</div></li>
+<li><div class="para">For each <span class="process-math">\(1\leq i\leq n\text{,}\)</span> “lift” the basis <span class="process-math">\(C_i\)</span> of <span class="process-math">\(E(\lambda_i, T_A)\)</span> to a basis <span class="process-math">\(B_i\)</span> of <span class="process-math">\(E(\lambda_i, T)\)</span> using the inverse coordinate map <span class="process-math">\([\phantom{v}]_B^{-1}\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><span class="incontext"><a class="internal" href="s_char_poly.html#proc_eigenspaces_transformation">in-context</a></span>
+</body>
+</html>

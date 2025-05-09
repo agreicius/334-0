@@ -38,6 +38,34 @@ a_0 \amp = (-1)^n\det A\text{.}
 </div></li>
 <li><div class="para">If <span class="process-math">\(A'=P^{-1}AP\)</span> for some invertible matrix <span class="process-math">\(P\in F^{n,n}\text{,}\)</span> then <span class="process-math">\(A'\)</span> and <span class="process-math">\(A\)</span> have the same characteristic polynomial. In other words, similar matrices have the same characteristic polynomial.</div></li>
 </ol>
-</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para"></div></article></details><span class="incontext"><a class="internal" href="s_char_poly.html#th_char_poly">in-context</a></span>
+</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical"><ol class="decimal" id="th_char_poly-3-1-1">
+<li><div class="para logical">
+<div class="para">We have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\lambda \text{ an eigenvalue of } T_A \amp \iff \NS (\lambda I-T_A)\ne \{\boldzero\} \\
+\amp \iff \NS (\lambda I-A)\ne \{\boldzero\}\\
+\amp \iff \lambda I-A \text{ is not invertible}\\
+\amp \iff \det (\lambda I-A)=0\\
+\amp \iff f(\lambda)=0\text{.}
+\end{align*}
+</div>
+</div></li>
+<li><div class="para">This proved by induction on <span class="process-math">\(n\text{,}\)</span> using various properties of the determinant. You can find a proof of this in my <a class="external" href="https://agreicius.github.io/linear-algebra/s_eigenvectors.html" target="_blank">textbook for a first course in linear algebra</a><details class="ptx-footnote" aria-live="polite" id="th_char_poly-3-1-1-2-1-3"><summary class="ptx-footnote__number" title="Footnote 1.4"><sup> 4 </sup></summary><div class="ptx-footnote__contents" id="th_char_poly-3-1-1-2-1-3"><code class="code-inline tex2jax_ignore">agreicius.github.io/linear-algebra/s_eigenvectors.html</code></div></details>.</div></li>
+<li><div class="para logical">
+<div class="para">Let <span class="process-math">\(f_A(x)\)</span> and <span class="process-math">\(f_{A'}(x)\)</span> be the characteristic polynomials of <span class="process-math">\(A\)</span> and <span class="process-math">\(A'\text{,}\)</span> respectively. We have</div>
+<div class="displaymath process-math">
+\begin{align*}
+f_{A'}(x) \amp =\det(xI-A')\\
+\amp = \det(xI-P^{-1}AP)\\
+\amp = \det(P^{-1}(xI-A)P) \amp (\text{matrix mult. props.})\\
+\amp = \det P^{-1}\det(xI-A)\det P \amp (\det A_1A_2=\det A_1\det A_2) \\
+\amp = \det(xI-A) \amp (\det P^{-1}=(\det P)^{-1})\\
+\amp = f_A(x)\text{,}
+\end{align*}
+</div>
+<div class="para">as claimed.</div>
+</div></li>
+</ol></div></article></details><span class="incontext"><a class="internal" href="s_char_poly.html#th_char_poly">in-context</a></span>
 </body>
 </html>
