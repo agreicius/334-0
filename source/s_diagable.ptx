@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_diagable" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Diagonalizable operators</title>
+    <p>
+      Our treatment of eigenvectors in <xref ref="s_eigenvector"/> was motivated in part by the objective of finding particularly simple matrix representations <m>[T]_B</m> of a linear transformation <m>T\colon V\rightarrow V</m>. The simplest situation we could hope for is that there is a choice of basis <m>B</m> for which <m>[T]_B</m> is diagonal. We say that the basis <m>B</m> <em>diagonalizes</em> the transformation <m>T</m> in this case, and that <m>T</m> is <em>diagonalizable</em>. In this section we develop theoretical and computational tools for determining whether a linear transformation <m>T</m> is diagonalizable, and for finding a diagonalizing basis <m>B</m> when <m>T</m> is in fact diagonalizable.
+        </p>
+    <definition xml:id="d_diagonalizable">
+    <title>Diagonalizable</title>
+    <statement>
+    <p>
+    Let <m>V</m> be a finite-dimensional vector space. A linear operator <m>T\in \mathcal{L}(V)</m> is <term>diagonalizable</term> if there exists a basis <m>B</m> of <m>V</m> such that <m>[T]_B</m> is a diagonal matrix. In this case, we say that the basis <m>B</m> <term>diagonalizes</term> <m>T</m>.
+    </p>
+    </statement>
+    </definition>
+    <convention>
+        <title>Diagonalizable matrix</title>
+        <p>
+            We will say a matrix <m>A\in F^{n,n}</m> is diagonalizable if its corresponding matrix transformation <m>T_A\colon F^{n}\rightarrow F^{n}</m> is diagonalizable. 
+        </p>
+        <p>
+            Let's examine what this means in terms of matrix arithmetic. Let <m>B=(\bolde_1,\bolde_2,\dots, \bolde_n)</m> be the standard basis of <m>F^n</m>, and recall that <m>A=[T_A]_B</m>: <ie/>, the standard matrix of <m>T=T_A</m> is the matrix representation of <m>T_A</m> with respect to the standard basis. The matrix <m>A</m> is diagonalizable if and only if there is a basis <m>B'</m> of <m>F^{n}</m> such that <m>[T_A]_{B'}=D</m> is a diagonal matrix. Using <xref ref="th_similarity_matrixreps"/>, this in turn is equivalent to there being an invertible matrix <m>P</m> such that 
+            <me>
+                D=P^{-1}AP
+            </me>.
+            Thus, we conclude that <m>A</m> is diagonalizable if and only if it is similar to a diagonal matrix.
+        </p>
+    </convention>
+    <p>
+        Given a basis <m>B=(v_1,v_2,\dots, v_n)</m> of <m>V</m> and linear operator <m>T\in \mathcal{L}(V)</m>, looking at the recipe for the matrix representation <m>[T]_B</m>, we see that we have <m>[T]_B=D</m> for some diagonal matrix 
+        <me>
+            D=\begin{bmatrix}
+            d_1 \amp 0\amp \dots \amp \amp 0\\
+            0   \amp d_2\amp 0\amp \dots \amp 0\\
+            0\amp 0\amp \ddots \amp \amp 0\\
+            \vdots  \amp \amp \amp \amp \vdots \\
+            0\amp 0\amp \dots \amp 0\amp d_n
+        \end{bmatrix}
+        </me>
+        if and only if 
+        <md>
+            <mrow>\begin{amatrix}[cccc]\vert \amp \vert \amp \amp \vert \\[20pt]
+                \left[T(v_1)\right]_{B}\amp [T(v_2)]_{B}\amp \dots \amp [T(v_n)]_{B} \\[20pt]
+                \vert \amp \vert \amp  \amp \vert\\[20pt]
+              \end{amatrix} =
+                \begin{bmatrix}
+                d_1 \amp 0\amp \dots \amp \amp 0\\
+                0   \amp d_2\amp 0\amp \dots \amp 0\\
+                0\amp 0\amp \ddots \amp \amp 0\\
+                \vdots  \amp \amp \amp \amp \vdots \\
+                0\amp 0\amp \dots \amp 0\amp d_n
+            \end{bmatrix}
+            </mrow>
+        </md>,
+        if and only if 
+        <me>
+            [T(v_j)]_B=(0,0,\dots, d_j,0,\dots, 0)
+        </me>
+        for all <m>1\leq j\leq n</m>, if and only if 
+        <me>
+            T(v_j)=d_jv_j
+        </me>
+        for all <m>1\leq j\leq n</m>. Since vectors of a basis are necessarily nonzero, we conclude that <m>B</m> diagonalizes <m>T</m> if and only if it consists of eigenvectors of <m>T</m>. We call such a basis an <em>eigenbasis</em>. 
+    </p>
+    <definition xml:id="d_eigenbasis">
+    <title>Eigenbasis</title>
+    <statement>
+    <p>
+    Let <m>T\in \mathcal{L}(V)</m>. A basis <m>B=(v_i)_{i\in I}</m> of <m>V</m> is an <term>eigenbasis</term> of <m>T</m> if <m>v_i</m> is an eigenvector of <m>T</m> for all <m>i\in I</m>. 
+    </p>
+    </statement>
+    </definition>
+    <p>
+        
+    </p>
+
+</section>
