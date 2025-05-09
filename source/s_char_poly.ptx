@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_char_poly" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Characteristic polynomial</title>
+
+    <introduction>
+        <p>
+            In this section we introduce a valuable computational tool, the <em>characteristic polynomial</em>, that will help us determine the eigenvalues of a linear operator on a finite-dimensional space. The definition of the characteristic polynomial makes use of the determinant of a matrix. You can find a detailed treatment of the determinant in <url href="https://agreicius.github.io/linear-algebra/s_det.html">Section 2.5</url> of my  <url href="https://agreicius.github.io/linear-algebra">first course in linear algebra textbook</url>. Our introduction of the determinant at this point marks a major divergence from Axler's exposition in <em>Linear algebra done right</em>, which deliberately avoids using the determinant to push the theory of eigenspaces forward. Are we engaging here in some naughtiness; perhaps pursuing a <q>linear algebra done wrong</q>? I don't think so. Personally, I find the theory of determinants quite elegant, and the characteristic polynomial will allow us to compute interesting examples in the small-dimensional case. In the words of the great Luther Ingram, <q>if loving you is wrong, I don't want to be right</q>. 
+        </p>
+        <video youtube="FvJj7SN9EWI?si=OOFgsqAoAYYX0O1V"/>
+    </introduction>
+    <subsection xml:id="ss_computing_eigenspaces">
+    <title>Computing eigenspaces</title>
+    <p>
+        The overarching goal of this section is to develop computational techniques for (a) determining all eigenvalues <m>\lambda</m> of a linear operator <m>T</m>, and (b) for each eigenvalue <m>\lambda</m> compute a basis for <m>E(\lambda, T)</m>. We will only describe a systematic approach in the case where <m>T\in \mathcal{L}(V)</m> is a linear operator on a finite-dimensional vector space <m>V</m>. In this case, it turns out that the computations for <m>T</m> can be reduced to the analogous computations for <m>A=[T]_B</m> for any choice of basis <m>B</m>. This is articulated in the next theorem, and nicely summarized by <xref ref="fig_matrix_reps_eigen"/>. 
+    </p>
+    <theorem xml:id="th_matrixreps_eigenspace">
+    <title>Eigenspaces and matrix representations</title>
+    <statement>
+    <p>
+    Let <m>T\in \mathcal{L}(V)</m>, where <m>\dim V=n&lt; \infty</m>, let <m>B</m> be a basis for <m>V</m>, and let <m>A=[T]_B</m>. 
+    <ol>
+        <li>
+            <p>
+                <m>\lambda</m> is an eigenvalue of <m>T\colon V\rightarrow V</m> if and only if <m>\lambda</m> is an eigenvalue of <m>T_A\colon F^n\rightarrow F^n</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                For all <m>\lambda\in F</m>,  the restriction of the coordinate vector map <m>[\phantom{v}]_B\colon V\rightarrow F^n </m> to <m>E(\lambda, T)</m> yields an isomorphism 
+                <md>
+                   <mrow> [\phantom{v}]_B\colon E(\lambda, T)\amp \rightarrow E(\lambda, T_A) \amp </mrow>
+                   <mrow> v \amp \mapsto [v]_B</mrow>
+                </md>.
+                As a result we can produce a basis of <m>E(\lambda, T)</m> by computing a basis of <m>E(\lambda, T_A)</m> and <q>lifting</q> this to a basis of <m>E(\lambda, T)</m> using the inverse map <m>[\phantom{v}]_B^{-1}</m>.
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <proof>
+    <p>
+        Since <m>\lambda</m> is an eigenvalue of <m>T</m> (resp., <m>T_A</m>) if and only if <m>E(\lambda, T)</m> (resp., <m>E(\lambda, T_A</m>)) is nonzero, we see that (1) follows directly from (2). 
+    </p>
+    <p>
+        Furthermore, since 
+        <md>
+            <mrow>E(\lambda, T)\amp =\NS(\lambda I_V-T) \amp </mrow>
+            <mrow>E(\lambda, T_A) \amp = \NS(\lambda I_{F^n}-T_A)=\NS(\lambda I-A)</mrow>
+        </md>,
+        statement (2) follows from <xref ref="th_matrix_rep_null_im"/> (applied to <m>\lambda I_V-T</m> and <m>[\lambda I_V-T]_B</m>) and the fact that 
+        <me>
+            [\lambda I_V-T]_B=\lambda[I_V]_B-[T]_B=\lambda I-A
+        </me>.
+    </p>
+    </proof>
+    </theorem>
+    <figure xml:id="fig_matrix_reps_eigen">
+        <caption>Matrix representations and eigenspaces: <m>A=[T]_B</m>. The coordinate vector map <m>[\phantom{v}]_B</m> defines an isomorphism between <m>E(\lambda, T)</m> and <m>E(\lambda, T_A)</m>.</caption>
+        <image width="50%">
+          <shortdescription>Commutative diagram relating eigenspaces of T and its matrix representation</shortdescription>
+          <latex-image>
+            \begin{tikzcd}
+      E(\lambda, T) \arrow[hookrightarrow]{r} \arrow[leftrightarrow]{d}{[\phantom{v}]_{B}}
+      \amp V \arrow{r}{T} \arrow[leftrightarrow]{d}{[\phantom{v}]_B}
+      \amp V  \arrow[leftrightarrow]{d}{[\phantom{v}]_{B'}}\\
+      E(\lambda, T_A) \arrow[hookrightarrow]{r}
+      \amp F^n \arrow{r}{T_A}
+      \amp F^n 
+    \end{tikzcd}
+          </latex-image>
+        </image>
+    </figure>
+    </subsection>
+<subsection xml:id="ss_char_poly">
+<title>Characteristic polynomial</title>
+<p>
+    Given a finite-dimensional space <m>V</m> and linear operator <m>T\in\mathcal{L}(V)</m>, <xref ref="th_matrixreps_eigenspace"/> reduces the computation of eigenspaces of <m>T</m> to the computation of eigenspaces of the matrix transformation <m>T_A\in \mathcal{L}(F^n)</m>, where <m>A=[T]_B</m> is any matrix representation of <m>T</m>. The question thus becomes, how do we compute the eigenspaces of a matrix transformation <m>T_A</m>? We tackle this question now, beginning with a tool that allows us to find the eigenvalues of <m>T_A</m>.
+</p>
+<definition xml:id="d_char_poly_matrix">
+    <title>Characteristic polynomial of a matrix</title>
+    <statement>
+    <p>
+    Let <m>A\in F^{n,n}</m>. The characteristic polynomial of <m>A</m> is the function <m>f\colon F\rightarrow F</m> defined as 
+    <men xml:id="eq_char_poly_matrix">
+        f(x)=\det(xI-A)
+    </men>.
+    </p>
+    </statement>
+    </definition>
+<p>
+    The next theorem illustrates how the characteristic polynomial <m>f(x)=\det(xI-A)</m> can be used to find eigenvalues of <m>T_A</m>. It also lists some additional useful properties of <m>f</m>, one of which involves the <em>trace</em> of a matrix. 
+</p>
+
+<definition xml:id="d_trace">
+<title>Trace of a matrix</title>
+<statement>
+<p>
+Let <m>A=[a_{ij}]\in F^{n,n}</m>. The <term>trace</term> <m>\tr A</m> of <m>A</m> is the sum of its diagonal entries: <ie/>, <m>\tr A=a_{11}+a_{22}+\cdots +a_{nn}</m>. 
+</p>
+</statement>
+</definition>
+
+<theorem xml:id="th_char_poly">
+<title>Characteristic polynomial of a matrix</title>
+<statement>
+<p>
+Let <m>A\in F^{n,n}</m>, and let <m>f(x)=\det(xI-A)</m> be its characteristic polynomial. 
+<ol>
+    <li>
+        <p>
+            <m>\lambda\in F</m> is an eigenvalue of <m>T_A</m> if and only if <m>f(\lambda)=0</m>. 
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>f</m> is a monic polynomial of degree <m>n</m>, and we have 
+            <me>
+                f(x)=x^n+a_{n-1}x^{n-1}+\cdots +a_1x+a_0
+            </me>,
+            where 
+            <md>
+                <mrow>a_{n-1} \amp = \tr A</mrow>
+                <mrow>a_0 \amp = (-1)^n\det A</mrow>
+            </md>.
+        </p>
+    </li>
+    <li>
+        <p>
+            If <m>A'=P^{-1}AP</m> for some invertible matrix <m>P\in F^{n,n}</m>, then <m>A'</m> and <m>A</m> have the same characteristic polynomial. In other words, similar matrices have the same characteristic polynomial. 
+        </p>
+    </li>
+</ol>
+</p>
+</statement>
+<proof>
+<p>
+</p>
+</proof>
+</theorem>
+<corollary xml:id="cor_char_poly_matrix">
+    <title>Characteristic polynomial of a matrix</title>
+    <statement>
+        <p>
+            Let <m>A\in F^{n,n}</m>, and let <m>f(x)=x^n+a_{n-1}x+\cdots +a_1x+a_0</m> be the characteristic polynomial of <m>A</m>. 
+            <ol>
+                <li>
+                    <p>
+                        <m>\lambda\in F</m> is an eigenvalue of of <m>T_A</m> if and only if <m>f</m> factors over <m>F</m> as 
+                        <me>
+                            f(x)=(x-\lambda)g(x)
+                        </me>,
+                        for some <m>g\in P_{n-1}(F)</m>. 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>T_A</m> has at most <m>n</m> distinct eigenvalues. 
+                    </p>
+                </li>
+            </ol>
+        </p>
+    </statement>
+</corollary>
+<example xml:id="eg_eigenvalues_reflection">
+<title>Reflection, again</title>
+<statement>
+<p>
+Let <m>(a,b)</m> be a nonzero element of <m>\R^2</m>, let <m>\ell=\Span((a,b))</m>, and let <m>T\in\mathcal{L}(\R^2)</m> be reflection through <m>\ell</m>. We saw in <xref ref="eg_changebasis_reflection_gen"/> that <m>T=T_A</m>, where 
+<me>
+    A=\frac{1}{a^2+b^2}\begin{bmatrix}
+    a^2-b^2 \amp 2ab\\ 2ab \amp b^2-a^2
+    \end{bmatrix}
+</me>.
+<ol>
+    <li>
+        <p>
+            Compute the characteristic polynomial of <m>A</m>. 
+        </p>
+    </li>
+    <li>
+        <p>
+            Find all eigenvalue of <m>T_A</m>. 
+        </p>
+    </li>
+</ol>
+
+</p>
+</statement>
+<solution>
+<p>
+<ol>
+    <li>
+        <p>
+            Instead of computing <m>f(x)=\det(xI-A)</m> directly, we make use of statement (2) of <xref ref="th_char_poly"/>:
+            <md>
+                <mrow>f(x) \amp =x^2-\tr A x+\det A</mrow>
+                <mrow> \amp = x^2-0x+-1</mrow>
+                <mrow> \amp =x^2-1</mrow>
+            </md>.
+            In computing <m>\det A</m> above, we make use of the fact that <m>\det (cA)=c^n\det A</m> for an <m>n\times n</m> matrix as follows: 
+            <md>
+                <mrow>\det A\amp =\frac{1}{(a^2+b^2)^2}\det \begin{bmatrix}
+                a^2-b^2\amp 2ab\\ 2ab \amp b^2-a^2
+                \end{bmatrix}  </mrow>
+                <mrow> \amp =\frac{1}{(a^2+b^2)^2}(-(a^2-b^2)^2-4a^2b^2)</mrow>
+                <mrow> \amp =-\frac{a^4-b^4-2a^2b^2+4a^2b^2}{a^2+b^2}</mrow>
+                <mrow> \amp =-\frac{(a^2+b^2)^2}{(a^2+b^2)^2}</mrow>
+                <mrow> \amp = 1</mrow>
+            </md>.
+        </p>
+    </li>
+    <li>
+        <p>
+            Since <m>f</m> factors as <m>f(x)=(x-1)(x+1)</m>, we see that the only eigenvalues of <m>T_A</m> are <m>1</m> and <m>-1</m>. 
+        </p>
+    </li>
+</ol>
+</p>
+</solution>
+</example>
+
+<example xml:id="eg_eigenvalues_rotation">
+    <title>Rotation (again)</title>
+    <statement>
+      <p>
+        Fix an angle <m>\theta\in [0,2\pi)</m>, and let 
+        <me>A=\begin{amatrix}[rr]
+            \cos\theta\amp -\sin \theta \\
+            \sin\theta \amp \cos\theta
+            \end{amatrix}
+        </me>. 
+        As mentioned earlier, the linear operator <m>T_A\in\mathcal{L}(\R^2)</m> is rotation about the origin by the angle <m>\theta</m>. 
+      <ol>
+        <li>
+            <p>
+                Compute the characteristic polynomial of <m>A</m>.
+            </p>
+        </li>
+        <li>
+            <p>
+                Find all eigenvalues of <m>T_A\in \mathcal{L}(\R^2)</m>. Consider the cases <m>\theta=0</m>, <m>\theta=\pi</m>, and <m>\theta\ne 0,\pi</m> separately. 
+            </p>
+        </li>
+      </ol>
+    </p>
+    </statement>
+    <solution>
+        <p>
+            The characteristic polynomial of <m>A</m> is 
+            <md>
+                <mrow>f(x)=\det(xI-A) \amp= \det \begin{bmatrix}
+                  x-\cos\theta\amp \sin\theta\\ -\sin\theta\amp x-\cos\theta
+                \end{bmatrix} </mrow>
+                <mrow> \amp=x^2-2(\cos\theta)x+1</mrow>
+              </md>.
+              We can use the quadratic formula to find the real roots of <m>f</m>:
+              <md>
+                <mrow>x \amp = \frac{2\cos\theta\pm \sqrt{4\cos^2\theta-4}}{2}</mrow>
+                <mrow> \amp = \cos\theta\pm \sqrt{\cos^2\theta-1}</mrow>
+                <mrow> \amp = \cos\theta\pm \sqrt{-\sin^2\theta}</mrow>
+              </md>.
+              When <m>\theta=0</m>, this reduces to <m>x=\cos 0=1</m>; similarly, when <m>\theta=\pi</m>, this reduces to <m>x=\cos\pi=-1</m>. This confirms our our conclusion in <xref ref="eg_eigenvector_rotation"/> that when <m>\theta=\pi</m> the only eigenvalue of <m>A</m> is <m>0</m>; and that when <m>\theta=\pi</m>, the only eigenvalue of <m>A</m> is  <m>-1</m>.
+              </p>
+              <p>
+                When <m>\theta\in [0\2pi)-\{0,\pi\}</m>, <m>-\sin^2\theta&lt; 0</m>
+                and we see that <m>f(x)</m> has no real roots. This confirms our conclusion in <xref ref="eg_eigenvector_rotation"/> that such rotations have no eigenvalues.
+        </p>
+    </solution>
+  </example>
+  <p>
+    Since <m>\R\subseteq \C</m>, and hence <m>\R^{n,n}\subseteq \C^{n,n}</m> for any positive integer <m>n</m>,  any matrix with real coefficients can also be considered as a a matrix with complex coefficients: <ie/> <m>A\in \R^{n,n}\implies A\in \C^{n,n}</m>. In this situation there are <em>two different</em> linear transformations we can associate to <m>A</m>: 
+    <md>
+        <mrow>T_A\colon \R^n \amp \rightarrow \R^n \amp T_A\colon \C^n\rightarrow \C^n</mrow>
+    </md>.
+    By abuse of notation, we denote both of these transformations as <m>T_A</m>, but as the next example illustrates, these two transformations can be very different in nature. 
+  </p>
+  <example xml:id="eg_complex_matrix_transformation">
+  <title>Complex matrix transformation</title>
+  <statement>
+  <p>
+  Let <m>\theta\in (0,2\pi)</m>, let <m>A=\begin{bmatrix}
+  \cos\theta \amp -\sin\theta \\ \sin\theta\amp \cos\theta
+  \end{bmatrix}</m>, and let <m>T_A\colon \C^2\rightarrow \C^2</m> be the corresponding matrix transformation. 
+  <ol>
+    <li>
+        <p>
+            Compute the characteristic polynomial of <m>A</m>. 
+        </p>
+    </li>
+    <li>
+        <p>
+            Determine the eigenvalue of <m>T_A</m>. 
+        </p>
+    </li>
+  </ol>
+  </p>
+  </statement>
+  <solution>
+  <p>
+  <ol>
+    <li>
+        <p>
+            We compute the characteristic polynomial <m>f(x)=\det(xI-A)=x^2-2\cos\theta x+1</m>, exactly as in <xref ref="eg_eigenvalues_rotation"/>. 
+        </p>
+    </li>
+    <li>
+        <p>
+            Using the complex version of the quadratic formula, we can factor <m>f</m> over <m>\C</m> as <m>f(x)=(x-\lambda_1)(x-\lambda_2)</m>, where 
+            <md>
+                <mrow>\lambda_1\amp =\cos\theta+i\sin\theta \amp \lambda_2\amp =\cos\theta-i\sin\theta</mrow>
+            </md>.
+            Note that since <m>\theta\in (0,2\pi)</m> we have <m>-\sin^2\theta&lt; 0</m>, from whence it follows that the two complex square-roots of <m>-\sin^2\theta</m> are <m>i\sin\theta</m> and <m>-i\sin\theta</m>. Using the Euler formula <m>e^{i\theta}=\cos\theta+i\sin\theta</m>, we can further express these eigenvalues as
+            <md>
+                <mrow>\lambda_1 \amp = e^{i\theta} \amp \lambda_2\amp =e^{-i\theta}</mrow>
+            </md>.
+            Finally, observe that in contrast to the linear operator <m>T_A\colon \R^2\rightarrow \R^2</m>, which has no eigenvalues (<xref ref="eg_eigenvalues_rotation"/>), the linear operator <m>T_A\colon \C^2\rightarrow \C^2</m> has two distinct (non-real) eigenvalues. 
+        </p>
+    </li>
+  </ol>
+  </p>
+  </solution>
+  </example>
+  
+
+</subsection>
+</section>
