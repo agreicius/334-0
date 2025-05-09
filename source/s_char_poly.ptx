@@ -32,7 +32,7 @@
                    <mrow> [\phantom{v}]_B\colon E(\lambda, T)\amp \rightarrow E(\lambda, T_A) \amp </mrow>
                    <mrow> v \amp \mapsto [v]_B</mrow>
                 </md>.
-                As a result we can produce a basis of <m>E(\lambda, T)</m> by computing a basis of <m>E(\lambda, T_A)</m> and <q>lifting</q> this to a basis of <m>E(\lambda, T)</m> using the inverse map <m>[\phantom{v}]_B^{-1}</m>.
+                As a result we can produce a basis of <m>E(\lambda, T)</m> by computing a basis of <m>E(\lambda, T_A)</m> and <q>lifting</q> this to a basis of <m>E(\lambda, T)</m> using the inverse coordinate map <m>[\phantom{v}]_B^{-1}</m>.
             </p>
         </li>
     </ol>
@@ -63,7 +63,7 @@
             \begin{tikzcd}
       E(\lambda, T) \arrow[hookrightarrow]{r} \arrow[leftrightarrow]{d}{[\phantom{v}]_{B}}
       \amp V \arrow{r}{T} \arrow[leftrightarrow]{d}{[\phantom{v}]_B}
-      \amp V  \arrow[leftrightarrow]{d}{[\phantom{v}]_{B'}}\\
+      \amp V  \arrow[leftrightarrow]{d}{[\phantom{v}]_{B}}\\
       E(\lambda, T_A) \arrow[hookrightarrow]{r}
       \amp F^n \arrow{r}{T_A}
       \amp F^n 
@@ -135,33 +135,116 @@ Let <m>A\in F^{n,n}</m>, and let <m>f(x)=\det(xI-A)</m> be its characteristic po
 </statement>
 <proof>
 <p>
+    <ol>
+        <li>
+            <p>
+                We have 
+                <md>
+                    <mrow>\lambda \text{ an eigenvalue of } T_A \amp \iff \NS (\lambda I-T_A)\ne \{\boldzero\} </mrow>
+                    <mrow> \amp \iff \NS (\lambda I-A)\ne \{\boldzero\}</mrow>
+                    <mrow> \amp \iff \lambda I-A \text{ is not invertible}</mrow>
+                    <mrow> \amp \iff \det (\lambda I-A)=0</mrow>
+                    <mrow> \amp \iff f(\lambda)=0</mrow>
+                </md>.
+            </p>
+        </li>
+        <li>
+            <p>
+                This proved by induction on <m>n</m>, using various properties of the determinant. You can find a proof of this in my <url href="https://agreicius.github.io/linear-algebra/s_eigenvectors.html">textbook for a first course in linear algebra</url>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                Let <m>f_A(x)</m> and <m>f_{A'}(x)</m> be the characteristic polynomials of <m>A</m> and <m>A'</m>, respectively. We have 
+                <md>
+                    <mrow>f_{A'}(x) \amp =\det(xI-A')</mrow>
+                    <mrow> \amp = \det(xI-P^{-1}AP)</mrow>
+                    <mrow> \amp = \det(P^{-1}(xI-A)P) \amp (\text{matrix mult. props.})</mrow>
+                    <mrow> \amp = \det P^{-1}\det(xI-A)\det P \amp (\det A_1A_2=\det A_1\det A_2) </mrow>
+                    <mrow> \amp = \det(xI-A) \amp (\det P^{-1}=(\det P)^{-1})</mrow>
+                    <mrow> \amp = f_A(x)</mrow>
+                </md>,
+                as claimed. 
+            </p>
+        </li>
+    </ol>
 </p>
 </proof>
 </theorem>
-<corollary xml:id="cor_char_poly_matrix">
-    <title>Characteristic polynomial of a matrix</title>
+<p>
+    We will soon proceed to examples illustrating how statement (1) of <xref ref="th_char_poly"/> allows us to find all the eigenvalues of a given linear operator. Before getting to those examples, we first observe that statement (3) allows us to define in a well-defined manner the characteristic polynomial of a general linear operator <m>T</m> of a finite-dimensional vector space. We state the definition first, and then justify its well-definedness in the remark that follows.  
+</p>
+<definition xml:id="d_char_poly">
+<title>Characteristic polynomial of operator</title>
+<statement>
+<p>
+Let <m>T\in \mathcal{L}(V)</m>, where <m>\dim V&lt; \infty</m>. We define the <term>characteristic polynomial</term> of <m>T</m> to be the characteristic polynomial of <m>[T]_B</m>, where <m>B</m> is any basis of <m>V</m>. 
+</p>
+</statement>
+</definition>
+<remark>
+<title>Characteristic polynomial is well-defined</title>
+<p>
+Why is <xref ref="d_char_poly"/> well-defined? That is, suppose I choose basis <m>B</m> and matrix representation <m>[T]_B</m> to compute the characteristic polynomial of <m>T</m>, and you choose basis <m>B'</m> and matrix representation <m>[T]_{B'}</m>; why do we both get the same characteristic polynomial? We are saved by the change of basis for transformations formula <xref ref="eq_changebasis_transform"/> and (3) of <xref ref="th_char_poly"/>. Indeed letting <m>A=[T]_B</m> (my matrix representation) and <m>A'=[T]_{B'}</m> (your matrix representation), we have 
+<me>
+    A'=[T]_{B'}=\underset{B\to B'}{P}\,[T]_B\,\underset{B'\to B}{P}=P^{-1}AP
+</me>,
+where <m>P=\underset{B'\to B}{P}</m>. This shows that <m>A'</m> and <m>A</m> are similar (<m>A'=P^{-1}AP</m>), and hence that they have the same characteristic polynomial by (3) of <xref ref="th_char_poly"/>.  
+</p>
+<p>
+    Lastly, observe that according to <xref ref="d_char_poly"/>, the characteristic polynomial of a matrix transformation <m>T_A\colon F^n\rightarrow F^n</m> is the characteristic polynomial of the matrix <m>A</m>, as defined in <xref ref="d_char_poly_matrix"/>. This is because <m>A=[T_A]_B</m>, where <m>B</m> is the standard basis of <m>F^n</m>. 
+</p>
+</remark>
+<p>
+    Now that we have generalized the definition of characteristic polynomial to a general linear operator <m>T</m> of a finite-dimensional vector space, we make official its relation ship to the eigenvalues of <m>T</m>.  
+</p>
+<theorem xml:id="th_char_poly_operator">
+    <title>Characteristic polynomial of operator</title>
     <statement>
         <p>
-            Let <m>A\in F^{n,n}</m>, and let <m>f(x)=x^n+a_{n-1}x+\cdots +a_1x+a_0</m> be the characteristic polynomial of <m>A</m>. 
+            Let <m>T\in\mathcal{L}(V)</m>, where <m>\dim V=n&lt; \infty</m>, and let <m>f(x)=x^n+a_{n-1}x+\cdots +a_1x+a_0</m> be the characteristic polynomial of <m>T</m>. 
             <ol>
                 <li>
                     <p>
-                        <m>\lambda\in F</m> is an eigenvalue of of <m>T_A</m> if and only if <m>f</m> factors over <m>F</m> as 
-                        <me>
-                            f(x)=(x-\lambda)g(x)
-                        </me>,
-                        for some <m>g\in P_{n-1}(F)</m>. 
+                       The polynomial <m>f</m> can be factored over <m>F</m> as  
+                       <mdn>
+                        <mrow xml:id="eq_char_poly_factored">f(x) \amp =(x-\lambda_1)^{n_1}(x-\lambda_2)^{n_2}\cdots (x-\lambda_r)^{n_r}g(x)</mrow>
+                       </mdn>,
+                       where <m>\lambda_i\in F</m> for all <m>1\leq i\leq r</m>, <m>\lambda_i\ne \lambda_j</m> for <m>i\ne j</m>, and <m>g(x)\in P(F)</m> is a polynomial with no roots in <m>F</m>. It follows that <m>\lambda_1,\lambda_2,\dots, \lambda_r</m> are the distinct eigenvalues of <m>T</m>. 
                     </p>
                 </li>
                 <li>
                     <p>
-                        <m>T_A</m> has at most <m>n</m> distinct eigenvalues. 
+                        <m>T</m> has at most <m>n=\dim V</m> distinct eigenvalues. 
                     </p>
                 </li>
             </ol>
         </p>
     </statement>
-</corollary>
+    <proof>
+        <p>
+            <ol>
+                <li>
+                    <p>
+                        Let <m>A=[T]_B</m> be any matrix representation of <m>T</m>. We know from <xref ref="th_matrixreps_eigenspace"/> that the eigenvalues of <m>A</m> are precisely the eigenvalues of <m>T</m>. Furthermore, by <xref ref="th_char_poly"/>, the eigenvalues of <m>A</m> are precisely the roots of <m>f</m> lying in the base field <m>F</m>. Elementary polynomial properties imply that a scalar <m>\lambda</m> is a root of <m>f(x)</m> if and only if we can factor <m>f</m> as 
+                        <me>
+                            f(x)=(x-\lambda)q(x)
+                        </me>,
+                        where the <em>quotient</em> <m>q(x)</m> is a polynomial of degree <m>n-1</m>. Continuing this factoring out of roots process until the quotient polynomial has no roots in <m>F</m>, we see that we can factor <m>f</m> as in <xref ref="eq_char_poly_factored"/>. From that factorization, we see that <m>\lambda_1,\lambda_2,\dots, \lambda_r</m> are the distinct roots of <m>f</m>, and hence the distinct eigenvalues of <m>T</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        As we have mentioned before, a polynomial in <m>P(F)</m> of degree <m>n\geq 0</m> can have at most <m>n</m> distinct roots in <m>F</m>. Thus the characteristic polynomial of <m>T</m> can have at most <m>n</m> distinct roots in <m>F</m>, from which it follows that <m>T</m> can have at most <m>n</m> distinct eigenvalues. 
+                    </p>
+                </li>
+            </ol>
+        </p>
+    </proof>
+</theorem>
+<p>
+    At last we proceed to some examples, beginning with some familiar friends from the previous section.  
+</p>
 <example xml:id="eg_eigenvalues_reflection">
 <title>Reflection, again</title>
 <statement>
@@ -180,7 +263,7 @@ Let <m>(a,b)</m> be a nonzero element of <m>\R^2</m>, let <m>\ell=\Span((a,b))</
     </li>
     <li>
         <p>
-            Find all eigenvalue of <m>T_A</m>. 
+            Find all eigenvalues of <m>T_A</m>. 
         </p>
     </li>
 </ol>
@@ -321,7 +404,218 @@ Let <m>(a,b)</m> be a nonzero element of <m>\R^2</m>, let <m>\ell=\Span((a,b))</
   </p>
   </solution>
   </example>
-  
+  <p>
+    Our last example illustrates how a characteristic polynomial may not factor completely over the base field <m>F</m>. In this example we also compute bases for each eigenspace of the linear operator <m>T_A</m>. 
+  </p>
+  <example xml:base="eg_eigenspaces_4by4">
+    <title>Compute eigenspaces</title>
+    <statement>
+      <p>
+        Let <m>T\colon \R^4\rightarrow \R^4</m> be the matrix transformation <m>T=T_A</m>, where
+        <me>
+          A=\begin{amatrix}[rrrr]
+          3 \amp -1 \amp -1 \amp -1 \\
+  -5 \amp 2 \amp 2 \amp 3 \\
+  6 \amp -1 \amp -2 \amp -3 \\
+  1 \amp -1 \amp 0 \amp 0
+          \end{amatrix}
+        </me>.
+        The characteristic polynomial of <m>A</m> is 
+        is <m>f(x)=x^{4} - 3 x^{3} + 3 x^{2} - 3 x + 2</m>.
+        <ol>
+          <li>
+            <p>
+              Find all eigenvalues of <m>A</m>. 
+            </p>
+          </li>
+          <li>
+            <p>
+              For each eigenvalue <m>\lambda</m> compute a basis for the eigenspace <m>E(\lambda, T_A)</m>. 
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              To find the eigenvalues of <m>A</m> we must factor the polynomial <m>f(x)</m>. We first look for integer roots that divide the constant term <m>2</m>. We see that <m>f(1)=0</m>, and thus that <m>(x-1)</m> is a factor of <m>f(x)</m>. Using polynomial long division, we see that 
+              <me>f(x)=(x-1)(x^3 - 2x^2 + x - 2)</me>. Continuing this process with the cubic polynomial, we factor
+              <me>
+                x^3 - 2x^2 + x - 2=(x-2)(x^2+1)
+              </me>.
+              Since <m>x^2+1</m> is irreducible over <m>\R</m>, we can factor no further. The factorization 
+              <me>
+                f(x)=(x-1)(x-2)(x^2+1)
+              </me>, 
+              tells us that the eigenvalues of <m>A</m> are <m>\lambda=1</m> and <m>\lambda=2</m>.  
+            </p>
+          </li>
+          <li>
+            <case>
+              <title>Basis of <m>E(1, T_A)</m></title>
+              <p>
+              We have 
+              <md>
+                <mrow>E(1, T_A) \amp =\NS (I-A)</mrow>
+                <mrow> \amp = \NS \begin{amatrix}[rrrr]
+                  -2 \amp 1 \amp 1 \amp 1 \\
+                  5 \amp -1 \amp -2 \amp -3 \\
+                  -6 \amp 1 \amp 3 \amp 3 \\
+                  -1 \amp 1 \amp 0 \amp 1
+                \end{amatrix}
+                </mrow>
+                <mrow> \amp = \NS \begin{amatrix}[rrrr]
+                  1 \amp -\frac{1}{2} \amp -\frac{1}{2} \amp -\frac{1}{2} \\
+    0 \amp 1 \amp \frac{1}{3} \amp -\frac{1}{3} \\
+    0 \amp 0 \amp 1 \amp -1 \\
+    0 \amp 0 \amp 0 \amp 0
+                \end{amatrix}
+                </mrow>
+                <mrow> \amp =\Span((1,0,1,1))</mrow>
+              </md>.
+              We conclude that <m>B=((1,0,1,1))</m> is a basis of <m>E(1, T_A)</m>. 
+              </p>
+              </case>
+            <case>
+            <title>Basis of <m>E(2, T_A)</m></title>
+            <p>
+            We have 
+            <md>
+              <mrow>E(2, T_A) \amp =\NS (2-A)</mrow>
+              <mrow> \amp = \NS \begin{amatrix}[rrrr]
+                -1 \amp 1 \amp 1 \amp 1 \\
+  5 \amp 0 \amp -2 \amp -3 \\
+  -6 \amp 1 \amp 4 \amp 3 \\
+  -1 \amp 1 \amp 0 \amp 2
+              \end{amatrix}
+              </mrow>
+              <mrow> \amp = \NS \begin{amatrix}[rrrr]
+                1 \amp -1 \amp -1 \amp -1 \\
+  0 \amp 1 \amp \frac{3}{5} \amp \frac{2}{5} \\
+  0 \amp 0 \amp 1 \amp -1 \\
+  0 \amp 0 \amp 0 \amp 0
+              \end{amatrix}
+              </mrow>
+              <mrow> \amp = \Span((1,-1,1,1))</mrow>
+            </md>.
+            We conclude that <m>B'=((1,-1,1,1))</m> is a basis of <m>E(2, T_A)</m>. 
+            </p>
+            </case>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </example>
 
+</subsection>
+<subsection xml:id="ss_eigenspaces">
+<title>Computing eigenspaces</title>
+<p>
+    We end this section by bringing together <xref ref="th_matrixreps_eigenspace"/> and <xref ref="th_char_poly_operator"/> to give a complete procedure for finding all eigenvalues of a linear operator on a finite-dimensional space, and then computing bases for the eigenspaces of each of those eigenvalues. 
+</p>
+<algorithm xml:id="proc_eigenspaces_transformation">
+    <title>Computing eigenspaces of operators</title>
+    <statement>
+      <p>
+        Let <m>T\in\mathcal{L}(V)</m>, where <m>\dim V=n&lt; \infty</m>. To compute the eigenvalues and eigenspaces of <m>T</m>, proceed as follows.
+      
+      <ol>
+        <li>
+          <p>
+            Pick <em>any</em> basis <m>B</m> of <m>V</m> and compute <m>A=[T]_B</m>.
+          </p>
+        </li>
+        <li>
+            <p>
+                Compute <m>f(x)=\det(xI-A)</m>, the characteristic polynomial of <m>T</m> and factor <m>f</m> as in <xref ref="eq_char_poly_factored"/> to find the distinct eigenvalues <m>\lambda_1,\lambda_2,\dots, \lambda_r</m> of <m>T</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                For each <m>1\leq i\leq r</m> compute a basis <m>C_i</m> of <m>E(\lambda_i, T_A)=\NS(\lambda I-A)</m> using the null space algorithm for matrices. 
+            </p>
+        </li>
+        <li>
+            <p>
+                For each <m>1\leq i\leq n</m>, <q>lift</q> the basis <m>C_i</m> of <m>E(\lambda_i, T_A)</m> to a basis <m>B_i</m> of <m>E(\lambda_i, T)</m> using the inverse coordinate map <m>[\phantom{v}]_B^{-1}</m>. 
+            </p>
+        </li>
+      </ol>
+    </p>
+    </statement>
+  </algorithm>
+  <example xml:id="eg_eigenvector_systematic_transposition">
+    <title>Transposition (again)</title>
+    <statement>
+      <p>
+        Let <m>S\colon M_{22}\rightarrow M_{22}</m> be defined as <m>S(A)=A^T</m>.
+      
+      <ol>
+        <li>
+          <p>
+            Find all eigenvalues of <m>S</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            For each eigenvalue <m>\lambda</m> of <m>S</m> compute a basis for <m>E(\lambda,S)</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+    </statement>
+    <solution>
+      <p>
+        Let <m>B=(E_{11},E_{12},E_{21},E_{22})</m>, the standard basis of <m>F^{2,2}</m>. We let <m>A=[S]_B</m>, where 
+        <md>
+          <mrow> [S]_B \amp =\begin{bmatrix}
+            \vert \amp \vert\amp \vert\amp \vert \\
+            [S(E_{11})]_B\amp [S(E_{12})]_B \amp [S(E_{21})]_B \amp [S(E_{22})]_B\\
+            \vert \amp \vert \amp \vert\amp \vert
+        \end{bmatrix} </mrow>
+        <mrow>  \amp =\begin{bmatrix}
+          \vert \amp \vert\amp \vert\amp \vert \\
+          [E_{11}]_B\amp [E_{21}]_B \amp [E_{12}]_B \amp [E_{22}]_B \\
+          \vert \amp \vert \amp \vert\amp \vert
+      \end{bmatrix}
+      \hspace{10pt} (E_{11}^T=E_{11}, E_{12}^T=E_{21}, \text{etc.})</mrow>
+      <mrow>  \amp =\begin{bmatrix}
+        1\amp 0\amp 0\amp 0\\
+        0\amp 0\amp 1\amp 0\\
+        0\amp 1\amp 0\amp 0\\
+        0\amp 0\amp 0\amp 1
+      \end{bmatrix} </mrow>
+        </md>.
+      Now compute the the eigenvalues and eigenspaces of <m>A</m>. We leave it to you to verify that 
+    <me>f(x)=\det(xI-A)=(x-1)^2(x^2-1)=(x-1)^3(x+1)
+    </me>.
+     We conclude that <m>1</m> and <m>-1</m> are the only eigenvalues of <m>A</m> (and hence also <m>S</m>). Bases for the corresponding eigenspaces of <m>A</m> are readily computed (using the null space algorithm for matrices) as
+      <md>
+        <mrow>E(1,T_A)\amp=\NS(I-A) = \Span\underset{C_1}{\underbrace{\left((1,0,0,0), (0,1,1,0), (0,0,0,1)\right)}} </mrow>
+        <mrow>E(-1,T_A)\amp=\NS(-I-A)  =\Span\underset{C_2}{\underbrace{\left((0,1,-1,0)\right)}} </mrow>
+      </md>.
+      Now <q>lift</q> these up to bases of the eigenspaces <m>E(1,S)</m> and <m>E(-1,S)</m> of <m>S</m>:
+      <md>
+        <mrow>E(1,S) \amp=\Span\underset{B_1}{\underbrace{\left(\begin{bmatrix}
+          1\amp 0\\ 0 \amp 0
+        \end{bmatrix},
+        \begin{bmatrix}
+          0\amp 1\\ 1 \amp 0
+        \end{bmatrix},
+        \begin{bmatrix}
+          0\amp 0\\ 0 \amp 1
+        \end{bmatrix} \right)}} </mrow>
+        <mrow>E(-1,S)\amp= \Span\underset{B_2}{\underbrace{\left(
+        \begin{amatrix}[rr]
+          0\amp 1\\ -1 \amp 0
+        \end{amatrix} \right)}} </mrow>
+      </md>.
+      It is easy to see that <m>E(1,S)</m> and <m>E(-1,S)</m> are the subspaces of symmetric and skew-symmetric matrices, respectively. This is consistent with our analysis in <xref ref="eg_eigenvector_adhoc_transposition"/>.
+      </p>
+    </solution>
+  </example>
 </subsection>
 </section>

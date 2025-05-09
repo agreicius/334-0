@@ -20,10 +20,10 @@
         </p>
         <p>
             Let's examine what this means in terms of matrix arithmetic. Let <m>B=(\bolde_1,\bolde_2,\dots, \bolde_n)</m> be the standard basis of <m>F^n</m>, and recall that <m>A=[T_A]_B</m>: <ie/>, the standard matrix of <m>T=T_A</m> is the matrix representation of <m>T_A</m> with respect to the standard basis. The matrix <m>A</m> is diagonalizable if and only if there is a basis <m>B'</m> of <m>F^{n}</m> such that <m>[T_A]_{B'}=D</m> is a diagonal matrix. Using <xref ref="th_similarity_matrixreps"/>, this in turn is equivalent to there being an invertible matrix <m>P</m> such that 
-            <me>
+            <men xml:id="eq_matrix_diagonalize">
                 D=P^{-1}AP
-            </me>.
-            Thus, we conclude that <m>A</m> is diagonalizable if and only if it is similar to a diagonal matrix.
+            </men>.
+            Thus, we conclude that <m>A</m> is diagonalizable if and only if it is similar to a diagonal matrix. We say that the invertible matrix <m>P</m> in <xref ref="eq_matrix_diagonalize"/> <em>diagonalizes</em> the matrix <m>A</m>. 
         </p>
     </convention>
     <p>
@@ -71,7 +71,243 @@
     </statement>
     </definition>
     <p>
-        
+        Our discussion above <xref ref="d_eigenbasis"/> constitutes a proof of the first two statements in <xref ref="th_diagable"/>.  
     </p>
+    <theorem xml:id="th_diagable">
+    <title>Diagonalizable operators</title>
+    <statement>
+    <p>
+    Let <m>T</m> be a linear operator on the finite-dimensional vector space <m>V</m>, and let <m>\lambda_1,\lambda_2,\dots, \lambda_r</m> be the distinct eigenvalues of <m>T</m>. The following statements are equivalent. 
+    <ol>
+        <li>
+            <p>
+                <m>T</m> is diagonalizable. 
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>T</m> has an eigenbasis <m>B</m>.  
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>V=\bigoplus_{i=1}^r E(\lambda_i, T)</m>.
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>\dim V=\sum_{i=1}^r\dim E(\lambda_i, T)</m>.
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    </theorem>
+    <p>
+        We defer a full proof of <xref ref="th_diagable"/> for the time being, opting instead to illustrate with some examples how we can decide whether a linear transformation is diagonalizable.  The last statement of <xref ref="th_diagable"/> will serve as the foundation for our computational technique for answering such questions, as we make official in the following procedure.
+    </p>
+    <algorithm xml:id="proc_diagable">
+        <title>Diagonalizable operator</title>
+        <statement>
+            <p>
+                Let <m>T</m> be a linear operator of the finite-dimensional vector space <m>V</m>. To determine whether <m>T</m> is diagonalizable and/or find an eigenbasis of <m>T</m>, proceed as follows. 
+                <ol>
+                    <li>
+                        <p>
+                            Determine the distinct eigenvalues <m>\lambda_1,\lambda_2,\dots, \lambda_r</m> of <m>T</m>. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            For each <m>1\leq i\leq r</m>, compute a basis <m>B_i</m> for <m>E(\lambda_i, T)</m>. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>T</m> is diagonalizable if and only if <m>\sum_{i=1}^r\dim E(\lambda_i, T)=\dim V</m>. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            If <m>T</m> is diagonalizable, then the tuple <m>B=B_1*B_2*\cdots *B_r</m> obtained by concatenating the bases <m>B_i</m> is an eigenbasis of <m>T</m>. 
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+    </algorithm>
+    <example xml:id="eg_diagable_transposition">
+    <title>Transposition</title>
+    <statement>
+    <p>
+    Let <m>S\colon F^{2,2}\rightarrow F^{2,2}</m> be defined as <m>S(A)=A^T</m>. Decide whether <m>S</m> is diagonalizable; if it is, find an eigenbasis <m>B</m> of <m>S</m> and compute <m>[S]_B</m>. 
+    </p>
+    </statement>
+    <solution>
+    <p>
+    We have already done most of the work of <xref ref="proc_diagable"/> for this linear operator in <xref ref="eg_transposition_eigenspace"/>. There we saw that <m>1</m> and <m>-1</m> are the only eigenvalues of <m>S</m>, and the the bases of <m>E(1,S)</m> and <m>E(-1,S)</m> are 
+    <md>
+        <mrow>B_1\amp =\left( \begin{bmatrix}
+            1\amp 0\\ 0 \amp 0
+          \end{bmatrix},
+          \begin{bmatrix}
+            0\amp 1\\ 1 \amp 0
+          \end{bmatrix},
+          \begin{bmatrix}
+            0\amp 0\\ 0 \amp 1
+          \end{bmatrix}\right) \amp </mrow>
+          <mrow>B_2 \amp =\left(\begin{bmatrix}
+          0\amp 1\\ -1\amp 0
+          \end{bmatrix} \right)</mrow>
+    </md>,
+    respectively. It follows that 
+    <md>
+        <mrow>\dim E(1,S) \amp =\len B_1=3</mrow>
+        <mrow>\dim E(-1,S) \amp =\len B_2=1</mrow>
+    </md>.
+    Since we have 
+    <me>
+        \dim F^{2,2}=4=3+1=\dim E(1,S)+\dim E(-1,S)
+    </me>,
+    we conclude that <m>S</m> is diagonalizable, and furthermore that 
+    <me>
+        B=\left(\begin{bmatrix}
+        1\amp 0\\ 0 \amp 0
+      \end{bmatrix},
+      \begin{bmatrix}
+        0\amp 1\\ 1 \amp 0
+      \end{bmatrix},
+      \begin{bmatrix}
+        0\amp 0\\ 0 \amp 1
+      \end{bmatrix},  \begin{bmatrix}
+      0\amp 1\\ -1\amp 0
+      \end{bmatrix}\right)
+    </me>
+    is an eigenbasis of <m>S</m>.
+    </p>
+    </solution>
+    </example>
+    <example xml:id="eg_nondiagable_matrix_transform">
+    <title>Matrix transformation</title>
+    <statement>
+    <p>
+    Let <m>T\colon \R^3\rightarrow \R^3</m> be the matrix transformation <m>T=T_A</m>, where 
+    <me>
+        A=\begin{bmatrix}
+        1\amp 1\amp 0 \\0\amp 1\amp 0\\ 0\amp 0\amp 2
+        \end{bmatrix}
+    </me>.
+    Decide whether <m>T_A</m> is diagonalizable; if it is, find an invertible matrix <m>P</m> that diagonalizes <m>A</m> compute <m>D=P^{-1}AP</m>. 
+    
+    </p>
+    </statement>
+    <solution>
+    <p>
+    
+    </p>
+    </solution>
+    </example>
+    <example xml:id="eg_diagable_matrix_transform">
+        <title>Matrix transformation</title>
+        <statement>
+        <p>
+        Let <m>T\colon \R^3\rightarrow \R^3</m> be the matrix transformation <m>T=T_A</m>, where 
+        <me>
+            A=\begin{bmatrix}
+            1\amp 0\amp 1 \\0\amp 1\amp 0\\ 0\amp 0\amp 2
+            \end{bmatrix}
+        </me>.
+        Decide whether <m>T_A</m> is diagonalizable; if it is, find an invertible matrix <m>P</m> that diagonalizes <m>A</m> compute <m>D=P^{-1}AP</m>. 
+        
+        </p>
+        </statement>
+        <solution>
+        <p>
+        
+        </p>
+        </solution>
+        </example>
+        <theorem xml:id="th_eigenvectors_ind">
+        <title>Independence of eigenvectors</title>
+        <statement>
+        <p>
+        Let <m>T</m> be a linear operator on the vector space <m>V</m> (not necessarily finite dimensional). If <m>S=(v_i)_{i\in I}</m> is a tuple of eigenvectors of <m>T</m> satisfying <m>T(v_i)=\lambda_i v_i</m> for all <m>i\in I</m> and <m>\lambda_i\ne \lambda_j</m> for all <m>i\ne j</m> (<ie/>, the eigenvalues are distinct), then <m>S</m> is linearly independent. 
+        </p>
+        </statement>
+        <proof>
+        <p>
+        </p>
+        </proof>
+        </theorem>
+        <example xml:id="eg_exponential_eigenvectors">
+        <title>Exponential functions as eigenvectors</title>
+        <statement>
+        <p>
+        Let <m>I</m> be an interval of <m>\R</m> containing more than one element. For all <m>\lambda\in \R</m>, define <m>f_\lambda\in C^\infty(\R)</m> as <m>f_\lambda(x)=e^{\lambda x}</m>. Prove that <m>S=(f_\lambda)_{\lambda\in \R}</m> is an uncountably infinite linear independent tuple in <m>C^{\infty}(I)</m>. 
+        </p>
+        </statement>
+        <solution>
+        <p>
+        
+        </p>
+        </solution>
+        </example>
+        
+        <corollary xml:id="cor_eigenvectors_ind">
+            <title>Independence of eigenvectors</title>
+            <statement>
+                <p>
+                    Let <m>T</m> be a linear operator on the vector space <m>V</m> (not necessarily finite dimensional). If <m>\lambda_1,\lambda_2,\dots, \lambda_r</m> are distinct eigenvalues of <m>T</m>, then 
+                    <men xml:id="eq_eigenspace_directsum">
+                        \sum_{i=1}^rE(\lambda_i, T)=\bigoplus_{i=1}^r E(\lambda_i, T)
+                    </men>.
+                </p>
+            </statement>
+        </corollary>
+        <corollary xml:id="cor_distinct_eigenvalues">
+            <title>Distinct eigenvalues</title>
+            <statement>
+                <p>
+                    Let <m>T\in \mathcal{L}(V)</m>, where <m>\dim V=n&lt; \infty</m>. If <m>T</m> has <m>n</m> distinct eigenvalues, then <m>T</m> is diagonalizable. 
+                </p>
+            </statement>
+        </corollary>
+        <remark>
+            <title>Distinct eigenvalues</title>
+            <p>
+                Mark well that the implication in <xref ref="cor_distinct_eigenvalues"/> is not an if and only if! Consider the identity transformation <m>I_V\colon V\rightarrow V</m> on a nonzero finite-dimensional vector space <m>V</m>. Given any basis <m>B</m> of <m>V</m>, we have 
+                <me>
+                    [I_V]_B=I\in F^{n,n}
+                </me>.
+                Thus <m>I_V</m> is diagonalizable. And yet, <m>I_V</m> has only one eigenvalue, namely <m>\lambda=1</m>.
+            </p>
+        </remark>
+        <example xml:id="eg_distinct_eigenvalues_complex">
+        <title>Complex linear operator</title>
+        <statement>
+        <p>
+        Assume <m>T</m> is a linear operator of the 3-dimensional <m>\C</m>-vector space <m>V</m> and that the characteristic polynomial of <m>T</m> is <m>f(x)=x^3-1</m>. Decide whether <m>T</m> is diagonalizable. 
+        </p>
+        </statement>
+        <solution>
+        <p>
+        
+        </p>
+        </solution>
+        </example>
+        <example xml:id="eg_distinct_eigenvalues_real">
+            <title>Real linear operator</title>
+            <statement>
+            <p>
+            Assume <m>T</m> is a linear operator of the 3-dimensional <m>\R</m>-vector space <m>V</m> and that the characteristic polynomial of <m>T</m> is <m>f(x)=x^3-1</m>. Decide whether <m>T</m> is diagonalizable. 
+            </p>
+            </statement>
+            <solution>
+            <p>
+            
+            </p>
+            </solution>
+            </example>
+        
 
 </section>
