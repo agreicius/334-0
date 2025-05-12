@@ -197,13 +197,38 @@
         1\amp 1\amp 0 \\0\amp 1\amp 0\\ 0\amp 0\amp 2
         \end{bmatrix}
     </me>.
-    Decide whether <m>T_A</m> is diagonalizable; if it is, find an invertible matrix <m>P</m> that diagonalizes <m>A</m> compute <m>D=P^{-1}AP</m>. 
+    Decide whether <m>T_A</m> is diagonalizable; if it is, find an invertible matrix <m>P</m> that diagonalizes <m>A</m> and compute <m>D=P^{-1}AP</m>. 
     
     </p>
     </statement>
     <solution>
     <p>
-    
+    We compute the characteristic polynomial <m>f</m> as 
+    <md>
+        <mrow>f(x) \amp = \det(xI-A)</mrow>
+        <mrow> \amp = \det \begin{amatrix}[ccc]
+        x-1\amp -1 \amp 0\\ 0 \amp x-1\amp 0 \\ 0 \amp 0\amp x-2
+        \end{amatrix} </mrow>
+        <mrow> \amp = (x-1)^2(x-2)</mrow>
+    </md>.
+    (Note how easy <m>f</m> was to compute, thanks to <m>A</m> being upper triangular.) The distinct eigenvalues of <m>A</m> are thus <m>1</m> and <m>2</m>. We compute 
+    <md>
+        <mrow>E(1,T_A) \amp = \NS(I-A)</mrow>
+        <mrow> \amp =\NS \begin{amatrix}[ccc]
+        0\amp -1 \amp 0\\ 0 \amp 0\amp 0 \\ 0 \amp 0\amp -1
+        \end{amatrix}</mrow>
+        <mrow> \amp = \Span((1,0,0))</mrow>
+        <mrow>E(2,T_A) \amp = \NS(2I-A)</mrow>
+        <mrow> \amp =\NS \begin{amatrix}[ccc]
+        1\amp -1 \amp 0\\ 0 \amp 1\amp 0 \\ 0 \amp 0\amp 0
+        \end{amatrix}</mrow>
+        <mrow> \amp = \Span((0,0,1))</mrow>
+    </md>.
+    Since 
+    <md>
+        <mrow>\dim E(1,T_A)+\dim E(2,T_A) \amp = 1+1=2\ne 3</mrow>
+    </md>,
+    we conclude that <m>T_A</m> is not diagaonalizable. 
     </p>
     </solution>
     </example>
@@ -217,16 +242,131 @@
             1\amp 0\amp 1 \\0\amp 1\amp 0\\ 0\amp 0\amp 2
             \end{bmatrix}
         </me>.
-        Decide whether <m>T_A</m> is diagonalizable; if it is, find an invertible matrix <m>P</m> that diagonalizes <m>A</m> compute <m>D=P^{-1}AP</m>. 
+        Decide whether <m>T_A</m> is diagonalizable; if it is, find an invertible matrix <m>P</m> that diagonalizes <m>A</m> and compute <m>D=P^{-1}AP</m>. 
         
         </p>
         </statement>
         <solution>
         <p>
-        
-        </p>
-        </solution>
+    We compute the characteristic polynomial <m>f</m> as 
+    <md>
+        <mrow>f(x) \amp = \det(xI-A)</mrow>
+        <mrow> \amp = \det \begin{amatrix}[ccc]
+        x-1\amp 0 \amp -\\ 0 \amp x-1\amp 0 \\ 0 \amp 0\amp x-2
+        \end{amatrix} </mrow>
+        <mrow> \amp = (x-1)^2(x-2)</mrow>
+    </md>.
+    The distinct eigenvalues of <m>A</m> are thus <m>1</m> and <m>2</m>. We compute 
+    <md>
+        <mrow>E(1,T_A) \amp = \NS(I-A)</mrow>
+        <mrow> \amp =\NS \begin{amatrix}[ccc]
+        0\amp 0\amp -1\\ 0 \amp 0\amp 0 \\ 0 \amp 0\amp -1
+        \end{amatrix}</mrow>
+        <mrow> \amp = \Span((1,0,0), (0,1,0))</mrow>
+        <mrow>E(2,T_A) \amp = \NS(2I-A)</mrow>
+        <mrow> \amp =\NS \begin{amatrix}[ccc]
+        1\amp 0 \amp -1\\ 0 \amp 1\amp 0 \\ 0 \amp 0\amp 0
+        \end{amatrix}</mrow>
+        <mrow> \amp = \Span((1,0,1))</mrow>
+    </md>.
+    Since 
+    <md>
+        <mrow>\dim E(1,T_A)+\dim E(2,T_A) \amp = 2+1=3</mrow>
+    </md>,
+    we conclude that <m>T_A</m> is diagaonalizable. Furthermore we obtain an eigenbasis 
+    <me>
+        B'=((1,0,0),(0,1,0),(1,0,1))
+    </me>
+    by concantenating the bases for our two eigenspaces. Let <m>B</m> be the standard basis of <m>\R^3</m>. By the change of basis formula, we have 
+    <me>
+        [T_A]_{B'}=(\underset{B'\to B}{P})^{-1}[T_A]_B\underset{B'\to B}{P}=(\underset{B'\to B}{P})^{-1}A\underset{B'\to B}{P}
+    </me>.
+    Since <m>B'</m> is an eigenbasis, we easily compute 
+    <me>
+        D=[T_A]_{B'}=\begin{bmatrix}
+        1\amp 0\amp 0\\ 0\amp 1\amp 0\\ 0\amp 0\amp 2
+        \end{bmatrix}
+    </me>.
+    Thus we have 
+    <me>
+        D=P^{-1}AP, \hspace{10pt} P=\underset{B'\to B}{P}=\begin{bmatrix}
+        1\amp 0\amp 0\\ 0\amp 1\amp 0\\ 1\amp 0\amp 1
+        \end{bmatrix}
+    </me>.
+    </p>
+    </solution>
         </example>
+<p>
+    The next example is a first glimpse at the algebraic usefulness of diagonalizability. If <m>A</m> is diagonalizable, we have 
+    <md>
+        <mrow>D \amp =P^{-1}AP \amp A=PDP^{-1}</mrow>
+    </md>
+    and hence 
+    <md>
+        <mrow>A^n \amp =(PDP^{-1})^n</mrow>
+        <mrow> \amp =PD^nP^{-1}</mrow>
+    </md>
+    for any positive integer <m>n</m>. This gives us a convenient means of computing powers of diagonalizable matrices.
+</p>
+<example xml:id="eg_matrix_power">
+<title>Matrix power</title>
+<statement>
+<p>
+Let <m>A=\begin{bmatrix}
+3\amp 1\\ 1\amp 3
+\end{bmatrix}</m>. Compute <m>A^{100}</m>
+</p>
+</statement>
+<solution>
+<p>
+The characteristic polynomial of <m>A</m> is <m>f(x)=x^2-6x+8=(x-4)(x-2)</m>. The usual computation shows that 
+<md>
+    <mrow>E(2, T_A) \amp = \Span ((1,-1)) </mrow>
+    <mrow>E(4,T_A) \amp =\Span ((1,1))</mrow>
+</md>,
+and thus that we have <m>D=P^{-1}AP</m>, where 
+<me>
+    D=\begin{bmatrix}
+    2\amp 0 \\ 0\amp 4
+    \end{bmatrix},
+    P=\begin{bmatrix}
+    1\amp 1 \\ -1\amp 1
+    \end{bmatrix}
+</me>.
+From the discussion above, we conclude that 
+<md>
+    <mrow>A^{100} \amp =(PDP^{-1})^{100}</mrow>
+    <mrow> \amp = PD^{100}P^{-1}</mrow>
+    <mrow> \amp =\begin{bmatrix}
+    1\amp 1 \\ -1\amp 1
+    \end{bmatrix}
+\begin{bmatrix}
+    2^{100}\amp 0 \\ 0\amp 4^{100}
+    \end{bmatrix}
+    \begin{bmatrix}
+    1/2\amp -1/2 \\ 1/2\amp 1/2
+    \end{bmatrix}
+</mrow>
+<mrow> \amp = 
+   \begin{bmatrix}
+    1\amp 1 \\ -1\amp 1
+    \end{bmatrix}
+   \begin{bmatrix}
+    2^{99}\amp -2^{99} \\ 2^{199}\amp 2^{199}
+    \end{bmatrix}
+</mrow>
+<mrow> \amp = 
+    \begin{bmatrix}
+    2^{199}+2^{99} \amp 2^{199}-2^{99} \\
+    2^{199}-2^{99} \amp 2^{199}+2^{99}
+    \end{bmatrix}
+</mrow>
+</md>.
+
+</p>
+</solution>
+</example>
+
         <theorem xml:id="th_eigenvectors_ind">
         <title>Independence of eigenvectors</title>
         <statement>
@@ -235,9 +375,36 @@
         </p>
         </statement>
         <proof>
-        <p>
-        </p>
-        </proof>
+       <p>
+      We prove the result by contradiction. If <m>S=(v_i)_{i\in I}</m> is linearly depenendent, then we can find a linearly dependent finite subtuple <m>S'=(v_{i_1}, v_{i_2},\dots, v_{i_r})</m> of minimal length <m>r</m>. Since each <m>v_{i_j}</m> is an eigenvector of <m>T</m>, we have 
+      <me>
+        T(v_{i_j})=\lambda_j v_{i_j}
+      </me>
+      for all <m>1\leq j\leq r</m>; since the eigenvalues are assumed to be distinct, we have <m>\lambda_j\ne \lambda_\ell</m> for <m>j\ne \ell</m>. 
+    </p>
+    <p>
+        Note first that we must have <m>r\geq 2</m>: since eigenvectors are nonzero by definition, no subtuple of <m>S</m> of length 1 is linearly dependent. Since <m>S'</m> is linearly dependent we have
+    <men xml:id="eq_independent_eigenvectors_A">
+      c_1v_{i_1}+c_2v_{i_2}+\cdots +c_rv_{i_r}=\boldzero
+    </men>,
+    where <m>c_i\ne 0</m> for some <m>1\leq i\leq r</m>.  After reordering, we may assume without loss of generality that <m>c_1\ne 0</m>. Next we apply <m>T</m> to both sides of <xref ref="eq_independent_eigenvectors_A"/>:
+    <mdn>
+      <mrow>c_1v_{i_1}+c_2v_{i_2}\cdots +c_rv_{i_r}\amp=\boldzero </mrow>
+      <mrow>T(c_1v_{i_1}+c_2v_{i_2}+\cdots +c_rv_{i_r})\amp=T(\boldzero)</mrow>
+      <mrow> c_1T(v_{i_1})+c_2T(v_{i_2})+\cdots +c_rT(v_{i_r})\amp =\boldzero </mrow>
+      <mrow xml:id="eq_independent_eigenvectors_B">c_1\lambda_1v_{i_1}+c_2\lambda_2v_{i_2}+\cdots +c_r\lambda_rv_{i_r}=\boldzero</mrow>
+    </mdn>.
+    From equation <xref ref="eq_independent_eigenvectors_A"/> and the equation in <xref ref="eq_independent_eigenvectors_B"/> we have
+    <me>
+      \lambda_r(c_1v_{i_1}+c_2v_{i_2}\cdots +c_rv_{i_r})- (c_1\lambda_1v_{i_1}+c_2\lambda_2v_{i_2}\cdots +c_r\lambda_rv_{i_r})=\boldzero
+    </me>,
+    and hence
+    <men xml:id="eq_independent_eigenvectors_C">
+      c_1(\lambda_r-\lambda_1)v_{i_1}+\cdots +c_{r-1}(\lambda_r-\lambda_{r-1})v_{i_{r-1}}+\cancel{c_r(\lambda_r-\lambda_r)}v_{i_r}=\boldzero
+    </men>.
+    Since <m>c_1\ne 0</m> and <m>\lambda_1\ne \lambda_r</m>, we have <m>c_1(\lambda_r-\lambda_1)\ne 0</m>. Thus equation <xref ref="eq_independent_eigenvectors_C"/> implies that the tuple <m>S''=(v_{i_1}, v_{i_2}, \dots, v_{i_{r-1}})</m> is a linearly dependent subtuple of <m>S</m> of length <m>r=1</m>, contradicting the minimality of <m>r</m>. Since we have reached a contradiction, we conclude that <m>S</m> must be linearly independent. 
+    </p>
+  </proof>
         </theorem>
         <example xml:id="eg_exponential_eigenvectors">
         <title>Exponential functions as eigenvectors</title>
@@ -248,7 +415,7 @@
         </statement>
         <solution>
         <p>
-        
+        We saw in <xref ref="eg_eigenvectors_adhoc_derivative"/> that the functions <m>f_\lambda</m> are all eigenvectors of the differential operator <m>T\colon C^\infty(I)\rightarrow C^\infty(I)</m>, <m>T(f)=f'</m>. Since <m>T(f_\lambda)=\lambda f_\lambda</m> for all <m>\lambda</m>, we see that the functions <m>f_\lambda</m> all have distinct eigenvalues. We conclude from <xref ref="th_eigenvectors_ind"/> that <m>(f_\lambda)_{\lambda\in \R}</m> is a linearly independent tuple. Since this tuple is indexed by <m>\R</m> itself, we see that it is an uncountably infinite linear independent tuple. 
         </p>
         </solution>
         </example>
@@ -263,7 +430,89 @@
                     </men>.
                 </p>
             </statement>
+            <proof>
+                <p>
+                    Suppose we have a decomposition of $\boldzero$ of the form  
+                    <men xml:id="eq_proof_eigenspace_directsum">
+                        \boldzero=v_1+v_2+\cdots +v_r, v_i\in E(\lambda_i, T)
+                    </men>.
+                    Let $J=\{j\in \{1,2,\dots, r\}\colon v_j\ne \boldzero\}$. If $J$ is nonempty, then $v_j$ is a $\lambda_j$-eigenvector, and we have 
+                    <me>
+                        \boldzero=\sum_{j\in J}v_j
+                    </me>,
+                    a nontrivial linear combination of the tuple <m>S=(v_j)_{j\in J}</m>. This is a contradiction, as this tuple of eigenvectors (with distinct eigenvalues) is linearly independent by <xref ref="th_eigenvectors_ind"/>. Thus <m>J</m> is empty, and we see that the decomposition <xref ref="eq_proof_eigenspace_directsum"/> must be the trivial one. We conclude from <xref ref="th_direct_sum_dim"/> that subspace sum <m>W=\sum_{i=1}^rE(\lambda_i, T)</m> is direct: <ie/>, that 
+                    <me>
+                        \sum_{i=1}^rE(\lambda_i, T)=\bigoplus_{i=1}^rE(\lambda_i, T)
+                    </me>,
+                    as desired.
+                </p>
+            </proof>
         </corollary>
+        <p>
+            <xref ref="th_eigenvectors_ind"/> and <xref ref="cor_eigenvectors_ind"/> give us the necessary theoretical tools to complete the proof of <xref ref="th_diagable"/>. 
+        </p>
+        <proof>
+            <title>Proof of <xref ref="th_diagable"/></title>
+            <p>
+                Recall that we have already provided an argument proving that statements (1) and (2) of <xref ref="th_diagable"/> are equivalent. We will prove the cycle of implications (2)<m>\implies</m>(3)<m>\implies</m>(4)<m>\implies</m>(2)
+            </p>
+            <case>
+            <title>Implication: (2)<m>\implies</m>(3)</title>
+            <p>
+            Assume <m>T</m> has an eigenbasis <m>B</m>. Since the elements of <m>B</m> are eigenvectors, after a re-ordering of <m>B</m>, we can assume <m>B</m> is of the form 
+            <me>
+                B=(v_{1,1},\dots, v_{1,n_1},v_{2,1},\dots, v_{2,n_2},\dots, v_{\ell,1},\dots, v_{\ell,n_{\ell}})
+            </me>,
+            where for all <m>1\leq i\leq \ell</m> and <m>1\leq j\leq n_i</m>, <m>v_{i,j}</m> is an eigenvector of <m>T</m> with eigenvalue <m>\lambda_i</m>. (Note that we do not assume that <m>\ell=r</m> here, but it follows from the rest of our argument that  that this must be the case.) Since <m>B</m> is a basis, given any <m>v\in V</m>, we have 
+            <md>
+                <mrow>v \amp =\underset{w_1}{\underbrace{\sum_{j=1}^{n_1}v_{1,j}}}+\underset{w_2}{\underbrace{\sum_{j=1}^{n_2}v_{2,j}}}+\cdots +\underset{w_\ell}{\underbrace{\sum_{j=1}^{n_\ell}v_{\ell,j}}}</mrow>
+                <mrow> \amp =w_1+w_2+\cdots +w_\ell</mrow>
+            </md>,
+            where <m>w_i=\sum_{j=1}^{n_i}v_{i,j}\in E(\lambda_i, T)</m> for all <m>1\leq i\leq \ell</m>. This proves <m>V=\sum_{i=1}^\ell E(\lambda_i, T)</m>. By <xref ref="cor_eigenvectors_ind"/>, we conclude that <m>V=\bigoplus_{i=1}^\ell E(\lambda_i, T)</m>. Lastly, since clearly  
+            <me>
+                \sum_{i=1}^\ell E(\lambda_i, T)\subseteq \sum_{i=1}^rE(\lambda_i, T)
+            </me>,
+            we have 
+            <md>
+                <mrow>V \amp =\sum_{i=1}^rE(\lambda_i, T)</mrow>
+                <mrow> \amp = \bigoplus_{i=1}^rE(\lambda_i, T) \amp (<xref ref="cor_eigenvectors_ind" text="global"/>)</mrow>
+            </md>,
+            as desired. 
+            </p>
+            </case>
+            <case>
+            <title>Implication: (3)<m>\implies</m>(4)</title>
+            <p>
+            This is a direct consequence of <xref ref="th_direct_sum_dim"/>. 
+            </p>
+            </case>
+            <case>
+            <title>Implication: (4)<m>\implies</m>(2)</title>
+            <p>
+            Assume <m>\sum_{i=1}^r\dim E(\lambda_i, T)=\dim V=n</m>. For each <m>1\leq i\leq r</m>, let 
+            <me>
+                B_i=(v_{i,1}, v_{i,2},\dots, v_{i,n_{i}})
+            </me>
+            be a basis of <m>E(\lambda_i, T)</m>. Since <m>\len B_i=n_i</m>, we see that 
+            <me>
+                \sum_{i=1}^rn_i=\sum_{i=1}^{r}\dim E(\lambda_i, T)=n
+            </me>.
+            Consider the concatentation <m>B=B_1*B_2*\cdots * B_r</m> of the bases <m>B_i</m>: <ie/>, 
+            <me>
+                B=(v_{1,1},\dots, v_{1,n_1}, v_{2,1},\dots, v_{2,n_2},\dots, v_{r,1},\dots, v_{r,n_r})
+            </me>.
+            Since each <m>B_i</m> is the basis of <m>E(\lambda_i, T)</m>, and since 
+            <me>
+                \sum_{i=1}^rE(\lambda_i, T)=\bigoplus_{i=1}^rE(\lambda_i, T)
+            </me>
+            by <xref ref="cor_eigenvectors_ind"/>, it follows that <m>B</m> is linearly independent. (This is left as an exercise.) Since <m>\len B=n=\dim V</m>, it follows from <xref ref="cor_street_smarts"/> that <m>B</m> is a basis of <m>V</m>. Since each element of <m>B</m> is an eigenvector of <m>T</m>, we conclude that <m>B</m> is an eigenbasis of <m>T</m>. 
+            </p>
+            </case>
+            
+            
+        </proof>
+
+
         <corollary xml:id="cor_distinct_eigenvalues">
             <title>Distinct eigenvalues</title>
             <statement>
@@ -271,6 +520,11 @@
                     Let <m>T\in \mathcal{L}(V)</m>, where <m>\dim V=n&lt; \infty</m>. If <m>T</m> has <m>n</m> distinct eigenvalues, then <m>T</m> is diagonalizable. 
                 </p>
             </statement>
+            <proof>
+                <p>
+                    Let <m>\lambda_1,\lambda_2,\dots, \lambda_n</m> be the <m>n</m> distict eigenvalues of <m>T</m>, and let <m>B=(v_1,v_2,\dots, v_n)</m> be a tuple of eigenvectors satisfying <m>T(v_i)=\lambda_i</m> for all <m>1\leq i\leq n</m>. By <xref ref="th_eigenvectors_ind"/>, <m>B</m> is linearly independent. Since <m>\dim V=n=\len B</m>, it follows that <m>B</m> is an eigenbasis of <m>V</m>. From <xref ref="th_diagable"/>, we conclude that <m>T</m> is diagonalizable. 
+                </p>
+            </proof>
         </corollary>
         <remark>
             <title>Distinct eigenvalues</title>
@@ -291,7 +545,16 @@
         </statement>
         <solution>
         <p>
-        
+        Over <m>\C</m> the characteristic polynomial factors as
+        <me>
+            f(x)=(x-1)(x^2+x+1)=(x-1)(x-\alpha)(x-\beta)
+        </me>,
+        where 
+        <md>
+            <mrow>\alpha \amp =-\frac{1}{2}+\frac{\sqrt{3}}{2}i</mrow>
+            <mrow>\beta \amp =-\frac{1}{2}-\frac{\sqrt{3}}{2}i</mrow>
+        </md>.
+        Thus <m>T</m> has three <em>distinct</em> eigenvalues <m>1, \alpha, \beta</m>. Since <m>\dim V=3</m>,  it follows from <xref ref="cor_distinct_eigenvalues"/> that <m>T</m> is diagonalizable. 
         </p>
         </solution>
         </example>
@@ -299,12 +562,24 @@
             <title>Real linear operator</title>
             <statement>
             <p>
-            Assume <m>T</m> is a linear operator of the 3-dimensional <m>\R</m>-vector space <m>V</m> and that the characteristic polynomial of <m>T</m> is <m>f(x)=x^3-1</m>. Decide whether <m>T</m> is diagonalizable. 
+            Assume <m>T</m> is a linear operator of the 3-dimensional <m>\R</m>-vector space <m>V</m>, that the characteristic polynomial of <m>T</m> is <m>f(x)=x^3-1</m>, and that <m>T\ne I_V</m>. Decide whether <m>T</m> is diagonalizable. 
             </p>
             </statement>
             <solution>
             <p>
-            
+                Over <m>\R</m> the characteristic polynomial <m>f</m> factors as 
+                <me>
+                    f(x)=(x-1)(x^2+x+1)
+                </me>.
+                Thus <m>1</m> is the only eigenvalue of <m>T</m>. If <m>T</m> were diagonalizable, we would have 
+                <me>
+                    V=\bigoplus E(\lambda_i, T)=E(1,T)
+                </me>. 
+                But then <m>v\in E(1,T)</m> for all <m>v\in V</m>, in which case 
+                <me>
+                    T(v)=1v=v
+                </me>
+                for all <m>v\in V</m>: <ie/>, we would have <m>T=I_V</m> in this case. We conclude that <m>T</m> is not diagonalizable.
             </p>
             </solution>
             </example>
