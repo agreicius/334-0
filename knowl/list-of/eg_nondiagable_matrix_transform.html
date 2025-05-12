@@ -23,9 +23,42 @@ A=\begin{bmatrix}
 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<div class="para">Decide whether <span class="process-math">\(T_A\)</span> is diagonalizable; if it is, find an invertible matrix <span class="process-math">\(P\)</span> that diagonalizes <span class="process-math">\(A\)</span> compute <span class="process-math">\(D=P^{-1}AP\text{.}\)</span>
+<div class="para">Decide whether <span class="process-math">\(T_A\)</span> is diagonalizable; if it is, find an invertible matrix <span class="process-math">\(P\)</span> that diagonalizes <span class="process-math">\(A\)</span> and compute <span class="process-math">\(D=P^{-1}AP\text{.}\)</span>
 </div>
 </div>
-<div class="solutions"><details xmlns:xlink="http://www.w3.org/1999/xlink" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para"></div></div></details></div></article><span class="incontext"><a class="internal" href="s_diagable.html#eg_nondiagable_matrix_transform">in-context</a></span>
+<div class="solutions"><details xmlns:xlink="http://www.w3.org/1999/xlink" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical">
+<div class="para">We compute the characteristic polynomial <span class="process-math">\(f\)</span> as</div>
+<div class="displaymath process-math">
+\begin{align*}
+f(x) \amp = \det(xI-A)\\
+\amp = \det \begin{amatrix}[ccc]
+x-1\amp -1 \amp 0\\ 0 \amp x-1\amp 0 \\ 0 \amp 0\amp x-2
+\end{amatrix} \\
+\amp = (x-1)^2(x-2)\text{.}
+\end{align*}
+</div>
+<div class="para">(Note how easy <span class="process-math">\(f\)</span> was to compute, thanks to <span class="process-math">\(A\)</span> being upper triangular.) The distinct eigenvalues of <span class="process-math">\(A\)</span> are thus <span class="process-math">\(1\)</span> and <span class="process-math">\(2\text{.}\)</span> We compute</div>
+<div class="displaymath process-math">
+\begin{align*}
+E(1,T_A) \amp = \NS(I-A)\\
+\amp =\NS \begin{amatrix}[ccc]
+0\amp -1 \amp 0\\ 0 \amp 0\amp 0 \\ 0 \amp 0\amp -1
+\end{amatrix}\\
+\amp = \Span((1,0,0))\\
+E(2,T_A) \amp = \NS(2I-A)\\
+\amp =\NS \begin{amatrix}[ccc]
+1\amp -1 \amp 0\\ 0 \amp 1\amp 0 \\ 0 \amp 0\amp 0
+\end{amatrix}\\
+\amp = \Span((0,0,1))\text{.}
+\end{align*}
+</div>
+<div class="para">Since</div>
+<div class="displaymath process-math">
+\begin{align*}
+\dim E(1,T_A)+\dim E(2,T_A) \amp = 1+1=2\ne 3\text{,}
+\end{align*}
+</div>
+<div class="para">we conclude that <span class="process-math">\(T_A\)</span> is not diagaonalizable.</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="s_diagable.html#eg_nondiagable_matrix_transform">in-context</a></span>
 </body>
 </html>

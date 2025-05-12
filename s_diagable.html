@@ -599,7 +599,7 @@ T(v_j)=d_jv_j
 <div class="para">We have already done most of the work of <a href="s_diagable.html#proc_diagable" class="xref" data-knowl="./knowl/xref/proc_diagable.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 1.17.5: Diagonalizable operator">Procedure 1.17.5</a> for this linear operator in <a href="s_eigenvector.html#eg_transposition_eigenspace" class="xref" data-knowl="./knowl/xref/eg_transposition_eigenspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.15.15: Eigenspaces of transposition">Example 1.15.15</a>. There we saw that <span class="process-math">\(1\)</span> and <span class="process-math">\(-1\)</span> are the only eigenvalues of <span class="process-math">\(S\text{,}\)</span> and the the bases of <span class="process-math">\(E(1,S)\)</span> and <span class="process-math">\(E(-1,S)\)</span> are</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_diagable.html ./knowl/xref/eg_transposition_eigenspace.html" id="eg_diagable_transposition-3-1-8">
 \begin{align*}
-B_1=\left( \begin{bmatrix}
+B_1\amp =\left( \begin{bmatrix}
 1\amp 0\\ 0 \amp 0
 \end{bmatrix},
 \begin{bmatrix}
@@ -656,10 +656,43 @@ A=\begin{bmatrix}
 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<div class="para">Decide whether <span class="process-math">\(T_A\)</span> is diagonalizable; if it is, find an invertible matrix <span class="process-math">\(P\)</span> that diagonalizes <span class="process-math">\(A\)</span> compute <span class="process-math">\(D=P^{-1}AP\text{.}\)</span>
+<div class="para">Decide whether <span class="process-math">\(T_A\)</span> is diagonalizable; if it is, find an invertible matrix <span class="process-math">\(P\)</span> that diagonalizes <span class="process-math">\(A\)</span> and compute <span class="process-math">\(D=P^{-1}AP\text{.}\)</span>
 </div>
 </div>
-<div class="solutions"><details id="eg_nondiagable_matrix_transform-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_nondiagable_matrix_transform-3-1"></div></div></details></div></article><article class="example example-like" id="eg_diagable_matrix_transform"><h3 class="heading">
+<div class="solutions"><details id="eg_nondiagable_matrix_transform-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_nondiagable_matrix_transform-3-1">
+<div class="para">We compute the characteristic polynomial <span class="process-math">\(f\)</span> as</div>
+<div class="displaymath process-math" id="eg_nondiagable_matrix_transform-3-1-2">
+\begin{align*}
+f(x) \amp = \det(xI-A)\\
+\amp = \det \begin{amatrix}[ccc]
+x-1\amp -1 \amp 0\\ 0 \amp x-1\amp 0 \\ 0 \amp 0\amp x-2
+\end{amatrix} \\
+\amp = (x-1)^2(x-2)\text{.}
+\end{align*}
+</div>
+<div class="para">(Note how easy <span class="process-math">\(f\)</span> was to compute, thanks to <span class="process-math">\(A\)</span> being upper triangular.) The distinct eigenvalues of <span class="process-math">\(A\)</span> are thus <span class="process-math">\(1\)</span> and <span class="process-math">\(2\text{.}\)</span> We compute</div>
+<div class="displaymath process-math" id="eg_nondiagable_matrix_transform-3-1-8">
+\begin{align*}
+E(1,T_A) \amp = \NS(I-A)\\
+\amp =\NS \begin{amatrix}[ccc]
+0\amp -1 \amp 0\\ 0 \amp 0\amp 0 \\ 0 \amp 0\amp -1
+\end{amatrix}\\
+\amp = \Span((1,0,0))\\
+E(2,T_A) \amp = \NS(2I-A)\\
+\amp =\NS \begin{amatrix}[ccc]
+1\amp -1 \amp 0\\ 0 \amp 1\amp 0 \\ 0 \amp 0\amp 0
+\end{amatrix}\\
+\amp = \Span((0,0,1))\text{.}
+\end{align*}
+</div>
+<div class="para">Since</div>
+<div class="displaymath process-math" id="eg_nondiagable_matrix_transform-3-1-9">
+\begin{align*}
+\dim E(1,T_A)+\dim E(2,T_A) \amp = 1+1=2\ne 3\text{,}
+\end{align*}
+</div>
+<div class="para">we conclude that <span class="process-math">\(T_A\)</span> is not diagaonalizable.</div>
+</div></div></details></div></article><article class="example example-like" id="eg_diagable_matrix_transform"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.17.8</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix transformation.</span>
 </h3>
 <div class="para logical" id="eg_diagable_matrix_transform-2-1">
@@ -671,35 +704,285 @@ A=\begin{bmatrix}
 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<div class="para">Decide whether <span class="process-math">\(T_A\)</span> is diagonalizable; if it is, find an invertible matrix <span class="process-math">\(P\)</span> that diagonalizes <span class="process-math">\(A\)</span> compute <span class="process-math">\(D=P^{-1}AP\text{.}\)</span>
+<div class="para">Decide whether <span class="process-math">\(T_A\)</span> is diagonalizable; if it is, find an invertible matrix <span class="process-math">\(P\)</span> that diagonalizes <span class="process-math">\(A\)</span> and compute <span class="process-math">\(D=P^{-1}AP\text{.}\)</span>
 </div>
 </div>
-<div class="solutions"><details id="eg_diagable_matrix_transform-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_diagable_matrix_transform-3-1"></div></div></details></div></article><article class="theorem theorem-like" id="th_eigenvectors_ind"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.17.9</span><span class="period">.</span><span class="space"> </span><span class="title">Independence of eigenvectors.</span>
+<div class="solutions"><details id="eg_diagable_matrix_transform-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_diagable_matrix_transform-3-1">
+<div class="para">We compute the characteristic polynomial <span class="process-math">\(f\)</span> as</div>
+<div class="displaymath process-math" id="eg_diagable_matrix_transform-3-1-2">
+\begin{align*}
+f(x) \amp = \det(xI-A)\\
+\amp = \det \begin{amatrix}[ccc]
+x-1\amp 0 \amp -\\ 0 \amp x-1\amp 0 \\ 0 \amp 0\amp x-2
+\end{amatrix} \\
+\amp = (x-1)^2(x-2)\text{.}
+\end{align*}
+</div>
+<div class="para">The distinct eigenvalues of <span class="process-math">\(A\)</span> are thus <span class="process-math">\(1\)</span> and <span class="process-math">\(2\text{.}\)</span> We compute</div>
+<div class="displaymath process-math" id="eg_diagable_matrix_transform-3-1-6">
+\begin{align*}
+E(1,T_A) \amp = \NS(I-A)\\
+\amp =\NS \begin{amatrix}[ccc]
+0\amp 0\amp -1\\ 0 \amp 0\amp 0 \\ 0 \amp 0\amp -1
+\end{amatrix}\\
+\amp = \Span((1,0,0), (0,1,0))\\
+E(2,T_A) \amp = \NS(2I-A)\\
+\amp =\NS \begin{amatrix}[ccc]
+1\amp 0 \amp -1\\ 0 \amp 1\amp 0 \\ 0 \amp 0\amp 0
+\end{amatrix}\\
+\amp = \Span((1,0,1))\text{.}
+\end{align*}
+</div>
+<div class="para">Since</div>
+<div class="displaymath process-math" id="eg_diagable_matrix_transform-3-1-7">
+\begin{align*}
+\dim E(1,T_A)+\dim E(2,T_A) \amp = 2+1=3\text{,}
+\end{align*}
+</div>
+<div class="para">we conclude that <span class="process-math">\(T_A\)</span> is diagaonalizable. Furthermore we obtain an eigenbasis</div>
+<div class="displaymath process-math">
+\begin{equation*}
+B'=((1,0,0),(0,1,0),(1,0,1))
+\end{equation*}
+</div>
+<div class="para">by concantenating the bases for our two eigenspaces. Let <span class="process-math">\(B\)</span> be the standard basis of <span class="process-math">\(\R^3\text{.}\)</span> By the change of basis formula, we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[T_A]_{B'}=(\underset{B'\to B}{P})^{-1}[T_A]_B\underset{B'\to B}{P}=(\underset{B'\to B}{P})^{-1}A\underset{B'\to B}{P}\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(B'\)</span> is an eigenbasis, we easily compute</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D=[T_A]_{B'}=\begin{bmatrix}
+1\amp 0\amp 0\\ 0\amp 1\amp 0\\ 0\amp 0\amp 2
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Thus we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D=P^{-1}AP, \hspace{10pt} P=\underset{B'\to B}{P}=\begin{bmatrix}
+1\amp 0\amp 0\\ 0\amp 1\amp 0\\ 1\amp 0\amp 1
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+</div></div></details></div></article><div class="para logical" id="s_diagable-14">
+<div class="para">The next example is a first glimpse at the algebraic usefulness of diagonalizability. If <span class="process-math">\(A\)</span> is diagonalizable, we have</div>
+<div class="displaymath process-math" id="s_diagable-14-2">
+\begin{align*}
+D \amp =P^{-1}AP \amp A=PDP^{-1}
+\end{align*}
+</div>
+<div class="para">and hence</div>
+<div class="displaymath process-math" id="s_diagable-14-3">
+\begin{align*}
+A^n \amp =(PDP^{-1})^n\\
+\amp =PD^nP^{-1}
+\end{align*}
+</div>
+<div class="para">for any positive integer <span class="process-math">\(n\text{.}\)</span> This gives us a convenient means of computing powers of diagonalizable matrices.</div>
+</div>
+<article class="example example-like" id="eg_matrix_power"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.17.9</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix power.</span>
 </h3>
-<div class="para" id="th_eigenvectors_ind-2-1">Let <span class="process-math">\(T\)</span> be a linear operator on the vector space <span class="process-math">\(V\)</span> (not necessarily finite dimensional). If <span class="process-math">\(S=(v_i)_{i\in I}\)</span> is a tuple of eigenvectors of <span class="process-math">\(T\)</span> satisfying <span class="process-math">\(T(v_i)=\lambda_i v_i\)</span> for all <span class="process-math">\(i\in I\)</span> and <span class="process-math">\(\lambda_i\ne \lambda_j\)</span> for all <span class="process-math">\(i\ne j\)</span> (i.e., the eigenvalues are distinct), then <span class="process-math">\(S\)</span> is linearly independent.</div></article><details id="th_eigenvectors_ind-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_eigenvectors_ind-3-1"></div></article></details><article class="example example-like" id="eg_exponential_eigenvectors"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.17.10</span><span class="period">.</span><span class="space"> </span><span class="title">Exponential functions as eigenvectors.</span>
+<div class="para" id="eg_matrix_power-2-1">Let <span class="process-math">\(A=\begin{bmatrix}
+3\amp 1\\ 1\amp 3
+\end{bmatrix}\text{.}\)</span> Compute <span class="process-math">\(A^{100}\)</span>
+</div>
+<div class="solutions"><details id="eg_matrix_power-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_matrix_power-3-1">
+<div class="para">The characteristic polynomial of <span class="process-math">\(A\)</span> is <span class="process-math">\(f(x)=x^2-6x+8=(x-4)(x-2)\text{.}\)</span> The usual computation shows that</div>
+<div class="displaymath process-math" id="eg_matrix_power-3-1-3">
+\begin{align*}
+E(2, T_A) \amp = \Span ((1,-1)) \\
+E(4,T_A) \amp =\Span ((1,1))\text{,}
+\end{align*}
+</div>
+<div class="para">and thus that we have <span class="process-math">\(D=P^{-1}AP\text{,}\)</span> where</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D=\begin{bmatrix}
+2\amp 0 \\ 0\amp 4
+\end{bmatrix},
+P=\begin{bmatrix}
+1\amp 1 \\ -1\amp 1
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">From the discussion above, we conclude that</div>
+<div class="displaymath process-math" id="eg_matrix_power-3-1-6">
+\begin{align*}
+A^{100} \amp =(PDP^{-1})^{100}\\
+\amp = PD^{100}P^{-1}\\
+\amp =\begin{bmatrix}
+1\amp 1 \\ -1\amp 1
+\end{bmatrix}
+\begin{bmatrix}
+2^{100}\amp 0 \\ 0\amp 4^{100}
+\end{bmatrix}
+\begin{bmatrix}
+1/2\amp -1/2 \\ 1/2\amp 1/2
+\end{bmatrix}\\
+\amp = 
+\begin{bmatrix}
+1\amp 1 \\ -1\amp 1
+\end{bmatrix}
+\begin{bmatrix}
+2^{99}\amp -2^{99} \\ 2^{199}\amp 2^{199}
+\end{bmatrix}\\
+\amp = 
+\begin{bmatrix}
+2^{199}+2^{99} \amp 2^{199}-2^{99} \\
+2^{199}-2^{99} \amp 2^{199}+2^{99}
+\end{bmatrix}\text{.}
+\end{align*}
+</div>
+</div></div></details></div></article><article class="theorem theorem-like" id="th_eigenvectors_ind"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.17.10</span><span class="period">.</span><span class="space"> </span><span class="title">Independence of eigenvectors.</span>
+</h3>
+<div class="para" id="th_eigenvectors_ind-2-1">Let <span class="process-math">\(T\)</span> be a linear operator on the vector space <span class="process-math">\(V\)</span> (not necessarily finite dimensional). If <span class="process-math">\(S=(v_i)_{i\in I}\)</span> is a tuple of eigenvectors of <span class="process-math">\(T\)</span> satisfying <span class="process-math">\(T(v_i)=\lambda_i v_i\)</span> for all <span class="process-math">\(i\in I\)</span> and <span class="process-math">\(\lambda_i\ne \lambda_j\)</span> for all <span class="process-math">\(i\ne j\)</span> (i.e., the eigenvalues are distinct), then <span class="process-math">\(S\)</span> is linearly independent.</div></article><details id="th_eigenvectors_ind-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_eigenvectors_ind-3-1">
+<div class="para">We prove the result by contradiction. If <span class="process-math">\(S=(v_i)_{i\in I}\)</span> is linearly depenendent, then we can find a linearly dependent finite subtuple <span class="process-math">\(S'=(v_{i_1}, v_{i_2},\dots, v_{i_r})\)</span> of minimal length <span class="process-math">\(r\text{.}\)</span> Since each <span class="process-math">\(v_{i_j}\)</span> is an eigenvector of <span class="process-math">\(T\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T(v_{i_j})=\lambda_j v_{i_j}
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(1\leq j\leq r\text{;}\)</span> since the eigenvalues are assumed to be distinct, we have <span class="process-math">\(\lambda_j\ne \lambda_\ell\)</span> for <span class="process-math">\(j\ne \ell\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="th_eigenvectors_ind-3-2">
+<div class="para">Note first that we must have <span class="process-math">\(r\geq 2\text{:}\)</span> since eigenvectors are nonzero by definition, no subtuple of <span class="process-math">\(S\)</span> of length 1 is linearly dependent. Since <span class="process-math">\(S'\)</span> is linearly dependent we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_independent_eigenvectors_A.html ./knowl/xref/eq_independent_eigenvectors_A.html ./knowl/xref/eq_independent_eigenvectors_B.html ./knowl/xref/eq_independent_eigenvectors_C.html" id="eq_independent_eigenvectors_A">
+\begin{equation}
+c_1v_{i_1}+c_2v_{i_2}+\cdots +c_rv_{i_r}=\boldzero\text{,}\tag{1.50}
+\end{equation}
+</div>
+<div class="para">where <span class="process-math">\(c_i\ne 0\)</span> for some <span class="process-math">\(1\leq i\leq r\text{.}\)</span>  After reordering, we may assume without loss of generality that <span class="process-math">\(c_1\ne 0\text{.}\)</span> Next we apply <span class="process-math">\(T\)</span> to both sides of <a href="s_diagable.html#eq_independent_eigenvectors_A" class="xref" data-knowl="./knowl/xref/eq_independent_eigenvectors_A.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.50">(1.50)</a>:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_independent_eigenvectors_A.html ./knowl/xref/eq_independent_eigenvectors_A.html ./knowl/xref/eq_independent_eigenvectors_B.html ./knowl/xref/eq_independent_eigenvectors_C.html" id="th_eigenvectors_ind-3-2-10">
+\begin{align}
+c_1v_{i_1}+c_2v_{i_2}\cdots +c_rv_{i_r}\amp=\boldzero \tag{1.51}\\
+T(c_1v_{i_1}+c_2v_{i_2}+\cdots +c_rv_{i_r})\amp=T(\boldzero)\tag{1.52}\\
+c_1T(v_{i_1})+c_2T(v_{i_2})+\cdots +c_rT(v_{i_r})\amp =\boldzero \tag{1.53}\\
+c_1\lambda_1v_{i_1}+c_2\lambda_2v_{i_2}+\cdots +c_r\lambda_rv_{i_r}=\boldzero\text{.}\tag{1.54}
+\end{align}
+</div>
+<div class="para">From equation <a href="s_diagable.html#eq_independent_eigenvectors_A" class="xref" data-knowl="./knowl/xref/eq_independent_eigenvectors_A.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.50">(1.50)</a> and the equation in <a href="s_diagable.html#th_eigenvectors_ind-3-2-10" class="xref" data-knowl="./knowl/xref/eq_independent_eigenvectors_B.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.54">(1.54)</a> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_independent_eigenvectors_A.html ./knowl/xref/eq_independent_eigenvectors_A.html ./knowl/xref/eq_independent_eigenvectors_B.html ./knowl/xref/eq_independent_eigenvectors_C.html">
+\begin{equation*}
+\lambda_r(c_1v_{i_1}+c_2v_{i_2}\cdots +c_rv_{i_r})- (c_1\lambda_1v_{i_1}+c_2\lambda_2v_{i_2}\cdots +c_r\lambda_rv_{i_r})=\boldzero\text{,}
+\end{equation*}
+</div>
+<div class="para">and hence</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_independent_eigenvectors_A.html ./knowl/xref/eq_independent_eigenvectors_A.html ./knowl/xref/eq_independent_eigenvectors_B.html ./knowl/xref/eq_independent_eigenvectors_C.html" id="eq_independent_eigenvectors_C">
+\begin{equation}
+c_1(\lambda_r-\lambda_1)v_{i_1}+\cdots +c_{r-1}(\lambda_r-\lambda_{r-1})v_{i_{r-1}}+\cancel{c_r(\lambda_r-\lambda_r)}v_{i_r}=\boldzero\text{.}\tag{1.55}
+\end{equation}
+</div>
+<div class="para">Since <span class="process-math">\(c_1\ne 0\)</span> and <span class="process-math">\(\lambda_1\ne \lambda_r\text{,}\)</span> we have <span class="process-math">\(c_1(\lambda_r-\lambda_1)\ne 0\text{.}\)</span> Thus equation <a href="s_diagable.html#eq_independent_eigenvectors_C" class="xref" data-knowl="./knowl/xref/eq_independent_eigenvectors_C.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.55">(1.55)</a> implies that the tuple <span class="process-math">\(S''=(v_{i_1}, v_{i_2}, \dots, v_{i_{r-1}})\)</span> is a linearly dependent subtuple of <span class="process-math">\(S\)</span> of length <span class="process-math">\(r=1\text{,}\)</span> contradicting the minimality of <span class="process-math">\(r\text{.}\)</span> Since we have reached a contradiction, we conclude that <span class="process-math">\(S\)</span> must be linearly independent.</div>
+</div></article></details><article class="example example-like" id="eg_exponential_eigenvectors"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.17.11</span><span class="period">.</span><span class="space"> </span><span class="title">Exponential functions as eigenvectors.</span>
 </h3>
 <div class="para" id="eg_exponential_eigenvectors-2-1">Let <span class="process-math">\(I\)</span> be an interval of <span class="process-math">\(\R\)</span> containing more than one element. For all <span class="process-math">\(\lambda\in \R\text{,}\)</span> define <span class="process-math">\(f_\lambda\in C^\infty(\R)\)</span> as <span class="process-math">\(f_\lambda(x)=e^{\lambda x}\text{.}\)</span> Prove that <span class="process-math">\(S=(f_\lambda)_{\lambda\in \R}\)</span> is an uncountably infinite linear independent tuple in <span class="process-math">\(C^{\infty}(I)\text{.}\)</span>
 </div>
-<div class="solutions"><details id="eg_exponential_eigenvectors-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_exponential_eigenvectors-3-1"></div></div></details></div></article><article class="corollary theorem-like" id="cor_eigenvectors_ind"><h3 class="heading">
-<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.17.11</span><span class="period">.</span><span class="space"> </span><span class="title">Independence of eigenvectors.</span>
+<div class="solutions"><details id="eg_exponential_eigenvectors-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_exponential_eigenvectors-3-1">We saw in <a href="s_eigenvector.html#eg_eigenvectors_adhoc_derivative" class="xref" data-knowl="./knowl/xref/eg_eigenvectors_adhoc_derivative.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.15.10: Differentiation">Example 1.15.10</a> that the functions <span class="process-math">\(f_\lambda\)</span> are all eigenvectors of the differential operator <span class="process-math">\(T\colon C^\infty(I)\rightarrow C^\infty(I)\text{,}\)</span> <span class="process-math">\(T(f)=f'\text{.}\)</span> Since <span class="process-math">\(T(f_\lambda)=\lambda f_\lambda\)</span> for all <span class="process-math">\(\lambda\text{,}\)</span> we see that the functions <span class="process-math">\(f_\lambda\)</span> all have distinct eigenvalues. We conclude from <a href="s_diagable.html#th_eigenvectors_ind" class="xref" data-knowl="./knowl/xref/th_eigenvectors_ind.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.17.10: Independence of eigenvectors">Theorem 1.17.10</a> that <span class="process-math">\((f_\lambda)_{\lambda\in \R}\)</span> is a linearly independent tuple. Since this tuple is indexed by <span class="process-math">\(\R\)</span> itself, we see that it is an uncountably infinite linear independent tuple.</div></div></details></div></article><article class="corollary theorem-like" id="cor_eigenvectors_ind"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.17.12</span><span class="period">.</span><span class="space"> </span><span class="title">Independence of eigenvectors.</span>
 </h3>
 <div class="para logical" id="cor_eigenvectors_ind-2-1">
 <div class="para">Let <span class="process-math">\(T\)</span> be a linear operator on the vector space <span class="process-math">\(V\)</span> (not necessarily finite dimensional). If <span class="process-math">\(\lambda_1,\lambda_2,\dots, \lambda_r\)</span> are distinct eigenvalues of <span class="process-math">\(T\text{,}\)</span> then</div>
 <div class="displaymath process-math" id="eq_eigenspace_directsum">
 \begin{equation}
-\sum_{i=1}^rE(\lambda_i, T)=\bigoplus_{i=1}^r E(\lambda_i, T)\text{.}\tag{1.50}
+\sum_{i=1}^rE(\lambda_i, T)=\bigoplus_{i=1}^r E(\lambda_i, T)\text{.}\tag{1.56}
 \end{equation}
 </div>
-</div></article><article class="corollary theorem-like" id="cor_distinct_eigenvalues"><h3 class="heading">
-<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.17.12</span><span class="period">.</span><span class="space"> </span><span class="title">Distinct eigenvalues.</span>
+</div></article><details id="cor_eigenvectors_ind-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="cor_eigenvectors_ind-3-1">
+<div class="para">Suppose we have a decomposition of $\boldzero$ of the form</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_eigenvectors_ind.html ./knowl/xref/eq_proof_eigenspace_directsum.html ./knowl/xref/th_direct_sum_dim.html" id="eq_proof_eigenspace_directsum">
+\begin{equation}
+\boldzero=v_1+v_2+\cdots +v_r, v_i\in E(\lambda_i, T)\text{.}\tag{1.57}
+\end{equation}
+</div>
+<div class="para">Let $J=\{j\in \{1,2,\dots, r\}\colon v_j\ne \boldzero\}$. If $J$ is nonempty, then $v_j$ is a $\lambda_j$-eigenvector, and we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_eigenvectors_ind.html ./knowl/xref/eq_proof_eigenspace_directsum.html ./knowl/xref/th_direct_sum_dim.html">
+\begin{equation*}
+\boldzero=\sum_{j\in J}v_j\text{,}
+\end{equation*}
+</div>
+<div class="para">a nontrivial linear combination of the tuple <span class="process-math">\(S=(v_j)_{j\in J}\text{.}\)</span> This is a contradiction, as this tuple of eigenvectors (with distinct eigenvalues) is linearly independent by <a href="s_diagable.html#th_eigenvectors_ind" class="xref" data-knowl="./knowl/xref/th_eigenvectors_ind.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.17.10: Independence of eigenvectors">Theorem 1.17.10</a>. Thus <span class="process-math">\(J\)</span> is empty, and we see that the decomposition <a href="s_diagable.html#eq_proof_eigenspace_directsum" class="xref" data-knowl="./knowl/xref/eq_proof_eigenspace_directsum.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.57">(1.57)</a> must be the trivial one. We conclude from <a href="s_dimention.html#th_direct_sum_dim" class="xref" data-knowl="./knowl/xref/th_direct_sum_dim.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.8.13: Direct sums">Theorem 1.8.13</a> that subspace sum <span class="process-math">\(W=\sum_{i=1}^rE(\lambda_i, T)\)</span> is direct: i.e., that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_eigenvectors_ind.html ./knowl/xref/eq_proof_eigenspace_directsum.html ./knowl/xref/th_direct_sum_dim.html">
+\begin{equation*}
+\sum_{i=1}^rE(\lambda_i, T)=\bigoplus_{i=1}^rE(\lambda_i, T)\text{,}
+\end{equation*}
+</div>
+<div class="para">as desired.</div>
+</div></article></details><div class="para" id="s_diagable-19">
+<a href="s_diagable.html#th_eigenvectors_ind" class="xref" data-knowl="./knowl/xref/th_eigenvectors_ind.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.17.10: Independence of eigenvectors">Theorem 1.17.10</a> and <a href="s_diagable.html#cor_eigenvectors_ind" class="xref" data-knowl="./knowl/xref/cor_eigenvectors_ind.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.17.12: Independence of eigenvectors">Corollary 1.17.12</a> give us the necessary theoretical tools to complete the proof of <a href="s_diagable.html#th_diagable" class="xref" data-knowl="./knowl/xref/th_diagable.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.17.4: Diagonalizable operators">Theorem 1.17.4</a>.</div>
+<details id="s_diagable-20" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="title">Proof of Theorem 1.17.4.</span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="s_diagable-20-2">Recall that we have already provided an argument proving that statements (1) and (2) of <a href="s_diagable.html#th_diagable" class="xref" data-knowl="./knowl/xref/th_diagable.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.17.4: Diagonalizable operators">Theorem 1.17.4</a> are equivalent. We will prove the cycle of implications (2)<span class="process-math">\(\implies\)</span>(3)<span class="process-math">\(\implies\)</span>(4)<span class="process-math">\(\implies\)</span>(2)</div>
+<article class="case" id="s_diagable-20-3"><h3 class="heading">Implication: (2)<span class="process-math">\(\implies\)</span>(3).</h3>
+<div class="para logical" id="s_diagable-20-3-2">
+<div class="para">Assume <span class="process-math">\(T\)</span> has an eigenbasis <span class="process-math">\(B\text{.}\)</span> Since the elements of <span class="process-math">\(B\)</span> are eigenvectors, after a re-ordering of <span class="process-math">\(B\text{,}\)</span> we can assume <span class="process-math">\(B\)</span> is of the form</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_eigenvectors_ind.html ./knowl/xref/cor_eigenvectors_ind.html">
+\begin{equation*}
+B=(v_{1,1},\dots, v_{1,n_1},v_{2,1},\dots, v_{2,n_2},\dots, v_{\ell,1},\dots, v_{\ell,n_{\ell}})\text{,}
+\end{equation*}
+</div>
+<div class="para">where for all <span class="process-math">\(1\leq i\leq \ell\)</span> and <span class="process-math">\(1\leq j\leq n_i\text{,}\)</span> <span class="process-math">\(v_{i,j}\)</span> is an eigenvector of <span class="process-math">\(T\)</span> with eigenvalue <span class="process-math">\(\lambda_i\text{.}\)</span> (Note that we do not assume that <span class="process-math">\(\ell=r\)</span> here, but it follows from the rest of our argument that  that this must be the case.) Since <span class="process-math">\(B\)</span> is a basis, given any <span class="process-math">\(v\in V\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_eigenvectors_ind.html ./knowl/xref/cor_eigenvectors_ind.html" id="s_diagable-20-3-2-15">
+\begin{align*}
+v \amp =\underset{w_1}{\underbrace{\sum_{j=1}^{n_1}v_{1,j}}}+\underset{w_2}{\underbrace{\sum_{j=1}^{n_2}v_{2,j}}}+\cdots +\underset{w_\ell}{\underbrace{\sum_{j=1}^{n_\ell}v_{\ell,j}}}\\
+\amp =w_1+w_2+\cdots +w_\ell\text{,}
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(w_i=\sum_{j=1}^{n_i}v_{i,j}\in E(\lambda_i, T)\)</span> for all <span class="process-math">\(1\leq i\leq \ell\text{.}\)</span> This proves <span class="process-math">\(V=\sum_{i=1}^\ell E(\lambda_i, T)\text{.}\)</span> By <a href="s_diagable.html#cor_eigenvectors_ind" class="xref" data-knowl="./knowl/xref/cor_eigenvectors_ind.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.17.12: Independence of eigenvectors">Corollary 1.17.12</a>, we conclude that <span class="process-math">\(V=\bigoplus_{i=1}^\ell E(\lambda_i, T)\text{.}\)</span> Lastly, since clearly</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_eigenvectors_ind.html ./knowl/xref/cor_eigenvectors_ind.html">
+\begin{equation*}
+\sum_{i=1}^\ell E(\lambda_i, T)\subseteq \sum_{i=1}^rE(\lambda_i, T)\text{,}
+\end{equation*}
+</div>
+<div class="para">we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_eigenvectors_ind.html ./knowl/xref/cor_eigenvectors_ind.html" id="s_diagable-20-3-2-22">
+\begin{align*}
+V \amp =\sum_{i=1}^rE(\lambda_i, T)\\
+\amp = \bigoplus_{i=1}^rE(\lambda_i, T) \amp (\knowl{./knowl/xref/cor_eigenvectors_ind.html}{\text{1.17.12}})\text{,}
+\end{align*}
+</div>
+<div class="para">as desired.</div>
+</div></article><article class="case" id="s_diagable-20-4"><h3 class="heading">Implication: (3)<span class="process-math">\(\implies\)</span>(4).</h3>
+<div class="para" id="s_diagable-20-4-2">This is a direct consequence of <a href="s_dimention.html#th_direct_sum_dim" class="xref" data-knowl="./knowl/xref/th_direct_sum_dim.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.8.13: Direct sums">Theorem 1.8.13</a>.</div></article><article class="case" id="s_diagable-20-5"><h3 class="heading">Implication: (4)<span class="process-math">\(\implies\)</span>(2).</h3>
+<div class="para logical" id="s_diagable-20-5-2">
+<div class="para">Assume <span class="process-math">\(\sum_{i=1}^r\dim E(\lambda_i, T)=\dim V=n\text{.}\)</span> For each <span class="process-math">\(1\leq i\leq r\text{,}\)</span> let</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_eigenvectors_ind.html ./knowl/xref/cor_street_smarts.html">
+\begin{equation*}
+B_i=(v_{i,1}, v_{i,2},\dots, v_{i,n_{i}})
+\end{equation*}
+</div>
+<div class="para">be a basis of <span class="process-math">\(E(\lambda_i, T)\text{.}\)</span> Since <span class="process-math">\(\len B_i=n_i\text{,}\)</span> we see that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_eigenvectors_ind.html ./knowl/xref/cor_street_smarts.html">
+\begin{equation*}
+\sum_{i=1}^rn_i=\sum_{i=1}^{r}\dim E(\lambda_i, T)=n\text{.}
+\end{equation*}
+</div>
+<div class="para">Consider the concatentation <span class="process-math">\(B=B_1*B_2*\cdots * B_r\)</span> of the bases <span class="process-math">\(B_i\text{:}\)</span> i.e.,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_eigenvectors_ind.html ./knowl/xref/cor_street_smarts.html">
+\begin{equation*}
+B=(v_{1,1},\dots, v_{1,n_1}, v_{2,1},\dots, v_{2,n_2},\dots, v_{r,1},\dots, v_{r,n_r})\text{.}
+\end{equation*}
+</div>
+<div class="para">Since each <span class="process-math">\(B_i\)</span> is the basis of <span class="process-math">\(E(\lambda_i, T)\text{,}\)</span> and since</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_eigenvectors_ind.html ./knowl/xref/cor_street_smarts.html">
+\begin{equation*}
+\sum_{i=1}^rE(\lambda_i, T)=\bigoplus_{i=1}^rE(\lambda_i, T)
+\end{equation*}
+</div>
+<div class="para">by <a href="s_diagable.html#cor_eigenvectors_ind" class="xref" data-knowl="./knowl/xref/cor_eigenvectors_ind.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.17.12: Independence of eigenvectors">Corollary 1.17.12</a>, it follows that <span class="process-math">\(B\)</span> is linearly independent. (This is left as an exercise.) Since <span class="process-math">\(\len B=n=\dim V\text{,}\)</span> it follows from <a href="s_dimention.html#cor_street_smarts" class="xref" data-knowl="./knowl/xref/cor_street_smarts.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.8.9: Street smarts">Corollary 1.8.9</a> that <span class="process-math">\(B\)</span> is a basis of <span class="process-math">\(V\text{.}\)</span> Since each element of <span class="process-math">\(B\)</span> is an eigenvector of <span class="process-math">\(T\text{,}\)</span> we conclude that <span class="process-math">\(B\)</span> is an eigenbasis of <span class="process-math">\(T\text{.}\)</span>
+</div>
+</div></article></article></details><article class="corollary theorem-like" id="cor_distinct_eigenvalues"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.17.13</span><span class="period">.</span><span class="space"> </span><span class="title">Distinct eigenvalues.</span>
 </h3>
-<div class="para" id="cor_distinct_eigenvalues-2-1">Let <span class="process-math">\(T\in \mathcal{L}(V)\text{,}\)</span> where <span class="process-math">\(\dim V=n&lt; \infty\text{.}\)</span> If <span class="process-math">\(T\)</span> has <span class="process-math">\(n\)</span> distinct eigenvalues, then <span class="process-math">\(T\)</span> is diagonalizable.</div></article><article class="remark remark-like" id="s_diagable-18"><h3 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.17.13</span><span class="period">.</span><span class="space"> </span><span class="title">Distinct eigenvalues.</span>
+<div class="para" id="cor_distinct_eigenvalues-2-1">Let <span class="process-math">\(T\in \mathcal{L}(V)\text{,}\)</span> where <span class="process-math">\(\dim V=n&lt; \infty\text{.}\)</span> If <span class="process-math">\(T\)</span> has <span class="process-math">\(n\)</span> distinct eigenvalues, then <span class="process-math">\(T\)</span> is diagonalizable.</div></article><details id="cor_distinct_eigenvalues-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="cor_distinct_eigenvalues-3-1">Let <span class="process-math">\(\lambda_1,\lambda_2,\dots, \lambda_n\)</span> be the <span class="process-math">\(n\)</span> distict eigenvalues of <span class="process-math">\(T\text{,}\)</span> and let <span class="process-math">\(B=(v_1,v_2,\dots, v_n)\)</span> be a tuple of eigenvectors satisfying <span class="process-math">\(T(v_i)=\lambda_i\)</span> for all <span class="process-math">\(1\leq i\leq n\text{.}\)</span> By <a href="s_diagable.html#th_eigenvectors_ind" class="xref" data-knowl="./knowl/xref/th_eigenvectors_ind.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.17.10: Independence of eigenvectors">Theorem 1.17.10</a>, <span class="process-math">\(B\)</span> is linearly independent. Since <span class="process-math">\(\dim V=n=\len B\text{,}\)</span> it follows that <span class="process-math">\(B\)</span> is an eigenbasis of <span class="process-math">\(V\text{.}\)</span> From <a href="s_diagable.html#th_diagable" class="xref" data-knowl="./knowl/xref/th_diagable.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.17.4: Diagonalizable operators">Theorem 1.17.4</a>, we conclude that <span class="process-math">\(T\)</span> is diagonalizable.</div></article></details><article class="remark remark-like" id="s_diagable-22"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.17.14</span><span class="period">.</span><span class="space"> </span><span class="title">Distinct eigenvalues.</span>
 </h3>
-<div class="para logical" id="s_diagable-18-2">
-<div class="para">Mark well that the implication in <a href="s_diagable.html#cor_distinct_eigenvalues" class="xref" data-knowl="./knowl/xref/cor_distinct_eigenvalues.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.17.12: Distinct eigenvalues">Corollary 1.17.12</a> is not an if and only if! Consider the identity transformation <span class="process-math">\(I_V\colon V\rightarrow V\)</span> on a nonzero finite-dimensional vector space <span class="process-math">\(V\text{.}\)</span> Given any basis <span class="process-math">\(B\)</span> of <span class="process-math">\(V\text{,}\)</span> we have</div>
+<div class="para logical" id="s_diagable-22-2">
+<div class="para">Mark well that the implication in <a href="s_diagable.html#cor_distinct_eigenvalues" class="xref" data-knowl="./knowl/xref/cor_distinct_eigenvalues.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.17.13: Distinct eigenvalues">Corollary 1.17.13</a> is not an if and only if! Consider the identity transformation <span class="process-math">\(I_V\colon V\rightarrow V\)</span> on a nonzero finite-dimensional vector space <span class="process-math">\(V\text{.}\)</span> Given any basis <span class="process-math">\(B\)</span> of <span class="process-math">\(V\text{,}\)</span> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_distinct_eigenvalues.html">
 \begin{equation*}
 [I_V]_B=I\in F^{n,n}\text{.}
@@ -708,14 +991,49 @@ A=\begin{bmatrix}
 <div class="para">Thus <span class="process-math">\(I_V\)</span> is diagonalizable. And yet, <span class="process-math">\(I_V\)</span> has only one eigenvalue, namely <span class="process-math">\(\lambda=1\text{.}\)</span>
 </div>
 </div></article><article class="example example-like" id="eg_distinct_eigenvalues_complex"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.17.14</span><span class="period">.</span><span class="space"> </span><span class="title">Complex linear operator.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.17.15</span><span class="period">.</span><span class="space"> </span><span class="title">Complex linear operator.</span>
 </h3>
 <div class="para" id="eg_distinct_eigenvalues_complex-2-1">Assume <span class="process-math">\(T\)</span> is a linear operator of the 3-dimensional <span class="process-math">\(\C\)</span>-vector space <span class="process-math">\(V\)</span> and that the characteristic polynomial of <span class="process-math">\(T\)</span> is <span class="process-math">\(f(x)=x^3-1\text{.}\)</span> Decide whether <span class="process-math">\(T\)</span> is diagonalizable.</div>
-<div class="solutions"><details id="eg_distinct_eigenvalues_complex-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_distinct_eigenvalues_complex-3-1"></div></div></details></div></article><article class="example example-like" id="eg_distinct_eigenvalues_real"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.17.15</span><span class="period">.</span><span class="space"> </span><span class="title">Real linear operator.</span>
+<div class="solutions"><details id="eg_distinct_eigenvalues_complex-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_distinct_eigenvalues_complex-3-1">
+<div class="para">Over <span class="process-math">\(\C\)</span> the characteristic polynomial factors as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_distinct_eigenvalues.html">
+\begin{equation*}
+f(x)=(x-1)(x^2+x+1)=(x-1)(x-\alpha)(x-\beta)\text{,}
+\end{equation*}
+</div>
+<div class="para">where</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_distinct_eigenvalues.html" id="eg_distinct_eigenvalues_complex-3-1-3">
+\begin{align*}
+\alpha \amp =-\frac{1}{2}+\frac{\sqrt{3}}{2}i\\
+\beta \amp =-\frac{1}{2}-\frac{\sqrt{3}}{2}i\text{.}
+\end{align*}
+</div>
+<div class="para">Thus <span class="process-math">\(T\)</span> has three <em class="emphasis">distinct</em> eigenvalues <span class="process-math">\(1, \alpha, \beta\text{.}\)</span> Since <span class="process-math">\(\dim V=3\text{,}\)</span>  it follows from <a href="s_diagable.html#cor_distinct_eigenvalues" class="xref" data-knowl="./knowl/xref/cor_distinct_eigenvalues.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.17.13: Distinct eigenvalues">Corollary 1.17.13</a> that <span class="process-math">\(T\)</span> is diagonalizable.</div>
+</div></div></details></div></article><article class="example example-like" id="eg_distinct_eigenvalues_real"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.17.16</span><span class="period">.</span><span class="space"> </span><span class="title">Real linear operator.</span>
 </h3>
-<div class="para" id="eg_distinct_eigenvalues_real-2-1">Assume <span class="process-math">\(T\)</span> is a linear operator of the 3-dimensional <span class="process-math">\(\R\)</span>-vector space <span class="process-math">\(V\)</span> and that the characteristic polynomial of <span class="process-math">\(T\)</span> is <span class="process-math">\(f(x)=x^3-1\text{.}\)</span> Decide whether <span class="process-math">\(T\)</span> is diagonalizable.</div>
-<div class="solutions"><details id="eg_distinct_eigenvalues_real-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_distinct_eigenvalues_real-3-1"></div></div></details></div></article></section></div>
+<div class="para" id="eg_distinct_eigenvalues_real-2-1">Assume <span class="process-math">\(T\)</span> is a linear operator of the 3-dimensional <span class="process-math">\(\R\)</span>-vector space <span class="process-math">\(V\text{,}\)</span> that the characteristic polynomial of <span class="process-math">\(T\)</span> is <span class="process-math">\(f(x)=x^3-1\text{,}\)</span> and that <span class="process-math">\(T\ne I_V\text{.}\)</span> Decide whether <span class="process-math">\(T\)</span> is diagonalizable.</div>
+<div class="solutions"><details id="eg_distinct_eigenvalues_real-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_distinct_eigenvalues_real-3-1">
+<div class="para">Over <span class="process-math">\(\R\)</span> the characteristic polynomial <span class="process-math">\(f\)</span> factors as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(x)=(x-1)(x^2+x+1)\text{.}
+\end{equation*}
+</div>
+<div class="para">Thus <span class="process-math">\(1\)</span> is the only eigenvalue of <span class="process-math">\(T\text{.}\)</span> If <span class="process-math">\(T\)</span> were diagonalizable, we would have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+V=\bigoplus E(\lambda_i, T)=E(1,T)\text{.}
+\end{equation*}
+</div>
+<div class="para">But then <span class="process-math">\(v\in E(1,T)\)</span> for all <span class="process-math">\(v\in V\text{,}\)</span> in which case</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T(v)=1v=v
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(v\in V\text{:}\)</span> i.e., we would have <span class="process-math">\(T=I_V\)</span> in this case. We conclude that <span class="process-math">\(T\)</span> is not diagonalizable.</div>
+</div></div></details></div></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="s_char_poly.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="advlinalgkursobjekt-6.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

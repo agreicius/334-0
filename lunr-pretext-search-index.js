@@ -2914,7 +2914,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.17",
   "title": "Diagonalizable operators",
-  "body": " Diagonalizable operators  Our treatment of eigenvectors in was motivated in part by the objective of finding particularly simple matrix representations of a linear transformation . The simplest situation we could hope for is that there is a choice of basis for which is diagonal. We say that the basis  diagonalizes the transformation in this case, and that is diagonalizable . In this section we develop theoretical and computational tools for determining whether a linear transformation is diagonalizable, and for finding a diagonalizing basis when is in fact diagonalizable.   Diagonalizable   Let be a finite-dimensional vector space. A linear operator is diagonalizable if there exists a basis of such that is a diagonal matrix. In this case, we say that the basis  diagonalizes  .     Diagonalizable matrix  We will say a matrix is diagonalizable if its corresponding matrix transformation is diagonalizable.  Let's examine what this means in terms of matrix arithmetic. Let be the standard basis of , and recall that : , the standard matrix of is the matrix representation of with respect to the standard basis. The matrix is diagonalizable if and only if there is a basis of such that is a diagonal matrix. Using , this in turn is equivalent to there being an invertible matrix such that . Thus, we conclude that is diagonalizable if and only if it is similar to a diagonal matrix. We say that the invertible matrix in  diagonalizes the matrix .   Given a basis of and linear operator , looking at the recipe for the matrix representation , we see that we have for some diagonal matrix if and only if , if and only if for all , if and only if for all . Since vectors of a basis are necessarily nonzero, we conclude that diagonalizes if and only if it consists of eigenvectors of . We call such a basis an eigenbasis .   Eigenbasis   Let . A basis of is an eigenbasis of if is an eigenvector of for all .    Our discussion above constitutes a proof of the first two statements in .   Diagonalizable operators   Let be a linear operator on the finite-dimensional vector space , and let be the distinct eigenvalues of . The following statements are equivalent.    is diagonalizable.     has an eigenbasis .     .     .       We defer a full proof of for the time being, opting instead to illustrate with some examples how we can decide whether a linear transformation is diagonalizable. The last statement of will serve as the foundation for our computational technique for answering such questions, as we make official in the following procedure.   Diagonalizable operator   Let be a linear operator of the finite-dimensional vector space . To determine whether is diagonalizable and\/or find an eigenbasis of , proceed as follows.   Determine the distinct eigenvalues of .    For each , compute a basis for .     is diagonalizable if and only if .    If is diagonalizable, then the tuple obtained by concatenating the bases is an eigenbasis of .        Transposition   Let be defined as . Decide whether is diagonalizable; if it is, find an eigenbasis of and compute .    We have already done most of the work of for this linear operator in . There we saw that and are the only eigenvalues of , and the the bases of and are , respectively. It follows that . Since we have , we conclude that is diagonalizable, and furthermore that is an eigenbasis of .     Matrix transformation   Let be the matrix transformation , where . Decide whether is diagonalizable; if it is, find an invertible matrix that diagonalizes compute .         Matrix transformation   Let be the matrix transformation , where . Decide whether is diagonalizable; if it is, find an invertible matrix that diagonalizes compute .         Independence of eigenvectors   Let be a linear operator on the vector space (not necessarily finite dimensional). If is a tuple of eigenvectors of satisfying for all and for all ( , the eigenvalues are distinct), then is linearly independent.         Exponential functions as eigenvectors   Let be an interval of containing more than one element. For all , define as . Prove that is an uncountably infinite linear independent tuple in .         Independence of eigenvectors   Let be a linear operator on the vector space (not necessarily finite dimensional). If are distinct eigenvalues of , then .     Distinct eigenvalues   Let , where . If has distinct eigenvalues, then is diagonalizable.     Distinct eigenvalues  Mark well that the implication in is not an if and only if! Consider the identity transformation on a nonzero finite-dimensional vector space . Given any basis of , we have . Thus is diagonalizable. And yet, has only one eigenvalue, namely .    Complex linear operator   Assume is a linear operator of the 3-dimensional -vector space and that the characteristic polynomial of is . Decide whether is diagonalizable.         Real linear operator   Assume is a linear operator of the 3-dimensional -vector space and that the characteristic polynomial of is . Decide whether is diagonalizable.        "
+  "body": " Diagonalizable operators  Our treatment of eigenvectors in was motivated in part by the objective of finding particularly simple matrix representations of a linear transformation . The simplest situation we could hope for is that there is a choice of basis for which is diagonal. We say that the basis  diagonalizes the transformation in this case, and that is diagonalizable . In this section we develop theoretical and computational tools for determining whether a linear transformation is diagonalizable, and for finding a diagonalizing basis when is in fact diagonalizable.   Diagonalizable   Let be a finite-dimensional vector space. A linear operator is diagonalizable if there exists a basis of such that is a diagonal matrix. In this case, we say that the basis  diagonalizes  .     Diagonalizable matrix  We will say a matrix is diagonalizable if its corresponding matrix transformation is diagonalizable.  Let's examine what this means in terms of matrix arithmetic. Let be the standard basis of , and recall that : , the standard matrix of is the matrix representation of with respect to the standard basis. The matrix is diagonalizable if and only if there is a basis of such that is a diagonal matrix. Using , this in turn is equivalent to there being an invertible matrix such that . Thus, we conclude that is diagonalizable if and only if it is similar to a diagonal matrix. We say that the invertible matrix in  diagonalizes the matrix .   Given a basis of and linear operator , looking at the recipe for the matrix representation , we see that we have for some diagonal matrix if and only if , if and only if for all , if and only if for all . Since vectors of a basis are necessarily nonzero, we conclude that diagonalizes if and only if it consists of eigenvectors of . We call such a basis an eigenbasis .   Eigenbasis   Let . A basis of is an eigenbasis of if is an eigenvector of for all .    Our discussion above constitutes a proof of the first two statements in .   Diagonalizable operators   Let be a linear operator on the finite-dimensional vector space , and let be the distinct eigenvalues of . The following statements are equivalent.    is diagonalizable.     has an eigenbasis .     .     .       We defer a full proof of for the time being, opting instead to illustrate with some examples how we can decide whether a linear transformation is diagonalizable. The last statement of will serve as the foundation for our computational technique for answering such questions, as we make official in the following procedure.   Diagonalizable operator   Let be a linear operator of the finite-dimensional vector space . To determine whether is diagonalizable and\/or find an eigenbasis of , proceed as follows.   Determine the distinct eigenvalues of .    For each , compute a basis for .     is diagonalizable if and only if .    If is diagonalizable, then the tuple obtained by concatenating the bases is an eigenbasis of .        Transposition   Let be defined as . Decide whether is diagonalizable; if it is, find an eigenbasis of and compute .    We have already done most of the work of for this linear operator in . There we saw that and are the only eigenvalues of , and the the bases of and are , respectively. It follows that . Since we have , we conclude that is diagonalizable, and furthermore that is an eigenbasis of .     Matrix transformation   Let be the matrix transformation , where . Decide whether is diagonalizable; if it is, find an invertible matrix that diagonalizes and compute .    We compute the characteristic polynomial as . (Note how easy was to compute, thanks to being upper triangular.) The distinct eigenvalues of are thus and . We compute . Since , we conclude that is not diagaonalizable.     Matrix transformation   Let be the matrix transformation , where . Decide whether is diagonalizable; if it is, find an invertible matrix that diagonalizes and compute .    We compute the characteristic polynomial as . The distinct eigenvalues of are thus and . We compute . Since , we conclude that is diagaonalizable. Furthermore we obtain an eigenbasis by concantenating the bases for our two eigenspaces. Let be the standard basis of . By the change of basis formula, we have . Since is an eigenbasis, we easily compute . Thus we have .    The next example is a first glimpse at the algebraic usefulness of diagonalizability. If is diagonalizable, we have and hence for any positive integer . This gives us a convenient means of computing powers of diagonalizable matrices.   Matrix power   Let . Compute     The characteristic polynomial of is . The usual computation shows that , and thus that we have , where . From the discussion above, we conclude that .     Independence of eigenvectors   Let be a linear operator on the vector space (not necessarily finite dimensional). If is a tuple of eigenvectors of satisfying for all and for all ( , the eigenvalues are distinct), then is linearly independent.    We prove the result by contradiction. If is linearly depenendent, then we can find a linearly dependent finite subtuple of minimal length . Since each is an eigenvector of , we have for all ; since the eigenvalues are assumed to be distinct, we have for .  Note first that we must have : since eigenvectors are nonzero by definition, no subtuple of of length 1 is linearly dependent. Since is linearly dependent we have , where for some . After reordering, we may assume without loss of generality that . Next we apply to both sides of : . From equation and the equation in we have , and hence . Since and , we have . Thus equation implies that the tuple is a linearly dependent subtuple of of length , contradicting the minimality of . Since we have reached a contradiction, we conclude that must be linearly independent.     Exponential functions as eigenvectors   Let be an interval of containing more than one element. For all , define as . Prove that is an uncountably infinite linear independent tuple in .    We saw in that the functions are all eigenvectors of the differential operator , . Since for all , we see that the functions all have distinct eigenvalues. We conclude from that is a linearly independent tuple. Since this tuple is indexed by itself, we see that it is an uncountably infinite linear independent tuple.     Independence of eigenvectors   Let be a linear operator on the vector space (not necessarily finite dimensional). If are distinct eigenvalues of , then .    Suppose we have a decomposition of $\\boldzero$ of the form . Let $J=\\{j\\in \\{1,2,\\dots, r\\}\\colon v_j\\ne \\boldzero\\}$. If $J$ is nonempty, then $v_j$ is a $\\lambda_j$-eigenvector, and we have , a nontrivial linear combination of the tuple . This is a contradiction, as this tuple of eigenvectors (with distinct eigenvalues) is linearly independent by . Thus is empty, and we see that the decomposition must be the trivial one. We conclude from that subspace sum is direct: , that , as desired.     and give us the necessary theoretical tools to complete the proof of .   Proof of  Recall that we have already provided an argument proving that statements (1) and (2) of are equivalent. We will prove the cycle of implications (2) (3) (4) (2)   Implication: (2) (3)  Assume has an eigenbasis . Since the elements of are eigenvectors, after a re-ordering of , we can assume is of the form , where for all and , is an eigenvector of with eigenvalue . (Note that we do not assume that here, but it follows from the rest of our argument that that this must be the case.) Since is a basis, given any , we have , where for all . This proves . By , we conclude that . Lastly, since clearly , we have , as desired.    Implication: (3) (4)  This is a direct consequence of .    Implication: (4) (2)  Assume . For each , let be a basis of . Since , we see that . Consider the concatentation of the bases : , . Since each is the basis of , and since by , it follows that is linearly independent. (This is left as an exercise.) Since , it follows from that is a basis of . Since each element of is an eigenvector of , we conclude that is an eigenbasis of .     Distinct eigenvalues   Let , where . If has distinct eigenvalues, then is diagonalizable.    Let be the distict eigenvalues of , and let be a tuple of eigenvectors satisfying for all . By , is linearly independent. Since , it follows that is an eigenbasis of . From , we conclude that is diagonalizable.     Distinct eigenvalues  Mark well that the implication in is not an if and only if! Consider the identity transformation on a nonzero finite-dimensional vector space . Given any basis of , we have . Thus is diagonalizable. And yet, has only one eigenvalue, namely .    Complex linear operator   Assume is a linear operator of the 3-dimensional -vector space and that the characteristic polynomial of is . Decide whether is diagonalizable.    Over the characteristic polynomial factors as , where . Thus has three distinct eigenvalues . Since , it follows from that is diagonalizable.     Real linear operator   Assume is a linear operator of the 3-dimensional -vector space , that the characteristic polynomial of is , and that . Decide whether is diagonalizable.    Over the characteristic polynomial factors as . Thus is the only eigenvalue of . If were diagonalizable, we would have . But then for all , in which case for all : , we would have in this case. We conclude that is not diagonalizable.    "
 },
 {
   "id": "d_diagonalizable",
@@ -2977,7 +2977,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.17.7",
   "title": "Matrix transformation.",
-  "body": " Matrix transformation   Let be the matrix transformation , where . Decide whether is diagonalizable; if it is, find an invertible matrix that diagonalizes compute .       "
+  "body": " Matrix transformation   Let be the matrix transformation , where . Decide whether is diagonalizable; if it is, find an invertible matrix that diagonalizes and compute .    We compute the characteristic polynomial as . (Note how easy was to compute, thanks to being upper triangular.) The distinct eigenvalues of are thus and . We compute . Since , we conclude that is not diagaonalizable.   "
 },
 {
   "id": "eg_diagable_matrix_transform",
@@ -2986,50 +2986,68 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.17.8",
   "title": "Matrix transformation.",
-  "body": " Matrix transformation   Let be the matrix transformation , where . Decide whether is diagonalizable; if it is, find an invertible matrix that diagonalizes compute .       "
+  "body": " Matrix transformation   Let be the matrix transformation , where . Decide whether is diagonalizable; if it is, find an invertible matrix that diagonalizes and compute .    We compute the characteristic polynomial as . The distinct eigenvalues of are thus and . We compute . Since , we conclude that is diagaonalizable. Furthermore we obtain an eigenbasis by concantenating the bases for our two eigenspaces. Let be the standard basis of . By the change of basis formula, we have . Since is an eigenbasis, we easily compute . Thus we have .   "
+},
+{
+  "id": "eg_matrix_power",
+  "level": "2",
+  "url": "s_diagable.html#eg_matrix_power",
+  "type": "Example",
+  "number": "1.17.9",
+  "title": "Matrix power.",
+  "body": " Matrix power   Let . Compute     The characteristic polynomial of is . The usual computation shows that , and thus that we have , where . From the discussion above, we conclude that .   "
 },
 {
   "id": "th_eigenvectors_ind",
   "level": "2",
   "url": "s_diagable.html#th_eigenvectors_ind",
   "type": "Theorem",
-  "number": "1.17.9",
+  "number": "1.17.10",
   "title": "Independence of eigenvectors.",
-  "body": " Independence of eigenvectors   Let be a linear operator on the vector space (not necessarily finite dimensional). If is a tuple of eigenvectors of satisfying for all and for all ( , the eigenvalues are distinct), then is linearly independent.       "
+  "body": " Independence of eigenvectors   Let be a linear operator on the vector space (not necessarily finite dimensional). If is a tuple of eigenvectors of satisfying for all and for all ( , the eigenvalues are distinct), then is linearly independent.    We prove the result by contradiction. If is linearly depenendent, then we can find a linearly dependent finite subtuple of minimal length . Since each is an eigenvector of , we have for all ; since the eigenvalues are assumed to be distinct, we have for .  Note first that we must have : since eigenvectors are nonzero by definition, no subtuple of of length 1 is linearly dependent. Since is linearly dependent we have , where for some . After reordering, we may assume without loss of generality that . Next we apply to both sides of : . From equation and the equation in we have , and hence . Since and , we have . Thus equation implies that the tuple is a linearly dependent subtuple of of length , contradicting the minimality of . Since we have reached a contradiction, we conclude that must be linearly independent.   "
 },
 {
   "id": "eg_exponential_eigenvectors",
   "level": "2",
   "url": "s_diagable.html#eg_exponential_eigenvectors",
   "type": "Example",
-  "number": "1.17.10",
+  "number": "1.17.11",
   "title": "Exponential functions as eigenvectors.",
-  "body": " Exponential functions as eigenvectors   Let be an interval of containing more than one element. For all , define as . Prove that is an uncountably infinite linear independent tuple in .       "
+  "body": " Exponential functions as eigenvectors   Let be an interval of containing more than one element. For all , define as . Prove that is an uncountably infinite linear independent tuple in .    We saw in that the functions are all eigenvectors of the differential operator , . Since for all , we see that the functions all have distinct eigenvalues. We conclude from that is a linearly independent tuple. Since this tuple is indexed by itself, we see that it is an uncountably infinite linear independent tuple.   "
 },
 {
   "id": "cor_eigenvectors_ind",
   "level": "2",
   "url": "s_diagable.html#cor_eigenvectors_ind",
   "type": "Corollary",
-  "number": "1.17.11",
+  "number": "1.17.12",
   "title": "Independence of eigenvectors.",
-  "body": " Independence of eigenvectors   Let be a linear operator on the vector space (not necessarily finite dimensional). If are distinct eigenvalues of , then .   "
+  "body": " Independence of eigenvectors   Let be a linear operator on the vector space (not necessarily finite dimensional). If are distinct eigenvalues of , then .    Suppose we have a decomposition of $\\boldzero$ of the form . Let $J=\\{j\\in \\{1,2,\\dots, r\\}\\colon v_j\\ne \\boldzero\\}$. If $J$ is nonempty, then $v_j$ is a $\\lambda_j$-eigenvector, and we have , a nontrivial linear combination of the tuple . This is a contradiction, as this tuple of eigenvectors (with distinct eigenvalues) is linearly independent by . Thus is empty, and we see that the decomposition must be the trivial one. We conclude from that subspace sum is direct: , that , as desired.   "
+},
+{
+  "id": "s_diagable-20",
+  "level": "2",
+  "url": "s_diagable.html#s_diagable-20",
+  "type": "Proof",
+  "number": "1.17.1",
+  "title": "Proof of Theorem 1.17.4.",
+  "body": " Proof of  Recall that we have already provided an argument proving that statements (1) and (2) of are equivalent. We will prove the cycle of implications (2) (3) (4) (2)   Implication: (2) (3)  Assume has an eigenbasis . Since the elements of are eigenvectors, after a re-ordering of , we can assume is of the form , where for all and , is an eigenvector of with eigenvalue . (Note that we do not assume that here, but it follows from the rest of our argument that that this must be the case.) Since is a basis, given any , we have , where for all . This proves . By , we conclude that . Lastly, since clearly , we have , as desired.    Implication: (3) (4)  This is a direct consequence of .    Implication: (4) (2)  Assume . For each , let be a basis of . Since , we see that . Consider the concatentation of the bases : , . Since each is the basis of , and since by , it follows that is linearly independent. (This is left as an exercise.) Since , it follows from that is a basis of . Since each element of is an eigenvector of , we conclude that is an eigenbasis of .   "
 },
 {
   "id": "cor_distinct_eigenvalues",
   "level": "2",
   "url": "s_diagable.html#cor_distinct_eigenvalues",
   "type": "Corollary",
-  "number": "1.17.12",
+  "number": "1.17.13",
   "title": "Distinct eigenvalues.",
-  "body": " Distinct eigenvalues   Let , where . If has distinct eigenvalues, then is diagonalizable.   "
+  "body": " Distinct eigenvalues   Let , where . If has distinct eigenvalues, then is diagonalizable.    Let be the distict eigenvalues of , and let be a tuple of eigenvectors satisfying for all . By , is linearly independent. Since , it follows that is an eigenbasis of . From , we conclude that is diagonalizable.   "
 },
 {
-  "id": "s_diagable-18",
+  "id": "s_diagable-22",
   "level": "2",
-  "url": "s_diagable.html#s_diagable-18",
+  "url": "s_diagable.html#s_diagable-22",
   "type": "Remark",
-  "number": "1.17.13",
+  "number": "1.17.14",
   "title": "Distinct eigenvalues.",
   "body": " Distinct eigenvalues  Mark well that the implication in is not an if and only if! Consider the identity transformation on a nonzero finite-dimensional vector space . Given any basis of , we have . Thus is diagonalizable. And yet, has only one eigenvalue, namely .  "
 },
@@ -3038,18 +3056,18 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_diagable.html#eg_distinct_eigenvalues_complex",
   "type": "Example",
-  "number": "1.17.14",
+  "number": "1.17.15",
   "title": "Complex linear operator.",
-  "body": " Complex linear operator   Assume is a linear operator of the 3-dimensional -vector space and that the characteristic polynomial of is . Decide whether is diagonalizable.       "
+  "body": " Complex linear operator   Assume is a linear operator of the 3-dimensional -vector space and that the characteristic polynomial of is . Decide whether is diagonalizable.    Over the characteristic polynomial factors as , where . Thus has three distinct eigenvalues . Since , it follows from that is diagonalizable.   "
 },
 {
   "id": "eg_distinct_eigenvalues_real",
   "level": "2",
   "url": "s_diagable.html#eg_distinct_eigenvalues_real",
   "type": "Example",
-  "number": "1.17.15",
+  "number": "1.17.16",
   "title": "Real linear operator.",
-  "body": " Real linear operator   Assume is a linear operator of the 3-dimensional -vector space and that the characteristic polynomial of is . Decide whether is diagonalizable.       "
+  "body": " Real linear operator   Assume is a linear operator of the 3-dimensional -vector space , that the characteristic polynomial of is , and that . Decide whether is diagonalizable.    Over the characteristic polynomial factors as . Thus is the only eigenvalue of . If were diagonalizable, we would have . But then for all , in which case for all : , we would have in this case. We conclude that is not diagonalizable.   "
 },
 {
   "id": "appendix-notation",
