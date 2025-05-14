@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_inner_prod" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Inner product spaces</title>
+    <introduction>
+    <p>
+      An <em>inner product</em> is an additional layer of structure we can define on an <m>\R</m>- or <m>\C</m>-vector space <m>V</m> that generalizes the dot product operation on <m>\R^n</m>, familiar to students of multivariable calculus at least in the <m>n=2</m> or <m>n=3</m> cases. As with the definition of vector spaces, <xref ref="d_inner_prod"/> proceeds axiomatically. Think of those axioms as a list of important properties, all enjoyed by the familiar dot product operation, that we want our generalized version of the dot product to satisfy. 
+    </p>
+    <p>
+      The addition of an inner product enriches the structure of a vector space considerably, and gives rise to a number of additional useful analytic tools. We highlight a few below.
+      <dl>
+        <li>
+          <title>Distance and angle</title>
+          <p>
+            A notion of <em>distance</em> and <em>angle</em> between two vectors can be defined relative to a given inner product. These provide a numeric measurement of how <q>close</q> (distance) or <q>closely oriented</q> (angle) two vectors in our space are.
+          </p>
+        </li>
+        <li>
+          <title>Orthogonality</title>
+          <p>
+          Two vectors <m>\boldv, \boldw\in V</m> are <em>orthogonal</em>, relative to a given inner product, if <m>\langle \boldv, \boldw\rangle=0</m>. Orthogonality leads further to a general notion of <em>orthogonal projection</em> onto a subspace <m>W\subseteq V</m>.
+          </p>
+        </li>
+        <li>
+          <title>Orthogonal bases</title>
+          <p>
+          An <em>orthogonal basis</em> of a vector space <m>V</m>, relative to a given inner product, is one whose elements are pairwise orthogonal. As we will see there are many computational advantages of working with an orthogonal basis.
+          </p>
+        </li>
+      </dl>
+    </p>
+  </introduction>
+<subsection xml:id="ss_inner_product">
+<title>Inner product</title>
+<p>
+    Technically, we will deal with two distinct notions of inner product in this course: one for <m>\R</m>-vector spaces, and one for <m>\C</m>-spaces. It turns out, however, that the notion of a complex inner product is an extension of sorts of the real inner product. As such, the definition below rolls both concepts up into one formulation. In order to cover the more general complex inner product, it makes use of the complex conjugation and complex modulus operations 
+    <md>
+        <mrow>\overline{\phantom{v}}\colon \C \amp \rightarrow \C \amp \abs{\phantom{v}}\colon \C\amp \rightarrow \C</mrow>
+        <mrow>z=a+bi \amp \longmapsto \overline{z}=a-bi \amp z=a+bi\amp \longmapsto \abs{z}=\sqrt{a^2+b^2}</mrow>
+    </md>.
+    It is useful to recall how these operations behave with respect to real numbers, thinking as always of <m>\R</m> as a subset of <m>\C</m>: namely, given <m>a=a+0i\in \R</m>, we have <m>\overline{a}=a</m>, and the complex modulus of <m>a</m> is equal to the real absolute value of <m>a</m>, since <m>\sqrt{a^2+0^2}=\sqrt{a^2}=\abs{a}</m>. 
+</p>
+<definition xml:id="d_inner_prod">
+<title>Inner product</title>
+<statement>
+<p>
+Let <m>F\in \{\R, \C\}</m>. An <term>inner product</term> on an <m>F</m>-vector space <m>V</m> is a function 
+<md>
+    <mrow>\angvec{\phantom{v}, \phantom{v}}\colon V\times V \amp \rightarrow F</mrow>
+    <mrow>(v,w) \amp \longmapsto \angvec{v,w}</mrow>
+</md>
+that satisfies the following properties. 
+<ol>
+    <li>
+        <title>Conjugate symmetry</title>
+        <p>
+            <men xml:id="eq_inner_conj_symm">\angvec{w,v}=\overline{\angvec{v,w}}</men> for all <m>v,w\in V</m>. 
+        </p>
+    </li>
+    <li>
+        <title>Additivity</title>
+        <p>
+            <mdn>
+                <mrow xml:id="eq_inner_add_left">\angvec{v_1+v_2,w}\amp=\angvec{v_1,w}+\angvec{v_2,w} </mrow>
+                <mrow xml:id="eq_inner_add_right"> \angvec{v,w_1+w_2}\amp =\angvec{v,w_1}+\angvec{v,w_2} </mrow>
+            </mdn>
+            for all <m>v,v_1,v_2,w,w_1,w_2\in V</m>. 
+        </p>
+    </li>
+    <li>
+        <title>(Conjugate) homogeneity</title>
+        <p>
+            <mdn>
+                <mrow xml:id="eq_inner_homog_left">\angvec{cv,w} \amp = c\angvec{v,w}</mrow>
+                <mrow xml:id="eq_inner_homog_right">\angvec{v,cw} \amp =\overline{c}\angvec{v,w}</mrow>
+            </mdn>
+            for all <m>v,w\in V</m> and <m>c\in F</m>.
+        </p>
+    </li>
+    <li>
+        <title>Positivity</title>
+        <p>
+           
+           <md>
+            <mrow>\angvec{v,v} \amp \geq 0, \text{ and } </mrow>
+            <mrow>\angvec{v,v} \amp =0\iff v=\boldzero </mrow>
+           </md>
+           for all <m>v\in V</m>.
+        </p>
+    </li>
+</ol>
+An <term>inner product space</term> is a pair <m>(V,\angvec{ \, , })</m>, where <m>V</m> is an <m>F</m>-vector space (<m>F\in \{\R,\C\}</m>) and <m>\angvec{ \,  , }</m> is an inner product on <m>V</m>. 
+</p>
+</statement>
+</definition>
+<remark>
+    <title>Inner product</title>
+    <p>
+        The conjugate symmetry property <xref ref="eq_inner_conj_symm"/> implies that the property <xref ref="eq_inner_add_right"/> follows from <xref ref="eq_inner_add_left"/>, and that the property <xref ref="eq_inner_homog_right"/> follows from <xref ref="eq_inner_homog_left"/>. As such, we have indulged in some redundancy in <xref ref="d_inner_prod"/>. 
+    </p>
+</remark>
+<remark>
+    <title>Inner product: real case</title>
+    <p>
+        Note that when <m>F=\R</m>, <xref ref="eq_inner_conj_symm"/> reduces to <m>\angvec{w,z}=\angvec{v,w}</m>, since <m>\angvec{v,w}\in \R</m> implies <m>\overline{\angvec{v,w}}=\angvec{v,w}</m>. Similarly, the homogeneity properties reduce to 
+        <me>
+            \angvec{cv,w}=\angvec{v,cw}=c\angvec{v,w}
+        </me>,
+        since <m>c\in \R</m> implies <m>\overline{c}=c</m>. 
+    </p>
+</remark>
+<p>
+    We give a short list of some common inner product spaces, starting from the most familiar, and moving to the more exotic. We state each example as a definition, but of course in each instance it must be proved that the given vector space and operation <m>\angvec{\, , }</m> satisfies the inner product axioms. We will leave that verification to the reader for the most part, restricting our comments in each case only to the positivity axiom.  
+</p>
+<definition xml:id="d_dot">
+<title>Dot product</title>
+            <statement>
+                <p>
+                    Let <m>F\in \{\R,\C\}</m>.  The function <m>\angvec{\, ,}\colon F^n\times F^n\rightarrow F</m>  defined as 
+                    <men xml:id="eq_dot">
+                        \angvec{(x_1,x_2,\dots, x_n),(y_1,y_2,\dots, y_n)}=\sum_{i=1}^n x_i\overline{y_i}
+                    </men>
+                    is an inner product. When <m>F=\R</m> this is called the <term>dot product</term>; when <m>F=\C</m> this is called the <term>complex dot product</term> or <term>standard Hermitian inner product</term>. 
+                </p>
+            </statement>
+          </definition>
+<definition xml:id="d_weighted_dot">
+<title>Weighted dot product</title>
+            <statement>
+                <p>
+                    Let <m>F\in \{\R,\C\}</m>.  Given positive real numbers <m>k_1, k_2, \dots , k_n</m>, the function <m>\angvec{\, ,}\colon F^n\times F^n\rightarrow F</m>  defined as 
+                    <men xml:id="eq_weighted_dot">
+                        \angvec{(x_1,x_2,\dots, x_n),(y_1,y_2,\dots, y_n)}=\sum_{i=1}^nk_ix_i\overline{y_i}
+                    </men>
+                    is an inner product on <m>F^n</m> called the 
+                    <term>weighted dot product</term> with weights <m>(k_1,k_2,\dots, k_n)</m>.
+                </p>
+            </statement>
+          </definition>
+<definition xml:id="d_poly_eval">
+<title>Polynomial evaluation</title>
+<statement>
+<p>
+Let <m>F\in \{\R, \C\}</m>, and let <m>n</m> be a positive integer. Given any distinct scalars <m>c_1,c_2,\dots, c_{n+1}\in F</m>, the function 
+<md>
+    <mrow>\angvec{\phantom{v},\phantom{v}}\colon P_n(F)\times P_n(F) \amp \rightarrow F</mrow>
+    <mrow>(f,g) \amp \mapsto \angvec{f,g}=\sum_{i=1}^{n+1}f(c_i)\overline{g(c_i)}</mrow>
+</md>
+is an inner product on <m>P_n(F)</m> . We call <m>\angvec{\, ,}</m> a <term>polynomial evaluation inner product</term>. 
+</p>
+</statement>
+</definition>
+<definition xml:id="d_integral_inner">
+<title>Integral inner product</title>
+<statement>
+<p>
+Let <m>I=[a,b]</m> be a closed interval in <m>\R</m>. The function 
+<md>
+    <mrow>\angvec{\phantom{v},\phantom{v}}\colon C^\infty(I)\times C^{\infty}(I) \amp \rightarrow \R</mrow>
+    <mrow>(f,g) \amp \mapsto \angvec{f,g}=\int_{a}^b f(x)g(x)\, dx</mrow>
+</md>
+is an inner product on <m>C^\infty(I)</m>. We call <m>\angvec{\, , }</m> an <term>integral inner product</term>. 
+</p>
+</statement>
+</definition>
+<convention>
+    <title>Inner product</title>
+    <p>
+        Since the definition of inner product assumes that the base field is either <m>\R</m> or <m>\C</m>, henceforth anytime the inner product is in play for an <m>F</m>-vector space <m>V</m>, it should be assumed that <m>F\in \{\R,\C\}</m>. 
+    </p>
+</convention>
+
+
+
+</subsection>
+<subsection xml:id="ss_norm">
+<title>Norm</title>
+<definition xml:id="d_norm">
+<title>Norm</title>
+<statement>
+<p>
+Let <m>(V,\angvec{\, ,})</m> be an inner product space. The function <m>\norm{\phantom{v}}\colon V\rightarrow F</m> defined as 
+<me>
+    \norm{v}=\sqrt{\angvec{v,v}}
+</me>
+is called the <term>norm</term> associated to <m>\angvec{\, , }</m>. 
+</p>
+</statement>
+</definition>
+<p>
+    Observe that the norm function defined above is dependent on the inner product. That is, each choice of inner product for a vector space <m>V</m> gives rise to its own norm function. We illustrate this with the inner products introduced above. 
+</p>
+<example xml:id="eg_norms">
+<title>Norm</title>
+<statement>
+<p>
+<ol>
+    <li>
+        <title>Weighted dot product</title>
+        <p>
+            Consider the weighted dot product on <m>F^n</m> with weights <m>k_1,k_2,\dots, k_n</m>. Given <m>\boldx=(x_1,x_2,\dots, x_n)\in F^n</m>, we have 
+            <md>
+                <mrow>\norm{\boldx} \amp = \sqrt{\angvec{\boldx,\boldx}} \amp (\text{def. of norm}) </mrow>
+                <mrow> \amp = \sqrt{\sum_{i=1}^nk_ix_i\overline{x_i}}</mrow>
+                <mrow> \amp = \sqrt{\sum_{i=1}^n k_i\abs{x_i}^2} \amp (z\overline{z}=\abs{z}^2)</mrow>
+            </md>.
+        </p>
+    </li>
+    <li>
+        <title>Polynomial evaluation</title>
+        <p>
+           Consider a polynomial evaluation inner product on <m>P_n(F)</m> with distinct inputs <m>c_1,c_2,\dots, c_{n+1}</m>. Given <m>f\in P_n(F)</m>, we have 
+           <md>
+            <mrow>\norm{f} \amp =\sqrt{\angvec{f,f}} \amp (\text{def. of norm}) </mrow>
+            <mrow> \amp =\sqrt{\sum_{i=1}^{n=1}f(c_i)\overline{f(c_i)}}</mrow>
+            <mrow> \amp =\sqrt{\sum_{i=1}^{n=1}\abs{f(c_i)}^2} \amp (z\overline{z}=\abs{z}^2)</mrow>
+           </md> 
+        </p>
+    </li>
+    <li>
+        <title>Integral inner product</title>
+        <p>
+            Consider the integral inner product on <m>C(I)</m>, where <m>I=[a,b]</m> is a closed interval in <m>\R</m>. Given <m>f\in C^(I)</m>, we have 
+            <md>
+                <mrow>\norm{f} \amp =\sqrt{\angvec{f,f}} \amp (\text{def. of norm})</mrow>
+                <mrow> \amp = \sqrt{\int_a^b f(x)f(x)\, dx}</mrow>
+                <mrow> \amp = \sqrt{\int_a^b f^2(x)\, dx}</mrow>
+            </md>.
+        </p>
+    </li>
+</ol>
+</p>
+</statement>
+</example>
+<theorem xml:id="th_cauchy-schwarz">
+<title>Cauchy-Schwarz inequality</title>
+<statement>
+<p>
+Let <m>(V,\angvec{\, ,})</m> be an inner product space. We have 
+<men xml:id="eq_cauchy-schwarz">
+    \abs{\angvec{v,w}}\leq \norm{v}\norm{w}
+</men>
+for all <m>v,w\in V</m>.
+
+</p>
+</statement>
+<proof>
+<p>
+</p>
+</proof>
+</theorem>
+<theorem xml:id="th_norm">
+<title>Norm properties</title>
+<statement>
+<p>
+Let <m>(V,\angvec{\, ,})</m> be an inner product space. 
+<ol>
+    <li>
+        <p>
+            <m>\norm{cv}=\abs{c}\norm{v}</m> for all <m>v\in V</m> and <m>c\in F</m>. 
+        </p>
+    </li>
+</ol>
+</p>
+</statement>
+<proof>
+<p>
+</p>
+</proof>
+</theorem>
+
+</subsection>
+</section>

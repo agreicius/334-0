@@ -19,4 +19,5 @@
     <xi:include href="s_eigenvector.ptx" />
     <xi:include href="s_char_poly.ptx" />
     <xi:include href="s_diagable.ptx" />
+    <xi:include href="s_inner_prod.ptx" />
 </chapter>
