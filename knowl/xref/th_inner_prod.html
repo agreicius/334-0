@@ -40,6 +40,33 @@ T(v)=\angvec{v,w_0}
 </ol>
 </div></li>
 </ol>
-</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para"></div></article></details><span class="incontext"><a class="internal" href="s_inner_prod.html#th_inner_prod">in-context</a></span>
+</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical"><ol class="decimal" id="th_inner_prod-3-1-1">
+<li><div class="para logical">
+<div class="para">We use the 1-step technique. Given any <span class="process-math">\(v,w\in V\)</span> and <span class="process-math">\(c,d\in F\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+T(cv+dw) \amp = \angvec{cv+dw,w_0} \amp (\text{def.})\\
+\amp =\angvec{cv,w_0}+\angvec{dw,w_0} \amp (\text{additivity})\\
+\amp =c\angvec{v,w_0}+d\angvec{w,w_0} \amp (\text{homogeneity})\text{.}
+\end{align*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">We have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\angvec{w,\boldzero} \amp =\angvec{w,\boldzero+\boldzero}\\
+\amp =\angvec{w,\boldzero}+\angvec{w,\boldzero} \amp (\text{additivity})\text{.}
+\end{align*}
+</div>
+<div class="para">Subtracting <span class="process-math">\(\angvec{w,\boldzero}\)</span> from both sides, we conclude that <span class="process-math">\(\angvec{w,\boldzero}=0\text{.}\)</span> It follows from conjugate symmetry that</div>
+<div class="displaymath process-math">
+\begin{align*}
+\angvec{\boldzero,w} \amp = \overline{\angvec{w,\boldzer0}}=\overline{0}=0\text{.}
+\end{align*}
+</div>
+</div></li>
+<li><div class="para">We prove the cycle of implications (a)<span class="process-math">\(\implies\)</span>(b)<span class="process-math">\(\implies\)</span>(c)<span class="process-math">\(\implies\)</span>(a). The implication (a)<span class="process-math">\(\implies\)</span>(b) was shown above. Furthermore, (c) follows trivially from (a) by taking <span class="process-math">\(w=v\text{.}\)</span> Lastly, the implication (c)<span class="process-math">\(\implies\)</span>(a) follows directly from the positivity axiom (Axiom (iv)) of the inner product definition.</div></li>
+</ol></div></article></details><span class="incontext"><a class="internal" href="s_inner_prod.html#th_inner_prod">in-context</a></span>
 </body>
 </html>

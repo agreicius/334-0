@@ -685,7 +685,34 @@ T(v)=\angvec{v,w_0}
 </ol>
 </div></li>
 </ol>
-</div></article><details id="th_inner_prod-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_inner_prod-3-1"></div></article></details></section><section class="subsection" id="ss_norm"><h3 class="heading hide-type">
+</div></article><details id="th_inner_prod-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_inner_prod-3-1"><ol class="decimal" id="th_inner_prod-3-1-1">
+<li id="th_inner_prod-3-1-1-1"><div class="para logical" id="th_inner_prod-3-1-1-1-1">
+<div class="para">We use the 1-step technique. Given any <span class="process-math">\(v,w\in V\)</span> and <span class="process-math">\(c,d\in F\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="th_inner_prod-3-1-1-1-1-3">
+\begin{align*}
+T(cv+dw) \amp = \angvec{cv+dw,w_0} \amp (\text{def.})\\
+\amp =\angvec{cv,w_0}+\angvec{dw,w_0} \amp (\text{additivity})\\
+\amp =c\angvec{v,w_0}+d\angvec{w,w_0} \amp (\text{homogeneity})\text{.}
+\end{align*}
+</div>
+</div></li>
+<li id="th_inner_prod-3-1-1-2"><div class="para logical" id="th_inner_prod-3-1-1-2-1">
+<div class="para">We have</div>
+<div class="displaymath process-math" id="th_inner_prod-3-1-1-2-1-1">
+\begin{align*}
+\angvec{w,\boldzero} \amp =\angvec{w,\boldzero+\boldzero}\\
+\amp =\angvec{w,\boldzero}+\angvec{w,\boldzero} \amp (\text{additivity})\text{.}
+\end{align*}
+</div>
+<div class="para">Subtracting <span class="process-math">\(\angvec{w,\boldzero}\)</span> from both sides, we conclude that <span class="process-math">\(\angvec{w,\boldzero}=0\text{.}\)</span> It follows from conjugate symmetry that</div>
+<div class="displaymath process-math" id="th_inner_prod-3-1-1-2-1-4">
+\begin{align*}
+\angvec{\boldzero,w} \amp = \overline{\angvec{w,\boldzer0}}=\overline{0}=0\text{.}
+\end{align*}
+</div>
+</div></li>
+<li id="th_inner_prod-3-1-1-3"><div class="para" id="th_inner_prod-3-1-1-3-1">We prove the cycle of implications (a)<span class="process-math">\(\implies\)</span>(b)<span class="process-math">\(\implies\)</span>(c)<span class="process-math">\(\implies\)</span>(a). The implication (a)<span class="process-math">\(\implies\)</span>(b) was shown above. Furthermore, (c) follows trivially from (a) by taking <span class="process-math">\(w=v\text{.}\)</span> Lastly, the implication (c)<span class="process-math">\(\implies\)</span>(a) follows directly from the positivity axiom (Axiom (iv)) of the inner product definition.</div></li>
+</ol></div></article></details></section><section class="subsection" id="ss_norm"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Norm</span>
 </h3>
 <article class="definition definition-like" id="d_norm"><h4 class="heading">
@@ -821,14 +848,58 @@ T(v)=\angvec{v,w_0}
 </div></li>
 <li id="th_norm-2-1-2-3">
 <span class="heading"><span class="title">Triangle inequality.</span></span><div class="para" id="th_norm-2-1-2-3-2">
-<span class="process-math">\(\norm{v+w}\leq \norm{v}+\norm{w}\)</span> for all <span class="process-math">\(v,w\in V\text{.}\)</span>
-</div>
+<span class="process-math">\(\norm{v+w}\leq \norm{v}+\norm{w}\)</span> for all <span class="process-math">\(v,w\in V\text{.}\)</span> Moreover, the inequality is an equality of and only if one of the vectors is a nonnegative scalar multiple of the other.</div>
 </li>
 <li id="th_norm-2-1-2-4">
 <span class="heading"><span class="title">Parallelogram law.</span></span><div class="para" id="th_norm-2-1-2-4-2"><span class="process-math">\(\displaystyle \norm{v+w}^2+\norm{v-w}^2=2\norm{v}^2+2\norm{w}^2\)</span></div>
 </li>
 </ol>
-</div></article><details id="th_norm-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_norm-3-1"></div></article></details><article class="remark remark-like" id="ss_norm-7"><h4 class="heading">
+</div></article><details id="th_norm-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_norm-3-1"><ol class="decimal" id="th_norm-3-1-1">
+<li id="th_norm-3-1-1-1"><div class="para logical" id="th_norm-3-1-1-1-1">
+<div class="para">We have</div>
+<div class="displaymath process-math" id="th_norm-3-1-1-1-1-1">
+\begin{align*}
+\norm{v}=0 \amp \iff \sqrt{\angvec{v,v}}=0 \amp (\text{def. of norm})\\
+\amp \iff \angvec{v,v}=0\\
+\amp \iff v=\boldzero \amp (\text{Axiom (iv)}) \text{.}
+\end{align*}
+</div>
+</div></li>
+<li id="th_norm-3-1-1-2"><div class="para logical" id="th_norm-3-1-1-2-1">
+<div class="para">We have</div>
+<div class="displaymath process-math" id="th_norm-3-1-1-2-1-1">
+\begin{align*}
+\norm{cv} \amp =\sqrt{\angvec{cv,cv}}\\
+\amp = \sqrt{c\overline{c}\angvec{v,v}}\\
+\amp =\sqrt{\abs{c}^2\angvec{v,v}}\\
+\amp = \abs{c}\sqrt{\angvec{v,v}} \amp (a\geq 0\implies \sqrt{a^2}=a)\\
+\amp = \abs{c}\norm{v}\text{.}
+\end{align*}
+</div>
+</div></li>
+<li id="th_norm-3-1-1-3"><div class="para logical" id="th_norm-3-1-1-3-1">
+<div class="para">We have</div>
+<div class="displaymath process-math" id="th_norm-3-1-1-3-1-1">
+\begin{align*}
+\norm{v+w}^2 \amp =\angvec{v+w,v+w}\\
+\amp =\angvec{v,v}+\angvec{v,w}+\angvec{w,v}+\angvec{w,w}\\
+\amp =\angvec{v,v}+\angvec{v,w}+\overline{\angvec{v,w}}+\angvec{w,w}\\
+\amp =\norm{v}^2+2\Re \angvec{v,w}+\norm{w}^2 \amp (z+\overline{z}=2\Re z)\\
+\amp \leq norm{v}^2+2\abs{\angvec{v,w}}+\norm{w}^2 \amp (\Re z\leq \abs{z}) \\
+\amp \leq \norm{v}^2+2\norm{v}\norm{w}+\norm{w}^2 \amp (\text{Cauchy-Schwarz ineq.})\\
+\amp = (\norm{v}+\norm{w})^2\text{.}
+\end{align*}
+</div>
+<div class="para">Take the square-root of both sides, we conclude that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\norm{v+w}\leq \norm{v}+\norm{w}\text{.}
+\end{equation*}
+</div>
+<div class="para">Working our way back through the chain of equalities above, we see that equality holds if and only if <span class="process-math">\(\abs{\angvec{v,w}}=\abs{v}\abs{w}\)</span> and <span class="process-math">\(\Re \angvec{v,w}=\abs{\angvec{v,w}}\text{.}\)</span> The first equality holds if and only if one of the vectors is a scalar multiple of the other (by Cauchy-Schwarz); we leave it to the reader to show that both equalities hold if and only if one of the vectors is a scalar multiple of the other, and that scalar is a nonnegative real number.</div>
+</div></li>
+<li id="th_norm-3-1-1-4"><div class="para" id="th_norm-3-1-1-4-1">Proof left as an exercise.</div></li>
+</ol></div></article></details><article class="remark remark-like" id="ss_norm-7"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.18.14</span><span class="period">.</span><span class="space"> </span><span class="title">Norm functions.</span>
 </h4>
 <div class="para logical" id="ss_norm-7-2">
