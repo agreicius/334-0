@@ -50,7 +50,7 @@ Let <m>F\in \{\R, \C\}</m>. An <term>inner product</term> on an <m>F</m>-vector 
     <mrow>(v,w) \amp \longmapsto \angvec{v,w}</mrow>
 </md>
 that satisfies the following properties. 
-<ol>
+<ol marker="(i)">
     <li>
         <title>Conjugate symmetry</title>
         <p>
@@ -169,8 +169,56 @@ is an inner product on <m>C^\infty(I)</m>. We call <m>\angvec{\, , }</m> an <ter
         Since the definition of inner product assumes that the base field is either <m>\R</m> or <m>\C</m>, henceforth anytime the inner product is in play for an <m>F</m>-vector space <m>V</m>, it should be assumed that <m>F\in \{\R,\C\}</m>. 
     </p>
 </convention>
-
-
+<theorem xml:id="th_inner_prod">
+<title>Inner product properties</title>
+<statement>
+<p>
+Let <m>(V,\angvec{\, ,})</m> be an inner product space. 
+<ol>
+    <li>
+        <p>
+            Given <m>w_0\in V</m>, the function <m>T\colon V\rightarrow F</m> defined as 
+            <me>
+                T(v)=\angvec{v,w_0}
+            </me>
+            is a linear transformation.
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>\angvec{w,\boldzero}=\angvec{\boldzero,w}=0</m> for all <m>w\in V</m>.
+        </p>
+    </li>
+    <li>
+        <p>
+            Let <m>v\in V</m>. The following statements are equivalent. 
+            <ol>
+                <li>
+                    <p>
+                        <m>v=\boldzero</m>. 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>\angvec{v,w}=0</m> for all <m>w\in V</m>. 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>\angvec{v,v}=0</m>.
+                    </p>
+                </li>
+            </ol>
+        </p>
+    </li>
+</ol>
+</p>
+</statement>
+<proof>
+<p>
+</p>
+</proof>
+</theorem>
 
 </subsection>
 <subsection xml:id="ss_norm">
@@ -240,12 +288,55 @@ Let <m>(V,\angvec{\, ,})</m> be an inner product space. We have
 <men xml:id="eq_cauchy-schwarz">
     \abs{\angvec{v,w}}\leq \norm{v}\norm{w}
 </men>
-for all <m>v,w\in V</m>.
-
+for all <m>v,w\in V</m>. Furthermore, the inequality <xref ref="eq_cauchy-schwarz"/> is an equality if and only if one of <m>v</m> or <m>w</m> is a scalar multiple of the other.
 </p>
 </statement>
 <proof>
 <p>
+    First observe that inequality <xref ref="eq_cauchy-schwarz"/> clearly holds if <m>w=\boldzero</m>, since in this case we have <m>\abs{\angvec{v,w}}=\norm{v}\norm{w}=0</m>.
+</p>
+<p>
+    We now show <xref ref="eq_cauchy-schwarz"/> holds when <m>w\ne \boldzero</m>.   For any scalar <m>c\in F</m>, we have 
+    <men xml:id="eq_C-S_proof_ineq1">
+        \angvec{v+cw,v+cw} \geq 0
+    </men>. 
+    Let's unpack this inequality using additional properties of the inner product:
+    <md>
+        <mrow>\angvec{v+cw,v+cw} \amp \geq 0</mrow>
+        <mrow>\angvec{v,v}+\angvec{cv,w}+\angvec{v,cw}+\angvec{cw,cw} \amp \geq 0</mrow>
+        <mrow> \angvec{v,v}+c\angvec{w,v}+\overline{c}\angvec{v,w}+c\overline{c}\angvec{w,w} \amp \geq 0 </mrow>
+        <mrow>\norm{v}^2+c\overline{\angvec{v,w}}+\overline{c}\angvec{v,w}+\abs{c}^2\norm{w}^2 \amp \geq 0 </mrow>
+    </md>.
+    Assume <m>w\ne \boldzero</m>. Since the last inequality is true for <em>any</em> scalar <m>c\in F</m>, it is true for the particular choice choice <m>c=-\frac{\angvec{v,w}}{\norm{w}^2}</m>. (Note that <m>c</m> is well defined since <m>w\ne \boldzero</m>, and hence <m>\norm{w}\ne 0</m>.) We now substitute this expression in for <m>c</m> and do some further simplification: 
+    <md>
+        <mrow> \norm{v}^2-\frac{\angvec{v,w}}{\norm{w}^2}\cdot\overline{\angvec{v,w}}-\frac{\overline{\angvec{v,w}}}{\norm{w}^2}\cdot\angvec{v,w}+\frac{\abs{\angvec{v,w}}^2}{\norm{w}^4}\cdot\norm{w}^2 \amp \geq 0  </mrow>
+        <mrow>\norm{v}^2-\frac{\abs{\angvec{v,w}}^2}{\norm{w}^2}- \cancel{\frac{\abs{\angvec{v,w}}^2}{\norm{w}^2}}+\cancel{\frac{\abs{\angvec{v,w}}^2}{\norm{w}^2}}\amp \geq 0 </mrow>
+        <mrow>\abs{\angvec{v,w}}^2  \leq \norm{v}^2\norm{w}^2\amp</mrow>
+    </md>.
+    Taking square-roots of both sides (and using the fact that <m>\sqrt{a^2}=a</m> for all <em>nonnegative</em> real numbers <m>a</m>), we conclude that 
+    <me>
+        \abs{\angvec{v,w}}\leq \norm{v}\norm{w}
+    </me>,
+    as desired.    
+</p>
+<p>
+    Having proved that <xref ref="eq_cauchy-schwarz"/> holds for all <m>v,w\in V</m>, we now show that we have equality if and only one of the vectors is a scalar multiple of the other. The reverse implication is easy to see: if <m>v=cw</m>, for example, then we have 
+    <md>
+        <mrow>\abs{\angvec{v,w}} \amp = \abs{\angvec{cw,w}}=\abs{c}\norm{w}^2 </mrow>
+        <mrow>\norm{v}\norm{w} \amp =\norm{cw}\norm{w}=\abs{c}\norm{w}^2</mrow>
+    </md>,
+    showing that equality holds in <xref ref="eq_cauchy-schwarz"/>. The argument in the case <m>w=cv</m> is very similar. (We <q>cheated</q> somewhat above, using property (2) of <xref ref="th_norm"/>. However, the proof of that property does not use Cauchy-Schwarz, so we are not indulging in circularity here.) 
+</p>
+<p>
+    It remains only to show the forward implication. Assume <m>\abs{\angvec{v,w}}=\norm{v}\norm{w}</m>; we will show that one of the vectors is a scalar multiple of the other. If <m>w=\boldzero</m>, then the claim follows trivially, since <m>w=0v</m>. If <m>w\ne \boldzero</m>, then working our way backward through the various simplifications starting with <xref ref="eq_C-S_proof_ineq1"/>, we see that 
+    <md>
+        <mrow> \abs{\angvec{v,w}}=\norm{v}\norm{w}=0 \amp \iff \abs{\angvec{v,w}}^2=\norm{v}^2\norm{w}^2 </mrow>
+        <mrow> \amp\iff \angvec{v+cw,v+cw}=0, \hspace{10pt} c=-\frac{\angvec{v,w}}{\norm{w}^2} </mrow>
+        <mrow> \amp \implies v+cw=\boldzero, \hspace{10pt} c=-\frac{\angvec{v,w}}{\norm{w}^2}</mrow>
+        <mrow> \amp \iff v=-cw, \hspace{10pt} c=-\frac{\angvec{v,w}}{\norm{w}^2}</mrow>
+    </md>,
+    where the last line follows from (3) of <xref ref="th_inner_prod"/>. Thus, one of the vectors (namely, <m>v</m>) is scalar multiple of the others in this case, as desired. 
+
 </p>
 </proof>
 </theorem>
@@ -257,9 +348,27 @@ Let <m>(V,\angvec{\, ,})</m> be an inner product space.
 <ol>
     <li>
         <p>
+            <m>\norm{v}=0</m> if and only if <m>v=\boldzero</m> for all <m>v\in V</m>. 
+        </p>
+    </li>
+    <li>
+        <p>
             <m>\norm{cv}=\abs{c}\norm{v}</m> for all <m>v\in V</m> and <m>c\in F</m>. 
         </p>
     </li>
+    <li>
+        <title>Triangle inequality</title>
+        <p>
+            <m>\norm{v+w}\leq \norm{v}+\norm{w}</m> for all <m>v,w\in V</m>. 
+        </p>
+    </li>
+    <li>
+        <title>Parallelogram law</title>
+        <p>
+            <m>\norm{v+w}^2+\norm{v-w}^2=2\norm{v}^2+2\norm{w}^2</m>
+        </p>
+    </li>
+
 </ol>
 </p>
 </statement>
@@ -268,6 +377,58 @@ Let <m>(V,\angvec{\, ,})</m> be an inner product space.
 </p>
 </proof>
 </theorem>
+<remark>
+    <title>Norm functions</title>
+    <p>
+        You can use the first three statements of <xref ref="th_norm"/> to axiomatize the properties of a norm. That is given a <m>F</m>-vector space <m>V</m> (with <m>F\in \{\R, \C\}</m>), a norm on <m>V</m> is a function <m>\norm{\phantom{v}}\colon V\rightarrow \R</m> satisfying the following axioms.
+        <ol marker="(i)">
+            <li>
+                <p>
+                    <m>\norm{v}\geq 0</m> for all <m>v\in V</m>, and moreover, <m>\norm{v}=0</m> if and only if <m>v=\boldzero</m>. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    <m>\norm{cv}=\abs{c}\norm{v}</m> for all <m>v\in V</m> and <m>c\in F</m>. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    <m>\norm{v+w}\leq \norm{v}+\norm{w}</m> for all <m>v,w\in V</m>. 
+                </p>
+            </li>
+        </ol>
+        In this sense, the norm we have defined is just one special case of a norm function: one arising from a given inner product. It is not the case that all norms arise in this manner: for example, you can show that the <q>taxicab distance</q> on <m>\R^n</m> defined as  
+        <me>
+            \norm{(x_1,x_2,\dots, x_n)}=\sum_{i=1}^n\abs{x_i}
+        </me>
+        is a norm, but does not arise from an inner product. In fact, you can show that a norm (in the axiomatic sense) arises from an inner product if and only it satisfies the parallelogram law. 
+    
+    </p>
+</remark>
+<remark>
+<title>Distance function</title>
+<p>
+Let <m>(V,\angvec{\, ,})</m> be an inner product space. The norm function, which we understand as a measure of size or length of vectors, gives rise in turn to a <em>distance function</em> 
+<me>
+    d(v,w)=\norm{v-w}
+</me>
+that can be thought of as measure of the distance between vectors.  From <xref ref="th_norm"/> it follows easily that the function <m>d\colon V\times V\rightarrow \R</m> satisfies the following properties.
+        <ol marker="(i)">
+            <li>
+                <p>
+                    <m>d(v,w)\geq 0</m> for all <m>v,w\in V</m>, and moreover, we have <m>d(v,w)=0</m> if and only if <m>v=w</m>.  
+                </p>
+            </li>
+            <li>
+                <p>
+                    <m>d(v,w)\leq d(v,v')+d(v',w)</m> for all <m>v,w, v'\in V</m>. 
+                </p>
+            </li>
+        </ol> 
+This distance function <m>d</m> provides yet another layer of structure to an inner product space, making it what is known as a <em>metric space</em>. Metric spaces come equipped with their own rich theory that includes useful and familiar concepts from calculus (and analysis) like limits, continuity, closed and open sets. connected and compact sets, <etc/>. 
+</p>
+</remark>
 
 </subsection>
 </section>
