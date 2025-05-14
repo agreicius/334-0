@@ -3070,6 +3070,123 @@ var ptx_lunr_docs = [
   "body": " Real linear operator   Assume is a linear operator of the 3-dimensional -vector space , that the characteristic polynomial of is , and that . Decide whether is diagonalizable.    Over the characteristic polynomial factors as . Thus is the only eigenvalue of . If were diagonalizable, we would have . But then for all , in which case for all : , we would have in this case. We conclude that is not diagonalizable.   "
 },
 {
+  "id": "s_inner_prod",
+  "level": "1",
+  "url": "s_inner_prod.html",
+  "type": "Section",
+  "number": "1.18",
+  "title": "Inner product spaces",
+  "body": " Inner product spaces   An inner product is an additional layer of structure we can define on an - or -vector space that generalizes the dot product operation on , familiar to students of multivariable calculus at least in the or cases. As with the definition of vector spaces, proceeds axiomatically. Think of those axioms as a list of important properties, all enjoyed by the familiar dot product operation, that we want our generalized version of the dot product to satisfy.  The addition of an inner product enriches the structure of a vector space considerably, and gives rise to a number of additional useful analytic tools. We highlight a few below.   Distance and angle  A notion of distance and angle between two vectors can be defined relative to a given inner product. These provide a numeric measurement of how close (distance) or closely oriented (angle) two vectors in our space are.    Orthogonality  Two vectors are orthogonal , relative to a given inner product, if . Orthogonality leads further to a general notion of orthogonal projection onto a subspace .    Orthogonal bases  An orthogonal basis of a vector space , relative to a given inner product, is one whose elements are pairwise orthogonal. As we will see there are many computational advantages of working with an orthogonal basis.       Inner product  Technically, we will deal with two distinct notions of inner product in this course: one for -vector spaces, and one for -spaces. It turns out, however, that the notion of a complex inner product is an extension of sorts of the real inner product. As such, the definition below rolls both concepts up into one formulation. In order to cover the more general complex inner product, it makes use of the complex conjugation and complex modulus operations . It is useful to recall how these operations behave with respect to real numbers, thinking as always of as a subset of : namely, given , we have , and the complex modulus of is equal to the real absolute value of , since .   Inner product   Let . An inner product on an -vector space is a function that satisfies the following properties.   Conjugate symmetry   for all .    Additivity   for all .    (Conjugate) homogeneity   for all and .    Positivity   for all .   An inner product space is a pair , where is an -vector space ( ) and is an inner product on .     Inner product  The conjugate symmetry property implies that the property follows from , and that the property follows from . As such, we have indulged in some redundancy in .    Inner product: real case  Note that when , reduces to , since implies . Similarly, the homogeneity properties reduce to , since implies .   We give a short list of some common inner product spaces, starting from the most familiar, and moving to the more exotic. We state each example as a definition, but of course in each instance it must be proved that the given vector space and operation satisfies the inner product axioms. We will leave that verification to the reader for the most part, restricting our comments in each case only to the positivity axiom.   Dot product   Let . The function defined as is an inner product. When this is called the dot product ; when this is called the complex dot product or standard Hermitian inner product .     Weighted dot product   Let . Given positive real numbers , the function defined as is an inner product on called the weighted dot product with weights .     Polynomial evaluation   Let , and let be a positive integer. Given any distinct scalars , the function is an inner product on . We call a polynomial evaluation inner product .     Integral inner product   Let be a closed interval in . The function is an inner product on . We call an integral inner product .     Inner product  Since the definition of inner product assumes that the base field is either or , henceforth anytime the inner product is in play for an -vector space , it should be assumed that .     Norm   Norm   Let be an inner product space. The function defined as is called the norm associated to .    Observe that the norm function defined above is dependent on the inner product. That is, each choice of inner product for a vector space gives rise to its own norm function. We illustrate this with the inner products introduced above.   Norm      Weighted dot product  Consider the weighted dot product on with weights . Given , we have .    Polynomial evaluation  Consider a polynomial evaluation inner product on with distinct inputs . Given , we have     Integral inner product  Consider the integral inner product on , where is a closed interval in . Given , we have .        Cauchy-Schwarz inequality   Let be an inner product space. We have for all .         Norm properties   Let be an inner product space.    for all and .            "
+},
+{
+  "id": "d_inner_prod",
+  "level": "2",
+  "url": "s_inner_prod.html#d_inner_prod",
+  "type": "Definition",
+  "number": "1.18.1",
+  "title": "Inner product.",
+  "body": " Inner product   Let . An inner product on an -vector space is a function that satisfies the following properties.   Conjugate symmetry   for all .    Additivity   for all .    (Conjugate) homogeneity   for all and .    Positivity   for all .   An inner product space is a pair , where is an -vector space ( ) and is an inner product on .   "
+},
+{
+  "id": "ss_inner_product-4",
+  "level": "2",
+  "url": "s_inner_prod.html#ss_inner_product-4",
+  "type": "Remark",
+  "number": "1.18.2",
+  "title": "Inner product.",
+  "body": " Inner product  The conjugate symmetry property implies that the property follows from , and that the property follows from . As such, we have indulged in some redundancy in .  "
+},
+{
+  "id": "ss_inner_product-5",
+  "level": "2",
+  "url": "s_inner_prod.html#ss_inner_product-5",
+  "type": "Remark",
+  "number": "1.18.3",
+  "title": "Inner product: real case.",
+  "body": " Inner product: real case  Note that when , reduces to , since implies . Similarly, the homogeneity properties reduce to , since implies .  "
+},
+{
+  "id": "d_dot",
+  "level": "2",
+  "url": "s_inner_prod.html#d_dot",
+  "type": "Definition",
+  "number": "1.18.4",
+  "title": "Dot product.",
+  "body": " Dot product   Let . The function defined as is an inner product. When this is called the dot product ; when this is called the complex dot product or standard Hermitian inner product .   "
+},
+{
+  "id": "d_weighted_dot",
+  "level": "2",
+  "url": "s_inner_prod.html#d_weighted_dot",
+  "type": "Definition",
+  "number": "1.18.5",
+  "title": "Weighted dot product.",
+  "body": " Weighted dot product   Let . Given positive real numbers , the function defined as is an inner product on called the weighted dot product with weights .   "
+},
+{
+  "id": "d_poly_eval",
+  "level": "2",
+  "url": "s_inner_prod.html#d_poly_eval",
+  "type": "Definition",
+  "number": "1.18.6",
+  "title": "Polynomial evaluation.",
+  "body": " Polynomial evaluation   Let , and let be a positive integer. Given any distinct scalars , the function is an inner product on . We call a polynomial evaluation inner product .   "
+},
+{
+  "id": "d_integral_inner",
+  "level": "2",
+  "url": "s_inner_prod.html#d_integral_inner",
+  "type": "Definition",
+  "number": "1.18.7",
+  "title": "Integral inner product.",
+  "body": " Integral inner product   Let be a closed interval in . The function is an inner product on . We call an integral inner product .   "
+},
+{
+  "id": "ss_inner_product-11",
+  "level": "2",
+  "url": "s_inner_prod.html#ss_inner_product-11",
+  "type": "Convention",
+  "number": "1.18.8",
+  "title": "Inner product.",
+  "body": " Inner product  Since the definition of inner product assumes that the base field is either or , henceforth anytime the inner product is in play for an -vector space , it should be assumed that .  "
+},
+{
+  "id": "d_norm",
+  "level": "2",
+  "url": "s_inner_prod.html#d_norm",
+  "type": "Definition",
+  "number": "1.18.9",
+  "title": "Norm.",
+  "body": " Norm   Let be an inner product space. The function defined as is called the norm associated to .   "
+},
+{
+  "id": "eg_norms",
+  "level": "2",
+  "url": "s_inner_prod.html#eg_norms",
+  "type": "Example",
+  "number": "1.18.10",
+  "title": "Norm.",
+  "body": " Norm      Weighted dot product  Consider the weighted dot product on with weights . Given , we have .    Polynomial evaluation  Consider a polynomial evaluation inner product on with distinct inputs . Given , we have     Integral inner product  Consider the integral inner product on , where is a closed interval in . Given , we have .      "
+},
+{
+  "id": "th_cauchy-schwarz",
+  "level": "2",
+  "url": "s_inner_prod.html#th_cauchy-schwarz",
+  "type": "Theorem",
+  "number": "1.18.11",
+  "title": "Cauchy-Schwarz inequality.",
+  "body": " Cauchy-Schwarz inequality   Let be an inner product space. We have for all .       "
+},
+{
+  "id": "th_norm",
+  "level": "2",
+  "url": "s_inner_prod.html#th_norm",
+  "type": "Theorem",
+  "number": "1.18.12",
+  "title": "Norm properties.",
+  "body": " Norm properties   Let be an inner product space.    for all and .          "
+},
+{
   "id": "appendix-notation",
   "level": "1",
   "url": "appendix-notation.html",

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.18.10</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Norm.</span>
+</h4>
+<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical"><ol class="decimal" id="eg_norms-2-1-1">
+<li>
+<span class="heading"><span class="title">Weighted dot product.</span></span><div class="para logical">
+<div class="para">Consider the weighted dot product on <span class="process-math">\(F^n\)</span> with weights <span class="process-math">\(k_1,k_2,\dots, k_n\text{.}\)</span> Given <span class="process-math">\(\boldx=(x_1,x_2,\dots, x_n)\in F^n\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\norm{\boldx} \amp = \sqrt{\angvec{\boldx,\boldx}} \amp (\text{def. of norm}) \\
+\amp = \sqrt{\sum_{i=1}^nk_ix_i\overline{x_i}}\\
+\amp = \sqrt{\sum_{i=1}^n k_i\abs{x_i}^2} \amp (z\overline{z}=\abs{z}^2)\text{.}
+\end{align*}
+</div>
+</div>
+</li>
+<li>
+<span class="heading"><span class="title">Polynomial evaluation.</span></span><div class="para logical">
+<div class="para">Consider a polynomial evaluation inner product on <span class="process-math">\(P_n(F)\)</span> with distinct inputs <span class="process-math">\(c_1,c_2,\dots, c_{n+1}\text{.}\)</span> Given <span class="process-math">\(f\in P_n(F)\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\norm{f} \amp =\sqrt{\angvec{f,f}} \amp (\text{def. of norm}) \\
+\amp =\sqrt{\sum_{i=1}^{n=1}f(c_i)\overline{f(c_i)}}\\
+\amp =\sqrt{\sum_{i=1}^{n=1}\abs{f(c_i)}^2} \amp (z\overline{z}=\abs{z}^2)
+\end{align*}
+</div>
+</div>
+</li>
+<li>
+<span class="heading"><span class="title">Integral inner product.</span></span><div class="para logical">
+<div class="para">Consider the integral inner product on <span class="process-math">\(C(I)\text{,}\)</span> where <span class="process-math">\(I=[a,b]\)</span> is a closed interval in <span class="process-math">\(\R\text{.}\)</span> Given <span class="process-math">\(f\in C^(I)\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\norm{f} \amp =\sqrt{\angvec{f,f}} \amp (\text{def. of norm})\\
+\amp = \sqrt{\int_a^b f(x)f(x)\, dx}\\
+\amp = \sqrt{\int_a^b f^2(x)\, dx}\text{.}
+\end{align*}
+</div>
+</div>
+</li>
+</ol></div></article><span class="incontext"><a class="internal" href="s_inner_prod.html#eg_norms">in-context</a></span>
+</body>
+</html>
