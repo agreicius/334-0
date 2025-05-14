@@ -96,15 +96,15 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.6.3';
+eBookConfig.runestone_version = '7.6.4';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.1dbf799015a9933a.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.541c9106f2c605b9.css">
+<script src="_static/prefix-runtime.670ec3fcb7b60f96.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
@@ -538,7 +538,7 @@ z=a+bi \amp \longmapsto \overline{z}=a-bi \amp z=a+bi\amp \longmapsto \abs{z}=\s
 \end{align*}
 </div>
 <div class="para">that satisfies the following properties.</div>
-<ol class="decimal" id="d_inner_prod-2-1-6">
+<ol class="lower-roman ol-marker-2" id="d_inner_prod-2-1-6">
 <li id="d_inner_prod-2-1-6-1">
 <span class="heading"><span class="title">Conjugate symmetry.</span></span><div class="para logical" id="d_inner_prod-2-1-6-1-2">
 <div class="displaymath process-math" id="eq_inner_conj_symm">
@@ -656,11 +656,40 @@ z=a+bi \amp \longmapsto \overline{z}=a-bi \amp z=a+bi\amp \longmapsto \abs{z}=\s
 <span class="type">Convention</span><span class="space"> </span><span class="codenumber">1.18.8</span><span class="period">.</span><span class="space"> </span><span class="title">Inner product.</span>
 </h4>
 <div class="para" id="ss_inner_product-11-2">Since the definition of inner product assumes that the base field is either <span class="process-math">\(\R\)</span> or <span class="process-math">\(\C\text{,}\)</span> henceforth anytime the inner product is in play for an <span class="process-math">\(F\)</span>-vector space <span class="process-math">\(V\text{,}\)</span> it should be assumed that <span class="process-math">\(F\in \{\R,\C\}\text{.}\)</span>
-</div></article></section><section class="subsection" id="ss_norm"><h3 class="heading hide-type">
+</div></article><article class="theorem theorem-like" id="th_inner_prod"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.18.9</span><span class="period">.</span><span class="space"> </span><span class="title">Inner product properties.</span>
+</h4>
+<div class="para logical" id="th_inner_prod-2-1">
+<div class="para">Let <span class="process-math">\((V,\angvec{\, ,})\)</span> be an inner product space.</div>
+<ol class="decimal" id="th_inner_prod-2-1-2">
+<li id="th_inner_prod-2-1-2-1"><div class="para logical" id="th_inner_prod-2-1-2-1-1">
+<div class="para">Given <span class="process-math">\(w_0\in V\text{,}\)</span> the function <span class="process-math">\(T\colon V\rightarrow F\)</span> defined as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T(v)=\angvec{v,w_0}
+\end{equation*}
+</div>
+<div class="para">is a linear transformation.</div>
+</div></li>
+<li id="th_inner_prod-2-1-2-2"><div class="para" id="th_inner_prod-2-1-2-2-1">
+<span class="process-math">\(\angvec{w,\boldzero}=\angvec{\boldzero,w}=0\)</span> for all <span class="process-math">\(w\in V\text{.}\)</span>
+</div></li>
+<li id="th_inner_prod-2-1-2-3"><div class="para logical" id="th_inner_prod-2-1-2-3-1">
+<div class="para">Let <span class="process-math">\(v\in V\text{.}\)</span> The following statements are equivalent.</div>
+<ol class="lower-alpha lower-alpha-level-1" id="th_inner_prod-2-1-2-3-1-2">
+<li id="th_inner_prod-2-1-2-3-1-2-1"><div class="para" id="th_inner_prod-2-1-2-3-1-2-1-1"><span class="process-math">\(v=\boldzero\text{.}\)</span></div></li>
+<li id="th_inner_prod-2-1-2-3-1-2-2"><div class="para" id="th_inner_prod-2-1-2-3-1-2-2-1">
+<span class="process-math">\(\angvec{v,w}=0\)</span> for all <span class="process-math">\(w\in V\text{.}\)</span>
+</div></li>
+<li id="th_inner_prod-2-1-2-3-1-2-3"><div class="para" id="th_inner_prod-2-1-2-3-1-2-3-1"><span class="process-math">\(\angvec{v,v}=0\text{.}\)</span></div></li>
+</ol>
+</div></li>
+</ol>
+</div></article><details id="th_inner_prod-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_inner_prod-3-1"></div></article></details></section><section class="subsection" id="ss_norm"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Norm</span>
 </h3>
 <article class="definition definition-like" id="d_norm"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.18.9</span><span class="period">.</span><span class="space"> </span><span class="title">Norm.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.18.10</span><span class="period">.</span><span class="space"> </span><span class="title">Norm.</span>
 </h4>
 <div class="para logical" id="d_norm-2-1">
 <div class="para">Let <span class="process-math">\((V,\angvec{\, ,})\)</span> be an inner product space. The function <span class="process-math">\(\norm{\phantom{v}}\colon V\rightarrow F\)</span> defined as</div>
@@ -673,7 +702,7 @@ z=a+bi \amp \longmapsto \overline{z}=a-bi \amp z=a+bi\amp \longmapsto \abs{z}=\s
 </div>
 </div></article><div class="para" id="ss_norm-3">Observe that the norm function defined above is dependent on the inner product. That is, each choice of inner product for a vector space <span class="process-math">\(V\)</span> gives rise to its own norm function. We illustrate this with the inner products introduced above.</div>
 <article class="example example-like" id="eg_norms"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.18.10</span><span class="period">.</span><span class="space"> </span><span class="title">Norm.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.18.11</span><span class="period">.</span><span class="space"> </span><span class="title">Norm.</span>
 </h4>
 <div class="para logical" id="eg_norms-2-1"><ol class="decimal" id="eg_norms-2-1-1">
 <li id="eg_norms-2-1-1-1">
@@ -713,26 +742,137 @@ z=a+bi \amp \longmapsto \overline{z}=a-bi \amp z=a+bi\amp \longmapsto \abs{z}=\s
 </div>
 </li>
 </ol></div></article><article class="theorem theorem-like" id="th_cauchy-schwarz"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.18.11</span><span class="period">.</span><span class="space"> </span><span class="title">Cauchy-Schwarz inequality.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.18.12</span><span class="period">.</span><span class="space"> </span><span class="title">Cauchy-Schwarz inequality.</span>
 </h4>
 <div class="para logical" id="th_cauchy-schwarz-2-1">
 <div class="para">Let <span class="process-math">\((V,\angvec{\, ,})\)</span> be an inner product space. We have</div>
-<div class="displaymath process-math" id="eq_cauchy-schwarz">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_cauchy-schwarz.html" id="eq_cauchy-schwarz">
 \begin{equation}
 \abs{\angvec{v,w}}\leq \norm{v}\norm{w}\tag{1.65}
 \end{equation}
 </div>
-<div class="para">for all <span class="process-math">\(v,w\in V\text{.}\)</span>
+<div class="para">for all <span class="process-math">\(v,w\in V\text{.}\)</span> Furthermore, the inequality <a href="s_inner_prod.html#eq_cauchy-schwarz" class="xref" data-knowl="./knowl/xref/eq_cauchy-schwarz.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.65">(1.65)</a> is an equality if and only if one of <span class="process-math">\(v\)</span> or <span class="process-math">\(w\)</span> is a scalar multiple of the other.</div>
+</div></article><details id="th_cauchy-schwarz-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_cauchy-schwarz-3-1">First observe that inequality <a href="s_inner_prod.html#eq_cauchy-schwarz" class="xref" data-knowl="./knowl/xref/eq_cauchy-schwarz.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.65">(1.65)</a> clearly holds if <span class="process-math">\(w=\boldzero\text{,}\)</span> since in this case we have <span class="process-math">\(\abs{\angvec{v,w}}=\norm{v}\norm{w}=0\text{.}\)</span>
 </div>
-</div></article><details id="th_cauchy-schwarz-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_cauchy-schwarz-3-1"></div></article></details><article class="theorem theorem-like" id="th_norm"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.18.12</span><span class="period">.</span><span class="space"> </span><span class="title">Norm properties.</span>
+<div class="para logical" id="th_cauchy-schwarz-3-2">
+<div class="para">We now show <a href="s_inner_prod.html#eq_cauchy-schwarz" class="xref" data-knowl="./knowl/xref/eq_cauchy-schwarz.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.65">(1.65)</a> holds when <span class="process-math">\(w\ne \boldzero\text{.}\)</span>   For any scalar <span class="process-math">\(c\in F\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_cauchy-schwarz.html" id="eq_C-S_proof_ineq1">
+\begin{equation}
+\angvec{v+cw,v+cw} \geq 0\text{.}\tag{1.66}
+\end{equation}
+</div>
+<div class="para">Let’s unpack this inequality using additional properties of the inner product:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_cauchy-schwarz.html" id="th_cauchy-schwarz-3-2-5">
+\begin{align*}
+\angvec{v+cw,v+cw} \amp \geq 0\\
+\angvec{v,v}+\angvec{cv,w}+\angvec{v,cw}+\angvec{cw,cw} \amp \geq 0\\
+\angvec{v,v}+c\angvec{w,v}+\overline{c}\angvec{v,w}+c\overline{c}\angvec{w,w} \amp \geq 0 \\
+\norm{v}^2+c\overline{\angvec{v,w}}+\overline{c}\angvec{v,w}+\abs{c}^2\norm{w}^2 \amp \geq 0 \text{.}
+\end{align*}
+</div>
+<div class="para">Assume <span class="process-math">\(w\ne \boldzero\text{.}\)</span> Since the last inequality is true for <em class="emphasis">any</em> scalar <span class="process-math">\(c\in F\text{,}\)</span> it is true for the particular choice choice <span class="process-math">\(c=-\frac{\angvec{v,w}}{\norm{w}^2}\text{.}\)</span> (Note that <span class="process-math">\(c\)</span> is well defined since <span class="process-math">\(w\ne \boldzero\text{,}\)</span> and hence <span class="process-math">\(\norm{w}\ne 0\text{.}\)</span>) We now substitute this expression in for <span class="process-math">\(c\)</span> and do some further simplification:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_cauchy-schwarz.html" id="th_cauchy-schwarz-3-2-14">
+\begin{align*}
+\norm{v}^2-\frac{\angvec{v,w}}{\norm{w}^2}\cdot\overline{\angvec{v,w}}-\frac{\overline{\angvec{v,w}}}{\norm{w}^2}\cdot\angvec{v,w}+\frac{\abs{\angvec{v,w}}^2}{\norm{w}^4}\cdot\norm{w}^2 \amp \geq 0  \\
+\norm{v}^2-\frac{\abs{\angvec{v,w}}^2}{\norm{w}^2}- \cancel{\frac{\abs{\angvec{v,w}}^2}{\norm{w}^2}}+\cancel{\frac{\abs{\angvec{v,w}}^2}{\norm{w}^2}}\amp \geq 0 \\
+\abs{\angvec{v,w}}^2  \leq \norm{v}^2\norm{w}^2\amp\text{.}
+\end{align*}
+</div>
+<div class="para">Taking square-roots of both sides (and using the fact that <span class="process-math">\(\sqrt{a^2}=a\)</span> for all <em class="emphasis">nonnegative</em> real numbers <span class="process-math">\(a\)</span>), we conclude that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_cauchy-schwarz.html">
+\begin{equation*}
+\abs{\angvec{v,w}}\leq \norm{v}\norm{w}\text{,}
+\end{equation*}
+</div>
+<div class="para">as desired.</div>
+</div>
+<div class="para logical" id="th_cauchy-schwarz-3-3">
+<div class="para">Having proved that <a href="s_inner_prod.html#eq_cauchy-schwarz" class="xref" data-knowl="./knowl/xref/eq_cauchy-schwarz.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.65">(1.65)</a> holds for all <span class="process-math">\(v,w\in V\text{,}\)</span> we now show that we have equality if and only one of the vectors is a scalar multiple of the other. The reverse implication is easy to see: if <span class="process-math">\(v=cw\text{,}\)</span> for example, then we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_cauchy-schwarz.html ./knowl/xref/eq_cauchy-schwarz.html ./knowl/xref/th_norm.html" id="th_cauchy-schwarz-3-3-4">
+\begin{align*}
+\abs{\angvec{v,w}} \amp = \abs{\angvec{cw,w}}=\abs{c}\norm{w}^2 \\
+\norm{v}\norm{w} \amp =\norm{cw}\norm{w}=\abs{c}\norm{w}^2\text{,}
+\end{align*}
+</div>
+<div class="para">showing that equality holds in <a href="s_inner_prod.html#eq_cauchy-schwarz" class="xref" data-knowl="./knowl/xref/eq_cauchy-schwarz.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.65">(1.65)</a>. The argument in the case <span class="process-math">\(w=cv\)</span> is very similar. (We “cheated” somewhat above, using property (2) of <a href="s_inner_prod.html#th_norm" class="xref" data-knowl="./knowl/xref/th_norm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.18.13: Norm properties">Theorem 1.18.13</a>. However, the proof of that property does not use Cauchy-Schwarz, so we are not indulging in circularity here.)</div>
+</div>
+<div class="para logical" id="th_cauchy-schwarz-3-4">
+<div class="para">It remains only to show the forward implication. Assume <span class="process-math">\(\abs{\angvec{v,w}}=\norm{v}\norm{w}\text{;}\)</span> we will show that one of the vectors is a scalar multiple of the other. If <span class="process-math">\(w=\boldzero\text{,}\)</span> then the claim follows trivially, since <span class="process-math">\(w=0v\text{.}\)</span> If <span class="process-math">\(w\ne \boldzero\text{,}\)</span> then working our way backward through the various simplifications starting with <a href="s_inner_prod.html#eq_C-S_proof_ineq1" class="xref" data-knowl="./knowl/xref/eq_C-S_proof_ineq1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.66">(1.66)</a>, we see that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_C-S_proof_ineq1.html ./knowl/xref/th_inner_prod.html" id="th_cauchy-schwarz-3-4-6">
+\begin{align*}
+\abs{\angvec{v,w}}=\norm{v}\norm{w}=0 \amp \iff \abs{\angvec{v,w}}^2=\norm{v}^2\norm{w}^2 \\
+\amp\iff \angvec{v+cw,v+cw}=0, \hspace{10pt} c=-\frac{\angvec{v,w}}{\norm{w}^2} \\
+\amp \implies v+cw=\boldzero, \hspace{10pt} c=-\frac{\angvec{v,w}}{\norm{w}^2}\\
+\amp \iff v=-cw, \hspace{10pt} c=-\frac{\angvec{v,w}}{\norm{w}^2}\text{,}
+\end{align*}
+</div>
+<div class="para">where the last line follows from (3) of <a href="s_inner_prod.html#th_inner_prod" class="xref" data-knowl="./knowl/xref/th_inner_prod.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.18.9: Inner product properties">Theorem 1.18.9</a>. Thus, one of the vectors (namely, <span class="process-math">\(v\)</span>) is scalar multiple of the others in this case, as desired.</div>
+</div></article></details><article class="theorem theorem-like" id="th_norm"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.18.13</span><span class="period">.</span><span class="space"> </span><span class="title">Norm properties.</span>
 </h4>
 <div class="para logical" id="th_norm-2-1">
 <div class="para">Let <span class="process-math">\((V,\angvec{\, ,})\)</span> be an inner product space.</div>
-<ol class="decimal" id="th_norm-2-1-2"><li id="th_norm-2-1-2-1"><div class="para" id="th_norm-2-1-2-1-1">
+<ol class="decimal" id="th_norm-2-1-2">
+<li id="th_norm-2-1-2-1"><div class="para" id="th_norm-2-1-2-1-1">
+<span class="process-math">\(\norm{v}=0\)</span> if and only if <span class="process-math">\(v=\boldzero\)</span> for all <span class="process-math">\(v\in V\text{.}\)</span>
+</div></li>
+<li id="th_norm-2-1-2-2"><div class="para" id="th_norm-2-1-2-2-1">
 <span class="process-math">\(\norm{cv}=\abs{c}\norm{v}\)</span> for all <span class="process-math">\(v\in V\)</span> and <span class="process-math">\(c\in F\text{.}\)</span>
-</div></li></ol>
-</div></article><details id="th_norm-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_norm-3-1"></div></article></details></section></section></div>
+</div></li>
+<li id="th_norm-2-1-2-3">
+<span class="heading"><span class="title">Triangle inequality.</span></span><div class="para" id="th_norm-2-1-2-3-2">
+<span class="process-math">\(\norm{v+w}\leq \norm{v}+\norm{w}\)</span> for all <span class="process-math">\(v,w\in V\text{.}\)</span>
+</div>
+</li>
+<li id="th_norm-2-1-2-4">
+<span class="heading"><span class="title">Parallelogram law.</span></span><div class="para" id="th_norm-2-1-2-4-2"><span class="process-math">\(\displaystyle \norm{v+w}^2+\norm{v-w}^2=2\norm{v}^2+2\norm{w}^2\)</span></div>
+</li>
+</ol>
+</div></article><details id="th_norm-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_norm-3-1"></div></article></details><article class="remark remark-like" id="ss_norm-7"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.18.14</span><span class="period">.</span><span class="space"> </span><span class="title">Norm functions.</span>
+</h4>
+<div class="para logical" id="ss_norm-7-2">
+<div class="para">You can use the first three statements of <a href="s_inner_prod.html#th_norm" class="xref" data-knowl="./knowl/xref/th_norm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.18.13: Norm properties">Theorem 1.18.13</a> to axiomatize the properties of a norm. That is given a <span class="process-math">\(F\)</span>-vector space <span class="process-math">\(V\)</span> (with <span class="process-math">\(F\in \{\R, \C\}\)</span>), a norm on <span class="process-math">\(V\)</span> is a function <span class="process-math">\(\norm{\phantom{v}}\colon V\rightarrow \R\)</span> satisfying the following axioms.</div>
+<ol class="lower-roman ol-marker-2" id="ss_norm-7-2-7">
+<li id="ss_norm-7-2-7-1"><div class="para" id="ss_norm-7-2-7-1-1">
+<span class="process-math">\(\norm{v}\geq 0\)</span> for all <span class="process-math">\(v\in V\text{,}\)</span> and moreover, <span class="process-math">\(\norm{v}=0\)</span> if and only if <span class="process-math">\(v=\boldzero\text{.}\)</span>
+</div></li>
+<li id="ss_norm-7-2-7-2"><div class="para" id="ss_norm-7-2-7-2-1">
+<span class="process-math">\(\norm{cv}=\abs{c}\norm{v}\)</span> for all <span class="process-math">\(v\in V\)</span> and <span class="process-math">\(c\in F\text{.}\)</span>
+</div></li>
+<li id="ss_norm-7-2-7-3"><div class="para" id="ss_norm-7-2-7-3-1">
+<span class="process-math">\(\norm{v+w}\leq \norm{v}+\norm{w}\)</span> for all <span class="process-math">\(v,w\in V\text{.}\)</span>
+</div></li>
+</ol>
+<div class="para">In this sense, the norm we have defined is just one special case of a norm function: one arising from a given inner product. It is not the case that all norms arise in this manner: for example, you can show that the “taxicab distance” on <span class="process-math">\(\R^n\)</span> defined as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_norm.html">
+\begin{equation*}
+\norm{(x_1,x_2,\dots, x_n)}=\sum_{i=1}^n\abs{x_i}
+\end{equation*}
+</div>
+<div class="para">is a norm, but does not arise from an inner product. In fact, you can show that a norm (in the axiomatic sense) arises from an inner product if and only it satisfies the parallelogram law.</div>
+</div></article><article class="remark remark-like" id="ss_norm-8"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.18.15</span><span class="period">.</span><span class="space"> </span><span class="title">Distance function.</span>
+</h4>
+<div class="para logical" id="ss_norm-8-2">
+<div class="para">Let <span class="process-math">\((V,\angvec{\, ,})\)</span> be an inner product space. The norm function, which we understand as a measure of size or length of vectors, gives rise in turn to a <em class="emphasis">distance function</em>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_norm.html">
+\begin{equation*}
+d(v,w)=\norm{v-w}
+\end{equation*}
+</div>
+<div class="para">that can be thought of as measure of the distance between vectors.  From <a href="s_inner_prod.html#th_norm" class="xref" data-knowl="./knowl/xref/th_norm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.18.13: Norm properties">Theorem 1.18.13</a> it follows easily that the function <span class="process-math">\(d\colon V\times V\rightarrow \R\)</span> satisfies the following properties.</div>
+<ol class="lower-roman ol-marker-2" id="ss_norm-8-2-6">
+<li id="ss_norm-8-2-6-1"><div class="para" id="ss_norm-8-2-6-1-1">
+<span class="process-math">\(d(v,w)\geq 0\)</span> for all <span class="process-math">\(v,w\in V\text{,}\)</span> and moreover, we have <span class="process-math">\(d(v,w)=0\)</span> if and only if <span class="process-math">\(v=w\text{.}\)</span>
+</div></li>
+<li id="ss_norm-8-2-6-2"><div class="para" id="ss_norm-8-2-6-2-1">
+<span class="process-math">\(d(v,w)\leq d(v,v')+d(v',w)\)</span> for all <span class="process-math">\(v,w, v'\in V\text{.}\)</span>
+</div></li>
+</ol>
+<div class="para">This distance function <span class="process-math">\(d\)</span> provides yet another layer of structure to an inner product space, making it what is known as a <em class="emphasis">metric space</em>. Metric spaces come equipped with their own rich theory that includes useful and familiar concepts from calculus (and analysis) like limits, continuity, closed and open sets. connected and compact sets, etc..</div>
+</div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="s_diagable.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="advlinalgkursobjekt-6.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

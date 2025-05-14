@@ -12,17 +12,71 @@
 </head>
 <body class="ignore-math">
 <article class="theorem theorem-like"><h4 class="heading">
-<span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.18.11</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Cauchy-Schwarz inequality.</span>
+<span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.18.12</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Cauchy-Schwarz inequality.</span>
 </h4>
 <div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
 <div class="para">Let <span class="process-math">\((V,\angvec{\, ,})\)</span> be an inner product space. We have</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_cauchy-schwarz.html">
 \begin{equation}
 \abs{\angvec{v,w}}\leq \norm{v}\norm{w}\tag{1.65}
 \end{equation}
 </div>
-<div class="para">for all <span class="process-math">\(v,w\in V\text{.}\)</span>
+<div class="para">for all <span class="process-math">\(v,w\in V\text{.}\)</span> Furthermore, the inequality <a href="s_inner_prod.html#eq_cauchy-schwarz" class="xref" data-knowl="./knowl/xref/eq_cauchy-schwarz.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.65">(1.65)</a> is an equality if and only if one of <span class="process-math">\(v\)</span> or <span class="process-math">\(w\)</span> is a scalar multiple of the other.</div>
+</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">First observe that inequality <a href="s_inner_prod.html#eq_cauchy-schwarz" class="xref" data-knowl="./knowl/xref/eq_cauchy-schwarz.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.65">(1.65)</a> clearly holds if <span class="process-math">\(w=\boldzero\text{,}\)</span> since in this case we have <span class="process-math">\(\abs{\angvec{v,w}}=\norm{v}\norm{w}=0\text{.}\)</span>
 </div>
-</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para"></div></article></details><span class="incontext"><a class="internal" href="s_inner_prod.html#th_cauchy-schwarz">in-context</a></span>
+<div class="para logical">
+<div class="para">We now show <a href="s_inner_prod.html#eq_cauchy-schwarz" class="xref" data-knowl="./knowl/xref/eq_cauchy-schwarz.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.65">(1.65)</a> holds when <span class="process-math">\(w\ne \boldzero\text{.}\)</span>   For any scalar <span class="process-math">\(c\in F\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_cauchy-schwarz.html">
+\begin{equation}
+\angvec{v+cw,v+cw} \geq 0\text{.}\tag{1.66}
+\end{equation}
+</div>
+<div class="para">Let’s unpack this inequality using additional properties of the inner product:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_cauchy-schwarz.html">
+\begin{align*}
+\angvec{v+cw,v+cw} \amp \geq 0\\
+\angvec{v,v}+\angvec{cv,w}+\angvec{v,cw}+\angvec{cw,cw} \amp \geq 0\\
+\angvec{v,v}+c\angvec{w,v}+\overline{c}\angvec{v,w}+c\overline{c}\angvec{w,w} \amp \geq 0 \\
+\norm{v}^2+c\overline{\angvec{v,w}}+\overline{c}\angvec{v,w}+\abs{c}^2\norm{w}^2 \amp \geq 0 \text{.}
+\end{align*}
+</div>
+<div class="para">Assume <span class="process-math">\(w\ne \boldzero\text{.}\)</span> Since the last inequality is true for <em class="emphasis">any</em> scalar <span class="process-math">\(c\in F\text{,}\)</span> it is true for the particular choice choice <span class="process-math">\(c=-\frac{\angvec{v,w}}{\norm{w}^2}\text{.}\)</span> (Note that <span class="process-math">\(c\)</span> is well defined since <span class="process-math">\(w\ne \boldzero\text{,}\)</span> and hence <span class="process-math">\(\norm{w}\ne 0\text{.}\)</span>) We now substitute this expression in for <span class="process-math">\(c\)</span> and do some further simplification:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_cauchy-schwarz.html">
+\begin{align*}
+\norm{v}^2-\frac{\angvec{v,w}}{\norm{w}^2}\cdot\overline{\angvec{v,w}}-\frac{\overline{\angvec{v,w}}}{\norm{w}^2}\cdot\angvec{v,w}+\frac{\abs{\angvec{v,w}}^2}{\norm{w}^4}\cdot\norm{w}^2 \amp \geq 0  \\
+\norm{v}^2-\frac{\abs{\angvec{v,w}}^2}{\norm{w}^2}- \cancel{\frac{\abs{\angvec{v,w}}^2}{\norm{w}^2}}+\cancel{\frac{\abs{\angvec{v,w}}^2}{\norm{w}^2}}\amp \geq 0 \\
+\abs{\angvec{v,w}}^2  \leq \norm{v}^2\norm{w}^2\amp\text{.}
+\end{align*}
+</div>
+<div class="para">Taking square-roots of both sides (and using the fact that <span class="process-math">\(\sqrt{a^2}=a\)</span> for all <em class="emphasis">nonnegative</em> real numbers <span class="process-math">\(a\)</span>), we conclude that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_cauchy-schwarz.html">
+\begin{equation*}
+\abs{\angvec{v,w}}\leq \norm{v}\norm{w}\text{,}
+\end{equation*}
+</div>
+<div class="para">as desired.</div>
+</div>
+<div class="para logical">
+<div class="para">Having proved that <a href="s_inner_prod.html#eq_cauchy-schwarz" class="xref" data-knowl="./knowl/xref/eq_cauchy-schwarz.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.65">(1.65)</a> holds for all <span class="process-math">\(v,w\in V\text{,}\)</span> we now show that we have equality if and only one of the vectors is a scalar multiple of the other. The reverse implication is easy to see: if <span class="process-math">\(v=cw\text{,}\)</span> for example, then we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_cauchy-schwarz.html ./knowl/xref/eq_cauchy-schwarz.html ./knowl/xref/th_norm.html">
+\begin{align*}
+\abs{\angvec{v,w}} \amp = \abs{\angvec{cw,w}}=\abs{c}\norm{w}^2 \\
+\norm{v}\norm{w} \amp =\norm{cw}\norm{w}=\abs{c}\norm{w}^2\text{,}
+\end{align*}
+</div>
+<div class="para">showing that equality holds in <a href="s_inner_prod.html#eq_cauchy-schwarz" class="xref" data-knowl="./knowl/xref/eq_cauchy-schwarz.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.65">(1.65)</a>. The argument in the case <span class="process-math">\(w=cv\)</span> is very similar. (We “cheated” somewhat above, using property (2) of <a href="s_inner_prod.html#th_norm" class="xref" data-knowl="./knowl/xref/th_norm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.18.13: Norm properties">Theorem 1.18.13</a>. However, the proof of that property does not use Cauchy-Schwarz, so we are not indulging in circularity here.)</div>
+</div>
+<div class="para logical">
+<div class="para">It remains only to show the forward implication. Assume <span class="process-math">\(\abs{\angvec{v,w}}=\norm{v}\norm{w}\text{;}\)</span> we will show that one of the vectors is a scalar multiple of the other. If <span class="process-math">\(w=\boldzero\text{,}\)</span> then the claim follows trivially, since <span class="process-math">\(w=0v\text{.}\)</span> If <span class="process-math">\(w\ne \boldzero\text{,}\)</span> then working our way backward through the various simplifications starting with <a href="s_inner_prod.html#eq_C-S_proof_ineq1" class="xref" data-knowl="./knowl/xref/eq_C-S_proof_ineq1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.66">(1.66)</a>, we see that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_C-S_proof_ineq1.html ./knowl/xref/th_inner_prod.html">
+\begin{align*}
+\abs{\angvec{v,w}}=\norm{v}\norm{w}=0 \amp \iff \abs{\angvec{v,w}}^2=\norm{v}^2\norm{w}^2 \\
+\amp\iff \angvec{v+cw,v+cw}=0, \hspace{10pt} c=-\frac{\angvec{v,w}}{\norm{w}^2} \\
+\amp \implies v+cw=\boldzero, \hspace{10pt} c=-\frac{\angvec{v,w}}{\norm{w}^2}\\
+\amp \iff v=-cw, \hspace{10pt} c=-\frac{\angvec{v,w}}{\norm{w}^2}\text{,}
+\end{align*}
+</div>
+<div class="para">where the last line follows from (3) of <a href="s_inner_prod.html#th_inner_prod" class="xref" data-knowl="./knowl/xref/th_inner_prod.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.18.9: Inner product properties">Theorem 1.18.9</a>. Thus, one of the vectors (namely, <span class="process-math">\(v\)</span>) is scalar multiple of the others in this case, as desired.</div>
+</div></article></details><span class="incontext"><a class="internal" href="s_inner_prod.html#th_cauchy-schwarz">in-context</a></span>
 </body>
 </html>
