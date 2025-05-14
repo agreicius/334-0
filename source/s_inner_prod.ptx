@@ -216,6 +216,36 @@ Let <m>(V,\angvec{\, ,})</m> be an inner product space.
 </statement>
 <proof>
 <p>
+    <ol>
+        <li>
+            <p>
+                We use the 1-step technique. Given any <m>v,w\in V</m> and <m>c,d\in F</m>, we have 
+                <md>
+                    <mrow>T(cv+dw) \amp = \angvec{cv+dw,w_0} \amp (\text{def.})</mrow>
+                    <mrow> \amp =\angvec{cv,w_0}+\angvec{dw,w_0} \amp (\text{additivity})</mrow>
+                    <mrow> \amp =c\angvec{v,w_0}+d\angvec{w,w_0} \amp (\text{homogeneity})</mrow>
+                </md>.
+            </p>
+        </li>
+        <li>
+            <p>
+                We have 
+                <md>
+                    <mrow>\angvec{w,\boldzero} \amp =\angvec{w,\boldzero+\boldzero}</mrow>
+                    <mrow> \amp =\angvec{w,\boldzero}+\angvec{w,\boldzero} \amp (\text{additivity})</mrow>
+                </md>.
+                Subtracting <m>\angvec{w,\boldzero}</m> from both sides, we conclude that <m>\angvec{w,\boldzero}=0</m>. It follows from conjugate symmetry that 
+                <md>
+                    <mrow>\angvec{\boldzero,w} \amp = \overline{\angvec{w,\boldzer0}}=\overline{0}=0</mrow>
+                </md>.
+            </p>
+        </li>
+        <li>
+            <p>
+                We prove the cycle of implications (a)<m>\implies</m>(b)<m>\implies</m>(c)<m>\implies</m>(a). The implication (a)<m>\implies</m>(b) was shown above. Furthermore, (c) follows trivially from (a) by taking <m>w=v</m>. Lastly, the implication (c)<m>\implies</m>(a) follows directly from the positivity axiom (Axiom (iv)) of the inner product definition. 
+            </p>
+        </li>
+    </ol>
 </p>
 </proof>
 </theorem>
@@ -336,7 +366,6 @@ for all <m>v,w\in V</m>. Furthermore, the inequality <xref ref="eq_cauchy-schwar
         <mrow> \amp \iff v=-cw, \hspace{10pt} c=-\frac{\angvec{v,w}}{\norm{w}^2}</mrow>
     </md>,
     where the last line follows from (3) of <xref ref="th_inner_prod"/>. Thus, one of the vectors (namely, <m>v</m>) is scalar multiple of the others in this case, as desired. 
-
 </p>
 </proof>
 </theorem>
@@ -359,7 +388,7 @@ Let <m>(V,\angvec{\, ,})</m> be an inner product space.
     <li>
         <title>Triangle inequality</title>
         <p>
-            <m>\norm{v+w}\leq \norm{v}+\norm{w}</m> for all <m>v,w\in V</m>. 
+            <m>\norm{v+w}\leq \norm{v}+\norm{w}</m> for all <m>v,w\in V</m>. Moreover, the inequality is an equality of and only if one of the vectors is a nonnegative scalar multiple of the other.  
         </p>
     </li>
     <li>
@@ -374,6 +403,54 @@ Let <m>(V,\angvec{\, ,})</m> be an inner product space.
 </statement>
 <proof>
 <p>
+    <ol>
+        <li>
+            <p>
+                We have 
+                <md>
+                    <mrow>\norm{v}=0 \amp \iff \sqrt{\angvec{v,v}}=0 \amp (\text{def. of norm})</mrow>
+                    <mrow> \amp \iff \angvec{v,v}=0</mrow>
+                    <mrow> \amp \iff v=\boldzero \amp (\text{Axiom (iv)}) </mrow>
+                </md>.
+            </p>
+        </li>
+        <li>
+            <p>
+                We have 
+                <md>
+                    <mrow>\norm{cv} \amp =\sqrt{\angvec{cv,cv}}</mrow>
+                    <mrow> \amp = \sqrt{c\overline{c}\angvec{v,v}}</mrow>
+                    <mrow> \amp =\sqrt{\abs{c}^2\angvec{v,v}}</mrow>
+                    <mrow> \amp = \abs{c}\sqrt{\angvec{v,v}} \amp (a\geq 0\implies \sqrt{a^2}=a)</mrow>
+                    <mrow> \amp = \abs{c}\norm{v}</mrow>
+                </md>.
+            </p>
+        </li>
+        <li>
+            <p>
+                We have 
+                <md>
+                    <mrow>\norm{v+w}^2 \amp =\angvec{v+w,v+w}</mrow>
+                    <mrow> \amp =\angvec{v,v}+\angvec{v,w}+\angvec{w,v}+\angvec{w,w}</mrow>
+                    <mrow> \amp =\angvec{v,v}+\angvec{v,w}+\overline{\angvec{v,w}}+\angvec{w,w}</mrow>
+                    <mrow> \amp =\norm{v}^2+2\Re \angvec{v,w}+\norm{w}^2 \amp (z+\overline{z}=2\Re z)</mrow>
+                    <mrow> \amp \leq norm{v}^2+2\abs{\angvec{v,w}}+\norm{w}^2 \amp (\Re z\leq \abs{z}) </mrow>
+                    <mrow> \amp \leq \norm{v}^2+2\norm{v}\norm{w}+\norm{w}^2 \amp (\text{Cauchy-Schwarz ineq.})</mrow>
+                    <mrow> \amp = (\norm{v}+\norm{w})^2</mrow>
+                </md>.
+                Take the square-root of both sides, we conclude that 
+                <me>
+                    \norm{v+w}\leq \norm{v}+\norm{w}
+                </me>.
+                Working our way back through the chain of equalities above, we see that equality holds if and only if <m>\abs{\angvec{v,w}}=\abs{v}\abs{w}</m> and <m>\Re \angvec{v,w}=\abs{\angvec{v,w}}</m>. The first equality holds if and only if one of the vectors is a scalar multiple of the other (by Cauchy-Schwarz); we leave it to the reader to show that both equalities hold if and only if one of the vectors is a scalar multiple of the other, and that scalar is a nonnegative real number.
+            </p>
+        </li>
+        <li>
+            <p>
+                Proof left as an exercise. 
+            </p>
+        </li>
+    </ol>
 </p>
 </proof>
 </theorem>
