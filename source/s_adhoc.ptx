@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_adhoc" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Orthogonality</title>
+<subsection xml:id="ss_ortho">
+<title>Orthogonality</title>
+
+
+    <definition xml:id="d_ortho">
+    <title>Orthogonality</title>
+    <statement>
+    <p>
+    Let <m>(V,\angvec{\, })</m> be an inner product space.
+    <ul>
+        <li>
+            <title>Orthogonal vectors</title>
+            <p>
+                Vectors <m>v,w\in V</m> are <term>orthogonal</term> if <m>\angvec{v,w}=0</m>.
+            </p>
+        </li>
+        <li>
+            <title>Orthogonal tuple</title>
+            <p>
+                Let <m>S=(v_i)_{i\in I}</m> be a tuple of <em>nonzero</em> vectors of <m>V</m>. We say <m>S</m> is <term>orthogonal</term> if <m>\angvec{v_i,v_j}=0</m> for all <m>i,j\in I</m> with <m>i\ne j</m>: <ie/>, the vectors of <m>S</m> are pairwise orthogonal. We say <m>S</m> is <term>orthonormal</term> if it is orthogonal and <m>\norm{v_i}=1</m> for all <m>i\in I</m>. 
+            </p>
+        </li>
+    </ul>
+    </p>
+    </statement>
+    </definition>
+    <theorem xml:id="th_ortho_ind">
+    <title>Orthogonal implies independent</title>
+    <statement>
+    <p>
+    Let <m>S=(v_i)_{i\in I}</m> be a tuple in the inner product space <m>(V,\angvec{\, ,})</m>. If <m>S</m> is orthogonal, then <m>S</m> is linearly independent. Using logical shorthand: 
+    <men xml:id="eq_ortho_ind">
+        S \text{ orthogonal}\implies S \text{ linearly independent}
+    </men>.
+    </p>
+    </statement>
+    <proof>
+    <p>
+    </p>
+    </proof>
+    </theorem>
+    <example>
+      <statement>
+        <p>
+          Show that the tuple <m>S=(\boldx_1=(1,1,1),\boldx_2=(1,2,-3), \boldx_3=(-5,4,1))</m> is orthogonal with respect to the dot product and hence linearly independent by <xref ref="th_ortho_ind"/>. 
+        </p>
+      </statement>
+      <solution>
+        <p>
+          A simple computation shows <m>\boldx_i\cdot \boldx_j=0</m> for all <m>1\leq i\ne j\leq 3</m>, showing that <m>S</m> is orthogonal. <xref ref="th_ortho_ind"/> implies <m>S</m> is linearly independent. Since <m>\val{S}=\dim \R^3=3</m>, it follows from <xref ref="cor_street_smarts"/> that <m>S</m> is a basis.
+        </p>
+      </solution>
+    </example>
+  <example xml:id="eg_orthogonal_functions">
+    <statement>
+      <p>
+        Let <m>V=C([0,2\pi])</m> with integral inner product <m>\langle f, g\rangle=\int_0^{2\pi} f(x)g(x) \, dx</m>, and let
+        <me>
+          S=(1, \cos(x),\sin(x),\cos(2x),\sin(2x), \dots )
+        </me>,
+        where as always, the element <m>1\in S</m> is understood as the constant function <m>f(x)=1</m>.
+      Show that <m>S</m> is orthogonal and hence linearly independent.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        First observe that
+        <md>
+          <mrow> \angvec{1,1} \amp = \int_0^{2\pi} 1\, dx=2\pi </mrow>
+          <mrow>\angvec{1, \cos n x} \amp= \int_0^{2\pi}\cos n x\, dx=0 </mrow>
+          <mrow>\angvec{1, \sin n x} \amp= \int_0^{2\pi}\sin n x\, dx=0 </mrow>
+        </md>
+        for all <m>n</m>. (Note: since <m>\angvec{1,1}=2\pi\ne 1</m>, the set <m>S</m> is not orthonormal. )
+        Next, using the trigonometric identities
+        <md>
+          <mrow>\cos\alpha\cos\beta \amp =\frac{1}{2}(\cos(\alpha-\beta)+\cos(\alpha+\beta))</mrow>
+          <mrow> \sin\alpha\sin\beta  \amp=\frac{1}{2}(\cos(\alpha-\beta)-\cos(\alpha+\beta)) </mrow>
+          <mrow> \sin\alpha\cos\beta \amp =\frac{1}{2}(\sin(\alpha-\beta)+\sin(\alpha+\beta)) </mrow>
+        </md>
+        it follows that
+        <md>
+          <mrow>\langle \cos(nx),\cos(mx)\rangle=\int_0^{2\pi}\cos(nx)\cos(mx)\, dx\amp =\begin{cases} 0\amp  \text{ if \(n\ne m\) }</mrow>
+          <mrow>\pi\amp  \text{ if \(n=m\) }  \end{cases}</mrow>
+          <mrow>\langle \sin(nx),\sin(mx)\rangle=\int_0^{2\pi}\sin(nx)\sin(mx)\, dx\amp =\begin{cases} 0\amp  \text{ if \(n\ne m\) }</mrow>
+          <mrow>\pi\amp  \text{ if \(n=m\) }  \end{cases}</mrow>
+          <mrow>\langle \cos(nx),\sin(mx)\rangle=\int_0^{2\pi}\cos(nx)\sin(mx)\, dx\amp =0 \text{ for any \(n,m\) }</mrow>
+        </md>.
+      </p>
+    </solution>
+  </example>
+</subsection>
+<subsection>
+    <title>Orthogonal bases</title>
+    <p>
+      Given an inner product space <m>V</m> we will see that working with orthogonal sets of vectors is extremely convenient computationally speaking. In particular, when picking basis of <m>V</m>, we will look for one consisting of orthogonal vectors. Not surprisingly, this is called an <em>orthogonal basis</em>.
+    </p>
+    
+    <p>
+      We will see in <xref ref="th_orthogonal_basis_formula"/> precisely why working with orthogonal or orthonormal bases is so convenient. Before we do so, however, we would like some guarantee that we can actually find an orthogonal basis. The <em>Gram-Schmidt procedure</em> comes to our rescue in this regard, at least in the finite-dimensional case, as it provides a method of converting an arbitrary basis into an orthogonal one.
+    </p>
+    <algorithm xml:id="proc_gram-schmidt">
+      <title>Gram-Schmidt procedure</title>
+      <idx><h>Gram-Schmidt procedure</h></idx>
+      <statement>
+        <p>
+          Let <m>(V,\angvec{\, ,})</m> be an inner product space of dimension <m>n</m>,
+          and let <m>B=(v_1, v_2, \dots, v_n)</m> be a basis for <m>V</m>.
+          To produce an orthogonal basis <m>B'</m> (or orthonormal basis <m>B''</m>) from <m>B</m>, follow the steps below. 
+          <ol>
+            <li>
+              <p>
+                Set <m>w_1=v_1</m>.
+              </p>
+            </li>
+            <li>
+              <title>Orthogonalize</title>
+              <p>
+                Proceeding in succession for each <m>2\leq r\leq n</m>, replace <m>v_r</m> with the vector <m>w_r</m> defined as 
+                <me>
+                  w_r=v_r-\frac{\angvec{v_r, w_{r-1}}}{\angvec{w_{r-1},w_{r-1}}}w_{r-1}-\frac{\angvec{v_r, w_{r-2}}}{\angvec{w_{r-2},w_{r-2}}}w_{r-2}-\cdots -\frac{\angvec{v_r, w_{1}}}{\angvec{w_{1},w_{1}}}w_1
+                </me>.
+                The resulting tuple <m>B'=(w_1, w_2, \dots, w_n)</m> is an orthogonal basis of <m>V</m>.
+              </p>
+            </li>
+            <li>
+              <title>Normalize</title>
+              <p>
+                For each <m>1\leq i\leq n</m> let
+                <me>
+                  u_i=\frac{1}{\norm{w_i}}\,w_i
+                </me>.
+                The tuple <m>B''=(u_1, u_2, \dots, u_n)</m> is an orthonormal basis of <m>V</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </algorithm>
+      <corollary xml:id="cor_orthonormal_existence">
+        <title>Existence of orthonormal bases</title>
+        <statement>
+          <p>
+            Let <m>(V,\angvec{\, ,})</m> be an inner product space of dimension <m>n</m>.
+          
+          <ol>
+            <li>
+              <p>
+              There is an orthonormal basis for <m>V</m>. In fact, any basis of <m>V</m> can be converted to an orthonormal basis using the <xref ref="proc_gram-schmidt" text="custom">Gram-Schmidt procedure</xref>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Any orthogonal (resp. orthonormal) tuple <m>S=(v_1,v_2,\dots, v_k)</m> in <m>V</m> can be extended to an orthogonal (resp. orthonormal) basis <m>B=(v_1,\dots, v_k,\dots, v_n)</m>. 
+              </p>
+            </li>
+          </ol>
+        </p>
+        </statement>
+        <proof>
+          <p>
+            <ol>
+            <li>
+              <p>
+                See <xref ref="proc_gram-schmidt"/> and its proof.
+              </p>
+            </li>
+            <li>
+              <p>
+                The orthogonal set <m>S</m> is linearly independent by <xref ref="th_ortho_ind"/>. Let <m>S=(v_1,v_2,\dots, v_r)</m> be the distinct elements of <m>S</m>. (We must have <m>r\leq n</m> since <m>S</m> is linearly independent.) By <xref ref="th_basis_contract_expand"/> we can extend <m>S</m> to a basis <m>B=(v_1,\dots, v_r, v_{r+1}, \dots, v_n)</m>. It is easy to see that when we apply the Gram-Schmidt procedure to <m>B</m>, the first <m>r</m> vectors are left unchanged, as they are already pairwise orthogonal. Thus Gram-Schmidt returns an orthogonal basis of the form <m>B'=\{v_1,\dots, v_r, w_{r+1}, \dots, w_n\}</m>, as desired.
+              </p>
+            </li>
+          </ol>
+        </p>
+        </proof>
+      </corollary>
+      <p>
+        Now let's see the computational virtue of working with orthogonal bases. 
+      </p>
+
+    <theorem xml:id="th_orthogonal_basis_formula">
+      <title>Calculating with orthogonal bases</title>
+      <statement>
+        <p>
+          Let <m>(V,\angvec{\, ,})</m> be an inner product space of dimension <m>n</m>. 
+        <ol>
+          <li>
+            <p>
+              Let <m>B=(v_1,v_2,\dots, v_n)</m> be an orthogonal basis of <m>V</m>. For any <m>v\in V</m> we have
+              <me>
+              v=c_1v_1+c_2v_2+\cdots +c_nv_n
+              </me>, where
+              <men xml:id="eq_inner_prod_formula_orthogonal">
+              c_i=\frac{\langle v,v_i\rangle}{\langle v_i,v_i\rangle}
+            </men>
+              for all <m>1\leq i\leq n</m>.
+              </p>
+              <p>
+              If <m>B</m> is <em>orthonormal</em>, so that <m>\langle v_i, v_i\rangle =1</m> for all <m>1\leq i\leq n</m>, then the inner product formula <xref ref="eq_inner_prod_formula_orthogonal"/> reduces to the simpler 
+              <men xml:id="eq_inner_prod_formula_orthonormal">
+                c_i=\langle v, v_i\rangle
+              </men>.
+            </p>
+          </li>
+          <li>
+            <title>Parseval's identity</title>
+            <p>
+              Let <m>B=(v_1,v_2,\dots, v_n)</m> be an <em>orthonormal</em> basis of <m>V</m>. Given any <m>v=\sum_{i=1}^nc_iv_i\in V</m>, we have 
+              <mdn>
+                <mrow xml:id="eq_gen_pyth"> \norm{v}^2\amp = \abs{c_1}^2+\abs{c_2}^2+\cdots +\abs{c_n}^2</mrow>
+                <mrow xml:id="eq_parseval"> \amp = \abs{\angvec{v,v_1}}^2+\abs{\angvec{v,v_2}}^2+\cdots +\abs{\angvec{v,v_n}}^2</mrow>
+              </mdn>.
+            </p>
+          </li>
+        </ol>
+        </p>
+      </statement>
+    </theorem>
+  <example>
+    <statement>
+      <p>
+        Consider the inner product space <m>V=\R^2</m> with the dot product.
+        <ol>
+          <li>
+            <p>
+              Verify that <m>B'=(\boldx_1=(\sqrt{3}/2,1/2), \boldx_2=(-1/2,\sqrt{3}/2))</m> is an orthonormal basis of <m>\R^2</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Let <m>\boldx=(4,2)</m>. Find the scalars <m>c_1, c_2\in \R</m> such that <m>\boldx=c_1\boldx_1+c_2\boldx_2</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Verify that <m>\norm{\boldx}=\sqrt{c_1^2+c_2^2}</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+     <p>
+         <ol>
+        <li>
+          <p>
+            Easily verified.
+          </p>
+        </li>
+        <li>
+          <p>
+            Using <xref ref="th_orthogonal_basis_formula"/> we compute
+            <md>
+              <mrow>c_1 \amp =\boldx\cdot \boldx_1=2\sqrt{3}+1  </mrow>
+              <mrow> c_2\amp= \boldx\cdot \boldx_2=\sqrt{3}-2 </mrow>
+            </md>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Computing  directly yields <m>\norm{\boldx}=\sqrt{20}=2\sqrt{5}</m>. Using the generalized Pythagorean theorem we have
+            <md>
+              <mrow>\norm{\boldx} \amp= \sqrt{(2\sqrt{3}+1)^2+(\sqrt{3}-2)^2} </mrow>
+              <mrow> \amp=\sqrt{(12+4\sqrt{3}+1)+(3-4\sqrt{3}+4)} </mrow>
+              <mrow>  \amp = \sqrt{20}=2\sqrt{5}</mrow>
+            </md>,
+            as desired.
+          </p>
+        </li>
+      </ol>
+    </p>
+    </solution>
+  </example>
+  <p>
+    As the previous example and <xref ref="th_orthogonal_basis_formula"/> begin to make clear, orthogonal bases, and especially orthonormal bases make our life easier computationally speaking. This observation is worthy of a mantra. 
+  </p>
+  <principle xml:id="mantra_orthogonal_bases">
+    <title>Orthogonal basis mantra</title>
+    <statement>
+      <p>
+        Working with an orthogonal basis is very nice; working with an orthonormal basis is even nicer. 
+      </p>
+    </statement>
+  </principle>
+  </subsection>
+  <subsection xml:id="ss_ortho_comp">
+  <title>Orthogonal complement</title>
+  <definition xml:id="d_orho_comp">
+  <title>Orthogonal complement</title>
+  <statement>
+  <p>
+  Let <m>(V,\angvec{\, ,})</m> be an inner product space. Given a subspace <m>W\subseteq V</m>, its <term>orthogonal complement</term> <m>W^\perp</m> is the set of all vectors of <m>v</m> that are orthogonal to every vector in <m>W</m>: <ie/>, 
+  <men xml:id="eq_ortho_comp">
+    W^\perp=\{v\in V\colon \angvec{v,w}=0 \text{ for all } w\in W\}
+  </men>.
+  </p>
+  </statement>
+  </definition>
+  <theorem xml:id="th_ortho_comp">
+  <title>Orthogonal complement</title>
+  <statement>
+  <p>
+  Let <m>W</m> be a subspace of the inner product space  <m>(V,\angvec{\, ,})</m>. 
+  <ol>
+    <li>
+        <p>
+            <m>W^\perp</m> is a subspace of <m>V</m>. 
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>W\cap W^\perp=\{\boldzero\}</m>.
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>W\subseteq (W^\perp)^\perp</m>.
+        </p>
+    </li>
+    <li>
+        <title><m>W</m> finite dimensional</title>
+        <p>
+            If <m>W</m> is finite dimensional, then 
+            <mdn>
+                <mrow xml:id="eq_ortho_comp_decomp">V \amp= W\oplus W^\perp </mrow>
+            </mdn>.
+            As a consequence, we have 
+            <men xml:id="eq_ortho_comp_self_dual">
+                (W^\perp)^\perp=W
+            </men>
+            in this setting.             
+        </p>
+    </li>
+  </ol>
+  </p>
+  </statement>
+  <proof>
+  <p>
+  </p>
+  </proof>
+  </theorem>
+  
+  </subsection>
+
+</section>
