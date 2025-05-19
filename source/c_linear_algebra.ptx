@@ -20,5 +20,6 @@
     <xi:include href="s_char_poly.ptx" />
     <xi:include href="s_diagable.ptx" />
     <xi:include href="s_inner_prod.ptx" />
-    <xi:include href="s_adhoc.ptx" />
+    <xi:include href="s_ortho_basis.ptx" />
+    <xi:include href="s_ortho_proj.ptx" />
 </chapter>

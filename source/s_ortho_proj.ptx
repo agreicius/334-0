@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="s_ortho_proj" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Orthogonal projection</title>
+    <introduction>
+    <p>
+      A trick we learn early on in physics-- specifically, in dynamics problems in <m>\R^2</m>-- is to pick a convenient axis and then decompose any relevant vectors (force, acceleration, velocity, position, <etc />) into a sum of two components: one that points along the chosen axis, and one that points perpendicularly to it. As we will see in this section, this technique can be vastly generalized. Namely, instead of <m>\R^2</m> we  can take any inner product space <m>(V, \langle\, , \rangle)</m>; and instead of a chosen axis in <m>\R^2</m>, we can choose any finite-dimensional subspace <m>W\subseteq V</m>; then any <m>v\in V</m> can be decomposed in the form
+    <me>
+      v=w+w^\perp,
+    </me>
+    where <m>w\in W</m> and <m>w^\perp</m> is a vector <em>orthogonal</em> to <m>W</m>, in a sense we will make precise below. Just as in our toy physics example, this manner of decomposing vectors helps simplify computations in problems where the subspace <m>W</m> chosen is of central importance.
+  </p>
+  </introduction>
+    <subsection xml:id="ss_ortho_comp">
+  <title>Orthogonal complement</title>
+  <definition xml:id="d_ortho_comp">
+  <title>Orthogonal complement</title>
+  <statement>
+  <p>
+  Let <m>(V,\angvec{\, ,})</m> be an inner product space. Given a subspace <m>W\subseteq V</m>, its <term>orthogonal complement</term> <m>W^\perp</m> is the set of all vectors of <m>v</m> that are orthogonal to every vector in <m>W</m>: <ie/>, 
+  <men xml:id="eq_ortho_comp">
+    W^\perp=\{v\in V\colon \angvec{v,w}=0 \text{ for all } w\in W\}
+  </men>.
+  </p>
+  </statement>
+  </definition>
+  <p>
+    The next theorem tells us that to check <m>w\in W^\perp</m>, it suffices to check that <m>w</m> is orthogonal to the elements of a spanning set of <m>W</m>.
+  </p>
+  <theorem xml:id="th_ortho_comp_span">
+  <title>Orthogonality and spanning sets</title>
+  <statement>
+  <p>
+  Let <m>(V,\angvec{\, , })</m> be an inner product space, and let <m>W=\Span (w_i)_{i\in I}</m>. We have <m>v\in W^\perp</m> if and only if <m>\angvec{v,w_i}=0</m> for all <m>i\in I</m>: <ie/>, 
+    <me>
+        W^\perp=\{v\in V\colon \angvec{v,w_i}=0 \text{ for all } i\in I\}
+    </me>.
+  </p>
+  </statement>
+  <proof>
+  <p>
+    The forward implication follows purely from logic. Conversely, assume that <m>\angvec{v,w_i}=0</m> for all <m>i\in I</m>. Given <m>w\in W</m>, we can write <m>w=\sum_{i\in J}c_{i}v_{i}</m>  for some finite subset <m>J\subseteq I</m>, in which case 
+    <md>
+        <mrow>\angvec{v,w} \amp =\sum_{i\in J}\overline{c_i}\angvec{v,\sum_{i\in J}c_iw_i}</mrow>
+        <mrow> \amp =\sum_{i\in J}\overline{c_i}\angvec{v,w_i}</mrow>
+        <mrow> \amp =\sum_{i\in J}\overline{c_i}\cdot 0</mrow>
+        <mrow> \amp = 0</mrow>
+    </md>.
+    Thus <m>v\in W^\perp</m>. 
+  </p>
+  </proof>
+  </theorem>
+  <p>
+    <xref ref="th_ortho_comp_span"/> is especially useful for computing <m>W^\perp</m> when <m>W</m> admits a finite basis or spanning set. 
+  </p>
+  <example xml:id="eg_ortho_comp_line">
+    <statement>
+      <p>
+        Consider the inner product space <m>\R^2</m> together with the dot product. Let <m>W=\Span\left((1,1)\right)=\{(t,t)\colon t\in \R\}</m>: the line <m>\ell\subseteq \R^2</m> with equation <m>y=x</m>. Compute <m>W^\perp</m> and identify it as a familiar geometric object in <m>\R^2</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        According to <xref ref="th_ortho_comp_span"/>, since <m>W=\Span((1,1))</m>, we have
+        <me>
+          \boldx\in W^\perp \iff \boldx\cdot (1,1)=0
+        </me>.
+        Letting <m>\boldx=(x,y)</m>, we see that <m>\boldx\cdot (1,1)=0</m> if and only if <m>x+y=0</m>, if and only if <m>y=-x</m>. Thus <m>W^\perp=\{(x,y)\colon y=-x\}</m> is the line <m>\ell'\subseteq \R^2</m> with equation <m>y=-x</m>. Observe that the lines <m>\ell</m> and <m>\ell'</m> are indeed perpendicular to one another. (Graph them!)
+      </p>
+    </solution>
+  </example>
+  <example xml:id="eg_ortho_comp_plane">
+    <statement>
+      <p>
+        Consider the inner product space <m>\R^3</m> together with the dot product. Let <m>W\subseteq \R^3</m> be the plane with equation <m>x-2y-z=0</m>.  Compute <m>W^\perp</m> and identify this as a familiar geometric object in <m>\R^3</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        First, solving <m>x-2y-z=0</m> for <m>(x,y,z)</m>, we see that
+        <me>
+          W=\{(2s+t,s,t)\colon s,t\in \R\}=\Span\left((2,1,0),(1,0,1)\right)
+        </me>.
+        Next, according to <xref ref="th_ortho_comp_span"/> we have
+        <me>
+          \boldx\in W^\perp\iff \boldx\cdot (2,1,0)=0 \text{ and } \boldx\cdot (1,0,1)=0
+        </me>.
+       It follows that <m>W^\perp</m> is the set of vectors <m>\boldx=(x,y,z)</m> satisfying the linear system
+       <me>
+         \begin{linsys}{3}
+         2x\amp +\amp y \amp \amp  \amp = \amp 0\\
+         x\amp \amp  \amp +\amp z \amp = \amp 0
+       \end{linsys}.
+       </me>
+       Solving this system using Gaussian elimination we conclude that
+       <me>
+       W^\perp=\{(t,-2t,-t)\colon t\in \R\}=\Span\left((1,-2,-1)\right)
+       </me>,
+       which we recognize as the line <m>\ell\subseteq \R^3</m> passing through the origin with direction vector <m>(1,-2,-1)</m>. This is none other than the normal line to the plane <m>W</m> passing through the origin.
+      </p>
+    </solution>
+  </example>
+  <theorem xml:id="th_ortho_comp">
+  <title>Orthogonal complement</title>
+  <statement>
+  <p>
+  Let <m>W</m> be a subspace of the inner product space  <m>(V,\angvec{\, ,})</m>. 
+  <ol>
+    <li>
+        <p>
+            <m>W^\perp</m> is a subspace of <m>V</m>. 
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>W\cap W^\perp=\{\boldzero\}</m>.
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>W\subseteq (W^\perp)^\perp</m>.
+        </p>
+    </li>
+    <li>
+        <title><m>W</m> finite dimensional</title>
+        <p>
+            If <m>W</m> is finite dimensional, then 
+            <mdn>
+                <mrow xml:id="eq_ortho_comp_decomp">V \amp= W\oplus W^\perp </mrow>
+            </mdn>.
+            Furthermore, we have 
+            <men xml:id="eq_ortho_comp_self_dual">
+                (W^\perp)^\perp=W
+            </men>
+            in this setting.             
+        </p>
+    </li>
+  </ol>
+  </p>
+  </statement>
+  <proof>
+  <p>
+  </p>
+  </proof>
+  </theorem>
+  
+  </subsection>
+  <subsection xml:id="ss_ortho_proj">
+  <title>Orthogonal projection</title>
+  <definition xml:id="d_ortho_proj">
+  <title>Orthogonal projection</title>
+  <statement>
+  <p>
+  Let <m>(V, \langle\, , \rangle)</m> be an inner product space, and let <m>W</m> be a finite-dimensional subspace of <m>V</m>.
+Since <m>V=W\oplus W^{\perp}</m>, given any <m>\boldv\in V</m> there is a unique choice of <m>\boldw\in W</m> and <m>\boldw^{\perp}\in W^{\perp}</m> satisfying
+<men xml:id="eq_ortho_decomp">
+    \boldv=\boldw+\boldw^{\perp}.
+</men>
+The vectors <m>\boldw</m> and <m>\boldw^{\perp}</m> are the <term>orthogonal projections</term> of <m>\boldv</m> onto <m>W</m> and <m>W^{\perp}</m>, respectively, and are denoted <m>\boldw=\proj_W(v)</m> and <m>\boldw^{\perp}=\proj_{W^\perp}(v)</m>.
+In this manner the direct sum decomposition <m>V=W\oplus W^{\perp}</m> gives rise to functions
+<md>
+    <mrow>\proj_W\colon V \amp \rightarrow V \amp \proj_{W^\perp}\colon V\amp \rightarrow V</mrow>
+</md>
+called <term>orthogonal projection</term> onto <m>W</m> and <m>W^\perp</m>, respectively. 
+  </p>
+  </statement>
+  </definition>
+  <theorem xml:id="th_ortho_proj">
+  <title>Orthogonal projection</title>
+  <statement>
+  <p>
+  Let <m>(V, \langle\, , \rangle)</m> be an inner product space, and let <m>W</m> be a finite-dimensional subspace of <m>V</m>.
+<ol>
+    <li>
+        <p>
+            <m>\operatorname{proj}_{W}, \operatorname{proj}_{W^\perp}\in \mathcal{L}(V)</m>.
+        </p>
+    </li>
+
+    <li>
+        <p>
+            <m>\proj_W(v)</m> is the element of <m>W</m> that is closest to <m>v</m> in the following sense: for all <m>w\in W</m> we have
+        
+        <me>
+            d(v,\proj_W(v))\leq d(v,w)
+        </me>,
+            or equivalently,
+        <me>
+            \norm{v-\proj_W(v)}\leq \norm{v-w}
+        </me>.
+        </p>
+    </li>
+</ol>
+  </p>
+  </statement>
+  <proof>
+  <p>
+  </p>
+  </proof>
+  </theorem>
+  
+  </subsection>
+
+</section>

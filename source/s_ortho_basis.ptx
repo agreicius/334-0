@@ -286,63 +286,6 @@
     </statement>
   </principle>
   </subsection>
-  <subsection xml:id="ss_ortho_comp">
-  <title>Orthogonal complement</title>
-  <definition xml:id="d_orho_comp">
-  <title>Orthogonal complement</title>
-  <statement>
-  <p>
-  Let <m>(V,\angvec{\, ,})</m> be an inner product space. Given a subspace <m>W\subseteq V</m>, its <term>orthogonal complement</term> <m>W^\perp</m> is the set of all vectors of <m>v</m> that are orthogonal to every vector in <m>W</m>: <ie/>, 
-  <men xml:id="eq_ortho_comp">
-    W^\perp=\{v\in V\colon \angvec{v,w}=0 \text{ for all } w\in W\}
-  </men>.
-  </p>
-  </statement>
-  </definition>
-  <theorem xml:id="th_ortho_comp">
-  <title>Orthogonal complement</title>
-  <statement>
-  <p>
-  Let <m>W</m> be a subspace of the inner product space  <m>(V,\angvec{\, ,})</m>. 
-  <ol>
-    <li>
-        <p>
-            <m>W^\perp</m> is a subspace of <m>V</m>. 
-        </p>
-    </li>
-    <li>
-        <p>
-            <m>W\cap W^\perp=\{\boldzero\}</m>.
-        </p>
-    </li>
-    <li>
-        <p>
-            <m>W\subseteq (W^\perp)^\perp</m>.
-        </p>
-    </li>
-    <li>
-        <title><m>W</m> finite dimensional</title>
-        <p>
-            If <m>W</m> is finite dimensional, then 
-            <mdn>
-                <mrow xml:id="eq_ortho_comp_decomp">V \amp= W\oplus W^\perp </mrow>
-            </mdn>.
-            As a consequence, we have 
-            <men xml:id="eq_ortho_comp_self_dual">
-                (W^\perp)^\perp=W
-            </men>
-            in this setting.             
-        </p>
-    </li>
-  </ol>
-  </p>
-  </statement>
-  <proof>
-  <p>
-  </p>
-  </proof>
-  </theorem>
   
-  </subsection>
 
 </section>
