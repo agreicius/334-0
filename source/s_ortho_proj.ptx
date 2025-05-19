@@ -139,6 +139,78 @@
   </statement>
   <proof>
   <p>
+    <ol>
+      <li>
+        <p>
+          We use the 2-step technique. 
+        </p>
+        <p>
+          Since <m>\angvec{\boldzero,v}=0</m> for all <m>v\in V</m>, it is certainly true that 
+          <m>\angvec{\boldzero,w}=0</m> for all <m>w\in W</m>. Thus <m>\boldzero\in W^\perp</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Assume <m>v_1,v_2\in W^\perp</m>. By definition this means 
+          <me>
+            \angvec{v_1,w}=\angvec{v_2,w}=0
+          </me>
+          for all <m>w\in W</m>. It follows that for any <m>c,d\in F</m>, and for all <m>w\in W</m> we have 
+          <md>
+            <mrow>\angvec{cv_1+dv_2,w} \amp = c\angvec{v_1,w}+d\angvec{v_2,w}</mrow>
+            <mrow> \amp =c\cdot 0+d\cdot 0</mrow>
+            <mrow> \amp =0</mrow>
+          </md>,
+          and thus that <m>cv_1+dv_2\in W^\perp</m>. 
+        </p>
+      </li>
+      <li>
+        <p>
+          Assume <m>v\in W\cap W^\perp</m>. Since <m>v\in W</m> and <m>v\in W^\perp</m>, we must have <m>\angvec{v,v}=0</m>. The positivity axiom for inner products then implies that <m>v=\boldzero</m>. Thus <m>W\cap W^\perp=\{\boldzero\}</m>. 
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>w\in W</m>. Given any <m>v\in W^\perp</m>, we have 
+          <md>
+            <mrow>\angvec{w,v} \amp =\overline{\angvec{v,w}}=\overline{0}=0</mrow>
+          </md>.
+          Thus <m>\angvec{w,v}=0</m> for all <m>v\in W^\perp</m>, showing that <m>w\in (W^\perp)^\perp</m>. This proves <m>W\subseteq (W^\perp)^\perp</m>. 
+        </p>
+      </li>
+      <li>
+        <p>
+          Assume <m>W</m> is finite dimensional. By definition this means <m>W</m> has a finite basis. The Gram-Schmidt procedure then guarantees that we can produce an orthogonal basis <m>B=(w_1,w_2,\dots, w_r)</m> of <m>W</m>. Furthermore, the proof of the validity of the Gram-Schmidt procedure shows that for any <m>v\in V</m> the vector 
+          <me>
+            w^\perp=v-\sum_{i=1}^r\frac{\angvec{v,w_i}}{\angvec{w_i,w_i}}w_i
+          </me>
+          is orthogonal to <m>w_i</m> for all <m>1\leq i\leq r</m>. Since <m>W=\Span ((w_1,w_2,\dots, w_n))</m>, we conclude from <xref ref="th_ortho_comp_span"/> that <m>w^\perp\in W^perp</m>. Noting that 
+          <me>
+            w=\sum_{i=1}^r\frac{\angvec{v,w_i}}{\angvec{w_i,w_i}}w_i\in W
+          </me>,
+          we see that for all <m>v\in V</m> we can write 
+          <me>
+            v=w+w^\perp
+          </me>,
+          where <m>w\in W</m> and <m>w^\perp\in W^\perp</m>. This proves that <m>V=W+W^\perp</m>. Since <m>W\cap W^\perp=\{\boldzero\}</m> by (2), we conclude that <m>V=W\oplus W^\perp</m>. 
+        </p>
+        <p>
+          Lastly, we show in this case that <m>W=(W^\perp)^\perp</m>. Using (3) above, it suffices to show <m>(W^\perp)^\perp\subseteq W</m>. Take <m>v\in (W^\perp)^\perp</m>, and write <m>v=w+w^\perp</m>, where <m>w\in W</m> and <m>w^\perp\in W</m>. Since <m>v\in (W^\perp)^\perp</m>, we have
+          <md>
+            <mrow>0 \amp =\angvec{v,w^\perp}</mrow>
+            <mrow> \amp =\angvec{w+w^\perp,w^\perp}</mrow>
+            <mrow> \amp =\angvec{w,w^\perp}+\angvec{w^\perp,w^\perp}</mrow>
+            <mrow> \amp =0+\angvec{w^\perp,w^\perp}</mrow>
+            <mrow> \amp = \angvec{w^\perp,w^\perp}</mrow>
+          </md>.
+          Since <m>\angvec{w^\perp,w^\perp}=0</m>, we conclude that <m>w^\perp=\boldzero</m>, and hence that 
+          <me>
+            v=w+w^\perp=w+\boldzero=w\in W
+          </me>,
+          as desired.
+        </p>
+      </li>
+    </ol>
   </p>
   </proof>
   </theorem>
@@ -151,11 +223,11 @@
   <statement>
   <p>
   Let <m>(V, \langle\, , \rangle)</m> be an inner product space, and let <m>W</m> be a finite-dimensional subspace of <m>V</m>.
-Since <m>V=W\oplus W^{\perp}</m>, given any <m>\boldv\in V</m> there is a unique choice of <m>\boldw\in W</m> and <m>\boldw^{\perp}\in W^{\perp}</m> satisfying
+Since <m>V=W\oplus W^{\perp}</m>, given any <m>v\in V</m> there is a unique choice of <m>w\in W</m> and <m>w^{\perp}\in W^{\perp}</m> satisfying
 <men xml:id="eq_ortho_decomp">
-    \boldv=\boldw+\boldw^{\perp}.
+    v=w+w^{\perp}.
 </men>
-The vectors <m>\boldw</m> and <m>\boldw^{\perp}</m> are the <term>orthogonal projections</term> of <m>\boldv</m> onto <m>W</m> and <m>W^{\perp}</m>, respectively, and are denoted <m>\boldw=\proj_W(v)</m> and <m>\boldw^{\perp}=\proj_{W^\perp}(v)</m>.
+The vectors <m>w</m> and <m>w^{\perp}</m> are the <term>orthogonal projections</term> of <m>v</m> onto <m>W</m> and <m>W^{\perp}</m>, respectively, and are denoted <m>w=\proj_W(v)</m> and <m>w^{\perp}=\proj_{W^\perp}(v)</m>.
 In this manner the direct sum decomposition <m>V=W\oplus W^{\perp}</m> gives rise to functions
 <md>
     <mrow>\proj_W\colon V \amp \rightarrow V \amp \proj_{W^\perp}\colon V\amp \rightarrow V</mrow>
@@ -164,6 +236,33 @@ called <term>orthogonal projection</term> onto <m>W</m> and <m>W^\perp</m>, resp
   </p>
   </statement>
   </definition>
+  <p>
+    From the proof of <xref ref="th_ortho_comp"/> we extract the following procedure for computing <m>\proj_W(v)</m> for a finite-dimensional subspace of an inner product space. 
+  </p>
+  <algorithm xml:id="proc_ortho_proj">
+    <title>Orthogonal projection</title>
+    <statement>
+      <p>
+        Let <m>W</m> be a finite-dimensional subspace of the inner product space <m>(V,\angvec{\, ,})</m>. To compute <m>\proj_W</m> and <m>\proj_{W^\perp}</m>, proceed as follows. 
+        <ol>
+          <li>
+            <p>
+              Compute an orthogonal basis <m>B=(v_1,v_2,\dots, v_r)</m> of <m>W</m> using the Gram-Schmidt procedure. 
+            </p>
+          </li>
+          <li>
+            <p>
+              Given <m>v\in V</m>, we have 
+              <mdn>
+                <mrow xml:id="eq_ortho_proj_formula">\proj_W(v) \amp =\sum_{i=1}^r\frac{\angvec{v,w_i}}{\angvec{w_i,w_i}}w_i</mrow>
+                <mrow xml:id="eq_ortho_proj_comp_formula">\proj_{W^\perp} \amp = v-\proj_W(v)</mrow>
+              </mdn>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </algorithm>
   <theorem xml:id="th_ortho_proj">
   <title>Orthogonal projection</title>
   <statement>
@@ -171,22 +270,22 @@ called <term>orthogonal projection</term> onto <m>W</m> and <m>W^\perp</m>, resp
   Let <m>(V, \langle\, , \rangle)</m> be an inner product space, and let <m>W</m> be a finite-dimensional subspace of <m>V</m>.
 <ol>
     <li>
+      <title>Orthogonal projection is linear</title>
+      
+      
         <p>
             <m>\operatorname{proj}_{W}, \operatorname{proj}_{W^\perp}\in \mathcal{L}(V)</m>.
         </p>
     </li>
 
     <li>
+      <title>Closest element of <m>W</m></title>
         <p>
-            <m>\proj_W(v)</m> is the element of <m>W</m> that is closest to <m>v</m> in the following sense: for all <m>w\in W</m> we have
-        
-        <me>
-            d(v,\proj_W(v))\leq d(v,w)
-        </me>,
-            or equivalently,
-        <me>
-            \norm{v-\proj_W(v)}\leq \norm{v-w}
-        </me>.
+            <m>\proj_W(v)</m> is the unique element of <m>W</m> satisfying the following property:
+        <men xml:id="eq_ortho_proj_closest">
+            d(v,\proj_W(v))\leq d(v,w) \text{ for all } w\in W
+        </men>.
+        In other words, <m>\proj_W(v)</m> is the unique element in <m>W</m> that is closest to <m>v</m>. 
         </p>
     </li>
 </ol>
@@ -197,7 +296,28 @@ called <term>orthogonal projection</term> onto <m>W</m> and <m>W^\perp</m>, resp
   </p>
   </proof>
   </theorem>
-  
+  <definition xml:id="d_distance_subspace">
+  <title>Distance to subspace</title>
+  <statement>
+  <p>
+  Let <m>W</m> be a subspace of the inner product space <m>(V,\angvec{\, ,})</m>. Given a vector <m>v\in V</m>, its <term>distance</term> to <m>W</m>, denoted <m>d(v,W)</m>, is defined as 
+  <me>
+    d(v,W)=\inf\{d(v,w)\colon w\in W\}
+  </me>.
+  </p>
+  </statement>
+  </definition>
+  <corollary xml:id="cor_ortho_proj">
+    <title>Distance to <m>W</m></title>
+    <statement>
+      <p>
+        Let <m>W</m> be a finite-dimensional subspace of the inner product space <m>(V,\angvec{\, ,})</m>. For all <m>v\in V</m>, we have 
+        <men xml:id="eq_dist_v_W">
+          d(v,W)=d(v,\proj_W(v))=\norm{v-\proj_W(v)}
+        </men>.
+      </p>
+    </statement>
+  </corollary>
   </subsection>
 
 </section>
