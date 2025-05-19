@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.20.2</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Orthogonality and spanning sets.</span>
+</h4>
+<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
+<div class="para">Let <span class="process-math">\((V,\angvec{\, , })\)</span> be an inner product space, and let <span class="process-math">\(W=\Span (w_i)_{i\in I}\text{.}\)</span> We have <span class="process-math">\(v\in W^\perp\)</span> if and only if <span class="process-math">\(\angvec{v,w_i}=0\)</span> for all <span class="process-math">\(i\in I\text{:}\)</span> i.e.,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+W^\perp=\{v\in V\colon \angvec{v,w_i}=0 \text{ for all } i\in I\}\text{.}
+\end{equation*}
+</div>
+</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">The forward implication follows purely from logic. Conversely, assume that <span class="process-math">\(\angvec{v,w_i}=0\)</span> for all <span class="process-math">\(i\in I\text{.}\)</span> Given <span class="process-math">\(w\in W\text{,}\)</span> we can write <span class="process-math">\(w=\sum_{i\in J}c_{i}v_{i}\)</span>  for some finite subset <span class="process-math">\(J\subseteq I\text{,}\)</span> in which case</div>
+<div class="displaymath process-math">
+\begin{align*}
+\angvec{v,w} \amp =\sum_{i\in J}\overline{c_i}\angvec{v,\sum_{i\in J}c_iw_i}\\
+\amp =\sum_{i\in J}\overline{c_i}\angvec{v,w_i}\\
+\amp =\sum_{i\in J}\overline{c_i}\cdot 0\\
+\amp = 0\text{.}
+\end{align*}
+</div>
+<div class="para">Thus <span class="process-math">\(v\in W^\perp\text{.}\)</span>
+</div>
+</div></article></details><span class="incontext"><a class="internal" href="s_ortho_proj.html#th_ortho_comp_span">in-context</a></span>
+</body>
+</html>

@@ -3214,6 +3214,195 @@ var ptx_lunr_docs = [
   "body": " Distance function  Let be an inner product space. The norm function, which we understand as a measure of size or length of vectors, gives rise in turn to a distance function  that can be thought of as measure of the distance between vectors. From it follows easily that the function satisfies the following properties.    for all , and moreover, we have if and only if .     for all .   This distance function provides yet another layer of structure to an inner product space, making it what is known as a metric space . Metric spaces come equipped with their own rich theory that includes useful and familiar concepts from calculus (and analysis) like limits, continuity, closed and open sets. connected and compact sets, .  "
 },
 {
+  "id": "s_adhoc",
+  "level": "1",
+  "url": "s_adhoc.html",
+  "type": "Section",
+  "number": "1.19",
+  "title": "Orthogonality",
+  "body": " Orthogonality   Orthogonality   Orthogonality   Let be an inner product space.   Orthogonal vectors  Vectors are orthogonal if .    Orthogonal tuple  Let be a tuple of nonzero vectors of . We say is orthogonal if for all with : , the vectors of are pairwise orthogonal. We say is orthonormal if it is orthogonal and for all .        Orthogonal implies independent   Let be a tuple in the inner product space . If is orthogonal, then is linearly independent. Using logical shorthand: .          Show that the tuple is orthogonal with respect to the dot product and hence linearly independent by .    A simple computation shows for all , showing that is orthogonal. implies is linearly independent. Since , it follows from that is a basis.      Let with integral inner product , and let , where as always, the element is understood as the constant function . Show that is orthogonal and hence linearly independent.    First observe that for all . (Note: since , the set is not orthonormal. ) Next, using the trigonometric identities it follows that .      Orthogonal bases  Given an inner product space we will see that working with orthogonal sets of vectors is extremely convenient computationally speaking. In particular, when picking basis of , we will look for one consisting of orthogonal vectors. Not surprisingly, this is called an orthogonal basis .  We will see in precisely why working with orthogonal or orthonormal bases is so convenient. Before we do so, however, we would like some guarantee that we can actually find an orthogonal basis. The Gram-Schmidt procedure comes to our rescue in this regard, at least in the finite-dimensional case, as it provides a method of converting an arbitrary basis into an orthogonal one.   Gram-Schmidt procedure  Gram-Schmidt procedure   Let be an inner product space of dimension , and let be a basis for . To produce an orthogonal basis (or orthonormal basis ) from , follow the steps below.   Set .    Orthogonalize  Proceeding in succession for each , replace with the vector defined as . The resulting tuple is an orthogonal basis of .    Normalize  For each let . The tuple is an orthonormal basis of .        Existence of orthonormal bases   Let be an inner product space of dimension .   There is an orthonormal basis for . In fact, any basis of can be converted to an orthonormal basis using the Gram-Schmidt procedure .    Any orthogonal (resp. orthonormal) tuple in can be extended to an orthogonal (resp. orthonormal) basis .          See and its proof.    The orthogonal set is linearly independent by . Let be the distinct elements of . (We must have since is linearly independent.) By we can extend to a basis . It is easy to see that when we apply the Gram-Schmidt procedure to , the first vectors are left unchanged, as they are already pairwise orthogonal. Thus Gram-Schmidt returns an orthogonal basis of the form , as desired.       Now let's see the computational virtue of working with orthogonal bases.   Calculating with orthogonal bases   Let be an inner product space of dimension .   Let be an orthogonal basis of . For any we have , where for all .  If is orthonormal , so that for all , then the inner product formula reduces to the simpler .    Parseval's identity  Let be an orthonormal basis of . Given any , we have .         Consider the inner product space with the dot product.   Verify that is an orthonormal basis of .    Let . Find the scalars such that .    Verify that .          Easily verified.    Using we compute .    Computing directly yields . Using the generalized Pythagorean theorem we have , as desired.       As the previous example and begin to make clear, orthogonal bases, and especially orthonormal bases make our life easier computationally speaking. This observation is worthy of a mantra.   Orthogonal basis mantra   Working with an orthogonal basis is very nice; working with an orthonormal basis is even nicer.     "
+},
+{
+  "id": "d_ortho",
+  "level": "2",
+  "url": "s_adhoc.html#d_ortho",
+  "type": "Definition",
+  "number": "1.19.1",
+  "title": "Orthogonality.",
+  "body": " Orthogonality   Let be an inner product space.   Orthogonal vectors  Vectors are orthogonal if .    Orthogonal tuple  Let be a tuple of nonzero vectors of . We say is orthogonal if for all with : , the vectors of are pairwise orthogonal. We say is orthonormal if it is orthogonal and for all .      "
+},
+{
+  "id": "th_ortho_ind",
+  "level": "2",
+  "url": "s_adhoc.html#th_ortho_ind",
+  "type": "Theorem",
+  "number": "1.19.2",
+  "title": "Orthogonal implies independent.",
+  "body": " Orthogonal implies independent   Let be a tuple in the inner product space . If is orthogonal, then is linearly independent. Using logical shorthand: .       "
+},
+{
+  "id": "ss_ortho-4",
+  "level": "2",
+  "url": "s_adhoc.html#ss_ortho-4",
+  "type": "Example",
+  "number": "1.19.3",
+  "title": "",
+  "body": "  Show that the tuple is orthogonal with respect to the dot product and hence linearly independent by .    A simple computation shows for all , showing that is orthogonal. implies is linearly independent. Since , it follows from that is a basis.   "
+},
+{
+  "id": "eg_orthogonal_functions",
+  "level": "2",
+  "url": "s_adhoc.html#eg_orthogonal_functions",
+  "type": "Example",
+  "number": "1.19.4",
+  "title": "",
+  "body": "  Let with integral inner product , and let , where as always, the element is understood as the constant function . Show that is orthogonal and hence linearly independent.    First observe that for all . (Note: since , the set is not orthonormal. ) Next, using the trigonometric identities it follows that .   "
+},
+{
+  "id": "proc_gram-schmidt",
+  "level": "2",
+  "url": "s_adhoc.html#proc_gram-schmidt",
+  "type": "Procedure",
+  "number": "1.19.5",
+  "title": "Gram-Schmidt procedure.",
+  "body": " Gram-Schmidt procedure  Gram-Schmidt procedure   Let be an inner product space of dimension , and let be a basis for . To produce an orthogonal basis (or orthonormal basis ) from , follow the steps below.   Set .    Orthogonalize  Proceeding in succession for each , replace with the vector defined as . The resulting tuple is an orthogonal basis of .    Normalize  For each let . The tuple is an orthonormal basis of .      "
+},
+{
+  "id": "cor_orthonormal_existence",
+  "level": "2",
+  "url": "s_adhoc.html#cor_orthonormal_existence",
+  "type": "Corollary",
+  "number": "1.19.6",
+  "title": "Existence of orthonormal bases.",
+  "body": " Existence of orthonormal bases   Let be an inner product space of dimension .   There is an orthonormal basis for . In fact, any basis of can be converted to an orthonormal basis using the Gram-Schmidt procedure .    Any orthogonal (resp. orthonormal) tuple in can be extended to an orthogonal (resp. orthonormal) basis .          See and its proof.    The orthogonal set is linearly independent by . Let be the distinct elements of . (We must have since is linearly independent.) By we can extend to a basis . It is easy to see that when we apply the Gram-Schmidt procedure to , the first vectors are left unchanged, as they are already pairwise orthogonal. Thus Gram-Schmidt returns an orthogonal basis of the form , as desired.      "
+},
+{
+  "id": "th_orthogonal_basis_formula",
+  "level": "2",
+  "url": "s_adhoc.html#th_orthogonal_basis_formula",
+  "type": "Theorem",
+  "number": "1.19.7",
+  "title": "Calculating with orthogonal bases.",
+  "body": " Calculating with orthogonal bases   Let be an inner product space of dimension .   Let be an orthogonal basis of . For any we have , where for all .  If is orthonormal , so that for all , then the inner product formula reduces to the simpler .    Parseval's identity  Let be an orthonormal basis of . Given any , we have .      "
+},
+{
+  "id": "s_adhoc-3-8",
+  "level": "2",
+  "url": "s_adhoc.html#s_adhoc-3-8",
+  "type": "Example",
+  "number": "1.19.8",
+  "title": "",
+  "body": "  Consider the inner product space with the dot product.   Verify that is an orthonormal basis of .    Let . Find the scalars such that .    Verify that .          Easily verified.    Using we compute .    Computing directly yields . Using the generalized Pythagorean theorem we have , as desired.      "
+},
+{
+  "id": "mantra_orthogonal_bases",
+  "level": "2",
+  "url": "s_adhoc.html#mantra_orthogonal_bases",
+  "type": "Mantra",
+  "number": "1.19.9",
+  "title": "Orthogonal basis mantra.",
+  "body": " Orthogonal basis mantra   Working with an orthogonal basis is very nice; working with an orthonormal basis is even nicer.   "
+},
+{
+  "id": "s_ortho_proj",
+  "level": "1",
+  "url": "s_ortho_proj.html",
+  "type": "Section",
+  "number": "1.20",
+  "title": "Orthogonal projection",
+  "body": " Orthogonal projection   A trick we learn early on in physics-- specifically, in dynamics problems in -- is to pick a convenient axis and then decompose any relevant vectors (force, acceleration, velocity, position, ) into a sum of two components: one that points along the chosen axis, and one that points perpendicularly to it. As we will see in this section, this technique can be vastly generalized. Namely, instead of we can take any inner product space ; and instead of a chosen axis in , we can choose any finite-dimensional subspace ; then any can be decomposed in the form where and is a vector orthogonal to , in a sense we will make precise below. Just as in our toy physics example, this manner of decomposing vectors helps simplify computations in problems where the subspace chosen is of central importance.    Orthogonal complement   Orthogonal complement   Let be an inner product space. Given a subspace , its orthogonal complement  is the set of all vectors of that are orthogonal to every vector in : , .    The next theorem tells us that to check , it suffices to check that is orthogonal to the elements of a spanning set of .   Orthogonality and spanning sets   Let be an inner product space, and let . We have if and only if for all : , .    The forward implication follows purely from logic. Conversely, assume that for all . Given , we can write for some finite subset , in which case . Thus .     is especially useful for computing when admits a finite basis or spanning set.    Consider the inner product space together with the dot product. Let : the line with equation . Compute and identify it as a familiar geometric object in .    According to , since , we have . Letting , we see that if and only if , if and only if . Thus is the line with equation . Observe that the lines and are indeed perpendicular to one another. (Graph them!)      Consider the inner product space together with the dot product. Let be the plane with equation . Compute and identify this as a familiar geometric object in .    First, solving for , we see that . Next, according to we have . It follows that is the set of vectors satisfying the linear system Solving this system using Gaussian elimination we conclude that , which we recognize as the line passing through the origin with direction vector . This is none other than the normal line to the plane passing through the origin.     Orthogonal complement   Let be a subspace of the inner product space .    is a subspace of .     .     .    finite dimensional  If is finite dimensional, then . Furthermore, we have in this setting.          We use the 2-step technique.  Since for all , it is certainly true that for all . Thus .    Assume . By definition this means for all . It follows that for any , and for all we have , and thus that .    Assume . Since and , we must have . The positivity axiom for inner products then implies that . Thus .    Let . Given any , we have . Thus for all , showing that . This proves .    Assume is finite dimensional. By definition this means has a finite basis. The Gram-Schmidt procedure then guarantees that we can produce an orthogonal basis of . Furthermore, the proof of the validity of the Gram-Schmidt procedure shows that for any the vector is orthogonal to for all . Since , we conclude from that . Noting that , we see that for all we can write , where and . This proves that . Since by (2), we conclude that .  Lastly, we show in this case that . Using (3) above, it suffices to show . Take , and write , where and . Since , we have . Since , we conclude that , and hence that , as desired.         Orthogonal projection   Orthogonal projection   Let be an inner product space, and let be a finite-dimensional subspace of . Since , given any there is a unique choice of and satisfying The vectors and are the orthogonal projections of onto and , respectively, and are denoted and . In this manner the direct sum decomposition gives rise to functions called orthogonal projection onto and , respectively.    From the proof of we extract the following procedure for computing for a finite-dimensional subspace of an inner product space.   Orthogonal projection   Let be a finite-dimensional subspace of the inner product space . To compute and , proceed as follows.   Compute an orthogonal basis of using the Gram-Schmidt procedure.    Given , we have .        Orthogonal projection   Let be an inner product space, and let be a finite-dimensional subspace of .   Orthogonal projection is linear   .    Closest element of   is the unique element of satisfying the following property: . In other words, is the unique element in that is closest to .            Distance to subspace   Let be a subspace of the inner product space . Given a vector , its distance to , denoted , is defined as .     Distance to   Let be a finite-dimensional subspace of the inner product space . For all , we have .     "
+},
+{
+  "id": "d_ortho_comp",
+  "level": "2",
+  "url": "s_ortho_proj.html#d_ortho_comp",
+  "type": "Definition",
+  "number": "1.20.1",
+  "title": "Orthogonal complement.",
+  "body": " Orthogonal complement   Let be an inner product space. Given a subspace , its orthogonal complement  is the set of all vectors of that are orthogonal to every vector in : , .   "
+},
+{
+  "id": "th_ortho_comp_span",
+  "level": "2",
+  "url": "s_ortho_proj.html#th_ortho_comp_span",
+  "type": "Theorem",
+  "number": "1.20.2",
+  "title": "Orthogonality and spanning sets.",
+  "body": " Orthogonality and spanning sets   Let be an inner product space, and let . We have if and only if for all : , .    The forward implication follows purely from logic. Conversely, assume that for all . Given , we can write for some finite subset , in which case . Thus .   "
+},
+{
+  "id": "eg_ortho_comp_line",
+  "level": "2",
+  "url": "s_ortho_proj.html#eg_ortho_comp_line",
+  "type": "Example",
+  "number": "1.20.3",
+  "title": "",
+  "body": "  Consider the inner product space together with the dot product. Let : the line with equation . Compute and identify it as a familiar geometric object in .    According to , since , we have . Letting , we see that if and only if , if and only if . Thus is the line with equation . Observe that the lines and are indeed perpendicular to one another. (Graph them!)   "
+},
+{
+  "id": "eg_ortho_comp_plane",
+  "level": "2",
+  "url": "s_ortho_proj.html#eg_ortho_comp_plane",
+  "type": "Example",
+  "number": "1.20.4",
+  "title": "",
+  "body": "  Consider the inner product space together with the dot product. Let be the plane with equation . Compute and identify this as a familiar geometric object in .    First, solving for , we see that . Next, according to we have . It follows that is the set of vectors satisfying the linear system Solving this system using Gaussian elimination we conclude that , which we recognize as the line passing through the origin with direction vector . This is none other than the normal line to the plane passing through the origin.   "
+},
+{
+  "id": "th_ortho_comp",
+  "level": "2",
+  "url": "s_ortho_proj.html#th_ortho_comp",
+  "type": "Theorem",
+  "number": "1.20.5",
+  "title": "Orthogonal complement.",
+  "body": " Orthogonal complement   Let be a subspace of the inner product space .    is a subspace of .     .     .    finite dimensional  If is finite dimensional, then . Furthermore, we have in this setting.          We use the 2-step technique.  Since for all , it is certainly true that for all . Thus .    Assume . By definition this means for all . It follows that for any , and for all we have , and thus that .    Assume . Since and , we must have . The positivity axiom for inner products then implies that . Thus .    Let . Given any , we have . Thus for all , showing that . This proves .    Assume is finite dimensional. By definition this means has a finite basis. The Gram-Schmidt procedure then guarantees that we can produce an orthogonal basis of . Furthermore, the proof of the validity of the Gram-Schmidt procedure shows that for any the vector is orthogonal to for all . Since , we conclude from that . Noting that , we see that for all we can write , where and . This proves that . Since by (2), we conclude that .  Lastly, we show in this case that . Using (3) above, it suffices to show . Take , and write , where and . Since , we have . Since , we conclude that , and hence that , as desired.      "
+},
+{
+  "id": "d_ortho_proj",
+  "level": "2",
+  "url": "s_ortho_proj.html#d_ortho_proj",
+  "type": "Definition",
+  "number": "1.20.6",
+  "title": "Orthogonal projection.",
+  "body": " Orthogonal projection   Let be an inner product space, and let be a finite-dimensional subspace of . Since , given any there is a unique choice of and satisfying The vectors and are the orthogonal projections of onto and , respectively, and are denoted and . In this manner the direct sum decomposition gives rise to functions called orthogonal projection onto and , respectively.   "
+},
+{
+  "id": "proc_ortho_proj",
+  "level": "2",
+  "url": "s_ortho_proj.html#proc_ortho_proj",
+  "type": "Procedure",
+  "number": "1.20.7",
+  "title": "Orthogonal projection.",
+  "body": " Orthogonal projection   Let be a finite-dimensional subspace of the inner product space . To compute and , proceed as follows.   Compute an orthogonal basis of using the Gram-Schmidt procedure.    Given , we have .      "
+},
+{
+  "id": "th_ortho_proj",
+  "level": "2",
+  "url": "s_ortho_proj.html#th_ortho_proj",
+  "type": "Theorem",
+  "number": "1.20.8",
+  "title": "Orthogonal projection.",
+  "body": " Orthogonal projection   Let be an inner product space, and let be a finite-dimensional subspace of .   Orthogonal projection is linear   .    Closest element of   is the unique element of satisfying the following property: . In other words, is the unique element in that is closest to .          "
+},
+{
+  "id": "d_distance_subspace",
+  "level": "2",
+  "url": "s_ortho_proj.html#d_distance_subspace",
+  "type": "Definition",
+  "number": "1.20.9",
+  "title": "Distance to subspace.",
+  "body": " Distance to subspace   Let be a subspace of the inner product space . Given a vector , its distance to , denoted , is defined as .   "
+},
+{
+  "id": "cor_ortho_proj",
+  "level": "2",
+  "url": "s_ortho_proj.html#cor_ortho_proj",
+  "type": "Corollary",
+  "number": "1.20.10",
+  "title": "Distance to <span class=\"process-math\">\\(W\\)<\/span>.",
+  "body": " Distance to   Let be a finite-dimensional subspace of the inner product space . For all , we have .   "
+},
+{
   "id": "appendix-notation",
   "level": "1",
   "url": "appendix-notation.html",

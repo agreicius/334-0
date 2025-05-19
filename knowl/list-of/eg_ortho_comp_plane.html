@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.20.4</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span>
+</h4>
+<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">Consider the inner product space <span class="process-math">\(\R^3\)</span> together with the dot product. Let <span class="process-math">\(W\subseteq \R^3\)</span> be the plane with equation <span class="process-math">\(x-2y-z=0\text{.}\)</span>  Compute <span class="process-math">\(W^\perp\)</span> and identify this as a familiar geometric object in <span class="process-math">\(\R^3\text{.}\)</span>
+</div>
+<div class="solutions"><details xmlns:xlink="http://www.w3.org/1999/xlink" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical">
+<div class="para">First, solving <span class="process-math">\(x-2y-z=0\)</span> for <span class="process-math">\((x,y,z)\text{,}\)</span> we see that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_ortho_comp_span.html">
+\begin{equation*}
+W=\{(2s+t,s,t)\colon s,t\in \R\}=\Span\left((2,1,0),(1,0,1)\right)\text{.}
+\end{equation*}
+</div>
+<div class="para">Next, according to <a href="s_ortho_proj.html#th_ortho_comp_span" class="xref" data-knowl="./knowl/xref/th_ortho_comp_span.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.20.2: Orthogonality and spanning sets">Theorem 1.20.2</a> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_ortho_comp_span.html">
+\begin{equation*}
+\boldx\in W^\perp\iff \boldx\cdot (2,1,0)=0 \text{ and } \boldx\cdot (1,0,1)=0\text{.}
+\end{equation*}
+</div>
+<div class="para">It follows that <span class="process-math">\(W^\perp\)</span> is the set of vectors <span class="process-math">\(\boldx=(x,y,z)\)</span> satisfying the linear system</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_ortho_comp_span.html">
+\begin{equation*}
+\begin{linsys}{3}
+2x\amp +\amp y \amp \amp  \amp = \amp 0\\
+x\amp \amp  \amp +\amp z \amp = \amp 0
+\end{linsys}.
+\end{equation*}
+</div>
+<div class="para">Solving this system using Gaussian elimination we conclude that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_ortho_comp_span.html">
+\begin{equation*}
+W^\perp=\{(t,-2t,-t)\colon t\in \R\}=\Span\left((1,-2,-1)\right)\text{,}
+\end{equation*}
+</div>
+<div class="para">which we recognize as the line <span class="process-math">\(\ell\subseteq \R^3\)</span> passing through the origin with direction vector <span class="process-math">\((1,-2,-1)\text{.}\)</span> This is none other than the normal line to the plane <span class="process-math">\(W\)</span> passing through the origin.</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="s_ortho_proj.html#eg_ortho_comp_plane">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="algorithm theorem-like"><h4 class="heading">
+<span class="type">Procedure</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.19.5</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Gram-Schmidt procedure.</span>
+</h4>
+<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
+<div class="para">Let <span class="process-math">\((V,\angvec{\, ,})\)</span> be an inner product space of dimension <span class="process-math">\(n\text{,}\)</span> and let <span class="process-math">\(B=(v_1, v_2, \dots, v_n)\)</span> be a basis for <span class="process-math">\(V\text{.}\)</span> To produce an orthogonal basis <span class="process-math">\(B'\)</span> (or orthonormal basis <span class="process-math">\(B''\)</span>) from <span class="process-math">\(B\text{,}\)</span> follow the steps below.</div>
+<ol class="decimal" id="proc_gram-schmidt-3-1-8">
+<li><div class="para">Set <span class="process-math">\(w_1=v_1\text{.}\)</span>
+</div></li>
+<li>
+<span class="heading"><span class="title">Orthogonalize.</span></span><div class="para logical">
+<div class="para">Proceeding in succession for each <span class="process-math">\(2\leq r\leq n\text{,}\)</span> replace <span class="process-math">\(v_r\)</span> with the vector <span class="process-math">\(w_r\)</span> defined as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+w_r=v_r-\frac{\angvec{v_r, w_{r-1}}}{\angvec{w_{r-1},w_{r-1}}}w_{r-1}-\frac{\angvec{v_r, w_{r-2}}}{\angvec{w_{r-2},w_{r-2}}}w_{r-2}-\cdots -\frac{\angvec{v_r, w_{1}}}{\angvec{w_{1},w_{1}}}w_1\text{.}
+\end{equation*}
+</div>
+<div class="para">The resulting tuple <span class="process-math">\(B'=(w_1, w_2, \dots, w_n)\)</span> is an orthogonal basis of <span class="process-math">\(V\text{.}\)</span>
+</div>
+</div>
+</li>
+<li>
+<span class="heading"><span class="title">Normalize.</span></span><div class="para logical">
+<div class="para">For each <span class="process-math">\(1\leq i\leq n\)</span> let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+u_i=\frac{1}{\norm{w_i}}\,w_i\text{.}
+\end{equation*}
+</div>
+<div class="para">The tuple <span class="process-math">\(B''=(u_1, u_2, \dots, u_n)\)</span> is an orthonormal basis of <span class="process-math">\(V\text{.}\)</span>
+</div>
+</div>
+</li>
+</ol>
+</div></article><span class="incontext"><a class="internal" href="s_adhoc.html#proc_gram-schmidt">in-context</a></span>
+</body>
+</html>
