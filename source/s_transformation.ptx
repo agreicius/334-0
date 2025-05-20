@@ -707,6 +707,62 @@
         </solution>
         </example>
       
+        <theorem xml:id="th_transformation_projection">
+        <title>Projection onto summand</title>
+        <statement>
+        <p>
+        Let <m>V=\bigoplus_{i=1}^rW_i</m> be a direct sum decomposition of the vector space <m>V</m>. For all <m>1\leq j\leq r</m>, we define <m>\pi_j\colon V\rightarrow V</m> via the following recipe:
+        <ul>
+          <li>
+            <p>
+              given <m>v\in V</m>, there is a unique expression
+        <me>
+          v=w_1+w_2+\cdots + w_r
+        </me>,
+        where <m>w_i\in W_i</m> for all <m>1\leq i\leq</m>;
+            </p>
+          </li>
+          <li>
+            <p>
+              define <m>\pi_j(v)=w_j</m>. 
+            </p>
+          </li>
+        </ul> 
+        The function <m>\pi_j</m> is a linear transformation. We call <m>\pi_j</m> the <term>projection onto</term> <m>W_i</m> operator. 
+        </p>
+        </statement>
+        <proof>
+        <p>
+          Let <m>1\leq j\leq r</m>. Observe first that <m>\pi_j</m> is well-defined precisely because the expression 
+          <me>
+            v=v_1+v_2+\cdots +v_r, v_i\in W_i
+          </me>
+          is unique by the definition (<xref ref="d_subspace_direct_sum" text="global"/>).
+        </p>
+        <p>
+          We will show that <m>\pi_j</m> is linear using the 1-step technique. Given <m>v,v'\in V</m> we can write 
+          <md>
+            <mrow>v \amp =w_1+w_2+\cdots + w_r </mrow>
+            <mrow>v' \amp = w'_1+w'_2+\cdots + w'_r</mrow>
+          </md>,
+          where <m>w_i,w_i'\in W_i</m> for all <m>i\in I</m>. Note that by definition of <m>\pi_j</m> we have 
+          <md>
+            <mrow>\pi_j(v) \amp = w_j \amp \pi_j(v')=w_j'</mrow>
+          </md>.
+          For any <m>c,d\in F</m>, we then have 
+          <me>
+            cv+dv'=(cw_1+dw_1)+(cw_2+dw_2)+\cdots + (cw_r+dw_r)
+          </me>.
+          Since each <m>W_i</m> is a subspace, we have <m>cw_i+dw_i'\in W_i</m>, and thus this is the unique decomposition of the vector <m>cv+dv'</m> in terms of the <m>W_i</m>. We conclude that 
+          <md>
+            <mrow>\pi_j(cv+dv') \amp = cw_j+dw_j \amp (\text{def. of } \pi_j)  </mrow>
+            <mrow> \amp =c\pi_j(v)+d\pi_j(v')</mrow>
+          </md>,
+          as desired.
+        </p>
+        </proof>
+        </theorem>
+        
       
     
     </subsection>

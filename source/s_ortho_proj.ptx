@@ -263,6 +263,47 @@ called <term>orthogonal projection</term> onto <m>W</m> and <m>W^\perp</m>, resp
       </p>
     </statement>
   </algorithm>
+  <example xml:base="eg_ortho_proj_plane">
+    <title>Orthogonal projection onto plane</title>
+    <statement>
+      <p>
+        Consider the inner product space <m>\R^3</m> with the dot product. Let <m>W\subseteq\R^3</m> be the plane with equation <m>x+y+z=0</m>. Compute <m>\proj_W(v)</m> for each <m>\boldv</m> below.
+        <ol>
+          <li>
+            <p>
+              <m>\boldv=(3,-2,2)</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\boldv=(2,1,-3)</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\boldv=(-7,-7,-7)</m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        According to <xref ref="proc_ortho_proj"/> our first step is to produce an orthogonal basis of <m>W</m>. We do so by inspection. Since <m>\dim W=2</m>, we simply need to find two solutions to <m>x+y+z=0</m> that are orthogonal to one another: <eg />, <m>\boldw_1=(1,-1,0)</m> and <m>\boldw_2=(1,1,-2)</m>. Thus we choose <m>B=((1,-1,0), (1,1,-2))</m> as our orthogonal basis, and our computations become a matter of applying <xref ref="eq_ortho_proj_formula"/>, which in this case becomes
+        <me>
+          \proj_W(v)=\frac{\boldv\cdot\boldw_1}{\boldw_1\cdot \boldw_1}\boldw_1+\frac{\boldv\cdot\boldw_2}{\boldw_2\cdot \boldw_2}\boldw_2=
+          \frac{\boldv\cdot\boldw_1}{2}\boldw_1+\frac{\boldv\cdot\boldw_2}{6}\boldw_2
+        </me>.
+        Now compute:
+        <md>
+          <mrow>\proj_W(3,-2,2) \amp =\frac{5}{2}(1,-1,0)+\frac{-3}{6}(1,1,-2)=(2,-3,1)</mrow>
+          <mrow>\proj_W(2,1,-3) \amp =\frac{1}{2}(1,-1,0)+\frac{9}{6}(1,1,-2)=(2,1,-3)</mrow>
+          <mrow>\proj_W(-7,-7,-7) \amp =\frac{0}{2}(1,-1,0)+\frac{0}{6}(1,1,-2)=(0,0,0)</mrow>
+        </md>.
+        The last two computations might give you pause. Why do we have <m>\proj_W(2,1,-3)=(2,1,-3)</m> and <m>\proj_W(-7,7-7,-7)=(0,0,0)</m>? The answer is that <m>(2,1,-3)</m> is already an element of <m>W</m>, so it stands to reason that its projection is itself; and <m>(-7,-7,-7)</m> is already orthogonal to <m>W</m> (it is a scalar multiple of <m>(1,1,1)</m>), so it stands to reason that its projection is equal to <m>\boldzero</m>. 
+      </p>
+    </solution>
+  </example>
   <theorem xml:id="th_ortho_proj">
   <title>Orthogonal projection</title>
   <statement>
@@ -271,21 +312,30 @@ called <term>orthogonal projection</term> onto <m>W</m> and <m>W^\perp</m>, resp
 <ol>
     <li>
       <title>Orthogonal projection is linear</title>
-      
-      
         <p>
             <m>\operatorname{proj}_{W}, \operatorname{proj}_{W^\perp}\in \mathcal{L}(V)</m>.
         </p>
     </li>
 
     <li>
-      <title>Closest element of <m>W</m></title>
+      <title>Orthogonal projection as closest element</title>
         <p>
-            <m>\proj_W(v)</m> is the unique element of <m>W</m> satisfying the following property:
+            <m>\proj_W(v)</m> is the unique element <m>w\in W</m> satisfying the following property:
         <men xml:id="eq_ortho_proj_closest">
-            d(v,\proj_W(v))\leq d(v,w) \text{ for all } w\in W
+            d(v,w)\leq d(v,w') \text{ for all } w\in W
         </men>.
-        In other words, <m>\proj_W(v)</m> is the unique element in <m>W</m> that is closest to <m>v</m>. 
+        In other words, <m>\proj_W(v)</m> is the unique element in <m>W</m> that minimizes the distance to <m>v</m>: <ie/>, it is the unique element of <m>W</m> closest to <m>v</m>. 
+        </p>
+        <p>
+        Similarly, <m>\proj_{W^\perp}(v)</m> is the unique element in <m>W^\perp</m> that minimizes the distance to <m>v</m>. 
+        </p>
+    </li>
+    <li>
+        <p>
+            We have <m>\proj_W(v)+\proj_{W^\perp}(v)=v</m> for all <m>v\in V</m>: <ie/>, 
+            <men xml:id="eq_proj_plus_proj">
+                \proj_W+\proj_{W^\perp}=I_V
+            </men>.
         </p>
     </li>
 </ol>
@@ -293,6 +343,39 @@ called <term>orthogonal projection</term> onto <m>W</m> and <m>W^\perp</m>, resp
   </statement>
   <proof>
   <p>
+    <ol>
+        <li>
+            <p>
+                Both <m>\proj_W</m> and <m>\proj_{W^\perp}</m> are specific examples of the more general projection onto a direct summand operator. We saw in <xref ref="th_transformation_projection"/> the such operators are linear. 
+            </p>
+        </li>
+        <li>
+            <p>
+                Given <m>v\in V</m>, write <m>v=w+w^\perp</m> with <m>w\in W</m> and <m>w^\perp\in W^\perp</m>. By definition this means <m>\proj_W(v)=w</m>. Given any <m>w'\in W</m> we have 
+                <md>
+                    <mrow>d(v,w') \amp = \norm{v-w'}</mrow>
+                    <mrow> \amp = \norm{(w-w')+w^\perp}</mrow>
+                    <mrow> \amp = \sqrt{\norm{w-w'}+\norm{w^\perp}}^2 \amp (w-w' \text{ ortho. to } w^\perp ) </mrow>
+                    <mrow> \amp \geq \sqrt{\norm{w^\perp}^2}</mrow>
+                    <mrow> \amp = \norm{w^\perp}</mrow>
+                    <mrow> \amp = \norm{v-w}</mrow>
+                    <mrow> \amp = d(v,\proj_W(v))</mrow>
+                </md>.
+                This proves <m>d(v,\proj_W(v))\leq d(v,w')</m> for all <m>w'\in W</m>: <ie/>, <m>\proj_W(v)</m> is an element of <m>W</m> that minimizes the distance to <m>v</m>. It remains to show that <m>\proj_W(v)</m> is the unique element of <m>W</m> satisfying this property. To this end, if <m>w'\in W</m> is another element of <m>W</m> that minimizes the distance to <m>v</m>, then in particular we have <m>d(v,w')\leq d(v,\proj_W(v))</m>. Since we also have <m>d(v,\proj_W(v))\leq d(v,w')</m>, we conclude that <m>d(v,w')=d(v,\proj_W(v))</m>. Looking at the chain of inequalities above, this would imply that <m>sqrt{\norm{w-w'}+\norm{w^\perp}}^2=\sqrt{{w^\perp}^2}</m>. The latter is true if and only if <m>\norm{w-w'}=0</m>, if and only if <m>w'=w=\proj_W(v)</m>, as desired. 
+            </p>
+            <p>
+                Note that the proof above only used the fact that <m>V=W\oplus W^\perp</m> is a direct sum decomposition into two orthogonal spaces. As such, essentially the same argument can be used to show that <m>\proj_{W^\perp}(v)</m> is the unique element of <m>W^\perp</m> minimizing the distance to <m>v</m>.
+            </p>
+        </li>
+        <li>
+            <p>
+                This is essentially by definition of <m>\proj_W</m> and <m>\proj_{W^\perp}</m>. Any vector <m>v\in V</m> can be written as <m>v=w+w^\perp</m>, where <m>w\in W</m> and <m>w^\perp\in W^\perp</m>. By definition we have <m>w=\proj_W(v)</m> and <m>w^\perp=\proj_{W^\perp}(v)</m>, whence 
+                <me>
+                    v=w+w^\perp=\proj_W(v)+\proj_{W^\perp}(v)
+                </me>.
+            </p>
+        </li>
+    </ol>
   </p>
   </proof>
   </theorem>
@@ -318,6 +401,412 @@ called <term>orthogonal projection</term> onto <m>W</m> and <m>W^\perp</m>, resp
       </p>
     </statement>
   </corollary>
-  </subsection>
 
+  
+  <example xml:id="eg_projection_line">
+      <title>Projection onto a line</title>
+      <statement>
+        <p>
+          Any line in <m>\R^3</m> passing through the origin can be described as <m>\ell=\Span\{\boldv\}</m>,
+          for some <m>\boldv=(a,b,c)\ne 0</m>.
+          The tuple <m>((a,b,c))</m> is trivially an orthogonal basis of <m>\ell</m>. Using <xref ref="eq_ortho_proj_formula"/>, we have
+          <me>
+            \proj_\ell(\boldx)=\frac{\boldx\cdot \boldv}{\boldv\cdot\boldv}\boldv=\frac{ax+by+cz}{a^2+b^2+c^2}(a,b,c)
+          </me>.
+          It follows that <m>\operatorname{proj}_\ell=T_A</m>, where
+          <me>
+            A=\begin{bmatrix}
+            \vert \amp \vert \amp \vert \\
+            \proj_\ell(1,0,0)\amp \proj_\ell(0,1,0)\amp \proj_\ell(0,0,1) \\
+            \vert \amp \vert \amp \vert
+          \end{bmatrix}=\frac{1}{a^2+b^2+c}\begin{bmatrix}
+          a^2\amp ab\amp ac\\
+          ab\amp b^2\amp bc\\
+          ac\amp bc\amp c^2
+        \end{bmatrix}
+          </me>.
+        </p>
+      </statement>
+    </example>
+    <example xml:base="eg_ortho_proj_line_specific">
+        <title>Projection onto specific line</title>
+      <statement>
+        <p>
+          Consider the line <m>\ell=\Span\{(1,2,1)\}\subseteq \R^3</m>.
+        
+        <ol>
+          <li>
+            <p>
+              Find the matrix <m>A</m> such that <m>\operatorname{proj}_\ell=T_A</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Use your matrix formula from (a) to compute <m>\proj_\ell(-2,3,1)</m>, <m>\proj_\ell(-2,-4,-2)</m>, and  <m>\proj_\ell(1,-1,1)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Compute <m>d((-2,3,1), \ell)</m> and <m>d((-2,-4,-2), \ell)</m>.
+            </p>
+          </li>
+        </ol>
+        </p>
+      </statement>
+      <solution>
+    <p>
+        <ol>
+      <li>
+<p>  Using the general formula described in <xref ref="eg_projection_line"/>, we have
+      <me>
+        A=\frac{1}{6}\begin{bmatrix}
+        1\amp 2\amp 1\\ 2\amp 4\amp 2\\ 1\amp 2\amp 1
+      \end{bmatrix}
+      </me>.
+    </p>
+  </li>
+    <li>
+      <p>
+        Now compute
+    <md>
+      <mrow> \proj_\ell(-2,3,1)\amp=  \frac{1}{6}\begin{bmatrix}
+      1\amp 2\amp 1\\ 2\amp 4\amp 2\\ 1\amp 2\amp 1
+    \end{bmatrix}
+    \begin{amatrix}[r]
+        -2 \\ 3\\ 1
+    \end{amatrix}=
+    \frac{1}{6}\begin{amatrix}[r]
+        5\\ 10\\ 5
+    \end{amatrix}
+    </mrow>
+    <mrow> \proj_W(-2,-4,-2)\amp=  \frac{1}{6}\begin{bmatrix}
+    1\amp 2\amp 1\\ 2\amp 4\amp 2\\ 1\amp 2\amp 1
+  \end{bmatrix}
+  \begin{amatrix}[r]
+      -2 \\ -4\\ -2
+  \end{amatrix}=
+  \frac{1}{6}\begin{amatrix}[r]
+      -2\\ -4\\ -2
+  \end{amatrix}
+  </mrow>
+  <mrow> \proj_W(1,-1,1)\amp=  \frac{1}{6}\begin{bmatrix}
+  1\amp 2\amp 1\\ 2\amp 4\amp 2\\ 1\amp 2\amp 1
+\end{bmatrix}
+\begin{amatrix}[r]
+    1\\ -1\\ 1
+\end{amatrix}=
+\frac{1}{6}\begin{amatrix}[r]
+    0\\ 0\\ 0
+\end{amatrix}
+</mrow>
+    </md>.
+The last two computations, <m>\proj_{\ell}((-2,-4,-2))=(-2,-4,-2)</m> and <m>\proj_{\ell}((1,-1,1))=(0,0,0)</m>, should come as no surprise, since <m>(-2,-4,-2)\in \ell</m> and <m>(1,-1,1)\in \ell^\perp</m>. 
+</p>
+</li>
+<li>
+  <p>
+    We have
+    <md>
+      <mrow>d((-2,3,1), \ell) \amp=\norm{(-2,3,1)-\proj_\ell(-2,3,1)} </mrow>
+      <mrow> \amp = \norm{\frac{1}{6}(-17,8,1)}=\frac{\sqrt{354}}{6} </mrow>
+      <mrow>d((-2,-4,-2), \ell) \amp=\norm{(-2,-4,-2)-\proj_\ell(-2,-4,-2)} </mrow>
+      <mrow> \amp = \norm{(0,0,0)}=0 </mrow>
+    </md>.
+    Again, the second computation should come as no surprise.  Since <m>(-2,-4,-2)</m> is itself an element of <m>\ell</m>, it stands to reason that its distance to <m>\ell</m> is equal to zero.
+  </p>
+</li>
+</ol>
+</p>
+      </solution>
+    </example>
+
+
+    <example xml:id="eg_projection_plane">
+      <title>Projection onto planes in <m>\R^3</m></title>
+      <statement>
+        <p>
+          Any plane <m>W\subseteq\R^3</m> passing through the origin can be described as <m>W=\{(x,y,z)\in \R^3\colon ax+by+cz=0\}</m>. Equivalently, <m>W</m> is the set of all <m>\boldx\in \R^3</m> satisfying <m>\boldx\cdot (a,b,c)=0</m>: <ie />, <m>W=\ell^\perp</m>, where <m>\ell=\Span((a,b,c))</m>.
+          </p>
+          <p>
+          Let <m>A</m> and <m>A'</m> be the standard matrices for <m>\proj_{\ell}</m> and <m>\proj_W</m>, respectively. Since <m>I_{\R^3}=\proj_{\ell}+\proj_W</m> (<xref ref="eq_proj_plus_proj"/>), it follows that 
+          <m>I=A+A'</m>, or equivalently <m>A'=I-A</m>. Making use of our standard matrix computation for <m>\proj_\ell</m> in <xref ref="eg_projection_line"/>, we now compute 
+          <md>
+            <mrow>A' \amp =I-A</mrow>
+            <mrow> \amp = \begin{bmatrix}
+            1\amp 0\amp 0\\ 0\amp 1\amp 0\\ 0\amp 0\amp 1
+            \end{bmatrix} - \frac{1}{a^2+b^2+c}\begin{bmatrix}
+            a^2\amp ab\amp ac\\
+            ab\amp b^2\amp bc\\
+            ac\amp bc\amp c^2
+          \end{bmatrix}</mrow>
+          <mrow>  \amp = \frac{1}{a^2+b^2+c^2}\begin{bmatrix}b^2+c^2\amp -ab\amp -ac\\ -ab\amp a^2+c^2\amp -bc\\ -ac\amp -bc\amp a^2+b^2 \end{bmatrix}</mrow>
+          </md>.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Consider the plane <m>W=\{(x,y,z)\in\R^3\colon x-2y+z=0-\}</m>.
+        
+        <ol>
+          <li>
+            <p>
+              Find the matrix <m>A</m> such that <m>\operatorname{proj}_W=T_A</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Use your matrix formula from (a) to compute <m>\proj_W(2,1,1)</m> and <m>\proj_W(1,1,1)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Compute <m>d((2,1,1),W)</m> and <m>d((1,1,1), W)</m>.
+            </p>
+          </li>
+        </ol>
+    </p>
+      </statement>
+      <solution>
+        <p>
+            <ol>
+        <li>
+        <p>
+        Using the general formula described in <xref ref="eg_projection_plane"/>, we have
+        <me>
+          A=\frac{1}{6}\begin{amatrix}[rrr]
+          5\amp 2\amp -1\\ 2\amp 2\amp 2\\ -1\amp 2\amp 5
+        \end{amatrix}
+        </me>.
+      </p>
+    </li>
+    <li>
+      <p>
+      Now compute
+      <md>
+        <mrow> \proj_W(2,1,1)\amp= \frac{1}{6}\begin{amatrix}[rrr]
+        5\amp 2\amp -1\\ 2\amp 2\amp 2\\ -1\amp 2\amp 5
+      \end{amatrix}
+      \begin{amatrix}[r]
+          2 \\ 1\\ 1
+      \end{amatrix}=
+      \frac{1}{6}\begin{amatrix}[r]
+          11\\ 8\\ 5
+      \end{amatrix}
+      </mrow>
+      <mrow> \proj_W(1,1,1)\amp= \frac{1}{6}\begin{amatrix}[rrr]
+      5\amp 2\amp -1\\ 2\amp 2\amp 2\\ -1\amp 2\amp 5
+    \end{amatrix}
+    \begin{amatrix}[r]
+        1 \\ 1\\ 1
+    \end{amatrix}=
+    \frac{1}{6}\begin{amatrix}[r]
+        0\\ 0\\ 0
+    \end{amatrix}
+    </mrow>
+      </md>.
+    </p>
+  </li>
+  <li>
+    <p>
+      We have
+      <md>
+        <mrow>d((2,1,1), W) \amp = \norm{(2,1,1)-\proj_W(2,1,1)}</mrow>
+        <mrow> \amp =\norm{\frac{1}{6}(1,-2,-1)}=\frac{6}{6} </mrow>
+        <mrow>d((1,1,1), W) \amp = \norm{(1,1,1)-\proj_W(1,1,1)}</mrow>
+        <mrow> \amp =\norm{(0,0,0)}=0 </mrow>
+      </md>.
+    </p>
+</li>
+</ol>
+</p>
+      </solution>
+    </example>
+
+  </subsection>
+<subsection>
+    <title>Trigonometric polynomial approximation</title>
+    <p>
+      Consider the inner product space consisting of  <m>C([0,2\pi])</m> along with the integral inner product <m>\langle f, g\rangle=\int_0^{2\pi}f(x)g(x) \, dx</m>.
+      In <xref ref="eg_orthogonal_functions"/> we saw that
+      <me>
+        B=(1, \cos(x),\sin(x),\cos(2x),\sin(2x), \dots , \cos(nx),\sin(nx))
+      </me>
+      is orthogonal with respect to this inner product.
+      Thus <m>B</m> is an orthogonal basis of
+      <me>
+        \Span B=\{g\in C([0,2\pi])\colon g(x)=a_0+\sum_{k=1}^na_k\cos kx +b_k\sin kx \text{ for some } a_i, b_i\in \R\}
+      </me>.
+      We call <m>W=\Span B</m> the space of
+      <term>trigonometric polynomials of degree at most <m>n</m></term>.
+    </p>
+    <p>
+      Since <m>B</m> is an orthogonal basis of <m>W</m>, given an arbitrary function <m>f(x)\in C[0,2\pi]</m>, its orthogonal projection <m>\hat{f}=\proj_{W}(f)</m> is given by
+      <me>
+        \hat{f}(x)=a_0+a_1\cos(x)+b_1\sin(x)+a_2\cos(2x)+b_2\sin(2x)+\cdots +a_n\cos(nx)+b_n\sin(nx)
+      </me>,
+      where
+      <me>
+        a_0=\frac{1}{2\pi}\int_0^{2\pi} f(x) \ dx, \ a_j=\frac{1}{\pi}\int_0^{2\pi}f(x)\cos(jx)\, dx, \ b_k=\frac{1}{\pi}\int_0^{2\pi}f(x)\sin(kx)\, dx
+      </me>.
+      Here we are using <xref ref="eq_ortho_proj_formula"/>, as well as the inner product formulas <m>\angvec{1,1}=2\pi</m> and <m>\angvec{\cos n x, \cos n x}=\angvec{\sin n x, \sin n x}=\pi</m> from <xref ref="eg_orthogonal_functions"/>.
+    </p>
+    <p>
+      What is the relationship between <m>f</m> and <m>\hat{f}</m>?
+      <xref ref="th_ortho_proj"/> tells us that <m>\hat{f}</m> is the
+      <q>best</q>
+      trigonometric polynomial approximation of <m>f(x)</m>
+      of degree at most <m>n</m> in the following sense:
+      given any any other trigonometric polynomial <m>g\in W</m>, we have
+      <me>\left\vert\left\vert f-\hat{f}\right\vert\right\vert\leq \norm{f-g}</me>.
+      Unpacking the definition of norm in this inner product space, we conclude that
+      <me>
+        \int_0^{2\pi} (f-\hat{f})^2\, dx\leq \int_0^{2\pi} (f-g)^2 \, dx
+      </me>
+      for all <m>g\in W</m>.
+    </p>
+    <p>
+      Thus, given a continuous function <m>f</m> on <m>[0,2\pi]</m>, linear algebra shows us how to find its best trigonometric polynomial approximation of the form
+      <me>
+        g(x)=a_0+\sum_{k=1}^na_k\cos kx +b_k\sin kx
+      </me>.
+      However, linear algebra does not tell us just how good this approximation is. This question, among others, is tackled by another mathematical theory: <em>Fourier analysis</em>. There we learn that the trigonometric polynomial approximations get arbitrarily close to <m>f</m> as we let <m>n</m> increase. More precisely, letting <m>\hat{f}_n</m> be the orthogonal projection of <m>f</m> onto the space of trigonometric polynomials of degree at most <m>n</m>, we have
+      <me>
+        \lim_{n\to\infty}\norm{f-\hat{f}_n}=0
+      </me>.
+    </p>
+  </subsection>
+  <subsection>
+    <title>Least-squares solution to linear systems</title>
+    <p>
+      In statistics we often wish to approximate a scatter plot of points <m>P_i=(X_i, Y_i)</m>, <m>1\leq i\leq m</m>, with a line <m>\ell\colon y=mx+b</m> that <q>best fits</q> the data. <q>Finding</q> this line amounts to finding the appropriate slope <m>m</m> and <m>y</m>-intercept <m>b</m>: <ie />, in this setup, the points <m>P_i=(X_i, Y_i)</m> are given, and <m>m</m> and <m>b</m> are the unknowns we wish to find. For the line to perfectly fit the data, we would want
+      <me>
+      Y_i=mX_i+b \text{ for all } 1\leq i\leq m
+      </me>.
+      In other words <m>(m,b)</m> would be a solution to the matrix equation <m>A\boldx=\boldy</m>, where
+      <me>
+        \boldx=\begin{bmatrix}m \\ b\end{bmatrix},A=\begin{bmatrix} X_1\amp 1\\ X_2\amp 1\\ \vdots \amp \vdots \\ X_m\amp 1  \end{bmatrix},  \boldy=\begin{bmatrix} Y_1\\ Y_2\\ \vdots \\ Y_m\end{bmatrix}
+      </me>.
+      Of course in most situations the provided points do not lie on a line, and thus there is no solution <m>\boldx</m> to the given matrix equation <m>A\boldx=\boldy</m>. When this is the case we can use the theory of orthogonal projection to find what is called a <em>least-squares</em> solution, which we now describe in detail.
+    </p>
+    <p>
+      The least-squares method applies to any matrix equation
+      <men xml:id="eq_least-squares_orig">\underset{m\times n}{A}\, \underset{n\times 1}{\boldx}=\underset{m\times 1}{\boldy}</men>,
+      where <m>A</m> and <m>\boldy</m> are given, and <m>\boldx</m> is treated as an unknown vector. Recall that
+      <md>
+        <mrow>A\boldx=\boldy \text{ has a solution } \amp\iff \boldy\in \CS A  </mrow>
+      </md>.
+      When <m>\boldy\notin \CS A</m>, and hence <xref ref="eq_least-squares_orig"/> does not have a solution, the least-squares method proceeds by replacing <m>\boldy</m> with the element of <m>W=\CS A</m> closest to it: that is, with its <em>orthogonal projection</em> onto <m>W</m>.  Let <m>\hat{\boldy}=\proj_{W}(\boldy)</m>, where orthogonal projection is taken with respect to the dot product on <m>\R^m</m>, and consider the adjusted matrix equation
+      <men xml:id="eq_least-squares_new">
+        A\boldx=\hat{\boldy}
+      </men>.
+      By definition of <m>\operatorname{proj}_W</m>,  we have <m>\hat{\boldy}\in W=\CS A</m>, and thus there is a solution <m>\hat{\boldx}</m> to <xref ref="eq_least-squares_new"/>.
+      We call <m>\hat{\boldx}</m> a <term>least-squares</term> solution to <xref ref="eq_least-squares_orig"/>. Observe that <m>\hat{\boldx}</m> does <em>not</em> necessarily satisfy <m>A\hat{\boldx}=\boldy</m>; rather, it satisfies <m>A\hat{\boldx}=\hat{\boldy}</m>. What makes this a <q>least-squares</q> solution is that <m>A\hat{\boldx}=\hat{\boldy}</m> is the element of <m>W=\CS A</m> closest to <m>\boldy</m>. With respect to the dot product, this means that a least-squares solution <m>\hat{\boldx}</m> minimizes the quantity
+      <me>
+        \norm{\boldy-A\boldx}=\sqrt{(y_1-y_1')^2+(y_2-y_2')^2+\cdots +(y_n-y_n')^2}
+      </me>,
+      among all <m>\boldx\in \R^n</m>.
+    </p>
+<example xml:id="eg_least-squares">
+  <title>Best fitting line</title>
+  <statement>
+    <p>
+      Suppose we wish to find a line <m>\ell\colon y=mx+b</m> that best fits
+      (in the least-square sense)
+      the following data points:
+      <m>P_1=(-3,1), P_2=(1,2), P_3=(2,3)</m>. Following the discussion above, we seek a solution <m>\boldx=(m,b)</m> to the matrix equation <m>A\boldx=\boldy</m>, where
+      <me>
+        \boldx=\begin{bmatrix}m \\ b \end{bmatrix}, A=\begin{amatrix}[rr]-3\amp 1\\ 1\amp 1\\ 2\amp 1 \end{amatrix}  , \boldy=\begin{bmatrix}1\\ 2\\ 3 \end{bmatrix}
+      </me>.
+      Using Gaussian elimination, we see easily that this equation has no solution: equivalently, <m>\boldy\notin W=\CS A</m>. Accordingly, we compute <m>\hat{\boldy}=\proj_{W}(\boldy)</m> and find a solution to <m>A\hat{\boldx}=\hat{\boldy}</m>. Conveniently, the set <m>B=\{(-3,2,1), (1,1,1)\}</m> is already an <em>orthogonal</em> basis of <m>W=\CS A</m>, allowing us to use <xref ref="eq_ortho_proj_formula"/>:
+      <me>
+        \hat{\boldy}=\frac{\boldy\cdot (-3,1,2)}{(-3,2,1)\cdot (-3,1,2)}(-3,1,2)+\frac{\boldy\cdot(1,1,1)}{(1,1,1)\cdot (1,1,1)}(1,1,1)=\frac{1}{14}(13, 33, 38)
+      </me>.
+      Lastly, solving <m>A\hat{\boldx}=\hat{\boldy}</m> yields <m>(m,b)=\hat{\boldx}=(5/14, 2)</m>, and we conclude the line <m>\ell\colon y=(5/14)x+2</m> is the one that best fits the data in the least-squares sense.
+</p>
+  </statement>
+
+</example>
+    <remark xml:id="rm_least-squares">
+      <title>Visualizing least-squares</title>
+    <p>
+     <xref ref="fig_leastsquares"/> helps us give a graphical interpretation of how the line <m>\ell\colon y=(5/14)x+2</m> best approximates the points <m>P_1=(-3,1), P_2=(1,2), P_3=(2,3)</m>.
+    </p>
+    <figure xml:id="fig_leastsquares">
+       <title>Least-squares visualization</title>
+        <caption>Least-squares visualization</caption>
+         <image xml:id="im_leastsquares" width="100%" source="image/im_leastsquares.png"/>
+     </figure>
+     <p>
+      Let <m>\boldy=(1,2,3)=(y_1,y_2,y_3)</m> be the given <m>y</m>-values of the points,
+      and let <m>\hat{\boldy}=(y_1',y_2',y_3')</m> be the orthogonal projection of <m>\boldy</m> onto <m>\CS A</m>.
+      In the graph the values <m>\epsilon_i</m> denote the vertical difference
+      <m>\epsilon_i=y_i-y_i'</m> between the data points, and our fitting line.
+      The projection <m>\hat{\boldy}</m> makes the error
+      <m>\norm{\boldy-\hat{\boldy}}=\sqrt{ \epsilon_1^2+\epsilon_2^2+\epsilon_3^2}</m> as small as possible.
+      This means if I draw <em>any other line</em>
+      and compute the corresponding differences
+      <m>\epsilon_i'</m> at the <m>x</m>-values  -3, 1 and 2, then
+      <me>
+        \epsilon_1^2+\epsilon_2^2+\epsilon_3^2\leq (\epsilon_1')^2+(\epsilon_2')^2+(\epsilon_3')^2
+      </me>
+    </p>
+  </remark>
+  <p>
+    To compute a least-squares solution to <m>A\boldx=\boldy</m> we must first compute the orthogonal projection of <m>\boldy</m> onto <m>W=\CS A</m>; and this in turn requires first producing an orthogonal basis of <m>\CS A</m>, which may require using the Gram-Schmidt procedure. The following result bypasses these potentially onerous steps by  characterizing a least-squares solution to <m>A\boldx=\boldy</m> as a solution to the matrix equation
+    <me>
+      A^TA\boldx=A^T\boldy
+    </me>.
+  </p>
+  <theorem xml:id="th_leastsquares">
+    <title>Least-squares matrix formula</title>
+    <statement>
+      <p>
+        Given an <m>m\times n</m> matrix <m>A</m> and <m>m\times 1</m> column vector <m>\boldy</m>, a vector <m>\hat{\boldx}</m> is a least-squares solution to <m>A\boldx=\boldy</m> if and only if
+        <men xml:id="eq_leastsquares_matrix_equation">
+          A^TA\boldx=A^T\boldy
+        </men>.
+          In other words, we can find a least-squares solution by solving the matrix equation <xref ref="eq_leastsquares_matrix_equation"/> directly.
+      </p>
+    </statement>
+    <proof>
+      <p>
+        Let <m>W=\CS A</m>, and let <m>\hat{\boldy}=\proj_{W}(\boldy)</m>. The key observation is that a vector <m>\hat{\boldx}</m> satisfies <m>A\hat{\boldx}=\hat{\boldy}</m> if and only if
+        <me>
+          \boldy=A\hat{\boldx}+(\boldy-A\hat{\boldx})
+        </me>
+        is an orthogonal decomposition of <m>\boldy</m> with respect to <m>W=\CS A</m>; and this is true if and only if <m>\boldy-A\hat{\boldx}\in (\CS A)^\perp</m>. Thus we have
+        <md>
+          <mrow> A\hat{\boldx}=\hat{\boldy} \amp\iff \boldy-A\hat{\boldx}\in (\CS A)^\perp </mrow>
+          <mrow> \amp\iff \boldy-A\hat{\boldx}\in \NS A^T \amp ((\CS A)^\perp=\NS A^T) </mrow>
+          <mrow>  \amp\iff A^T(\boldy-A\hat{\boldx})=\boldzero </mrow>
+          <mrow>  \amp \iff A^T\boldy-A^TA\hat{\boldx}=\boldzero</mrow>
+          <mrow>  \amp \iff A^TA\hat{\boldx}=A^T\boldy</mrow>
+        </md>.
+      </p>
+    </proof>
+
+  </theorem>
+  <example>
+    <statement>
+      <p>
+        Consider again the matrix equation <m>A\boldx=\boldy</m> from <xref ref="eg_least-squares"/>. According to <xref ref="th_leastsquares"/> the least-squares solution can be found by solving the equation <m>A^TA\boldx=A^T\boldy</m> for <m>\boldx</m>. We compute
+        <md>
+          <mrow>A^TA\amp=\begin{amatrix}[rr]14\amp 0\\ 0\amp 3  \end{amatrix} \amp A^T\boldy\amp =\begin{amatrix}[r] 5\\ 6 \end{amatrix}</mrow>
+        </md>
+        and solve
+        <me>
+          \begin{amatrix}[rr]14\amp 0\\ 0\amp 3  \end{amatrix}\boldx=\begin{amatrix}[r] 5\\ 6 \end{amatrix}\iff
+            \boldx=(5/14, 2),
+        </me>
+        just as before.
+
+      </p>
+    </statement>
+
+  </example>
+
+
+</subsection>
 </section>
