@@ -22,4 +22,5 @@
     <xi:include href="s_inner_prod.ptx" />
     <xi:include href="s_ortho_basis.ptx" />
     <xi:include href="s_ortho_proj.ptx" />
+    <xi:include href="s_adjoint.ptx" />
 </chapter>

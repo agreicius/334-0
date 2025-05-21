@@ -200,12 +200,34 @@ Let <m>(V,\angvec{\, ,})</m> be an inner product space.
                 </li>
                 <li>
                     <p>
-                        <m>\angvec{v,w}=0</m> for all <m>w\in V</m>. 
+                        <m>\angvec{v,w}=\angvec{w,v}=0</m> for all <m>w\in V</m>. 
                     </p>
                 </li>
                 <li>
                     <p>
                         <m>\angvec{v,v}=0</m>.
+                    </p>
+                </li>
+            </ol>
+        </p>
+    </li>
+    <li>
+        <p>
+            Let <m>v_1,v_2\in V</m>. The following statements are equivalent. 
+            <ol>
+                <li>
+                    <p>
+                        <m>v_1=v_2</m>. 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>\angvec{v_1,w}=\angvec{v_2,w}</m> for all <m>w\in V</m>. 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>\angvec{w,v_1}=\angvec{w,v_2}</m> for all <m>w\in V</m>. 
                     </p>
                 </li>
             </ol>
@@ -245,11 +267,15 @@ Let <m>(V,\angvec{\, ,})</m> be an inner product space.
                 We prove the cycle of implications (a)<m>\implies</m>(b)<m>\implies</m>(c)<m>\implies</m>(a). The implication (a)<m>\implies</m>(b) was shown above. Furthermore, (c) follows trivially from (a) by taking <m>w=v</m>. Lastly, the implication (c)<m>\implies</m>(a) follows directly from the positivity axiom (Axiom (iv)) of the inner product definition. 
             </p>
         </li>
+        <li>
+            <p>
+                This follows in a relatively straightforward manner from (3) starting with the observation that <m>v_1=v_2</m> if and only if <m>v_1-v_2=\boldzero</m>. 
+            </p>
+        </li>
     </ol>
 </p>
 </proof>
 </theorem>
-
 </subsection>
 <subsection xml:id="ss_norm">
 <title>Norm</title>

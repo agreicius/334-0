@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_adjoint" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Adjoints</title>
+    <definition xml:id="d_lin_functional">
+    <title>Linear functional</title>
+    <statement>
+    <p>
+        Let <m>V</m> be a vector space. A <term>linear functional</term> on <m>V</m> is a linear transformation <m>\phi\colon V\rightarrow F</m> from <m>V</m> to <m>F</m>. The vector space <m>\mathcal{L}(V,F)</m> of all linear functionals on <m>V</m> is called the <term>dual space</term> of <m>V</m>, and is denoted <m>V^*</m>. 
+    </p>
+    </statement>
+    </definition>
+    
+    <theorem xml:id="th_Riesz_rep">
+    <title>Riesz representation</title>
+    <statement>
+    <p>
+    Let <m>(V,\angvec{\, ,})</m> be an inner product space. 
+    <ol>
+        <li>
+            <p>
+                For all <m>v_0\in V</m>, the function <m>\phi_{v_0}\colon V\rightarrow F</m> defined as <m>\phi_{v_0}(v)=\angvec{v,v_0}</m> is a linear functional. 
+            </p>
+        </li>
+        <li>
+            <p>
+                The function 
+                <md>
+                    <mrow>\Phi\colon V \amp \rightarrow V^*=\mathcal{L}(V,F)</mrow>
+                    <mrow> v \amp \mapsto \phi_v </mrow>
+                </md>,
+                where <m>\phi_v(v')=\angvec{v',v}</m>,
+                is an injective linear transformation. 
+            </p>
+        </li>
+        <li>
+            <p>
+                Assume <m>\dim V&lt; \infty</m>.  In this case the map <m>\Phi</m> above is an isomorphism. In particular, given a linear functional <m>\phi\colon V\rightarrow F</m>, there is a unique vector <m>v_0\in V</m> such that <m>\phi=\phi_{v_0}</m>: <ie/>, such that <m>\phi(v)=\angvec{v,v_0}</m> for all <m>v\in V</m>. 
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <proof>
+    <p>
+        <ol>
+            <li>
+                <p>
+                    This was already proved in <xref ref="th_inner_prod"/>. The current statement is just a slight reformulation of this fact, using the language of linear functionals. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    We use the 1-step technique. Given any <m>v_1,v_2\in V</m> and <m>c,d\in F</m>, the function <m>\Phi(cv_1+dv_2)=\phi_{cv_1+dv_2}</m> satisfies 
+                    <md>
+                        <mrow>\phi_{cv_1+dv_2}(v) \amp = \angvec{v,cv_1+dv+2} </mrow>
+                        <mrow> \amp = c\angvec{v,v_1}+d\angvec{v,v_2}</mrow>
+                        <mrow> \amp = c\phi_{v_1}(v)+d\phi_{v_2}(v)</mrow>
+                        <mrow> \amp =(c\phi_{v_1}+d\phi_{v_2})(v)</mrow>
+                    </md>
+                    for all <m>v\in V</m>. Thus <m>\phi_{cv_1+dv_2}=c\phi_{v_1}+d\phi_{v_2}</m>: <ie/>, <m>\Phi(cv_1+dv_2)=c\Phi(v_1)+d\Phi(v_2)</m>.
+                </p>
+                <p>
+                    To show <m>\Phi</m> is injective, we will show that <m>\NS \Phi=\{\boldzero\}</m>. Given any <m>v_0\in V</m>, we have 
+                    <md>
+                        <mrow>\Phi(v_0)=\boldzero \amp \iff \phi_{v_0}=0_{V,F}</mrow>
+                        <mrow> \amp \iff \phi_{v_0}(v)=0 \text{ for all } v\in V</mrow>
+                        <mrow> \amp \iff \angvec{v,v_0}=0 \text{ for all } v\in V</mrow>
+                        <mrow> \amp \iff v_0=\boldzero \amp (<xref ref="th_inner_prod" text="global"/>) </mrow>
+                    </md>.
+                    Thus <m>\NS \Phi=\{\boldzero\}</m> and <m>\Phi</m> is injective. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Let <m>\dim V=n&lt; \infty</m>. Since <m>\dim F=1</m>, by <xref ref="th_matrix_reps_isom"/> we have 
+                    <me>
+                        \dim V^*=\dim \mathcal{L}(V,F)=n\cdot 1=n=\dim V
+                    </me>.
+                    Since <m>\Phi</m> is an injective linear transformation between two vector spaces of the same finite dimension, it follows from <xref ref="cor_inj_surj_bij"/> that <m>\Phi</m> is bijective, and hence an isomorphism.
+                </p>
+            </li>
+        </ol>
+    </p>
+    </proof>
+    </theorem>
+    <theorem xml:id="th_adjoint">
+    <title>Adjoint of a transformation</title>
+    <statement>
+    <p>
+    Let <m>(V,\angvec{\, ,}_V)</m> and <m>(W,\angvec{\, ,}_W</m> be inner product spaces, and assume <m>V</m> is finite dimensional. Given any <m>T\in \mathcal{V,W}</m>, there is a unique <m>T^*\colon W\rightarrow V</m> satisfying 
+    <mdn>
+        <mrow xml:id="eq_adj_T">\angvec{T(v),w}_W \amp =\angvec{v,T^*(w)}_V</mrow>
+        <mrow xml:id="eq_adj_Tstar">\angvec{T^*(w),v}_V \amp =\angvec{w,T(v)}_V</mrow>
+    </mdn>.
+    </p>
+    </statement>
+    <proof>
+        <p>
+            In the argument that follows, we will drop the subscripts on <m>\angvec{\, ,}_V</m> and <m>\angvec{\, ,}_W</m>. The reader can easily determine which inner product is meant by determining which space (<m>V</m> or <m>W</m>) the input vectors are elements of. 
+        </p>
+        <p>
+        First we prove the existence of <m>T^*</m> by defining it explicitly via a somewhat involved recipe. Given any <m>w\in W</m>, the function 
+        <me>
+            f_w(v)=\angvec{T(v),w}
+        </me>
+        is easily seen to be a linear functional on <m>V</m>: <ie/>, <m>f_w\in V^*=\mathcal{L}(V,F)</m>. By <xref ref="th_Riesz_rep" text="title"/> there is a unique vector <m>v_w\in V</m> satisfying <m>f_w(v)=\angvec{v,v_w}</m> for all <m>v\in V</m>. We define <m>T^*(w)=v_0</m>.
+    </p>
+    <p> Having defined <m>T^*\colon W\rightarrow V</m> as a function,, we now show that it satisfies equation <xref ref="eq_adj_T"/>; equation <xref ref="eq_adj_Tstar"/> then follows immediately from the conjugate symmetry property. Given any <m>v,w\in V</m>, we have 
+        <md>
+            <mrow>\angvec{T(v),w} \amp = f_w(v) \amp (f_w(v)=\angvec{T(v),w})</mrow>
+            <mrow> \amp =\angvec{v,v_w} \amp (<xref ref="th_Riesz_rep" text="global"/></mrow>
+            <mrow> \amp =\angvec{v,T^*(w)} \amp (\text{def. } T^*) </mrow>
+        </md>,
+        as desired.
+    </p>
+    <p>
+    Next, we use the fact that <m>T^*</m> satisfies <xref ref="eq_adj_Tstar"/> to show it is linear. Given any <m>w_1,w_2\in W</m> and <m>c,d\in F</m>, we have
+    <md>
+        <mrow>\angvec{T^*(cw_1+dw_2),v} \amp = \angvec{cw_1+dw_2,T(v)}</mrow>
+        <mrow> \amp = c\angvec{w_1,T(v)}+d\angvec{w_2,T(v)}</mrow>
+        <mrow> \amp = c\angvec{T^*(w_1),v}+d\angvec{T^*(w_2),v}</mrow>
+        <mrow> \amp =\angvec{cT^*(w_1)+dT^*(w_2),v}</mrow>
+    </md>
+    for all <m>v</m>. It follows from <xref ref="th_inner_prod"/> that <m>T^*(cw_1+dw_2)=cT^*(w_1)+dT^*(w_2)</m>. Thus <m>T^*</m> is linear. 
+    </p>
+    <p>
+        Lastly, we show that <m>T^*</m> is the unique element of <m>\mathcal{L}(W,V)</m> satisfying <xref ref="eq_adj_T"/>. If <m>S\in \mathcal{L}(W,V)</m> satisfies 
+        <me>
+            \angvec{T(v),w}_W=\angvec{v,S(w)}_V
+        </me>
+        for all <m>v\in V</m> and <m>w\in W</m>, then for all <m>w\in W</m> and <m>v\in V</m> we have 
+        <md>
+            <mrow> \angvec{v,S(w)-T^*(w)} \amp =\angvec{v,S(w)}-\angvec{v,T^*(w)} </mrow>
+            <mrow> \amp = \angvec{T(v),w}-\angvec{T(v),w}</mrow>
+            <mrow> \amp = 0</mrow>
+        </md>.
+        It follows that <m>S(w)-T^*(w)=0</m> for all <m>w\in W</m>, and hence that <m>S=T^*</m>.
+    </p>
+    </proof>
+    </theorem>
+    
+    <definition xml:id="d_adjoint">
+    <title>Adjoint of transformation</title>
+    <statement>
+    <p>
+    Let <m>(V,\angvec{\, ,}_V)</m> and <m>(W,\angvec{\, ,}_W</m> be inner product spaces. Given <m>T\in \mathcal{L}(V,W)</m>, we call a transformation <m>T^*\in \mathcal{L}(W,V)</m>  the <term>adjoint</term> of <m>T</m> if it satisfies properties <xref first="eq_adj_T" last="eq_adj_Tstar"/>. Furthermore, we call each of the equivalent properties <xref first="eq_adj_T" last="eq_adj_Tstar"/> the <term>adjoint property</term>. 
+    </p>
+    </statement>
+    </definition>
+    <p>
+        For our first example of computing an adjoint, we consider a linear transformation <m>T\colon F^n\rightarrow F^m</m>. Recall that <m>T=T_A</m> for a unique matrix <m>A\in F^{m,n}</m>. By <xref ref="th_adjoint"/>, there is an adjoint transformation <m>T^*\colon F^{m}\rightarrow F^{n}</m>. What is the matrix <m>A'</m> such that <m>T^*=T_{A'}</m>? This is answered in <xref ref="th_adjoint_matrix"/>, which makes use of the following definition. 
+    </p>
+    <definition xml:id="d_adjoint_matrix">
+    <title>Conjugate and adjoint of a matrix</title>
+    <statement>
+    <p>
+    Let <m>F\in \{\R,\C\}</m>, and let <m>A=[a_{ij}]\in F^{m,n}</m>.
+    </p>
+    <p>
+        The <term>conjugate</term> of <m>A</m>, denoted <m>\overline{A}</m> is the <m>m\times n</m> matrix defined as  
+        <me>\overline{A}=[\overline{a_{ij}}]\in F^{m,n}</me>.
+        The <term>adjoint</term> of <m>A</m>, denoted <m>A^*</m>, is the <m>n\times m</m> matrix defined as 
+        <me>
+            A^*=(\overline{A})^T=\overline{(A^T)}
+        </me>.
+    </p>
+    </statement>
+    </definition>
+    <theorem xml:id="th_adjoint_matrix">
+    <title>Adjoint of a matrix transformation</title>
+    <statement>
+    <p>
+    Assume <m>F\in \{\R,\C\}</m>. Let <m>T\in\mathcal{L}(F^n, F^m)</m>, and let <m>A\in F^{m,n}</m> be the unique matrix such that <m>T=T_A</m>. The adjoint <m>T^*\in \mathcal{L}(F^m, F^n)</m>, taken with respect to the standard inner products on <m>F^n</m> and <m>F^m</m>, is the matrix transformation <m>T_{A^*}</m>.
+    </p>
+    </statement>
+    <proof>
+    <p>
+        By uniqueness of the adjoint, it suffices to show that <m>T_{A^*}</m> satisfies the adjoint properties: that is, that 
+        <md>
+            <mrow>\angvec{T_A(\boldx),\boldy} \amp =\angvec{\boldx,T_{A^*}\boldy}</mrow>
+        </md>
+        for all <m>\boldx\in F^n</m> and <m>\boldy\in F^m</m>. First observe that the standard inner product on these spaces can be computed as a matrix multiplication as follows: 
+        <me>
+            \angvec{\boldx,\boldy}=\boldx^T\,\overline{y}
+        </me>.
+        It 
+        
+    </p>
+    </proof>
+    </theorem>
+    
+    
+
+</section>
