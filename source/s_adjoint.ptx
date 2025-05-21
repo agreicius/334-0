@@ -2,6 +2,328 @@
 
 <section xml:id="s_adjoint" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Adjoints</title>
+    
+<subsection xml:id="ss_adjoints">
+<title>Adjoints</title>
+ 
+    <definition xml:id="d_adjoint">
+    <title>Adjoint of transformation</title>
+    <statement>
+    <p>
+    Let <m>(V,\angvec{\, ,}_V)</m> and <m>(W,\angvec{\, ,}_W)</m> be inner product spaces. Given <m>T\in \mathcal{L}(V,W)</m>, we call a function <m>T^*\colon W\rightarrow V</m> an <term>adjoint</term> of <m>T</m> if it satisfies 
+    <mdn>
+        <mrow xml:id="eq_adj_T">\angvec{T(v),w}_W \amp =\angvec{v,T^*(w)}_V</mrow>
+        <mrow xml:id="eq_adj_Tstar">\angvec{T^*(w),v}_V \amp =\angvec{w,T(v)}_V</mrow>
+    </mdn>
+    for all <m>v\in V</m> and <m>w\in W</m>. Furthermore, we call each of the equivalent properties <xref first="eq_adj_T" last="eq_adj_Tstar"/> the <term>adjoint property</term>. 
+    </p>
+    </statement>
+    </definition>
+    
+    <remark>
+        <title>Adjoint properties</title>
+        <p>
+            To see that properties <xref first="eq_adj_T" last="eq_adj_Tstar"/> are equivalent, note that 
+            <md>
+                <mrow>\angvec{v,T^*(w)}_V \amp =\angvec{T(v),w}_W</mrow>
+                <mrow> \amp \iff \overline{\angvec{v,T^*(w)}}_V=\overline{\angvec{T(v),w}}_W</mrow>
+                <mrow> \amp \iff \angvec{T^*(w),v}_V=\angvec{w,T(v)}_W \amp (\text{conj. sym.})</mrow>
+            </md>.
+        </p>
+    </remark>
+
+    <convention>
+        <title>Adjoints</title>
+    <p>
+        As is evident in the statement of <xref ref="d_adjoint"/>, discussion of adjoint transformations generally involves two different inner product spaces with two different inner products. Although we will be careful to use subscript notation in statements of definitions or theory, henceforth we will drop the subscripts on <m>\angvec{\, ,}_V</m> and <m>\angvec{\, ,}_W</m> when constructing proofs or computing examples. The reader can easily determine which inner product is meant by determining which space (<m>V</m> or <m>W</m>) the input vectors are elements of. 
+    </p>
+    </convention>
+    <p>
+        The adjoint of a linear transformation <m>T\colon V\rightarrow W</m> does not always exist. However, as we show in <xref ref="th_adjoint"/>, <m>T^*</m> is guaranteed to exist if <m>\dim V&lt; \infty</m>. The next theorem gives us information about adjoints when they do exist, and as such will be littered with phrase of the sort <q>if the adjoint exists</q>. 
+    </p>
+    <theorem xml:id="th_adjoint_props">
+    <title>Adjoint properties</title>
+    <statement>
+    <p>
+    Let <m>(V,\angvec{\, }_V)</m>, <m>(W,\angvec{\, }_W)</m>, and <m>(U,\angvec{\, ,}_U)</m> be inner product spaces, let <m>T\in \mathcal{L}(V,W)</m>, and let <m>S\in \mathcal{L}(W,U)</m>.
+    <ol>
+        <li>
+            <p>
+             There is at most one adjoint of <m>T</m>: <ie/>, if there exists a function <m>T^*</m> satisfying the adjoint property, then it is unique.  
+            </p>
+        </li>
+        <li>
+            <p>
+                An adjoint of <m>T</m> is linear: <ie/>, if <m>T^*</m> exists, then <m>T^*\in \mathcal{W,V}</m> 
+            </p>
+        </li>
+        <li>
+            <p>
+                If <m>T^*</m> exists, then so does <m>(T^*)^*</m>. Moreover, in this case we have
+                <men xml:id="eq_adj_adj">
+                    (T^*)^*=T
+                </men>.
+            </p>
+        </li>
+        <li>
+            <p>
+                If <m>T^*</m> and <m>S^*</m> exist, then so does <m>(ST)^*</m>. Moreover, in this case we have  
+                <men>
+                    (ST)^*=T^*S^*
+                </men>.
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <proof>
+    <p>
+        <ol>
+            <li>
+                <p>
+                     Suppose <m>T^*\colon W\rightarrow V</m> and <m>S\colon W\rightarrow V</m> are adjoint functions of <m>T</m>: <ie/>, <m>T^*</m> and <m>S</m> both satisfy <xref ref="eq_adj_T"/>. It follows that for all <m>v\in V</m> and <m>w\in W</m>, we have 
+        <md>
+            <mrow> \angvec{v,S(w)-T^*(w)} \amp =\angvec{v,S(w)}-\angvec{v,T^*(w)} </mrow>
+            <mrow> \amp = \angvec{T(v),w}-\angvec{T(v),w} \amp (S, T^* \text{ adj. of } T) </mrow>
+            <mrow> \amp = 0</mrow>
+        </md>.
+        Since <m>\angvec{v,S(w)-T^*(w)}=0</m> for all <m>v</m>, it follows from <xref ref="th_inner_prod"/> that <m>S(w)-T^*(w)=0</m> for all <m>w\in W</m>, and hence that <m>S=T^*</m>, as desired.
+    </p>
+            </li>
+            <li>
+                <p>
+                    Assume an adjoint <m>T^*\colon V\rightarrow W</m> exists. We use the 1-step technique to show <m>T^*</m> is linear. Given any <m>w_1,w_2\in W</m> and <m>c,d\in F</m>, we will show that <m>T^*(cw_1+dw_2)=cT^*(w_1)+dT^*(w_2)</m> by proving that 
+                    <me>
+                        \angvec{T^*(cw_1+dw_2),v}=\angvec{cT^*(w_1)+dT^*(w_2),v}
+                    </me>
+                    for all <m>v\in V</m>, using <xref ref="th_inner_prod"/>. To this end, we have 
+    <md>
+        <mrow>\angvec{T^*(cw_1+dw_2),v} \amp = \angvec{cw_1+dw_2,T(v)}</mrow>
+        <mrow> \amp = c\angvec{w_1,T(v)}+d\angvec{w_2,T(v)}</mrow>
+        <mrow> \amp = c\angvec{T^*(w_1),v}+d\angvec{T^*(w_2),v}</mrow>
+        <mrow> \amp =\angvec{cT^*(w_1)+dT^*(w_2),v}</mrow>
+    </md>
+    for all <m>v</m>. Thus <m>T^*(cw_1+dw_2)=cT^*(w_1)+dT^*(w_2)</m>, as desired. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Assume <m>T^*</m> and <m>S^*</m> exists. By uniqueness of adjoints,  it suffices to show that <m>T^*S^*</m> satisfies the adjoint property. We have 
+                    <md>
+                        <mrow>\angvec{v,T^*S^*(u)} \amp = \angvec{v,T^*(S^*(u))} </mrow>
+                        <mrow> \amp =\angvec{S(v),T^*(u)}</mrow>
+                        <mrow> \amp =\angvec{T(S(v)),u}</mrow>
+                        <mrow> \amp = \angvec{TS(v),u}</mrow>
+                    </md>
+                    for all <m>v\in V</m> and <m>u\in U</m>. Since this property uniquely defines the adjoint <m>(TS)^*</m>, we conclude that <m>(TS)^*=S^*T^*</m>. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Assume <m>T^*</m> exists. From (2) we know that <m>T^*</m> is linear. That <m>T</m> is its adjoint follows now from the equivalence of the two properties <xref first="eq_adj_T" last="eq_adj_Tstar"/>:<ie/>, we can think of the first as saying that <m>T^*</m> is an adjoint of <m>T</m>, and the second as saying that <m>T</m> is an adjoint of <m>T^*</m>. 
+                </p>
+            </li>
+            
+        </ol>
+    </p>
+    </proof>
+    </theorem>
+    <p>
+        Before getting to our existence result, we consider a few examples where we can determine an adjoint map explicitly. 
+        For our first example of computing an adjoint, we consider a linear transformation <m>T\colon F^n\rightarrow F^m</m>. Recall that <m>T=T_A</m> for a unique matrix <m>A\in F^{m,n}</m>. By <xref ref="th_adjoint"/>, there is an adjoint transformation <m>T^*\colon F^{m}\rightarrow F^{n}</m>. What is the matrix <m>A'</m> such that <m>T^*=T_{A'}</m>? This is answered in <xref ref="th_adjoint_matrix"/>, which makes use of the following definition. 
+    </p>
+    <definition xml:id="d_adjoint_matrix">
+    <title>Conjugate and adjoint of a matrix</title>
+    <statement>
+    <p>
+    Let <m>F\in \{\R,\C\}</m>, and let <m>A=[a_{ij}]\in F^{m,n}</m>.
+    </p>
+    <p>
+        The <term>conjugate</term> of <m>A</m>, denoted <m>\overline{A}</m> is the <m>m\times n</m> matrix defined as  
+        <me>\overline{A}=[\overline{a_{ij}}]\in F^{m,n}</me>.
+        The <term>adjoint</term> of <m>A</m>, denoted <m>A^*</m>, is the <m>n\times m</m> matrix defined as 
+        <me>
+            A^*=(\overline{A})^T=\overline{(A^T)}
+        </me>.
+    </p>
+    </statement>
+    </definition>
+    <remark>
+        <title>Adjoint matrix</title>
+        <p>
+            Thanks to the definition <m>A^*=(\overline{A})^T=\overline{(A^T)}</m>, many elementary properties of the adjoint operation follow from related properties enjoyed by the transpose operator, with complex conjugation intervening to spice things up. We leave it to the reader to prove that the following properties for matrices <m>A,B</m> (of appropriate size) and scalars <m>c,d</m>:
+            <mdn>
+                <mrow xml:id="eq_conjugate_linear">\overline{cA+dB} \amp =\overline{c}\overline{A}+\overline{d}\overline{B} </mrow>
+                <mrow xml:id="eq_adjoint_linear">(cA+dB)^* \amp =\overline{c}A^*+\overline{d}B^*</mrow>
+                <mrow xml:id="eq_adjoint_prod">(AB)^* \amp =B^*A^*</mrow>
+                <mrow xml:id="eq_adj_adj_matrix">(A^*)^* \amp =A</mrow>
+            </mdn>.
+        </p>
+    </remark>
+    <theorem xml:id="th_adjoint_inner">
+    <title>Standard inner product</title>
+    <statement>
+    <p>
+    Let <m>F\in \{\R, \C\}</m>, and let <m>\angvec{\, ,}</m> be the standard inner product on <m>F^n</m> as defined in <xref ref="d_dot"/>. For all <m>\boldx, \boldy\in F^n</m>, we have 
+    <men xml:id="eq_standard_inner_product_matrix">
+        \angvec{\boldx,\boldy}=\boldy^*\,\boldx
+    </men>.
+    </p>
+    </statement>
+    <proof>
+    <p>
+        Let <m>\boldx=(x_1,x_2,\dots, x_n)</m> and <m>\boldy=(y_1,y_2,\dots, y_n)</m>. Treating <m>\boldx</m> and <m>\boldy</m> as column vectors  (<xref ref="fiat_col_vecs_tuples"/>), we have 
+        <md>
+            <mrow>\boldy^*\,\boldx\amp =\rowvec{\overline{y_1}, \dots, \overline{y_n}}\,\colvec{x_1\\ \vdots \\ x_n} </mrow>
+            <mrow> \amp = \sum_{i=1}^n\overline{y_i}x_i</mrow>
+            <mrow> \amp = \sum_{i=1}^nx_i\overline{y_i}</mrow>
+            <mrow> \amp =\angvec{\boldx, \boldy}</mrow>
+        </md>.
+    </p>
+    </proof>
+    </theorem>
+    
+    <theorem xml:id="th_adjoint_matrix">
+    <title>Adjoint of a matrix transformation</title>
+    <statement>
+    <p>
+    Assume <m>F\in \{\R,\C\}</m>. Let <m>T\in\mathcal{L}(F^n, F^m)</m>, and let <m>A\in F^{m,n}</m> be the unique matrix such that <m>T=T_A</m>. The adjoint <m>T^*\in \mathcal{L}(F^m, F^n)</m>, taken with respect to the standard inner products on <m>F^n</m> and <m>F^m</m>, is the matrix transformation <m>T_{A^*}</m>.
+    </p>
+    </statement>
+    <proof>
+    <p>
+        By uniqueness of the adjoint, it suffices to show that <m>T_{A^*}</m> satisfies the adjoint property: that is, that 
+        <md>
+            <mrow>\angvec{T_A(\boldx),\boldy} \amp =\angvec{\boldx,T_{A^*}\boldy}</mrow>
+        </md>
+        for all <m>\boldx\in F^n</m> and <m>\boldy\in F^m</m>. We have 
+        <md>
+            <mrow>\angvec{\boldx,T_{A^*}\boldy} \amp =\angvec{\boldx,A^*\boldy} </mrow>
+            <mrow> \amp = (A^*\boldy)^*\boldx \amp (<xref ref="th_adjoint_inner" text="global"/>)</mrow>
+            <mrow> \amp =\boldy^* (A^*)^*\boldx \amp <xref ref="eq_adjoint_prod"/> </mrow>
+            <mrow> \amp = \boldy^* A\boldx \amp <xref ref="eq_adj_adj_matrix"/></mrow>
+            <mrow> \amp = \angvec{A\boldx, \boldy} \amp (<xref ref="th_adjoint_inner" text="global"/>)</mrow>
+            <mrow> \amp = \angvec{T_A(\boldx), \boldy}</mrow>
+        </md>.
+    </p>
+    </proof>
+</theorem>
+<remark>
+    <title>Adjoint of matrix transformation</title>
+    <p>
+        As usual, observe that if <m>F=\R</m> complex conjugation operation can be disregarded. Let's give a quick summary of what the previous definitions and theorems boil down to in this setting. 
+        <ul>
+            <li>
+                <p>
+                    Given <m>A\in \R^{m,n}</m>, we have <m>A^*=A^T</m>. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Given <m>\boldx, \boldy\in \R^n</m>, we have <m>\boldx\cdot \boldy=\boldx^T\boldy</m>. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Given <m>T_A\colon \R^n\rightarrow \R^m</m>, we have <m>T_A^*=T_{A^T}</m>. 
+                </p>
+            </li>
+        </ul>
+    </p>
+</remark>
+<p>
+        We now consider some more exotic/abstract examples. 
+</p>
+    <example xml:id="eg_adjoint_inclusion">
+    <title>Adjoint of inclusion map</title>
+    <statement>
+    <p>
+    Let <m>W</m> be a finite-dimensional subspace of the inner product space <m>(V,\angvec{\, })</m>, and let <m>i\colon W\rightarrow V</m> be the inclusion map. Given an explicit description of the adjoint map <m>i^*\colon V\rightarrow W</m>. 
+    </p>
+    </statement>
+    <solution>
+    <p>
+    Since <m>W</m> is finite dimensional, we have <m>V=W\oplus W^\perp</m>, and can define the orthogonal projection map <m>\proj_W\colon V\rightarrow W</m>. We claim that <m>i^*=\proj_W</m>, and prove our claim by showing that 
+    <me>
+        \angvec{i(w'),v}=\angvec{w,\proj_W(v)}
+    </me>
+    for all <m>w'\in W</m> and <m>v\in V</m>. Given any <m>v\in V</m>, we write <m>v=w+w^\perp</m>, where by definition <m>w=\proj_W(v)\in W</m> and <m>w^\perp\in W^\perp</m>. It follows that for any <m>w'\in W</m>, we have 
+    <md>
+        <mrow>\angvec{i(w'),v} \amp =\angvec{w',v}</mrow>
+        <mrow> \amp = \angvec{w',w+w^\perp}</mrow>
+        <mrow> \amp =\angvec{w',w}+\angvec{w',w^\perp}</mrow>
+        <mrow> \amp =\angvec{w',w} \amp (\angvec{w',w^\perp}=0)</mrow>
+        <mrow> \amp = \angvec{w',\proj_W(v)}</mrow>
+    </md>,
+    as desired. 
+    </p>
+    </solution>
+    </example>
+    
+    <example xml:id="eg_adjoint_deriv">
+    <title>Derivative operator</title>
+    <statement>
+    <p>
+    Let <m>W</m> be the set of functions <m>C^\infty(\R)</m> of period 1. The operation 
+    <me>
+        \angvec{f,g}=\int_0^1f(x)g(x)\, dx
+    </me>
+    defines an inner product on <m>W</m>. It is easy to show that if <m>f\in W</m>, then <m>f'\in W</m>: <ie/>, the derivative of a <m>C^\infty</m> period-1 function is a <m>C^\infty</m> period-1 function. Thus we can define a linear transformation 
+    <md>
+        <mrow>T\colon W \amp \rightarrow W</mrow>
+        <mrow>f \amp \mapsto f'</mrow>
+    </md>.
+    Show that <m>T^*=-T</m>. 
+    </p>
+    </statement>
+    <solution>
+    <p>
+    Observe that <m>-T(g)=-g'</m>, by definition.  We must show that <m>-T</m> satisfies the adjoint property with respect to <m>T</m>. Given any <m>f,g\in W</m>, we have 
+    <md>
+        <mrow>\angvec{T(f),g} \amp = \int_0^1f'(x)g(x)\, dx</mrow>
+        <mrow> \amp = f(x)g(x)\Bigr\vert_0^1-\int_0^1f(x)g'(x)\, dx \amp (\text{int. by parts.})</mrow>
+        <mrow> \amp = 0+\int_0^1f(x)(-g'(x))\, dx \amp (f(0)=f(1), g(0)=g(1))</mrow>
+        <mrow> \amp = \angvec{f,-T(g)} \amp (-T(g)=-g')</mrow>
+    </md>.
+    </p>
+    </solution>
+    </example>
+    
+    <example xml:id="eg_adjoint_integration_kernel">
+    <title>Integral transformation</title>
+    <statement>
+    <p>
+    Let <m>I=[a,b]</m> be a closed interval in <m>\R</m>. Let  
+    <me>
+        K\colon I\times I\rightarrow \R
+    </me>,
+    be a continuous function. Given any <m>f\in C([a,b])</m>, you can show that the integral function 
+    <me>
+        F(x)=\int_a^bF(x,y)f(y)\, dy
+    </me>
+    is continuous on <m>[a,b]</m> and that the resulting map 
+    <md>
+        <mrow>T\colon C([a,b]) \amp\rightarrow C([a,b]) </mrow>
+        <mrow>f \amp \mapsto \int_a^bF(x,y)\, dy</mrow>
+    </md>
+    is a linear transformation. Show, using Fubini's theorem for double integrals, that the adjoint of <m>T</m> is the function 
+    <md>
+        <mrow>T^*\colon C([a,b]) \amp \rightarrow C([a,b])</mrow>
+        <mrow>g  \amp \mapsto \int_a^b F(y,x)g(x)\, dy </mrow>
+    </md>.
+    </p>
+    </statement>
+    <solution>
+    <p>
+    This is left as an exercise. 
+    </p>
+    </solution>
+    </example>
+</subsection>
+    <subsection xml:id="ss_existence">
+    <title>Existence of adjoints</title>
+    
+    
     <definition xml:id="d_lin_functional">
     <title>Linear functional</title>
     <statement>
@@ -29,13 +351,16 @@
                     <mrow>\Phi\colon V \amp \rightarrow V^*=\mathcal{L}(V,F)</mrow>
                     <mrow> v \amp \mapsto \phi_v </mrow>
                 </md>,
-                where <m>\phi_v(v')=\angvec{v',v}</m>,
-                is an injective linear transformation. 
+                where <m>\phi_v(v')=\angvec{v',v}</m> is injective and satisfies 
+                <me>
+                    \Phi(cv_1+dv_2)=\overline{c}v_1+\overline{d}v_2
+                </me>. 
+                In other words, <m>\Phi</m> is <em>conjugate linear</em>.
             </p>
         </li>
         <li>
             <p>
-                Assume <m>\dim V&lt; \infty</m>.  In this case the map <m>\Phi</m> above is an isomorphism. In particular, given a linear functional <m>\phi\colon V\rightarrow F</m>, there is a unique vector <m>v_0\in V</m> such that <m>\phi=\phi_{v_0}</m>: <ie/>, such that <m>\phi(v)=\angvec{v,v_0}</m> for all <m>v\in V</m>. 
+                Assume <m>\dim V&lt; \infty</m>.  In this case the map <m>\Phi</m> above is bijective. In particular, given a linear functional <m>\phi\colon V\rightarrow F</m>, there is a unique vector <m>v_0\in V</m> such that <m>\phi=\phi_{v_0}</m>: <ie/>, such that <m>\phi(v)=\angvec{v,v_0}</m> for all <m>v\in V</m>. 
             </p>
         </li>
     </ol>
@@ -54,21 +379,21 @@
                     We use the 1-step technique. Given any <m>v_1,v_2\in V</m> and <m>c,d\in F</m>, the function <m>\Phi(cv_1+dv_2)=\phi_{cv_1+dv_2}</m> satisfies 
                     <md>
                         <mrow>\phi_{cv_1+dv_2}(v) \amp = \angvec{v,cv_1+dv+2} </mrow>
-                        <mrow> \amp = c\angvec{v,v_1}+d\angvec{v,v_2}</mrow>
-                        <mrow> \amp = c\phi_{v_1}(v)+d\phi_{v_2}(v)</mrow>
-                        <mrow> \amp =(c\phi_{v_1}+d\phi_{v_2})(v)</mrow>
+                        <mrow> \amp = \overline{c}\angvec{v,v_1}+\overline{d}\angvec{v,v_2}</mrow>
+                        <mrow> \amp = \overline{c}\phi_{v_1}(v)+\overline{d}\phi_{v_2}(v)</mrow>
+                        <mrow> \amp =(\overline{c}\phi_{v_1}+\overline{d}\phi_{v_2})(v)</mrow>
                     </md>
-                    for all <m>v\in V</m>. Thus <m>\phi_{cv_1+dv_2}=c\phi_{v_1}+d\phi_{v_2}</m>: <ie/>, <m>\Phi(cv_1+dv_2)=c\Phi(v_1)+d\Phi(v_2)</m>.
+                    for all <m>v\in V</m>. Thus <m>\phi_{cv_1+dv_2}=\overline{c}\phi_{v_1}+\overline{d}\phi_{v_2}</m>: <ie/>, <m>\Phi(cv_1+dv_2)=\overline{c}\Phi(v_1)+\overline{d}\Phi(v_2)</m>.
                 </p>
                 <p>
-                    To show <m>\Phi</m> is injective, we will show that <m>\NS \Phi=\{\boldzero\}</m>. Given any <m>v_0\in V</m>, we have 
+                    We now show <m>\Phi</m> is injective. Given <m>v_1,v_2\in V</m>, we have 
                     <md>
-                        <mrow>\Phi(v_0)=\boldzero \amp \iff \phi_{v_0}=0_{V,F}</mrow>
-                        <mrow> \amp \iff \phi_{v_0}(v)=0 \text{ for all } v\in V</mrow>
-                        <mrow> \amp \iff \angvec{v,v_0}=0 \text{ for all } v\in V</mrow>
-                        <mrow> \amp \iff v_0=\boldzero \amp (<xref ref="th_inner_prod" text="global"/>) </mrow>
+                        <mrow>\Phi(v_1)=\Phi(v_2) \amp \iff  \phi_{v_1}=\phi_{v_2}</mrow>
+                        <mrow> \amp \iff \phi_{v_1}(v)=\phi_{v_2}(v) \text{ for all } v\in V</mrow>
+                        <mrow> \amp \iff \angvec{v,v_1}=\angvec{v,v_2} \text{ for all } v\in V</mrow>
+                        <mrow> \amp \iff v_1=v_2 \amp (<xref ref="th_inner_prod" text="global"/>)</mrow>
                     </md>.
-                    Thus <m>\NS \Phi=\{\boldzero\}</m> and <m>\Phi</m> is injective. 
+                    Thus <m>\Phi</m> is injective. 
                 </p>
             </li>
             <li>
@@ -77,7 +402,57 @@
                     <me>
                         \dim V^*=\dim \mathcal{L}(V,F)=n\cdot 1=n=\dim V
                     </me>.
-                    Since <m>\Phi</m> is an injective linear transformation between two vector spaces of the same finite dimension, it follows from <xref ref="cor_inj_surj_bij"/> that <m>\Phi</m> is bijective, and hence an isomorphism.
+                    Since <m>\Phi</m> is conjugate linear, and not linear, we cannot invoke <xref ref="cor_inj_surj_bij"/> directly to conclude that it is surjective. However, the same result does in fact apply to conjugate linear maps for the following two reasons (left to the reader to prove):
+                    <ul>
+                        <li>
+                            <p>
+                                the image of a conjugate linear map is a subspace of the codomain (just as with linear maps);
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                the image of a linearly independent tuple under an injective conjugate linear map is a linearly independent tuple.  
+                            </p>
+                        </li>
+                    </ul>
+                    Let <m>B=(v_1,v_2,\dots, v_n)</m> be a basis of <m>V</m>. From the two points above, we see that <m>\im \Phi</m> is a subspace of <m>V^*</m> containing the linearly independent tuple <m>\Phi(B)=(\Phi(v_1),\dots, \Phi(v_n))</m>. It follows that <m>\dim \im \Phi=\dim V^*=n</m>, and thus that <m>\im \Phi=V^*</m>, as desired. 
+                </p>
+                <p>
+                    Alternatively, we can give a more constructive proof of the surjectivity of <m>\Phi</m> as follows: 
+                    <ul>
+                        <li>
+                            <p>
+                                pick an orthonormal basis <m>B=(v_1,v_2,\dots, v_n)</m> of <m>V</m>; 
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                given <m>\phi\in V^*=\mathcal{L}(V,F)</m>, let <m>c_i=\phi(v_i)</m> for all <m>i\in I</m>;
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                let <m>v=\sum_{i=1}^n\overline{c_i}v_i</m>;
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                for all <m>1\leq i\leq n</m>, we have 
+                                <md>
+                                    <mrow>\phi_v(v_i) \amp =\angvec{v_i, v}</mrow>
+                                    <mrow> \amp = \angvec{v_i, \overline{c}_iv_i} \amp (i\ne j\implies \angvec{v_i, c_jv_j}=0)</mrow>
+                                    <mrow> \amp = c_i\angvec{v_i,v_i} \amp (\text{conj. homog.})</mrow>
+                                    <mrow> \amp =c_i \amp (\norm{v_i}=1)</mrow>
+                                </md>;
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                since <m>\phi</m> and <m>\phi_v</m> agree on the basis <m>B</m>, we have <m>\phi=\phi_v</m>. 
+                            </p>
+                        </li>
+
+                    </ul>
                 </p>
             </li>
         </ol>
@@ -88,17 +463,10 @@
     <title>Adjoint of a transformation</title>
     <statement>
     <p>
-    Let <m>(V,\angvec{\, ,}_V)</m> and <m>(W,\angvec{\, ,}_W</m> be inner product spaces, and assume <m>V</m> is finite dimensional. Given any <m>T\in \mathcal{V,W}</m>, there is a unique <m>T^*\colon W\rightarrow V</m> satisfying 
-    <mdn>
-        <mrow xml:id="eq_adj_T">\angvec{T(v),w}_W \amp =\angvec{v,T^*(w)}_V</mrow>
-        <mrow xml:id="eq_adj_Tstar">\angvec{T^*(w),v}_V \amp =\angvec{w,T(v)}_V</mrow>
-    </mdn>.
+    Let <m>(V,\angvec{\, ,}_V)</m> and <m>(W,\angvec{\, ,}_W)</m> be inner product spaces, and assume <m>V</m> is finite dimensional. Every linear transformation <m>T\in \mathcal{L}(V,W)</m> has a unique adjoint <m>T^*\in \mathcal{L}(W,V)</m>. 
     </p>
     </statement>
     <proof>
-        <p>
-            In the argument that follows, we will drop the subscripts on <m>\angvec{\, ,}_V</m> and <m>\angvec{\, ,}_W</m>. The reader can easily determine which inner product is meant by determining which space (<m>V</m> or <m>W</m>) the input vectors are elements of. 
-        </p>
         <p>
         First we prove the existence of <m>T^*</m> by defining it explicitly via a somewhat involved recipe. Given any <m>w\in W</m>, the function 
         <me>
@@ -109,174 +477,55 @@
     <p> Having defined <m>T^*\colon W\rightarrow V</m> as a function,, we now show that it satisfies equation <xref ref="eq_adj_T"/>; equation <xref ref="eq_adj_Tstar"/> then follows immediately from the conjugate symmetry property. Given any <m>v,w\in V</m>, we have 
         <md>
             <mrow>\angvec{T(v),w} \amp = f_w(v) \amp (f_w(v)=\angvec{T(v),w})</mrow>
-            <mrow> \amp =\angvec{v,v_w} \amp (<xref ref="th_Riesz_rep" text="global"/></mrow>
+            <mrow> \amp =\angvec{v,v_w} \amp (<xref ref="th_Riesz_rep" text="global"/>)</mrow>
             <mrow> \amp =\angvec{v,T^*(w)} \amp (\text{def. } T^*) </mrow>
         </md>,
         as desired.
     </p>
     <p>
-    Next, we use the fact that <m>T^*</m> satisfies <xref ref="eq_adj_Tstar"/> to show it is linear. Given any <m>w_1,w_2\in W</m> and <m>c,d\in F</m>, we have
-    <md>
-        <mrow>\angvec{T^*(cw_1+dw_2),v} \amp = \angvec{cw_1+dw_2,T(v)}</mrow>
-        <mrow> \amp = c\angvec{w_1,T(v)}+d\angvec{w_2,T(v)}</mrow>
-        <mrow> \amp = c\angvec{T^*(w_1),v}+d\angvec{T^*(w_2),v}</mrow>
-        <mrow> \amp =\angvec{cT^*(w_1)+dT^*(w_2),v}</mrow>
-    </md>
-    for all <m>v</m>. It follows from <xref ref="th_inner_prod"/> that <m>T^*(cw_1+dw_2)=cT^*(w_1)+dT^*(w_2)</m>. Thus <m>T^*</m> is linear. 
-    </p>
-    <p>
-        Lastly, we show that <m>T^*</m> is the unique element of <m>\mathcal{L}(W,V)</m> satisfying <xref ref="eq_adj_T"/>. If <m>S\in \mathcal{L}(W,V)</m> satisfies 
-        <me>
-            \angvec{T(v),w}_W=\angvec{v,S(w)}_V
-        </me>
-        for all <m>v\in V</m> and <m>w\in W</m>, then for all <m>w\in W</m> and <m>v\in V</m> we have 
-        <md>
-            <mrow> \angvec{v,S(w)-T^*(w)} \amp =\angvec{v,S(w)}-\angvec{v,T^*(w)} </mrow>
-            <mrow> \amp = \angvec{T(v),w}-\angvec{T(v),w}</mrow>
-            <mrow> \amp = 0</mrow>
-        </md>.
-        It follows that <m>S(w)-T^*(w)=0</m> for all <m>w\in W</m>, and hence that <m>S=T^*</m>.
+        The uniqueness and linearity of <m>T^*</m> follow from <xref ref="th_adjoint_props"/>. 
     </p>
     </proof>
     </theorem>
-    
-    <definition xml:id="d_adjoint">
-    <title>Adjoint of transformation</title>
+    <theorem xml:id="th_adjoint_null_im">
+    <title>Null space and image of adjoint</title>
     <statement>
     <p>
-    Let <m>(V,\angvec{\, ,}_V)</m> and <m>(W,\angvec{\, ,}_W</m> be inner product spaces. Given <m>T\in \mathcal{L}(V,W)</m>, we call a transformation <m>T^*\in \mathcal{L}(W,V)</m>  the <term>adjoint</term> of <m>T</m> if it satisfies properties <xref first="eq_adj_T" last="eq_adj_Tstar"/>. Furthermore, we call each of the equivalent properties <xref first="eq_adj_T" last="eq_adj_Tstar"/> the <term>adjoint property</term>. 
-    </p>
-    </statement>
-    </definition>
-    <p>
-        For our first example of computing an adjoint, we consider a linear transformation <m>T\colon F^n\rightarrow F^m</m>. Recall that <m>T=T_A</m> for a unique matrix <m>A\in F^{m,n}</m>. By <xref ref="th_adjoint"/>, there is an adjoint transformation <m>T^*\colon F^{m}\rightarrow F^{n}</m>. What is the matrix <m>A'</m> such that <m>T^*=T_{A'}</m>? This is answered in <xref ref="th_adjoint_matrix"/>, which makes use of the following definition. 
-    </p>
-    <definition xml:id="d_adjoint_matrix">
-    <title>Conjugate and adjoint of a matrix</title>
-    <statement>
-    <p>
-    Let <m>F\in \{\R,\C\}</m>, and let <m>A=[a_{ij}]\in F^{m,n}</m>.
-    </p>
-    <p>
-        The <term>conjugate</term> of <m>A</m>, denoted <m>\overline{A}</m> is the <m>m\times n</m> matrix defined as  
-        <me>\overline{A}=[\overline{a_{ij}}]\in F^{m,n}</me>.
-        The <term>adjoint</term> of <m>A</m>, denoted <m>A^*</m>, is the <m>n\times m</m> matrix defined as 
-        <me>
-            A^*=(\overline{A})^T=\overline{(A^T)}
-        </me>.
-    </p>
-    </statement>
-    </definition>
-    <theorem xml:id="th_adjoint_inner">
-    <title>Standard inner product</title>
-    <statement>
-    <p>
-    Let <m>F\in \{\R, \C\}</m>, and let <m>\angvec{\, ,}</m> be the standard inner product on <m>F^n</m>. For all <m>\boldx, \boldy\in F^n</m>, we have 
-    <men xml:id="eq_standard_inner_product_matrix">
-        \angvec{\boldx,\boldy}=\boldy^*\,\boldx
-    </men>.
+    Let <m>(V,\angvec{\, ,}_V)</m> and <m>(W,\angvec{\, ,})</m> be inner product spaces, and assume <m>V</m> is finite dimensional. Given <m>T\in \mathcal{L}(V,W)</m>, let <m>T^*\in\mathcal{L}(W,V)</m> be its adjoint. We have 
+    <mdn>
+        <mrow xml:id="eq_null_adjoint">\NS T^* \amp =(\im T)^\perp</mrow>
+        <mrow xml:id="eq_im_adjoint">\im T^* \amp =(\NS T)^\perp</mrow>
+    </mdn>.
     </p>
     </statement>
     <proof>
     <p>
-        Let <m>\boldx=(x_1,x_2,\dots, x_n)</m> and <m>\boldy=(y_1,y_2,\dots, y_n)</m>. Treating <m>\boldx</m> and <m>\boldy</m> as column vectors  (<xref ref="fiat_col_vecs_tuples"/>), we have 
-        <md>
-            <mrow>\boldy^*\,\boldx\amp =\rowvec{\overline{y_1}, \dots, \overline{y_n}}\,\colvec{x_1\\ \vdots \\ x_n} </mrow>
-            <mrow> \amp = \sum_{i=1}^n\overline{y_i}x_i</mrow>
-        </md>
-    </p>
+            Assume <m>T^*</m> exists. We first prove that <m>\NS T^*=\im T^\perp</m>. We have 
+            <md>
+                <mrow>w\in \NS T^* \amp  \iff T^*(w)=\boldzero</mrow>
+                <mrow> \amp \iff \angvec{T^*(w),v}=\boldzero \text{ for all } v\in V</mrow>
+                <mrow> \amp \iff \angvec{w,T(v)}=0 \text{ for all } v\in V \amp (\text{adj. prop.})</mrow>
+                <mrow> \amp \iff \angvec{w,u}=0 \text{ for all } u\in \im T \amp (\text{def. } \im T)</mrow>
+                <mrow> \amp \iff w\in \im T^\perp</mrow>
+            </md>.
+            Thus <m>\NS T^*=\im T^\perp</m>.
+        </p>
+        <p>
+            To prove that <m>\im T^*=\NS T^\perp</m>, we use the fact that <m>T=(T^*)^\perp</m> and apply the result above to compute 
+            <md>
+                <mrow>\NS T \amp =\NS (T^*)^*</mrow>
+                <mrow> \amp = (\im T^*)^\perp</mrow>
+            </md>.
+            Thus <m>\NS T=(\im T^*)^\perp</m>. Since <m>(\im T^*)^\perp\subseteq V</m> is finite dimensional, we have <m>((\im T^*)^\perp)^\perp=\im T^*</m>, and thus 
+            <me>
+                \im T^*=((\im T^*)^\perp)^\perp=\NS T^\perp
+            </me>,
+            as desired.
+        </p>
     </proof>
     </theorem>
+    </subsection>
     
-    <theorem xml:id="th_adjoint_matrix">
-    <title>Adjoint of a matrix transformation</title>
-    <statement>
-    <p>
-    Assume <m>F\in \{\R,\C\}</m>. Let <m>T\in\mathcal{L}(F^n, F^m)</m>, and let <m>A\in F^{m,n}</m> be the unique matrix such that <m>T=T_A</m>. The adjoint <m>T^*\in \mathcal{L}(F^m, F^n)</m>, taken with respect to the standard inner products on <m>F^n</m> and <m>F^m</m>, is the matrix transformation <m>T_{A^*}</m>.
-    </p>
-    </statement>
-    <proof>
-    <p>
-        By uniqueness of the adjoint, it suffices to show that <m>T_{A^*}</m> satisfies the adjoint properties: that is, that 
-        <md>
-            <mrow>\angvec{T_A(\boldx),\boldy} \amp =\angvec{\boldx,T_{A^*}\boldy}</mrow>
-        </md>
-        for all <m>\boldx\in F^n</m> and <m>\boldy\in F^m</m>. First observe that the standard inner product on these spaces can be computed as a matrix multiplication as follows: 
-        <me>
-            \angvec{\boldx,\boldy}=\boldy^*\boldx
-        </me>.
-        It 
-        
-    </p>
-    </proof>
-    <example xml:id="eg_adjoint_inclusion">
-    <title>Adjoint of inclusion map</title>
-    <statement>
-    <p>
-    Let <m>W</m> be a finite-dimensional subspace of the inner product space <m>(V,\angvec{\, })</m>, and let <m>i\colon W\rightarrow V</m> be the inclusion map. Determine the adjoint map <m>i^*\colon V\rightarrow W</m>. 
-    </p>
-    </statement>
-    <solution>
-    <p>
-    
-    </p>
-    </solution>
-    </example>
-    <!-- <example xml:id="eg_adjoint_integration_kernel">
-    <title>Integral kernel</title>
-    <statement>
-    <p>
-    
-    </p>
-    </statement>
-    <solution>
-    <p>
-    
-    </p>
-    </solution>
-    </example> -->
-    <theorem xml:id="th_adjoint_props">
-    <title>Adjoint properties</title>
-    <statement>
-    <p>
-    Let <m>(V,\angvec{\, }_V)</m>, <m>(W,\angvec{\, }_W)</m>, and <m>(U,\angvec{\, ,}_U</m> be inner product spaces. 
-    <ol>
-        <li>
-            <p>
-                Assume <m>V</m> and <m>W</m> are finite-dimensional. If <m>T\in \mathcal{L}(V,W)</m> and <m>S\in \mathcal{L}(W,U)</m>, then 
-                <men>
-                    (ST)^*=T^*S^*
-                </men>.
-            </p>
-        </li>
-        <li>
-            <p>
-                Assume <m>V</m> and <m>W</m> are finite dimensional. If <m>T\in \mathcal{L}(V,W)</m>, then 
-                <men xml:id="eq_double_adjoint">
-                    (T^*)^*=T
-                </men>.
-            </p>
-        </li>
-        <li>
-            <p>
-                Assume <m>V</m> is finite dimensional. Given <m>T\in \mathcal{L}(V,W)</m>, we have 
-                <md>
-                    <mrow>\NS T^* \amp =\im T^\perp</mrow>
-                    <mrow>\im T^* \amp =\NS T^\perp</mrow>
-                </md>
-            </p>
-        </li>
-    </ol>
-    </p>
-    </statement>
-    <proof>
-    <p>
-    </p>
-    </proof>
-    </theorem>
-    
-    
-    </theorem>
     
     
 
