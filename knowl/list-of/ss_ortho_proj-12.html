@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.20.15</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span>
+</h4>
+<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
+<div class="para">Consider the plane <span class="process-math">\(W=\{(x,y,z)\in\R^3\colon x-2y+z=0-\}\text{.}\)</span>
+</div>
+<ol class="decimal" id="ss_ortho_proj-12-1-1-2">
+<li><div class="para">Find the matrix <span class="process-math">\(A\)</span> such that <span class="process-math">\(\operatorname{proj}_W=T_A\text{.}\)</span>
+</div></li>
+<li><div class="para">Use your matrix formula from (a) to compute <span class="process-math">\(\proj_W(2,1,1)\)</span> and <span class="process-math">\(\proj_W(1,1,1)\text{.}\)</span>
+</div></li>
+<li><div class="para">Compute <span class="process-math">\(d((2,1,1),W)\)</span> and <span class="process-math">\(d((1,1,1), W)\text{.}\)</span>
+</div></li>
+</ol>
+</div>
+<div class="solutions"><details xmlns:xlink="http://www.w3.org/1999/xlink" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical"><ol class="decimal" id="ss_ortho_proj-12-2-1-1">
+<li><div class="para logical">
+<div class="para">Using the general formula described in <a href="s_ortho_proj.html#eg_projection_plane" class="xref" data-knowl="./knowl/xref/eg_projection_plane.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.20.14: Projection onto planes in \R^3">Example 1.20.14</a>, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_projection_plane.html">
+\begin{equation*}
+A=\frac{1}{6}\begin{amatrix}[rrr]
+5\amp 2\amp -1\\ 2\amp 2\amp 2\\ -1\amp 2\amp 5
+\end{amatrix}\text{.}
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">Now compute</div>
+<div class="displaymath process-math">
+\begin{align*}
+\proj_W(2,1,1)\amp= \frac{1}{6}\begin{amatrix}[rrr]
+5\amp 2\amp -1\\ 2\amp 2\amp 2\\ -1\amp 2\amp 5
+\end{amatrix}
+\begin{amatrix}[r]
+2 \\ 1\\ 1
+\end{amatrix}=
+\frac{1}{6}\begin{amatrix}[r]
+11\\ 8\\ 5
+\end{amatrix}\\
+\proj_W(1,1,1)\amp= \frac{1}{6}\begin{amatrix}[rrr]
+5\amp 2\amp -1\\ 2\amp 2\amp 2\\ -1\amp 2\amp 5
+\end{amatrix}
+\begin{amatrix}[r]
+1 \\ 1\\ 1
+\end{amatrix}=
+\frac{1}{6}\begin{amatrix}[r]
+0\\ 0\\ 0
+\end{amatrix}\text{.}
+\end{align*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">We have</div>
+<div class="displaymath process-math">
+\begin{align*}
+d((2,1,1), W) \amp = \norm{(2,1,1)-\proj_W(2,1,1)}\\
+\amp =\norm{\frac{1}{6}(1,-2,-1)}=\frac{6}{6} \\
+d((1,1,1), W) \amp = \norm{(1,1,1)-\proj_W(1,1,1)}\\
+\amp =\norm{(0,0,0)}=0 \text{.}
+\end{align*}
+</div>
+</div></li>
+</ol></div></div></details></div></article><span class="incontext"><a class="internal" href="s_ortho_proj.html#ss_ortho_proj-12">in-context</a></span>
+</body>
+</html>

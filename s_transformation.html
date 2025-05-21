@@ -96,14 +96,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.6.5';
+eBookConfig.runestone_version = '7.7.0';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.052b07dd5d5bd82e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.5eb70769dc5e56d7.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -497,8 +497,11 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_ortho_proj.html#ss_ortho_comp" class="internal"><span class="title">Orthogonal complement</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_ortho_proj.html#ss_ortho_proj" class="internal"><span class="title">Orthogonal projection</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_ortho_proj.html#s_ortho_proj-5" class="internal"><span class="title">Trigonometric polynomial approximation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_ortho_proj.html#s_ortho_proj-6" class="internal"><span class="title">Least-squares solution to linear systems</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_adjoint.html" class="internal"><span class="codenumber">1.21</span> <span class="title">Adjoints</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -989,11 +992,68 @@ T_\ell(c(a_n)_{n=1}^\infty+d(b_n)_{n=1}^\infty) \amp = T_\ell(ca_n+db_n)_{n=1}^\
 \amp =cT_\ell((a_n)_{n=1}^\infty)+dT((b_n)_{n=1}^\infty)\text{.}
 \end{align*}
 </div>
-</div></div></details></div></article></section><section class="subsection" id="ss_transformations_bases"><h3 class="heading hide-type">
+</div></div></details></div></article><article class="theorem theorem-like" id="th_transformation_projection"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.9.20</span><span class="period">.</span><span class="space"> </span><span class="title">Projection onto summand.</span>
+</h4>
+<div class="para logical" id="th_transformation_projection-2-1">
+<div class="para">Let <span class="process-math">\(V=\bigoplus_{i=1}^rW_i\)</span> be a direct sum decomposition of the vector space <span class="process-math">\(V\text{.}\)</span> For all <span class="process-math">\(1\leq j\leq r\text{,}\)</span> we define <span class="process-math">\(\pi_j\colon V\rightarrow V\)</span> via the following recipe:</div>
+<ul class="disc" id="th_transformation_projection-2-1-5">
+<li id="th_transformation_projection-2-1-5-1"><div class="para logical" id="th_transformation_projection-2-1-5-1-1">
+<div class="para">given <span class="process-math">\(v\in V\text{,}\)</span> there is a unique expression</div>
+<div class="displaymath process-math">
+\begin{equation*}
+v=w_1+w_2+\cdots + w_r\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(w_i\in W_i\)</span> for all <span class="process-math">\(1\leq i\leq\text{;}\)</span>
+</div>
+</div></li>
+<li id="th_transformation_projection-2-1-5-2"><div class="para" id="th_transformation_projection-2-1-5-2-1">define <span class="process-math">\(\pi_j(v)=w_j\text{.}\)</span>
+</div></li>
+</ul>
+<div class="para">The function <span class="process-math">\(\pi_j\)</span> is a linear transformation. We call <span class="process-math">\(\pi_j\)</span> the <dfn class="terminology">projection onto</dfn> <span class="process-math">\(W_i\)</span> operator.</div>
+</div></article><details id="th_transformation_projection-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_transformation_projection-3-1">
+<div class="para">Let <span class="process-math">\(1\leq j\leq r\text{.}\)</span> Observe first that <span class="process-math">\(\pi_j\)</span> is well-defined precisely because the expression</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/d_subspace_direct_sum.html">
+\begin{equation*}
+v=v_1+v_2+\cdots +v_r, v_i\in W_i
+\end{equation*}
+</div>
+<div class="para">is unique by the definition (<a href="s_subspace_sum.html#d_subspace_direct_sum" class="xref" data-knowl="./knowl/xref/d_subspace_direct_sum.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.5.4: Direct sum of subspaces">1.5.4</a>).</div>
+</div>
+<div class="para logical" id="th_transformation_projection-3-2">
+<div class="para">We will show that <span class="process-math">\(\pi_j\)</span> is linear using the 1-step technique. Given <span class="process-math">\(v,v'\in V\)</span> we can write</div>
+<div class="displaymath process-math" id="th_transformation_projection-3-2-3">
+\begin{align*}
+v \amp =w_1+w_2+\cdots + w_r \\
+v' \amp = w'_1+w'_2+\cdots + w'_r\text{,}
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(w_i,w_i'\in W_i\)</span> for all <span class="process-math">\(i\in I\text{.}\)</span> Note that by definition of <span class="process-math">\(\pi_j\)</span> we have</div>
+<div class="displaymath process-math" id="th_transformation_projection-3-2-7">
+\begin{align*}
+\pi_j(v) \amp = w_j \amp \pi_j(v')=w_j'\text{.}
+\end{align*}
+</div>
+<div class="para">For any <span class="process-math">\(c,d\in F\text{,}\)</span> we then have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+cv+dv'=(cw_1+dw_1)+(cw_2+dw_2)+\cdots + (cw_r+dw_r)\text{.}
+\end{equation*}
+</div>
+<div class="para">Since each <span class="process-math">\(W_i\)</span> is a subspace, we have <span class="process-math">\(cw_i+dw_i'\in W_i\text{,}\)</span> and thus this is the unique decomposition of the vector <span class="process-math">\(cv+dv'\)</span> in terms of the <span class="process-math">\(W_i\text{.}\)</span> We conclude that</div>
+<div class="displaymath process-math" id="th_transformation_projection-3-2-14">
+\begin{align*}
+\pi_j(cv+dv') \amp = cw_j+dw_j \amp (\text{def. of } \pi_j)  \\
+\amp =c\pi_j(v)+d\pi_j(v')\text{,}
+\end{align*}
+</div>
+<div class="para">as desired.</div>
+</div></article></details></section><section class="subsection" id="ss_transformations_bases"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Transformations and bases</span>
 </h3>
 <article class="theorem theorem-like" id="th_trans_basis"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.9.20</span><span class="period">.</span><span class="space"> </span><span class="title">Transformations and bases.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.9.21</span><span class="period">.</span><span class="space"> </span><span class="title">Transformations and bases.</span>
 </h4>
 <div class="para logical" id="th_trans_basis-2-1">
 <div class="para">Let <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> be vector spaces, and let <span class="process-math">\(B=(v_i)_{i\in I}\)</span> be a basis of <span class="process-math">\(V\text{.}\)</span>
@@ -1070,24 +1130,24 @@ T(cv+dw) \amp =T\left(\sum_{i\in i}cc_iv_i+\sum_{i\in I}dd_iv_i\right)\\
 </li>
 </ol>
 </div></article></details><article class="remark remark-like" id="ss_transformations_bases-3"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.9.21</span><span class="period">.</span><span class="space"> </span><span class="title">Transformations and bases.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.9.22</span><span class="period">.</span><span class="space"> </span><span class="title">Transformations and bases.</span>
 </h4>
 <div class="para logical" id="ss_transformations_bases-3-2">
-<div class="para">The two statements of <a href="s_transformation.html#th_trans_basis" class="xref" data-knowl="./knowl/xref/th_trans_basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.9.20: Transformations and bases">Theorem 1.9.20</a> deserve some elaboration and interpretation.</div>
+<div class="para">The two statements of <a href="s_transformation.html#th_trans_basis" class="xref" data-knowl="./knowl/xref/th_trans_basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.9.21: Transformations and bases">Theorem 1.9.21</a> deserve some elaboration and interpretation.</div>
 <ol class="decimal" id="ss_transformations_bases-3-2-2">
 <li id="ss_transformations_bases-3-2-2-1"><div class="para" id="ss_transformations_bases-3-2-2-1-1">The first statement tells us that a linear transformation <span class="process-math">\(T\colon V\rightarrow W\)</span> is uniqueley determined by its values <span class="process-math">\(T(v_i)\)</span> for any basis <span class="process-math">\(B=(v_i)_{i\in I}\text{.}\)</span> In other words, if you know that <span class="process-math">\(T\)</span> is linear, and you know where it sends each element of a basis, then you know <span class="process-math">\(T\)</span> completeley! Put another way, a linear transformation is uniquely determined by its action on any given basis.</div></li>
 <li id="ss_transformations_bases-3-2-2-2"><div class="para" id="ss_transformations_bases-3-2-2-2-1">Consisder the second statement as a powerful “transformation building” result. In more detail, it says the following: given a basis <span class="process-math">\(B=(v_i)_{i\in I}\)</span> of <span class="process-math">\(V\text{,}\)</span> given any choice of values <span class="process-math">\(w_i\in W\text{,}\)</span> there is a unique linear transformation <span class="process-math">\(T\in \mathcal{L}(V,W)\)</span> that sends <span class="process-math">\(v_i\)</span> to <span class="process-math">\(w_i\)</span> for all <span class="process-math">\(i\in I\text{.}\)</span>
 </div></li>
 </ol>
 </div></article><article class="corollary theorem-like" id="cor_matrix_transformation"><h4 class="heading">
-<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.9.22</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix transformations.</span>
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.9.23</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix transformations.</span>
 </h4>
 <div class="para" id="cor_matrix_transformation-2-1">Let <span class="process-math">\(T\colon F^n\rightarrow F^m\)</span> be a linear transformation. There is a unique matrix <span class="process-math">\(A\in F^{m,n}\)</span> such that <span class="process-math">\(T=T_A\text{.}\)</span> In particular, all linear transformations from <span class="process-math">\(F^n\)</span> to <span class="process-math">\(F^m\)</span> are matrix transformations.</div></article><details id="cor_matrix_transformation-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="cor_matrix_transformation-3-1">The proof is left as an exercise.</div></article></details></section><section class="subsection" id="ss_vs_of_lin_transformations"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title"><span class="process-math">\(\mathcal{L}(V,W)\)</span> as a vector space</span>
 </h3>
 <div class="para" id="ss_vs_of_lin_transformations-2">We end this section by providing a vector space structure to the set <span class="process-math">\(\mathcal{L}(V,W)\)</span> of all linear transformations from <span class="process-math">\(V\)</span> to <span class="process-math">\(W\text{.}\)</span> As in <a href="s_vector_space.html" class="internal" title="Section 1.2: Vector spaces">Section 1.2</a>, we state the result as a definition with proof.</div>
 <article class="definition definition-like" id="d_linear_transformations"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.9.23</span><span class="period">.</span><span class="space"> </span><span class="title">Space of linear transformations.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.9.24</span><span class="period">.</span><span class="space"> </span><span class="title">Space of linear transformations.</span>
 </h4>
 <div class="para logical" id="d_linear_transformations-2-1">
 <div class="para">Let <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> be vector spaces. Below we define a vector space structure on <span class="process-math">\(\mathcal{L}(V,W)\text{.}\)</span>

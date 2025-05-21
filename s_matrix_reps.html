@@ -96,14 +96,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.6.5';
+eBookConfig.runestone_version = '7.7.0';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.052b07dd5d5bd82e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.5eb70769dc5e56d7.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -497,8 +497,11 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_ortho_proj.html#ss_ortho_comp" class="internal"><span class="title">Orthogonal complement</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_ortho_proj.html#ss_ortho_proj" class="internal"><span class="title">Orthogonal projection</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_ortho_proj.html#s_ortho_proj-5" class="internal"><span class="title">Trigonometric polynomial approximation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_ortho_proj.html#s_ortho_proj-6" class="internal"><span class="title">Least-squares solution to linear systems</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_adjoint.html" class="internal"><span class="codenumber">1.21</span> <span class="title">Adjoints</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -1267,7 +1270,7 @@ C=c[T]_{B}^{B'}+d[T]_{B}^{B'}=[cT+dS]_{B}^{B'}\text{,}
 \boldy_i=A[v_i]_B
 \end{equation*}
 </div>
-<div class="para">for all <span class="process-math">\(1\leq i\leq n\text{,}\)</span> and let <span class="process-math">\((w_1,w_2,\dots, w_n)\)</span> be the unique tuple of vectors in <span class="process-math">\(W\)</span> satisfying <span class="process-math">\([w_i]_{B'}=\boldy_i\text{.}\)</span> (There is such a unique tuple as <span class="process-math">\([\phantom{v}]_{B'}\)</span> is an isomorphism.) By <a href="s_transformation.html#th_trans_basis" class="xref" data-knowl="./knowl/xref/th_trans_basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.9.20: Transformations and bases">Theorem 1.9.20</a> there is a <em class="emphasis">unique</em> linear map <span class="process-math">\(T\in \mathcal{L}(V,W)\)</span> satisfying</div>
+<div class="para">for all <span class="process-math">\(1\leq i\leq n\text{,}\)</span> and let <span class="process-math">\((w_1,w_2,\dots, w_n)\)</span> be the unique tuple of vectors in <span class="process-math">\(W\)</span> satisfying <span class="process-math">\([w_i]_{B'}=\boldy_i\text{.}\)</span> (There is such a unique tuple as <span class="process-math">\([\phantom{v}]_{B'}\)</span> is an isomorphism.) By <a href="s_transformation.html#th_trans_basis" class="xref" data-knowl="./knowl/xref/th_trans_basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.9.21: Transformations and bases">Theorem 1.9.21</a> there is a <em class="emphasis">unique</em> linear map <span class="process-math">\(T\in \mathcal{L}(V,W)\)</span> satisfying</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_trans_basis.html ./knowl/xref/eq_matrixrep_prop.html ./knowl/xref/th_trans_basis.html">
 \begin{equation*}
 T(v_i)=w_i
@@ -1279,7 +1282,7 @@ T(v_i)=w_i
 A'[v_i]_B=[T]_B^{B'}[v_i]=[T(v_i)]_{B'}=[w_i]_{B'}=A[v_i]_B
 \end{equation*}
 </div>
-<div class="para">for all <span class="process-math">\(1\leq i\leq n\text{.}\)</span> Since <span class="process-math">\(B\)</span> is a basis and <span class="process-math">\([\phantom{v}]_B\)</span> is an isomorphism, <span class="process-math">\(B''=([v_1]_B, [v_2]_B, \dots, [v_n]_B)\)</span> is a basis of <span class="process-math">\(F^n\text{.}\)</span> The equation above proves that <span class="process-math">\(T_{A'}\)</span> and <span class="process-math">\(T_{A}\)</span> agree on the basis <span class="process-math">\(B''\text{.}\)</span> It follows from <a href="s_transformation.html#th_trans_basis" class="xref" data-knowl="./knowl/xref/th_trans_basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.9.20: Transformations and bases">Theorem 1.9.20</a> (again) that <span class="process-math">\(T_{A'}=T_A\text{,}\)</span> and hence that <span class="process-math">\(A'=A\text{,}\)</span> as desired.</div>
+<div class="para">for all <span class="process-math">\(1\leq i\leq n\text{.}\)</span> Since <span class="process-math">\(B\)</span> is a basis and <span class="process-math">\([\phantom{v}]_B\)</span> is an isomorphism, <span class="process-math">\(B''=([v_1]_B, [v_2]_B, \dots, [v_n]_B)\)</span> is a basis of <span class="process-math">\(F^n\text{.}\)</span> The equation above proves that <span class="process-math">\(T_{A'}\)</span> and <span class="process-math">\(T_{A}\)</span> agree on the basis <span class="process-math">\(B''\text{.}\)</span> It follows from <a href="s_transformation.html#th_trans_basis" class="xref" data-knowl="./knowl/xref/th_trans_basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.9.21: Transformations and bases">Theorem 1.9.21</a> (again) that <span class="process-math">\(T_{A'}=T_A\text{,}\)</span> and hence that <span class="process-math">\(A'=A\text{,}\)</span> as desired.</div>
 </div></article></details><article class="theorem theorem-like" id="th_matrix_rep_null_im"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.13.20</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix representations of.</span>
 </h4>

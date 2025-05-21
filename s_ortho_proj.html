@@ -96,14 +96,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.6.5';
+eBookConfig.runestone_version = '7.7.0';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.052b07dd5d5bd82e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.5eb70769dc5e56d7.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -124,7 +124,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_adhoc.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_linear_algebra.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="advlinalgkursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_adhoc.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_linear_algebra.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s_adjoint.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div xmlns:xlink="http://www.w3.org/1999/xlink" id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\renewcommand{\Re}{\operatorname{Re}}
 \renewcommand{\Im}{\operatorname{Im}}
 \newcommand{\Z}{{\mathbb Z}}
@@ -497,8 +497,11 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_ortho_proj.html#ss_ortho_comp" class="internal"><span class="title">Orthogonal complement</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_ortho_proj.html#ss_ortho_proj" class="internal"><span class="title">Orthogonal projection</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_ortho_proj.html#s_ortho_proj-5" class="internal"><span class="title">Trigonometric polynomial approximation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_ortho_proj.html#s_ortho_proj-6" class="internal"><span class="title">Least-squares solution to linear systems</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_adjoint.html" class="internal"><span class="codenumber">1.21</span> <span class="title">Adjoints</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -756,8 +759,37 @@ v=w+w^{\perp}.\tag{1.75}
 </div>
 </div></li>
 </ol>
-</div></article><article class="theorem theorem-like" id="th_ortho_proj"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.20.8</span><span class="period">.</span><span class="space"> </span><span class="title">Orthogonal projection.</span>
+</div></article><article class="example example-like" id="ss_ortho_proj-5"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.20.8</span><span class="period">.</span><span class="space"> </span><span class="title">Orthogonal projection onto plane.</span>
+</h4>
+<div class="para logical" id="ss_ortho_proj-5-2-1">
+<div class="para">Consider the inner product space <span class="process-math">\(\R^3\)</span> with the dot product. Let <span class="process-math">\(W\subseteq\R^3\)</span> be the plane with equation <span class="process-math">\(x+y+z=0\text{.}\)</span> Compute <span class="process-math">\(\proj_W(v)\)</span> for each <span class="process-math">\(\boldv\)</span> below.</div>
+<ol class="decimal" id="ss_ortho_proj-5-2-1-6">
+<li id="ss_ortho_proj-5-2-1-6-1"><div class="para" id="ss_ortho_proj-5-2-1-6-1-1"><span class="process-math">\(\displaystyle \boldv=(3,-2,2)\)</span></div></li>
+<li id="ss_ortho_proj-5-2-1-6-2"><div class="para" id="ss_ortho_proj-5-2-1-6-2-1"><span class="process-math">\(\displaystyle \boldv=(2,1,-3)\)</span></div></li>
+<li id="ss_ortho_proj-5-2-1-6-3"><div class="para" id="ss_ortho_proj-5-2-1-6-3-1"><span class="process-math">\(\displaystyle \boldv=(-7,-7,-7)\)</span></div></li>
+</ol>
+</div>
+<div class="solutions"><details id="ss_ortho_proj-5-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="ss_ortho_proj-5-3-1">
+<div class="para">According to <a href="s_ortho_proj.html#proc_ortho_proj" class="xref" data-knowl="./knowl/xref/proc_ortho_proj.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 1.20.7: Orthogonal projection">Procedure 1.20.7</a> our first step is to produce an orthogonal basis of <span class="process-math">\(W\text{.}\)</span> We do so by inspection. Since <span class="process-math">\(\dim W=2\text{,}\)</span> we simply need to find two solutions to <span class="process-math">\(x+y+z=0\)</span> that are orthogonal to one another: e.g., <span class="process-math">\(\boldw_1=(1,-1,0)\)</span> and <span class="process-math">\(\boldw_2=(1,1,-2)\text{.}\)</span> Thus we choose <span class="process-math">\(B=((1,-1,0), (1,1,-2))\)</span> as our orthogonal basis, and our computations become a matter of applying <a href="s_ortho_proj.html#proc_ortho_proj-2-1-5-2-1-2" class="xref" data-knowl="./knowl/xref/eq_ortho_proj_formula.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.76">(1.76)</a>, which in this case becomes</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_ortho_proj.html ./knowl/xref/eq_ortho_proj_formula.html">
+\begin{equation*}
+\proj_W(v)=\frac{\boldv\cdot\boldw_1}{\boldw_1\cdot \boldw_1}\boldw_1+\frac{\boldv\cdot\boldw_2}{\boldw_2\cdot \boldw_2}\boldw_2=
+\frac{\boldv\cdot\boldw_1}{2}\boldw_1+\frac{\boldv\cdot\boldw_2}{6}\boldw_2\text{.}
+\end{equation*}
+</div>
+<div class="para">Now compute:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_ortho_proj.html ./knowl/xref/eq_ortho_proj_formula.html" id="ss_ortho_proj-5-3-1-11">
+\begin{align*}
+\proj_W(3,-2,2) \amp =\frac{5}{2}(1,-1,0)+\frac{-3}{6}(1,1,-2)=(2,-3,1)\\
+\proj_W(2,1,-3) \amp =\frac{1}{2}(1,-1,0)+\frac{9}{6}(1,1,-2)=(2,1,-3)\\
+\proj_W(-7,-7,-7) \amp =\frac{0}{2}(1,-1,0)+\frac{0}{6}(1,1,-2)=(0,0,0)\text{.}
+\end{align*}
+</div>
+<div class="para">The last two computations might give you pause. Why do we have <span class="process-math">\(\proj_W(2,1,-3)=(2,1,-3)\)</span> and <span class="process-math">\(\proj_W(-7,7-7,-7)=(0,0,0)\text{?}\)</span> The answer is that <span class="process-math">\((2,1,-3)\)</span> is already an element of <span class="process-math">\(W\text{,}\)</span> so it stands to reason that its projection is itself; and <span class="process-math">\((-7,-7,-7)\)</span> is already orthogonal to <span class="process-math">\(W\)</span> (it is a scalar multiple of <span class="process-math">\((1,1,1)\)</span>), so it stands to reason that its projection is equal to <span class="process-math">\(\boldzero\text{.}\)</span>
+</div>
+</div></div></details></div></article><article class="theorem theorem-like" id="th_ortho_proj"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.20.9</span><span class="period">.</span><span class="space"> </span><span class="title">Orthogonal projection.</span>
 </h4>
 <div class="para logical" id="th_ortho_proj-2-1">
 <div class="para">Let <span class="process-math">\((V, \langle\, , \rangle)\)</span> be an inner product space, and let <span class="process-math">\(W\)</span> be a finite-dimensional subspace of <span class="process-math">\(V\text{.}\)</span>
@@ -767,21 +799,60 @@ v=w+w^{\perp}.\tag{1.75}
 <span class="heading"><span class="title">Orthogonal projection is linear.</span></span><div class="para" id="th_ortho_proj-2-1-4-1-2"><span class="process-math">\(\operatorname{proj}_{W}, \operatorname{proj}_{W^\perp}\in \mathcal{L}(V)\text{.}\)</span></div>
 </li>
 <li id="th_ortho_proj-2-1-4-2">
-<span class="heading"><span class="title">Closest element of <span class="process-math">\(W\)</span>.</span></span><div class="para logical" id="th_ortho_proj-2-1-4-2-2">
+<span class="heading"><span class="title">Orthogonal projection as closest element.</span></span><div class="para logical" id="th_ortho_proj-2-1-4-2-2">
 <div class="para">
-<span class="process-math">\(\proj_W(v)\)</span> is the unique element of <span class="process-math">\(W\)</span> satisfying the following property:</div>
+<span class="process-math">\(\proj_W(v)\)</span> is the unique element <span class="process-math">\(w\in W\)</span> satisfying the following property:</div>
 <div class="displaymath process-math" id="eq_ortho_proj_closest">
 \begin{equation}
-d(v,\proj_W(v))\leq d(v,w) \text{ for all } w\in W\text{.}\tag{1.78}
+d(v,w)\leq d(v,w') \text{ for all } w\in W\text{.}\tag{1.78}
 \end{equation}
 </div>
-<div class="para">In other words, <span class="process-math">\(\proj_W(v)\)</span> is the unique element in <span class="process-math">\(W\)</span> that is closest to <span class="process-math">\(v\text{.}\)</span>
+<div class="para">In other words, <span class="process-math">\(\proj_W(v)\)</span> is the unique element in <span class="process-math">\(W\)</span> that minimizes the distance to <span class="process-math">\(v\text{:}\)</span> i.e., it is the unique element of <span class="process-math">\(W\)</span> closest to <span class="process-math">\(v\text{.}\)</span>
 </div>
+</div>
+<div class="para" id="th_ortho_proj-2-1-4-2-3">Similarly, <span class="process-math">\(\proj_{W^\perp}(v)\)</span> is the unique element in <span class="process-math">\(W^\perp\)</span> that minimizes the distance to <span class="process-math">\(v\text{.}\)</span>
 </div>
 </li>
+<li id="th_ortho_proj-2-1-4-3"><div class="para logical" id="th_ortho_proj-2-1-4-3-1">
+<div class="para">We have <span class="process-math">\(\proj_W(v)+\proj_{W^\perp}(v)=v\)</span> for all <span class="process-math">\(v\in V\text{:}\)</span> i.e.,</div>
+<div class="displaymath process-math" id="eq_proj_plus_proj">
+\begin{equation}
+\proj_W+\proj_{W^\perp}=I_V\text{.}\tag{1.79}
+\end{equation}
+</div>
+</div></li>
 </ol>
-</div></article><details id="th_ortho_proj-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_ortho_proj-3-1"></div></article></details><article class="definition definition-like" id="d_distance_subspace"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.20.9</span><span class="period">.</span><span class="space"> </span><span class="title">Distance to subspace.</span>
+</div></article><details id="th_ortho_proj-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_ortho_proj-3-1"><ol class="decimal" id="th_ortho_proj-3-1-1">
+<li id="th_ortho_proj-3-1-1-1"><div class="para" id="th_ortho_proj-3-1-1-1-1">Both <span class="process-math">\(\proj_W\)</span> and <span class="process-math">\(\proj_{W^\perp}\)</span> are specific examples of the more general projection onto a direct summand operator. We saw in <a href="s_transformation.html#th_transformation_projection" class="xref" data-knowl="./knowl/xref/th_transformation_projection.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.9.20: Projection onto summand">Theorem 1.9.20</a> the such operators are linear.</div></li>
+<li id="th_ortho_proj-3-1-1-2">
+<div class="para logical" id="th_ortho_proj-3-1-1-2-1">
+<div class="para">Given <span class="process-math">\(v\in V\text{,}\)</span> write <span class="process-math">\(v=w+w^\perp\)</span> with <span class="process-math">\(w\in W\)</span> and <span class="process-math">\(w^\perp\in W^\perp\text{.}\)</span> By definition this means <span class="process-math">\(\proj_W(v)=w\text{.}\)</span> Given any <span class="process-math">\(w'\in W\)</span> we have</div>
+<div class="displaymath process-math" id="th_ortho_proj-3-1-1-2-1-7">
+\begin{align*}
+d(v,w') \amp = \norm{v-w'}\\
+\amp = \norm{(w-w')+w^\perp}\\
+\amp = \sqrt{\norm{w-w'}+\norm{w^\perp}}^2 \amp (w-w' \text{ ortho. to } w^\perp ) \\
+\amp \geq \sqrt{\norm{w^\perp}^2}\\
+\amp = \norm{w^\perp}\\
+\amp = \norm{v-w}\\
+\amp = d(v,\proj_W(v))\text{.}
+\end{align*}
+</div>
+<div class="para">This proves <span class="process-math">\(d(v,\proj_W(v))\leq d(v,w')\)</span> for all <span class="process-math">\(w'\in W\text{:}\)</span> i.e., <span class="process-math">\(\proj_W(v)\)</span> is an element of <span class="process-math">\(W\)</span> that minimizes the distance to <span class="process-math">\(v\text{.}\)</span> It remains to show that <span class="process-math">\(\proj_W(v)\)</span> is the unique element of <span class="process-math">\(W\)</span> satisfying this property. To this end, if <span class="process-math">\(w'\in W\)</span> is another element of <span class="process-math">\(W\)</span> that minimizes the distance to <span class="process-math">\(v\text{,}\)</span> then in particular we have <span class="process-math">\(d(v,w')\leq d(v,\proj_W(v))\text{.}\)</span> Since we also have <span class="process-math">\(d(v,\proj_W(v))\leq d(v,w')\text{,}\)</span> we conclude that <span class="process-math">\(d(v,w')=d(v,\proj_W(v))\text{.}\)</span> Looking at the chain of inequalities above, this would imply that <span class="process-math">\(sqrt{\norm{w-w'}+\norm{w^\perp}}^2=\sqrt{{w^\perp}^2}\text{.}\)</span> The latter is true if and only if <span class="process-math">\(\norm{w-w'}=0\text{,}\)</span> if and only if <span class="process-math">\(w'=w=\proj_W(v)\text{,}\)</span> as desired.</div>
+</div>
+<div class="para" id="th_ortho_proj-3-1-1-2-2">Note that the proof above only used the fact that <span class="process-math">\(V=W\oplus W^\perp\)</span> is a direct sum decomposition into two orthogonal spaces. As such, essentially the same argument can be used to show that <span class="process-math">\(\proj_{W^\perp}(v)\)</span> is the unique element of <span class="process-math">\(W^\perp\)</span> minimizing the distance to <span class="process-math">\(v\text{.}\)</span>
+</div>
+</li>
+<li id="th_ortho_proj-3-1-1-3"><div class="para logical" id="th_ortho_proj-3-1-1-3-1">
+<div class="para">This is essentially by definition of <span class="process-math">\(\proj_W\)</span> and <span class="process-math">\(\proj_{W^\perp}\text{.}\)</span> Any vector <span class="process-math">\(v\in V\)</span> can be written as <span class="process-math">\(v=w+w^\perp\text{,}\)</span> where <span class="process-math">\(w\in W\)</span> and <span class="process-math">\(w^\perp\in W^\perp\text{.}\)</span> By definition we have <span class="process-math">\(w=\proj_W(v)\)</span> and <span class="process-math">\(w^\perp=\proj_{W^\perp}(v)\text{,}\)</span> whence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+v=w+w^\perp=\proj_W(v)+\proj_{W^\perp}(v)\text{.}
+\end{equation*}
+</div>
+</div></li>
+</ol></div></article></details><article class="definition definition-like" id="d_distance_subspace"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.20.10</span><span class="period">.</span><span class="space"> </span><span class="title">Distance to subspace.</span>
 </h4>
 <div class="para logical" id="d_distance_subspace-2-1">
 <div class="para">Let <span class="process-math">\(W\)</span> be a subspace of the inner product space <span class="process-math">\((V,\angvec{\, ,})\text{.}\)</span> Given a vector <span class="process-math">\(v\in V\text{,}\)</span> its <dfn class="terminology">distance</dfn> to <span class="process-math">\(W\text{,}\)</span> denoted <span class="process-math">\(d(v,W)\text{,}\)</span> is defined as</div>
@@ -791,18 +862,390 @@ d(v,W)=\inf\{d(v,w)\colon w\in W\}\text{.}
 \end{equation*}
 </div>
 </div></article><article class="corollary theorem-like" id="cor_ortho_proj"><h4 class="heading">
-<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.20.10</span><span class="period">.</span><span class="space"> </span><span class="title">Distance to <span class="process-math">\(W\)</span>.</span>
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.20.11</span><span class="period">.</span><span class="space"> </span><span class="title">Distance to <span class="process-math">\(W\)</span>.</span>
 </h4>
 <div class="para logical" id="cor_ortho_proj-2-1">
 <div class="para">Let <span class="process-math">\(W\)</span> be a finite-dimensional subspace of the inner product space <span class="process-math">\((V,\angvec{\, ,})\text{.}\)</span> For all <span class="process-math">\(v\in V\text{,}\)</span> we have</div>
 <div class="displaymath process-math" id="eq_dist_v_W">
 \begin{equation}
-d(v,W)=d(v,\proj_W(v))=\norm{v-\proj_W(v)}\text{.}\tag{1.79}
+d(v,W)=d(v,\proj_W(v))=\norm{v-\proj_W(v)}\text{.}\tag{1.80}
 \end{equation}
 </div>
+</div></article><article class="example example-like" id="eg_projection_line"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.20.12</span><span class="period">.</span><span class="space"> </span><span class="title">Projection onto a line.</span>
+</h4>
+<div class="para logical" id="eg_projection_line-2-1">
+<div class="para">Any line in <span class="process-math">\(\R^3\)</span> passing through the origin can be described as <span class="process-math">\(\ell=\Span\{\boldv\}\text{,}\)</span> for some <span class="process-math">\(\boldv=(a,b,c)\ne 0\text{.}\)</span> The tuple <span class="process-math">\(((a,b,c))\)</span> is trivially an orthogonal basis of <span class="process-math">\(\ell\text{.}\)</span> Using <a href="s_ortho_proj.html#proc_ortho_proj-2-1-5-2-1-2" class="xref" data-knowl="./knowl/xref/eq_ortho_proj_formula.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.76">(1.76)</a>, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_ortho_proj_formula.html">
+\begin{equation*}
+\proj_\ell(\boldx)=\frac{\boldx\cdot \boldv}{\boldv\cdot\boldv}\boldv=\frac{ax+by+cz}{a^2+b^2+c^2}(a,b,c)\text{.}
+\end{equation*}
+</div>
+<div class="para">It follows that <span class="process-math">\(\operatorname{proj}_\ell=T_A\text{,}\)</span> where</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_ortho_proj_formula.html">
+\begin{equation*}
+A=\begin{bmatrix}
+\vert \amp \vert \amp \vert \\
+\proj_\ell(1,0,0)\amp \proj_\ell(0,1,0)\amp \proj_\ell(0,0,1) \\
+\vert \amp \vert \amp \vert
+\end{bmatrix}=\frac{1}{a^2+b^2+c}\begin{bmatrix}
+a^2\amp ab\amp ac\\
+ab\amp b^2\amp bc\\
+ac\amp bc\amp c^2
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+</div></article><article class="example example-like" id="ss_ortho_proj-10"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.20.13</span><span class="period">.</span><span class="space"> </span><span class="title">Projection onto specific line.</span>
+</h4>
+<div class="para logical" id="ss_ortho_proj-10-2-1">
+<div class="para">Consider the line <span class="process-math">\(\ell=\Span\{(1,2,1)\}\subseteq \R^3\text{.}\)</span>
+</div>
+<ol class="decimal" id="ss_ortho_proj-10-2-1-2">
+<li id="ss_ortho_proj-10-2-1-2-1"><div class="para" id="ss_ortho_proj-10-2-1-2-1-1">Find the matrix <span class="process-math">\(A\)</span> such that <span class="process-math">\(\operatorname{proj}_\ell=T_A\text{.}\)</span>
+</div></li>
+<li id="ss_ortho_proj-10-2-1-2-2"><div class="para" id="ss_ortho_proj-10-2-1-2-2-1">Use your matrix formula from (a) to compute <span class="process-math">\(\proj_\ell(-2,3,1)\text{,}\)</span> <span class="process-math">\(\proj_\ell(-2,-4,-2)\text{,}\)</span> and  <span class="process-math">\(\proj_\ell(1,-1,1)\text{.}\)</span>
+</div></li>
+<li id="ss_ortho_proj-10-2-1-2-3"><div class="para" id="ss_ortho_proj-10-2-1-2-3-1">Compute <span class="process-math">\(d((-2,3,1), \ell)\)</span> and <span class="process-math">\(d((-2,-4,-2), \ell)\text{.}\)</span>
+</div></li>
+</ol>
+</div>
+<div class="solutions"><details id="ss_ortho_proj-10-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="ss_ortho_proj-10-3-1"><ol class="decimal" id="ss_ortho_proj-10-3-1-1">
+<li id="ss_ortho_proj-10-3-1-1-1"><div class="para logical" id="ss_ortho_proj-10-3-1-1-1-1">
+<div class="para">Using the general formula described in <a href="s_ortho_proj.html#eg_projection_line" class="xref" data-knowl="./knowl/xref/eg_projection_line.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.20.12: Projection onto a line">Example 1.20.12</a>, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_projection_line.html">
+\begin{equation*}
+A=\frac{1}{6}\begin{bmatrix}
+1\amp 2\amp 1\\ 2\amp 4\amp 2\\ 1\amp 2\amp 1
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+</div></li>
+<li id="ss_ortho_proj-10-3-1-1-2"><div class="para logical" id="ss_ortho_proj-10-3-1-1-2-1">
+<div class="para">Now compute</div>
+<div class="displaymath process-math" id="ss_ortho_proj-10-3-1-1-2-1-1">
+\begin{align*}
+\proj_\ell(-2,3,1)\amp=  \frac{1}{6}\begin{bmatrix}
+1\amp 2\amp 1\\ 2\amp 4\amp 2\\ 1\amp 2\amp 1
+\end{bmatrix}
+\begin{amatrix}[r]
+-2 \\ 3\\ 1
+\end{amatrix}=
+\frac{1}{6}\begin{amatrix}[r]
+5\\ 10\\ 5
+\end{amatrix}\\
+\proj_W(-2,-4,-2)\amp=  \frac{1}{6}\begin{bmatrix}
+1\amp 2\amp 1\\ 2\amp 4\amp 2\\ 1\amp 2\amp 1
+\end{bmatrix}
+\begin{amatrix}[r]
+-2 \\ -4\\ -2
+\end{amatrix}=
+\frac{1}{6}\begin{amatrix}[r]
+-2\\ -4\\ -2
+\end{amatrix}\\
+\proj_W(1,-1,1)\amp=  \frac{1}{6}\begin{bmatrix}
+1\amp 2\amp 1\\ 2\amp 4\amp 2\\ 1\amp 2\amp 1
+\end{bmatrix}
+\begin{amatrix}[r]
+1\\ -1\\ 1
+\end{amatrix}=
+\frac{1}{6}\begin{amatrix}[r]
+0\\ 0\\ 0
+\end{amatrix}\text{.}
+\end{align*}
+</div>
+<div class="para">The last two computations, <span class="process-math">\(\proj_{\ell}((-2,-4,-2))=(-2,-4,-2)\)</span> and <span class="process-math">\(\proj_{\ell}((1,-1,1))=(0,0,0)\text{,}\)</span> should come as no surprise, since <span class="process-math">\((-2,-4,-2)\in \ell\)</span> and <span class="process-math">\((1,-1,1)\in \ell^\perp\text{.}\)</span>
+</div>
+</div></li>
+<li id="ss_ortho_proj-10-3-1-1-3"><div class="para logical" id="ss_ortho_proj-10-3-1-1-3-1">
+<div class="para">We have</div>
+<div class="displaymath process-math" id="ss_ortho_proj-10-3-1-1-3-1-1">
+\begin{align*}
+d((-2,3,1), \ell) \amp=\norm{(-2,3,1)-\proj_\ell(-2,3,1)} \\
+\amp = \norm{\frac{1}{6}(-17,8,1)}=\frac{\sqrt{354}}{6} \\
+d((-2,-4,-2), \ell) \amp=\norm{(-2,-4,-2)-\proj_\ell(-2,-4,-2)} \\
+\amp = \norm{(0,0,0)}=0 \text{.}
+\end{align*}
+</div>
+<div class="para">Again, the second computation should come as no surprise.  Since <span class="process-math">\((-2,-4,-2)\)</span> is itself an element of <span class="process-math">\(\ell\text{,}\)</span> it stands to reason that its distance to <span class="process-math">\(\ell\)</span> is equal to zero.</div>
+</div></li>
+</ol></div></div></details></div></article><article class="example example-like" id="eg_projection_plane"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.20.14</span><span class="period">.</span><span class="space"> </span><span class="title">Projection onto planes in <span class="process-math">\(\R^3\)</span>.</span>
+</h4>
+<div class="para" id="eg_projection_plane-2-1">Any plane <span class="process-math">\(W\subseteq\R^3\)</span> passing through the origin can be described as <span class="process-math">\(W=\{(x,y,z)\in \R^3\colon ax+by+cz=0\}\text{.}\)</span> Equivalently, <span class="process-math">\(W\)</span> is the set of all <span class="process-math">\(\boldx\in \R^3\)</span> satisfying <span class="process-math">\(\boldx\cdot (a,b,c)=0\text{:}\)</span> i.e., <span class="process-math">\(W=\ell^\perp\text{,}\)</span> where <span class="process-math">\(\ell=\Span((a,b,c))\text{.}\)</span>
+</div> <div class="para logical" id="eg_projection_plane-2-2">
+<div class="para">Let <span class="process-math">\(A\)</span> and <span class="process-math">\(A'\)</span> be the standard matrices for <span class="process-math">\(\proj_{\ell}\)</span> and <span class="process-math">\(\proj_W\text{,}\)</span> respectively. Since <span class="process-math">\(I_{\R^3}=\proj_{\ell}+\proj_W\)</span> (<a href="s_ortho_proj.html#eq_proj_plus_proj" class="xref" data-knowl="./knowl/xref/eq_proj_plus_proj.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.79">(1.79)</a>), it follows that <span class="process-math">\(I=A+A'\text{,}\)</span> or equivalently <span class="process-math">\(A'=I-A\text{.}\)</span> Making use of our standard matrix computation for <span class="process-math">\(\proj_\ell\)</span> in <a href="s_ortho_proj.html#eg_projection_line" class="xref" data-knowl="./knowl/xref/eg_projection_line.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.20.12: Projection onto a line">Example 1.20.12</a>, we now compute</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_proj_plus_proj.html ./knowl/xref/eg_projection_line.html" id="eg_projection_plane-2-2-11">
+\begin{align*}
+A' \amp =I-A\\
+\amp = \begin{bmatrix}
+1\amp 0\amp 0\\ 0\amp 1\amp 0\\ 0\amp 0\amp 1
+\end{bmatrix} - \frac{1}{a^2+b^2+c}\begin{bmatrix}
+a^2\amp ab\amp ac\\
+ab\amp b^2\amp bc\\
+ac\amp bc\amp c^2
+\end{bmatrix}\\
+\amp = \frac{1}{a^2+b^2+c^2}\begin{bmatrix}b^2+c^2\amp -ab\amp -ac\\ -ab\amp a^2+c^2\amp -bc\\ -ac\amp -bc\amp a^2+b^2 \end{bmatrix}\text{.}
+\end{align*}
+</div>
+</div></article><article class="example example-like" id="ss_ortho_proj-12"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.20.15</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="ss_ortho_proj-12-1-1">
+<div class="para">Consider the plane <span class="process-math">\(W=\{(x,y,z)\in\R^3\colon x-2y+z=0-\}\text{.}\)</span>
+</div>
+<ol class="decimal" id="ss_ortho_proj-12-1-1-2">
+<li id="ss_ortho_proj-12-1-1-2-1"><div class="para" id="ss_ortho_proj-12-1-1-2-1-1">Find the matrix <span class="process-math">\(A\)</span> such that <span class="process-math">\(\operatorname{proj}_W=T_A\text{.}\)</span>
+</div></li>
+<li id="ss_ortho_proj-12-1-1-2-2"><div class="para" id="ss_ortho_proj-12-1-1-2-2-1">Use your matrix formula from (a) to compute <span class="process-math">\(\proj_W(2,1,1)\)</span> and <span class="process-math">\(\proj_W(1,1,1)\text{.}\)</span>
+</div></li>
+<li id="ss_ortho_proj-12-1-1-2-3"><div class="para" id="ss_ortho_proj-12-1-1-2-3-1">Compute <span class="process-math">\(d((2,1,1),W)\)</span> and <span class="process-math">\(d((1,1,1), W)\text{.}\)</span>
+</div></li>
+</ol>
+</div>
+<div class="solutions"><details id="ss_ortho_proj-12-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="ss_ortho_proj-12-2-1"><ol class="decimal" id="ss_ortho_proj-12-2-1-1">
+<li id="ss_ortho_proj-12-2-1-1-1"><div class="para logical" id="ss_ortho_proj-12-2-1-1-1-1">
+<div class="para">Using the general formula described in <a href="s_ortho_proj.html#eg_projection_plane" class="xref" data-knowl="./knowl/xref/eg_projection_plane.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.20.14: Projection onto planes in \R^3">Example 1.20.14</a>, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_projection_plane.html">
+\begin{equation*}
+A=\frac{1}{6}\begin{amatrix}[rrr]
+5\amp 2\amp -1\\ 2\amp 2\amp 2\\ -1\amp 2\amp 5
+\end{amatrix}\text{.}
+\end{equation*}
+</div>
+</div></li>
+<li id="ss_ortho_proj-12-2-1-1-2"><div class="para logical" id="ss_ortho_proj-12-2-1-1-2-1">
+<div class="para">Now compute</div>
+<div class="displaymath process-math" id="ss_ortho_proj-12-2-1-1-2-1-1">
+\begin{align*}
+\proj_W(2,1,1)\amp= \frac{1}{6}\begin{amatrix}[rrr]
+5\amp 2\amp -1\\ 2\amp 2\amp 2\\ -1\amp 2\amp 5
+\end{amatrix}
+\begin{amatrix}[r]
+2 \\ 1\\ 1
+\end{amatrix}=
+\frac{1}{6}\begin{amatrix}[r]
+11\\ 8\\ 5
+\end{amatrix}\\
+\proj_W(1,1,1)\amp= \frac{1}{6}\begin{amatrix}[rrr]
+5\amp 2\amp -1\\ 2\amp 2\amp 2\\ -1\amp 2\amp 5
+\end{amatrix}
+\begin{amatrix}[r]
+1 \\ 1\\ 1
+\end{amatrix}=
+\frac{1}{6}\begin{amatrix}[r]
+0\\ 0\\ 0
+\end{amatrix}\text{.}
+\end{align*}
+</div>
+</div></li>
+<li id="ss_ortho_proj-12-2-1-1-3"><div class="para logical" id="ss_ortho_proj-12-2-1-1-3-1">
+<div class="para">We have</div>
+<div class="displaymath process-math" id="ss_ortho_proj-12-2-1-1-3-1-1">
+\begin{align*}
+d((2,1,1), W) \amp = \norm{(2,1,1)-\proj_W(2,1,1)}\\
+\amp =\norm{\frac{1}{6}(1,-2,-1)}=\frac{6}{6} \\
+d((1,1,1), W) \amp = \norm{(1,1,1)-\proj_W(1,1,1)}\\
+\amp =\norm{(0,0,0)}=0 \text{.}
+\end{align*}
+</div>
+</div></li>
+</ol></div></div></details></div></article></section><section class="subsection" id="s_ortho_proj-5"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Trigonometric polynomial approximation</span>
+</h3>
+<div class="para logical" id="s_ortho_proj-5-2">
+<div class="para">Consider the inner product space consisting of  <span class="process-math">\(C([0,2\pi])\)</span> along with the integral inner product <span class="process-math">\(\langle f, g\rangle=\int_0^{2\pi}f(x)g(x) \, dx\text{.}\)</span> In <a href="s_adhoc.html#eg_orthogonal_functions" class="xref" data-knowl="./knowl/xref/eg_orthogonal_functions.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.19.4">Example 1.19.4</a> we saw that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_orthogonal_functions.html">
+\begin{equation*}
+B=(1, \cos(x),\sin(x),\cos(2x),\sin(2x), \dots , \cos(nx),\sin(nx))
+\end{equation*}
+</div>
+<div class="para">is orthogonal with respect to this inner product. Thus <span class="process-math">\(B\)</span> is an orthogonal basis of</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_orthogonal_functions.html">
+\begin{equation*}
+\Span B=\{g\in C([0,2\pi])\colon g(x)=a_0+\sum_{k=1}^na_k\cos kx +b_k\sin kx \text{ for some } a_i, b_i\in \R\}\text{.}
+\end{equation*}
+</div>
+<div class="para">We call <span class="process-math">\(W=\Span B\)</span> the space of <dfn class="terminology">trigonometric polynomials of degree at most <span class="process-math">\(n\)</span></dfn>.</div>
+</div>
+<div class="para logical" id="s_ortho_proj-5-3">
+<div class="para">Since <span class="process-math">\(B\)</span> is an orthogonal basis of <span class="process-math">\(W\text{,}\)</span> given an arbitrary function <span class="process-math">\(f(x)\in C[0,2\pi]\text{,}\)</span> its orthogonal projection <span class="process-math">\(\hat{f}=\proj_{W}(f)\)</span> is given by</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_ortho_proj_formula.html ./knowl/xref/eg_orthogonal_functions.html">
+\begin{equation*}
+\hat{f}(x)=a_0+a_1\cos(x)+b_1\sin(x)+a_2\cos(2x)+b_2\sin(2x)+\cdots +a_n\cos(nx)+b_n\sin(nx)\text{,}
+\end{equation*}
+</div>
+<div class="para">where</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_ortho_proj_formula.html ./knowl/xref/eg_orthogonal_functions.html">
+\begin{equation*}
+a_0=\frac{1}{2\pi}\int_0^{2\pi} f(x) \ dx, \ a_j=\frac{1}{\pi}\int_0^{2\pi}f(x)\cos(jx)\, dx, \ b_k=\frac{1}{\pi}\int_0^{2\pi}f(x)\sin(kx)\, dx\text{.}
+\end{equation*}
+</div>
+<div class="para">Here we are using <a href="s_ortho_proj.html#proc_ortho_proj-2-1-5-2-1-2" class="xref" data-knowl="./knowl/xref/eq_ortho_proj_formula.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.76">(1.76)</a>, as well as the inner product formulas <span class="process-math">\(\angvec{1,1}=2\pi\)</span> and <span class="process-math">\(\angvec{\cos n x, \cos n x}=\angvec{\sin n x, \sin n x}=\pi\)</span> from <a href="s_adhoc.html#eg_orthogonal_functions" class="xref" data-knowl="./knowl/xref/eg_orthogonal_functions.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.19.4">Example 1.19.4</a>.</div>
+</div>
+<div class="para logical" id="s_ortho_proj-5-4">
+<div class="para">What is the relationship between <span class="process-math">\(f\)</span> and <span class="process-math">\(\hat{f}\text{?}\)</span> <a href="s_ortho_proj.html#th_ortho_proj" class="xref" data-knowl="./knowl/xref/th_ortho_proj.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.20.9: Orthogonal projection">Theorem 1.20.9</a> tells us that <span class="process-math">\(\hat{f}\)</span> is the “best” trigonometric polynomial approximation of <span class="process-math">\(f(x)\)</span> of degree at most <span class="process-math">\(n\)</span> in the following sense: given any any other trigonometric polynomial <span class="process-math">\(g\in W\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_ortho_proj.html">
+\begin{equation*}
+\left\vert\left\vert f-\hat{f}\right\vert\right\vert\leq \norm{f-g}\text{.}
+\end{equation*}
+</div>
+<div class="para">Unpacking the definition of norm in this inner product space, we conclude that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_ortho_proj.html">
+\begin{equation*}
+\int_0^{2\pi} (f-\hat{f})^2\, dx\leq \int_0^{2\pi} (f-g)^2 \, dx
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(g\in W\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="s_ortho_proj-5-5">
+<div class="para">Thus, given a continuous function <span class="process-math">\(f\)</span> on <span class="process-math">\([0,2\pi]\text{,}\)</span> linear algebra shows us how to find its best trigonometric polynomial approximation of the form</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g(x)=a_0+\sum_{k=1}^na_k\cos kx +b_k\sin kx\text{.}
+\end{equation*}
+</div>
+<div class="para">However, linear algebra does not tell us just how good this approximation is. This question, among others, is tackled by another mathematical theory: <em class="emphasis">Fourier analysis</em>. There we learn that the trigonometric polynomial approximations get arbitrarily close to <span class="process-math">\(f\)</span> as we let <span class="process-math">\(n\)</span> increase. More precisely, letting <span class="process-math">\(\hat{f}_n\)</span> be the orthogonal projection of <span class="process-math">\(f\)</span> onto the space of trigonometric polynomials of degree at most <span class="process-math">\(n\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{n\to\infty}\norm{f-\hat{f}_n}=0\text{.}
+\end{equation*}
+</div>
+</div></section><section class="subsection" id="s_ortho_proj-6"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Least-squares solution to linear systems</span>
+</h3>
+<div class="para logical" id="s_ortho_proj-6-2">
+<div class="para">In statistics we often wish to approximate a scatter plot of points <span class="process-math">\(P_i=(X_i, Y_i)\text{,}\)</span> <span class="process-math">\(1\leq i\leq m\text{,}\)</span> with a line <span class="process-math">\(\ell\colon y=mx+b\)</span> that “best fits” the data. “Finding” this line amounts to finding the appropriate slope <span class="process-math">\(m\)</span> and <span class="process-math">\(y\)</span>-intercept <span class="process-math">\(b\text{:}\)</span> i.e., in this setup, the points <span class="process-math">\(P_i=(X_i, Y_i)\)</span> are given, and <span class="process-math">\(m\)</span> and <span class="process-math">\(b\)</span> are the unknowns we wish to find. For the line to perfectly fit the data, we would want</div>
+<div class="displaymath process-math">
+\begin{equation*}
+Y_i=mX_i+b \text{ for all } 1\leq i\leq m\text{.}
+\end{equation*}
+</div>
+<div class="para">In other words <span class="process-math">\((m,b)\)</span> would be a solution to the matrix equation <span class="process-math">\(A\boldx=\boldy\text{,}\)</span> where</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\boldx=\begin{bmatrix}m \\ b\end{bmatrix},A=\begin{bmatrix} X_1\amp 1\\ X_2\amp 1\\ \vdots \amp \vdots \\ X_m\amp 1  \end{bmatrix},  \boldy=\begin{bmatrix} Y_1\\ Y_2\\ \vdots \\ Y_m\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Of course in most situations the provided points do not lie on a line, and thus there is no solution <span class="process-math">\(\boldx\)</span> to the given matrix equation <span class="process-math">\(A\boldx=\boldy\text{.}\)</span> When this is the case we can use the theory of orthogonal projection to find what is called a <em class="emphasis">least-squares</em> solution, which we now describe in detail.</div>
+</div>
+<div class="para logical" id="s_ortho_proj-6-3">
+<div class="para">The least-squares method applies to any matrix equation</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_least-squares_orig.html ./knowl/xref/eq_least-squares_new.html ./knowl/xref/eq_least-squares_orig.html" id="eq_least-squares_orig">
+\begin{equation}
+\underset{m\times n}{A}\, \underset{n\times 1}{\boldx}=\underset{m\times 1}{\boldy}\text{,}\tag{1.81}
+\end{equation}
+</div>
+<div class="para">where <span class="process-math">\(A\)</span> and <span class="process-math">\(\boldy\)</span> are given, and <span class="process-math">\(\boldx\)</span> is treated as an unknown vector. Recall that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_least-squares_orig.html ./knowl/xref/eq_least-squares_new.html ./knowl/xref/eq_least-squares_orig.html" id="s_ortho_proj-6-3-5">
+\begin{align*}
+A\boldx=\boldy \text{ has a solution } \amp\iff \boldy\in \CS A  \text{.}
+\end{align*}
+</div>
+<div class="para">When <span class="process-math">\(\boldy\notin \CS A\text{,}\)</span> and hence <a href="s_ortho_proj.html#eq_least-squares_orig" class="xref" data-knowl="./knowl/xref/eq_least-squares_orig.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.81">(1.81)</a> does not have a solution, the least-squares method proceeds by replacing <span class="process-math">\(\boldy\)</span> with the element of <span class="process-math">\(W=\CS A\)</span> closest to it: that is, with its <em class="emphasis">orthogonal projection</em> onto <span class="process-math">\(W\text{.}\)</span>  Let <span class="process-math">\(\hat{\boldy}=\proj_{W}(\boldy)\text{,}\)</span> where orthogonal projection is taken with respect to the dot product on <span class="process-math">\(\R^m\text{,}\)</span> and consider the adjusted matrix equation</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_least-squares_orig.html ./knowl/xref/eq_least-squares_new.html ./knowl/xref/eq_least-squares_orig.html" id="eq_least-squares_new">
+\begin{equation}
+A\boldx=\hat{\boldy}\text{.}\tag{1.82}
+\end{equation}
+</div>
+<div class="para">By definition of <span class="process-math">\(\operatorname{proj}_W\text{,}\)</span>  we have <span class="process-math">\(\hat{\boldy}\in W=\CS A\text{,}\)</span> and thus there is a solution <span class="process-math">\(\hat{\boldx}\)</span> to <a href="s_ortho_proj.html#eq_least-squares_new" class="xref" data-knowl="./knowl/xref/eq_least-squares_new.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.82">(1.82)</a>. We call <span class="process-math">\(\hat{\boldx}\)</span> a <dfn class="terminology">least-squares</dfn> solution to <a href="s_ortho_proj.html#eq_least-squares_orig" class="xref" data-knowl="./knowl/xref/eq_least-squares_orig.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.81">(1.81)</a>. Observe that <span class="process-math">\(\hat{\boldx}\)</span> does <em class="emphasis">not</em> necessarily satisfy <span class="process-math">\(A\hat{\boldx}=\boldy\text{;}\)</span> rather, it satisfies <span class="process-math">\(A\hat{\boldx}=\hat{\boldy}\text{.}\)</span> What makes this a “least-squares” solution is that <span class="process-math">\(A\hat{\boldx}=\hat{\boldy}\)</span> is the element of <span class="process-math">\(W=\CS A\)</span> closest to <span class="process-math">\(\boldy\text{.}\)</span> With respect to the dot product, this means that a least-squares solution <span class="process-math">\(\hat{\boldx}\)</span> minimizes the quantity</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_least-squares_orig.html ./knowl/xref/eq_least-squares_new.html ./knowl/xref/eq_least-squares_orig.html">
+\begin{equation*}
+\norm{\boldy-A\boldx}=\sqrt{(y_1-y_1')^2+(y_2-y_2')^2+\cdots +(y_n-y_n')^2}\text{,}
+\end{equation*}
+</div>
+<div class="para">among all <span class="process-math">\(\boldx\in \R^n\text{.}\)</span>
+</div>
+</div>
+<article class="example example-like" id="eg_least-squares"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.20.16</span><span class="period">.</span><span class="space"> </span><span class="title">Best fitting line.</span>
+</h4>
+<div class="para logical" id="eg_least-squares-2-1">
+<div class="para">Suppose we wish to find a line <span class="process-math">\(\ell\colon y=mx+b\)</span> that best fits (in the least-square sense) the following data points: <span class="process-math">\(P_1=(-3,1), P_2=(1,2), P_3=(2,3)\text{.}\)</span> Following the discussion above, we seek a solution <span class="process-math">\(\boldx=(m,b)\)</span> to the matrix equation <span class="process-math">\(A\boldx=\boldy\text{,}\)</span> where</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_ortho_proj_formula.html">
+\begin{equation*}
+\boldx=\begin{bmatrix}m \\ b \end{bmatrix}, A=\begin{amatrix}[rr]-3\amp 1\\ 1\amp 1\\ 2\amp 1 \end{amatrix}  , \boldy=\begin{bmatrix}1\\ 2\\ 3 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Using Gaussian elimination, we see easily that this equation has no solution: equivalently, <span class="process-math">\(\boldy\notin W=\CS A\text{.}\)</span> Accordingly, we compute <span class="process-math">\(\hat{\boldy}=\proj_{W}(\boldy)\)</span> and find a solution to <span class="process-math">\(A\hat{\boldx}=\hat{\boldy}\text{.}\)</span> Conveniently, the set <span class="process-math">\(B=\{(-3,2,1), (1,1,1)\}\)</span> is already an <em class="emphasis">orthogonal</em> basis of <span class="process-math">\(W=\CS A\text{,}\)</span> allowing us to use <a href="s_ortho_proj.html#proc_ortho_proj-2-1-5-2-1-2" class="xref" data-knowl="./knowl/xref/eq_ortho_proj_formula.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.76">(1.76)</a>:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_ortho_proj_formula.html">
+\begin{equation*}
+\hat{\boldy}=\frac{\boldy\cdot (-3,1,2)}{(-3,2,1)\cdot (-3,1,2)}(-3,1,2)+\frac{\boldy\cdot(1,1,1)}{(1,1,1)\cdot (1,1,1)}(1,1,1)=\frac{1}{14}(13, 33, 38)\text{.}
+\end{equation*}
+</div>
+<div class="para">Lastly, solving <span class="process-math">\(A\hat{\boldx}=\hat{\boldy}\)</span> yields <span class="process-math">\((m,b)=\hat{\boldx}=(5/14, 2)\text{,}\)</span> and we conclude the line <span class="process-math">\(\ell\colon y=(5/14)x+2\)</span> is the one that best fits the data in the least-squares sense.</div>
+</div></article><article class="remark remark-like" id="rm_least-squares"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.20.17</span><span class="period">.</span><span class="space"> </span><span class="title">Visualizing least-squares.</span>
+</h4>
+<div class="para" id="rm_least-squares-2">
+<a href="s_ortho_proj.html#fig_leastsquares" class="xref" data-knowl="./knowl/xref/fig_leastsquares.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.20.18: Least-squares visualization">Figure 1.20.18</a> helps us give a graphical interpretation of how the line <span class="process-math">\(\ell\colon y=(5/14)x+2\)</span> best approximates the points <span class="process-math">\(P_1=(-3,1), P_2=(1,2), P_3=(2,3)\text{.}\)</span>
+</div>
+<figure class="figure figure-like" id="fig_leastsquares"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/image/im_leastsquares.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.20.18<span class="period">.</span></span><span class="space"> </span>Least-squares visualization</figcaption></figure><div class="para logical" id="rm_least-squares-4">
+<div class="para">Let <span class="process-math">\(\boldy=(1,2,3)=(y_1,y_2,y_3)\)</span> be the given <span class="process-math">\(y\)</span>-values of the points, and let <span class="process-math">\(\hat{\boldy}=(y_1',y_2',y_3')\)</span> be the orthogonal projection of <span class="process-math">\(\boldy\)</span> onto <span class="process-math">\(\CS A\text{.}\)</span> In the graph the values <span class="process-math">\(\epsilon_i\)</span> denote the vertical difference <span class="process-math">\(\epsilon_i=y_i-y_i'\)</span> between the data points, and our fitting line. The projection <span class="process-math">\(\hat{\boldy}\)</span> makes the error <span class="process-math">\(\norm{\boldy-\hat{\boldy}}=\sqrt{ \epsilon_1^2+\epsilon_2^2+\epsilon_3^2}\)</span> as small as possible. This means if I draw <em class="emphasis">any other line</em> and compute the corresponding differences <span class="process-math">\(\epsilon_i'\)</span> at the <span class="process-math">\(x\)</span>-values  -3, 1 and 2, then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\epsilon_1^2+\epsilon_2^2+\epsilon_3^2\leq (\epsilon_1')^2+(\epsilon_2')^2+(\epsilon_3')^2
+\end{equation*}
+</div>
+</div></article><div class="para logical" id="s_ortho_proj-6-6">
+<div class="para">To compute a least-squares solution to <span class="process-math">\(A\boldx=\boldy\)</span> we must first compute the orthogonal projection of <span class="process-math">\(\boldy\)</span> onto <span class="process-math">\(W=\CS A\text{;}\)</span> and this in turn requires first producing an orthogonal basis of <span class="process-math">\(\CS A\text{,}\)</span> which may require using the Gram-Schmidt procedure. The following result bypasses these potentially onerous steps by  characterizing a least-squares solution to <span class="process-math">\(A\boldx=\boldy\)</span> as a solution to the matrix equation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A^TA\boldx=A^T\boldy\text{.}
+\end{equation*}
+</div>
+</div>
+<article class="theorem theorem-like" id="th_leastsquares"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.20.19</span><span class="period">.</span><span class="space"> </span><span class="title">Least-squares matrix formula.</span>
+</h4>
+<div class="para logical" id="th_leastsquares-2-1">
+<div class="para">Given an <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\)</span> and <span class="process-math">\(m\times 1\)</span> column vector <span class="process-math">\(\boldy\text{,}\)</span> a vector <span class="process-math">\(\hat{\boldx}\)</span> is a least-squares solution to <span class="process-math">\(A\boldx=\boldy\)</span> if and only if</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_leastsquares_matrix_equation.html" id="eq_leastsquares_matrix_equation">
+\begin{equation}
+A^TA\boldx=A^T\boldy\text{.}\tag{1.83}
+\end{equation}
+</div>
+<div class="para">In other words, we can find a least-squares solution by solving the matrix equation <a href="s_ortho_proj.html#eq_leastsquares_matrix_equation" class="xref" data-knowl="./knowl/xref/eq_leastsquares_matrix_equation.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.83">(1.83)</a> directly.</div>
+</div></article><details id="th_leastsquares-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_leastsquares-3-1">
+<div class="para">Let <span class="process-math">\(W=\CS A\text{,}\)</span> and let <span class="process-math">\(\hat{\boldy}=\proj_{W}(\boldy)\text{.}\)</span> The key observation is that a vector <span class="process-math">\(\hat{\boldx}\)</span> satisfies <span class="process-math">\(A\hat{\boldx}=\hat{\boldy}\)</span> if and only if</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\boldy=A\hat{\boldx}+(\boldy-A\hat{\boldx})
+\end{equation*}
+</div>
+<div class="para">is an orthogonal decomposition of <span class="process-math">\(\boldy\)</span> with respect to <span class="process-math">\(W=\CS A\text{;}\)</span> and this is true if and only if <span class="process-math">\(\boldy-A\hat{\boldx}\in (\CS A)^\perp\text{.}\)</span> Thus we have</div>
+<div class="displaymath process-math" id="th_leastsquares-3-1-9">
+\begin{align*}
+A\hat{\boldx}=\hat{\boldy} \amp\iff \boldy-A\hat{\boldx}\in (\CS A)^\perp \\
+\amp\iff \boldy-A\hat{\boldx}\in \NS A^T \amp ((\CS A)^\perp=\NS A^T) \\
+\amp\iff A^T(\boldy-A\hat{\boldx})=\boldzero \\
+\amp \iff A^T\boldy-A^TA\hat{\boldx}=\boldzero\\
+\amp \iff A^TA\hat{\boldx}=A^T\boldy\text{.}
+\end{align*}
+</div>
+</div></article></details><article class="example example-like" id="s_ortho_proj-6-8"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.20.20</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="s_ortho_proj-6-8-1-1">
+<div class="para">Consider again the matrix equation <span class="process-math">\(A\boldx=\boldy\)</span> from <a href="s_ortho_proj.html#eg_least-squares" class="xref" data-knowl="./knowl/xref/eg_least-squares.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.20.16: Best fitting line">Example 1.20.16</a>. According to <a href="s_ortho_proj.html#th_leastsquares" class="xref" data-knowl="./knowl/xref/th_leastsquares.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.20.19: Least-squares matrix formula">Theorem 1.20.19</a> the least-squares solution can be found by solving the equation <span class="process-math">\(A^TA\boldx=A^T\boldy\)</span> for <span class="process-math">\(\boldx\text{.}\)</span> We compute</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_least-squares.html ./knowl/xref/th_leastsquares.html" id="s_ortho_proj-6-8-1-1-6">
+\begin{align*}
+A^TA\amp=\begin{amatrix}[rr]14\amp 0\\ 0\amp 3  \end{amatrix} \amp A^T\boldy\amp =\begin{amatrix}[r] 5\\ 6 \end{amatrix}
+\end{align*}
+</div>
+<div class="para">and solve</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_least-squares.html ./knowl/xref/th_leastsquares.html">
+\begin{equation*}
+\begin{amatrix}[rr]14\amp 0\\ 0\amp 3  \end{amatrix}\boldx=\begin{amatrix}[r] 5\\ 6 \end{amatrix}\iff
+\boldx=(5/14, 2),
+\end{equation*}
+</div>
+<div class="para">just as before.</div>
 </div></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="s_adhoc.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="advlinalgkursobjekt-6.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="s_adhoc.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_adjoint.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

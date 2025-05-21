@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h3 class="heading">
+<span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.21.2</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Riesz representation.</span>
+</h3>
+<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
+<div class="para">Let <span class="process-math">\((V,\angvec{\, ,})\)</span> be an inner product space.</div>
+<ol class="decimal" id="th_Riesz_rep-2-1-2">
+<li><div class="para">For all <span class="process-math">\(v_0\in V\text{,}\)</span> the function <span class="process-math">\(\phi_{v_0}\colon V\rightarrow F\)</span> defined as <span class="process-math">\(\phi_{v_0}(v)=\angvec{v,v_0}\)</span> is a linear functional.</div></li>
+<li><div class="para logical">
+<div class="para">The function</div>
+<div class="displaymath process-math">
+\begin{align*}
+\Phi\colon V \amp \rightarrow V^*=\mathcal{L}(V,F)\\
+v \amp \mapsto \phi_v \text{,}
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(\phi_v(v')=\angvec{v',v}\text{,}\)</span> is an injective linear transformation.</div>
+</div></li>
+<li><div class="para">Assume <span class="process-math">\(\dim V&lt; \infty\text{.}\)</span>  In this case the map <span class="process-math">\(\Phi\)</span> above is an isomorphism. In particular, given a linear functional <span class="process-math">\(\phi\colon V\rightarrow F\text{,}\)</span> there is a unique vector <span class="process-math">\(v_0\in V\)</span> such that <span class="process-math">\(\phi=\phi_{v_0}\text{:}\)</span> i.e., such that <span class="process-math">\(\phi(v)=\angvec{v,v_0}\)</span> for all <span class="process-math">\(v\in V\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical"><ol class="decimal" id="th_Riesz_rep-3-1-1">
+<li><div class="para">This was already proved in <a href="s_inner_prod.html#th_inner_prod" class="xref" data-knowl="./knowl/xref/th_inner_prod.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.18.9: Inner product properties">Theorem 1.18.9</a>. The current statement is just a slight reformulation of this fact, using the language of linear functionals.</div></li>
+<li>
+<div class="para logical">
+<div class="para">We use the 1-step technique. Given any <span class="process-math">\(v_1,v_2\in V\)</span> and <span class="process-math">\(c,d\in F\text{,}\)</span> the function <span class="process-math">\(\Phi(cv_1+dv_2)=\phi_{cv_1+dv_2}\)</span> satisfies</div>
+<div class="displaymath process-math">
+\begin{align*}
+\phi_{cv_1+dv_2}(v) \amp = \angvec{v,cv_1+dv+2} \\
+\amp = c\angvec{v,v_1}+d\angvec{v,v_2}\\
+\amp = c\phi_{v_1}(v)+d\phi_{v_2}(v)\\
+\amp =(c\phi_{v_1}+d\phi_{v_2})(v)
+\end{align*}
+</div>
+<div class="para">for all <span class="process-math">\(v\in V\text{.}\)</span> Thus <span class="process-math">\(\phi_{cv_1+dv_2}=c\phi_{v_1}+d\phi_{v_2}\text{:}\)</span> i.e., <span class="process-math">\(\Phi(cv_1+dv_2)=c\Phi(v_1)+d\Phi(v_2)\text{.}\)</span>
+</div>
+</div>
+<div class="para logical">
+<div class="para">To show <span class="process-math">\(\Phi\)</span> is injective, we will show that <span class="process-math">\(\NS \Phi=\{\boldzero\}\text{.}\)</span> Given any <span class="process-math">\(v_0\in V\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_inner_prod.html">
+\begin{align*}
+\Phi(v_0)=\boldzero \amp \iff \phi_{v_0}=0_{V,F}\\
+\amp \iff \phi_{v_0}(v)=0 \text{ for all } v\in V\\
+\amp \iff \angvec{v,v_0}=0 \text{ for all } v\in V\\
+\amp \iff v_0=\boldzero \amp (\knowl{./knowl/xref/th_inner_prod.html}{\text{1.18.9}}) \text{.}
+\end{align*}
+</div>
+<div class="para">Thus <span class="process-math">\(\NS \Phi=\{\boldzero\}\)</span> and <span class="process-math">\(\Phi\)</span> is injective.</div>
+</div>
+</li>
+<li><div class="para logical">
+<div class="para">Let <span class="process-math">\(\dim V=n&lt; \infty\text{.}\)</span> Since <span class="process-math">\(\dim F=1\text{,}\)</span> by <a href="s_matrix_reps.html#th_matrix_reps_isom" class="xref" data-knowl="./knowl/xref/th_matrix_reps_isom.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.13.19: Matrix representation isomorphism">Theorem 1.13.19</a> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_matrix_reps_isom.html ./knowl/xref/cor_inj_surj_bij.html">
+\begin{equation*}
+\dim V^*=\dim \mathcal{L}(V,F)=n\cdot 1=n=\dim V\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\Phi\)</span> is an injective linear transformation between two vector spaces of the same finite dimension, it follows from <a href="s_rank_nullity.html#cor_inj_surj_bij" class="xref" data-knowl="./knowl/xref/cor_inj_surj_bij.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.11.4: Injective, surjective, bijective">Corollary 1.11.4</a> that <span class="process-math">\(\Phi\)</span> is bijective, and hence an isomorphism.</div>
+</div></li>
+</ol></div></article></details><span class="incontext"><a class="internal" href="s_adjoint.html#th_Riesz_rep">in-context</a></span>
+</body>
+</html>
