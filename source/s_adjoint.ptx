@@ -167,6 +167,27 @@
     </p>
     </statement>
     </definition>
+    <theorem xml:id="th_adjoint_inner">
+    <title>Standard inner product</title>
+    <statement>
+    <p>
+    Let <m>F\in \{\R, \C\}</m>, and let <m>\angvec{\, ,}</m> be the standard inner product on <m>F^n</m>. For all <m>\boldx, \boldy\in F^n</m>, we have 
+    <men xml:id="eq_standard_inner_product_matrix">
+        \angvec{\boldx,\boldy}=\boldy^*\,\boldx
+    </men>.
+    </p>
+    </statement>
+    <proof>
+    <p>
+        Let <m>\boldx=(x_1,x_2,\dots, x_n)</m> and <m>\boldy=(y_1,y_2,\dots, y_n)</m>. Treating <m>\boldx</m> and <m>\boldy</m> as column vectors  (<xref ref="fiat_col_vecs_tuples"/>), we have 
+        <md>
+            <mrow>\boldy^*\,\boldx\amp =\rowvec{\overline{y_1}, \dots, \overline{y_n}}\,\colvec{x_1\\ \vdots \\ x_n} </mrow>
+            <mrow> \amp = \sum_{i=1}^n\overline{y_i}x_i</mrow>
+        </md>
+    </p>
+    </proof>
+    </theorem>
+    
     <theorem xml:id="th_adjoint_matrix">
     <title>Adjoint of a matrix transformation</title>
     <statement>
@@ -182,12 +203,79 @@
         </md>
         for all <m>\boldx\in F^n</m> and <m>\boldy\in F^m</m>. First observe that the standard inner product on these spaces can be computed as a matrix multiplication as follows: 
         <me>
-            \angvec{\boldx,\boldy}=\boldx^T\,\overline{y}
+            \angvec{\boldx,\boldy}=\boldy^*\boldx
         </me>.
         It 
         
     </p>
     </proof>
+    <example xml:id="eg_adjoint_inclusion">
+    <title>Adjoint of inclusion map</title>
+    <statement>
+    <p>
+    Let <m>W</m> be a finite-dimensional subspace of the inner product space <m>(V,\angvec{\, })</m>, and let <m>i\colon W\rightarrow V</m> be the inclusion map. Determine the adjoint map <m>i^*\colon V\rightarrow W</m>. 
+    </p>
+    </statement>
+    <solution>
+    <p>
+    
+    </p>
+    </solution>
+    </example>
+    <!-- <example xml:id="eg_adjoint_integration_kernel">
+    <title>Integral kernel</title>
+    <statement>
+    <p>
+    
+    </p>
+    </statement>
+    <solution>
+    <p>
+    
+    </p>
+    </solution>
+    </example> -->
+    <theorem xml:id="th_adjoint_props">
+    <title>Adjoint properties</title>
+    <statement>
+    <p>
+    Let <m>(V,\angvec{\, }_V)</m>, <m>(W,\angvec{\, }_W)</m>, and <m>(U,\angvec{\, ,}_U</m> be inner product spaces. 
+    <ol>
+        <li>
+            <p>
+                Assume <m>V</m> and <m>W</m> are finite-dimensional. If <m>T\in \mathcal{L}(V,W)</m> and <m>S\in \mathcal{L}(W,U)</m>, then 
+                <men>
+                    (ST)^*=T^*S^*
+                </men>.
+            </p>
+        </li>
+        <li>
+            <p>
+                Assume <m>V</m> and <m>W</m> are finite dimensional. If <m>T\in \mathcal{L}(V,W)</m>, then 
+                <men xml:id="eq_double_adjoint">
+                    (T^*)^*=T
+                </men>.
+            </p>
+        </li>
+        <li>
+            <p>
+                Assume <m>V</m> is finite dimensional. Given <m>T\in \mathcal{L}(V,W)</m>, we have 
+                <md>
+                    <mrow>\NS T^* \amp =\im T^\perp</mrow>
+                    <mrow>\im T^* \amp =\NS T^\perp</mrow>
+                </md>
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <proof>
+    <p>
+    </p>
+    </proof>
+    </theorem>
+    
+    
     </theorem>
     
     
