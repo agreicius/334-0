@@ -501,7 +501,13 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_ortho_proj.html#s_ortho_proj-6" class="internal"><span class="title">Least-squares solution to linear systems</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="s_adjoint.html" class="internal"><span class="codenumber">1.21</span> <span class="title">Adjoints</span></a></div></li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="s_adjoint.html" class="internal"><span class="codenumber">1.21</span> <span class="title">Adjoints</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_adjoint.html#ss_adjoints" class="internal"><span class="title">Adjoints</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_adjoint.html#ss_existence" class="internal"><span class="title">Existence of adjoints</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -518,104 +524,85 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:xlink="http://www.w3.org/1999/xlink" class="section" id="s_adjoint"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">1.21</span><span class="space"> </span><span class="title">Adjoints</span>
 </h2>
-<article class="definition definition-like" id="d_lin_functional"><h3 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.21.1</span><span class="period">.</span><span class="space"> </span><span class="title">Linear functional.</span>
+<section class="subsection" id="ss_adjoints"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Adjoints</span>
 </h3>
-<div class="para" id="d_lin_functional-2-1">Let <span class="process-math">\(V\)</span> be a vector space. A <dfn class="terminology">linear functional</dfn> on <span class="process-math">\(V\)</span> is a linear transformation <span class="process-math">\(\phi\colon V\rightarrow F\)</span> from <span class="process-math">\(V\)</span> to <span class="process-math">\(F\text{.}\)</span> The vector space <span class="process-math">\(\mathcal{L}(V,F)\)</span> of all linear functionals on <span class="process-math">\(V\)</span> is called the <dfn class="terminology">dual space</dfn> of <span class="process-math">\(V\text{,}\)</span> and is denoted <span class="process-math">\(V^*\text{.}\)</span>
-</div></article><article class="theorem theorem-like" id="th_Riesz_rep"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.21.2</span><span class="period">.</span><span class="space"> </span><span class="title">Riesz representation.</span>
-</h3>
-<div class="para logical" id="th_Riesz_rep-2-1">
-<div class="para">Let <span class="process-math">\((V,\angvec{\, ,})\)</span> be an inner product space.</div>
-<ol class="decimal" id="th_Riesz_rep-2-1-2">
-<li id="th_Riesz_rep-2-1-2-1"><div class="para" id="th_Riesz_rep-2-1-2-1-1">For all <span class="process-math">\(v_0\in V\text{,}\)</span> the function <span class="process-math">\(\phi_{v_0}\colon V\rightarrow F\)</span> defined as <span class="process-math">\(\phi_{v_0}(v)=\angvec{v,v_0}\)</span> is a linear functional.</div></li>
-<li id="th_Riesz_rep-2-1-2-2"><div class="para logical" id="th_Riesz_rep-2-1-2-2-1">
-<div class="para">The function</div>
-<div class="displaymath process-math" id="th_Riesz_rep-2-1-2-2-1-1">
-\begin{align*}
-\Phi\colon V \amp \rightarrow V^*=\mathcal{L}(V,F)\\
-v \amp \mapsto \phi_v \text{,}
-\end{align*}
-</div>
-<div class="para">where <span class="process-math">\(\phi_v(v')=\angvec{v',v}\text{,}\)</span> is an injective linear transformation.</div>
-</div></li>
-<li id="th_Riesz_rep-2-1-2-3"><div class="para" id="th_Riesz_rep-2-1-2-3-1">Assume <span class="process-math">\(\dim V&lt; \infty\text{.}\)</span>  In this case the map <span class="process-math">\(\Phi\)</span> above is an isomorphism. In particular, given a linear functional <span class="process-math">\(\phi\colon V\rightarrow F\text{,}\)</span> there is a unique vector <span class="process-math">\(v_0\in V\)</span> such that <span class="process-math">\(\phi=\phi_{v_0}\text{:}\)</span> i.e., such that <span class="process-math">\(\phi(v)=\angvec{v,v_0}\)</span> for all <span class="process-math">\(v\in V\text{.}\)</span>
-</div></li>
-</ol>
-</div></article><details id="th_Riesz_rep-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_Riesz_rep-3-1"><ol class="decimal" id="th_Riesz_rep-3-1-1">
-<li id="th_Riesz_rep-3-1-1-1"><div class="para" id="th_Riesz_rep-3-1-1-1-1">This was already proved in <a href="s_inner_prod.html#th_inner_prod" class="xref" data-knowl="./knowl/xref/th_inner_prod.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.18.9: Inner product properties">Theorem 1.18.9</a>. The current statement is just a slight reformulation of this fact, using the language of linear functionals.</div></li>
-<li id="th_Riesz_rep-3-1-1-2">
-<div class="para logical" id="th_Riesz_rep-3-1-1-2-1">
-<div class="para">We use the 1-step technique. Given any <span class="process-math">\(v_1,v_2\in V\)</span> and <span class="process-math">\(c,d\in F\text{,}\)</span> the function <span class="process-math">\(\Phi(cv_1+dv_2)=\phi_{cv_1+dv_2}\)</span> satisfies</div>
-<div class="displaymath process-math" id="th_Riesz_rep-3-1-1-2-1-4">
-\begin{align*}
-\phi_{cv_1+dv_2}(v) \amp = \angvec{v,cv_1+dv+2} \\
-\amp = c\angvec{v,v_1}+d\angvec{v,v_2}\\
-\amp = c\phi_{v_1}(v)+d\phi_{v_2}(v)\\
-\amp =(c\phi_{v_1}+d\phi_{v_2})(v)
-\end{align*}
-</div>
-<div class="para">for all <span class="process-math">\(v\in V\text{.}\)</span> Thus <span class="process-math">\(\phi_{cv_1+dv_2}=c\phi_{v_1}+d\phi_{v_2}\text{:}\)</span> i.e., <span class="process-math">\(\Phi(cv_1+dv_2)=c\Phi(v_1)+d\Phi(v_2)\text{.}\)</span>
-</div>
-</div>
-<div class="para logical" id="th_Riesz_rep-3-1-1-2-2">
-<div class="para">To show <span class="process-math">\(\Phi\)</span> is injective, we will show that <span class="process-math">\(\NS \Phi=\{\boldzero\}\text{.}\)</span> Given any <span class="process-math">\(v_0\in V\text{,}\)</span> we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_inner_prod.html" id="th_Riesz_rep-3-1-1-2-2-4">
-\begin{align*}
-\Phi(v_0)=\boldzero \amp \iff \phi_{v_0}=0_{V,F}\\
-\amp \iff \phi_{v_0}(v)=0 \text{ for all } v\in V\\
-\amp \iff \angvec{v,v_0}=0 \text{ for all } v\in V\\
-\amp \iff v_0=\boldzero \amp (\knowl{./knowl/xref/th_inner_prod.html}{\text{1.18.9}}) \text{.}
-\end{align*}
-</div>
-<div class="para">Thus <span class="process-math">\(\NS \Phi=\{\boldzero\}\)</span> and <span class="process-math">\(\Phi\)</span> is injective.</div>
-</div>
-</li>
-<li id="th_Riesz_rep-3-1-1-3"><div class="para logical" id="th_Riesz_rep-3-1-1-3-1">
-<div class="para">Let <span class="process-math">\(\dim V=n&lt; \infty\text{.}\)</span> Since <span class="process-math">\(\dim F=1\text{,}\)</span> by <a href="s_matrix_reps.html#th_matrix_reps_isom" class="xref" data-knowl="./knowl/xref/th_matrix_reps_isom.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.13.19: Matrix representation isomorphism">Theorem 1.13.19</a> we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_matrix_reps_isom.html ./knowl/xref/cor_inj_surj_bij.html">
-\begin{equation*}
-\dim V^*=\dim \mathcal{L}(V,F)=n\cdot 1=n=\dim V\text{.}
-\end{equation*}
-</div>
-<div class="para">Since <span class="process-math">\(\Phi\)</span> is an injective linear transformation between two vector spaces of the same finite dimension, it follows from <a href="s_rank_nullity.html#cor_inj_surj_bij" class="xref" data-knowl="./knowl/xref/cor_inj_surj_bij.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.11.4: Injective, surjective, bijective">Corollary 1.11.4</a> that <span class="process-math">\(\Phi\)</span> is bijective, and hence an isomorphism.</div>
-</div></li>
-</ol></div></article></details><article class="theorem theorem-like" id="th_adjoint"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.21.3</span><span class="period">.</span><span class="space"> </span><span class="title">Adjoint of a transformation.</span>
-</h3>
-<div class="para logical" id="th_adjoint-2-1">
-<div class="para">Let <span class="process-math">\((V,\angvec{\, ,}_V)\)</span> and <span class="process-math">\((W,\angvec{\, ,}_W\)</span> be inner product spaces, and assume <span class="process-math">\(V\)</span> is finite dimensional. Given any <span class="process-math">\(T\in \mathcal{V,W}\text{,}\)</span> there is a unique <span class="process-math">\(T^*\colon W\rightarrow V\)</span> satisfying</div>
-<div class="displaymath process-math" id="th_adjoint-2-1-6">
+<article class="definition definition-like" id="d_adjoint"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.21.1</span><span class="period">.</span><span class="space"> </span><span class="title">Adjoint of transformation.</span>
+</h4>
+<div class="para logical" id="d_adjoint-2-1">
+<div class="para">Let <span class="process-math">\((V,\angvec{\, ,}_V)\)</span> and <span class="process-math">\((W,\angvec{\, ,}_W)\)</span> be inner product spaces. Given <span class="process-math">\(T\in \mathcal{L}(V,W)\text{,}\)</span> we call a function <span class="process-math">\(T^*\colon W\rightarrow V\)</span> an <dfn class="terminology">adjoint</dfn> of <span class="process-math">\(T\)</span> if it satisfies</div>
+<div class="displaymath process-math" data-contains-math-knowls="" id="d_adjoint-2-1-7">
 \begin{align}
 \angvec{T(v),w}_W \amp =\angvec{v,T^*(w)}_V\tag{1.84}\\
-\angvec{T^*(w),v}_V \amp =\angvec{w,T(v)}_V\text{.}\tag{1.85}
+\angvec{T^*(w),v}_V \amp =\angvec{w,T(v)}_V\tag{1.85}
 \end{align}
 </div>
-</div></article><details id="th_adjoint-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_adjoint-3-1">In the argument that follows, we will drop the subscripts on <span class="process-math">\(\angvec{\, ,}_V\)</span> and <span class="process-math">\(\angvec{\, ,}_W\text{.}\)</span> The reader can easily determine which inner product is meant by determining which space (<span class="process-math">\(V\)</span> or <span class="process-math">\(W\)</span>) the input vectors are elements of.</div>
-<div class="para logical" id="th_adjoint-3-2">
-<div class="para">First we prove the existence of <span class="process-math">\(T^*\)</span> by defining it explicitly via a somewhat involved recipe. Given any <span class="process-math">\(w\in W\text{,}\)</span> the function</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_Riesz_rep.html">
-\begin{equation*}
-f_w(v)=\angvec{T(v),w}
-\end{equation*}
-</div>
-<div class="para">is easily seen to be a linear functional on <span class="process-math">\(V\text{:}\)</span> i.e., <span class="process-math">\(f_w\in V^*=\mathcal{L}(V,F)\text{.}\)</span> By <a href="s_adjoint.html#th_Riesz_rep" class="xref" data-knowl="./knowl/xref/th_Riesz_rep.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.21.2: Riesz representation">Riesz representation</a> there is a unique vector <span class="process-math">\(v_w\in V\)</span> satisfying <span class="process-math">\(f_w(v)=\angvec{v,v_w}\)</span> for all <span class="process-math">\(v\in V\text{.}\)</span> We define <span class="process-math">\(T^*(w)=v_0\text{.}\)</span>
-</div>
-</div>
-<div class="para logical" id="th_adjoint-3-3">
-<div class="para">Having defined <span class="process-math">\(T^*\colon W\rightarrow V\)</span> as a function,, we now show that it satisfies equation <a href="s_adjoint.html#th_adjoint-2-1-6" class="xref" data-knowl="./knowl/xref/eq_adj_T.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.84">(1.84)</a>; equation <a href="s_adjoint.html#th_adjoint-2-1-6" class="xref" data-knowl="./knowl/xref/eq_adj_Tstar.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.85">(1.85)</a> then follows immediately from the conjugate symmetry property. Given any <span class="process-math">\(v,w\in V\text{,}\)</span> we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_adj_T.html ./knowl/xref/eq_adj_Tstar.html ./knowl/xref/th_Riesz_rep.html" id="th_adjoint-3-3-5">
+<div class="para">for all <span class="process-math">\(v\in V\)</span> and <span class="process-math">\(w\in W\text{.}\)</span> Furthermore, we call each of the equivalent properties <a href="s_adjoint.html#d_adjoint-2-1-7" class="xref" data-knowl="./knowl/xref/eq_adj_T.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.84">(1.84)–(1.85)</a> the <dfn class="terminology">adjoint property</dfn>.</div>
+</div></article><article class="remark remark-like" id="ss_adjoints-3"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.21.2</span><span class="period">.</span><span class="space"> </span><span class="title">Adjoint properties.</span>
+</h4>
+<div class="para logical" id="ss_adjoints-3-2">
+<div class="para">To see that properties <a href="s_adjoint.html#d_adjoint-2-1-7" class="xref" data-knowl="./knowl/xref/eq_adj_T.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.84">(1.84)–(1.85)</a> are equivalent, note that</div>
+<div class="displaymath process-math" data-contains-math-knowls="" id="ss_adjoints-3-2-2">
 \begin{align*}
-\angvec{T(v),w} \amp = f_w(v) \amp (f_w(v)=\angvec{T(v),w})\\
-\amp =\angvec{v,v_w} \amp (\knowl{./knowl/xref/th_Riesz_rep.html}{\text{1.21.2}}\\
-\amp =\angvec{v,T^*(w)} \amp (\text{def. } T^*) \text{,}
+\angvec{v,T^*(w)}_V \amp =\angvec{T(v),w}_W\\
+\amp \iff \overline{\angvec{v,T^*(w)}}_V=\overline{\angvec{T(v),w}}_W\\
+\amp \iff \angvec{T^*(w),v}_V=\angvec{w,T(v)}_W \amp (\text{conj. sym.})\text{.}
 \end{align*}
 </div>
-<div class="para">as desired.</div>
+</div></article><article class="convention remark-like" id="ss_adjoints-4"><h4 class="heading">
+<span class="type">Convention</span><span class="space"> </span><span class="codenumber">1.21.3</span><span class="period">.</span><span class="space"> </span><span class="title">Adjoints.</span>
+</h4>
+<div class="para" id="ss_adjoints-4-2">As is evident in the statement of <a href="s_adjoint.html#d_adjoint" class="xref" data-knowl="./knowl/xref/d_adjoint.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.21.1: Adjoint of transformation">Definition 1.21.1</a>, discussion of adjoint transformations generally involves two different inner product spaces with two different inner products. Although we will be careful to use subscript notation in statements of definitions or theory, henceforth we will drop the subscripts on <span class="process-math">\(\angvec{\, ,}_V\)</span> and <span class="process-math">\(\angvec{\, ,}_W\)</span> when constructing proofs or computing examples. The reader can easily determine which inner product is meant by determining which space (<span class="process-math">\(V\)</span> or <span class="process-math">\(W\)</span>) the input vectors are elements of.</div></article><div class="para" id="ss_adjoints-5">The adjoint of a linear transformation <span class="process-math">\(T\colon V\rightarrow W\)</span> does not always exist. However, as we show in <a href="s_adjoint.html#th_adjoint" class="xref" data-knowl="./knowl/xref/th_adjoint.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.21.15: Adjoint of a transformation">Theorem 1.21.15</a>, <span class="process-math">\(T^*\)</span> is guaranteed to exist if <span class="process-math">\(\dim V&lt; \infty\text{.}\)</span> The next theorem gives us information about adjoints when they do exist, and as such will be littered with phrase of the sort “if the adjoint exists”.</div>
+<article class="theorem theorem-like" id="th_adjoint_props"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.21.4</span><span class="period">.</span><span class="space"> </span><span class="title">Adjoint properties.</span>
+</h4>
+<div class="para logical" id="th_adjoint_props-2-1">
+<div class="para">Let <span class="process-math">\((V,\angvec{\, }_V)\text{,}\)</span> <span class="process-math">\((W,\angvec{\, }_W)\text{,}\)</span> and <span class="process-math">\((U,\angvec{\, ,}_U)\)</span> be inner product spaces, let <span class="process-math">\(T\in \mathcal{L}(V,W)\text{,}\)</span> and let <span class="process-math">\(S\in \mathcal{L}(W,U)\text{.}\)</span>
 </div>
-<div class="para logical" id="th_adjoint-3-4">
-<div class="para">Next, we use the fact that <span class="process-math">\(T^*\)</span> satisfies <a href="s_adjoint.html#th_adjoint-2-1-6" class="xref" data-knowl="./knowl/xref/eq_adj_Tstar.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.85">(1.85)</a> to show it is linear. Given any <span class="process-math">\(w_1,w_2\in W\)</span> and <span class="process-math">\(c,d\in F\text{,}\)</span> we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_adj_Tstar.html ./knowl/xref/th_inner_prod.html" id="th_adjoint-3-4-5">
+<ol class="decimal" id="th_adjoint_props-2-1-6">
+<li id="th_adjoint_props-2-1-6-1"><div class="para" id="th_adjoint_props-2-1-6-1-1">There is at most one adjoint of <span class="process-math">\(T\text{:}\)</span> i.e., if there exists a function <span class="process-math">\(T^*\)</span> satisfying the adjoint property, then it is unique.</div></li>
+<li id="th_adjoint_props-2-1-6-2"><div class="para" id="th_adjoint_props-2-1-6-2-1">An adjoint of <span class="process-math">\(T\)</span> is linear: i.e., if <span class="process-math">\(T^*\)</span> exists, then <span class="process-math">\(T^*\in \mathcal{W,V}\)</span>
+</div></li>
+<li id="th_adjoint_props-2-1-6-3"><div class="para logical" id="th_adjoint_props-2-1-6-3-1">
+<div class="para">If <span class="process-math">\(T^*\)</span> exists, then so does <span class="process-math">\((T^*)^*\text{.}\)</span> Moreover, in this case we have</div>
+<div class="displaymath process-math" id="eq_adj_adj">
+\begin{equation}
+(T^*)^*=T\text{.}\tag{1.86}
+\end{equation}
+</div>
+</div></li>
+<li id="th_adjoint_props-2-1-6-4"><div class="para logical" id="th_adjoint_props-2-1-6-4-1">
+<div class="para">If <span class="process-math">\(T^*\)</span> and <span class="process-math">\(S^*\)</span> exist, then so does <span class="process-math">\((ST)^*\text{.}\)</span> Moreover, in this case we have</div>
+<div class="displaymath process-math" id="th_adjoint_props-2-1-6-4-1-4">
+\begin{equation}
+(ST)^*=T^*S^*\text{.}\tag{1.87}
+\end{equation}
+</div>
+</div></li>
+</ol>
+</div></article><details id="th_adjoint_props-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_adjoint_props-3-1"><ol class="decimal" id="th_adjoint_props-3-1-1">
+<li id="th_adjoint_props-3-1-1-1"><div class="para logical" id="th_adjoint_props-3-1-1-1-1">
+<div class="para">Suppose <span class="process-math">\(T^*\colon W\rightarrow V\)</span> and <span class="process-math">\(S\colon W\rightarrow V\)</span> are adjoint functions of <span class="process-math">\(T\text{:}\)</span> i.e., <span class="process-math">\(T^*\)</span> and <span class="process-math">\(S\)</span> both satisfy <a href="s_adjoint.html#d_adjoint-2-1-7" class="xref" data-knowl="./knowl/xref/eq_adj_T.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.84">(1.84)</a>. It follows that for all <span class="process-math">\(v\in V\)</span> and <span class="process-math">\(w\in W\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_adj_T.html ./knowl/xref/th_inner_prod.html" id="th_adjoint_props-3-1-1-1-1-10">
+\begin{align*}
+\angvec{v,S(w)-T^*(w)} \amp =\angvec{v,S(w)}-\angvec{v,T^*(w)} \\
+\amp = \angvec{T(v),w}-\angvec{T(v),w} \amp (S, T^* \text{ adj. of } T) \\
+\amp = 0\text{.}
+\end{align*}
+</div>
+<div class="para">Since <span class="process-math">\(\angvec{v,S(w)-T^*(w)}=0\)</span> for all <span class="process-math">\(v\text{,}\)</span> it follows from <a href="s_inner_prod.html#th_inner_prod" class="xref" data-knowl="./knowl/xref/th_inner_prod.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.18.9: Inner product properties">Theorem 1.18.9</a> that <span class="process-math">\(S(w)-T^*(w)=0\)</span> for all <span class="process-math">\(w\in W\text{,}\)</span> and hence that <span class="process-math">\(S=T^*\text{,}\)</span> as desired.</div>
+</div></li>
+<li id="th_adjoint_props-3-1-1-2"><div class="para logical" id="th_adjoint_props-3-1-1-2-1">
+<div class="para">Assume an adjoint <span class="process-math">\(T^*\colon V\rightarrow W\)</span> exists. We use the 1-step technique to show <span class="process-math">\(T^*\)</span> is linear. Given any <span class="process-math">\(w_1,w_2\in W\)</span> and <span class="process-math">\(c,d\in F\text{,}\)</span> we will show that <span class="process-math">\(T^*(cw_1+dw_2)=cT^*(w_1)+dT^*(w_2)\)</span> by proving that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_inner_prod.html">
+\begin{equation*}
+\angvec{T^*(cw_1+dw_2),v}=\angvec{cT^*(w_1)+dT^*(w_2),v}
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(v\in V\text{,}\)</span> using <a href="s_inner_prod.html#th_inner_prod" class="xref" data-knowl="./knowl/xref/th_inner_prod.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.18.9: Inner product properties">Theorem 1.18.9</a>. To this end, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_inner_prod.html" id="th_adjoint_props-3-1-1-2-1-9">
 \begin{align*}
 \angvec{T^*(cw_1+dw_2),v} \amp = \angvec{cw_1+dw_2,T(v)}\\
 \amp = c\angvec{w_1,T(v)}+d\angvec{w_2,T(v)}\\
@@ -623,32 +610,27 @@ f_w(v)=\angvec{T(v),w}
 \amp =\angvec{cT^*(w_1)+dT^*(w_2),v}
 \end{align*}
 </div>
-<div class="para">for all <span class="process-math">\(v\text{.}\)</span> It follows from <a href="s_inner_prod.html#th_inner_prod" class="xref" data-knowl="./knowl/xref/th_inner_prod.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.18.9: Inner product properties">Theorem 1.18.9</a> that <span class="process-math">\(T^*(cw_1+dw_2)=cT^*(w_1)+dT^*(w_2)\text{.}\)</span> Thus <span class="process-math">\(T^*\)</span> is linear.</div>
-</div>
-<div class="para logical" id="th_adjoint-3-5">
-<div class="para">Lastly, we show that <span class="process-math">\(T^*\)</span> is the unique element of <span class="process-math">\(\mathcal{L}(W,V)\)</span> satisfying <a href="s_adjoint.html#th_adjoint-2-1-6" class="xref" data-knowl="./knowl/xref/eq_adj_T.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.84">(1.84)</a>. If <span class="process-math">\(S\in \mathcal{L}(W,V)\)</span> satisfies</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_adj_T.html">
-\begin{equation*}
-\angvec{T(v),w}_W=\angvec{v,S(w)}_V
-\end{equation*}
-</div>
-<div class="para">for all <span class="process-math">\(v\in V\)</span> and <span class="process-math">\(w\in W\text{,}\)</span> then for all <span class="process-math">\(w\in W\)</span> and <span class="process-math">\(v\in V\)</span> we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_adj_T.html" id="th_adjoint-3-5-10">
+<div class="para">for all <span class="process-math">\(v\text{.}\)</span> Thus <span class="process-math">\(T^*(cw_1+dw_2)=cT^*(w_1)+dT^*(w_2)\text{,}\)</span> as desired.</div>
+</div></li>
+<li id="th_adjoint_props-3-1-1-3"><div class="para logical" id="th_adjoint_props-3-1-1-3-1">
+<div class="para">Assume <span class="process-math">\(T^*\)</span> and <span class="process-math">\(S^*\)</span> exists. By uniqueness of adjoints,  it suffices to show that <span class="process-math">\(T^*S^*\)</span> satisfies the adjoint property. We have</div>
+<div class="displaymath process-math" id="th_adjoint_props-3-1-1-3-1-4">
 \begin{align*}
-\angvec{v,S(w)-T^*(w)} \amp =\angvec{v,S(w)}-\angvec{v,T^*(w)} \\
-\amp = \angvec{T(v),w}-\angvec{T(v),w}\\
-\amp = 0\text{.}
+\angvec{v,T^*S^*(u)} \amp = \angvec{v,T^*(S^*(u))} \\
+\amp =\angvec{S(v),T^*(u)}\\
+\amp =\angvec{T(S(v)),u}\\
+\amp = \angvec{TS(v),u}
 \end{align*}
 </div>
-<div class="para">It follows that <span class="process-math">\(S(w)-T^*(w)=0\)</span> for all <span class="process-math">\(w\in W\text{,}\)</span> and hence that <span class="process-math">\(S=T^*\text{.}\)</span>
+<div class="para">for all <span class="process-math">\(v\in V\)</span> and <span class="process-math">\(u\in U\text{.}\)</span> Since this property uniquely defines the adjoint <span class="process-math">\((TS)^*\text{,}\)</span> we conclude that <span class="process-math">\((TS)^*=S^*T^*\text{.}\)</span>
 </div>
-</div></article></details><article class="definition definition-like" id="d_adjoint"><h3 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.21.4</span><span class="period">.</span><span class="space"> </span><span class="title">Adjoint of transformation.</span>
-</h3>
-<div class="para" id="d_adjoint-2-1">Let <span class="process-math">\((V,\angvec{\, ,}_V)\)</span> and <span class="process-math">\((W,\angvec{\, ,}_W\)</span> be inner product spaces. Given <span class="process-math">\(T\in \mathcal{L}(V,W)\text{,}\)</span> we call a transformation <span class="process-math">\(T^*\in \mathcal{L}(W,V)\)</span>  the <dfn class="terminology">adjoint</dfn> of <span class="process-math">\(T\)</span> if it satisfies properties <a href="s_adjoint.html#th_adjoint-2-1-6" class="xref" data-knowl="./knowl/xref/eq_adj_T.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.84">(1.84)–(1.85)</a>. Furthermore, we call each of the equivalent properties <a href="s_adjoint.html#th_adjoint-2-1-6" class="xref" data-knowl="./knowl/xref/eq_adj_T.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.84">(1.84)–(1.85)</a> the <dfn class="terminology">adjoint property</dfn>.</div></article><div class="para" id="s_adjoint-6">For our first example of computing an adjoint, we consider a linear transformation <span class="process-math">\(T\colon F^n\rightarrow F^m\text{.}\)</span> Recall that <span class="process-math">\(T=T_A\)</span> for a unique matrix <span class="process-math">\(A\in F^{m,n}\text{.}\)</span> By <a href="s_adjoint.html#th_adjoint" class="xref" data-knowl="./knowl/xref/th_adjoint.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.21.3: Adjoint of a transformation">Theorem 1.21.3</a>, there is an adjoint transformation <span class="process-math">\(T^*\colon F^{m}\rightarrow F^{n}\text{.}\)</span> What is the matrix <span class="process-math">\(A'\)</span> such that <span class="process-math">\(T^*=T_{A'}\text{?}\)</span> This is answered in <a href="s_adjoint.html#th_adjoint_matrix" class="xref" data-knowl="./knowl/xref/th_adjoint_matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.21.7: Adjoint of a matrix transformation">Theorem 1.21.7</a>, which makes use of the following definition.</div>
-<article class="definition definition-like" id="d_adjoint_matrix"><h3 class="heading">
+</div></li>
+<li id="th_adjoint_props-3-1-1-4"><div class="para" id="th_adjoint_props-3-1-1-4-1">Assume <span class="process-math">\(T^*\)</span> exists. From (2) we know that <span class="process-math">\(T^*\)</span> is linear. That <span class="process-math">\(T\)</span> is its adjoint follows now from the equivalence of the two properties <a href="s_adjoint.html#d_adjoint-2-1-7" class="xref" data-knowl="./knowl/xref/eq_adj_T.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.84">(1.84)–(1.85)</a>:i.e., we can think of the first as saying that <span class="process-math">\(T^*\)</span> is an adjoint of <span class="process-math">\(T\text{,}\)</span> and the second as saying that <span class="process-math">\(T\)</span> is an adjoint of <span class="process-math">\(T^*\text{.}\)</span>
+</div></li>
+</ol></div></article></details><div class="para" id="ss_adjoints-7">Before getting to our existence result, we consider a few examples where we can determine an adjoint map explicitly. For our first example of computing an adjoint, we consider a linear transformation <span class="process-math">\(T\colon F^n\rightarrow F^m\text{.}\)</span> Recall that <span class="process-math">\(T=T_A\)</span> for a unique matrix <span class="process-math">\(A\in F^{m,n}\text{.}\)</span> By <a href="s_adjoint.html#th_adjoint" class="xref" data-knowl="./knowl/xref/th_adjoint.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.21.15: Adjoint of a transformation">Theorem 1.21.15</a>, there is an adjoint transformation <span class="process-math">\(T^*\colon F^{m}\rightarrow F^{n}\text{.}\)</span> What is the matrix <span class="process-math">\(A'\)</span> such that <span class="process-math">\(T^*=T_{A'}\text{?}\)</span> This is answered in <a href="s_adjoint.html#th_adjoint_matrix" class="xref" data-knowl="./knowl/xref/th_adjoint_matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.21.8: Adjoint of a matrix transformation">Theorem 1.21.8</a>, which makes use of the following definition.</div>
+<article class="definition definition-like" id="d_adjoint_matrix"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.21.5</span><span class="period">.</span><span class="space"> </span><span class="title">Conjugate and adjoint of a matrix.</span>
-</h3>
+</h4>
 <div class="para" id="d_adjoint_matrix-2-1">Let <span class="process-math">\(F\in \{\R,\C\}\text{,}\)</span> and let <span class="process-math">\(A=[a_{ij}]\in F^{m,n}\text{.}\)</span>
 </div> <div class="para logical" id="d_adjoint_matrix-2-2">
 <div class="para">The <dfn class="terminology">conjugate</dfn> of <span class="process-math">\(A\text{,}\)</span> denoted <span class="process-math">\(\overline{A}\)</span> is the <span class="process-math">\(m\times n\)</span> matrix defined as</div>
@@ -663,81 +645,328 @@ f_w(v)=\angvec{T(v),w}
 A^*=(\overline{A})^T=\overline{(A^T)}\text{.}
 \end{equation*}
 </div>
-</div></article><article class="theorem theorem-like" id="th_adjoint_inner"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.21.6</span><span class="period">.</span><span class="space"> </span><span class="title">Standard inner product.</span>
-</h3>
+</div></article><article class="remark remark-like" id="ss_adjoints-9"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.21.6</span><span class="period">.</span><span class="space"> </span><span class="title">Adjoint matrix.</span>
+</h4>
+<div class="para logical" id="ss_adjoints-9-2">
+<div class="para">Thanks to the definition <span class="process-math">\(A^*=(\overline{A})^T=\overline{(A^T)}\text{,}\)</span> many elementary properties of the adjoint operation follow from related properties enjoyed by the transpose operator, with complex conjugation intervening to spice things up. We leave it to the reader to prove that the following properties for matrices <span class="process-math">\(A,B\)</span> (of appropriate size) and scalars <span class="process-math">\(c,d\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="ss_adjoints-9-2-4">
+\begin{align}
+\overline{cA+dB} \amp =\overline{c}\overline{A}+\overline{d}\overline{B} \tag{1.88}\\
+(cA+dB)^* \amp =\overline{c}A^*+\overline{d}B^*\tag{1.89}\\
+(AB)^* \amp =B^*A^*\tag{1.90}\\
+(A^*)^* \amp =A\text{.}\tag{1.91}
+\end{align}
+</div>
+</div></article><article class="theorem theorem-like" id="th_adjoint_inner"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.21.7</span><span class="period">.</span><span class="space"> </span><span class="title">Standard inner product.</span>
+</h4>
 <div class="para logical" id="th_adjoint_inner-2-1">
-<div class="para">Let <span class="process-math">\(F\in \{\R, \C\}\text{,}\)</span> and let <span class="process-math">\(\angvec{\, ,}\)</span> be the standard inner product on <span class="process-math">\(F^n\text{.}\)</span> For all <span class="process-math">\(\boldx, \boldy\in F^n\text{,}\)</span> we have</div>
-<div class="displaymath process-math" id="eq_standard_inner_product_matrix">
+<div class="para">Let <span class="process-math">\(F\in \{\R, \C\}\text{,}\)</span> and let <span class="process-math">\(\angvec{\, ,}\)</span> be the standard inner product on <span class="process-math">\(F^n\)</span> as defined in <a href="s_inner_prod.html#d_dot" class="xref" data-knowl="./knowl/xref/d_dot.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.18.4: Dot product">Definition 1.18.4</a>. For all <span class="process-math">\(\boldx, \boldy\in F^n\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/d_dot.html" id="eq_standard_inner_product_matrix">
 \begin{equation}
-\angvec{\boldx,\boldy}=\boldy^*\,\boldx\text{.}\tag{1.86}
+\angvec{\boldx,\boldy}=\boldy^*\,\boldx\text{.}\tag{1.92}
 \end{equation}
 </div>
-</div></article><details id="th_adjoint_inner-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_adjoint_inner-3-1">
+</div></article><details id="th_adjoint_inner-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_adjoint_inner-3-1">
 <div class="para">Let <span class="process-math">\(\boldx=(x_1,x_2,\dots, x_n)\)</span> and <span class="process-math">\(\boldy=(y_1,y_2,\dots, y_n)\text{.}\)</span> Treating <span class="process-math">\(\boldx\)</span> and <span class="process-math">\(\boldy\)</span> as column vectors  (<a href="s_subspace.html#fiat_col_vecs_tuples" class="xref" data-knowl="./knowl/xref/fiat_col_vecs_tuples.html" data-reveal-label="Reveal" data-close-label="Close" title="Fiat 1.4.8: Tuples shall be column vectors, and vice versa">Fiat 1.4.8</a>), we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fiat_col_vecs_tuples.html" id="th_adjoint_inner-3-1-6">
 \begin{align*}
 \boldy^*\,\boldx\amp =\rowvec{\overline{y_1}, \dots, \overline{y_n}}\,\colvec{x_1\\ \vdots \\ x_n} \\
-\amp = \sum_{i=1}^n\overline{y_i}x_i
+\amp = \sum_{i=1}^n\overline{y_i}x_i\\
+\amp = \sum_{i=1}^nx_i\overline{y_i}\\
+\amp =\angvec{\boldx, \boldy}\text{.}
 \end{align*}
 </div>
-</div></article></details><article class="theorem theorem-like" id="th_adjoint_matrix"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.21.7</span><span class="period">.</span><span class="space"> </span><span class="title">Adjoint of a matrix transformation.</span>
-</h3>
+</div></article></details><article class="theorem theorem-like" id="th_adjoint_matrix"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.21.8</span><span class="period">.</span><span class="space"> </span><span class="title">Adjoint of a matrix transformation.</span>
+</h4>
 <div class="para" id="th_adjoint_matrix-2-1">Assume <span class="process-math">\(F\in \{\R,\C\}\text{.}\)</span> Let <span class="process-math">\(T\in\mathcal{L}(F^n, F^m)\text{,}\)</span> and let <span class="process-math">\(A\in F^{m,n}\)</span> be the unique matrix such that <span class="process-math">\(T=T_A\text{.}\)</span> The adjoint <span class="process-math">\(T^*\in \mathcal{L}(F^m, F^n)\text{,}\)</span> taken with respect to the standard inner products on <span class="process-math">\(F^n\)</span> and <span class="process-math">\(F^m\text{,}\)</span> is the matrix transformation <span class="process-math">\(T_{A^*}\text{.}\)</span>
-</div>
-<article class="example example-like" id="eg_adjoint_inclusion"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.21.8</span><span class="period">.</span><span class="space"> </span><span class="title">Adjoint of inclusion map.</span>
-</h4>
-<div class="para" id="eg_adjoint_inclusion-2-1">Let <span class="process-math">\(W\)</span> be a finite-dimensional subspace of the inner product space <span class="process-math">\((V,\angvec{\, })\text{,}\)</span> and let <span class="process-math">\(i\colon W\rightarrow V\)</span> be the inclusion map. Determine the adjoint map <span class="process-math">\(i^*\colon V\rightarrow W\text{.}\)</span>
-</div>
-<div class="solutions"><details id="eg_adjoint_inclusion-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_adjoint_inclusion-3-1"></div></div></details></div></article><article class="theorem theorem-like" id="th_adjoint_props"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.21.9</span><span class="period">.</span><span class="space"> </span><span class="title">Adjoint properties.</span>
-</h4>
-<div class="para logical" id="th_adjoint_props-2-1">
-<div class="para">Let <span class="process-math">\((V,\angvec{\, }_V)\text{,}\)</span> <span class="process-math">\((W,\angvec{\, }_W)\text{,}\)</span> <span class="process-math">\((U,\angvec{\, ,}_U\)</span> be inner product spaces.</div>
-<ol class="decimal" id="th_adjoint_props-2-1-4">
-<li id="th_adjoint_props-2-1-4-1"><div class="para logical" id="th_adjoint_props-2-1-4-1-1">
-<div class="para">Assume <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> are finite-dimensional. If <span class="process-math">\(T\in \mathcal{L}(V,W)\)</span> and <span class="process-math">\(S\in \mathcal{L}(W,U)\text{,}\)</span> then</div>
-<div class="displaymath process-math" id="th_adjoint_props-2-1-4-1-1-5">
-\begin{equation}
-(ST)^*=T^*S^*\text{.}\tag{1.87}
-\end{equation}
-</div>
-</div></li>
-<li id="th_adjoint_props-2-1-4-2"><div class="para logical" id="th_adjoint_props-2-1-4-2-1">
-<div class="para">Assume <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> are finite dimensional. If <span class="process-math">\(T\in \mathcal{L}(V,W)\text{,}\)</span> then</div>
-<div class="displaymath process-math" id="eq_double_adjoint">
-\begin{equation}
-(T^*)^*=T\text{.}\tag{1.88}
-\end{equation}
-</div>
-</div></li>
-<li id="th_adjoint_props-2-1-4-3"><div class="para logical" id="th_adjoint_props-2-1-4-3-1">
-<div class="para">Assume <span class="process-math">\(V\)</span> is finite dimensional. Given <span class="process-math">\(T\in \mathcal{L}(V,W)\text{,}\)</span> we have</div>
-<div class="displaymath process-math" id="th_adjoint_props-2-1-4-3-1-3">
-\begin{align*}
-\NS T^* \amp =\im T^\perp\\
-\im T^* \amp =\NS T^\perp
-\end{align*}
-</div>
-</div></li>
-</ol>
-</div></article><details id="th_adjoint_props-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_adjoint_props-3-1"></div></article></details></article><details id="th_adjoint_matrix-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_adjoint_matrix-3-1">
-<div class="para">By uniqueness of the adjoint, it suffices to show that <span class="process-math">\(T_{A^*}\)</span> satisfies the adjoint properties: that is, that</div>
-<div class="displaymath process-math" id="th_adjoint_matrix-3-1-2">
+</div></article><details id="th_adjoint_matrix-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_adjoint_matrix-3-1">
+<div class="para">By uniqueness of the adjoint, it suffices to show that <span class="process-math">\(T_{A^*}\)</span> satisfies the adjoint property: that is, that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_adjoint_inner.html ./knowl/xref/eq_adjoint_prod.html ./knowl/xref/eq_adj_adj_matrix.html ./knowl/xref/th_adjoint_inner.html" id="th_adjoint_matrix-3-1-2">
 \begin{align*}
 \angvec{T_A(\boldx),\boldy} \amp =\angvec{\boldx,T_{A^*}\boldy}
 \end{align*}
 </div>
-<div class="para">for all <span class="process-math">\(\boldx\in F^n\)</span> and <span class="process-math">\(\boldy\in F^m\text{.}\)</span> First observe that the standard inner product on these spaces can be computed as a matrix multiplication as follows:</div>
+<div class="para">for all <span class="process-math">\(\boldx\in F^n\)</span> and <span class="process-math">\(\boldy\in F^m\text{.}\)</span> We have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_adjoint_inner.html ./knowl/xref/eq_adjoint_prod.html ./knowl/xref/eq_adj_adj_matrix.html ./knowl/xref/th_adjoint_inner.html" id="th_adjoint_matrix-3-1-5">
+\begin{align*}
+\angvec{\boldx,T_{A^*}\boldy} \amp =\angvec{\boldx,A^*\boldy} \\
+\amp = (A^*\boldy)^*\boldx \amp (\knowl{./knowl/xref/th_adjoint_inner.html}{\text{1.21.7}})\\
+\amp =\boldy^* (A^*)^*\boldx \amp \knowl{./knowl/xref/eq_adjoint_prod.html}{\text{(1.90)}} \\
+\amp = \boldy^* A\boldx \amp \knowl{./knowl/xref/eq_adj_adj_matrix.html}{\text{(1.91)}}\\
+\amp = \angvec{A\boldx, \boldy} \amp (\knowl{./knowl/xref/th_adjoint_inner.html}{\text{1.21.7}})\\
+\amp = \angvec{T_A(\boldx), \boldy}\text{.}
+\end{align*}
+</div>
+</div></article></details><article class="remark remark-like" id="ss_adjoints-12"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.21.9</span><span class="period">.</span><span class="space"> </span><span class="title">Adjoint of matrix transformation.</span>
+</h4>
+<div class="para logical" id="ss_adjoints-12-2">
+<div class="para">As usual, observe that if <span class="process-math">\(F=\R\)</span> complex conjugation operation can be disregarded. Let’s give a quick summary of what the previous definitions and theorems boil down to in this setting.</div>
+<ul class="disc" id="ss_adjoints-12-2-2">
+<li id="ss_adjoints-12-2-2-1"><div class="para" id="ss_adjoints-12-2-2-1-1">Given <span class="process-math">\(A\in \R^{m,n}\text{,}\)</span> we have <span class="process-math">\(A^*=A^T\text{.}\)</span>
+</div></li>
+<li id="ss_adjoints-12-2-2-2"><div class="para" id="ss_adjoints-12-2-2-2-1">Given <span class="process-math">\(\boldx, \boldy\in \R^n\text{,}\)</span> we have <span class="process-math">\(\boldx\cdot \boldy=\boldx^T\boldy\text{.}\)</span>
+</div></li>
+<li id="ss_adjoints-12-2-2-3"><div class="para" id="ss_adjoints-12-2-2-3-1">Given <span class="process-math">\(T_A\colon \R^n\rightarrow \R^m\text{,}\)</span> we have <span class="process-math">\(T_A^*=T_{A^T}\text{.}\)</span>
+</div></li>
+</ul>
+</div></article><div class="para" id="ss_adjoints-13">We now consider some more exotic/abstract examples.</div>
+<article class="example example-like" id="eg_adjoint_inclusion"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.21.10</span><span class="period">.</span><span class="space"> </span><span class="title">Adjoint of inclusion map.</span>
+</h4>
+<div class="para" id="eg_adjoint_inclusion-2-1">Let <span class="process-math">\(W\)</span> be a finite-dimensional subspace of the inner product space <span class="process-math">\((V,\angvec{\, })\text{,}\)</span> and let <span class="process-math">\(i\colon W\rightarrow V\)</span> be the inclusion map. Given an explicit description of the adjoint map <span class="process-math">\(i^*\colon V\rightarrow W\text{.}\)</span>
+</div>
+<div class="solutions"><details id="eg_adjoint_inclusion-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_adjoint_inclusion-3-1">
+<div class="para">Since <span class="process-math">\(W\)</span> is finite dimensional, we have <span class="process-math">\(V=W\oplus W^\perp\text{,}\)</span> and can define the orthogonal projection map <span class="process-math">\(\proj_W\colon V\rightarrow W\text{.}\)</span> We claim that <span class="process-math">\(i^*=\proj_W\text{,}\)</span> and prove our claim by showing that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\angvec{\boldx,\boldy}=\boldy^*\boldx\text{.}
+\angvec{i(w'),v}=\angvec{w,\proj_W(v)}
 \end{equation*}
 </div>
-<div class="para">It</div>
-</div></article></details></section></div>
+<div class="para">for all <span class="process-math">\(w'\in W\)</span> and <span class="process-math">\(v\in V\text{.}\)</span> Given any <span class="process-math">\(v\in V\text{,}\)</span> we write <span class="process-math">\(v=w+w^\perp\text{,}\)</span> where by definition <span class="process-math">\(w=\proj_W(v)\in W\)</span> and <span class="process-math">\(w^\perp\in W^\perp\text{.}\)</span> It follows that for any <span class="process-math">\(w'\in W\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="eg_adjoint_inclusion-3-1-13">
+\begin{align*}
+\angvec{i(w'),v} \amp =\angvec{w',v}\\
+\amp = \angvec{w',w+w^\perp}\\
+\amp =\angvec{w',w}+\angvec{w',w^\perp}\\
+\amp =\angvec{w',w} \amp (\angvec{w',w^\perp}=0)\\
+\amp = \angvec{w',\proj_W(v)}\text{,}
+\end{align*}
+</div>
+<div class="para">as desired.</div>
+</div></div></details></div></article><article class="example example-like" id="eg_adjoint_deriv"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.21.11</span><span class="period">.</span><span class="space"> </span><span class="title">Derivative operator.</span>
+</h4>
+<div class="para logical" id="eg_adjoint_deriv-2-1">
+<div class="para">Let <span class="process-math">\(W\)</span> be the set of functions <span class="process-math">\(C^\infty(\R)\)</span> of period 1. The operation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\angvec{f,g}=\int_0^1f(x)g(x)\, dx
+\end{equation*}
+</div>
+<div class="para">defines an inner product on <span class="process-math">\(W\text{.}\)</span> It is easy to show that if <span class="process-math">\(f\in W\text{,}\)</span> then <span class="process-math">\(f'\in W\text{:}\)</span> i.e., the derivative of a <span class="process-math">\(C^\infty\)</span> period-1 function is a <span class="process-math">\(C^\infty\)</span> period-1 function. Thus we can define a linear transformation</div>
+<div class="displaymath process-math" id="eg_adjoint_deriv-2-1-10">
+\begin{align*}
+T\colon W \amp \rightarrow W\\
+f \amp \mapsto f'\text{.}
+\end{align*}
+</div>
+<div class="para">Show that <span class="process-math">\(T^*=-T\text{.}\)</span>
+</div>
+</div>
+<div class="solutions"><details id="eg_adjoint_deriv-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_adjoint_deriv-3-1">
+<div class="para">Observe that <span class="process-math">\(-T(g)=-g'\text{,}\)</span> by definition.  We must show that <span class="process-math">\(-T\)</span> satisfies the adjoint property with respect to <span class="process-math">\(T\text{.}\)</span> Given any <span class="process-math">\(f,g\in W\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="eg_adjoint_deriv-3-1-5">
+\begin{align*}
+\angvec{T(f),g} \amp = \int_0^1f'(x)g(x)\, dx\\
+\amp = f(x)g(x)\Bigr\vert_0^1-\int_0^1f(x)g'(x)\, dx \amp (\text{int. by parts.})\\
+\amp = 0+\int_0^1f(x)(-g'(x))\, dx \amp (f(0)=f(1), g(0)=g(1))\\
+\amp = \angvec{f,-T(g)} \amp (-T(g)=-g')\text{.}
+\end{align*}
+</div>
+</div></div></details></div></article><article class="example example-like" id="eg_adjoint_integration_kernel"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.21.12</span><span class="period">.</span><span class="space"> </span><span class="title">Integral transformation.</span>
+</h4>
+<div class="para logical" id="eg_adjoint_integration_kernel-2-1">
+<div class="para">Let <span class="process-math">\(I=[a,b]\)</span> be a closed interval in <span class="process-math">\(\R\text{.}\)</span> Let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+K\colon I\times I\rightarrow \R\text{,}
+\end{equation*}
+</div>
+<div class="para">be a continuous function. Given any <span class="process-math">\(f\in C([a,b])\text{,}\)</span> you can show that the integral function</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F(x)=\int_a^bF(x,y)f(y)\, dy
+\end{equation*}
+</div>
+<div class="para">is continuous on <span class="process-math">\([a,b]\)</span> and that the resulting map</div>
+<div class="displaymath process-math" id="eg_adjoint_integration_kernel-2-1-7">
+\begin{align*}
+T\colon C([a,b]) \amp\rightarrow C([a,b]) \\
+f \amp \mapsto \int_a^bF(x,y)\, dy
+\end{align*}
+</div>
+<div class="para">is a linear transformation. Show, using Fubini’s theorem for double integrals, that the adjoint of <span class="process-math">\(T\)</span> is the function</div>
+<div class="displaymath process-math" id="eg_adjoint_integration_kernel-2-1-9">
+\begin{align*}
+T^*\colon C([a,b]) \amp \rightarrow C([a,b])\\
+g  \amp \mapsto \int_a^b F(y,x)g(x)\, dy \text{.}
+\end{align*}
+</div>
+</div>
+<div class="solutions"><details id="eg_adjoint_integration_kernel-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_adjoint_integration_kernel-3-1">This is left as an exercise.</div></div></details></div></article></section><section class="subsection" id="ss_existence"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Existence of adjoints</span>
+</h3>
+<article class="definition definition-like" id="d_lin_functional"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.21.13</span><span class="period">.</span><span class="space"> </span><span class="title">Linear functional.</span>
+</h4>
+<div class="para" id="d_lin_functional-2-1">Let <span class="process-math">\(V\)</span> be a vector space. A <dfn class="terminology">linear functional</dfn> on <span class="process-math">\(V\)</span> is a linear transformation <span class="process-math">\(\phi\colon V\rightarrow F\)</span> from <span class="process-math">\(V\)</span> to <span class="process-math">\(F\text{.}\)</span> The vector space <span class="process-math">\(\mathcal{L}(V,F)\)</span> of all linear functionals on <span class="process-math">\(V\)</span> is called the <dfn class="terminology">dual space</dfn> of <span class="process-math">\(V\text{,}\)</span> and is denoted <span class="process-math">\(V^*\text{.}\)</span>
+</div></article><article class="theorem theorem-like" id="th_Riesz_rep"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.21.14</span><span class="period">.</span><span class="space"> </span><span class="title">Riesz representation.</span>
+</h4>
+<div class="para logical" id="th_Riesz_rep-2-1">
+<div class="para">Let <span class="process-math">\((V,\angvec{\, ,})\)</span> be an inner product space.</div>
+<ol class="decimal" id="th_Riesz_rep-2-1-2">
+<li id="th_Riesz_rep-2-1-2-1"><div class="para" id="th_Riesz_rep-2-1-2-1-1">For all <span class="process-math">\(v_0\in V\text{,}\)</span> the function <span class="process-math">\(\phi_{v_0}\colon V\rightarrow F\)</span> defined as <span class="process-math">\(\phi_{v_0}(v)=\angvec{v,v_0}\)</span> is a linear functional.</div></li>
+<li id="th_Riesz_rep-2-1-2-2"><div class="para logical" id="th_Riesz_rep-2-1-2-2-1">
+<div class="para">The function</div>
+<div class="displaymath process-math" id="th_Riesz_rep-2-1-2-2-1-1">
+\begin{align*}
+\Phi\colon V \amp \rightarrow V^*=\mathcal{L}(V,F)\\
+v \amp \mapsto \phi_v \text{,}
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(\phi_v(v')=\angvec{v',v}\)</span> is injective and satisfies</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Phi(cv_1+dv_2)=\overline{c}v_1+\overline{d}v_2\text{.}
+\end{equation*}
+</div>
+<div class="para">In other words, <span class="process-math">\(\Phi\)</span> is <em class="emphasis">conjugate linear</em>.</div>
+</div></li>
+<li id="th_Riesz_rep-2-1-2-3"><div class="para" id="th_Riesz_rep-2-1-2-3-1">Assume <span class="process-math">\(\dim V&lt; \infty\text{.}\)</span>  In this case the map <span class="process-math">\(\Phi\)</span> above is bijective. In particular, given a linear functional <span class="process-math">\(\phi\colon V\rightarrow F\text{,}\)</span> there is a unique vector <span class="process-math">\(v_0\in V\)</span> such that <span class="process-math">\(\phi=\phi_{v_0}\text{:}\)</span> i.e., such that <span class="process-math">\(\phi(v)=\angvec{v,v_0}\)</span> for all <span class="process-math">\(v\in V\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><details id="th_Riesz_rep-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_Riesz_rep-3-1"><ol class="decimal" id="th_Riesz_rep-3-1-1">
+<li id="th_Riesz_rep-3-1-1-1"><div class="para" id="th_Riesz_rep-3-1-1-1-1">This was already proved in <a href="s_inner_prod.html#th_inner_prod" class="xref" data-knowl="./knowl/xref/th_inner_prod.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.18.9: Inner product properties">Theorem 1.18.9</a>. The current statement is just a slight reformulation of this fact, using the language of linear functionals.</div></li>
+<li id="th_Riesz_rep-3-1-1-2">
+<div class="para logical" id="th_Riesz_rep-3-1-1-2-1">
+<div class="para">We use the 1-step technique. Given any <span class="process-math">\(v_1,v_2\in V\)</span> and <span class="process-math">\(c,d\in F\text{,}\)</span> the function <span class="process-math">\(\Phi(cv_1+dv_2)=\phi_{cv_1+dv_2}\)</span> satisfies</div>
+<div class="displaymath process-math" id="th_Riesz_rep-3-1-1-2-1-4">
+\begin{align*}
+\phi_{cv_1+dv_2}(v) \amp = \angvec{v,cv_1+dv+2} \\
+\amp = \overline{c}\angvec{v,v_1}+\overline{d}\angvec{v,v_2}\\
+\amp = \overline{c}\phi_{v_1}(v)+\overline{d}\phi_{v_2}(v)\\
+\amp =(\overline{c}\phi_{v_1}+\overline{d}\phi_{v_2})(v)
+\end{align*}
+</div>
+<div class="para">for all <span class="process-math">\(v\in V\text{.}\)</span> Thus <span class="process-math">\(\phi_{cv_1+dv_2}=\overline{c}\phi_{v_1}+\overline{d}\phi_{v_2}\text{:}\)</span> i.e., <span class="process-math">\(\Phi(cv_1+dv_2)=\overline{c}\Phi(v_1)+\overline{d}\Phi(v_2)\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="th_Riesz_rep-3-1-1-2-2">
+<div class="para">We now show <span class="process-math">\(\Phi\)</span> is injective. Given <span class="process-math">\(v_1,v_2\in V\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_inner_prod.html" id="th_Riesz_rep-3-1-1-2-2-3">
+\begin{align*}
+\Phi(v_1)=\Phi(v_2) \amp \iff  \phi_{v_1}=\phi_{v_2}\\
+\amp \iff \phi_{v_1}(v)=\phi_{v_2}(v) \text{ for all } v\in V\\
+\amp \iff \angvec{v,v_1}=\angvec{v,v_2} \text{ for all } v\in V\\
+\amp \iff v_1=v_2 \amp (\knowl{./knowl/xref/th_inner_prod.html}{\text{1.18.9}})\text{.}
+\end{align*}
+</div>
+<div class="para">Thus <span class="process-math">\(\Phi\)</span> is injective.</div>
+</div>
+</li>
+<li id="th_Riesz_rep-3-1-1-3">
+<div class="para logical" id="th_Riesz_rep-3-1-1-3-1">
+<div class="para">Let <span class="process-math">\(\dim V=n&lt; \infty\text{.}\)</span> Since <span class="process-math">\(\dim F=1\text{,}\)</span> by <a href="s_matrix_reps.html#th_matrix_reps_isom" class="xref" data-knowl="./knowl/xref/th_matrix_reps_isom.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.13.19: Matrix representation isomorphism">Theorem 1.13.19</a> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_matrix_reps_isom.html ./knowl/xref/cor_inj_surj_bij.html">
+\begin{equation*}
+\dim V^*=\dim \mathcal{L}(V,F)=n\cdot 1=n=\dim V\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\Phi\)</span> is conjugate linear, and not linear, we cannot invoke <a href="s_rank_nullity.html#cor_inj_surj_bij" class="xref" data-knowl="./knowl/xref/cor_inj_surj_bij.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.11.4: Injective, surjective, bijective">Corollary 1.11.4</a> directly to conclude that it is surjective. However, the same result does in fact apply to conjugate linear maps for the following two reasons (left to the reader to prove):</div>
+<ul class="disc" id="th_Riesz_rep-3-1-1-3-1-7">
+<li id="th_Riesz_rep-3-1-1-3-1-7-1"><div class="para" id="th_Riesz_rep-3-1-1-3-1-7-1-1">the image of a conjugate linear map is a subspace of the codomain (just as with linear maps);</div></li>
+<li id="th_Riesz_rep-3-1-1-3-1-7-2"><div class="para" id="th_Riesz_rep-3-1-1-3-1-7-2-1">the image of a linearly independent tuple under an injective conjugate linear map is a linearly independent tuple.</div></li>
+</ul>
+<div class="para">Let <span class="process-math">\(B=(v_1,v_2,\dots, v_n)\)</span> be a basis of <span class="process-math">\(V\text{.}\)</span> From the two points above, we see that <span class="process-math">\(\im \Phi\)</span> is a subspace of <span class="process-math">\(V^*\)</span> containing the linearly independent tuple <span class="process-math">\(\Phi(B)=(\Phi(v_1),\dots, \Phi(v_n))\text{.}\)</span> It follows that <span class="process-math">\(\dim \im \Phi=\dim V^*=n\text{,}\)</span> and thus that <span class="process-math">\(\im \Phi=V^*\text{,}\)</span> as desired.</div>
+</div>
+<div class="para logical" id="th_Riesz_rep-3-1-1-3-2">
+<div class="para">Alternatively, we can give a more constructive proof of the surjectivity of <span class="process-math">\(\Phi\)</span> as follows:</div>
+<ul class="disc" id="th_Riesz_rep-3-1-1-3-2-2">
+<li id="th_Riesz_rep-3-1-1-3-2-2-1"><div class="para" id="th_Riesz_rep-3-1-1-3-2-2-1-1">pick an orthonormal basis <span class="process-math">\(B=(v_1,v_2,\dots, v_n)\)</span> of <span class="process-math">\(V\text{;}\)</span>
+</div></li>
+<li id="th_Riesz_rep-3-1-1-3-2-2-2"><div class="para" id="th_Riesz_rep-3-1-1-3-2-2-2-1">given <span class="process-math">\(\phi\in V^*=\mathcal{L}(V,F)\text{,}\)</span> let <span class="process-math">\(c_i=\phi(v_i)\)</span> for all <span class="process-math">\(i\in I\text{;}\)</span>
+</div></li>
+<li id="th_Riesz_rep-3-1-1-3-2-2-3"><div class="para" id="th_Riesz_rep-3-1-1-3-2-2-3-1">let <span class="process-math">\(v=\sum_{i=1}^n\overline{c_i}v_i\text{;}\)</span>
+</div></li>
+<li id="th_Riesz_rep-3-1-1-3-2-2-4"><div class="para logical" id="th_Riesz_rep-3-1-1-3-2-2-4-1">
+<div class="para">for all <span class="process-math">\(1\leq i\leq n\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="th_Riesz_rep-3-1-1-3-2-2-4-1-2">
+\begin{align*}
+\phi_v(v_i) \amp =\angvec{v_i, v}\\
+\amp = \angvec{v_i, \overline{c}_iv_i} \amp (i\ne j\implies \angvec{v_i, c_jv_j}=0)\\
+\amp = c_i\angvec{v_i,v_i} \amp (\text{conj. homog.})\\
+\amp =c_i \amp (\norm{v_i}=1)\text{;}
+\end{align*}
+</div>
+</div></li>
+<li id="th_Riesz_rep-3-1-1-3-2-2-5"><div class="para" id="th_Riesz_rep-3-1-1-3-2-2-5-1">since <span class="process-math">\(\phi\)</span> and <span class="process-math">\(\phi_v\)</span> agree on the basis <span class="process-math">\(B\text{,}\)</span> we have <span class="process-math">\(\phi=\phi_v\text{.}\)</span>
+</div></li>
+</ul>
+</div>
+</li>
+</ol></div></article></details><article class="theorem theorem-like" id="th_adjoint"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.21.15</span><span class="period">.</span><span class="space"> </span><span class="title">Adjoint of a transformation.</span>
+</h4>
+<div class="para" id="th_adjoint-2-1">Let <span class="process-math">\((V,\angvec{\, ,}_V)\)</span> and <span class="process-math">\((W,\angvec{\, ,}_W)\)</span> be inner product spaces, and assume <span class="process-math">\(V\)</span> is finite dimensional. Every linear transformation <span class="process-math">\(T\in \mathcal{L}(V,W)\)</span> has a unique adjoint <span class="process-math">\(T^*\in \mathcal{L}(W,V)\text{.}\)</span>
+</div></article><details id="th_adjoint-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_adjoint-3-1">
+<div class="para">First we prove the existence of <span class="process-math">\(T^*\)</span> by defining it explicitly via a somewhat involved recipe. Given any <span class="process-math">\(w\in W\text{,}\)</span> the function</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_Riesz_rep.html">
+\begin{equation*}
+f_w(v)=\angvec{T(v),w}
+\end{equation*}
+</div>
+<div class="para">is easily seen to be a linear functional on <span class="process-math">\(V\text{:}\)</span> i.e., <span class="process-math">\(f_w\in V^*=\mathcal{L}(V,F)\text{.}\)</span> By <a href="s_adjoint.html#th_Riesz_rep" class="xref" data-knowl="./knowl/xref/th_Riesz_rep.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.21.14: Riesz representation">Riesz representation</a> there is a unique vector <span class="process-math">\(v_w\in V\)</span> satisfying <span class="process-math">\(f_w(v)=\angvec{v,v_w}\)</span> for all <span class="process-math">\(v\in V\text{.}\)</span> We define <span class="process-math">\(T^*(w)=v_0\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="th_adjoint-3-2">
+<div class="para">Having defined <span class="process-math">\(T^*\colon W\rightarrow V\)</span> as a function,, we now show that it satisfies equation <a href="s_adjoint.html#d_adjoint-2-1-7" class="xref" data-knowl="./knowl/xref/eq_adj_T.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.84">(1.84)</a>; equation <a href="s_adjoint.html#d_adjoint-2-1-7" class="xref" data-knowl="./knowl/xref/eq_adj_Tstar.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.85">(1.85)</a> then follows immediately from the conjugate symmetry property. Given any <span class="process-math">\(v,w\in V\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_adj_T.html ./knowl/xref/eq_adj_Tstar.html ./knowl/xref/th_Riesz_rep.html" id="th_adjoint-3-2-5">
+\begin{align*}
+\angvec{T(v),w} \amp = f_w(v) \amp (f_w(v)=\angvec{T(v),w})\\
+\amp =\angvec{v,v_w} \amp (\knowl{./knowl/xref/th_Riesz_rep.html}{\text{1.21.14}})\\
+\amp =\angvec{v,T^*(w)} \amp (\text{def. } T^*) \text{,}
+\end{align*}
+</div>
+<div class="para">as desired.</div>
+</div>
+<div class="para" id="th_adjoint-3-3">The uniqueness and linearity of <span class="process-math">\(T^*\)</span> follow from <a href="s_adjoint.html#th_adjoint_props" class="xref" data-knowl="./knowl/xref/th_adjoint_props.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.21.4: Adjoint properties">Theorem 1.21.4</a>.</div></article></details><article class="theorem theorem-like" id="th_adjoint_null_im"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.21.16</span><span class="period">.</span><span class="space"> </span><span class="title">Null space and image of adjoint.</span>
+</h4>
+<div class="para logical" id="th_adjoint_null_im-2-1">
+<div class="para">Let <span class="process-math">\((V,\angvec{\, ,}_V)\)</span> and <span class="process-math">\((W,\angvec{\, ,})\)</span> be inner product spaces, and assume <span class="process-math">\(V\)</span> is finite dimensional. Given <span class="process-math">\(T\in \mathcal{L}(V,W)\text{,}\)</span> let <span class="process-math">\(T^*\in\mathcal{L}(W,V)\)</span> be its adjoint. We have</div>
+<div class="displaymath process-math" id="th_adjoint_null_im-2-1-6">
+\begin{align}
+\NS T^* \amp =(\im T)^\perp\tag{1.93}\\
+\im T^* \amp =(\NS T)^\perp\text{.}\tag{1.94}
+\end{align}
+</div>
+</div></article><details id="th_adjoint_null_im-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_adjoint_null_im-3-1">
+<div class="para">Assume <span class="process-math">\(T^*\)</span> exists. We first prove that <span class="process-math">\(\NS T^*=\im T^\perp\text{.}\)</span> We have</div>
+<div class="displaymath process-math" id="th_adjoint_null_im-3-1-3">
+\begin{align*}
+w\in \NS T^* \amp  \iff T^*(w)=\boldzero\\
+\amp \iff \angvec{T^*(w),v}=\boldzero \text{ for all } v\in V\\
+\amp \iff \angvec{w,T(v)}=0 \text{ for all } v\in V \amp (\text{adj. prop.})\\
+\amp \iff \angvec{w,u}=0 \text{ for all } u\in \im T \amp (\text{def. } \im T)\\
+\amp \iff w\in \im T^\perp\text{.}
+\end{align*}
+</div>
+<div class="para">Thus <span class="process-math">\(\NS T^*=\im T^\perp\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="th_adjoint_null_im-3-2">
+<div class="para">To prove that <span class="process-math">\(\im T^*=\NS T^\perp\text{,}\)</span> we use the fact that <span class="process-math">\(T=(T^*)^\perp\)</span> and apply the result above to compute</div>
+<div class="displaymath process-math" id="th_adjoint_null_im-3-2-3">
+\begin{align*}
+\NS T \amp =\NS (T^*)^*\\
+\amp = (\im T^*)^\perp\text{.}
+\end{align*}
+</div>
+<div class="para">Thus <span class="process-math">\(\NS T=(\im T^*)^\perp\text{.}\)</span> Since <span class="process-math">\((\im T^*)^\perp\subseteq V\)</span> is finite dimensional, we have <span class="process-math">\(((\im T^*)^\perp)^\perp=\im T^*\text{,}\)</span> and thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\im T^*=((\im T^*)^\perp)^\perp=\NS T^\perp\text{,}
+\end{equation*}
+</div>
+<div class="para">as desired.</div>
+</div></article></details></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="s_ortho_proj.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="advlinalgkursobjekt-6.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

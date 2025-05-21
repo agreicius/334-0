@@ -11,9 +11,9 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<article class="theorem theorem-like"><h3 class="heading">
-<span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.21.2</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Riesz representation.</span>
-</h3>
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.21.14</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Riesz representation.</span>
+</h4>
 <div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
 <div class="para">Let <span class="process-math">\((V,\angvec{\, ,})\)</span> be an inner product space.</div>
 <ol class="decimal" id="th_Riesz_rep-2-1-2">
@@ -26,12 +26,18 @@
 v \amp \mapsto \phi_v \text{,}
 \end{align*}
 </div>
-<div class="para">where <span class="process-math">\(\phi_v(v')=\angvec{v',v}\text{,}\)</span> is an injective linear transformation.</div>
+<div class="para">where <span class="process-math">\(\phi_v(v')=\angvec{v',v}\)</span> is injective and satisfies</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Phi(cv_1+dv_2)=\overline{c}v_1+\overline{d}v_2\text{.}
+\end{equation*}
+</div>
+<div class="para">In other words, <span class="process-math">\(\Phi\)</span> is <em class="emphasis">conjugate linear</em>.</div>
 </div></li>
-<li><div class="para">Assume <span class="process-math">\(\dim V&lt; \infty\text{.}\)</span>  In this case the map <span class="process-math">\(\Phi\)</span> above is an isomorphism. In particular, given a linear functional <span class="process-math">\(\phi\colon V\rightarrow F\text{,}\)</span> there is a unique vector <span class="process-math">\(v_0\in V\)</span> such that <span class="process-math">\(\phi=\phi_{v_0}\text{:}\)</span> i.e., such that <span class="process-math">\(\phi(v)=\angvec{v,v_0}\)</span> for all <span class="process-math">\(v\in V\text{.}\)</span>
+<li><div class="para">Assume <span class="process-math">\(\dim V&lt; \infty\text{.}\)</span>  In this case the map <span class="process-math">\(\Phi\)</span> above is bijective. In particular, given a linear functional <span class="process-math">\(\phi\colon V\rightarrow F\text{,}\)</span> there is a unique vector <span class="process-math">\(v_0\in V\)</span> such that <span class="process-math">\(\phi=\phi_{v_0}\text{:}\)</span> i.e., such that <span class="process-math">\(\phi(v)=\angvec{v,v_0}\)</span> for all <span class="process-math">\(v\in V\text{.}\)</span>
 </div></li>
 </ol>
-</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical"><ol class="decimal" id="th_Riesz_rep-3-1-1">
+</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical"><ol class="decimal" id="th_Riesz_rep-3-1-1">
 <li><div class="para">This was already proved in <a href="s_inner_prod.html#th_inner_prod" class="xref" data-knowl="./knowl/xref/th_inner_prod.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.18.9: Inner product properties">Theorem 1.18.9</a>. The current statement is just a slight reformulation of this fact, using the language of linear functionals.</div></li>
 <li>
 <div class="para logical">
@@ -39,36 +45,67 @@ v \amp \mapsto \phi_v \text{,}
 <div class="displaymath process-math">
 \begin{align*}
 \phi_{cv_1+dv_2}(v) \amp = \angvec{v,cv_1+dv+2} \\
-\amp = c\angvec{v,v_1}+d\angvec{v,v_2}\\
-\amp = c\phi_{v_1}(v)+d\phi_{v_2}(v)\\
-\amp =(c\phi_{v_1}+d\phi_{v_2})(v)
+\amp = \overline{c}\angvec{v,v_1}+\overline{d}\angvec{v,v_2}\\
+\amp = \overline{c}\phi_{v_1}(v)+\overline{d}\phi_{v_2}(v)\\
+\amp =(\overline{c}\phi_{v_1}+\overline{d}\phi_{v_2})(v)
 \end{align*}
 </div>
-<div class="para">for all <span class="process-math">\(v\in V\text{.}\)</span> Thus <span class="process-math">\(\phi_{cv_1+dv_2}=c\phi_{v_1}+d\phi_{v_2}\text{:}\)</span> i.e., <span class="process-math">\(\Phi(cv_1+dv_2)=c\Phi(v_1)+d\Phi(v_2)\text{.}\)</span>
+<div class="para">for all <span class="process-math">\(v\in V\text{.}\)</span> Thus <span class="process-math">\(\phi_{cv_1+dv_2}=\overline{c}\phi_{v_1}+\overline{d}\phi_{v_2}\text{:}\)</span> i.e., <span class="process-math">\(\Phi(cv_1+dv_2)=\overline{c}\Phi(v_1)+\overline{d}\Phi(v_2)\text{.}\)</span>
 </div>
 </div>
 <div class="para logical">
-<div class="para">To show <span class="process-math">\(\Phi\)</span> is injective, we will show that <span class="process-math">\(\NS \Phi=\{\boldzero\}\text{.}\)</span> Given any <span class="process-math">\(v_0\in V\text{,}\)</span> we have</div>
+<div class="para">We now show <span class="process-math">\(\Phi\)</span> is injective. Given <span class="process-math">\(v_1,v_2\in V\text{,}\)</span> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_inner_prod.html">
 \begin{align*}
-\Phi(v_0)=\boldzero \amp \iff \phi_{v_0}=0_{V,F}\\
-\amp \iff \phi_{v_0}(v)=0 \text{ for all } v\in V\\
-\amp \iff \angvec{v,v_0}=0 \text{ for all } v\in V\\
-\amp \iff v_0=\boldzero \amp (\knowl{./knowl/xref/th_inner_prod.html}{\text{1.18.9}}) \text{.}
+\Phi(v_1)=\Phi(v_2) \amp \iff  \phi_{v_1}=\phi_{v_2}\\
+\amp \iff \phi_{v_1}(v)=\phi_{v_2}(v) \text{ for all } v\in V\\
+\amp \iff \angvec{v,v_1}=\angvec{v,v_2} \text{ for all } v\in V\\
+\amp \iff v_1=v_2 \amp (\knowl{./knowl/xref/th_inner_prod.html}{\text{1.18.9}})\text{.}
 \end{align*}
 </div>
-<div class="para">Thus <span class="process-math">\(\NS \Phi=\{\boldzero\}\)</span> and <span class="process-math">\(\Phi\)</span> is injective.</div>
+<div class="para">Thus <span class="process-math">\(\Phi\)</span> is injective.</div>
 </div>
 </li>
-<li><div class="para logical">
+<li>
+<div class="para logical">
 <div class="para">Let <span class="process-math">\(\dim V=n&lt; \infty\text{.}\)</span> Since <span class="process-math">\(\dim F=1\text{,}\)</span> by <a href="s_matrix_reps.html#th_matrix_reps_isom" class="xref" data-knowl="./knowl/xref/th_matrix_reps_isom.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.13.19: Matrix representation isomorphism">Theorem 1.13.19</a> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_matrix_reps_isom.html ./knowl/xref/cor_inj_surj_bij.html">
 \begin{equation*}
 \dim V^*=\dim \mathcal{L}(V,F)=n\cdot 1=n=\dim V\text{.}
 \end{equation*}
 </div>
-<div class="para">Since <span class="process-math">\(\Phi\)</span> is an injective linear transformation between two vector spaces of the same finite dimension, it follows from <a href="s_rank_nullity.html#cor_inj_surj_bij" class="xref" data-knowl="./knowl/xref/cor_inj_surj_bij.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.11.4: Injective, surjective, bijective">Corollary 1.11.4</a> that <span class="process-math">\(\Phi\)</span> is bijective, and hence an isomorphism.</div>
+<div class="para">Since <span class="process-math">\(\Phi\)</span> is conjugate linear, and not linear, we cannot invoke <a href="s_rank_nullity.html#cor_inj_surj_bij" class="xref" data-knowl="./knowl/xref/cor_inj_surj_bij.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.11.4: Injective, surjective, bijective">Corollary 1.11.4</a> directly to conclude that it is surjective. However, the same result does in fact apply to conjugate linear maps for the following two reasons (left to the reader to prove):</div>
+<ul class="disc" id="th_Riesz_rep-3-1-1-3-1-7">
+<li><div class="para">the image of a conjugate linear map is a subspace of the codomain (just as with linear maps);</div></li>
+<li><div class="para">the image of a linearly independent tuple under an injective conjugate linear map is a linearly independent tuple.</div></li>
+</ul>
+<div class="para">Let <span class="process-math">\(B=(v_1,v_2,\dots, v_n)\)</span> be a basis of <span class="process-math">\(V\text{.}\)</span> From the two points above, we see that <span class="process-math">\(\im \Phi\)</span> is a subspace of <span class="process-math">\(V^*\)</span> containing the linearly independent tuple <span class="process-math">\(\Phi(B)=(\Phi(v_1),\dots, \Phi(v_n))\text{.}\)</span> It follows that <span class="process-math">\(\dim \im \Phi=\dim V^*=n\text{,}\)</span> and thus that <span class="process-math">\(\im \Phi=V^*\text{,}\)</span> as desired.</div>
+</div>
+<div class="para logical">
+<div class="para">Alternatively, we can give a more constructive proof of the surjectivity of <span class="process-math">\(\Phi\)</span> as follows:</div>
+<ul class="disc" id="th_Riesz_rep-3-1-1-3-2-2">
+<li><div class="para">pick an orthonormal basis <span class="process-math">\(B=(v_1,v_2,\dots, v_n)\)</span> of <span class="process-math">\(V\text{;}\)</span>
 </div></li>
+<li><div class="para">given <span class="process-math">\(\phi\in V^*=\mathcal{L}(V,F)\text{,}\)</span> let <span class="process-math">\(c_i=\phi(v_i)\)</span> for all <span class="process-math">\(i\in I\text{;}\)</span>
+</div></li>
+<li><div class="para">let <span class="process-math">\(v=\sum_{i=1}^n\overline{c_i}v_i\text{;}\)</span>
+</div></li>
+<li><div class="para logical">
+<div class="para">for all <span class="process-math">\(1\leq i\leq n\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\phi_v(v_i) \amp =\angvec{v_i, v}\\
+\amp = \angvec{v_i, \overline{c}_iv_i} \amp (i\ne j\implies \angvec{v_i, c_jv_j}=0)\\
+\amp = c_i\angvec{v_i,v_i} \amp (\text{conj. homog.})\\
+\amp =c_i \amp (\norm{v_i}=1)\text{;}
+\end{align*}
+</div>
+</div></li>
+<li><div class="para">since <span class="process-math">\(\phi\)</span> and <span class="process-math">\(\phi_v\)</span> agree on the basis <span class="process-math">\(B\text{,}\)</span> we have <span class="process-math">\(\phi=\phi_v\text{.}\)</span>
+</div></li>
+</ul>
+</div>
+</li>
 </ol></div></article></details><span class="incontext"><a class="internal" href="s_adjoint.html#th_Riesz_rep">in-context</a></span>
 </body>
 </html>

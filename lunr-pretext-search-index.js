@@ -3517,43 +3517,43 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.21",
   "title": "Adjoints",
-  "body": " Adjoints   Linear functional   Let be a vector space. A linear functional on is a linear transformation from to . The vector space of all linear functionals on is called the dual space of , and is denoted .     Riesz representation   Let be an inner product space.   For all , the function defined as is a linear functional.    The function , where , is an injective linear transformation.    Assume . In this case the map above is an isomorphism. In particular, given a linear functional , there is a unique vector such that : , such that for all .          This was already proved in . The current statement is just a slight reformulation of this fact, using the language of linear functionals.    We use the 1-step technique. Given any and , the function satisfies for all . Thus : , .  To show is injective, we will show that . Given any , we have . Thus and is injective.    Let . Since , by we have . Since is an injective linear transformation between two vector spaces of the same finite dimension, it follows from that is bijective, and hence an isomorphism.        Adjoint of a transformation   Let and be inner product spaces, and assume is finite dimensional. Given any , there is a unique satisfying .    In the argument that follows, we will drop the subscripts on and . The reader can easily determine which inner product is meant by determining which space ( or ) the input vectors are elements of.  First we prove the existence of by defining it explicitly via a somewhat involved recipe. Given any , the function is easily seen to be a linear functional on : , . By there is a unique vector satisfying for all . We define .  Having defined as a function,, we now show that it satisfies equation ; equation then follows immediately from the conjugate symmetry property. Given any , we have , as desired.  Next, we use the fact that satisfies to show it is linear. Given any and , we have for all . It follows from that . Thus is linear.  Lastly, we show that is the unique element of satisfying . If satisfies for all and , then for all and we have . It follows that for all , and hence that .     Adjoint of transformation   Let and be inner product spaces. Given , we call a transformation the adjoint of if it satisfies properties . Furthermore, we call each of the equivalent properties the adjoint property .    For our first example of computing an adjoint, we consider a linear transformation . Recall that for a unique matrix . By , there is an adjoint transformation . What is the matrix such that ? This is answered in , which makes use of the following definition.   Conjugate and adjoint of a matrix   Let , and let .  The conjugate of , denoted is the matrix defined as . The adjoint of , denoted , is the matrix defined as .     Standard inner product   Let , and let be the standard inner product on . For all , we have .    Let and . Treating and as column vectors ( ), we have      Adjoint of a matrix transformation   Assume . Let , and let be the unique matrix such that . The adjoint , taken with respect to the standard inner products on and , is the matrix transformation .    By uniqueness of the adjoint, it suffices to show that satisfies the adjoint properties: that is, that for all and . First observe that the standard inner product on these spaces can be computed as a matrix multiplication as follows: . It    Adjoint of inclusion map   Let be a finite-dimensional subspace of the inner product space , and let be the inclusion map. Determine the adjoint map .          Adjoint properties   Let , , be inner product spaces.   Assume and are finite-dimensional. If and , then .    Assume and are finite dimensional. If , then .    Assume is finite dimensional. Given , we have             "
-},
-{
-  "id": "d_lin_functional",
-  "level": "2",
-  "url": "s_adjoint.html#d_lin_functional",
-  "type": "Definition",
-  "number": "1.21.1",
-  "title": "Linear functional.",
-  "body": " Linear functional   Let be a vector space. A linear functional on is a linear transformation from to . The vector space of all linear functionals on is called the dual space of , and is denoted .   "
-},
-{
-  "id": "th_Riesz_rep",
-  "level": "2",
-  "url": "s_adjoint.html#th_Riesz_rep",
-  "type": "Theorem",
-  "number": "1.21.2",
-  "title": "Riesz representation.",
-  "body": " Riesz representation   Let be an inner product space.   For all , the function defined as is a linear functional.    The function , where , is an injective linear transformation.    Assume . In this case the map above is an isomorphism. In particular, given a linear functional , there is a unique vector such that : , such that for all .          This was already proved in . The current statement is just a slight reformulation of this fact, using the language of linear functionals.    We use the 1-step technique. Given any and , the function satisfies for all . Thus : , .  To show is injective, we will show that . Given any , we have . Thus and is injective.    Let . Since , by we have . Since is an injective linear transformation between two vector spaces of the same finite dimension, it follows from that is bijective, and hence an isomorphism.      "
-},
-{
-  "id": "th_adjoint",
-  "level": "2",
-  "url": "s_adjoint.html#th_adjoint",
-  "type": "Theorem",
-  "number": "1.21.3",
-  "title": "Adjoint of a transformation.",
-  "body": " Adjoint of a transformation   Let and be inner product spaces, and assume is finite dimensional. Given any , there is a unique satisfying .    In the argument that follows, we will drop the subscripts on and . The reader can easily determine which inner product is meant by determining which space ( or ) the input vectors are elements of.  First we prove the existence of by defining it explicitly via a somewhat involved recipe. Given any , the function is easily seen to be a linear functional on : , . By there is a unique vector satisfying for all . We define .  Having defined as a function,, we now show that it satisfies equation ; equation then follows immediately from the conjugate symmetry property. Given any , we have , as desired.  Next, we use the fact that satisfies to show it is linear. Given any and , we have for all . It follows from that . Thus is linear.  Lastly, we show that is the unique element of satisfying . If satisfies for all and , then for all and we have . It follows that for all , and hence that .   "
+  "body": " Adjoints   Adjoints   Adjoint of transformation   Let and be inner product spaces. Given , we call a function an adjoint of if it satisfies for all and . Furthermore, we call each of the equivalent properties the adjoint property .     Adjoint properties  To see that properties are equivalent, note that .    Adjoints  As is evident in the statement of , discussion of adjoint transformations generally involves two different inner product spaces with two different inner products. Although we will be careful to use subscript notation in statements of definitions or theory, henceforth we will drop the subscripts on and when constructing proofs or computing examples. The reader can easily determine which inner product is meant by determining which space ( or ) the input vectors are elements of.   The adjoint of a linear transformation does not always exist. However, as we show in , is guaranteed to exist if . The next theorem gives us information about adjoints when they do exist, and as such will be littered with phrase of the sort if the adjoint exists .   Adjoint properties   Let , , and be inner product spaces, let , and let .   There is at most one adjoint of : , if there exists a function satisfying the adjoint property, then it is unique.    An adjoint of is linear: , if exists, then     If exists, then so does . Moreover, in this case we have .    If and exist, then so does . Moreover, in this case we have .          Suppose and are adjoint functions of : , and both satisfy . It follows that for all and , we have . Since for all , it follows from that for all , and hence that , as desired.    Assume an adjoint exists. We use the 1-step technique to show is linear. Given any and , we will show that by proving that for all , using . To this end, we have for all . Thus , as desired.    Assume and exists. By uniqueness of adjoints, it suffices to show that satisfies the adjoint property. We have for all and . Since this property uniquely defines the adjoint , we conclude that .    Assume exists. From (2) we know that is linear. That is its adjoint follows now from the equivalence of the two properties : , we can think of the first as saying that is an adjoint of , and the second as saying that is an adjoint of .       Before getting to our existence result, we consider a few examples where we can determine an adjoint map explicitly. For our first example of computing an adjoint, we consider a linear transformation . Recall that for a unique matrix . By , there is an adjoint transformation . What is the matrix such that ? This is answered in , which makes use of the following definition.   Conjugate and adjoint of a matrix   Let , and let .  The conjugate of , denoted is the matrix defined as . The adjoint of , denoted , is the matrix defined as .     Adjoint matrix  Thanks to the definition , many elementary properties of the adjoint operation follow from related properties enjoyed by the transpose operator, with complex conjugation intervening to spice things up. We leave it to the reader to prove that the following properties for matrices (of appropriate size) and scalars : .    Standard inner product   Let , and let be the standard inner product on as defined in . For all , we have .    Let and . Treating and as column vectors ( ), we have .     Adjoint of a matrix transformation   Assume . Let , and let be the unique matrix such that . The adjoint , taken with respect to the standard inner products on and , is the matrix transformation .    By uniqueness of the adjoint, it suffices to show that satisfies the adjoint property: that is, that for all and . We have .     Adjoint of matrix transformation  As usual, observe that if complex conjugation operation can be disregarded. Let's give a quick summary of what the previous definitions and theorems boil down to in this setting.   Given , we have .    Given , we have .    Given , we have .      We now consider some more exotic\/abstract examples.   Adjoint of inclusion map   Let be a finite-dimensional subspace of the inner product space , and let be the inclusion map. Given an explicit description of the adjoint map .    Since is finite dimensional, we have , and can define the orthogonal projection map . We claim that , and prove our claim by showing that for all and . Given any , we write , where by definition and . It follows that for any , we have , as desired.     Derivative operator   Let be the set of functions of period 1. The operation defines an inner product on . It is easy to show that if , then : , the derivative of a period-1 function is a period-1 function. Thus we can define a linear transformation . Show that .    Observe that , by definition. We must show that satisfies the adjoint property with respect to . Given any , we have .     Integral transformation   Let be a closed interval in . Let , be a continuous function. Given any , you can show that the integral function is continuous on and that the resulting map is a linear transformation. Show, using Fubini's theorem for double integrals, that the adjoint of is the function .    This is left as an exercise.      Existence of adjoints   Linear functional   Let be a vector space. A linear functional on is a linear transformation from to . The vector space of all linear functionals on is called the dual space of , and is denoted .     Riesz representation   Let be an inner product space.   For all , the function defined as is a linear functional.    The function , where is injective and satisfies . In other words, is conjugate linear .    Assume . In this case the map above is bijective. In particular, given a linear functional , there is a unique vector such that : , such that for all .          This was already proved in . The current statement is just a slight reformulation of this fact, using the language of linear functionals.    We use the 1-step technique. Given any and , the function satisfies for all . Thus : , .  We now show is injective. Given , we have . Thus is injective.    Let . Since , by we have . Since is conjugate linear, and not linear, we cannot invoke directly to conclude that it is surjective. However, the same result does in fact apply to conjugate linear maps for the following two reasons (left to the reader to prove):   the image of a conjugate linear map is a subspace of the codomain (just as with linear maps);    the image of a linearly independent tuple under an injective conjugate linear map is a linearly independent tuple.   Let be a basis of . From the two points above, we see that is a subspace of containing the linearly independent tuple . It follows that , and thus that , as desired.  Alternatively, we can give a more constructive proof of the surjectivity of as follows:   pick an orthonormal basis of ;    given , let for all ;    let ;    for all , we have ;    since and agree on the basis , we have .           Adjoint of a transformation   Let and be inner product spaces, and assume is finite dimensional. Every linear transformation has a unique adjoint .    First we prove the existence of by defining it explicitly via a somewhat involved recipe. Given any , the function is easily seen to be a linear functional on : , . By there is a unique vector satisfying for all . We define .  Having defined as a function,, we now show that it satisfies equation ; equation then follows immediately from the conjugate symmetry property. Given any , we have , as desired.  The uniqueness and linearity of follow from .     Null space and image of adjoint   Let and be inner product spaces, and assume is finite dimensional. Given , let be its adjoint. We have .    Assume exists. We first prove that . We have . Thus .  To prove that , we use the fact that and apply the result above to compute . Thus . Since is finite dimensional, we have , and thus , as desired.     "
 },
 {
   "id": "d_adjoint",
   "level": "2",
   "url": "s_adjoint.html#d_adjoint",
   "type": "Definition",
-  "number": "1.21.4",
+  "number": "1.21.1",
   "title": "Adjoint of transformation.",
-  "body": " Adjoint of transformation   Let and be inner product spaces. Given , we call a transformation the adjoint of if it satisfies properties . Furthermore, we call each of the equivalent properties the adjoint property .   "
+  "body": " Adjoint of transformation   Let and be inner product spaces. Given , we call a function an adjoint of if it satisfies for all and . Furthermore, we call each of the equivalent properties the adjoint property .   "
+},
+{
+  "id": "ss_adjoints-3",
+  "level": "2",
+  "url": "s_adjoint.html#ss_adjoints-3",
+  "type": "Remark",
+  "number": "1.21.2",
+  "title": "Adjoint properties.",
+  "body": " Adjoint properties  To see that properties are equivalent, note that .  "
+},
+{
+  "id": "ss_adjoints-4",
+  "level": "2",
+  "url": "s_adjoint.html#ss_adjoints-4",
+  "type": "Convention",
+  "number": "1.21.3",
+  "title": "Adjoints.",
+  "body": " Adjoints  As is evident in the statement of , discussion of adjoint transformations generally involves two different inner product spaces with two different inner products. Although we will be careful to use subscript notation in statements of definitions or theory, henceforth we will drop the subscripts on and when constructing proofs or computing examples. The reader can easily determine which inner product is meant by determining which space ( or ) the input vectors are elements of.  "
+},
+{
+  "id": "th_adjoint_props",
+  "level": "2",
+  "url": "s_adjoint.html#th_adjoint_props",
+  "type": "Theorem",
+  "number": "1.21.4",
+  "title": "Adjoint properties.",
+  "body": " Adjoint properties   Let , , and be inner product spaces, let , and let .   There is at most one adjoint of : , if there exists a function satisfying the adjoint property, then it is unique.    An adjoint of is linear: , if exists, then     If exists, then so does . Moreover, in this case we have .    If and exist, then so does . Moreover, in this case we have .          Suppose and are adjoint functions of : , and both satisfy . It follows that for all and , we have . Since for all , it follows from that for all , and hence that , as desired.    Assume an adjoint exists. We use the 1-step technique to show is linear. Given any and , we will show that by proving that for all , using . To this end, we have for all . Thus , as desired.    Assume and exists. By uniqueness of adjoints, it suffices to show that satisfies the adjoint property. We have for all and . Since this property uniquely defines the adjoint , we conclude that .    Assume exists. From (2) we know that is linear. That is its adjoint follows now from the equivalence of the two properties : , we can think of the first as saying that is an adjoint of , and the second as saying that is an adjoint of .      "
 },
 {
   "id": "d_adjoint_matrix",
@@ -3565,22 +3565,103 @@ var ptx_lunr_docs = [
   "body": " Conjugate and adjoint of a matrix   Let , and let .  The conjugate of , denoted is the matrix defined as . The adjoint of , denoted , is the matrix defined as .   "
 },
 {
+  "id": "ss_adjoints-9",
+  "level": "2",
+  "url": "s_adjoint.html#ss_adjoints-9",
+  "type": "Remark",
+  "number": "1.21.6",
+  "title": "Adjoint matrix.",
+  "body": " Adjoint matrix  Thanks to the definition , many elementary properties of the adjoint operation follow from related properties enjoyed by the transpose operator, with complex conjugation intervening to spice things up. We leave it to the reader to prove that the following properties for matrices (of appropriate size) and scalars : .  "
+},
+{
   "id": "th_adjoint_inner",
   "level": "2",
   "url": "s_adjoint.html#th_adjoint_inner",
   "type": "Theorem",
-  "number": "1.21.6",
+  "number": "1.21.7",
   "title": "Standard inner product.",
-  "body": " Standard inner product   Let , and let be the standard inner product on . For all , we have .    Let and . Treating and as column vectors ( ), we have    "
+  "body": " Standard inner product   Let , and let be the standard inner product on as defined in . For all , we have .    Let and . Treating and as column vectors ( ), we have .   "
 },
 {
   "id": "th_adjoint_matrix",
   "level": "2",
   "url": "s_adjoint.html#th_adjoint_matrix",
   "type": "Theorem",
-  "number": "1.21.7",
+  "number": "1.21.8",
   "title": "Adjoint of a matrix transformation.",
-  "body": " Adjoint of a matrix transformation   Assume . Let , and let be the unique matrix such that . The adjoint , taken with respect to the standard inner products on and , is the matrix transformation .    By uniqueness of the adjoint, it suffices to show that satisfies the adjoint properties: that is, that for all and . First observe that the standard inner product on these spaces can be computed as a matrix multiplication as follows: . It    Adjoint of inclusion map   Let be a finite-dimensional subspace of the inner product space , and let be the inclusion map. Determine the adjoint map .          Adjoint properties   Let , , be inner product spaces.   Assume and are finite-dimensional. If and , then .    Assume and are finite dimensional. If , then .    Assume is finite dimensional. Given , we have            "
+  "body": " Adjoint of a matrix transformation   Assume . Let , and let be the unique matrix such that . The adjoint , taken with respect to the standard inner products on and , is the matrix transformation .    By uniqueness of the adjoint, it suffices to show that satisfies the adjoint property: that is, that for all and . We have .   "
+},
+{
+  "id": "ss_adjoints-12",
+  "level": "2",
+  "url": "s_adjoint.html#ss_adjoints-12",
+  "type": "Remark",
+  "number": "1.21.9",
+  "title": "Adjoint of matrix transformation.",
+  "body": " Adjoint of matrix transformation  As usual, observe that if complex conjugation operation can be disregarded. Let's give a quick summary of what the previous definitions and theorems boil down to in this setting.   Given , we have .    Given , we have .    Given , we have .     "
+},
+{
+  "id": "eg_adjoint_inclusion",
+  "level": "2",
+  "url": "s_adjoint.html#eg_adjoint_inclusion",
+  "type": "Example",
+  "number": "1.21.10",
+  "title": "Adjoint of inclusion map.",
+  "body": " Adjoint of inclusion map   Let be a finite-dimensional subspace of the inner product space , and let be the inclusion map. Given an explicit description of the adjoint map .    Since is finite dimensional, we have , and can define the orthogonal projection map . We claim that , and prove our claim by showing that for all and . Given any , we write , where by definition and . It follows that for any , we have , as desired.   "
+},
+{
+  "id": "eg_adjoint_deriv",
+  "level": "2",
+  "url": "s_adjoint.html#eg_adjoint_deriv",
+  "type": "Example",
+  "number": "1.21.11",
+  "title": "Derivative operator.",
+  "body": " Derivative operator   Let be the set of functions of period 1. The operation defines an inner product on . It is easy to show that if , then : , the derivative of a period-1 function is a period-1 function. Thus we can define a linear transformation . Show that .    Observe that , by definition. We must show that satisfies the adjoint property with respect to . Given any , we have .   "
+},
+{
+  "id": "eg_adjoint_integration_kernel",
+  "level": "2",
+  "url": "s_adjoint.html#eg_adjoint_integration_kernel",
+  "type": "Example",
+  "number": "1.21.12",
+  "title": "Integral transformation.",
+  "body": " Integral transformation   Let be a closed interval in . Let , be a continuous function. Given any , you can show that the integral function is continuous on and that the resulting map is a linear transformation. Show, using Fubini's theorem for double integrals, that the adjoint of is the function .    This is left as an exercise.   "
+},
+{
+  "id": "d_lin_functional",
+  "level": "2",
+  "url": "s_adjoint.html#d_lin_functional",
+  "type": "Definition",
+  "number": "1.21.13",
+  "title": "Linear functional.",
+  "body": " Linear functional   Let be a vector space. A linear functional on is a linear transformation from to . The vector space of all linear functionals on is called the dual space of , and is denoted .   "
+},
+{
+  "id": "th_Riesz_rep",
+  "level": "2",
+  "url": "s_adjoint.html#th_Riesz_rep",
+  "type": "Theorem",
+  "number": "1.21.14",
+  "title": "Riesz representation.",
+  "body": " Riesz representation   Let be an inner product space.   For all , the function defined as is a linear functional.    The function , where is injective and satisfies . In other words, is conjugate linear .    Assume . In this case the map above is bijective. In particular, given a linear functional , there is a unique vector such that : , such that for all .          This was already proved in . The current statement is just a slight reformulation of this fact, using the language of linear functionals.    We use the 1-step technique. Given any and , the function satisfies for all . Thus : , .  We now show is injective. Given , we have . Thus is injective.    Let . Since , by we have . Since is conjugate linear, and not linear, we cannot invoke directly to conclude that it is surjective. However, the same result does in fact apply to conjugate linear maps for the following two reasons (left to the reader to prove):   the image of a conjugate linear map is a subspace of the codomain (just as with linear maps);    the image of a linearly independent tuple under an injective conjugate linear map is a linearly independent tuple.   Let be a basis of . From the two points above, we see that is a subspace of containing the linearly independent tuple . It follows that , and thus that , as desired.  Alternatively, we can give a more constructive proof of the surjectivity of as follows:   pick an orthonormal basis of ;    given , let for all ;    let ;    for all , we have ;    since and agree on the basis , we have .         "
+},
+{
+  "id": "th_adjoint",
+  "level": "2",
+  "url": "s_adjoint.html#th_adjoint",
+  "type": "Theorem",
+  "number": "1.21.15",
+  "title": "Adjoint of a transformation.",
+  "body": " Adjoint of a transformation   Let and be inner product spaces, and assume is finite dimensional. Every linear transformation has a unique adjoint .    First we prove the existence of by defining it explicitly via a somewhat involved recipe. Given any , the function is easily seen to be a linear functional on : , . By there is a unique vector satisfying for all . We define .  Having defined as a function,, we now show that it satisfies equation ; equation then follows immediately from the conjugate symmetry property. Given any , we have , as desired.  The uniqueness and linearity of follow from .   "
+},
+{
+  "id": "th_adjoint_null_im",
+  "level": "2",
+  "url": "s_adjoint.html#th_adjoint_null_im",
+  "type": "Theorem",
+  "number": "1.21.16",
+  "title": "Null space and image of adjoint.",
+  "body": " Null space and image of adjoint   Let and be inner product spaces, and assume is finite dimensional. Given , let be its adjoint. We have .    Assume exists. We first prove that . We have . Thus .  To prove that , we use the fact that and apply the result above to compute . Thus . Since is finite dimensional, we have , and thus , as desired.   "
 },
 {
   "id": "appendix-notation",

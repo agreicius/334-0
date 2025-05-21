@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.21.11</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Derivative operator.</span>
+</h4>
+<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
+<div class="para">Let <span class="process-math">\(W\)</span> be the set of functions <span class="process-math">\(C^\infty(\R)\)</span> of period 1. The operation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\angvec{f,g}=\int_0^1f(x)g(x)\, dx
+\end{equation*}
+</div>
+<div class="para">defines an inner product on <span class="process-math">\(W\text{.}\)</span> It is easy to show that if <span class="process-math">\(f\in W\text{,}\)</span> then <span class="process-math">\(f'\in W\text{:}\)</span> i.e., the derivative of a <span class="process-math">\(C^\infty\)</span> period-1 function is a <span class="process-math">\(C^\infty\)</span> period-1 function. Thus we can define a linear transformation</div>
+<div class="displaymath process-math">
+\begin{align*}
+T\colon W \amp \rightarrow W\\
+f \amp \mapsto f'\text{.}
+\end{align*}
+</div>
+<div class="para">Show that <span class="process-math">\(T^*=-T\text{.}\)</span>
+</div>
+</div>
+<div class="solutions"><details xmlns:xlink="http://www.w3.org/1999/xlink" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical">
+<div class="para">Observe that <span class="process-math">\(-T(g)=-g'\text{,}\)</span> by definition.  We must show that <span class="process-math">\(-T\)</span> satisfies the adjoint property with respect to <span class="process-math">\(T\text{.}\)</span> Given any <span class="process-math">\(f,g\in W\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\angvec{T(f),g} \amp = \int_0^1f'(x)g(x)\, dx\\
+\amp = f(x)g(x)\Bigr\vert_0^1-\int_0^1f(x)g'(x)\, dx \amp (\text{int. by parts.})\\
+\amp = 0+\int_0^1f(x)(-g'(x))\, dx \amp (f(0)=f(1), g(0)=g(1))\\
+\amp = \angvec{f,-T(g)} \amp (-T(g)=-g')\text{.}
+\end{align*}
+</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="s_adjoint.html#eg_adjoint_deriv">in-context</a></span>
+</body>
+</html>
