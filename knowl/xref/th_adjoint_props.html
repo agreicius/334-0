@@ -12,20 +12,28 @@
 </head>
 <body class="ignore-math">
 <article class="theorem theorem-like"><h4 class="heading">
-<span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.21.4</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Adjoint properties.</span>
+<span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.21.5</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Adjoint properties.</span>
 </h4>
 <div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
-<div class="para">Let <span class="process-math">\((V,\angvec{\, }_V)\text{,}\)</span> <span class="process-math">\((W,\angvec{\, }_W)\text{,}\)</span> and <span class="process-math">\((U,\angvec{\, ,}_U)\)</span> be inner product spaces, let <span class="process-math">\(T\in \mathcal{L}(V,W)\text{,}\)</span> and let <span class="process-math">\(S\in \mathcal{L}(W,U)\text{.}\)</span>
+<div class="para">Let <span class="process-math">\((V,\angvec{\, }_V)\text{,}\)</span> <span class="process-math">\((W,\angvec{\, }_W)\text{,}\)</span> and <span class="process-math">\((U,\angvec{\, ,}_U)\)</span> be inner product spaces, Let <span class="process-math">\(T,T_1,T_2\in \mathcal{L}(V,W)\text{,}\)</span> and let <span class="process-math">\(S\in \mathcal{L}(W,U)\text{.}\)</span>
 </div>
 <ol class="decimal" id="th_adjoint_props-2-1-6">
 <li><div class="para">There is at most one adjoint of <span class="process-math">\(T\text{:}\)</span> i.e., if there exists a function <span class="process-math">\(T^*\)</span> satisfying the adjoint property, then it is unique.</div></li>
-<li><div class="para">An adjoint of <span class="process-math">\(T\)</span> is linear: i.e., if <span class="process-math">\(T^*\)</span> exists, then <span class="process-math">\(T^*\in \mathcal{W,V}\)</span>
+<li><div class="para">An adjoint of <span class="process-math">\(T\)</span> is linear: i.e., if <span class="process-math">\(T^*\)</span> exists, then <span class="process-math">\(T^*\in \mathcal{L}(W,V)\)</span>
+</div></li>
+<li><div class="para logical">
+<div class="para">If <span class="process-math">\(T_1^*\)</span> and <span class="process-math">\(T_2^*\)</span> exist, then so does <span class="process-math">\((cT_1+dT_2)^*\)</span> for any scalars <span class="process-math">\(c,d\in F\text{.}\)</span> Moreover, in this case, we have</div>
+<div class="displaymath process-math">
+\begin{equation}
+(cT_1+dT_2)^*=\overline{c}T_1^*+\overline{d}T_2^*\text{.}\tag{1.86}
+\end{equation}
+</div>
 </div></li>
 <li><div class="para logical">
 <div class="para">If <span class="process-math">\(T^*\)</span> exists, then so does <span class="process-math">\((T^*)^*\text{.}\)</span> Moreover, in this case we have</div>
 <div class="displaymath process-math">
 \begin{equation}
-(T^*)^*=T\text{.}\tag{1.86}
+(T^*)^*=T\text{.}\tag{1.87}
 \end{equation}
 </div>
 </div></li>
@@ -33,7 +41,21 @@
 <div class="para">If <span class="process-math">\(T^*\)</span> and <span class="process-math">\(S^*\)</span> exist, then so does <span class="process-math">\((ST)^*\text{.}\)</span> Moreover, in this case we have</div>
 <div class="displaymath process-math">
 \begin{equation}
-(ST)^*=T^*S^*\text{.}\tag{1.87}
+(ST)^*=T^*S^*\text{.}\tag{1.88}
+\end{equation}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">Given a scalar <span class="process-math">\(c\in F\text{,}\)</span> let <span class="process-math">\(c_V\colon V\rightarrow V\)</span> be the dilation map defined as <span class="process-math">\(c_V(v)=cv\text{.}\)</span> We have</div>
+<div class="displaymath process-math">
+\begin{equation}
+(c_V)^*=\overline{c}_V\text{.}\tag{1.89}
+\end{equation}
+</div>
+<div class="para">As a consequence, since <span class="process-math">\(I_V=1_V\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation}
+(I_V)^*=I_V\text{.}\tag{1.90}
 \end{equation}
 </div>
 </div></li>
@@ -68,6 +90,7 @@
 </div>
 <div class="para">for all <span class="process-math">\(v\text{.}\)</span> Thus <span class="process-math">\(T^*(cw_1+dw_2)=cT^*(w_1)+dT^*(w_2)\text{,}\)</span> as desired.</div>
 </div></li>
+<li><div class="para">This is left as an exercise.</div></li>
 <li><div class="para logical">
 <div class="para">Assume <span class="process-math">\(T^*\)</span> and <span class="process-math">\(S^*\)</span> exists. By uniqueness of adjoints,  it suffices to show that <span class="process-math">\(T^*S^*\)</span> satisfies the adjoint property. We have</div>
 <div class="displaymath process-math">
@@ -83,6 +106,7 @@
 </div></li>
 <li><div class="para">Assume <span class="process-math">\(T^*\)</span> exists. From (2) we know that <span class="process-math">\(T^*\)</span> is linear. That <span class="process-math">\(T\)</span> is its adjoint follows now from the equivalence of the two properties <a href="s_adjoint.html#d_adjoint-2-1-7" class="xref" data-knowl="./knowl/xref/eq_adj_T.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.84">(1.84)–(1.85)</a>:i.e., we can think of the first as saying that <span class="process-math">\(T^*\)</span> is an adjoint of <span class="process-math">\(T\text{,}\)</span> and the second as saying that <span class="process-math">\(T\)</span> is an adjoint of <span class="process-math">\(T^*\text{.}\)</span>
 </div></li>
+<li><div class="para">This is left as an exercise.</div></li>
 </ol></div></article></details><span class="incontext"><a class="internal" href="s_adjoint.html#th_adjoint_props">in-context</a></span>
 </body>
 </html>

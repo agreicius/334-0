@@ -12,7 +12,7 @@
 </head>
 <body class="ignore-math">
 <article class="example example-like"><h4 class="heading">
-<span class="type">Example</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.21.12</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Integral transformation.</span>
+<span class="type">Example</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.21.16</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Integral transformation.</span>
 </h4>
 <div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
 <div class="para">Let <span class="process-math">\(I=[a,b]\)</span> be a closed interval in <span class="process-math">\(\R\text{.}\)</span> Let</div>
@@ -31,14 +31,14 @@ F(x)=\int_a^bF(x,y)f(y)\, dy
 <div class="displaymath process-math">
 \begin{align*}
 T\colon C([a,b]) \amp\rightarrow C([a,b]) \\
-f \amp \mapsto \int_a^bF(x,y)\, dy
+f \amp \mapsto F(x)=\int_a^bK(x,t)f(t)\, dt
 \end{align*}
 </div>
 <div class="para">is a linear transformation. Show, using Fubini’s theorem for double integrals, that the adjoint of <span class="process-math">\(T\)</span> is the function</div>
 <div class="displaymath process-math">
 \begin{align*}
 T^*\colon C([a,b]) \amp \rightarrow C([a,b])\\
-g  \amp \mapsto \int_a^b F(y,x)g(x)\, dy \text{.}
+g  \amp \mapsto G(x)=\int_a^b F(s,x)g(s)\, ds \text{.}
 \end{align*}
 </div>
 </div>
