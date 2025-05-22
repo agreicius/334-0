@@ -39,13 +39,38 @@
     </p>
     </convention>
     <p>
-        The adjoint of a linear transformation <m>T\colon V\rightarrow W</m> does not always exist. However, as we show in <xref ref="th_adjoint"/>, <m>T^*</m> is guaranteed to exist if <m>\dim V&lt; \infty</m>. The next theorem gives us information about adjoints when they do exist, and as such will be littered with phrase of the sort <q>if the adjoint exists</q>. 
+        As shown in in <xref ref="th_adjoint"/>, <m>T^*</m> is guaranteed to exist if <m>\dim V&lt; \infty</m>. However, it is not true in general that every linear transformation of inner product spaces has an adjoint. 
     </p>
+    <example xml:id="eg_no_adjoint">
+    <title>Nonexistence of an adjoint</title>
+    <statement>
+    <p>
+    Consider the vector space <m>C^\infty([0,1])</m> together with the integral inner product 
+    <me>
+        \angvec{f,g}=\int_0^1f(x)g(x)\, dx
+    </me>.
+    The linear operator <m>T\colon C^\infty([0,1])\rightarrow C^\infty([0,1])</m> defined as <m>T(f)=f'</m> does not have an adjoint. 
+    </p>
+    </statement>
+    <solution>
+    <p>
+    This is left as a homework exercise. It is worth noting that if we restrict <m>T</m> to certain <m>T</m>-invariant subspaces <m>W</m> of <m>C([0,1])</m>, the resulting linear transformation <m>T\vert_W\colon W\rightarrow W</m> does indeed have an adjoint. For example, we may take the space of polynomial functions 
+    <me>
+        W=P([0,1])
+    </me>,
+     or the trigonometric polynomial space
+    <me>
+        W=\Span(1,\cos 2\pi x, \sin 2\pi x, \cos 3\pi x, \sin 3\pi x,\dots )
+    </me>.
+    </p>
+    </solution>
+    </example>
+    
     <theorem xml:id="th_adjoint_props">
     <title>Adjoint properties</title>
     <statement>
     <p>
-    Let <m>(V,\angvec{\, }_V)</m>, <m>(W,\angvec{\, }_W)</m>, and <m>(U,\angvec{\, ,}_U)</m> be inner product spaces, let <m>T\in \mathcal{L}(V,W)</m>, and let <m>S\in \mathcal{L}(W,U)</m>.
+    Let <m>(V,\angvec{\, }_V)</m>, <m>(W,\angvec{\, }_W)</m>, and <m>(U,\angvec{\, ,}_U)</m> be inner product spaces, Let <m>T,T_1,T_2\in \mathcal{L}(V,W)</m>, and let <m>S\in \mathcal{L}(W,U)</m>.
     <ol>
         <li>
             <p>
@@ -54,7 +79,15 @@
         </li>
         <li>
             <p>
-                An adjoint of <m>T</m> is linear: <ie/>, if <m>T^*</m> exists, then <m>T^*\in \mathcal{W,V}</m> 
+                An adjoint of <m>T</m> is linear: <ie/>, if <m>T^*</m> exists, then <m>T^*\in \mathcal{L}(W,V)</m> 
+            </p>
+        </li>
+        <li>
+            <p>
+                If <m>T_1^*</m> and <m>T_2^*</m> exist, then so does <m>(cT_1+dT_2)^*</m> for any scalars <m>c,d\in F</m>. Moreover, in this case, we have 
+                <men xml:id="eq_adj_combo">
+                    (cT_1+dT_2)^*=\overline{c}T_1^*+\overline{d}T_2^*
+                </men>.
             </p>
         </li>
         <li>
@@ -68,8 +101,20 @@
         <li>
             <p>
                 If <m>T^*</m> and <m>S^*</m> exist, then so does <m>(ST)^*</m>. Moreover, in this case we have  
-                <men>
+                <men xml:id="eq_adj_comp">
                     (ST)^*=T^*S^*
+                </men>.
+            </p>
+        </li>
+        <li>
+            <p>
+                Given a scalar <m>c\in F</m>, let <m>c_V\colon V\rightarrow V</m> be the dilation map defined as <m>c_V(v)=cv</m>. We have 
+                <men xml:id="eq_adj_dilation">
+                    (c_V)^*=\overline{c}_V
+                </men>.
+                As a consequence, since <m>I_V=1_V</m>, we have 
+                <men xml:id="eq_adj_id">
+                    (I_V)^*=I_V
                 </men>.
             </p>
         </li>
@@ -108,6 +153,11 @@
             </li>
             <li>
                 <p>
+                    This is left as an exercise. 
+                </p>
+            </li>
+            <li>
+                <p>
                     Assume <m>T^*</m> and <m>S^*</m> exists. By uniqueness of adjoints,  it suffices to show that <m>T^*S^*</m> satisfies the adjoint property. We have 
                     <md>
                         <mrow>\angvec{v,T^*S^*(u)} \amp = \angvec{v,T^*(S^*(u))} </mrow>
@@ -121,6 +171,11 @@
             <li>
                 <p>
                     Assume <m>T^*</m> exists. From (2) we know that <m>T^*</m> is linear. That <m>T</m> is its adjoint follows now from the equivalence of the two properties <xref first="eq_adj_T" last="eq_adj_Tstar"/>:<ie/>, we can think of the first as saying that <m>T^*</m> is an adjoint of <m>T</m>, and the second as saying that <m>T</m> is an adjoint of <m>T^*</m>. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    This is left as an exercise. 
                 </p>
             </li>
             
@@ -182,34 +237,42 @@
     </p>
     </proof>
     </theorem>
-    
+    <p>
+        The next result tells us that adjoints of matrix transformations <m>T_A</m> exist, and that in fact the adjoint of <m>T_A</m> is the matrix transformation <m>T_{A^*}</m>. 
+    </p>
     <theorem xml:id="th_adjoint_matrix">
     <title>Adjoint of a matrix transformation</title>
     <statement>
     <p>
-    Assume <m>F\in \{\R,\C\}</m>. Let <m>T\in\mathcal{L}(F^n, F^m)</m>, and let <m>A\in F^{m,n}</m> be the unique matrix such that <m>T=T_A</m>. The adjoint <m>T^*\in \mathcal{L}(F^m, F^n)</m>, taken with respect to the standard inner products on <m>F^n</m> and <m>F^m</m>, is the matrix transformation <m>T_{A^*}</m>.
+    Assume <m>F\in \{\R,\C\}</m>, and let <m>A\in F^{m,n}</m>. For all <m>\boldx\in F^n</m> and <m>\boldy\in F^m</m>, we have 
+    <mdn>
+        <mrow xml:id="eq_adj_A" >\angvec{A\boldx,\boldy}_{F^m} \amp = \angvec{\boldx,A^*\boldy}_{F^n}</mrow>
+        <mrow xml:id="eq_adj_Astar" >\angvec{A^*\boldx,\boldy}_{F^n} \amp =\angvec{\boldx, A\boldy}_{F^m}</mrow>
+    </mdn>, 
+    where <m>\angvec{\, ,}_{F^n}</m> and <m>\angvec{\, ,}_{F^m}</m> denote the standard inner products on <m>F^n</m> and <m>F^m</m>, respectively. 
+</p>
+<p>
+    As a consequence, given a matrix transformation <m>T_A\colon F^n\rightarrow F^m</m>, we have 
+    <men xml:id="eq_adj_matrix_transf">
+        (T_A)^*=T_{A^*}
+    </men>,
+    where the adjoint is taken with respect to the standard inner products on <m>F^n</m> and <m>F^m</m>.
     </p>
     </statement>
     <proof>
     <p>
-        By uniqueness of the adjoint, it suffices to show that <m>T_{A^*}</m> satisfies the adjoint property: that is, that 
+        Equation <xref ref="eq_adj_matrix_transf"/> follows directly from equations <xref first="eq_adj_A" last="eq_adj_Astar" />, as these are precisely the adjoint properties for the matrix transformation <m>T_A</m>. We prove <xref ref="eq_adj_A"/> (which is equivalent to <xref ref="eq_adj_Astar"/>):
         <md>
-            <mrow>\angvec{T_A(\boldx),\boldy} \amp =\angvec{\boldx,T_{A^*}\boldy}</mrow>
-        </md>
-        for all <m>\boldx\in F^n</m> and <m>\boldy\in F^m</m>. We have 
-        <md>
-            <mrow>\angvec{\boldx,T_{A^*}\boldy} \amp =\angvec{\boldx,A^*\boldy} </mrow>
-            <mrow> \amp = (A^*\boldy)^*\boldx \amp (<xref ref="th_adjoint_inner" text="global"/>)</mrow>
+            <mrow> \angvec{\boldx,A^*\boldy} \amp = (A^*\boldy)^*\boldx \amp <xref ref="eq_standard_inner_product_matrix"/></mrow>
             <mrow> \amp =\boldy^* (A^*)^*\boldx \amp <xref ref="eq_adjoint_prod"/> </mrow>
             <mrow> \amp = \boldy^* A\boldx \amp <xref ref="eq_adj_adj_matrix"/></mrow>
-            <mrow> \amp = \angvec{A\boldx, \boldy} \amp (<xref ref="th_adjoint_inner" text="global"/>)</mrow>
-            <mrow> \amp = \angvec{T_A(\boldx), \boldy}</mrow>
+            <mrow> \amp = \angvec{A\boldx, \boldy} \amp <xref ref="eq_standard_inner_product_matrix"/></mrow>
         </md>.
     </p>
     </proof>
 </theorem>
 <remark>
-    <title>Adjoint of matrix transformation</title>
+    <title>Adjoint of real matrix transformation</title>
     <p>
         As usual, observe that if <m>F=\R</m> complex conjugation operation can be disregarded. Let's give a quick summary of what the previous definitions and theorems boil down to in this setting. 
         <ul>
@@ -229,6 +292,99 @@
                 </p>
             </li>
         </ul>
+    </p>
+</remark>
+<corollary xml:id="cor_adj_matrix_reps">
+    <title>Matrix representation of adjoint</title>
+    <statement>
+        <p>
+            Let <m>(V,\angvec{\, ,}_V)</m> be an inner product space of finite dimension <m>n</m>, and let <m>B</m> be an <em>orthonormal</em> basis of <m>V</m>. Given <m>T\in \mathcal{L}(V)</m> and adjoint <m>T^*\in\mathcal{L}(V)</m>, we have  
+            <men xml:id="eq_adj_matrix_rep">
+                [T^*]_{B}=\left([T]_B\right)^*
+            </men>.
+            More generally, given <m>S\in \mathcal{L}(V)</m>, we have 
+            <men xml:id="eq_adjoint_matrix_rep_equiv">
+                S=T^* \iff [S]_B=\left([T]_B\right)^*
+            </men>.
+        </p>
+    </statement>
+    <proof>
+        <p>
+            It suffices to show the equivalence <xref ref="eq_adjoint_matrix_rep_equiv"/>. The key ingredients to the proof are summarized as follows: 
+            <ol marker="(i)">
+                <li>
+                    <p>
+                        Since <m>B</m> is an <em>orthormal</em> basis, we have 
+                        <md>
+                            <mrow>\angvec{v,v'}_V \amp =\angvec{[v]_B,[v']_B]}</mrow>
+                        </md>,
+                        where the inner products on the right is the standard one on <m>F^{n}</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Matrices <m>A,C\in F^{m,n}</m> satisfy 
+                        <me>
+                            \angvec{A\boldx,\boldy}=\angvec{\boldx, C\boldy}
+                        </me>
+                        for all <m>\boldx\in F^{n}</m> and <m>\boldy\in F^{m}</m> if and only if <m>C=A^*</m>. This follows from <xref ref="th_adjoint_matrix"/> and uniqueness of the adjoint (if it exists).
+                    </p>
+                </li>
+            </ol>
+            We now prove the equivalence: 
+            <md>
+                <mrow>S=T^* \amp \iff \angvec{T(v),w}=\angvec{v,S(w)} \text{ for all } v,w\in V \hspace{10pt} (\text{def. of adj.})</mrow>
+                <mrow> \amp \iff \angvec{[T(v)]_B,[w]_{B}}=\angvec{[v]_B,[S(w)]_B} \text{ for all } v,w\in V \hspace{10pt} (\text{by (i) above}) </mrow>
+                <mrow> \amp \iff \angvec{[T]_B[v]_{B},[w]_{B}}=\angvec{[v]_B,[S]_{B}[w]_B} \text{ for all } v,w\in V \hspace{10pt} <xref ref="eq_matrixrep_prop"/></mrow>
+                <mrow> \amp \iff \angvec{[T]_B\,\boldx,\boldy}=\angvec{\boldx,[S]_{B}\,\boldy} \text{ for all } \boldx,\boldy\in F^n\hspace{10pt} ([\phantom{v}]_B \text{ an isom.}) </mrow>
+                <mrow> \amp \iff [S]_B=\left([T]_B\right)^* \hspace{10pt} (\text{by (ii) above}) </mrow>
+            </md>.
+        </p>
+    </proof>
+</corollary>
+<warning>
+    <title>Matrix representation of adjoint</title>
+    <p>
+        It is absolutely essential that the basis in <m>B</m> in <xref ref="cor_adj_matrix_reps"/> is orthonormal. As an example of what can go wrong when this condition is dropped, consider <m>T=T_A\colon \C^2\rightarrow \C^2  </m>, where <m>A=\begin{bmatrix}
+        0\amp i\\ 0\amp 0
+        \end{bmatrix}</m>. According to <xref ref="th_adjoint_matrix"/>, we have 
+        <me>
+            T_A^*=T_{A^*}
+        </me>,
+        where the adjoint is taken with respect to the standard inner product on <m>\C^2</m>. Of course, if we pick <m>B</m> to be the standard basis of <m>\C^2</m>, which is orthonormal with respect to this inner product, we have 
+        <md>
+            <mrow>[T]_B \amp = A=\begin{bmatrix}
+        0\amp i\\ 0\amp 0
+        \end{bmatrix} </mrow>
+        <mrow>[T^*]_B\amp =[T_{A^*}]_B=A^*=\begin{bmatrix}
+        0\amp 0 \\ -i\amp 0
+        \end{bmatrix}</mrow>
+        </md>,
+        and we see that <m>[T^*]_B=[T]_B^*</m>, as predicted by <xref ref="cor_adj_matrix_reps"/>. Now consider the non-orthonormal basis <m>B'=((1,0),(1,1))</m>. We readily compute 
+        <md>
+            <mrow>[T]_{B'} \amp =\begin{bmatrix}
+            0\amp i\\
+            0\amp 0
+            \end{bmatrix} </mrow>
+            <mrow>[T^*]_{B'} \amp = \begin{bmatrix}
+            -i\amp -i \\
+            i\amp i
+            \end{bmatrix}</mrow>
+        </md>,
+        and observe that 
+        <me>
+            [T]_{B'}^*\ne [T^*]_{B'}
+        </me>
+        in this case.
+    </p>
+</warning>
+<remark>
+    <title>Matrix representation of adjoint</title>
+    <p>
+        Not surprisingly, a more general version of <xref ref="cor_adj_matrix_reps"/> holds for linear operators <m>T\colon V\rightarrow W</m> between two different finite-dimensional inner product spaces. However, in that setting we need to choose two bases <m>B</m> and <m>B'</m>, and consider the matrix represetations <m>[T]_B^{B'}</m> and <m>[T^*]_{B'}^B</m>, resulting in some thorny notation. . I thought the generalized result was not interesting enough to justify this notational. 
+    </p>
+    <p>
+        It is also worth noting that the equivalence <xref ref="eq_adjoint_matrix_rep_equiv"/> in <xref ref="cor_adj_matrix_reps"/> implies the existence of adjoints in the setting it specified. However, <xref ref="th_adjoint"/> guarantees the existence of adjoints in a much more general setting. 
     </p>
 </remark>
 <p>
@@ -304,12 +460,12 @@
     is continuous on <m>[a,b]</m> and that the resulting map 
     <md>
         <mrow>T\colon C([a,b]) \amp\rightarrow C([a,b]) </mrow>
-        <mrow>f \amp \mapsto \int_a^bF(x,y)\, dy</mrow>
+        <mrow>f \amp \mapsto F(x)=\int_a^bK(x,t)f(t)\, dt</mrow>
     </md>
     is a linear transformation. Show, using Fubini's theorem for double integrals, that the adjoint of <m>T</m> is the function 
     <md>
         <mrow>T^*\colon C([a,b]) \amp \rightarrow C([a,b])</mrow>
-        <mrow>g  \amp \mapsto \int_a^b F(y,x)g(x)\, dy </mrow>
+        <mrow>g  \amp \mapsto G(x)=\int_a^b F(s,x)g(s)\, ds </mrow>
     </md>.
     </p>
     </statement>
