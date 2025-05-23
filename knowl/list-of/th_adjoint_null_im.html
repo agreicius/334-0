@@ -15,13 +15,36 @@
 <span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.21.20</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Null space and image of adjoint.</span>
 </h4>
 <div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
-<div class="para">Let <span class="process-math">\((V,\angvec{\, ,}_V)\)</span> and <span class="process-math">\((W,\angvec{\, ,})\)</span> be inner product spaces, and assume <span class="process-math">\(V\)</span> is finite dimensional. Given <span class="process-math">\(T\in \mathcal{L}(V,W)\text{,}\)</span> let <span class="process-math">\(T^*\in\mathcal{L}(W,V)\)</span> be its adjoint. We have</div>
-<div class="displaymath process-math">
-\begin{align}
-\NS T^* \amp =(\im T)^\perp\tag{1.101}\\
-\im T^* \amp =(\NS T)^\perp\text{.}\tag{1.102}
-\end{align}
+<div class="para">Let <span class="process-math">\((V,\angvec{\, ,}_V)\)</span> and <span class="process-math">\((W,\angvec{\, ,})\)</span> be inner product spaces. Assume <span class="process-math">\(T\in \mathcal{L}(V,W)\)</span> has adjoint <span class="process-math">\(T^*\in\mathcal{L}(W,V)\text{.}\)</span>
 </div>
+<ol class="decimal" id="th_adjoint_null_im-2-1-5">
+<li>
+<span class="heading"><span class="title"><span class="process-math">\(\NS T^*\)</span>.</span></span><div class="para logical">
+<div class="para">We have</div>
+<div class="displaymath process-math">
+\begin{equation}
+\NS T^* =(\im T)^\perp\text{.}\tag{1.101}
+\end{equation}
+</div>
+</div>
+</li>
+<li>
+<span class="heading"><span class="title"><span class="process-math">\(\im T^*\)</span>.</span></span><div class="para logical">
+<div class="para">We have</div>
+<div class="displaymath process-math">
+\begin{equation}
+\im T^* \subseteq (\NS T)^\perp\text{.}\tag{1.102}
+\end{equation}
+</div>
+<div class="para">If we assume further that <span class="process-math">\(\dim V&lt; \infty\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation}
+\im T^*=(\NS T)^\perp\text{.}\tag{1.103}
+\end{equation}
+</div>
+</div>
+</li>
+</ol>
 </div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
 <div class="para">Assume <span class="process-math">\(T^*\)</span> exists. We first prove that <span class="process-math">\(\NS T^*=\im T^\perp\text{.}\)</span> We have</div>
 <div class="displaymath process-math">
