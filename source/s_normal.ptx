@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_normal" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Normal operators</title>
+
+    <definition xml:id="d_normal">
+    <title>Normal operator</title>
+    <statement>
+    <p>
+    Let <m>T</m> be a linear operator on the inner product space <m>(V,\angvec{\, ,})</m>, and suppose <m>T</m> has an adjoint <m>T^*</m>. We say <m>T</m> is <term>normal</term> if it commutes with <m>T^*</m>: <ie/>, if <m>T*T=TT^*</m>. 
+    </p>
+    </statement>
+    </definition>
+    <definition xml:id="d_normal_egs">
+    <title>Self-adjoint, skew-Hermitian, unitary</title>
+    <statement>
+    <p>
+    Let <m>(V,\angvec{\, ,})</m> be an inner product space. Below we define several special types of normal operators. Let <m>T\in \mathcal{L}(V)</m> and suppose <m>T</m> has an adjoint <m>T^*</m>. 
+    <ul>
+        <li>
+            <title>Self-adjoint</title>
+            <p>
+                <m>T</m> is <term>self-adjoint</term> (or <term>symmetric</term> when <m>F=\R</m>) if <m>T^*=T</m>. 
+            </p>
+        </li>
+        <li>
+            <title>Skew-Hermitian</title>
+            <p>
+                <m>T\in \mathcal{L}(V)</m> is <term>skew-Hermitian</term> (or <term>skew-symmetric</term> when <m>F=\R</m>) if <m>T^*=-T</m>.
+            </p>
+        </li>
+        <li>
+            <title>Unitary</title>
+            <p>
+                <m>T\in \mathcal{L}(V)</m> is <term>unitary</term> (or <term>orthogonal</term> when <m>F=\R</m>) if <m>T</m> is invertible and <m>T^{-1}=T^*</m>. 
+            </p>
+        </li>
+    </ul>
+    </p>
+    </statement>
+    </definition>
+    <remark>
+        <title>Self-adjoint, skew-Hermitian, unitary</title>
+        <p>
+            To show each of the subtypes described in <xref ref="d_normal_egs"/> is indeed normal we simply have to show that an operator of a given type satisfies <m>T^*T=TT^*</m>. This is not difficult: 
+            <md>
+                <mrow> \text{Self-adjoint}: T^*=T \amp \implies T^*T=TT=TT^*</mrow>
+                <mrow>\text{Skew-Hermitian}: T^*=-T \amp \implies T^*T=-TT=T(-T)=TT^*</mrow>
+                <mrow>\text{Unitary}: T^*=T^{-1} \amp \implies T^*T=T^{-1}T=I=TT^{-1}=TT^*</mrow>
+            </md>.
+        </p>
+        
+    </remark>
+
+    <example xml:id="eg_ortho_proj">
+    <title>Orthogonal projection</title>
+    <statement>
+    <p>
+    Let <m>W</m> be a finite-dimensional subspace of the inner product space <m>(V,\angvec{\, ,})</m>, and let <m>\proj_W\colon V\rightarrow V</m> be orthogonal projection onto <m>W</m>. Show that <m>\proj_W</m> is self-adjoint. 
+    </p>
+    </statement>
+    <solution>
+    <p>
+    This is left as a homework exercise. 
+    </p>
+    </solution>
+    </example>
+    <example xml:id="eg_derivative_skew-symm">
+    <title>Derivative operator</title>
+    <statement>
+    <p>
+    Let <m>W</m> be the subspace of real periodic <m>C^\infty</m> functions on <m>\R</m> with period <m>1</m>. Recall that the derivative operator <m>T\in \mathcal{L}(W)</m> defined as <m>T(f)=f'</m> has adjoint <m>T^*-T</m> with respect to the inner product <m>\angvec{f,g}=\int_0^1f(x)g(x)\, dx</m>. Hence <m>T</m> is skew-symmetric. In particular, <m>T</m> is normal. 
+    </p>
+    </statement>
+     </example>
+    <p>
+        The following matrix-based result gives us an easy way of producing normal operators of varying types. 
+    </p>
+    <theorem xml:id="th_normal_matrix_rep">
+    <title>Normality and matrix representations</title>
+    <statement>
+    <p>
+    Let <m>(V,\angvec{\, ,})</m> be a finite-dimensional inner product space, let <m>T\in \mathcal{L}(V)</m>, let <m>B</m> be an <em>orthonormal</em> basis of <m>V</m>, and let <m>A=[T]_B</m>.  
+    <ul>
+        <li>
+            <p>
+                <m>T</m> is normal if and only if <m>A^*A=AA^*</m>.
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>T</m> is self-adjoint if and only if <m>A^*=A</m>.
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>T</m> is skew-symmetric if and only if <m>A^*=-A</m>.
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>T</m> is unitary if and only if <m>A</m> is invertible and  <m>A^*=A^{-1}</m>.
+            </p>
+        </li>
+    </ul> 
+    </p>
+    </statement>
+    <proof>
+    <p>
+        The equivalences are simple consequences of the following facts: 
+        <ul>
+            <li>
+                <p>
+                    <m>[TS]_B=[T]_B[S]_B</m> for all <m>S,T\in \mathcal{L}(V)</m> (<xref ref="cor_matrix_reps_comp"/>);
+                </p>
+            </li>
+            <li>
+                <p>
+                    <m>[T^*]_B=[T]_B^*</m> for all <m>T\in \mathcal{L}(V)</m> (<xref ref="cor_adj_matrix_reps"/>).
+                </p>
+            </li>
+        </ul>
+    </p>
+    </proof>
+    </theorem>
+    <p>
+        The next theorem tells us that these various types of normality are preserved by familiar operations on linear transformations. 
+    </p>
+    <theorem xml:id="th_normal_preserved">
+    <title>Normality preserved</title>
+    <statement>
+    <p>
+    Let <m>(V,\angvec{\, ,})</m> be an inner product space. Let <m>\operatorname{Norm}(V)</m>, <m>\operatorname{Sym}(V)</m>, <m>\operatorname{Skew}(V)</m>, and <m>\operatorname{Uni}(V)</m> denote the sets of normal, self-adjoint, skew-Hermitian, and unitary operators on <m>V</m>, respectively, and let <m>\mathcal{P}</m> denote any one of these sets of operators. 
+    <ol>
+        <li>
+            <p>
+                If <m>T\in \mathcal{P}</m>, then <m>T^*\in \mathcal{P}</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                If <m>S,T\in \mathcal{P}</m>, then <m>ST\in \mathcal{P}</m>.
+            </p>
+        </li>
+        <li>
+            <p>
+                If <m>S,T\in\mathcal{P}</m>, then <m>cS+dT\in \mathcal{P}</m> for all <m>c,d\in F</m>. 
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <proof>
+    <p>
+    </p>
+    </proof>
+    </theorem>
+    <theorem xml:id="th_polar_identities">
+    <title>Polar identities</title>
+    <statement>
+    <p>
+    Let <m>(V,\angvec{\, ,})</m> be an inner product space. For all <m>v,w\in V</m>, we have 
+    <men xml:id="eq_polar_id">
+        \angvec{v,w}=\frac{1}{4}(\norm{v+w}^2-\norm{v-w}^2)+\frac{1}{4}(\norm{v+iw}^2-\norm{v-iw}^2)\, i
+    </men>,
+    or equivalently, 
+    <mdn>
+        <mrow xml:id="eq_polar_id_real_part">\Re \angvec{v,w} \amp = \frac{1}{4}(\norm{v+w}^2-\norm{v-w}^2)</mrow>
+        <mrow xml:id="eq_polar_id_im_part">\Im \angvec{v,w} \amp = \frac{1}{4}(\norm{v+iw}^2-\norm{v-iw}^2) </mrow>
+    </mdn>.
+    As a consequence, if <m>F=\R</m>, then we have 
+    <men xml:id="eq_polar_id_reals">
+        \angvec{v,w}=\frac{1}{4}(\norm{v+w}^2-\norm{v-w}^2)
+    </men>.
+    </p>
+    </statement>
+    <proof>
+    <p>
+    </p>
+    </proof>
+    </theorem>
+    <theorem xml:id="th_normal_equiv">
+    <title>Normality equivalence</title>
+    <statement>
+    <p>
+    Let <m>T</m> be a linear operator on the inner product space <m>(V,\angvec{\, ,})</m>. The following statements are equivalent. 
+    <ol>
+        <li>
+            <p>
+                <m>T</m> is normal.
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>\norm{T(v)}=\norm{T^*(v)}</m> for all <m>v\in V</m>.
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>\angvec{T(v),T(w)}=\angvec{T^*(v),T^*(w)}</m> for all <m>v\in V</m>. 
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <proof>
+    <p>
+    </p>
+    </proof>
+    </theorem>
+    <corollary xml:id="cor_normal_props">
+        <title>Normal operator properties</title>
+        <statement>
+            <p>
+               Let <m>(V,\angvec{\, ,})</m> be an inner product space, and assume <m>T\in \mathcal{L}(V)</m> is normal. 
+                <ol>
+                    <li>
+                        <p>
+                           <m>T(v)=\boldzero</m> if and only if <m>T^*(v)=\boldzero</m>. As a consequence, we have <men xml:id="eq_normal_null">\NS T=\NS T^*</men>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>T(v)=\lambda v</m> if and only if <m>T^*(v)=\overline{\lambda}v</m>. As a consequence, we have 
+                            <men xml:id="eq_normal_eigenspace">
+                                E(\lambda, T)=E(\overline{\lambda},T^*)
+                            </men>
+                            for all <m>\lambda\in F</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <title>Finite-dimensional space</title>
+                        <p>
+                            Assume further that <m>\dim V=n&lt; \infty</m>. We have 
+                            <men xml:id="eq_normal_image">
+                                \im T=\im T^*
+                            </men>
+                            and 
+                            <men xml:id="eq_normal_direct_sum">
+                                V=\ker T\oplus \im T=\ker T^*\oplus \im T^*
+                            </men>.
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+    </corollary>
+    
+    
+   
+    
+    
+    
+
+</section>

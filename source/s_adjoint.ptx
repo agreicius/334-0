@@ -647,11 +647,31 @@
     <title>Null space and image of adjoint</title>
     <statement>
     <p>
-    Let <m>(V,\angvec{\, ,}_V)</m> and <m>(W,\angvec{\, ,})</m> be inner product spaces, and assume <m>V</m> is finite dimensional. Given <m>T\in \mathcal{L}(V,W)</m>, let <m>T^*\in\mathcal{L}(W,V)</m> be its adjoint. We have 
-    <mdn>
-        <mrow xml:id="eq_null_adjoint">\NS T^* \amp =(\im T)^\perp</mrow>
-        <mrow xml:id="eq_im_adjoint">\im T^* \amp =(\NS T)^\perp</mrow>
-    </mdn>.
+    Let <m>(V,\angvec{\, ,}_V)</m> and <m>(W,\angvec{\, ,})</m> be inner product spaces. Assume <m>T\in \mathcal{L}(V,W)</m> has adjoint <m>T^*\in\mathcal{L}(W,V)</m>.
+    <ol>
+        <li>
+            <title><m>\NS T^*</m></title>
+            <p>
+                We have 
+                <men xml:id="eq_null_adjoint">
+                    \NS T^* =(\im T)^\perp
+                </men>.
+            </p>
+        </li>
+        <li>
+            <title><m>\im T^*</m></title>
+            <p>
+             We have  
+                <men xml:id="eq_im_adjoint_inclusion">
+                    \im T^* \subseteq (\NS T)^\perp
+                </men>.
+            If we assume further that <m>\dim V&lt; \infty</m>, then 
+            <men xml:id="eq_im_adjoint">
+                \im T^*=(\NS T)^\perp
+            </men>.
+            </p>
+        </li>
+    </ol>
     </p>
     </statement>
     <proof>
