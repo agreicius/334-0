@@ -61,8 +61,19 @@
     </statement>
     <solution>
     <p>
-    This is left as a homework exercise. 
+        This is part of a homework exercise. 
     </p>
+        <!-- <p>
+    Since <m>\dim W&lt; \infty</m>, we have <m>V=W\oplus W^\perp</m> and can decompose every vector <m>v\in V</m> in a unique way as <m>v=\proj_W(v)+\proj_{W^\perp}(v)</m>, where <m>\proj_W(v)\in V</m> and <m>\proj_{W^\perp}(v)\in W^\perp</m>. It follows that for any <m>v,v'\in V</m>, we have 
+    <md>
+        <mrow> \angvec{\proj_W(v),v'} \amp = \angvec{\proj_W(v),\proj_W(v')+\proj_{W^\perp}(v')}</mrow>
+        <mrow> \amp = \angvec{\proj_W(V),\proj_W(v')} \amp (\proj_{W^\perp}(v')\in W^\perp)</mrow>
+        <mrow> \amp = \angvec{\proj_W(v)+\proj_{W^\perp}(v),\proj_{W}(v')} \amp (\proj_{W^\perp}(v)\in W^\perp)</mrow>
+        <mrow> \amp =\angvec{v,\proj_W(v')}</mrow>
+    </md>.
+    This shows that <m>\proj_W</m> satisfies the adjoint property with respect to itself, and hence that <m>(\proj_W)^*=\proj_W</m>. 
+    
+    </p> -->
     </solution>
     </example>
     <example xml:id="eg_derivative_skew-symm">
@@ -153,6 +164,7 @@
     </statement>
     <proof>
     <p>
+        The statements follow easily from elementary properties of the adjoint (<xref ref="th_adjoint_props"/>).
     </p>
     </proof>
     </theorem>
@@ -177,6 +189,12 @@
     </statement>
     <proof>
     <p>
+       This is a simple, if somewhat tedious exercise of expanding out the right side of <xref ref="eq_polar_id"/> using the definition <m>\norm{u}^2=\angvec{u,u}</m>, and then simplifying using properties of the inner product, and the fact that 
+       <md>
+        <mrow>\Re z \amp =\frac{1}{2}(z+\overline{z})</mrow>
+        <mrow>\Im z \amp =\frac{1}{2i}(z-\overline{z})</mrow>
+       </md>
+       for all <m>z\in \C</m>. 
     </p>
     </proof>
     </theorem>
@@ -206,6 +224,28 @@
     </statement>
     <proof>
     <p>
+        We prove a cycle of implications. 
+    </p>
+    <p>
+        If <m>T</m> is normal, then 
+        <md>
+            <mrow>\norm{T(v)}^2 \amp =\angvec{T(v),T(v)}</mrow>
+            <mrow> \amp =\angvec{v,T^*Tv}</mrow>
+            <mrow> \amp =\angvec{v,TT^*v} \amp (T^*T=TT^*)</mrow>
+            <mrow> \amp =\angvec{T^*(v),T^*(v)}</mrow>
+            <mrow> \amp =\norm{T^*(v)}^2</mrow>
+        </md>.
+        Taking square-roots of both sides (and using the fact that norms are nonnegative), we conclude that <m>\norm{T(v)}=\norm{T^*(v)}</m>. This proves (1)<m>\implies</m>(2). 
+    </p>
+    <p>
+        To prove (2)<m>\implies</m>(3), we use the polarity identity. If <m>\norm{T(v)}=\norm{T^*(v)}</m> for all <m>v\in V</m>, then we have 
+        <md>
+            <mrow>\angvec{T(v),T(w)} \amp = \frac{1}{4}(\norm{T(v)+T(w)}^2-\norm{T(v)-T(w)}^2)+\frac{1}{4}(\norm{T(v)+iT(w)}^2-\norm{T(v)-iT(w)}^2)i</mrow>
+            <mrow> \amp =\frac{1}{4}(\norm{(T(v+w))}^2-\norm{T(v-w)}^2)+\frac{1}{4}(\norm{T(v+iw)}^2-\norm{T(v-iw)}^2)i</mrow>
+            <mrow> \amp = \frac{1}{4}(\norm{(T^*(v+w))}^2-\norm{T^*(v-w)}^2)+\frac{1}{4}(\norm{T^*(v+iw)}^2-\norm{T^*(v-iw)}^2)i</mrow>
+            <mrow> \amp =\frac{1}{4}(\norm{T^*(v)+T^*(w)}^2-\norm{T^*(v)-T^*(w)}^2)+\frac{1}{4}(\norm{T^*(v)+\overline{i}T^*(w)}^2-\norm{T^*(v)-\overline{i}T^*(w)}^2)i </mrow>
+            <mrow> \amp = \angvec{T^*(v),T^*(w)}</mrow>
+        </md>
     </p>
     </proof>
     </theorem>
@@ -245,6 +285,57 @@
                 </ol>
             </p>
         </statement>
+        <proof>
+            <p>
+                Assume <m>T</m> is normal. 
+            <ol>
+                <li>
+                    <p>
+                        We have 
+                        <md>
+                            <mrow>v\in \NS T \amp \iff T(v)=\boldzero</mrow>
+                            <mrow> \amp \iff \norm{T(v)}=0</mrow>
+                            <mrow> \amp \iff \norm{T^*(v)}=0</mrow>
+                            <mrow> \amp \iff T^*(v)=\boldzero</mrow>
+                            <mrow> \amp \iff v\in \NS T^*</mrow>
+                        </md>.
+                        Thus <m>\NS T=\NS T^*</m>. 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Since <m>T</m> and <m>I_V</m> are normal, so is, <m>\lambda I_V-T</m> for any <m>\lambda\in F</m> by <xref ref="th_normal_preserved"/>. Applying the result in (1) to <m>\lambda I_V-T</m>, we have 
+                        <md>
+                            <mrow>T(v)=\lambda v \amp \iff v\in E(\lambda, T) </mrow>
+                            <mrow> \amp \iff v\in \NS (\lambda I_V-T)</mrow>
+                            <mrow> \amp \iff v\in \NS(\lambda I_V-T)^*</mrow>
+                            <mrow> \amp \iff v\in \NS(\overline{\lambda}I_V-T^*) \amp <xref ref="th_adjoint_props"/> </mrow>
+                            <mrow> \amp \iff v\in E(\overline{\lambda},T^*) </mrow>
+                            <mrow> \amp \iff T^*(v)=\overline{\lambda}v</mrow>
+                        </md>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        If we assume <m>V</m> is finite dimensional, then we have 
+                        <md>
+                            <mrow>\im T^* \amp =(\NS T)^\perp</mrow>
+                            <mrow> \amp =(\NS T^*)^\perp</mrow>
+                            <mrow> \amp = ((\im T)^\perp)^\perp</mrow>
+                            <mrow> \amp =\im T</mrow>
+                        </md>.
+                        It follows that 
+                        <md>
+                            <mrow>V \amp = \NS T\oplus (\NS T)^\perp</mrow>
+                            <mrow> \amp = \NS T \oplus \im T^*</mrow>
+                            <mrow> \amp =\NS T\oplus \im T</mrow>
+                            <mrow> \amp =\NS T^*\oplus \im T^*</mrow>
+                        </md>.
+                    </p>
+                </li>
+            </ol>
+            </p>
+        </proof>
     </corollary>
     
     
