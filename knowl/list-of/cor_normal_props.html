@@ -54,6 +54,57 @@ V=\ker T\oplus \im T=\ker T^*\oplus \im T^*\text{.}\tag{1.111}
 </div>
 </li>
 </ol>
-</div></article><span class="incontext"><a class="internal" href="s_normal.html#cor_normal_props">in-context</a></span>
+</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">Assume <span class="process-math">\(T\)</span> is normal.</div>
+<ol class="decimal" id="cor_normal_props-3-1-2">
+<li><div class="para logical">
+<div class="para">We have</div>
+<div class="displaymath process-math">
+\begin{align*}
+v\in \NS T \amp \iff T(v)=\boldzero\\
+\amp \iff \norm{T(v)}=0\\
+\amp \iff \norm{T^*(v)}=0\\
+\amp \iff T^*(v)=\boldzero\\
+\amp \iff v\in \NS T^*\text{.}
+\end{align*}
+</div>
+<div class="para">Thus <span class="process-math">\(\NS T=\NS T^*\text{.}\)</span>
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">Since <span class="process-math">\(T\)</span> and <span class="process-math">\(I_V\)</span> are normal, so is, <span class="process-math">\(\lambda I_V-T\)</span> for any <span class="process-math">\(\lambda\in F\)</span> by <a href="s_normal.html#th_normal_preserved" class="xref" data-knowl="./knowl/xref/th_normal_preserved.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.22.7: Normality preserved">Theorem 1.22.7</a>. Applying the result in (1) to <span class="process-math">\(\lambda I_V-T\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_normal_preserved.html ./knowl/xref/th_adjoint_props.html">
+\begin{align*}
+T(v)=\lambda v \amp \iff v\in E(\lambda, T) \\
+\amp \iff v\in \NS (\lambda I_V-T)\\
+\amp \iff v\in \NS(\lambda I_V-T)^*\\
+\amp \iff v\in \NS(\overline{\lambda}I_V-T^*) \amp \knowl{./knowl/xref/th_adjoint_props.html}{\text{Theorem 1.21.5}} \\
+\amp \iff v\in E(\overline{\lambda},T^*) \\
+\amp \iff T^*(v)=\overline{\lambda}v\text{.}
+\end{align*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">If we assume <span class="process-math">\(V\)</span> is finite dimensional, then we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\im T^* \amp =(\NS T)^\perp\\
+\amp =(\NS T^*)^\perp\\
+\amp = ((\im T)^\perp)^\perp\\
+\amp =\im T\text{.}
+\end{align*}
+</div>
+<div class="para">It follows that</div>
+<div class="displaymath process-math">
+\begin{align*}
+V \amp = \NS T\oplus (\NS T)^\perp\\
+\amp = \NS T \oplus \im T^*\\
+\amp =\NS T\oplus \im T\\
+\amp =\NS T^*\oplus \im T^*\text{.}
+\end{align*}
+</div>
+</div></li>
+</ol>
+</div></article></details><span class="incontext"><a class="internal" href="s_normal.html#cor_normal_props">in-context</a></span>
 </body>
 </html>

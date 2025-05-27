@@ -3706,7 +3706,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.22",
   "title": "Normal operators",
-  "body": " Normal operators   Normal operator   Let be a linear operator on the inner product space , and suppose has an adjoint . We say is normal if it commutes with : , if .     Self-adjoint, skew-Hermitian, unitary   Let be an inner product space. Below we define several special types of normal operators. Let and suppose has an adjoint .   Self-adjoint   is self-adjoint (or symmetric when ) if .    Skew-Hermitian   is skew-Hermitian (or skew-symmetric when ) if .    Unitary   is unitary (or orthogonal when ) if is invertible and .        Self-adjoint, skew-Hermitian, unitary  To show each of the subtypes described in is indeed normal we simply have to show that an operator of a given type satisfies . This is not difficult: .    Orthogonal projection   Let be a finite-dimensional subspace of the inner product space , and let be orthogonal projection onto . Show that is self-adjoint.    This is left as a homework exercise.     Derivative operator   Let be the subspace of real periodic functions on with period . Recall that the derivative operator defined as has adjoint with respect to the inner product . Hence is skew-symmetric. In particular, is normal.    The following matrix-based result gives us an easy way of producing normal operators of varying types.   Normality and matrix representations   Let be a finite-dimensional inner product space, let , let be an orthonormal basis of , and let .    is normal if and only if .     is self-adjoint if and only if .     is skew-symmetric if and only if .     is unitary if and only if is invertible and .       The equivalences are simple consequences of the following facts:    for all ( );     for all ( ).       The next theorem tells us that these various types of normality are preserved by familiar operations on linear transformations.   Normality preserved   Let be an inner product space. Let , , , and denote the sets of normal, self-adjoint, skew-Hermitian, and unitary operators on , respectively, and let denote any one of these sets of operators.   If , then .    If , then .    If , then for all .            Polar identities   Let be an inner product space. For all , we have , or equivalently, . As a consequence, if , then we have .         Normality equivalence   Let be a linear operator on the inner product space . The following statements are equivalent.    is normal.     for all .     for all .            Normal operator properties   Let be an inner product space, and assume is normal.    if and only if . As a consequence, we have .     if and only if . As a consequence, we have for all .    Finite-dimensional space  Assume further that . We have and .       "
+  "body": " Normal operators   Normal operator   Let be a linear operator on the inner product space , and suppose has an adjoint . We say is normal if it commutes with : , if .     Self-adjoint, skew-Hermitian, unitary   Let be an inner product space. Below we define several special types of normal operators. Let and suppose has an adjoint .   Self-adjoint   is self-adjoint (or symmetric when ) if .    Skew-Hermitian   is skew-Hermitian (or skew-symmetric when ) if .    Unitary   is unitary (or orthogonal when ) if is invertible and .        Self-adjoint, skew-Hermitian, unitary  To show each of the subtypes described in is indeed normal we simply have to show that an operator of a given type satisfies . This is not difficult: .    Orthogonal projection   Let be a finite-dimensional subspace of the inner product space , and let be orthogonal projection onto . Show that is self-adjoint.    This is part of a homework exercise.      Derivative operator   Let be the subspace of real periodic functions on with period . Recall that the derivative operator defined as has adjoint with respect to the inner product . Hence is skew-symmetric. In particular, is normal.    The following matrix-based result gives us an easy way of producing normal operators of varying types.   Normality and matrix representations   Let be a finite-dimensional inner product space, let , let be an orthonormal basis of , and let .    is normal if and only if .     is self-adjoint if and only if .     is skew-symmetric if and only if .     is unitary if and only if is invertible and .       The equivalences are simple consequences of the following facts:    for all ( );     for all ( ).       The next theorem tells us that these various types of normality are preserved by familiar operations on linear transformations.   Normality preserved   Let be an inner product space. Let , , , and denote the sets of normal, self-adjoint, skew-Hermitian, and unitary operators on , respectively, and let denote any one of these sets of operators.    if and only if .    If , then for all .    If , then for any positive integer .       The statements follow easily from elementary properties of the adjoint ( ).     Polar identities   Let be an inner product space. For all , we have , or equivalently, . As a consequence, if , then we have .    This is a simple, if somewhat tedious exercise of expanding out the right side of using the definition , and then simplifying using properties of the inner product, and the fact that for all .     Normality equivalence   Let be a linear operator on the inner product space . The following statements are equivalent.    is normal.     for all .     for all .       We prove a cycle of implications.  If is normal, then . Taking square-roots of both sides (and using the fact that norms are nonnegative), we conclude that . This proves (1) (2).  To prove (2) (3), we use the polarity identity. If for all , then we have      Normal operator properties   Let be an inner product space, and assume is normal.    if and only if . As a consequence, we have .     if and only if . As a consequence, we have for all .    Finite-dimensional space  Assume further that . We have and .       Assume is normal.   We have . Thus .    Since and are normal, so is, for any by . Applying the result in (1) to , we have .    If we assume is finite dimensional, then we have . It follows that .       "
 },
 {
   "id": "d_normal",
@@ -3742,7 +3742,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.22.4",
   "title": "Orthogonal projection.",
-  "body": " Orthogonal projection   Let be a finite-dimensional subspace of the inner product space , and let be orthogonal projection onto . Show that is self-adjoint.    This is left as a homework exercise.   "
+  "body": " Orthogonal projection   Let be a finite-dimensional subspace of the inner product space , and let be orthogonal projection onto . Show that is self-adjoint.    This is part of a homework exercise.    "
 },
 {
   "id": "eg_derivative_skew-symm",
@@ -3769,7 +3769,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "1.22.7",
   "title": "Normality preserved.",
-  "body": " Normality preserved   Let be an inner product space. Let , , , and denote the sets of normal, self-adjoint, skew-Hermitian, and unitary operators on , respectively, and let denote any one of these sets of operators.   If , then .    If , then .    If , then for all .          "
+  "body": " Normality preserved   Let be an inner product space. Let , , , and denote the sets of normal, self-adjoint, skew-Hermitian, and unitary operators on , respectively, and let denote any one of these sets of operators.    if and only if .    If , then for all .    If , then for any positive integer .       The statements follow easily from elementary properties of the adjoint ( ).   "
 },
 {
   "id": "th_polar_identities",
@@ -3778,7 +3778,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "1.22.8",
   "title": "Polar identities.",
-  "body": " Polar identities   Let be an inner product space. For all , we have , or equivalently, . As a consequence, if , then we have .       "
+  "body": " Polar identities   Let be an inner product space. For all , we have , or equivalently, . As a consequence, if , then we have .    This is a simple, if somewhat tedious exercise of expanding out the right side of using the definition , and then simplifying using properties of the inner product, and the fact that for all .   "
 },
 {
   "id": "th_normal_equiv",
@@ -3787,7 +3787,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "1.22.9",
   "title": "Normality equivalence.",
-  "body": " Normality equivalence   Let be a linear operator on the inner product space . The following statements are equivalent.    is normal.     for all .     for all .          "
+  "body": " Normality equivalence   Let be a linear operator on the inner product space . The following statements are equivalent.    is normal.     for all .     for all .       We prove a cycle of implications.  If is normal, then . Taking square-roots of both sides (and using the fact that norms are nonnegative), we conclude that . This proves (1) (2).  To prove (2) (3), we use the polarity identity. If for all , then we have    "
 },
 {
   "id": "cor_normal_props",
@@ -3796,7 +3796,7 @@ var ptx_lunr_docs = [
   "type": "Corollary",
   "number": "1.22.10",
   "title": "Normal operator properties.",
-  "body": " Normal operator properties   Let be an inner product space, and assume is normal.    if and only if . As a consequence, we have .     if and only if . As a consequence, we have for all .    Finite-dimensional space  Assume further that . We have and .      "
+  "body": " Normal operator properties   Let be an inner product space, and assume is normal.    if and only if . As a consequence, we have .     if and only if . As a consequence, we have for all .    Finite-dimensional space  Assume further that . We have and .       Assume is normal.   We have . Thus .    Since and are normal, so is, for any by . Applying the result in (1) to , we have .    If we assume is finite dimensional, then we have . It follows that .      "
 },
 {
   "id": "appendix-notation",
