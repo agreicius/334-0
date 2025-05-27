@@ -134,12 +134,7 @@
     <ol>
         <li>
             <p>
-                If <m>T\in \mathcal{P}</m>, then <m>T^*\in \mathcal{P}</m>. 
-            </p>
-        </li>
-        <li>
-            <p>
-                If <m>S,T\in \mathcal{P}</m>, then <m>ST\in \mathcal{P}</m>.
+                <m>T\in \mathcal{P}</m> if and only if <m>T^*\in \mathcal{P}</m>. 
             </p>
         </li>
         <li>
@@ -147,6 +142,12 @@
                 If <m>S,T\in\mathcal{P}</m>, then <m>cS+dT\in \mathcal{P}</m> for all <m>c,d\in F</m>. 
             </p>
         </li>
+        <li>
+            <p>
+                If <m>T\in \mathcal{P}</m>, then <m>T^k\in \mathcal{P}</m> for any positive integer <m>k</m>.
+            </p>
+        </li>
+        
     </ol>
     </p>
     </statement>
