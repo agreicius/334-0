@@ -24,4 +24,5 @@
     <xi:include href="s_ortho_proj.ptx" />
     <xi:include href="s_adjoint.ptx" />
     <xi:include href="s_normal.ptx" />
+    <xi:include href="s_spectral.ptx" />
 </chapter>

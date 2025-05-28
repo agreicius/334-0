@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_spectral" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Spectral theorems</title>
+<introduction>
+  <p>
+  Among the many takeaways from <xref ref="s_diagable"/> is the simple fact that not all linear operators are diagonalizable. In principle <xref ref="proc_diagable"/> gives a complete answer to the question of diagonalizability in terms of eigenspaces. However, you should not be mislead by the artificially simple examples treated in  <xref ref="s_diagable"/>. In practice even the determination (or approximation) of the distinct eigenvalues of an <m>n\times n</m> matrix poses a very challenging computational problem as <m>n</m> gets large. As such the general question of whether a matrix is diagonalizable remains an intractable one. This makes all the more welcoming the main results of this section: if <m>V</m> is a finite-dimensional inner product space, then <em>all</em> normal operators on <m>V</m> are diagonalizable (when <m>F=\C</m>), and all self-adjoint operators are diagonalizable (when <m>F=\R</m> or <m>F=\C</m>).  These surprising facts are elaborated upon in the two <em>spectral</em> theorems of this section. These results in turn fit into a larger suite of more general spectral theorems that treat the diagonalizability of various families of linear operators of inner product spaces (both finite and infinite dimensional). 
+  </p>
+</introduction>
+    <subsection xml:id="ss_spectral_normal">
+    <title>Spectral theorem for normal operators</title>
+    <definition xml:id="d_inv">
+    <title>Invariant subspace</title>
+    <statement>
+    <p>
+    Let <m>T\in \mathcal{V}</m>. A subspace <m>W\subseteq V</m> is <term><m>T</m>-invariant</term> if <m>T(W)\subseteq W</m>: equivalently, if <m>w\in W</m> implies <m>T(w)\in W</m>. 
+    </p>
+    </statement>
+    </definition>
+    <remark>
+        <title>Invariant subspace</title>
+        <p>
+            In general, if <m>T\in \mathcal{L}(V)</m> and <m>W</m> is a subspace of <m>V</m>, then restricting <m>T</m> to <m>W</m> yields a situation summarized by the diagram below. (Here <m>i\colon W\hookrightarrow V</m> is the inclusion map.)
+        </p>
+        <image width="25%" xml:id="im_comm_restrict">
+                <shortdescription>Commutative diagram for restriction</shortdescription>
+                <latex-image>
+                    \begin{tikzcd}
+                    W \arrow[r,"T\vert_W"] \arrow[d,hookrightarrow,"i"'] \amp  V \arrow[d,"I_V"]\\
+                    V \arrow[r,"T"] \amp V      
+                    \end{tikzcd}
+                </latex-image>
+            </image>
+        <p>
+            When <m>W</m> is <m>T</m>-invariant, on the other hand, we know that <m>T(W)\subseteq W</m>, yielding the the following commutative diagram. 
+        </p>
+        <image width="25%" xml:id="im_comm_restrict_invariant">
+                <shortdescription>Commutative diagram for restriction to invariant subspace</shortdescription>
+                <latex-image>
+                    \begin{tikzcd}
+                    W \arrow[r,"T\vert_W"] \arrow[d,hookrightarrow,"i"'] \amp  W \arrow[d,hookrightarrow,"i"]\\
+                    V \arrow[r,"T"] \amp V      
+                    \end{tikzcd}
+                </latex-image>
+        </image>
+        <p>
+         As you can see, when <m>W</m> is <m>T</m>-invariant, the restriction map <m>T\vert_W</m> can now be thought of as an operator on the smaller space <m>W</m>: <ie/>, we have <m>T\vert_W\in \mathcal{L}(W)</m>. As we will see below, this can be useful in the context of proofs that proceed by induction on the dimension of a space. 
+        </p>
+    </remark>
+    <definition xml:id="d_polynomial_eval_ops">
+    <title>Polynomial evaluation of operator</title>
+    <statement>
+    <p>
+    Let <m>T\in \mathcal{L}(V)</m>. Given a polynomial <m>f(x)=\anpoly</m> with coefficients <m>a_i\in F</m>, we define the operator <m>f(T)\in \mathcal{L}(V)</m> as 
+    <me>
+        f(T)=a_nT^n+a_{n-1}T^{n-1}+\cdots +a_1T+a_0I_V
+    </me>.
+    </p>
+    </statement>
+    </definition>
+    <definition xml:id="d_poly_conj">
+    <title>Polynomial conjugate</title>
+    <statement>
+    <p>
+    Let <m>F\in \{\R, \C\}</m>. Given a polynomial <m>f(x)=\anpoly</m> with coefficients <m>a_i\in F</m>, we define its <term>conjugate</term> <m>\overline{f}(x)</m> as 
+    <me>
+        \overline{f}(x)=\overline{a_n}x^n+\overline{a_{n-1}}x^{n-1}+\cdots +\overline{a_1}x+\overline{a_0}
+    </me>.
+    </p>
+    </statement>
+    </definition>
+    
+    <theorem xml:id="th_polynomial_eval_ops">
+    <title>Polynomial evaluation of operator</title>
+    <statement>
+    <p>
+    Let <m>T\in \mathcal{V}</m>, and let <m>f(x)</m> and <m>g(x)</m> be polynomials with coefficients in <m>F</m>.
+    <ol>
+        <li>
+            <p>
+                <m>f(T)</m> and <m>g(T)</m> commute: <ie/>, 
+                <men xml:id="eq_poly_eval_ops_commute">
+                f(T)g(T)=g(T)f(T)
+                </men>.
+                In particular, <m>T</m> commutes with <m>f(T)</m>: that is, we have <m>T\, f(T)=f(T)\, T</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                If <m>W</m> is a <m>T</m>-invariant subspace, then <m>W</m> is a <m>f(T)</m>-invariant subspace. 
+            </p>
+        </li>
+        <li>
+            <p>
+                Assume <m>F\in \{\R, \C\}</m> and that <m>V</m> is an inner product space. We have 
+                <mdn>
+                    <mrow xml:id="eq_poly_eval_ops_conj"> (f(T))^*\amp =\overline{f}(T^*) </mrow>
+                    <mrow> \amp = \overline{a_n}(T^*)^n+a_{n-1}(T^*)^{n-1}+\cdots +\overline{a_1}T^*+\overline{a_0}I_V </mrow>
+                </mdn>,
+                where <m>f(x)=\anpoly</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                Assume <m>F\in \{\R, \C\}</m> and that <m>V</m> is an inner product space. If <m>T</m> is normal, then <m>f(T)</m> is normal.
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <proof>
+    <p>
+        <ol>
+            <li>
+                <p>
+                    Let <m>f(x)=\anpoly</m> and <m>g(x)=\bmpoly</m>. First observe that for all integers <m>k\geq 0</m>, we have 
+                    <md>
+                        <mrow>T^k\, g(T) \amp =T^k(b_mT^m+\cdots +b_1T+b_0)</mrow>
+                        <mrow> \amp = b_mT^{m+k}+\cdots b_1T^{k+1}+b_0T^k</mrow>
+                        <mrow> \amp (b_mT^m+\cdots +b_1T+b_0)T^k </mrow>
+                    </md>.
+                    It follows that 
+                    <md>
+                        <mrow>f(T)g(T) \amp = a_nT^ng(T)+\cdots +a_1Tg(T)+a_0g(T)</mrow>
+                        <mrow> \amp = a_ng(T)T^n+\cdots +a_1g(T)T+a_0g(T)I_V</mrow>
+                        <mrow> \amp g(T)(a_nT^n+\cdots +a_1T+a_0I_V) </mrow>
+                        <mrow> \amp =g(T)f(T)</mrow>
+                    </md>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    First observe that if <m>W</m> is <m>S</m>- and <m>T</m>-invariant for operators <m>S,T\in \mathcal{L}(V)</m>, then it is <m>(cS+dT)</m>-invariant for any <m>c,d\in F</m>. Indeed, if <m>w\in W</m>, then <m>S(w)\in W</m> and <m>T(w)\in W</m> implies that <m>(cS+dT)(w)=cS(w)+dT(w)\in W</m>. It follows by induction that if <m>W</m> is <m>T_i</m>-invariant for operators <m>T_i\in \mathcal{L}(V)</m>, <m>1\leq i\leq n</m>, then it is <m>(c_1T_1+\cdots +c_nT_n)</m>-invariant for any <m>c_i\in F</m>.    
+                    Next, an easy induction argument shows that if <m>W</m> is <m>T</m>-invariant, then it is <m>T^k</m>-invariant for all <m>k\geq 0</m>. Thus, if <m>W</m> is <m>T</m>-invariant, then it is <m>T^k</m>-invariant for all <m>0\leq k\leq n</m>, and thus also <m>(a_nT^n+\cdot +a_1T+a_0I_V)</m>-invariant for any <m>a_i\in F</m>. This shows <m>W</m> is <m>f(T)</m>-invariant. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    We have 
+                    <md>
+                        <mrow>(f(T))^* \amp = (a_nT^n+\cdot +a_1T+a_0I_V)^*</mrow>
+                        <mrow> \amp = \overline{a_n}(T^n)^*+\cdot +\overline{a_1}T^*+\overline{a_0}I_V^* \amp <xref ref="th_adjoint_props" text="global"/></mrow>
+                        <mrow> \amp = \overline{a_n}(T^*)^n+\cdot +\overline{a_1}T^*+\overline{a_0}I_V \amp <xref ref="th_adjoint_props" text="global"/></mrow>
+                        <mrow> \amp =\overline{f}(T^*)</mrow>
+                    </md>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    We have 
+                    <md>
+                        <mrow>(f(T))^*f(T) \amp = \overline{f}(T^*)f(T)</mrow>
+                        <mrow> \amp = \sum_{0\leq i,j\leq n}\overline{a_i}a_j(T^*)^iT^j</mrow>
+                        <mrow> \amp \sum_{0\leq i,j\leq n}\overline{a_i}a_jT^j(T^*)^i </mrow>
+                        <mrow> \amp = f(T)\overline{f}(T^*)</mrow>
+                        <mrow> \amp =f(T)(f(T))^*</mrow>
+                    </md>.
+                </p>
+            </li>
+        </ol>
+    </p>
+    </proof>
+    </theorem>
+    <theorem xml:id="th_invariant_adoints">
+    <title>Invariant subspaces and adjoints</title>
+    <statement>
+    <p>
+    Let <m>T\in \mathcal{L}(V)</m> be a linear operator on the inner product space <m>(V,\angvec{\, , }</m>, and let <m>T^*\in \mathcal{L}(V)</m> be its adjoint. 
+    <ol>
+        <li>
+            <p>
+                If <m>W</m> is <m>T</m>-invariant, then <m>W^\perp</m> is <m>T^*</m>-invariant. 
+            </p>
+        </li>
+        <li>
+            <p>
+                If <m>W</m> is <m>T</m>- and <m>T^*</m>-invariant, then 
+                <men xml:id="eq_adjoint_restriction">
+                    (T\vert_W)^*=T^*\vert_W
+                </men>.
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <proof>
+    <p>
+        <ol>
+            <li>
+                <p>
+                    Assume <m>W</m> is <m>T</m>-\invariant. For any <m>v\in W^\perp</m> and <m>w\in W</m>, we have 
+                    <md>
+                        <mrow>\angvec{w, T^*(v)} \amp = \angvec{T(w),v}</mrow>
+                        <mrow> \amp = \angvec{w', v} \amp (T(w)=w'\in W)</mrow>
+                        <mrow> \amp =0 \amp (v\in W^\perp)</mrow>
+                    </md>.
+                    Thus <m>v\in W^\perp</m> implies <m>T^*(v)\in W^\perp</m>, showing that <m>W^\perp</m> is <m>T^*</m>-invariant. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Assume <m>W</m> is <m>T</m>- and <m>T^*</m>-invariant. This allows us to define maps <m>T\vert_W\colon W\rightarrow W</m> and <m>T^*\vert_W\colon W\rightarrow W</m>. Thus to show <m>T^*\vert_W=(T\vert_W)^*</m>, we need only show that <m>T^*\vert_W</m> satisfies the adjoint property 
+                    <me>
+                        \angvec{T\vert_W(w),w'}=\angvec{w,T^*\vert_W(w')}
+                    </me>
+                    for all <m>w,w'\in W</m>. But this is easy! We have 
+                    <md>
+                        <mrow> \angvec{T\vert_W(w),w'}\amp = \angvec{T(w),w'}  \amp (\text{def. of } T\vert_W)</mrow>
+                        <mrow> \amp =\angvec{w,T^*(w')}</mrow>
+                        <mrow> \amp =\angvec{w,T^*\vert_W(w')} \amp (\text{def. of } T^*\vert_W)</mrow>
+                    </md>.
+                    
+                </p>
+            </li>
+        </ol>
+    </p>
+    </proof>
+    </theorem>
+    <p>
+        Before getting to our first spectral theorem, we prove an interesting standalone fact about the eigenspaces of normal operators over any field. 
+    </p>
+    <theorem xml:id="th_normal_eigenspaces">
+    <title>Eigenspaces of normal operators</title>
+    <statement>
+    <p>
+    Let <m>F\in \{\R, \C\}</m>, and let <m>T</m> be a normal operator on the finite-dimensional inner product space <m>(V,\angvec{\, ,})</m>. Given distinct scalars <m>\lambda_1\ne \lambda_2\in F</m>, the eigenspaces <m>E(\lambda_1,T)</m> and <m>E(\lambda_2, T)</m> are <term>orthogonal</term>: <ie/>, <m>\angvec{v,w}=0</m> for all <m>v\in E(\lambda_1, T)</m> and <m>w\in E(\lambda_2,T)</m>.  
+    </p>
+    </statement>
+    <proof>
+    <p>
+        Let <m>\lambda_1</m> and <m>\lambda_2</m> be distinct scalars. Take any vectors <m>v\in E(\lambda_1, T)</m> and <m>w\in E(\lambda_2, T)</m> and consider first the adjoint property 
+        <me>
+            \angvec{T(v),w}=\angvec{v,T^*(w)}
+        </me>.
+        Since <m>v\in E(\lambda_1, T)</m>, we have <me>\angvec{T(v),w}=\lambda_1\angvec{v,w}</me>. Since <m>T</m> is normal, we have <m>w\in E(\lambda', T)=E(\overline{\lambda'}, T^*)</m> by <xref ref="th_norm"/>, and thus 
+        <me>
+            \angvec{v,T^*(w)}=\angvec{v,\overline{\lambda_2}w}=\overline{\overline{\lambda_2}}\angvec{v,w}=\lambda_2\angvec{v,w}
+        </me>.
+        Putting it all together, we have 
+        <me>
+            \lambda_1\angvec{v,w}=\angvec{T(v),w}=\angvec{v,T^*(w)}=\lambda_2\angvec{v,w}
+        </me>.
+        Since <m>\lambda_1\angvec{v,w}=\lambda_2\angvec{v,w}</m> and <m>\lambda_1\ne \lambda_2</m>, we conclude that <m>\angvec{v,w}=0</m>, as desired.  
+    </p>
+    </proof>
+    </theorem>
+    
+    <theorem xml:id="th_spectral_normal">
+    <title>Spectral theorem for normal operators: <m>F=\C</m></title>
+    <statement>
+    <p>
+    Let <m>F=\C</m>, let <m>(V,\angvec{\, ,})</m> be a nonzero finite-dimensional inner product space over <m>\C</m>, and let <m>T\in \mathcal{L}(V)</m> with distinct eigenvalues <m>\lambda_1,\lambda_2,\dots, \lambda_r</m>. The following statements are equivalent. 
+    <ol>
+        <li>
+            <p>
+                <m>T</m> is normal. 
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>V=\bigoplus_{i=1}^r E(\lambda_i, T)</m> and the eigenspaces <m>E(\lambda_i, T)</m> are <term>pairwise orthogonal</term>: <ie/>, if <m>i\ne j</m>, then <m>\angvec{v,w}=0</m> for all <m>v\in E(\lambda_i, T)</m> and <m>w\in E(\lambda_j, T)</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>T</m> is <term>orthogonally diagonalizable</term>: that is, there is an orthogonal (or orthonormal) eigenbasis of <m>T</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                There is an orthogonal (or orthonormal) basis <m>B</m> such that <m>[T]_B=D</m> is diagonal. 
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <proof>
+    <p>
+        We prove a cycle of implications (1)<m>\implies</m>(2)<m>\implies</m>(3)<m>\implies</m>(4)<m>\implies</m>(1). It turns out that only (1)<m>\implies</m>(2) is the only implication that requires any work. Accordingly, we take care of the easier implications first. 
+    </p>
+    <case>
+    <title>Implication (2)<m>\implies</m>(3)</title>
+    <p>
+        From <xref ref="th_diagable"/>, we know that choosing any bases <m>B_i</m> for each eigenspace <m>E(\lambda_i, T)</m> and then concatenating these as <m>B=B_1*B_2*\cdots *B_r</m> yields an eigenbasis of <m>V</m>. Since we know the eigenspaces are pairwise orthogonal, if we choose each <m>B_i</m> to be an orthogonal (resp. orthonormal) basis, then resulting concatenated basis <m>B</m> will be orthogonal (resp. orthonormal), since the elements of <m>B_i</m> are orthogonal to the elements of <m>B_j</m> for all <m>j\ne i</m>. Thus <m>T</m> is orthogonally diagonalizable.  
+    </p>
+    </case>
+    <case>
+    <title>Implication (3)<m>\implies</m>(4)</title>
+    <p>
+    We know from <xref ref="th_diagable"/> that if <m>B</m> is an eigenbasis of <m>T</m>, then <m>[T]_B</m> is diagonal. Assuming (3), not only does there exist an eigenbasis of <m>T</m>, but in fact we can find an orthogonal (or orthonormal) eigenbasis <m>B</m>. We have <m>[T]_B=D</m> for this choice of <m>B</m>. 
+    </p>
+    </case>
+    <case>
+    <title>Implication (4)<m>\implies</m>(1)</title>
+    <p>
+    Assume <m>B</m> is an orthonormal basis of <m>T</m> such that <m>[T]_B=D</m> is diagonal. For a diagonal matrix we have 
+    <me>
+        D^*=\overline{D^T}=\overline{D}
+    </me>,
+    and it is then easy to see that 
+    <me>
+        D^*D=\overline{D}D=D\overline{D}=DD^*
+    </me>.
+    Thus <m>D</m> is a normal matrix. Since <m>B</m> is <em>orthonormal</em>, it follows from <xref ref="th_normal_matrix_rep"/> that <m>T</m> is normal. 
+    </p>
+    </case>
+    <case>
+    <title>Implication (1)<m>\implies</m>(2)</title>
+    <p>
+        We now turn to the last implication in our cycle. Assume <m>T</m> is normal.  By <xref ref="th_normal_eigenspaces"/>, the distinct eigenspaces of any normal operator are orthogonal, so it suffices to show that we have 
+        <m>V=\oplus_{i=1}^r E(\lambda_i, T)</m>. We will do so by induction on the dimension of <m>V</m>. More precisely, we will show that for all <m>n\geq 1</m>, given <em>any</em> normal operator on <em>any</em> <m>n</m>-dimensional complex inner product space of dimension <m>n</m>, we have the direct sum decomposition into eigenspaces as specified in (2). 
+    </p>
+    <p>
+        Base case: <m>n=1</m>. If <m>V</m> is <m>1</m>-dimensional, then for <em>any</em> operator (normal or not) <m>T\in \mathcal{L}(V)</m>, we have <m>T=\lambda_V</m> for some <m>\lambda\in F</m>, in which case <m>V=E(\lambda, T)</m> and <m>\lambda</m> is the only eigenvalue of <m>T</m>.  
+    </p>
+    <p>
+        Now assume by (strong) induction that for all <m>1\leq k&lt; n</m>, for any normal operator on any <m>k</m>-dimensional complex inner product space, we have the direct sum decomposition into eigenspaces as specified in (2). Let <m>T</m> be a normal operator on the <m>n</m>-dimensional inner product space <m>V</m>. Since <m>\lambda_1</m> is an eigenvalue of <m>T</m>, the eigenspace <m>E(\lambda_1,T)</m> is nonzero.  
+    </p>
+    <p>
+        If <m>\dim E(\lambda_1,T)=n</m>, then we have <m>V=E(\lambda_1,T)</m>. It follows that <m>\lambda_1</m> is the only eigenvalue of <m>T</m>, and <m>V=E(\lambda_1,T)</m> is the desired direct sum decomposition into eigenspaces.
+    </p>
+    <p>
+        Assume that <m>\dim E(\lambda_1,T)&lt; n</m>, and consider the direct sum decomposition 
+        <me>
+            V=E(\lambda_1,T)\oplus E(\lambda_1,T)^\perp
+        </me>.
+        Since <m>1\leq \dim E(\lambda_1,T)\leq n-1</m>, we have 
+        <me>
+            1\leq \dim E(\lambda_1,T)^\perp\leq n-1
+        </me>.
+        Our proof concludes as follows: 
+        <ul>
+            <li>
+                <p>
+                    show that <m>W=E(\lambda_1,T)^\perp</m> is both <m>T</m>- and <m>T^*</m>-invariant; 
+                </p>
+            </li>
+            <li>
+                <p>
+                    show that <m>T\vert_W</m> is normal; 
+                </p>
+            </li>
+            <li>
+                <p>
+                    apply the induction hypothesis to <m>T\vert_W</m>. 
+                </p>
+            </li>
+        </ul>
+    Let <m>W=E(\lambda_1,T)^\perp</m>. We first show that <m>W</m> is <m>T</m>-invariant: given <m>w\in E(\lambda_1,T)^\perp</m> and <m>v\in E(\lambda, T)</m>, we have 
+    <md>
+        <mrow>\angvec{v,T(w)} \amp = \angvec{T^*(v),w}</mrow>
+        <mrow> \amp = \angvec{\overline{\lambda_1}v,w} \amp (E(\lambda, T)=E(\overline{\lambda},T^*)</mrow>
+        <mrow> \amp = \overline{\lambda_1}\angvec{v,w}</mrow>
+        <mrow> \amp = 0 \amp (w\in E(\lambda_1,T)^\perp)</mrow>
+    </md>.
+    Thus <m>w\in E(\lambda_1,T)^\perp</m> implies <m>T(w)\in E(\lambda_1,T)^\perp</m>, as desired. Similarly, given any <m>w\in E(\lambda_1,T)^\perp</m> and <m>v\in E(\lambda_1,T)</m>, we have 
+    <md>
+        <mrow>\angvec{v, T^*(w)} \amp =\angvec{T(v),w} </mrow>
+        <mrow> \amp =\angvec{\lambda v, w}</mrow>
+        <mrow> \amp =\lambda\angvec{v,w}</mrow>
+        <mrow> \amp =0</mrow>
+    </md>,
+    showing that <m>w\in E(\lambda_1,T)^\perp</m> implies <m>T^*(w)\in E(\lambda_1,T)^\perp</m>, as desired. 
+    </p>
+    <p>
+        Since <m>W=E(\lambda_1,T)^\perp</m> is <m>T</m>- and <m>T^*</m>-invariant, we know that 
+        <me>
+            (T\vert_W)^*=T^*\vert_W
+        </me>
+        by <xref ref="th_invariant_adoints"/>. Since
+        <md>
+            <mrow>\norm{T\vert_W(w)}\amp = \norm{T(w)} </mrow>
+            <mrow> \amp = \norm{T^*(w)}</mrow>
+            <mrow> \amp = \norm{T^*\vert_W(w)}</mrow>
+            <mrow> \amp =\norm{(T\vert_W)^*(w)}</mrow>
+        </md>
+        for all <m>w\in W</m>, it follows that <m>T\vert_W</m> is a normal operator on <m>W=E(\lambda_1,T)^\perp</m>. Lastly, since <m>\dim W=E(\lambda_1,T)^\perp&lt; n</m> we can apply our induction hypothesis to the normal operator <m>T|vert_W</m> on <m>W</m> to conclude that 
+        <me>
+            W=\bigoplus_{\lambda \in \Lambda} E(\lambda, T\vert_W)
+        </me>,
+        where <m>\Lambda</m> is the set of distinct eigenvalues of <m>T\vert_W</m>. Since clearly, any eigenvalue of <m>T\vert_W</m> is an eigenvalue of <m>T</m>, we conclude that 
+        <md>
+            <mrow>V \amp =E(\lambda_1,T)\oplus W \amp (W=E(\lambda_1,T)^\perp)</mrow>
+            <mrow> \amp =E(\lambda_1,T)\oplus \bigoplus_{\lambda \in \Lambda} E(\lambda, T\vert_W) </mrow>
+            <mrow> \amp =\bigoplus_{i=1}^r E(\lambda_i, T)</mrow>
+        </md>,
+        where <m>\lambda_1,\lambda_2,\dots, \lambda_r</m> are distinct eigenvalue of <m>T</m>. It then follows easily that these are all of the distinct eigenvalues of <m>T</m>.
+    </p>
+    
+    </case>
+
+    </proof>
+    </theorem>
+    
+    
+    </subsection>
+    <subsection xml:id="ss_spectral_selfadjoint">
+    <title>Self-adjoint operators</title>
+    <theorem xml:id="th_selfadj_eigenvalues_real">
+    <title>Eigenvalues of self-adjoint operators</title>
+    <statement>
+    <p>
+    Let <m>F\in \{\R, \C\}</m>, let <m>(V,\angvec{\, ,})</m> be a finite-dimensional inner product space over <m>F</m>, and let <m>T\in \mathcal{L}(V)</m> be a self-adjoint operator. 
+    <ol>
+        <li>
+            <p>
+                If <m>\lambda</m> is an eigenvalue <m>T</m>, then <m>\lambda\in \R</m>. In other words, all eigenvalues of <m>T</m> are real.  
+            </p>
+        </li>
+        <li>
+            <p>
+                The characteristic polynomial <m>f</m> of <m>T</m> factors as 
+                <me>
+                    f(x)=(x-\lambda_1)^{n_1}(x-\lambda_2)^{n_2}\cdots (x-\lambda_r)^{n_r}
+                </me>,
+                where <m>\lambda_i\ne \lambda_j</m> for all <m>i\ne j</m>, and <m>\lambda_i\in \R</m> for all <m>1\leq i\leq r</m>.
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <proof>
+    <p>
+    </p>
+    </proof>
+    </theorem>
+    
+    <theorem xml:id="th_spectral_selfadj">
+    <title>Spectral theorem for self-adjoint </title>
+    <statement>
+    <p>
+    Let <m>F\in \{\R,\C\}</m>, let <m>(V,\angvec{\, ,})</m> be a finite-dimensional inner product space over <m>F</m>, and let <m>T\in \mathcal{L}(V)</m> with distinct eigenvalues <m>\lambda_1,\lambda_2,\dots, \lambda_r</m>. The following statements are equivalent. 
+    <ol>
+        <li>
+            <p>
+                <m>T</m> is self-adjoint. 
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>\lambda_i\in \R</m> for all <m>1\leq i\leq r</m>, <m>V=\bigoplus_{i=1}^r E(\lambda_i, T)</m> and the eigenspaces <m>E(\lambda_i, T)</m> are pairwise orthogonal.
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>T</m> has real eigenvalues and is orthogonally diagonalizable.
+            </p>
+        </li>
+        <li>
+            <p>
+                There is an orthogonal (or orthonormal) basis <m>B</m> such that <m>[T]_B=D</m> is diagonal with real entries. 
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <proof>
+    <p>
+    </p>
+    </proof>
+    </theorem>
+    
+    </subsection>
+
+</section>
