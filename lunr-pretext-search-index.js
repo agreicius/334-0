@@ -3799,6 +3799,105 @@ var ptx_lunr_docs = [
   "body": " Normal operator properties   Let be an inner product space, and assume is normal.    if and only if . As a consequence, we have .     if and only if . As a consequence, we have for all .    Finite-dimensional space  Assume further that . We have and .       Assume is normal.   We have . Thus .    Since and are normal, so is, for any by . Applying the result in (1) to , we have .    If we assume is finite dimensional, then we have . It follows that .      "
 },
 {
+  "id": "s_spectral",
+  "level": "1",
+  "url": "s_spectral.html",
+  "type": "Section",
+  "number": "1.23",
+  "title": "Spectral theorems",
+  "body": " Spectral theorems   Among the many takeaways from is the simple fact that not all linear operators are diagonalizable. In principle gives a complete answer to the question of diagonalizability in terms of eigenspaces. However, you should not be mislead by the artificially simple examples treated in . In practice even the determination (or approximation) of the distinct eigenvalues of an matrix poses a very challenging computational problem as gets large. As such the general question of whether a matrix is diagonalizable remains an intractable one. This makes all the more welcoming the main results of this section: if is a finite-dimensional inner product space, then all normal operators on are diagonalizable (when ), and all self-adjoint operators are diagonalizable (when or ). These surprising facts are elaborated upon in the two spectral theorems of this section. These results in turn fit into a larger suite of more general spectral theorems that treat the diagonalizability of various families of linear operators of inner product spaces (both finite and infinite dimensional).    Spectral theorem for normal operators   Invariant subspace   Let . A subspace is -invariant if : equivalently, if implies .     Invariant subspace  In general, if and is a subspace of , then restricting to yields a situation summarized by the diagram below. (Here is the inclusion map.)   Commutative diagram for restriction    When is -invariant, on the other hand, we know that , yielding the the following commutative diagram.   Commutative diagram for restriction to invariant subspace    As you can see, when is -invariant, the restriction map can now be thought of as an operator on the smaller space : , we have . As we will see below, this can be useful in the context of proofs that proceed by induction on the dimension of a space.    Polynomial evaluation of operator   Let . Given a polynomial with coefficients , we define the operator as .     Polynomial conjugate   Let . Given a polynomial with coefficients , we define its conjugate  as .     Polynomial evaluation of operator   Let , and let and be polynomials with coefficients in .    and commute: , . In particular, commutes with : that is, we have .    If is a -invariant subspace, then is a -invariant subspace.    Assume and that is an inner product space. We have , where .    Assume and that is an inner product space. If is normal, then is normal.          Let and . First observe that for all integers , we have . It follows that .    First observe that if is - and -invariant for operators , then it is -invariant for any . Indeed, if , then and implies that . It follows by induction that if is -invariant for operators , , then it is -invariant for any . Next, an easy induction argument shows that if is -invariant, then it is -invariant for all . Thus, if is -invariant, then it is -invariant for all , and thus also -invariant for any . This shows is -invariant.    We have .    We have .        Invariant subspaces and adjoints   Let be a linear operator on the inner product space , and let be its adjoint.   If is -invariant, then is -invariant.    If is - and -invariant, then .          Assume is -\\invariant. For any and , we have . Thus implies , showing that is -invariant.    Assume is - and -invariant. This allows us to define maps and . Thus to show , we need only show that satisfies the adjoint property for all . But this is easy! We have .       Before getting to our first spectral theorem, we prove an interesting standalone fact about the eigenspaces of normal operators over any field.   Eigenspaces of normal operators   Let , and let be a normal operator on the finite-dimensional inner product space . Given distinct scalars , the eigenspaces and are orthogonal : , for all and .    Let and be distinct scalars. Take any vectors and and consider first the adjoint property . Since , we have . Since is normal, we have by , and thus . Putting it all together, we have . Since and , we conclude that , as desired.     Spectral theorem for normal operators:   Let , let be a nonzero finite-dimensional inner product space over , and let with distinct eigenvalues . The following statements are equivalent.    is normal.     and the eigenspaces are pairwise orthogonal : , if , then for all and .     is orthogonally diagonalizable : that is, there is an orthogonal (or orthonormal) eigenbasis of .    There is an orthogonal (or orthonormal) basis such that is diagonal.       We prove a cycle of implications (1) (2) (3) (4) (1). It turns out that only (1) (2) is the only implication that requires any work. Accordingly, we take care of the easier implications first.   Implication (2) (3)  From , we know that choosing any bases for each eigenspace and then concatenating these as yields an eigenbasis of . Since we know the eigenspaces are pairwise orthogonal, if we choose each to be an orthogonal (resp. orthonormal) basis, then resulting concatenated basis will be orthogonal (resp. orthonormal), since the elements of are orthogonal to the elements of for all . Thus is orthogonally diagonalizable.    Implication (3) (4)  We know from that if is an eigenbasis of , then is diagonal. Assuming (3), not only does there exist an eigenbasis of , but in fact we can find an orthogonal (or orthonormal) eigenbasis . We have for this choice of .    Implication (4) (1)  Assume is an orthonormal basis of such that is diagonal. For a diagonal matrix we have , and it is then easy to see that . Thus is a normal matrix. Since is orthonormal , it follows from that is normal.    Implication (1) (2)  We now turn to the last implication in our cycle. Assume is normal. By , the distinct eigenspaces of any normal operator are orthogonal, so it suffices to show that we have . We will do so by induction on the dimension of . More precisely, we will show that for all , given any normal operator on any  -dimensional complex inner product space of dimension , we have the direct sum decomposition into eigenspaces as specified in (2).  Base case: . If is -dimensional, then for any operator (normal or not) , we have for some , in which case and is the only eigenvalue of .  Now assume by (strong) induction that for all , for any normal operator on any -dimensional complex inner product space, we have the direct sum decomposition into eigenspaces as specified in (2). Let be a normal operator on the -dimensional inner product space . Since is an eigenvalue of , the eigenspace is nonzero.  If , then we have . It follows that is the only eigenvalue of , and is the desired direct sum decomposition into eigenspaces.  Assume that , and consider the direct sum decomposition . Since , we have . Our proof concludes as follows:   show that is both - and -invariant;    show that is normal;    apply the induction hypothesis to .   Let . We first show that is -invariant: given and , we have . Thus implies , as desired. Similarly, given any and , we have , showing that implies , as desired.  Since is - and -invariant, we know that by . Since for all , it follows that is a normal operator on . Lastly, since we can apply our induction hypothesis to the normal operator on to conclude that , where is the set of distinct eigenvalues of . Since clearly, any eigenvalue of is an eigenvalue of , we conclude that , where are distinct eigenvalue of . It then follows easily that these are all of the distinct eigenvalues of .       Self-adjoint operators   Eigenvalues of self-adjoint operators   Let , let be a finite-dimensional inner product space over , and let be a self-adjoint operator.   If is an eigenvalue , then . In other words, all eigenvalues of are real.    The characteristic polynomial of factors as , where for all , and for all .            Spectral theorem for self-adjoint   Let , let be a finite-dimensional inner product space over , and let with distinct eigenvalues . The following statements are equivalent.    is self-adjoint.     for all , and the eigenspaces are pairwise orthogonal.     has real eigenvalues and is orthogonally diagonalizable.    There is an orthogonal (or orthonormal) basis such that is diagonal with real entries.            "
+},
+{
+  "id": "d_inv",
+  "level": "2",
+  "url": "s_spectral.html#d_inv",
+  "type": "Definition",
+  "number": "1.23.1",
+  "title": "Invariant subspace.",
+  "body": " Invariant subspace   Let . A subspace is -invariant if : equivalently, if implies .   "
+},
+{
+  "id": "ss_spectral_normal-3",
+  "level": "2",
+  "url": "s_spectral.html#ss_spectral_normal-3",
+  "type": "Remark",
+  "number": "1.23.2",
+  "title": "Invariant subspace.",
+  "body": " Invariant subspace  In general, if and is a subspace of , then restricting to yields a situation summarized by the diagram below. (Here is the inclusion map.)   Commutative diagram for restriction    When is -invariant, on the other hand, we know that , yielding the the following commutative diagram.   Commutative diagram for restriction to invariant subspace    As you can see, when is -invariant, the restriction map can now be thought of as an operator on the smaller space : , we have . As we will see below, this can be useful in the context of proofs that proceed by induction on the dimension of a space.  "
+},
+{
+  "id": "d_polynomial_eval_ops",
+  "level": "2",
+  "url": "s_spectral.html#d_polynomial_eval_ops",
+  "type": "Definition",
+  "number": "1.23.3",
+  "title": "Polynomial evaluation of operator.",
+  "body": " Polynomial evaluation of operator   Let . Given a polynomial with coefficients , we define the operator as .   "
+},
+{
+  "id": "d_poly_conj",
+  "level": "2",
+  "url": "s_spectral.html#d_poly_conj",
+  "type": "Definition",
+  "number": "1.23.4",
+  "title": "Polynomial conjugate.",
+  "body": " Polynomial conjugate   Let . Given a polynomial with coefficients , we define its conjugate  as .   "
+},
+{
+  "id": "th_polynomial_eval_ops",
+  "level": "2",
+  "url": "s_spectral.html#th_polynomial_eval_ops",
+  "type": "Theorem",
+  "number": "1.23.5",
+  "title": "Polynomial evaluation of operator.",
+  "body": " Polynomial evaluation of operator   Let , and let and be polynomials with coefficients in .    and commute: , . In particular, commutes with : that is, we have .    If is a -invariant subspace, then is a -invariant subspace.    Assume and that is an inner product space. We have , where .    Assume and that is an inner product space. If is normal, then is normal.          Let and . First observe that for all integers , we have . It follows that .    First observe that if is - and -invariant for operators , then it is -invariant for any . Indeed, if , then and implies that . It follows by induction that if is -invariant for operators , , then it is -invariant for any . Next, an easy induction argument shows that if is -invariant, then it is -invariant for all . Thus, if is -invariant, then it is -invariant for all , and thus also -invariant for any . This shows is -invariant.    We have .    We have .      "
+},
+{
+  "id": "th_invariant_adoints",
+  "level": "2",
+  "url": "s_spectral.html#th_invariant_adoints",
+  "type": "Theorem",
+  "number": "1.23.6",
+  "title": "Invariant subspaces and adjoints.",
+  "body": " Invariant subspaces and adjoints   Let be a linear operator on the inner product space , and let be its adjoint.   If is -invariant, then is -invariant.    If is - and -invariant, then .          Assume is -\\invariant. For any and , we have . Thus implies , showing that is -invariant.    Assume is - and -invariant. This allows us to define maps and . Thus to show , we need only show that satisfies the adjoint property for all . But this is easy! We have .      "
+},
+{
+  "id": "th_normal_eigenspaces",
+  "level": "2",
+  "url": "s_spectral.html#th_normal_eigenspaces",
+  "type": "Theorem",
+  "number": "1.23.7",
+  "title": "Eigenspaces of normal operators.",
+  "body": " Eigenspaces of normal operators   Let , and let be a normal operator on the finite-dimensional inner product space . Given distinct scalars , the eigenspaces and are orthogonal : , for all and .    Let and be distinct scalars. Take any vectors and and consider first the adjoint property . Since , we have . Since is normal, we have by , and thus . Putting it all together, we have . Since and , we conclude that , as desired.   "
+},
+{
+  "id": "th_spectral_normal",
+  "level": "2",
+  "url": "s_spectral.html#th_spectral_normal",
+  "type": "Theorem",
+  "number": "1.23.8",
+  "title": "Spectral theorem for normal operators: <span class=\"process-math\">\\(F=\\C\\)<\/span>.",
+  "body": " Spectral theorem for normal operators:   Let , let be a nonzero finite-dimensional inner product space over , and let with distinct eigenvalues . The following statements are equivalent.    is normal.     and the eigenspaces are pairwise orthogonal : , if , then for all and .     is orthogonally diagonalizable : that is, there is an orthogonal (or orthonormal) eigenbasis of .    There is an orthogonal (or orthonormal) basis such that is diagonal.       We prove a cycle of implications (1) (2) (3) (4) (1). It turns out that only (1) (2) is the only implication that requires any work. Accordingly, we take care of the easier implications first.   Implication (2) (3)  From , we know that choosing any bases for each eigenspace and then concatenating these as yields an eigenbasis of . Since we know the eigenspaces are pairwise orthogonal, if we choose each to be an orthogonal (resp. orthonormal) basis, then resulting concatenated basis will be orthogonal (resp. orthonormal), since the elements of are orthogonal to the elements of for all . Thus is orthogonally diagonalizable.    Implication (3) (4)  We know from that if is an eigenbasis of , then is diagonal. Assuming (3), not only does there exist an eigenbasis of , but in fact we can find an orthogonal (or orthonormal) eigenbasis . We have for this choice of .    Implication (4) (1)  Assume is an orthonormal basis of such that is diagonal. For a diagonal matrix we have , and it is then easy to see that . Thus is a normal matrix. Since is orthonormal , it follows from that is normal.    Implication (1) (2)  We now turn to the last implication in our cycle. Assume is normal. By , the distinct eigenspaces of any normal operator are orthogonal, so it suffices to show that we have . We will do so by induction on the dimension of . More precisely, we will show that for all , given any normal operator on any  -dimensional complex inner product space of dimension , we have the direct sum decomposition into eigenspaces as specified in (2).  Base case: . If is -dimensional, then for any operator (normal or not) , we have for some , in which case and is the only eigenvalue of .  Now assume by (strong) induction that for all , for any normal operator on any -dimensional complex inner product space, we have the direct sum decomposition into eigenspaces as specified in (2). Let be a normal operator on the -dimensional inner product space . Since is an eigenvalue of , the eigenspace is nonzero.  If , then we have . It follows that is the only eigenvalue of , and is the desired direct sum decomposition into eigenspaces.  Assume that , and consider the direct sum decomposition . Since , we have . Our proof concludes as follows:   show that is both - and -invariant;    show that is normal;    apply the induction hypothesis to .   Let . We first show that is -invariant: given and , we have . Thus implies , as desired. Similarly, given any and , we have , showing that implies , as desired.  Since is - and -invariant, we know that by . Since for all , it follows that is a normal operator on . Lastly, since we can apply our induction hypothesis to the normal operator on to conclude that , where is the set of distinct eigenvalues of . Since clearly, any eigenvalue of is an eigenvalue of , we conclude that , where are distinct eigenvalue of . It then follows easily that these are all of the distinct eigenvalues of .    "
+},
+{
+  "id": "th_selfadj_eigenvalues_real",
+  "level": "2",
+  "url": "s_spectral.html#th_selfadj_eigenvalues_real",
+  "type": "Theorem",
+  "number": "1.23.9",
+  "title": "Eigenvalues of self-adjoint operators.",
+  "body": " Eigenvalues of self-adjoint operators   Let , let be a finite-dimensional inner product space over , and let be a self-adjoint operator.   If is an eigenvalue , then . In other words, all eigenvalues of are real.    The characteristic polynomial of factors as , where for all , and for all .          "
+},
+{
+  "id": "th_spectral_selfadj",
+  "level": "2",
+  "url": "s_spectral.html#th_spectral_selfadj",
+  "type": "Theorem",
+  "number": "1.23.10",
+  "title": "Spectral theorem for self-adjoint.",
+  "body": " Spectral theorem for self-adjoint   Let , let be a finite-dimensional inner product space over , and let with distinct eigenvalues . The following statements are equivalent.    is self-adjoint.     for all , and the eigenspaces are pairwise orthogonal.     has real eigenvalues and is orthogonally diagonalizable.    There is an orthogonal (or orthonormal) basis such that is diagonal with real entries.          "
+},
+{
   "id": "appendix-notation",
   "level": "1",
   "url": "appendix-notation.html",
