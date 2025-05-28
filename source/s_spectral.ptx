@@ -475,11 +475,31 @@
     </subsection>
     <subsection xml:id="ss_spectral_selfadjoint">
     <title>Self-adjoint operators</title>
+    <p>
+        If you look closely at the induction argument for the implication (1)<m>\implies</m>(2) in <xref ref="th_spectral_normal"/>, you see that the only thing we need to get the induction argument moving is the existence of an eigenvalue. By adding the condition <m>F=\C</m> to <xref ref="th_spectral_normal"/> we guarantee the existence of this eigenvalue: this is because for <em>any</em> operator <m>T\in \mathcal{L}(V)</m> on a <em>complex</em> vector space of finite dimension, its characteristic polynomial <m>f(x)</m> of <m>T</m> factors completely over <m>F=\C</m> as 
+        <men xml:id="eq_char_poly_split">
+            f(x)=(x-\lambda_1)^{n_1}\cdots (x-\lambda_r)^{n_r}
+        </men>
+        for scalars <m>\lambda_i\in \C</m>. Thus, our induction argument in <xref ref="th_spectral_normal"/> could be adapted for the <m>F=\R</m> case, as long as the characteristic polynomial of the operators always factor completely over <m>\R</m> as in <xref ref="eq_char_poly_split"/>. Unfortunately, this is simply not the case for <em>normal</em> operators of real vector spaces. However, it is the case for <em>self-adjoint</em> operators, as the next result shows. Before getting to that, let's give a manageable name for this factoring property of a polynomial. 
+    </p>
+    <definition xml:id="d_splits_completely">
+    <title>Splits completeley</title>
+    <statement>
+    <p>
+    Let <m>F</m> be a field, and let <m>f(x)=\anpoly</m> be a polynomial with coefficients in <m>F</m>. We say the <m>f</m> <term>splits completely</term> over <m>F</m> if <m>f</m> factors as 
+    <men xml:id="eq_splits_completely">
+        f(x)=(x-\lambda_1)^{n_1}(x-\lambda_2)^{n_2}\cdots (x-\lambda_r)^{n_r}
+    </men>,
+    with <m>\lambda_i\in F</m> for all <m>1\leq i\leq r</m>.
+    </p>
+    </statement>
+    </definition>
+
     <theorem xml:id="th_selfadj_eigenvalues_real">
     <title>Eigenvalues of self-adjoint operators</title>
     <statement>
     <p>
-    Let <m>F\in \{\R, \C\}</m>, let <m>(V,\angvec{\, ,})</m> be a finite-dimensional inner product space over <m>F</m>, and let <m>T\in \mathcal{L}(V)</m> be a self-adjoint operator. 
+    Let <m>F\in \{\R, \C\}</m>, let <m>(V,\angvec{\, ,})</m> be an inner product space over <m>F</m>, and let <m>T\in \mathcal{L}(V)</m> be a self-adjoint operator. 
     <ol>
         <li>
             <p>
@@ -488,6 +508,7 @@
         </li>
         <li>
             <p>
+                Assume further that <m>\dim V&lt; \infty</m>. 
                 The characteristic polynomial <m>f</m> of <m>T</m> factors as 
                 <me>
                     f(x)=(x-\lambda_1)^{n_1}(x-\lambda_2)^{n_2}\cdots (x-\lambda_r)^{n_r}
@@ -500,9 +521,59 @@
     </statement>
     <proof>
     <p>
+        <ol>
+            <li>
+                <p>
+                    Assume <m>v</m> is a <m>\lambda</m>-eigenvector of <m>T</m>. First observe that we have 
+                    <md>
+                        <mrow>\angvec{T(v),v} \amp = \angvec{v,T^*(v)}</mrow>
+                        <mrow> \amp =\angvec{v,T(v)} \amp (T=T^*)</mrow>
+                    </md>.
+                    Next, since <m>v\in E(\lambda, T)</m>, we have 
+                    <md>
+                        <mrow>\angvec{T(v),v} \amp =\angvec{\lambda v, v}=\lambda\angvec{v,v}</mrow>
+                        <mrow>\angvec{v,T(v)} \amp =\angvec{v,\lambda v}=\overline{\lambda}\angvec{v,v}</mrow>
+                    </md>.
+                    Putting it all together, we have 
+                    <me>
+                        \lambda\angvec{v,v}=\angvec{T(v),v}=\angvec{v,T(v)}=\overline{\lambda}\angvec{v,v}
+                    </me>.
+                    Since <m>\lambda\angvec{v,v}=\overline{\lambda}\angvec{v,v}</m> and <m>\angvec{v,v}\ne 0</m> (since <m>v\ne \boldzero</m> by definition), we conclude from (1) that <m>\lambda=\overline{\lambda}</m>, and hence that <m>\lambda\in \R</m>. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    We treat the cases <m>F=\R</m> and <m>F=\C</m> separately. 
+                </p>
+            
+            <p>
+                If <m>F=\C</m>, then by the fundamental theorem of algebra the characteristic polynomial factors as 
+                <me>
+                    f(x)=(x-\lambda_1)^{n_1}\cdots (x-\lambda_r)^{n_r}
+                </me>,
+                with <m>\lambda_i\in \C</m> for all <m>i</m>. Since <m>T</m> is self-adjoint, and since the <m>\lambda_i</m> are the eigenvalues of <m>T</m>, we conclude that in fact <m>\lambda_i\in \R</m> for all <m>i</m>, as desired. 
+            </p>
+            <p>
+                Now assume <m>F=\R</m>. We can compute the characteristic polynomia of <m>T</m> as 
+                <me>
+                    f(x)=\det(xI-A)
+                </me>,
+                where <m>A=[T]_B</m> is any matrix representation of <m>T</m> with respect to an <em>orthonormal</em> basis <m>B</m>. Now consider the <em>complex</em> matrix transformation 
+                <me>
+                    T_A\colon \C^n\rightarrow \C^n
+                </me>.
+                Since <m>T</m> is self-adjoint and <m>B</m> is orthonormal, the matrix <m>A=[T]_B</m> is self-adjoint by <xref ref="th_normal_matrix_rep"/>. It then follows that <m>T_A\colon \C^n\rightarrow \C^n</m> is self-adjoint. From the previous case (<m>F=\C</m>), we conclude that the characteristic polynomial <m>g(x)</m> of <m>T_A</m> factors as
+                <me>
+                    g(x)=(x-\lambda_1)^{n_1}\cdots (x-\lambda_r)^{n_r}
+                </me>
+                with <m>\lambda_i\in \R</m>. But (again by definition) the characteristic polynomial of <m>T_A</m> is precisely <m>g(x)=\det(xI-A)=f(x)</m>, the characteristic polynomial of <m>T</m>! Thus <m>f</m> splits completely over <m>\R</m>, as desired. 
+            </p>
+            </li>
+        </ol>
     </p>
     </proof>
     </theorem>
+
     
     <theorem xml:id="th_spectral_selfadj">
     <title>Spectral theorem for self-adjoint </title>
@@ -535,6 +606,38 @@
     </statement>
     <proof>
     <p>
+        We may proceed almost identically to the proof of <xref ref="th_spectral_normal"/>. As in that proof we prove a cycle of implications (1)<m>\implies</m>(2)<m>\implies</m>(3)<m>\implies</m>(4)<m>\implies</m>(1). And as in that previous proof, the chain of implications (2)<m>\implies</m>(3)<m>\implies</m>(4)<m>\implies</m>(1) is easily established. We leave that mostly to the reader, but point out that for the implication (4)<m>\implies</m>(1), we need the entries of <m>D</m> to be real in order to have <m>D^*=D</m> (and hence <m>T^*=T</m>).
+    </p>
+    <p>
+        Now consider the implication (1)<m>\implies</m>(2). Assume <m>T</m> is self-adjoint. Since in particular <m>T</m> is normal, we know that the eigenspaces of <m>T</m> are orthogonal by <xref ref="th_normal_eigenspaces"/>; and since <m>T</m> is self-adjoint we know that the eigenvalues of <m>T</m> are real by <xref ref="th_selfadj_eigenvalues_real"/>. It remains only to show that <m>V=\bigoplus_{i=1}^rE(\lambda_i, T)</m>, and we prove this using the exact same induction argument as in <xref ref="th_spectral_normal"/>. As such we can in good conscience content ourselves with a sketch of how this argument plays out in this case:
+        <ul>
+            <li>
+                <p>
+                    Since the characteristic polynomial of <m>T</m> splits completelely over <m>\R</m>, there is an eigenvalue <m>\lambda_1</m> and nonzero eigenspace <m>E(\lambda_1,T)</m>. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Consider the orthogonal decomposition <m>V=E(\lambda_1,T)\oplus E(\lambda_1,T)^\perp</m>. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Since <m>T</m> is self-adjoint (and hence normal) the space <m>W=E(\lambda_1,T)^\perp</m> is both <m>T</m>- and <m>T^*</m>-invariant. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Since <m>T</m> is self-adjoint, it follows easily that the restriction <m>T\vert_W</m> is also self-adjoint. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    The induction hypothesis then applies to the smaller space <m>W=E(\lambda_1,T)^\perp</m>, allowing us to decompose <m>W=E(\lambda_1,T)^\perp</m> into further eigenspaces of <m>T</m>, and giving us the full decomposition of <m>V</m> into eigenspaces of <m>T</m>. 
+                </p>
+            </li>
+        </ul>
+
     </p>
     </proof>
     </theorem>
