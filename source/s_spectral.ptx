@@ -232,7 +232,7 @@
         <me>
             \angvec{T(v),w}=\angvec{v,T^*(w)}
         </me>.
-        Since <m>v\in E(\lambda_1, T)</m>, we have <me>\angvec{T(v),w}=\lambda_1\angvec{v,w}</me>. Since <m>T</m> is normal, we have <m>w\in E(\lambda', T)=E(\overline{\lambda'}, T^*)</m> by <xref ref="th_norm"/>, and thus 
+        Since <m>v\in E(\lambda_1, T)</m>, we have <me>\angvec{T(v),w}=\lambda_1\angvec{v,w}</me>. Since <m>T</m> is normal, we have <m>w\in E(\lambda', T)=E(\overline{\lambda'}, T^*)</m> by <xref ref="cor_normal_props"/>, and thus 
         <me>
             \angvec{v,T^*(w)}=\angvec{v,\overline{\lambda_2}w}=\overline{\overline{\lambda_2}}\angvec{v,w}=\lambda_2\angvec{v,w}
         </me>.
@@ -374,7 +374,7 @@
             <mrow> \amp = \norm{T^*\vert_W(w)}</mrow>
             <mrow> \amp =\norm{(T\vert_W)^*(w)}</mrow>
         </md>
-        for all <m>w\in W</m>, it follows that <m>T\vert_W</m> is a normal operator on <m>W=E(\lambda_1,T)^\perp</m>. Lastly, since <m>\dim W=E(\lambda_1,T)^\perp&lt; n</m> we can apply our induction hypothesis to the normal operator <m>T|vert_W</m> on <m>W</m> to conclude that 
+        for all <m>w\in W</m>, it follows from <xref ref="th_normal_equiv"/> that <m>T\vert_W</m> is a normal operator on <m>W=E(\lambda_1,T)^\perp</m>. Lastly, since <m>\dim W=E(\lambda_1,T)^\perp&lt; n</m> we can apply our induction hypothesis to the normal operator <m>T|vert_W</m> on <m>W</m> to conclude that 
         <me>
             W=\bigoplus_{\lambda \in \Lambda} E(\lambda, T\vert_W)
         </me>,
@@ -391,6 +391,85 @@
 
     </proof>
     </theorem>
+    <example xml:id="eg_spec_normal">
+    <title>Normal operator (<m>F=\C</m>)</title>
+    <statement>
+    <p>
+    Let <m>A=\begin{bmatrix}
+    0\amp 1\\
+    -1 \amp 0
+    \end{bmatrix}</m> and consider the matrix transformation <m>T_A\colon \C^2\rightarrow \C^2</m>, where <m>\C^2</m> is given the standard Hermitian inner product. 
+    <ol>
+        <li>
+            <p>
+                Show that <m>T_A</m> is normal, skew-Hermitian, and unitary! 
+            </p>
+        </li>
+        <li>
+            <p>
+                Verify that (2) of <xref ref="th_spectral_normal"/> applies for <m>T_A</m>. 
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <solution>
+    <p>
+    <ol>
+        <li>
+            <p>
+                We have 
+                <me>
+                    T_A^*=T_{A^*}
+                </me>,
+                where 
+                <me>
+                    A^*=\overline{A^T}=\begin{bmatrix}
+                    0\amp -1 \\ 1 \amp 0
+                    \end{bmatrix}
+                </me>.
+                It is easily verified that 
+                <me>
+                    A^*=-A=A^{-1}
+                </me>,
+                and hence that <m>A</m> is skew-Hermitian and unitary, and hence also normal. 
+            </p>
+        </li>
+        <li>
+            <p>
+                The usual computations show that the characteristic polynomial of <m>T_A</m> is 
+                <me>
+                    f(x)=x^2+1=(x-i)(x+i)
+                </me>,
+                and that the nonzero eigenspaces of <m>T_A</m> are 
+                <md>
+                    <mrow>E(i,T_A) \amp =\Span(1,i)</mrow>
+                    <mrow>E(-i,T_A) \amp = \Span(1,-i)</mrow>
+                </md>.
+                Since <m>\dim \C^2=2=\dim E(i,T_A)+\dim E(-i,T_A)</m>, we see that <m>V=E(i,T_A)\oplus E(-i,T_A)</m> by <xref ref="th_diagable"/>. Lastly since
+                <me>
+                    \angvec{(1,i),(1,-i)}=1\cdot 1+i\cdot\overline{-i}=1+i^2=1-1=0
+                </me>.
+                it follows that <m>E(i,T_A)</m> and <m>E(-i,T_A)</m> are orthogonal.
+            </p>
+        </li>
+    </ol>
+    </p>
+    </solution>
+    </example>
+    <example xml:id="eg_spect_normal_real">
+    <title>Normal operator (<m>F=\R</m>)</title>
+    <statement>
+    <p>
+    Let <m>A=\begin{bmatrix}
+    0\amp 1\\
+    -1 \amp 0
+    \end{bmatrix}</m> again, but now consider the matrix transformation <m>T_A\colon \R^2\rightarrow \R^2</m>. Just as in <xref ref="eg_spec_normal"/>, <m>T_A</m> has characteristic polynomial <m>f(x)=x^2+1</m>, and is normal, skew-symmetric (real version of skew-Hermitian), and orthogonal (real version of unitary). However, not only is <m>T_A</m> not diagonalizable, it does not even have any eigenvalues! This illustrates the necessity of <m>F=\C</m> in <xref ref="th_spectral_normal"/>. 
+    </p>
+    </statement>
+    
+    </example>
+    
     
     
     </subsection>
