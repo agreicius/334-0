@@ -17,25 +17,25 @@
 <div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">Let <span class="process-math">\(F\in \{\R, \C\}\text{,}\)</span> and let <span class="process-math">\(T\)</span> be a normal operator on the finite-dimensional inner product space <span class="process-math">\((V,\angvec{\, ,})\text{.}\)</span> Given distinct scalars <span class="process-math">\(\lambda_1\ne \lambda_2\in F\text{,}\)</span> the eigenspaces <span class="process-math">\(E(\lambda_1,T)\)</span> and <span class="process-math">\(E(\lambda_2, T)\)</span> are <dfn class="terminology">orthogonal</dfn>: i.e., <span class="process-math">\(\angvec{v,w}=0\)</span> for all <span class="process-math">\(v\in E(\lambda_1, T)\)</span> and <span class="process-math">\(w\in E(\lambda_2,T)\text{.}\)</span>
 </div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
 <div class="para">Let <span class="process-math">\(\lambda_1\)</span> and <span class="process-math">\(\lambda_2\)</span> be distinct scalars. Take any vectors <span class="process-math">\(v\in E(\lambda_1, T)\)</span> and <span class="process-math">\(w\in E(\lambda_2, T)\)</span> and consider first the adjoint property</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_norm.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_normal_props.html">
 \begin{equation*}
 \angvec{T(v),w}=\angvec{v,T^*(w)}\text{.}
 \end{equation*}
 </div>
 <div class="para">Since <span class="process-math">\(v\in E(\lambda_1, T)\text{,}\)</span> we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_norm.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_normal_props.html">
 \begin{equation*}
 \angvec{T(v),w}=\lambda_1\angvec{v,w}\text{.}
 \end{equation*}
 </div>
-<div class="para">Since <span class="process-math">\(T\)</span> is normal, we have <span class="process-math">\(w\in E(\lambda', T)=E(\overline{\lambda'}, T^*)\)</span> by <a href="s_inner_prod.html#th_norm" class="xref" data-knowl="./knowl/xref/th_norm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.18.13: Norm properties">Theorem 1.18.13</a>, and thus</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_norm.html">
+<div class="para">Since <span class="process-math">\(T\)</span> is normal, we have <span class="process-math">\(w\in E(\lambda', T)=E(\overline{\lambda'}, T^*)\)</span> by <a href="s_normal.html#cor_normal_props" class="xref" data-knowl="./knowl/xref/cor_normal_props.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.22.10: Normal operator properties">Corollary 1.22.10</a>, and thus</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_normal_props.html">
 \begin{equation*}
 \angvec{v,T^*(w)}=\angvec{v,\overline{\lambda_2}w}=\overline{\overline{\lambda_2}}\angvec{v,w}=\lambda_2\angvec{v,w}\text{.}
 \end{equation*}
 </div>
 <div class="para">Putting it all together, we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_norm.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_normal_props.html">
 \begin{equation*}
 \lambda_1\angvec{v,w}=\angvec{T(v),w}=\angvec{v,T^*(w)}=\lambda_2\angvec{v,w}\text{.}
 \end{equation*}

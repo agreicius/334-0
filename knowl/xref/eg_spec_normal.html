@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.23.9</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Normal operator (<span xmlns:xlink="http://www.w3.org/1999/xlink" class="process-math">\(F=\C\)</span>).</span>
+</h4>
+<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
+<div class="para">Let <span class="process-math">\(A=\begin{bmatrix}
+0\amp 1\\
+-1 \amp 0
+\end{bmatrix}\)</span> and consider the matrix transformation <span class="process-math">\(T_A\colon \C^2\rightarrow \C^2\text{,}\)</span> where <span class="process-math">\(\C^2\)</span> is given the standard Hermitian inner product.</div>
+<ol class="decimal" id="eg_spec_normal-2-1-4">
+<li><div class="para">Show that <span class="process-math">\(T_A\)</span> is normal, skew-Hermitian, and unitary!</div></li>
+<li><div class="para">Verify that (2) of <a href="s_spectral.html#th_spectral_normal" class="xref" data-knowl="./knowl/xref/th_spectral_normal.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.23.8: Spectral theorem for normal operators: F=\C">Theorem 1.23.8</a> applies for <span class="process-math">\(T_A\text{.}\)</span>
+</div></li>
+</ol>
+</div>
+<div class="solutions"><details xmlns:xlink="http://www.w3.org/1999/xlink" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical"><ol class="decimal" id="eg_spec_normal-3-1-1">
+<li><div class="para logical">
+<div class="para">We have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T_A^*=T_{A^*}\text{,}
+\end{equation*}
+</div>
+<div class="para">where</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A^*=\overline{A^T}=\begin{bmatrix}
+0\amp -1 \\ 1 \amp 0
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">It is easily verified that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A^*=-A=A^{-1}\text{,}
+\end{equation*}
+</div>
+<div class="para">and hence that <span class="process-math">\(A\)</span> is skew-Hermitian and unitary, and hence also normal.</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">The usual computations show that the characteristic polynomial of <span class="process-math">\(T_A\)</span> is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_diagable.html">
+\begin{equation*}
+f(x)=x^2+1=(x-i)(x+i)\text{,}
+\end{equation*}
+</div>
+<div class="para">and that the nonzero eigenspaces of <span class="process-math">\(T_A\)</span> are</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_diagable.html">
+\begin{align*}
+E(i,T_A) \amp =\Span(1,i)\\
+E(-i,T_A) \amp = \Span(1,-i)\text{.}
+\end{align*}
+</div>
+<div class="para">Since <span class="process-math">\(\dim \C^2=2=\dim E(i,T_A)+\dim E(-i,T_A)\text{,}\)</span> we see that <span class="process-math">\(V=E(i,T_A)\oplus E(-i,T_A)\)</span> by <a href="s_diagable.html#th_diagable" class="xref" data-knowl="./knowl/xref/th_diagable.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.17.4: Diagonalizable operators">Theorem 1.17.4</a>. Lastly since</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_diagable.html">
+\begin{equation*}
+\angvec{(1,i),(1,-i)}=1\cdot 1+i\cdot\overline{-i}=1+i^2=1-1=0\text{.}
+\end{equation*}
+</div>
+<div class="para">it follows that <span class="process-math">\(E(i,T_A)\)</span> and <span class="process-math">\(E(-i,T_A)\)</span> are orthogonal.</div>
+</div></li>
+</ol></div></div></details></div></article><span class="incontext"><a class="internal" href="s_spectral.html#eg_spec_normal">in-context</a></span>
+</body>
+</html>
