@@ -899,15 +899,36 @@ E(-i,T_A) \amp = \Span(1,-i)\text{.}
 \end{bmatrix}\)</span> again, but now consider the matrix transformation <span class="process-math">\(T_A\colon \R^2\rightarrow \R^2\text{.}\)</span> Just as in <a href="s_spectral.html#eg_spec_normal" class="xref" data-knowl="./knowl/xref/eg_spec_normal.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.23.9: Normal operator (F=\C)">Example 1.23.9</a>, <span class="process-math">\(T_A\)</span> has characteristic polynomial <span class="process-math">\(f(x)=x^2+1\text{,}\)</span> and is normal, skew-symmetric (real version of skew-Hermitian), and orthogonal (real version of unitary). However, not only is <span class="process-math">\(T_A\)</span> not diagonalizable, it does not even have any eigenvalues! This illustrates the necessity of <span class="process-math">\(F=\C\)</span> in <a href="s_spectral.html#th_spectral_normal" class="xref" data-knowl="./knowl/xref/th_spectral_normal.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.23.8: Spectral theorem for normal operators: F=\C">Theorem 1.23.8</a>.</div></article></section><section class="subsection" id="ss_spectral_selfadjoint"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Self-adjoint operators</span>
 </h3>
-<article class="theorem theorem-like" id="th_selfadj_eigenvalues_real"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.23.11</span><span class="period">.</span><span class="space"> </span><span class="title">Eigenvalues of self-adjoint operators.</span>
+<div class="para logical" id="ss_spectral_selfadjoint-2">
+<div class="para">If you look closely at the induction argument for the implication (1)<span class="process-math">\(\implies\)</span>(2) in <a href="s_spectral.html#th_spectral_normal" class="xref" data-knowl="./knowl/xref/th_spectral_normal.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.23.8: Spectral theorem for normal operators: F=\C">Theorem 1.23.8</a>, you see that the only thing we need to get the induction argument moving is the existence of an eigenvalue. By adding the condition <span class="process-math">\(F=\C\)</span> to <a href="s_spectral.html#th_spectral_normal" class="xref" data-knowl="./knowl/xref/th_spectral_normal.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.23.8: Spectral theorem for normal operators: F=\C">Theorem 1.23.8</a> we guarantee the existence of this eigenvalue: this is because for <em class="emphasis">any</em> operator <span class="process-math">\(T\in \mathcal{L}(V)\)</span> on a <em class="emphasis">complex</em> vector space of finite dimension, its characteristic polynomial <span class="process-math">\(f(x)\)</span> of <span class="process-math">\(T\)</span> factors completely over <span class="process-math">\(F=\C\)</span> as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_spectral_normal.html ./knowl/xref/th_spectral_normal.html ./knowl/xref/th_spectral_normal.html ./knowl/xref/eq_char_poly_split.html" id="eq_char_poly_split">
+\begin{equation}
+f(x)=(x-\lambda_1)^{n_1}\cdots (x-\lambda_r)^{n_r}\tag{1.116}
+\end{equation}
+</div>
+<div class="para">for scalars <span class="process-math">\(\lambda_i\in \C\text{.}\)</span> Thus, our induction argument in <a href="s_spectral.html#th_spectral_normal" class="xref" data-knowl="./knowl/xref/th_spectral_normal.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.23.8: Spectral theorem for normal operators: F=\C">Theorem 1.23.8</a> could be adapted for the <span class="process-math">\(F=\R\)</span> case, as long as the characteristic polynomial of the operators always factor completely over <span class="process-math">\(\R\)</span> as in <a href="s_spectral.html#eq_char_poly_split" class="xref" data-knowl="./knowl/xref/eq_char_poly_split.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.116">(1.116)</a>. Unfortunately, this is simply not the case for <em class="emphasis">normal</em> operators of real vector spaces. However, it is the case for <em class="emphasis">self-adjoint</em> operators, as the next result shows. Before getting to that, let’s give a manageable name for this factoring property of a polynomial.</div>
+</div>
+<article class="definition definition-like" id="d_splits_completely"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.23.11</span><span class="period">.</span><span class="space"> </span><span class="title">Splits completeley.</span>
+</h4>
+<div class="para logical" id="d_splits_completely-2-1">
+<div class="para">Let <span class="process-math">\(F\)</span> be a field, and let <span class="process-math">\(f(x)=\anpoly\)</span> be a polynomial with coefficients in <span class="process-math">\(F\text{.}\)</span> We say the <span class="process-math">\(f\)</span> <dfn class="terminology">splits completely</dfn> over <span class="process-math">\(F\)</span> if <span class="process-math">\(f\)</span> factors as</div>
+<div class="displaymath process-math" id="eq_splits_completely">
+\begin{equation}
+f(x)=(x-\lambda_1)^{n_1}(x-\lambda_2)^{n_2}\cdots (x-\lambda_r)^{n_r}\text{,}\tag{1.117}
+\end{equation}
+</div>
+<div class="para">with <span class="process-math">\(\lambda_i\in F\)</span> for all <span class="process-math">\(1\leq i\leq r\text{.}\)</span>
+</div>
+</div></article><article class="theorem theorem-like" id="th_selfadj_eigenvalues_real"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.23.12</span><span class="period">.</span><span class="space"> </span><span class="title">Eigenvalues of self-adjoint operators.</span>
 </h4>
 <div class="para logical" id="th_selfadj_eigenvalues_real-2-1">
-<div class="para">Let <span class="process-math">\(F\in \{\R, \C\}\text{,}\)</span> let <span class="process-math">\((V,\angvec{\, ,})\)</span> be a finite-dimensional inner product space over <span class="process-math">\(F\text{,}\)</span> and let <span class="process-math">\(T\in \mathcal{L}(V)\)</span> be a self-adjoint operator.</div>
+<div class="para">Let <span class="process-math">\(F\in \{\R, \C\}\text{,}\)</span> let <span class="process-math">\((V,\angvec{\, ,})\)</span> be an inner product space over <span class="process-math">\(F\text{,}\)</span> and let <span class="process-math">\(T\in \mathcal{L}(V)\)</span> be a self-adjoint operator.</div>
 <ol class="decimal" id="th_selfadj_eigenvalues_real-2-1-5">
 <li id="th_selfadj_eigenvalues_real-2-1-5-1"><div class="para" id="th_selfadj_eigenvalues_real-2-1-5-1-1">If <span class="process-math">\(\lambda\)</span> is an eigenvalue <span class="process-math">\(T\text{,}\)</span> then <span class="process-math">\(\lambda\in \R\text{.}\)</span> In other words, all eigenvalues of <span class="process-math">\(T\)</span> are real.</div></li>
 <li id="th_selfadj_eigenvalues_real-2-1-5-2"><div class="para logical" id="th_selfadj_eigenvalues_real-2-1-5-2-1">
-<div class="para">The characteristic polynomial <span class="process-math">\(f\)</span> of <span class="process-math">\(T\)</span> factors as</div>
+<div class="para">Assume further that <span class="process-math">\(\dim V&lt; \infty\text{.}\)</span> The characteristic polynomial <span class="process-math">\(f\)</span> of <span class="process-math">\(T\)</span> factors as</div>
 <div class="displaymath process-math">
 \begin{equation*}
 f(x)=(x-\lambda_1)^{n_1}(x-\lambda_2)^{n_2}\cdots (x-\lambda_r)^{n_r}\text{,}
@@ -917,8 +938,66 @@ f(x)=(x-\lambda_1)^{n_1}(x-\lambda_2)^{n_2}\cdots (x-\lambda_r)^{n_r}\text{,}
 </div>
 </div></li>
 </ol>
-</div></article><details id="th_selfadj_eigenvalues_real-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_selfadj_eigenvalues_real-3-1"></div></article></details><article class="theorem theorem-like" id="th_spectral_selfadj"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.23.12</span><span class="period">.</span><span class="space"> </span><span class="title">Spectral theorem for self-adjoint.</span>
+</div></article><details id="th_selfadj_eigenvalues_real-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_selfadj_eigenvalues_real-3-1"><ol class="decimal" id="th_selfadj_eigenvalues_real-3-1-1">
+<li id="th_selfadj_eigenvalues_real-3-1-1-1"><div class="para logical" id="th_selfadj_eigenvalues_real-3-1-1-1-1">
+<div class="para">Assume <span class="process-math">\(v\)</span> is a <span class="process-math">\(\lambda\)</span>-eigenvector of <span class="process-math">\(T\text{.}\)</span> First observe that we have</div>
+<div class="displaymath process-math" id="th_selfadj_eigenvalues_real-3-1-1-1-1-4">
+\begin{align*}
+\angvec{T(v),v} \amp = \angvec{v,T^*(v)}\\
+\amp =\angvec{v,T(v)} \amp (T=T^*)\text{.}
+\end{align*}
+</div>
+<div class="para">Next, since <span class="process-math">\(v\in E(\lambda, T)\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="th_selfadj_eigenvalues_real-3-1-1-1-1-6">
+\begin{align*}
+\angvec{T(v),v} \amp =\angvec{\lambda v, v}=\lambda\angvec{v,v}\\
+\angvec{v,T(v)} \amp =\angvec{v,\lambda v}=\overline{\lambda}\angvec{v,v}\text{.}
+\end{align*}
+</div>
+<div class="para">Putting it all together, we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lambda\angvec{v,v}=\angvec{T(v),v}=\angvec{v,T(v)}=\overline{\lambda}\angvec{v,v}\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\lambda\angvec{v,v}=\overline{\lambda}\angvec{v,v}\)</span> and <span class="process-math">\(\angvec{v,v}\ne 0\)</span> (since <span class="process-math">\(v\ne \boldzero\)</span> by definition), we conclude from (1) that <span class="process-math">\(\lambda=\overline{\lambda}\text{,}\)</span> and hence that <span class="process-math">\(\lambda\in \R\text{.}\)</span>
+</div>
+</div></li>
+<li id="th_selfadj_eigenvalues_real-3-1-1-2">
+<div class="para" id="th_selfadj_eigenvalues_real-3-1-1-2-1">We treat the cases <span class="process-math">\(F=\R\)</span> and <span class="process-math">\(F=\C\)</span> separately.</div>
+<div class="para logical" id="th_selfadj_eigenvalues_real-3-1-1-2-2">
+<div class="para">If <span class="process-math">\(F=\C\text{,}\)</span> then by the fundamental theorem of algebra the characteristic polynomial factors as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(x)=(x-\lambda_1)^{n_1}\cdots (x-\lambda_r)^{n_r}\text{,}
+\end{equation*}
+</div>
+<div class="para">with <span class="process-math">\(\lambda_i\in \C\)</span> for all <span class="process-math">\(i\text{.}\)</span> Since <span class="process-math">\(T\)</span> is self-adjoint, and since the <span class="process-math">\(\lambda_i\)</span> are the eigenvalues of <span class="process-math">\(T\text{,}\)</span> we conclude that in fact <span class="process-math">\(\lambda_i\in \R\)</span> for all <span class="process-math">\(i\text{,}\)</span> as desired.</div>
+</div>
+<div class="para logical" id="th_selfadj_eigenvalues_real-3-1-1-2-3">
+<div class="para">Now assume <span class="process-math">\(F=\R\text{.}\)</span> We can compute the characteristic polynomia of <span class="process-math">\(T\)</span> as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_normal_matrix_rep.html">
+\begin{equation*}
+f(x)=\det(xI-A)\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(A=[T]_B\)</span> is any matrix representation of <span class="process-math">\(T\)</span> with respect to an <em class="emphasis">orthonormal</em> basis <span class="process-math">\(B\text{.}\)</span> Now consider the <em class="emphasis">complex</em> matrix transformation</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_normal_matrix_rep.html">
+\begin{equation*}
+T_A\colon \C^n\rightarrow \C^n\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(T\)</span> is self-adjoint and <span class="process-math">\(B\)</span> is orthonormal, the matrix <span class="process-math">\(A=[T]_B\)</span> is self-adjoint by <a href="s_normal.html#th_normal_matrix_rep" class="xref" data-knowl="./knowl/xref/th_normal_matrix_rep.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.22.6: Normality and matrix representations">Theorem 1.22.6</a>. It then follows that <span class="process-math">\(T_A\colon \C^n\rightarrow \C^n\)</span> is self-adjoint. From the previous case (<span class="process-math">\(F=\C\)</span>), we conclude that the characteristic polynomial <span class="process-math">\(g(x)\)</span> of <span class="process-math">\(T_A\)</span> factors as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_normal_matrix_rep.html">
+\begin{equation*}
+g(x)=(x-\lambda_1)^{n_1}\cdots (x-\lambda_r)^{n_r}
+\end{equation*}
+</div>
+<div class="para">with <span class="process-math">\(\lambda_i\in \R\text{.}\)</span> But (again by definition) the characteristic polynomial of <span class="process-math">\(T_A\)</span> is precisely <span class="process-math">\(g(x)=\det(xI-A)=f(x)\text{,}\)</span> the characteristic polynomial of <span class="process-math">\(T\text{!}\)</span> Thus <span class="process-math">\(f\)</span> splits completely over <span class="process-math">\(\R\text{,}\)</span> as desired.</div>
+</div>
+</li>
+</ol></div></article></details><article class="theorem theorem-like" id="th_spectral_selfadj"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.23.13</span><span class="period">.</span><span class="space"> </span><span class="title">Spectral theorem for self-adjoint.</span>
 </h4>
 <div class="para logical" id="th_spectral_selfadj-2-1">
 <div class="para">Let <span class="process-math">\(F\in \{\R,\C\}\text{,}\)</span> let <span class="process-math">\((V,\angvec{\, ,})\)</span> be a finite-dimensional inner product space over <span class="process-math">\(F\text{,}\)</span> and let <span class="process-math">\(T\in \mathcal{L}(V)\)</span> with distinct eigenvalues <span class="process-math">\(\lambda_1,\lambda_2,\dots, \lambda_r\text{.}\)</span> The following statements are equivalent.</div>
@@ -931,7 +1010,20 @@ f(x)=(x-\lambda_1)^{n_1}(x-\lambda_2)^{n_2}\cdots (x-\lambda_r)^{n_r}\text{,}
 <span class="process-math">\(T\)</span> has real eigenvalues and is orthogonally diagonalizable.</div></li>
 <li id="th_spectral_selfadj-2-1-6-4"><div class="para" id="th_spectral_selfadj-2-1-6-4-1">There is an orthogonal (or orthonormal) basis <span class="process-math">\(B\)</span> such that <span class="process-math">\([T]_B=D\)</span> is diagonal with real entries.</div></li>
 </ol>
-</div></article><details id="th_spectral_selfadj-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_spectral_selfadj-3-1"></div></article></details></section></section></div>
+</div></article><details id="th_spectral_selfadj-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_spectral_selfadj-3-1">We may proceed almost identically to the proof of <a href="s_spectral.html#th_spectral_normal" class="xref" data-knowl="./knowl/xref/th_spectral_normal.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.23.8: Spectral theorem for normal operators: F=\C">Theorem 1.23.8</a>. As in that proof we prove a cycle of implications (1)<span class="process-math">\(\implies\)</span>(2)<span class="process-math">\(\implies\)</span>(3)<span class="process-math">\(\implies\)</span>(4)<span class="process-math">\(\implies\)</span>(1). And as in that previous proof, the chain of implications (2)<span class="process-math">\(\implies\)</span>(3)<span class="process-math">\(\implies\)</span>(4)<span class="process-math">\(\implies\)</span>(1) is easily established. We leave that mostly to the reader, but point out that for the implication (4)<span class="process-math">\(\implies\)</span>(1), we need the entries of <span class="process-math">\(D\)</span> to be real in order to have <span class="process-math">\(D^*=D\)</span> (and hence <span class="process-math">\(T^*=T\)</span>).</div>
+<div class="para logical" id="th_spectral_selfadj-3-2">
+<div class="para">Now consider the implication (1)<span class="process-math">\(\implies\)</span>(2). Assume <span class="process-math">\(T\)</span> is self-adjoint. Since in particular <span class="process-math">\(T\)</span> is normal, we know that the eigenspaces of <span class="process-math">\(T\)</span> are orthogonal by <a href="s_spectral.html#th_normal_eigenspaces" class="xref" data-knowl="./knowl/xref/th_normal_eigenspaces.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.23.7: Eigenspaces of normal operators">Theorem 1.23.7</a>; and since <span class="process-math">\(T\)</span> is self-adjoint we know that the eigenvalues of <span class="process-math">\(T\)</span> are real by <a href="s_spectral.html#th_selfadj_eigenvalues_real" class="xref" data-knowl="./knowl/xref/th_selfadj_eigenvalues_real.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.23.12: Eigenvalues of self-adjoint operators">Theorem 1.23.12</a>. It remains only to show that <span class="process-math">\(V=\bigoplus_{i=1}^rE(\lambda_i, T)\text{,}\)</span> and we prove this using the exact same induction argument as in <a href="s_spectral.html#th_spectral_normal" class="xref" data-knowl="./knowl/xref/th_spectral_normal.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.23.8: Spectral theorem for normal operators: F=\C">Theorem 1.23.8</a>. As such we can in good conscience content ourselves with a sketch of how this argument plays out in this case:</div>
+<ul class="disc" id="th_spectral_selfadj-3-2-11">
+<li id="th_spectral_selfadj-3-2-11-1"><div class="para" id="th_spectral_selfadj-3-2-11-1-1">Since the characteristic polynomial of <span class="process-math">\(T\)</span> splits completelely over <span class="process-math">\(\R\text{,}\)</span> there is an eigenvalue <span class="process-math">\(\lambda_1\)</span> and nonzero eigenspace <span class="process-math">\(E(\lambda_1,T)\text{.}\)</span>
+</div></li>
+<li id="th_spectral_selfadj-3-2-11-2"><div class="para" id="th_spectral_selfadj-3-2-11-2-1">Consider the orthogonal decomposition <span class="process-math">\(V=E(\lambda_1,T)\oplus E(\lambda_1,T)^\perp\text{.}\)</span>
+</div></li>
+<li id="th_spectral_selfadj-3-2-11-3"><div class="para" id="th_spectral_selfadj-3-2-11-3-1">Since <span class="process-math">\(T\)</span> is self-adjoint (and hence normal) the space <span class="process-math">\(W=E(\lambda_1,T)^\perp\)</span> is both <span class="process-math">\(T\)</span>- and <span class="process-math">\(T^*\)</span>-invariant.</div></li>
+<li id="th_spectral_selfadj-3-2-11-4"><div class="para" id="th_spectral_selfadj-3-2-11-4-1">Since <span class="process-math">\(T\)</span> is self-adjoint, it follows easily that the restriction <span class="process-math">\(T\vert_W\)</span> is also self-adjoint.</div></li>
+<li id="th_spectral_selfadj-3-2-11-5"><div class="para" id="th_spectral_selfadj-3-2-11-5-1">The induction hypothesis then applies to the smaller space <span class="process-math">\(W=E(\lambda_1,T)^\perp\text{,}\)</span> allowing us to decompose <span class="process-math">\(W=E(\lambda_1,T)^\perp\)</span> into further eigenspaces of <span class="process-math">\(T\text{,}\)</span> and giving us the full decomposition of <span class="process-math">\(V\)</span> into eigenspaces of <span class="process-math">\(T\text{.}\)</span>
+</div></li>
+</ul>
+</div></article></details></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="s_normal.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="advlinalgkursobjekt-6.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
