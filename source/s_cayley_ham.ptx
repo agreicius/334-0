@@ -106,11 +106,32 @@
     </p>
     </proof>
     </theorem>
-    <theorem xml:id="">
-    <title></title>
+    <theorem xml:id="th_char_poly_inv">
+    <title>Invariance and characteristic polynomial</title>
     <statement>
     <p>
+    Let <m>T\in \mathcal{L}(V)</m>, where <m>V</m> is a finite-dimensional vector space, and let <m>W\subseteq V</m> be a <m>T</m>-invariant subspace. If <m>f</m> is the characteristic polynomial of <m>T</m> and <m>g</m> is the characteristic polynomial of <m>T\vert_W</m>, then <m>g\mid f</m>. In other words, we have 
+    <me>
+        f(x)=q(x)g(x)
+    </me>
+    for some <m>q(x)\in P(F)</m>. 
+    </p>
+    </statement>
+    <proof>
+    <p>
+    </p>
+    </proof>
+    </theorem>
     
+    <theorem xml:id="th_cayley_ham">
+    <title>Cayley-Hamilton theorem</title>
+    <statement>
+    <p>
+    Let <m>T\in\mathcal{L}(V)</m>, where <m>V</m> is finite dimensional, and let <m>f\in P(F)</m> be the characteristic polynomial of <m>T</m>. We have 
+    <men xml:id="eq_cayley_ham">
+        f(T)=0_V
+    </men>.
+    In other words, <m>T</m> is a <q>root</q> of its own characteristic polynomial. 
     </p>
     </statement>
     <proof>
@@ -120,7 +141,51 @@
     </theorem>
     
     
+    </subsection>
+    <subsection xml:id="ss_min_poly">
+    <title>Minimal polynomial</title>
+    <definition xml:id="d_min_poly">
+    <title>Minimal polynomial</title>
+    <statement>
+    <p>
+    Let <m>T\in\mathcal{L}(V)</m>, where <m>V</m> is finite dimensional. The <term>minimal polynomial</term> of <m>T</m> is the unique monic polynomial <m>m_T(x)</m> of minimal degree satisfying <m>m_T(T)=0_V</m>. 
+    </p>
+    </statement>
+    </definition>
+    <theorem xml:id="th_min_poly">
+    <title>Minimal polynomial</title>
+    <statement>
+    <p>
+    Let <m>T\in \mathcal{L}(V)</m>, where <m>V</m> is finite dimensional and let <m>m_T(x)</m> be the minimal polymonial of <m>T</m>. If <m>g\in P(F)</m> satisfies <m>g(T)=0_V</m>, then <m>m_T\mid g</m>: <ie/>, we have 
+        <me>
+            g(x)=q(x)m_T(x)
+        </me>
+        for some <m>q\in P(F)</m>. In particular, if <m>f</m> is the characteristic polynomial of <m>g</m>, then <m>m_T(x)\mid f</m>. 
+    </p>
+    </statement>
+    <proof>
+    <p>
+    </p>
+    </proof>
+    </theorem>
+    <corollary xml:id="cor_min_poly">
+        <title>Minimal polynomial and characteristic polynomial</title>
+        <statement>
+            <p>
+                Let <m>T\in \mathcal{L}(V)</m>, where <m>V</m> is finite dimensional, let <m>f</m> and <m>m_T</m> be the characteristic and minimal polynomials of <m>T</m>, respectively. If <m>f</m> splits completely over <m>F</m> as 
+                <me>
+                    f(x)=\prod_{i=1}^r(x-\lambda_i)^{n_i}, n_i\geq 1
+                </me>,
+                then <m>m_T(x)</m> splits completely as 
+                <me>
+                    m_T(x)=\prod_{i=1}^{r}(x-\lambda_i)^{m_i}
+                </me>,
+                where <m>1\leq m_i\leq n_i</m> for all <m>1\leq i\leq r</m>. In other words, <m>m_T</m> and <m>f</m> both split completely over <m>F</m> and have the same set of roots.
+            </p>
+        </statement>
+    </corollary>
+    
+    
     
     </subsection>
-
 </section>
