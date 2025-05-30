@@ -25,4 +25,5 @@
     <xi:include href="s_adjoint.ptx" />
     <xi:include href="s_normal.ptx" />
     <xi:include href="s_spectral.ptx" />
+    <xi:include href="s_cayley_ham.ptx" />
 </chapter>
