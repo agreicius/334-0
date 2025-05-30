@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,10 +19,10 @@
 </head>
 <body class="ignore-math">
 <article class="theorem theorem-like"><h4 class="heading">
-<span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.7.15</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Finite spanning set.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.7.15</span><span class="period">.</span><span class="space"> </span><span class="title">Finite spanning set.</span>
 </h4>
-<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">Assume <span class="process-math">\(B=(v_1,v_2,\dots, v_n)\)</span> is a spanning set of the vector space <span class="process-math">\(V\)</span> of finite length <span class="process-math">\(n\text{.}\)</span> Any tuple of vectors of <span class="process-math">\(V\)</span> of length greater than <span class="process-math">\(n\)</span> (this includes infinite tuples) is linearly dependent. Equivalently, if <span class="process-math">\(S\)</span> is a linearly independent tuple of vectors of <span class="process-math">\(V\text{,}\)</span> then <span class="process-math">\(\len S\leq n\text{.}\)</span>
-</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">Axler provides a pleasant proof where one does not have to dirty one’s hands with matrices. Personally, I enjoy digging in the dirt sometimes. In any case the argument below is a useful reminder about properties of linear systems.</div>
+<div class="para">Assume <span class="process-math">\(B=(v_1,v_2,\dots, v_n)\)</span> is a spanning set of the vector space <span class="process-math">\(V\)</span> of finite length <span class="process-math">\(n\text{.}\)</span> Any tuple of vectors of <span class="process-math">\(V\)</span> of length greater than <span class="process-math">\(n\)</span> (this includes infinite tuples) is linearly dependent. Equivalently, if <span class="process-math">\(S\)</span> is a linearly independent tuple of vectors of <span class="process-math">\(V\text{,}\)</span> then <span class="process-math">\(\len S\leq n\text{.}\)</span>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">Axler provides a pleasant proof where one does not have to dirty one’s hands with matrices. Personally, I enjoy digging in the dirt sometimes. In any case the argument below is a useful reminder about properties of linear systems.</div>
 <div class="para">First observe that it suffices to show that any <em class="emphasis">finite</em> tuple of length <span class="process-math">\(m&gt; n\)</span> is linearly dependent, since if <span class="process-math">\((w_i)_{i\in I}\)</span> is an infinite tuple, then the subtuple <span class="process-math">\((w_{i_1},\dots, w_{i_{n+1}})\)</span> is linearly dependent for any distinct list of <span class="process-math">\(n+1\)</span> indices <span class="process-math">\(i_1,i_2,\dots, i_{n+1}\text{.}\)</span> But then clearly the entire tuple is also linearly dependent since a nontrivial linear combination <span class="process-math">\(\boldzero=\sum_{k=1}^{n+1}c_{i_{k}}w_{i_k}=\boldzero\)</span> gives rise to a nontrivial linear combination <span class="process-math">\(\sum_{i\in I}c_iw_i=\boldzero\)</span> of all of the vectors <span class="process-math">\(v_i\)</span> simply by setting <span class="process-math">\(c_i=0\)</span> for <span class="process-math">\(i\ne i_k\text{.}\)</span> (This argument shows that in general a tuple <span class="process-math">\((w_i)_{i\in I}\)</span> is linearly dependent if and only if some finite subtuple <span class="process-math">\((w_{i_1}, w_{i_2},\dots, w_{i_m})\)</span> is linearly dependent.)</div>
 <div class="para logical">
 <div class="para">It remains to show that any tuple <span class="process-math">\((w_1,w_2,\dots , w_{m})\)</span> of <span class="process-math">\(V\)</span> of length <span class="process-math">\(m&gt; n\)</span> is linearly dependent. Since <span class="process-math">\(B=(v_1,v_2,\dots, v_n)\)</span> is a spanning set of <span class="process-math">\(V\)</span> we may write, for each <span class="process-math">\(1\leq j\leq m\)</span>
