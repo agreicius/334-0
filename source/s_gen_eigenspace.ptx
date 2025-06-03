@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_gen_eigenspace" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Generalized eigenspaces</title>
+    <definition xml:id="d_gen_eigenspace">
+    <title>Generalized eigenspace</title>
+    <statement>
+    <p>
+    Let <m>T\in \mathcal{L}(V)</m>, where <m>V</m> is finite dimensional. Given <m>\lambda\in F</m> we define the <term>generalized eigenspace</term> <m>G(\lambda, T)</m> associated to <m>\lambda</m> (or <m>\lambda</m>-generalized eigenspace) to be 
+    <men xml:id="eq_gen_eigenspace">
+        G(\lambda, T)=\{v\in V\colon (T-\lambda I)^k(v)=\boldzero \text{ for some } k\in \Z_+\}
+    </men>.
+    A <term>generalized <m>\lambda</m>-eigenvector</term> of <m>T</m> is a nonzero element of <m>G(\lambda, T)</m>.
+    </p>
+    </statement>
+    </definition>
+    <theorem xml:id="th_gen_eigenspace">
+    <title>Generalized eigenspaces</title>
+    <statement>
+    <p>
+    Let <m>T\in \mathcal{L}(V)</m>, where <m>V</m> is finite dimensional. 
+    <ol>
+        <li>
+            <p>
+                For all <m>\lambda\in F</m>, <m>G(\lambda, T)</m> is a <m>T</m>-invariant subspace and <m>E(\lambda, T)\subseteq G(\lambda, T)</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>G(\lambda, T)\cap G(\lambda', T)=\{\boldzero\}</m> for <m>\lambda\be \lambda'\in F</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                Let <m>\lambda</m> be an eigenvalue of <m>T</m> of algebraic multiplicty <m>m</m>. We have 
+                <men xml:id="eq_gen_eigenspace_dim_bounds">
+                    1\leq \dim E(\lamdba, T)\leq \dim G(\lambda, T)\leq m
+                </men> and 
+                <men xml:id="eq_gen_eigenspace_null">
+                    G(\lambda, T)=\NS(T-\lambda I)^m
+                </men>.
+                
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <proof>
+    <p>
+    </p>
+    </proof>
+    </theorem>
+    
+
+    <theorem xml:id="th_gen_eigenspace_decomp">
+    <title>Generalized eigenspace decomposition</title>
+    <statement>
+    <p>
+    Let <m>T\in \mathcal{L}(V)</m>, where <m>V</m> is finite dimensional, and assume the characteristic polynomial <m>f</m> of <m>T</m> factors as
+    <me>
+        f(x)=\prod_{i=1}^r(x-\lambda_i)^{n_i}
+    </me>,
+    where <m>\lambda_1,\lambda_2,\dots, \lambda_r</m> are the distinct eigenvalues of <m>T</m>. We have the following direct sum decomposition of <m>V</m>: 
+    <men xml:id="eq_gen_eigenspaces_decomp">
+        V=\oplus_{i=1}^rG(\lambda_i, T)
+    </men>.
+    </p>
+    </statement>
+    <proof>
+    <p>
+    </p>
+    </proof>
+    </theorem>
+    
+
+
+
+    <definition xml:id="d_relatively_prime">
+    <title>Relatively prime polynomials</title>
+    <statement>
+    <p>
+    Let <m>F</m> be a field. Polynomials <m>f,g\in P(F)</m> are <term>relatively prime</term> if they have no nonconstant common factor: <ie/>, if <m>q\in P(F)</m> satisfies <m>q\mid f</m> and <m>q\mid g</m>, then <m>q(x)=c</m> for some <m>c\in F</m>. 
+    </p>
+    <p>
+        More generally a finite list <m>f_1,f_2,\dots, f_n</m> of polynomials <m>f_i\in P(F)</m> is <term>relatively prime</term> if there is no nonconstant factor common to all the <m>f_i</m>: <ie/>, if <m>q\in P(F)</m> satisfies <m>q\mid f_i</m> for all <m>i</m>, then <m>q(x)=c</m> for some <m>c\in F</m>. 
+    </p>
+    </statement>
+    </definition>
+    <theorem xml:id="th_relatively_prime_polys">
+    <title>Relatively prime polynomials</title>
+    <statement>
+    <p>
+    Let <m>F</m> be a field, and let <m>f_1,f_2,\dots, f_r</m> be a relatively prime list of polynomials. There are polynomials <m>g_1,g_2,\dots, g_r</m> such that 
+    <men xml:id="eq_relatively_prime_poly">
+        1=g_1(x)f_1(x)+g_2(x)f_2(x)+\cdots +g_r(x)f_r(x)
+    </men>.
+    </p>
+    </statement>
+    <proof>
+    <p>
+        The proof, though not difficult, lies somewhat outside the scope of this course. This and other results about the theory of polynomials is covered in the <em>ring theory</em> portion of a course in abstract algebra. Moreover, it is an instance of a more general result involving the <em>greatest common divisor</em> of the polynomials <m>f_1,f_2,\dots, f_r</m>. 
+    </p>
+    </proof>
+    </theorem>
+    
+    <theorem xml:id="th_factorization_polynomials">
+    <title>Factorization of polynomials</title>
+    <statement>
+    <p>
+        Let <m>F</m> be a field, and let <m>f\in P(F)</m> be a nonzero polynomial. 
+        <ol>
+            <li>
+                <title>Irreducible factorization</title>
+                <p>
+                    We can factor <m>f</m> in the form 
+                    <men>
+                        f(x)=cf_1(x)^{n_1}f_2(x)^{n_2}\cdots f_r^{n_r}(x)
+                    </men>,
+                    where the factors <m>f_i</m> are pairwise relatively prime, monic irreducible polynomials.
+                </p>
+            </li>
+            <li>
+                <title>Uniqueness of factorization</title>
+                <p>
+                    The scalar <m>c</m>, set of monic irreducible polynomials <m>\{f_1,f_2,\dots, f_r\}</m> and powers <m>n_i</m> are all uniquely determined by <m>f</m>. 
+                </p>
+            </li>
+        </ol>
+    </p>
+    </statement>
+    <proof>
+    <p>
+        The proof, though not difficult, lies somewhat outside the scope of this course. This and other results about the theory of polynomials is covered in the <em>ring theory</em> portion of a course in abstract algebra. 
+    </p>
+    </proof>
+    </theorem>
+    
+    
+
+</section>

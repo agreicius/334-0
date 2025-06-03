@@ -122,6 +122,57 @@
     </p>
     </proof>
     </theorem>
+    <definition xml:id="d_multiplicity">
+    <title>Multiplicity</title>
+    <statement>
+    <p>
+    Let <m>f\in P(F)</m>. 
+
+                Suppose <m>c\in F</m> is a root of <m>f</m> and let 
+                <me>
+                    f(x)=(x-c)^mg(x)
+                </me>
+                be a factorization of <m>f</m> satisfying <m>g(c)\ne 0</m>. The integer <m>m</m> is called the <term>multiplicity</term> of the root <m>c</m>.
+    </p>
+    </statement>
+    </definition>
+    <definition xml:id="d_multiplicity_eigenvalues">
+    <title>Multiplicity of eigenvalues</title>
+    <statement>
+    <p>
+    Let <m>T\in \mathcal{L}(V)</m>, where <m>V</m> is finite dimensional, let <m>f\in P(F)</m> be the characteristic polynomial of <m>T</m>, and let <m>\lambda</m> be an eigenvalue of <m>T</m>. 
+    <ul>
+        <li>
+            <title>Algebraic multiplicity</title>
+            <p>
+                The <term>algebraic multiplicity</term> of <m>\lambda</m> is its multiplicity as a root of <m>f</m>: <ie/> the algebraic multiplicity of <m>\lambda</m> is the positive integer <m>m</m> such that <m>f(x)=(x-\lambda)^mg(x)</m> for some <m>g\in P(F)</m> satisfying <m>g(\lambda)\ne 0</m>. 
+            </p>
+        </li>
+        <li>
+            <title>Geometric multiplicity</title>
+            <p>
+                The <term>geometric multiplicity</term> of <m>\lambda</m> is defined as <m>\dim E(\lambda, T)</m>. 
+            </p>
+        </li>
+    </ul>
+    </p>
+    </statement>
+    </definition>
+    <corollary xml:id="cor_alg_geom_mult">
+        <statement>
+            <p>
+                Let <m>T\in \mathcal{L}(V)</m>, where <m>V</m> is finite dimensional, let <m>f\in P(F)</m> be the characteristic polynomial of <m>T</m>. Let <m>\lambda</m> be an eigenvalue of <m>T</m> of algebraic multiplicity <m>m</m>: <ie/>, suppose <m>f</m> factors as 
+                <me>
+                    f(x)=(x-\lambda)^mg(x)
+                </me>,
+                where <m>g(\lambda)\ne 0</m>. 
+                The geometric multiplicity of <m>\lambda</m> is bounded above by the algebraic multiplicity: <ie/>, 
+                    <men xml:id="eq_alg_geom_mult">
+                        \dim E(\lambda, T)\leq m
+                    </men>. 
+            </p>
+        </statement>
+    </corollary>
     
     <theorem xml:id="th_cayley_ham">
     <title>Cayley-Hamilton theorem</title>

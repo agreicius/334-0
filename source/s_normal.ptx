@@ -141,21 +141,21 @@
     <title>Normality preserved</title>
     <statement>
     <p>
-    Let <m>(V,\angvec{\, ,})</m> be an inner product space. Let <m>\operatorname{Norm}(V)</m>, <m>\operatorname{Sym}(V)</m>, <m>\operatorname{Skew}(V)</m>, and <m>\operatorname{Uni}(V)</m> denote the sets of normal, self-adjoint, skew-Hermitian, and unitary operators on <m>V</m>, respectively, and let <m>\mathcal{P}</m> denote any one of these sets of operators. 
+    Let <m>(V,\angvec{\, ,})</m> be an inner product space. Let <m>\operatorname{Norm}(V)</m>, <m>\operatorname{SelfAdj}(V)</m>, <m>\operatorname{Skew}(V)</m>, and <m>\operatorname{Uni}(V)</m> denote the sets of normal, self-adjoint, skew-Hermitian, and unitary operators on <m>V</m>, respectively. 
     <ol>
         <li>
             <p>
-                <m>T\in \mathcal{P}</m> if and only if <m>T^*\in \mathcal{P}</m>. 
+                <m>T\in \operatorname{Norm}(V)/\operatorname{SelfAdj}(V)/\operatorname{Skew}(V)/\operatorname{Uni}(V)</m> if and only if <m>T^*\in\operatorname{Norm}(V)/\operatorname{SelfAdj}(V)/\operatorname{Skew}(V)/\operatorname{Uni}(V)</m>. 
             </p>
         </li>
         <li>
             <p>
-                If <m>S,T\in\mathcal{P}</m>, then <m>cS+dT\in \mathcal{P}</m> for all <m>c,d\in F</m>. 
+                If <m>S,T\in \operatorname{SelfAdj}(V) </m>, then <m>cS+dT\in \operatorname{SelfAdj}(V)</m> for all <m>c,d\in \R</m>. 
             </p>
         </li>
         <li>
             <p>
-                If <m>T\in \mathcal{P}</m>, then <m>T^k\in \mathcal{P}</m> for any positive integer <m>k</m>.
+                If <m>T\in \operatorname{Norm}(V)/\operatorname{SelfAdj}(V)/\operatorname{Uni}(V)</m>, then <m>T^k\in \operatorname{Norm}(V)/\operatorname{SelfAdj}(V)/\operatorname{Uni}(V)</m> for any positive integer <m>k</m>.
             </p>
         </li>
         
