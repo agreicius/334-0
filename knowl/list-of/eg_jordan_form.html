@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "div.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
+</script>
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.26.12</span><span class="period">.</span><span class="space"> </span><span class="title">Computing Jordan form.</span>
+</h3>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(T=T_A\colon \R^8\rightarrow \R^8\text{,}\)</span> where</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_jordan_form_1.html">
+\begin{equation*}
+A=\begin{amatrix}[rrrrrrrr]
+-\frac{3}{2} \amp 0 \amp 0 \amp -1 \amp 0 \amp -1 \amp 1 \amp -3 \\
+3 \amp \frac{5}{2} \amp -4 \amp 4 \amp -1 \amp -2 \amp 4 \amp 1 \\
+-3 \amp -2 \amp \frac{9}{2} \amp -4 \amp 1 \amp 1 \amp -6 \amp -3 \\
+-3 \amp -12 \amp 8 \amp -\frac{7}{2} \amp -3 \amp 8 \amp -18 \amp 5 \\
+-2 \amp -8 \amp 6 \amp -3 \amp -\frac{3}{2} \amp 6 \amp -12 \amp 4 \\
+1 \amp -9 \amp 2 \amp 2 \amp -5 \amp \frac{13}{2} \amp -9 \amp 8 \\
+-1 \amp 0 \amp 2 \amp -2 \amp 1 \amp 1 \amp -\frac{1}{2} \amp 0 \\
+0 \amp 4 \amp -2 \amp 0 \amp 2 \amp -3 \amp 5 \amp -\frac{5}{2}
+\end{amatrix}\text{.}
+\end{equation*}
+</div>
+<ol class="decimal" id="eg_jordan_form-2-1-3">
+<li>
+<div class="para">Use the SageCells below to compute a Jordan normal form of <span class="process-math">\(T\)</span> in a step-by-step fashion, as in <a href="s_jordan_form.html#eg_jordan_form_1" class="xref" data-knowl="./knowl/xref/eg_jordan_form_1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.26.11: Computing Jordan form">Example 1.26.11</a>. Confirm your answer using the <code class="code-inline tex2jax_ignore">jordan_form()</code> command.</div>
+<div id="eg_jordan_form-2-1-3-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A=matrix([(-3/2, 0, 0, -1, 0, -1, 1, -3), (3, 5/2, -4, 4, -1, -2, 4, 1), (-3, -2, 9/2, -4, 1, 1, -6, -3), (-3, -12, 8, -7/2, -3, 8, -18, 5), (-2, -8, 6, -3, -3/2, 6, -12, 4), (1, -9, 2, 2, -5, 13/2, -9, 8), (-1, 0, 2, -2, 1, 1, -1/2, 0), (0, 4, -2, 0, 2, -3, 5, -5/2)])
+show(A)
+# compute the characteristic polynomial of A and factor
+</script></div>
+<div id="eg_jordan_form-2-1-3-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># compute the dot diagrams for each eigenvalue of A
+</script></div>
+<div id="eg_jordan_form-2-1-3-1-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Verify your answer with jordan_form()
+</script></div>
+</li>
+<li>
+<div class="para">Having computed the Jordan normal form for <span class="process-math">\(T\text{,}\)</span> hazard a guess as to what happens to <span class="process-math">\(T^k\)</span> as we let <span class="process-math">\(k\to \infty\text{.}\)</span> Verify or falsify your guess in the SageCell below.</div>
+<div id="eg_jordan_form-2-1-3-2-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># Compute A^k and see what happens as k goes to infty
+# Tip N(A) gives decimal versions of the entries of a matrix.
+</script></div>
+</li>
+</ol>
+</div></article><span class="incontext"><a class="internal" href="s_jordan_form.html#eg_jordan_form">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="algorithm theorem-like"><h3 class="heading">
+<span class="type">Procedure</span><span class="space"> </span><span class="codenumber">1.26.7</span><span class="period">.</span><span class="space"> </span><span class="title">Dot diagram.</span>
+</h3>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(T\in \mathcal{L}(V)\text{,}\)</span> where <span class="process-math">\(V\)</span> is finite dimensional. Fix an eigenvalue <span class="process-math">\(\lambda\text{,}\)</span> and let <span class="process-math">\(B=B_{1}*B_{2}*\dots * B_{r}\)</span> be a Jordan basis of <span class="process-math">\(G(\lambda, T)\text{,}\)</span> where each <span class="process-math">\(B_{j}\)</span> is a cycle of generalized <span class="process-math">\(\lambda\)</span>-eigenvectors satisfying <span class="process-math">\(\len B_j\geq \len B_{j+1}\)</span> for all <span class="process-math">\(1\leq j\leq r-1\text{.}\)</span> The <dfn class="terminology">dot diagram</dfn> of <span class="process-math">\(B\)</span> is an staircase pattern of dots constructed in the manner described below. For all <span class="process-math">\(i\geq 1\text{,}\)</span> let <span class="process-math">\(r_{i}\)</span> be the number of dots in the <span class="process-math">\(i\)</span>-th row of the dot diagram.</div>
+<ul class="disc" id="proc_dot_diagram-2-1-15">
+<li><div class="para">Dots are placed into a rectangular grid containing <span class="process-math">\(\len B_1\)</span> rows and <span class="process-math">\(r\)</span> columns. For all <span class="process-math">\(1\leq i\leq p\text{,}\)</span> the <span class="process-math">\(i\)</span>-th row contains <span class="process-math">\(r_{i}\)</span> dots, and these are placed consecutively starting in the leftmost column.</div></li>
+<li><div class="para logical">
+<div class="para">We have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+r_i=\dim \NS(T-\lambda I)^{i}-\dim\NS(T-\lambda I)^{i-1}.
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(1\leq i\text{.}\)</span>
+</div>
+</div></li>
+</ul>
+<div class="para">The dot diagram is interpreted as follows.</div>
+<ul class="disc" id="proc_dot_diagram-2-1-16">
+<li><div class="para logical">
+<div class="para">For any <span class="process-math">\(k\geq 1\text{,}\)</span> the total number of dots in the first <span class="process-math">\(i\)</span> rows of the diagram is equal to <span class="process-math">\(\dim \NS (T-\lambda I)^{k}\text{:}\)</span> i.e.,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\dim \NS (T-\lambda I)^k=\sum_{i=1}^kr_i\text{.}
+\end{equation*}
+</div>
+<div class="para">In particular, we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+r=r_1=\dim \NS(T-\lambda I)\text{.}
+\end{equation*}
+</div>
+<div class="para">Thus the number of <span class="process-math">\(\lambda\)</span>-Jordan blocks of <span class="process-math">\(T\)</span> is equal to the number of dots in the first row of the diagram, which is equal to  <span class="process-math">\(\dim \NS(T-\lambda I)\text{.}\)</span>
+</div>
+</div></li>
+<li><div class="para">For each <span class="process-math">\(1\leq j\leq r\text{,}\)</span> the number of dots <span class="process-math">\(c_j\)</span> in the <span class="process-math">\(j\)</span>-th column of the diagram is equal to the length of <span class="process-math">\(B_j\text{.}\)</span> Equivalently, <span class="process-math">\(c_j\)</span> is the size of the <span class="process-math">\(j\)</span>-th <span class="process-math">\(\lambda\)</span>-Jordan block.</div></li>
+</ul>
+</div></article><span class="incontext"><a class="internal" href="s_jordan_form.html#proc_dot_diagram">in-context</a></span>
+</body>
+</html>

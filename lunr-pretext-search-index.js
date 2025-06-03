@@ -4105,6 +4105,123 @@ var ptx_lunr_docs = [
   "body": " Factorization of polynomials   Let be a field, and let be a nonzero polynomial.   Irreducible factorization  We can factor in the form , where the factors are pairwise relatively prime, monic irreducible polynomials.    Uniqueness of factorization  The scalar , set of monic irreducible polynomials and powers are all uniquely determined by .       The proof, though not difficult, lies somewhat outside the scope of this course. This and other results about the theory of polynomials is covered in the ring theory portion of a course in abstract algebra.   "
 },
 {
+  "id": "s_jordan_form",
+  "level": "1",
+  "url": "s_jordan_form.html",
+  "type": "Section",
+  "number": "1.26",
+  "title": "Jordan form",
+  "body": " Jordan form   Jordan block   Let be a field. Given and positive integer , the matrix is called a -Jordan block .     Jordan basis   Let , where is finite dimensional. A Jordan basis of is a basis for which is block diagonal of the form where each is a -Jordan block for some . The matrix is called a Jordan form of in this case.     Cycle of generalized eigenvectors   Let where is finite dimensional, and let be an eigenvalue of . A cycle of generalized eigenvectors of corresponding to is a tuple of the form where and is the smallest positive integer satisfying . The vector is called the initial vector of the cycle; the vector is called the end vector of the cycle.     Jordan blocks   Let where is finite dimensional.   is a Jordan block if and only if is a cycle of generalized eigenvectors.   is a Jordan form if and only if is a concatenation of disjoint cycles of generalized eigenvectors.  A cycle of generalized eigenvectors is linearly independent, and its initial vector is an eigenvector.  If are cycles of generalized eigenvectors corresponding to a fixed whose initial vectors are linearly independent, then the concatenation is linearly independent.           Jordan form   Let where is finite dimensional, and suppose all roots of the characteristic polynomial of lie in .  There is a Jordan basis for .  The corresponding Jordan form is unique up to a permutation of the Jordan blocks .           Jordan form   Let , where is finite dimensional. Assume that the characteristic polynomials of and both split completely over the base field. We say and have the same Jordan form if they have Jordan forms that differ by a permutation of the Jordan blocks.     Dot diagram   Let , where is finite dimensional. Fix an eigenvalue , and let be a Jordan basis of , where each is a cycle of generalized -eigenvectors satisfying for all . The dot diagram of is an staircase pattern of dots constructed in the manner described below. For all , let be the number of dots in the -th row of the dot diagram.   Dots are placed into a rectangular grid containing rows and columns. For all , the -th row contains dots, and these are placed consecutively starting in the leftmost column.    We have for all .   The dot diagram is interpreted as follows.   For any , the total number of dots in the first rows of the diagram is equal to : , . In particular, we have . Thus the number of -Jordan blocks of is equal to the number of dots in the first row of the diagram, which is equal to .    For each , the number of dots in the -th column of the diagram is equal to the length of . Equivalently, is the size of the -th -Jordan block.       We illustrate how to compute a normal form for a matrix transformation in . Since those examples take up quite a lot of space, we place them at the end of the section. In the meantime, we list some interesting theoretical consequences of .  Similarity   Let and suppose both characteristic polynomials factor completely over . The following statements are equivalent.    and are similar (i.e. for some invertible ).     and have the same Jordan form.        Diagonal plus nilpotent   Let , where is finite-dimensional, and assume the characteristic polynomial of splits completely over the base field. There are operators satisfying the following conditions:    ;     is diagonalizable;     is nilpotent ( , for some ).   In other words is the sum of a diagonalizable and a nilpotent operator.         Square-roots of matrices   Let be an invertible matrix whose characteristic polynomial splits completely over . There is a matrix such that . In other words, if is invertible and the characteristic polynomial of splits completely over , then has a square root.       In order to illustrate the subtleties of the Jordan form analysis, we need to work with larger matrices than usual, and this in turn compels us to reach for some computing technology. The wonderful open source computer algebra system Sage serves our needs for this task.   Computing Jordan form   Consider the matrix transformation , where . Compute the characteristic polynomial of .   We see that . This tells us that decomposes into two generalized eigenspaces , and moreover (looking at the multiplicities), .  Now compute the dot diagram for . Since , we know that , and thus we only need to look at for .   Let be the number of dots in the -th row of our dot diagram for . From the computation above, we see that . The dot diagram for is thus and the Jordan form of breaks into 3 blocks of size , , and . .  Now compute the dot diagram for .   The corresponding dot diagram now consists of a single column and thus the Jordan form for consists of a single Jordan block . In summary, we conclude that there is a Jordan basis of the form , where with . Let us confirm with Sage.   Having successfully computed a Jordan form for , we should point out that we did not compute an actual Jordan basis for . That would involve computing explicit vectors that generate the cycles above. Of course, there is an algorithm for doing this, and this can be extracted from our proof of , but we omit that computation here.     Computing Jordan form   Let , where .   Use the SageCells below to compute a Jordan normal form of in a step-by-step fashion, as in . Confirm your answer using the jordan_form() command.       Having computed the Jordan normal form for , hazard a guess as to what happens to as we let . Verify or falsify your guess in the SageCell below.        "
+},
+{
+  "id": "d_jordan_block",
+  "level": "2",
+  "url": "s_jordan_form.html#d_jordan_block",
+  "type": "Definition",
+  "number": "1.26.1",
+  "title": "Jordan block.",
+  "body": " Jordan block   Let be a field. Given and positive integer , the matrix is called a -Jordan block .   "
+},
+{
+  "id": "d_jordan_basis",
+  "level": "2",
+  "url": "s_jordan_form.html#d_jordan_basis",
+  "type": "Definition",
+  "number": "1.26.2",
+  "title": "Jordan basis.",
+  "body": " Jordan basis   Let , where is finite dimensional. A Jordan basis of is a basis for which is block diagonal of the form where each is a -Jordan block for some . The matrix is called a Jordan form of in this case.   "
+},
+{
+  "id": "d_cycle_gen_eigenvectors",
+  "level": "2",
+  "url": "s_jordan_form.html#d_cycle_gen_eigenvectors",
+  "type": "Definition",
+  "number": "1.26.3",
+  "title": "Cycle of generalized eigenvectors.",
+  "body": " Cycle of generalized eigenvectors   Let where is finite dimensional, and let be an eigenvalue of . A cycle of generalized eigenvectors of corresponding to is a tuple of the form where and is the smallest positive integer satisfying . The vector is called the initial vector of the cycle; the vector is called the end vector of the cycle.   "
+},
+{
+  "id": "th_jordan_cycles",
+  "level": "2",
+  "url": "s_jordan_form.html#th_jordan_cycles",
+  "type": "Theorem",
+  "number": "1.26.4",
+  "title": "Jordan blocks.",
+  "body": " Jordan blocks   Let where is finite dimensional.   is a Jordan block if and only if is a cycle of generalized eigenvectors.   is a Jordan form if and only if is a concatenation of disjoint cycles of generalized eigenvectors.  A cycle of generalized eigenvectors is linearly independent, and its initial vector is an eigenvector.  If are cycles of generalized eigenvectors corresponding to a fixed whose initial vectors are linearly independent, then the concatenation is linearly independent.         "
+},
+{
+  "id": "th_jordan_form",
+  "level": "2",
+  "url": "s_jordan_form.html#th_jordan_form",
+  "type": "Theorem",
+  "number": "1.26.5",
+  "title": "Jordan form.",
+  "body": " Jordan form   Let where is finite dimensional, and suppose all roots of the characteristic polynomial of lie in .  There is a Jordan basis for .  The corresponding Jordan form is unique up to a permutation of the Jordan blocks .         "
+},
+{
+  "id": "d_Jordan_form",
+  "level": "2",
+  "url": "s_jordan_form.html#d_Jordan_form",
+  "type": "Definition",
+  "number": "1.26.6",
+  "title": "Jordan form.",
+  "body": " Jordan form   Let , where is finite dimensional. Assume that the characteristic polynomials of and both split completely over the base field. We say and have the same Jordan form if they have Jordan forms that differ by a permutation of the Jordan blocks.   "
+},
+{
+  "id": "proc_dot_diagram",
+  "level": "2",
+  "url": "s_jordan_form.html#proc_dot_diagram",
+  "type": "Procedure",
+  "number": "1.26.7",
+  "title": "Dot diagram.",
+  "body": " Dot diagram   Let , where is finite dimensional. Fix an eigenvalue , and let be a Jordan basis of , where each is a cycle of generalized -eigenvectors satisfying for all . The dot diagram of is an staircase pattern of dots constructed in the manner described below. For all , let be the number of dots in the -th row of the dot diagram.   Dots are placed into a rectangular grid containing rows and columns. For all , the -th row contains dots, and these are placed consecutively starting in the leftmost column.    We have for all .   The dot diagram is interpreted as follows.   For any , the total number of dots in the first rows of the diagram is equal to : , . In particular, we have . Thus the number of -Jordan blocks of is equal to the number of dots in the first row of the diagram, which is equal to .    For each , the number of dots in the -th column of the diagram is equal to the length of . Equivalently, is the size of the -th -Jordan block.      "
+},
+{
+  "id": "th_similarity",
+  "level": "2",
+  "url": "s_jordan_form.html#th_similarity",
+  "type": "Theorem",
+  "number": "1.26.8",
+  "title": "Similarity.",
+  "body": " Similarity   Let and suppose both characteristic polynomials factor completely over . The following statements are equivalent.    and are similar (i.e. for some invertible ).     and have the same Jordan form.      "
+},
+{
+  "id": "th_diagable_plus_nilpotent",
+  "level": "2",
+  "url": "s_jordan_form.html#th_diagable_plus_nilpotent",
+  "type": "Theorem",
+  "number": "1.26.9",
+  "title": "Diagonal plus nilpotent.",
+  "body": " Diagonal plus nilpotent   Let , where is finite-dimensional, and assume the characteristic polynomial of splits completely over the base field. There are operators satisfying the following conditions:    ;     is diagonalizable;     is nilpotent ( , for some ).   In other words is the sum of a diagonalizable and a nilpotent operator.       "
+},
+{
+  "id": "th_square_roots",
+  "level": "2",
+  "url": "s_jordan_form.html#th_square_roots",
+  "type": "Theorem",
+  "number": "1.26.10",
+  "title": "Square-roots of matrices.",
+  "body": " Square-roots of matrices   Let be an invertible matrix whose characteristic polynomial splits completely over . There is a matrix such that . In other words, if is invertible and the characteristic polynomial of splits completely over , then has a square root.       "
+},
+{
+  "id": "eg_jordan_form_1",
+  "level": "2",
+  "url": "s_jordan_form.html#eg_jordan_form_1",
+  "type": "Example",
+  "number": "1.26.11",
+  "title": "Computing Jordan form.",
+  "body": " Computing Jordan form   Consider the matrix transformation , where . Compute the characteristic polynomial of .   We see that . This tells us that decomposes into two generalized eigenspaces , and moreover (looking at the multiplicities), .  Now compute the dot diagram for . Since , we know that , and thus we only need to look at for .   Let be the number of dots in the -th row of our dot diagram for . From the computation above, we see that . The dot diagram for is thus and the Jordan form of breaks into 3 blocks of size , , and . .  Now compute the dot diagram for .   The corresponding dot diagram now consists of a single column and thus the Jordan form for consists of a single Jordan block . In summary, we conclude that there is a Jordan basis of the form , where with . Let us confirm with Sage.   Having successfully computed a Jordan form for , we should point out that we did not compute an actual Jordan basis for . That would involve computing explicit vectors that generate the cycles above. Of course, there is an algorithm for doing this, and this can be extracted from our proof of , but we omit that computation here.   "
+},
+{
+  "id": "eg_jordan_form",
+  "level": "2",
+  "url": "s_jordan_form.html#eg_jordan_form",
+  "type": "Example",
+  "number": "1.26.12",
+  "title": "Computing Jordan form.",
+  "body": " Computing Jordan form   Let , where .   Use the SageCells below to compute a Jordan normal form of in a step-by-step fashion, as in . Confirm your answer using the jordan_form() command.       Having computed the Jordan normal form for , hazard a guess as to what happens to as we let . Verify or falsify your guess in the SageCell below.       "
+},
+{
   "id": "appendix-notation",
   "level": "1",
   "url": "appendix-notation.html",

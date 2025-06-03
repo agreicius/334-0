@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "div.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
+</script>
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.26.11</span><span class="period">.</span><span class="space"> </span><span class="title">Computing Jordan form.</span>
+</h3>
+<div class="para logical">
+<div class="para">Consider the matrix transformation <span class="process-math">\(T=T_A\colon \R^8\rightarrow \R^8\text{,}\)</span> where</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\begin{amatrix}[rrrrrrrr]
+3 \amp 2 \amp 3 \amp 2 \amp 3 \amp -1 \amp -3 \amp -3 \\
+-5 \amp -4 \amp -13 \amp -15 \amp -15 \amp 2 \amp 16 \amp 1 \\
+-1 \amp -1 \amp -5 \amp -7 \amp -6 \amp 1 \amp 7 \amp -2 \\
+-1 \amp -2 \amp 7 \amp 23 \amp 11 \amp -5 \amp -20 \amp 21 \\
+0 \amp 0 \amp 2 \amp -7 \amp -1 \amp 1 \amp 7 \amp -8 \\
+1 \amp 1 \amp 3 \amp 1 \amp 2 \amp 0 \amp -1 \amp -2 \\
+-2 \amp -3 \amp 2 \amp 7 \amp 2 \amp -3 \amp -4 \amp 11 \\
+-1 \amp -1 \amp -5 \amp -14 \amp -9 \amp 2 \amp 14 \amp -8
+\end{amatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Compute the characteristic polynomial <span class="process-math">\(f\)</span> of <span class="process-math">\(A\text{.}\)</span>
+</div>
+</div> <div id="eg_jordan_form_1-2-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">        A=matrix([(3, 2, 3, 2, 3, -1, -3, -3), (-5, -4, -13, -15, -15, 2, 16, 1), (-1, -1, -5, -7, -6, 1, 7, -2), (-1, -2, 7, 23, 11, -5, -20, 21), (0, 0, 2, -7, -1, 1, 7, -8), (1, 1, 3, 1, 2, 0, -1, -2), (-2, -3, 2, 7, 2, -3, -4, 11), (-1, -1, -5, -14, -9, 2, 14, -8)])
+A.characteristic_polynomial().factor()
+</script></div> <div class="para logical">
+<div class="para">We see that <span class="process-math">\(f(x)=(x-2)^4(x+1)^4\text{.}\)</span> This tells us that <span class="process-math">\(V=\R^8\)</span> decomposes into two generalized eigenspaces</div>
+<div class="displaymath process-math">
+\begin{equation*}
+V=G(2,T)\oplus G(-1,T)\text{,}
+\end{equation*}
+</div>
+<div class="para">and moreover (looking at the multiplicities), <span class="process-math">\(\dim G(2,T)=\dim G(-1,T)=2\text{.}\)</span>
+</div>
+</div> <div class="para">Now compute the dot diagram for <span class="process-math">\(\lambda=2\text{.}\)</span> Since <span class="process-math">\(\dim(2,T)=4\text{,}\)</span> we know that <span class="process-math">\(G(2, T)=\NS(T-2I)^4\text{,}\)</span> and thus we only need to look at <span class="process-math">\(\dim \NS (T-2I)^i\)</span> for <span class="process-math">\(1\leq i\leq 4\text{.}\)</span>
+</div> <div id="eg_jordan_form_1-2-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">N=A-2
+for i in range(1,5):
+    print((N^i).nullity())
+</script></div> <div class="para logical">
+<div class="para">Let <span class="process-math">\(r_i\)</span> be the number of dots in the <span class="process-math">\(i\)</span>-th row of our dot diagram for <span class="process-math">\(\lambda=2\text{.}\)</span> From the computation above, we see that</div>
+<div class="displaymath process-math">
+\begin{align*}
+r_1 \amp =\dim \NS(A-2I)=3\\
+r_2 \amp =\dim \NS(A-2I)^2-\dim \NS(A-2I)=1\\
+r_i \amp =\dim \NS(A-2I)^i-\dim\NS(A-2I)^{i-1}=0, i\geq 3\text{.}
+\end{align*}
+</div>
+<div class="para">The dot diagram for <span class="process-math">\(\lambda=2\)</span> is thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+{\Huge
+\begin{array}{rrr}
+\cdot \amp \cdot \amp \cdot \\
+\cdot \amp \amp 
+\end{array}}
+\end{equation*}
+</div>
+<div class="para">and the Jordan form of <span class="process-math">\(T\vert_{G(2, T)}\)</span> breaks into 3 blocks of size <span class="process-math">\(2\times 2\text{,}\)</span> <span class="process-math">\(1\times 1\text{,}\)</span> and <span class="process-math">\(1\times 1\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{rr|r|r}
+2\amp 1 \amp 0 \amp 0\\
+0\amp 2\amp 0\amp 0 \\
+\hline
+0\amp 0\amp 2\amp 0 \\
+\hline
+0\amp 0\amp 0\amp 2
+\end{array}
+\right]\text{.}
+\end{equation*}
+</div>
+</div> <div class="para">Now compute the dot diagram for <span class="process-math">\(\lambda=-1\text{.}\)</span>
+</div> <div id="eg_jordan_form_1-2-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">N=A+1
+for i in range(1,5):
+    print((N^i).nullity())
+</script></div> <div class="para logical">
+<div class="para">The corresponding dot diagram now consists of a single column</div>
+<div class="displaymath process-math">
+\begin{equation*}
+{\Large
+\begin{array}{r}
+\cdot\\
+\cdot\\
+\cdot\\
+\cdot
+\end{array}
+}
+\end{equation*}
+</div>
+<div class="para">and thus the Jordan form for <span class="process-math">\(T\vert_{G(-1,T)}\)</span> consists of a single <span class="process-math">\(4\times 4\)</span> Jordan block</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}
+-1\amp 1\amp 0\amp 0\\
+0\amp -1\amp 1\amp 0\\
+0\amp 0\amp -1\amp 1\\
+0\amp 0\amp 0\amp -1
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">In summary, we conclude that there is a Jordan basis <span class="process-math">\(B\)</span> of the form</div>
+<div class="displaymath process-math">
+\begin{equation*}
+B=B_1*B_2*B_3*B_4\text{,}
+\end{equation*}
+</div>
+<div class="para">where</div>
+<div class="displaymath process-math">
+\begin{align*}
+B_1 \amp =((T-2I)v_1,v_1)\\
+B_2 \amp =(v_2)\\
+B_2 \amp =(v_3)\\
+B_4 \amp =((T+I)^3(v_4),(T+I)^2(v_4),(T+I)(v_4),v_4)
+\end{align*}
+</div>
+<div class="para">with</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[T]_B=\left[\begin{array}{rr|r|r|rrrr}
+2 \amp 1 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \\
+0 \amp 2 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \\
+\hline
+0 \amp 0 \amp 2 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \\
+\hline
+0 \amp 0 \amp 0 \amp 2 \amp 0 \amp 0 \amp 0 \amp 0 \\
+\hline
+0 \amp 0 \amp 0 \amp 0 \amp -1 \amp 1 \amp 0 \amp 0 \\
+0 \amp 0 \amp 0 \amp 0 \amp 0 \amp -1 \amp 1 \amp 0 \\
+0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp -1 \amp 1 \\
+0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp -1
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<div class="para">Let us confirm with Sage.</div>
+</div> <div id="eg_jordan_form_1-2-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">show(A.jordan_form())
+</script></div> <div class="para">Having successfully computed a Jordan form for <span class="process-math">\(T\text{,}\)</span> we should point out that we did <em class="emphasis">not</em> compute an actual Jordan basis for <span class="process-math">\(T\text{.}\)</span> That would involve computing explicit vectors <span class="process-math">\(v_1,v_2,v_3,v_4\)</span> that generate the cycles <span class="process-math">\(B_1,B_2,B_3,B_4\)</span> above. Of course, there is an algorithm for doing this, and this can be extracted from our proof of <a href="s_jordan_form.html#th_jordan_form" class="xref" data-knowl="./knowl/xref/th_jordan_form.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.26.5: Jordan form">Theorem 1.26.5</a>, but we omit that computation here.</div></article><span class="incontext"><a class="internal" href="s_jordan_form.html#eg_jordan_form_1">in-context</a></span>
+</body>
+</html>

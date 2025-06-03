@@ -47,7 +47,24 @@ window.MathJax = {
   },
   "options": {
     "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
-    "processHtmlClass": "process-math"
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
   },
   "chtml": {
     "scale": 0.98,
@@ -111,7 +128,7 @@ eBookConfig.enable_chatcodes =  false;
 <!--*** Runestone Services ***-->
 <script src="_static/prefix-runtime.107bf2d9be20d9c4.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.c7bf407f76a97812.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
-<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
 <body id="nuadvlinalg" class="pretext book ignore-math">
@@ -531,6 +548,7 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 </ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_gen_eigenspace.html" class="internal"><span class="codenumber">1.25</span> <span class="title">Generalized eigenspaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_jordan_form.html" class="internal"><span class="codenumber">1.26</span> <span class="title">Jordan form</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter contains-active">
@@ -871,7 +889,14 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <div>
 <a href="s_spectral.html#eg_spec_normal" class="xref" data-knowl="./knowl/list-of/eg_spec_normal.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.23.9: Normal operator (F=\C)">Example 1.23.9</a> Normal operator (<span class="process-math">\(F=\C\)</span>)</div>
 <div>
-<a href="s_spectral.html#eg_spect_normal_real" class="xref" data-knowl="./knowl/list-of/eg_spect_normal_real.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.23.10: Normal operator (F=\R)">Example 1.23.10</a> Normal operator (<span class="process-math">\(F=\R\)</span>)</div></section></div>
+<a href="s_spectral.html#eg_spect_normal_real" class="xref" data-knowl="./knowl/list-of/eg_spect_normal_real.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.23.10: Normal operator (F=\R)">Example 1.23.10</a> Normal operator (<span class="process-math">\(F=\R\)</span>)</div>
+<h4 class="heading hide-type" title="Section 1.26: Jordan form">
+<span class="codenumber">1.26</span><span class="space"> </span><span class="title">Jordan form</span>
+</h4>
+<div>
+<a href="s_jordan_form.html#eg_jordan_form_1" class="xref" data-knowl="./knowl/list-of/eg_jordan_form_1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.26.11: Computing Jordan form">Example 1.26.11</a> Computing Jordan form</div>
+<div>
+<a href="s_jordan_form.html#eg_jordan_form" class="xref" data-knowl="./knowl/list-of/eg_jordan_form.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.26.12: Computing Jordan form">Example 1.26.12</a> Computing Jordan form</div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="appendix-thms.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="appendix-vids.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
