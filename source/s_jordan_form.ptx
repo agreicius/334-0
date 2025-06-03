@@ -278,7 +278,7 @@ We see that <m>f(x)=(x-2)^4(x+1)^4</m>. This tells us that <m>V=\R^8</m> decompo
 <me>
     V=G(2,T)\oplus G(-1,T)
 </me>,
-and moreover (looking at the multiplicities), <m>\dim G(2,T)=\dim G(-1,T)=2</m>. 
+and moreover (looking at the multiplicities), that <me>\dim G(2,T)=\dim G(-1,T)=2</me>. 
 </p>
 <p>
     Now compute the dot diagram for <m>\lambda=2</m>. Since <m>\dim(2,T)=4</m>, we know that <m>G(2, T)=\NS(T-2I)^4</m>, and thus we only need to look at <m>\dim \NS (T-2I)^i</m> for <m>1\leq i\leq 4</m>. 
@@ -364,7 +364,7 @@ and moreover (looking at the multiplicities), <m>\dim G(2,T)=\dim G(-1,T)=2</m>.
         <mrow>B_2 \amp =(v_3)</mrow>
         <mrow>B_4 \amp =((T+I)^3(v_4),(T+I)^2(v_4),(T+I)(v_4),v_4)</mrow>
     </md>
-    with 
+    for some nonzero vectors <m>v_1,v_2,v_3,v_4</m>, and we have 
     <me>
         [T]_B=\left[\begin{array}{rr|r|r|rrrr}
 2 \amp 1 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \\
