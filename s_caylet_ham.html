@@ -102,14 +102,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.7.1';
+eBookConfig.runestone_version = '7.7.3';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.cf591bce111c14c1.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.472f5a2f0bfe3571.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.107bf2d9be20d9c4.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.c7bf407f76a97812.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -130,7 +130,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_spectral.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_linear_algebra.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="advlinalgkursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_spectral.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_linear_algebra.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s_gen_eigenspace.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\renewcommand{\Re}{\operatorname{Re}}
 \renewcommand{\Im}{\operatorname{Im}}
 \newcommand{\Z}{{\mathbb Z}}
@@ -530,6 +530,7 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_caylet_ham.html#ss_min_poly" class="internal"><span class="title">Minimal polynomial</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_gen_eigenspace.html" class="internal"><span class="codenumber">1.25</span> <span class="title">Generalized eigenspaces</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -636,14 +637,58 @@ f(x)=q(x)g(x)
 </div>
 <div class="para">for some <span class="process-math">\(q(x)\in P(F)\text{.}\)</span>
 </div>
-</div></article><details id="th_char_poly_inv-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_char_poly_inv-3-1"></div></article></details><article class="theorem theorem-like" id="th_cayley_ham"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.24.6</span><span class="period">.</span><span class="space"> </span><span class="title">Cayley-Hamilton theorem.</span>
+</div></article><details id="th_char_poly_inv-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_char_poly_inv-3-1"></div></article></details><article class="definition definition-like" id="d_multiplicity"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.24.6</span><span class="period">.</span><span class="space"> </span><span class="title">Multiplicity.</span>
+</h4>
+<div class="para logical" id="d_multiplicity-2-1">
+<div class="para">Let <span class="process-math">\(f\in P(F)\text{.}\)</span> Suppose <span class="process-math">\(c\in F\)</span> is a root of <span class="process-math">\(f\)</span> and let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(x)=(x-c)^mg(x)
+\end{equation*}
+</div>
+<div class="para">be a factorization of <span class="process-math">\(f\)</span> satisfying <span class="process-math">\(g(c)\ne 0\text{.}\)</span> The integer <span class="process-math">\(m\)</span> is called the <dfn class="terminology">multiplicity</dfn> of the root <span class="process-math">\(c\text{.}\)</span>
+</div>
+</div></article><article class="definition definition-like" id="d_multiplicity_eigenvalues"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.24.7</span><span class="period">.</span><span class="space"> </span><span class="title">Multiplicity of eigenvalues.</span>
+</h4>
+<div class="para logical" id="d_multiplicity_eigenvalues-2-1">
+<div class="para">Let <span class="process-math">\(T\in \mathcal{L}(V)\text{,}\)</span> where <span class="process-math">\(V\)</span> is finite dimensional, let <span class="process-math">\(f\in P(F)\)</span> be the characteristic polynomial of <span class="process-math">\(T\text{,}\)</span> and let <span class="process-math">\(\lambda\)</span> be an eigenvalue of <span class="process-math">\(T\text{.}\)</span>
+</div>
+<ul class="disc" id="d_multiplicity_eigenvalues-2-1-7">
+<li id="d_multiplicity_eigenvalues-2-1-7-1">
+<span class="heading"><span class="title">Algebraic multiplicity.</span></span><div class="para" id="d_multiplicity_eigenvalues-2-1-7-1-2">The <dfn class="terminology">algebraic multiplicity</dfn> of <span class="process-math">\(\lambda\)</span> is its multiplicity as a root of <span class="process-math">\(f\text{:}\)</span> i.e. the algebraic multiplicity of <span class="process-math">\(\lambda\)</span> is the positive integer <span class="process-math">\(m\)</span> such that <span class="process-math">\(f(x)=(x-\lambda)^mg(x)\)</span> for some <span class="process-math">\(g\in P(F)\)</span> satisfying <span class="process-math">\(g(\lambda)\ne 0\text{.}\)</span>
+</div>
+</li>
+<li id="d_multiplicity_eigenvalues-2-1-7-2">
+<span class="heading"><span class="title">Geometric multiplicity.</span></span><div class="para" id="d_multiplicity_eigenvalues-2-1-7-2-2">The <dfn class="terminology">geometric multiplicity</dfn> of <span class="process-math">\(\lambda\)</span> is defined as <span class="process-math">\(\dim E(\lambda, T)\text{.}\)</span>
+</div>
+</li>
+</ul>
+</div></article><article class="corollary theorem-like" id="cor_alg_geom_mult"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.24.8</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="cor_alg_geom_mult-1-1">
+<div class="para">Let <span class="process-math">\(T\in \mathcal{L}(V)\text{,}\)</span> where <span class="process-math">\(V\)</span> is finite dimensional, let <span class="process-math">\(f\in P(F)\)</span> be the characteristic polynomial of <span class="process-math">\(T\text{.}\)</span> Let <span class="process-math">\(\lambda\)</span> be an eigenvalue of <span class="process-math">\(T\)</span> of algebraic multiplicity <span class="process-math">\(m\text{:}\)</span> i.e., suppose <span class="process-math">\(f\)</span> factors as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(x)=(x-\lambda)^mg(x)\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(g(\lambda)\ne 0\text{.}\)</span> The geometric multiplicity of <span class="process-math">\(\lambda\)</span> is bounded above by the algebraic multiplicity: i.e.,</div>
+<div class="displaymath process-math" id="eq_alg_geom_mult">
+\begin{equation}
+\dim E(\lambda, T)\leq m\text{.}\tag{1.121}
+\end{equation}
+</div>
+</div></article><article class="theorem theorem-like" id="th_cayley_ham"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.24.9</span><span class="period">.</span><span class="space"> </span><span class="title">Cayley-Hamilton theorem.</span>
 </h4>
 <div class="para logical" id="th_cayley_ham-2-1">
 <div class="para">Let <span class="process-math">\(T\in\mathcal{L}(V)\text{,}\)</span> where <span class="process-math">\(V\)</span> is finite dimensional, and let <span class="process-math">\(f\in P(F)\)</span> be the characteristic polynomial of <span class="process-math">\(T\text{.}\)</span> We have</div>
 <div class="displaymath process-math" id="eq_cayley_ham">
 \begin{equation}
-f(T)=0_V\text{.}\tag{1.121}
+f(T)=0_V\text{.}\tag{1.122}
 \end{equation}
 </div>
 <div class="para">In other words, <span class="process-math">\(T\)</span> is a “root” of its own characteristic polynomial.</div>
@@ -651,11 +696,11 @@ f(T)=0_V\text{.}\tag{1.121}
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Minimal polynomial</span>
 </h3>
 <article class="definition definition-like" id="d_min_poly"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.24.7</span><span class="period">.</span><span class="space"> </span><span class="title">Minimal polynomial.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.24.10</span><span class="period">.</span><span class="space"> </span><span class="title">Minimal polynomial.</span>
 </h4>
 <div class="para" id="d_min_poly-2-1">Let <span class="process-math">\(T\in\mathcal{L}(V)\text{,}\)</span> where <span class="process-math">\(V\)</span> is finite dimensional. The <dfn class="terminology">minimal polynomial</dfn> of <span class="process-math">\(T\)</span> is the unique monic polynomial <span class="process-math">\(m_T(x)\)</span> of minimal degree satisfying <span class="process-math">\(m_T(T)=0_V\text{.}\)</span>
 </div></article><article class="theorem theorem-like" id="th_min_poly"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.24.8</span><span class="period">.</span><span class="space"> </span><span class="title">Minimal polynomial.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.24.11</span><span class="period">.</span><span class="space"> </span><span class="title">Minimal polynomial.</span>
 </h4>
 <div class="para logical" id="th_min_poly-2-1">
 <div class="para">Let <span class="process-math">\(T\in \mathcal{L}(V)\text{,}\)</span> where <span class="process-math">\(V\)</span> is finite dimensional and let <span class="process-math">\(m_T(x)\)</span> be the minimal polymonial of <span class="process-math">\(T\text{.}\)</span> If <span class="process-math">\(g\in P(F)\)</span> satisfies <span class="process-math">\(g(T)=0_V\text{,}\)</span> then <span class="process-math">\(m_T\mid g\text{:}\)</span> i.e., we have</div>
@@ -667,7 +712,7 @@ g(x)=q(x)m_T(x)
 <div class="para">for some <span class="process-math">\(q\in P(F)\text{.}\)</span> In particular, if <span class="process-math">\(f\)</span> is the characteristic polynomial of <span class="process-math">\(g\text{,}\)</span> then <span class="process-math">\(m_T(x)\mid f\text{.}\)</span>
 </div>
 </div></article><details id="th_min_poly-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_min_poly-3-1"></div></article></details><article class="corollary theorem-like" id="cor_min_poly"><h4 class="heading">
-<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.24.9</span><span class="period">.</span><span class="space"> </span><span class="title">Minimal polynomial and characteristic polynomial.</span>
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.24.12</span><span class="period">.</span><span class="space"> </span><span class="title">Minimal polynomial and characteristic polynomial.</span>
 </h4>
 <div class="para logical" id="cor_min_poly-2-1">
 <div class="para">Let <span class="process-math">\(T\in \mathcal{L}(V)\text{,}\)</span> where <span class="process-math">\(V\)</span> is finite dimensional, let <span class="process-math">\(f\)</span> and <span class="process-math">\(m_T\)</span> be the characteristic and minimal polynomials of <span class="process-math">\(T\text{,}\)</span> respectively. If <span class="process-math">\(f\)</span> splits completely over <span class="process-math">\(F\)</span> as</div>
@@ -685,7 +730,7 @@ m_T(x)=\prod_{i=1}^{r}(x-\lambda_i)^{m_i}\text{,}
 <div class="para">where <span class="process-math">\(1\leq m_i\leq n_i\)</span> for all <span class="process-math">\(1\leq i\leq r\text{.}\)</span> In other words, <span class="process-math">\(m_T\)</span> and <span class="process-math">\(f\)</span> both split completely over <span class="process-math">\(F\)</span> and have the same set of roots.</div>
 </div></article></section></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="s_spectral.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="advlinalgkursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="s_spectral.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_gen_eigenspace.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

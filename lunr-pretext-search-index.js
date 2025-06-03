@@ -3706,7 +3706,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.22",
   "title": "Normal operators",
-  "body": " Normal operators   Normal operator   Let be a linear operator on the inner product space , and suppose has an adjoint . We say is normal if it commutes with : , if .     Self-adjoint, skew-Hermitian, unitary   Let be an inner product space. Below we define several special types of normal operators. Let and suppose has an adjoint .   Self-adjoint   is self-adjoint (or symmetric when ) if .    Skew-Hermitian   is skew-Hermitian (or skew-symmetric when ) if .    Unitary   is unitary (or orthogonal when ) if is invertible and .        Self-adjoint, skew-Hermitian, unitary  To show each of the subtypes described in is indeed normal we simply have to show that an operator of a given type satisfies . This is not difficult: .    Orthogonal projection   Let be a finite-dimensional subspace of the inner product space , and let be orthogonal projection onto . Show that is self-adjoint.    This is part of a homework exercise.      Derivative operator   Let be the subspace of real periodic functions on with period . Recall that the derivative operator defined as has adjoint with respect to the inner product . Hence is skew-symmetric. In particular, is normal.    The following matrix-based result gives us an easy way of producing normal operators of varying types.   Normality and matrix representations   Let be a finite-dimensional inner product space, let , let be an orthonormal basis of , and let .    is normal if and only if .     is self-adjoint if and only if .     is skew-symmetric if and only if .     is unitary if and only if is invertible and .       The equivalences are simple consequences of the following facts:    for all ( );     for all ( ).       The next theorem tells us that these various types of normality are preserved by familiar operations on linear transformations.   Normality preserved   Let be an inner product space. Let , , , and denote the sets of normal, self-adjoint, skew-Hermitian, and unitary operators on , respectively, and let denote any one of these sets of operators.    if and only if .    If , then for all .    If , then for any positive integer .       The statements follow easily from elementary properties of the adjoint ( ).     Polar identities   Let be an inner product space. For all , we have , or equivalently, . As a consequence, if , then we have .    This is a simple, if somewhat tedious exercise of expanding out the right side of using the definition , and then simplifying using properties of the inner product, and the fact that for all .     Normality equivalence   Let be a linear operator on the inner product space . The following statements are equivalent.    is normal.     for all .     for all .       We prove a cycle of implications.  If is normal, then . Taking square-roots of both sides (and using the fact that norms are nonnegative), we conclude that . This proves (1) (2).  To prove (2) (3), we use the polarity identity. If for all , then we have      Normal operator properties   Let be an inner product space, and assume is normal.    if and only if . As a consequence, we have .     if and only if . As a consequence, we have for all .    Finite-dimensional space  Assume further that . We have and .       Assume is normal.   We have . Thus .    Since and are normal, so is, for any by . Applying the result in (1) to , we have .    If we assume is finite dimensional, then we have . It follows that .       "
+  "body": " Normal operators   Normal operator   Let be a linear operator on the inner product space , and suppose has an adjoint . We say is normal if it commutes with : , if .     Self-adjoint, skew-Hermitian, unitary   Let be an inner product space. Below we define several special types of normal operators. Let and suppose has an adjoint .   Self-adjoint   is self-adjoint (or symmetric when ) if .    Skew-Hermitian   is skew-Hermitian (or skew-symmetric when ) if .    Unitary   is unitary (or orthogonal when ) if is invertible and .        Self-adjoint, skew-Hermitian, unitary  To show each of the subtypes described in is indeed normal we simply have to show that an operator of a given type satisfies . This is not difficult: .    Orthogonal projection   Let be a finite-dimensional subspace of the inner product space , and let be orthogonal projection onto . Show that is self-adjoint.    This is part of a homework exercise.      Derivative operator   Let be the subspace of real periodic functions on with period . Recall that the derivative operator defined as has adjoint with respect to the inner product . Hence is skew-symmetric. In particular, is normal.    The following matrix-based result gives us an easy way of producing normal operators of varying types.   Normality and matrix representations   Let be a finite-dimensional inner product space, let , let be an orthonormal basis of , and let .    is normal if and only if .     is self-adjoint if and only if .     is skew-symmetric if and only if .     is unitary if and only if is invertible and .       The equivalences are simple consequences of the following facts:    for all ( );     for all ( ).       The next theorem tells us that these various types of normality are preserved by familiar operations on linear transformations.   Normality preserved   Let be an inner product space. Let , , , and denote the sets of normal, self-adjoint, skew-Hermitian, and unitary operators on , respectively.    if and only if .    If , then for all .    If , then for any positive integer .       The statements follow easily from elementary properties of the adjoint ( ).     Polar identities   Let be an inner product space. For all , we have , or equivalently, . As a consequence, if , then we have .    This is a simple, if somewhat tedious exercise of expanding out the right side of using the definition , and then simplifying using properties of the inner product, and the fact that for all .     Normality equivalence   Let be a linear operator on the inner product space . The following statements are equivalent.    is normal.     for all .     for all .       We prove a cycle of implications.  If is normal, then . Taking square-roots of both sides (and using the fact that norms are nonnegative), we conclude that . This proves (1) (2).  To prove (2) (3), we use the polarity identity. If for all , then we have      Normal operator properties   Let be an inner product space, and assume is normal.    if and only if . As a consequence, we have .     if and only if . As a consequence, we have for all .    Finite-dimensional space  Assume further that . We have and .       Assume is normal.   We have . Thus .    Since and are normal, so is, for any by . Applying the result in (1) to , we have .    If we assume is finite dimensional, then we have . It follows that .       "
 },
 {
   "id": "d_normal",
@@ -3769,7 +3769,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "1.22.7",
   "title": "Normality preserved.",
-  "body": " Normality preserved   Let be an inner product space. Let , , , and denote the sets of normal, self-adjoint, skew-Hermitian, and unitary operators on , respectively, and let denote any one of these sets of operators.    if and only if .    If , then for all .    If , then for any positive integer .       The statements follow easily from elementary properties of the adjoint ( ).   "
+  "body": " Normality preserved   Let be an inner product space. Let , , , and denote the sets of normal, self-adjoint, skew-Hermitian, and unitary operators on , respectively.    if and only if .    If , then for all .    If , then for any positive integer .       The statements follow easily from elementary properties of the adjoint ( ).   "
 },
 {
   "id": "th_polar_identities",
@@ -3931,7 +3931,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.24",
   "title": "Cayley-Hamilton theorem",
-  "body": " Cayley-Hamilton theorem   Polynomial theory   Polynomial divisibility   Let be a field. Recall that is the set of all polynomials with coefficients in .   Divisibility  Given polynomials , we say the  divides  if there is a polynomial satisfying . In this case we call a multiple of , a factor of , and the equation a factorization of .    Irreducible polynomial  A nonconstant polynomial is irreducible if it has no nontrivial factorization: more precisely, if for , then is a constant polynomial or is a constant polynomial.    Division algorithm  Given polynomials with , there is a unique pair of polynomials satisfying the following conditions: . We call and the quotient and remainder , respectively, upon dividing by .         Cayley-Hamilton theorem   Invariant subspaces and characteristic polynomial   Let be a finite-dimensional vector space. Given an operator , and let be a -invariant subspace.         -cyclic subspace   Let . Given a vector , the -cyclic subspace generated by is defined as .     -cyclic subspace   Let , let , and let .    is a -invariant subspace of .    If is a -invariant subspace of containing , then : , is the smallest -invariant subspace of containing .    If , then there is a such that is a basis of .            Invariance and characteristic polynomial   Let , where is a finite-dimensional vector space, and let be a -invariant subspace. If is the characteristic polynomial of and is the characteristic polynomial of , then . In other words, we have for some .         Cayley-Hamilton theorem   Let , where is finite dimensional, and let be the characteristic polynomial of . We have . In other words, is a root of its own characteristic polynomial.          Minimal polynomial   Minimal polynomial   Let , where is finite dimensional. The minimal polynomial of is the unique monic polynomial of minimal degree satisfying .     Minimal polynomial   Let , where is finite dimensional and let be the minimal polymonial of . If satisfies , then : , we have for some . In particular, if is the characteristic polynomial of , then .         Minimal polynomial and characteristic polynomial   Let , where is finite dimensional, let and be the characteristic and minimal polynomials of , respectively. If splits completely over as , then splits completely as , where for all . In other words, and both split completely over and have the same set of roots.     "
+  "body": " Cayley-Hamilton theorem   Polynomial theory   Polynomial divisibility   Let be a field. Recall that is the set of all polynomials with coefficients in .   Divisibility  Given polynomials , we say the  divides  if there is a polynomial satisfying . In this case we call a multiple of , a factor of , and the equation a factorization of .    Irreducible polynomial  A nonconstant polynomial is irreducible if it has no nontrivial factorization: more precisely, if for , then is a constant polynomial or is a constant polynomial.    Division algorithm  Given polynomials with , there is a unique pair of polynomials satisfying the following conditions: . We call and the quotient and remainder , respectively, upon dividing by .         Cayley-Hamilton theorem   Invariant subspaces and characteristic polynomial   Let be a finite-dimensional vector space. Given an operator , and let be a -invariant subspace.         -cyclic subspace   Let . Given a vector , the -cyclic subspace generated by is defined as .     -cyclic subspace   Let , let , and let .    is a -invariant subspace of .    If is a -invariant subspace of containing , then : , is the smallest -invariant subspace of containing .    If , then there is a such that is a basis of .            Invariance and characteristic polynomial   Let , where is a finite-dimensional vector space, and let be a -invariant subspace. If is the characteristic polynomial of and is the characteristic polynomial of , then . In other words, we have for some .         Multiplicity   Let . Suppose is a root of and let be a factorization of satisfying . The integer is called the multiplicity of the root .     Multiplicity of eigenvalues   Let , where is finite dimensional, let be the characteristic polynomial of , and let be an eigenvalue of .   Algebraic multiplicity  The algebraic multiplicity of is its multiplicity as a root of : the algebraic multiplicity of is the positive integer such that for some satisfying .    Geometric multiplicity  The geometric multiplicity of is defined as .         Let , where is finite dimensional, let be the characteristic polynomial of . Let be an eigenvalue of of algebraic multiplicity : , suppose factors as , where . The geometric multiplicity of is bounded above by the algebraic multiplicity: , .     Cayley-Hamilton theorem   Let , where is finite dimensional, and let be the characteristic polynomial of . We have . In other words, is a root of its own characteristic polynomial.          Minimal polynomial   Minimal polynomial   Let , where is finite dimensional. The minimal polynomial of is the unique monic polynomial of minimal degree satisfying .     Minimal polynomial   Let , where is finite dimensional and let be the minimal polymonial of . If satisfies , then : , we have for some . In particular, if is the characteristic polynomial of , then .         Minimal polynomial and characteristic polynomial   Let , where is finite dimensional, let and be the characteristic and minimal polynomials of , respectively. If splits completely over as , then splits completely as , where for all . In other words, and both split completely over and have the same set of roots.     "
 },
 {
   "id": "d_poly_divis",
@@ -3979,11 +3979,38 @@ var ptx_lunr_docs = [
   "body": " Invariance and characteristic polynomial   Let , where is a finite-dimensional vector space, and let be a -invariant subspace. If is the characteristic polynomial of and is the characteristic polynomial of , then . In other words, we have for some .       "
 },
 {
+  "id": "d_multiplicity",
+  "level": "2",
+  "url": "s_caylet_ham.html#d_multiplicity",
+  "type": "Definition",
+  "number": "1.24.6",
+  "title": "Multiplicity.",
+  "body": " Multiplicity   Let . Suppose is a root of and let be a factorization of satisfying . The integer is called the multiplicity of the root .   "
+},
+{
+  "id": "d_multiplicity_eigenvalues",
+  "level": "2",
+  "url": "s_caylet_ham.html#d_multiplicity_eigenvalues",
+  "type": "Definition",
+  "number": "1.24.7",
+  "title": "Multiplicity of eigenvalues.",
+  "body": " Multiplicity of eigenvalues   Let , where is finite dimensional, let be the characteristic polynomial of , and let be an eigenvalue of .   Algebraic multiplicity  The algebraic multiplicity of is its multiplicity as a root of : the algebraic multiplicity of is the positive integer such that for some satisfying .    Geometric multiplicity  The geometric multiplicity of is defined as .      "
+},
+{
+  "id": "cor_alg_geom_mult",
+  "level": "2",
+  "url": "s_caylet_ham.html#cor_alg_geom_mult",
+  "type": "Corollary",
+  "number": "1.24.8",
+  "title": "",
+  "body": "  Let , where is finite dimensional, let be the characteristic polynomial of . Let be an eigenvalue of of algebraic multiplicity : , suppose factors as , where . The geometric multiplicity of is bounded above by the algebraic multiplicity: , .   "
+},
+{
   "id": "th_cayley_ham",
   "level": "2",
   "url": "s_caylet_ham.html#th_cayley_ham",
   "type": "Theorem",
-  "number": "1.24.6",
+  "number": "1.24.9",
   "title": "Cayley-Hamilton theorem.",
   "body": " Cayley-Hamilton theorem   Let , where is finite dimensional, and let be the characteristic polynomial of . We have . In other words, is a root of its own characteristic polynomial.       "
 },
@@ -3992,7 +4019,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_caylet_ham.html#d_min_poly",
   "type": "Definition",
-  "number": "1.24.7",
+  "number": "1.24.10",
   "title": "Minimal polynomial.",
   "body": " Minimal polynomial   Let , where is finite dimensional. The minimal polynomial of is the unique monic polynomial of minimal degree satisfying .   "
 },
@@ -4001,7 +4028,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_caylet_ham.html#th_min_poly",
   "type": "Theorem",
-  "number": "1.24.8",
+  "number": "1.24.11",
   "title": "Minimal polynomial.",
   "body": " Minimal polynomial   Let , where is finite dimensional and let be the minimal polymonial of . If satisfies , then : , we have for some . In particular, if is the characteristic polynomial of , then .       "
 },
@@ -4010,9 +4037,72 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_caylet_ham.html#cor_min_poly",
   "type": "Corollary",
-  "number": "1.24.9",
+  "number": "1.24.12",
   "title": "Minimal polynomial and characteristic polynomial.",
   "body": " Minimal polynomial and characteristic polynomial   Let , where is finite dimensional, let and be the characteristic and minimal polynomials of , respectively. If splits completely over as , then splits completely as , where for all . In other words, and both split completely over and have the same set of roots.   "
+},
+{
+  "id": "s_gen_eigenspace",
+  "level": "1",
+  "url": "s_gen_eigenspace.html",
+  "type": "Section",
+  "number": "1.25",
+  "title": "Generalized eigenspaces",
+  "body": " Generalized eigenspaces   Generalized eigenspace   Let , where is finite dimensional. Given we define the generalized eigenspace  associated to (or -generalized eigenspace) to be . A generalized -eigenvector of is a nonzero element of .     Generalized eigenspaces   Let , where is finite dimensional.   For all , is a -invariant subspace and .     for .    Let be an eigenvalue of of algebraic multiplicty . We have and .            Generalized eigenspace decomposition   Let , where is finite dimensional, and assume the characteristic polynomial of factors as , where are the distinct eigenvalues of . We have the following direct sum decomposition of : .         Relatively prime polynomials   Let be a field. Polynomials are relatively prime if they have no nonconstant common factor: , if satisfies and , then for some .  More generally a finite list of polynomials is relatively prime if there is no nonconstant factor common to all the : , if satisfies for all , then for some .     Relatively prime polynomials   Let be a field, and let be a relatively prime list of polynomials. There are polynomials such that .    The proof, though not difficult, lies somewhat outside the scope of this course. This and other results about the theory of polynomials is covered in the ring theory portion of a course in abstract algebra. Moreover, it is an instance of a more general result involving the greatest common divisor of the polynomials .     Factorization of polynomials   Let be a field, and let be a nonzero polynomial.   Irreducible factorization  We can factor in the form , where the factors are pairwise relatively prime, monic irreducible polynomials.    Uniqueness of factorization  The scalar , set of monic irreducible polynomials and powers are all uniquely determined by .       The proof, though not difficult, lies somewhat outside the scope of this course. This and other results about the theory of polynomials is covered in the ring theory portion of a course in abstract algebra.    "
+},
+{
+  "id": "d_gen_eigenspace",
+  "level": "2",
+  "url": "s_gen_eigenspace.html#d_gen_eigenspace",
+  "type": "Definition",
+  "number": "1.25.1",
+  "title": "Generalized eigenspace.",
+  "body": " Generalized eigenspace   Let , where is finite dimensional. Given we define the generalized eigenspace  associated to (or -generalized eigenspace) to be . A generalized -eigenvector of is a nonzero element of .   "
+},
+{
+  "id": "th_gen_eigenspace",
+  "level": "2",
+  "url": "s_gen_eigenspace.html#th_gen_eigenspace",
+  "type": "Theorem",
+  "number": "1.25.2",
+  "title": "Generalized eigenspaces.",
+  "body": " Generalized eigenspaces   Let , where is finite dimensional.   For all , is a -invariant subspace and .     for .    Let be an eigenvalue of of algebraic multiplicty . We have and .          "
+},
+{
+  "id": "th_gen_eigenspace_decomp",
+  "level": "2",
+  "url": "s_gen_eigenspace.html#th_gen_eigenspace_decomp",
+  "type": "Theorem",
+  "number": "1.25.3",
+  "title": "Generalized eigenspace decomposition.",
+  "body": " Generalized eigenspace decomposition   Let , where is finite dimensional, and assume the characteristic polynomial of factors as , where are the distinct eigenvalues of . We have the following direct sum decomposition of : .       "
+},
+{
+  "id": "d_relatively_prime",
+  "level": "2",
+  "url": "s_gen_eigenspace.html#d_relatively_prime",
+  "type": "Definition",
+  "number": "1.25.4",
+  "title": "Relatively prime polynomials.",
+  "body": " Relatively prime polynomials   Let be a field. Polynomials are relatively prime if they have no nonconstant common factor: , if satisfies and , then for some .  More generally a finite list of polynomials is relatively prime if there is no nonconstant factor common to all the : , if satisfies for all , then for some .   "
+},
+{
+  "id": "th_relatively_prime_polys",
+  "level": "2",
+  "url": "s_gen_eigenspace.html#th_relatively_prime_polys",
+  "type": "Theorem",
+  "number": "1.25.5",
+  "title": "Relatively prime polynomials.",
+  "body": " Relatively prime polynomials   Let be a field, and let be a relatively prime list of polynomials. There are polynomials such that .    The proof, though not difficult, lies somewhat outside the scope of this course. This and other results about the theory of polynomials is covered in the ring theory portion of a course in abstract algebra. Moreover, it is an instance of a more general result involving the greatest common divisor of the polynomials .   "
+},
+{
+  "id": "th_factorization_polynomials",
+  "level": "2",
+  "url": "s_gen_eigenspace.html#th_factorization_polynomials",
+  "type": "Theorem",
+  "number": "1.25.6",
+  "title": "Factorization of polynomials.",
+  "body": " Factorization of polynomials   Let be a field, and let be a nonzero polynomial.   Irreducible factorization  We can factor in the form , where the factors are pairwise relatively prime, monic irreducible polynomials.    Uniqueness of factorization  The scalar , set of monic irreducible polynomials and powers are all uniquely determined by .       The proof, though not difficult, lies somewhat outside the scope of this course. This and other results about the theory of polynomials is covered in the ring theory portion of a course in abstract algebra.   "
 },
 {
   "id": "appendix-notation",

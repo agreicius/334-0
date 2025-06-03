@@ -102,14 +102,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.7.1';
+eBookConfig.runestone_version = '7.7.3';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.cf591bce111c14c1.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.472f5a2f0bfe3571.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.107bf2d9be20d9c4.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.c7bf407f76a97812.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -530,6 +530,7 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_caylet_ham.html#ss_min_poly" class="internal"><span class="title">Minimal polynomial</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_gen_eigenspace.html" class="internal"><span class="codenumber">1.25</span> <span class="title">Generalized eigenspaces</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -626,14 +627,14 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.22.7</span><span class="period">.</span><span class="space"> </span><span class="title">Normality preserved.</span>
 </h3>
 <div class="para logical" id="th_normal_preserved-2-1">
-<div class="para">Let <span class="process-math">\((V,\angvec{\, ,})\)</span> be an inner product space. Let <span class="process-math">\(\operatorname{Norm}(V)\text{,}\)</span> <span class="process-math">\(\operatorname{Sym}(V)\text{,}\)</span> <span class="process-math">\(\operatorname{Skew}(V)\text{,}\)</span> and <span class="process-math">\(\operatorname{Uni}(V)\)</span> denote the sets of normal, self-adjoint, skew-Hermitian, and unitary operators on <span class="process-math">\(V\text{,}\)</span> respectively, and let <span class="process-math">\(\mathcal{P}\)</span> denote any one of these sets of operators.</div>
-<ol class="decimal" id="th_normal_preserved-2-1-8">
-<li id="th_normal_preserved-2-1-8-1"><div class="para" id="th_normal_preserved-2-1-8-1-1">
-<span class="process-math">\(T\in \mathcal{P}\)</span> if and only if <span class="process-math">\(T^*\in \mathcal{P}\text{.}\)</span>
+<div class="para">Let <span class="process-math">\((V,\angvec{\, ,})\)</span> be an inner product space. Let <span class="process-math">\(\operatorname{Norm}(V)\text{,}\)</span> <span class="process-math">\(\operatorname{SelfAdj}(V)\text{,}\)</span> <span class="process-math">\(\operatorname{Skew}(V)\text{,}\)</span> and <span class="process-math">\(\operatorname{Uni}(V)\)</span> denote the sets of normal, self-adjoint, skew-Hermitian, and unitary operators on <span class="process-math">\(V\text{,}\)</span> respectively.</div>
+<ol class="decimal" id="th_normal_preserved-2-1-7">
+<li id="th_normal_preserved-2-1-7-1"><div class="para" id="th_normal_preserved-2-1-7-1-1">
+<span class="process-math">\(T\in \operatorname{Norm}(V)/\operatorname{SelfAdj}(V)/\operatorname{Skew}(V)/\operatorname{Uni}(V)\)</span> if and only if <span class="process-math">\(T^*\in\operatorname{Norm}(V)/\operatorname{SelfAdj}(V)/\operatorname{Skew}(V)/\operatorname{Uni}(V)\text{.}\)</span>
 </div></li>
-<li id="th_normal_preserved-2-1-8-2"><div class="para" id="th_normal_preserved-2-1-8-2-1">If <span class="process-math">\(S,T\in\mathcal{P}\text{,}\)</span> then <span class="process-math">\(cS+dT\in \mathcal{P}\)</span> for all <span class="process-math">\(c,d\in F\text{.}\)</span>
+<li id="th_normal_preserved-2-1-7-2"><div class="para" id="th_normal_preserved-2-1-7-2-1">If <span class="process-math">\(S,T\in \operatorname{SelfAdj}(V) \text{,}\)</span> then <span class="process-math">\(cS+dT\in \operatorname{SelfAdj}(V)\)</span> for all <span class="process-math">\(c,d\in \R\text{.}\)</span>
 </div></li>
-<li id="th_normal_preserved-2-1-8-3"><div class="para" id="th_normal_preserved-2-1-8-3-1">If <span class="process-math">\(T\in \mathcal{P}\text{,}\)</span> then <span class="process-math">\(T^k\in \mathcal{P}\)</span> for any positive integer <span class="process-math">\(k\text{.}\)</span>
+<li id="th_normal_preserved-2-1-7-3"><div class="para" id="th_normal_preserved-2-1-7-3-1">If <span class="process-math">\(T\in \operatorname{Norm}(V)/\operatorname{SelfAdj}(V)/\operatorname{Uni}(V)\text{,}\)</span> then <span class="process-math">\(T^k\in \operatorname{Norm}(V)/\operatorname{SelfAdj}(V)/\operatorname{Uni}(V)\)</span> for any positive integer <span class="process-math">\(k\text{.}\)</span>
 </div></li>
 </ol>
 </div></article><details id="th_normal_preserved-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_normal_preserved-3-1">The statements follow easily from elementary properties of the adjoint (<a href="s_adjoint.html#th_adjoint_props" class="xref" data-knowl="./knowl/xref/th_adjoint_props.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.21.5: Adjoint properties">Theorem 1.21.5</a>).</div></article></details><article class="theorem theorem-like" id="th_polar_identities"><h3 class="heading">
