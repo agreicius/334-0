@@ -176,7 +176,7 @@ The dot diagram is interpreted as follows.
 <p>
 We illustrate how to compute a normal form for a matrix transformation <m>T_A\colon F^n\rightarrow F^n</m> in <xref first="eg_jordan_form_1" last="eg_jordan_form"/>. Since those examples take up quite a lot of space, we place them at the end of the section. In the meantime, we list some interesting theoretical consequences of <xref ref="th_jordan_form"/>.  
 
-
+</p>
      <theorem xml:id="th_similarity">
         <title>Similarity</title>
         <statement>
@@ -242,7 +242,7 @@ The following statements are equivalent.
     </p>
     </proof>
     </theorem>
-    
+<p>
     In order to illustrate the subtleties of the Jordan form analysis, we need to work with larger matrices than usual, and this in turn compels us to reach for some computing technology. The wonderful open source computer algebra system Sage serves our needs for this task. 
 </p>
 <example xml:id="eg_jordan_form_1">
