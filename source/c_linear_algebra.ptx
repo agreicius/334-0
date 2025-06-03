@@ -27,4 +27,5 @@
     <xi:include href="s_spectral.ptx" />
     <xi:include href="s_cayley_ham.ptx" />
     <xi:include href="s_gen_eigenspace.ptx" />
+    <xi:include href="s_jordan_form.ptx" />
 </chapter>
