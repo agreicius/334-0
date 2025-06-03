@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_jordan_form" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Jordan form</title>
+
+    <definition xml:id="d_jordan_block">
+        <title>Jordan block</title>
+
+        <statement>
+            <p>
+                Let <m>F</m> be a field.
+                Given <m>\lambda\in F</m> and positive integer <m>k</m>, the <m>k\times k</m> matrix
+                <me>
+                    J=\begin{bmatrix} \lambda \amp 1\amp 0 \amp \dots \amp 0\\ 0 \amp \lambda\amp 1 \amp \\ \vdots \amp  \amp \ddots \amp \ddots \\ \amp \amp \amp \amp 1\\ 0\amp \dots \amp \amp \amp \lambda \end{bmatrix}
+                </me>
+                is called a <term><m>\lambda</m>-Jordan block</term>.
+            </p>
+        </statement>
+    </definition>
+
+    <definition xml:id="d_jordan_basis">
+        <title>Jordan basis</title>
+
+        <statement>
+            <p>
+                Let <m>T\in \mathcal{L}(V)</m>, where <m>V</m> is finite dimensional.
+                A <term>Jordan basis</term> of <m>T</m> is a basis <m>B</m> for which <m>A=[T]_{B}</m> is block diagonal of the form
+                <me>
+                    A=\begin{bmatrix}J_{1}\amp \\ \amp J_{2}\amp \\ \amp \amp \ddots \\ \amp \amp \amp J_{r} \end{bmatrix}
+                </me>
+                where each <m>J_{i}</m> is a <m>\lambda_i</m>-Jordan block for some <m>\lambda_i\in F</m>.
+                The matrix <m>A</m> is called a <term>Jordan form</term> of <m>T</m> in this case.
+            </p>
+        </statement>
+    </definition>
+
+    <definition xml:id="d_cycle_gen_eigenvectors">
+        <title>Cycle of generalized eigenvectors</title>
+
+        <statement>
+            <p>
+                Let <m>T\in \mathcal{L}(V)</m> where <m>V</m> is finite dimensional, and let <m>\lambda</m> be an eigenvalue of <m>T</m>.
+                A <term>cycle of generalized eigenvectors</term> of <m>T</m> corresponding to <m>\lambda</m> is a tuple of the form
+                <me>
+                    \left((T-\lambda I)^{k-1}(\boldv), (T-\lambda I)^{k-2}(\boldv), \dots, (T-\lambda I)(\boldv), \boldv\right)
+                </me>
+                where <m>\boldv\ne \boldzero</m> and <m>k</m> is the smallest positive integer satisfying <m>(T-\lambda I)^{k}(\boldv)=\boldzero</m>.
+                The vector <m>(T-\lambda I)^{k-1}(\boldv)</m> is called the <term>initial vector</term> of the cycle; the vector <m>\boldv</m> is called the <term>end vector</term> of the cycle.
+            </p>
+        </statement>
+    </definition>
+
+    <theorem xml:id="th_jordan_cycles">
+        <title>Jordan blocks</title>
+
+        <statement>
+            <p>
+                Let <m>T\in \mathcal{L}(V)</m> where <m>V</m> is finite dimensional.
+                <ol>
+                    <li>
+                        <m>[T]_{B}</m> is a Jordan block if and only if <m>B</m> is a cycle of generalized eigenvectors.
+                    </li>
+
+                    <li>
+                        <m>[T]_{B}</m> is a Jordan form if and only if <m>B</m> is a concatenation <m>B=B_1*B_2*\cdots * B_r</m> of disjoint cycles of generalized eigenvectors.
+                    </li>
+
+                    <li>
+                        A cycle of generalized eigenvectors is linearly independent, and its initial vector is an eigenvector.
+                    </li>
+
+                    <li>
+                        If <m>B_1, B_2, \dots, B_\ell</m> are cycles of generalized eigenvectors corresponding to a fixed <m>\lambda</m> whose initial vectors are linearly independent, then the concatenation <m>B_1*B_2*\cdots * B_\ell</m> is linearly independent.
+                    </li>
+                </ol>
+            </p>
+        </statement>
+
+
+        <proof>
+            <p>
+            </p>
+        </proof>
+    </theorem>
+
+    <theorem xml:id="th_jordan_form">
+        <title>Jordan form</title>
+
+        <statement>
+            <p>
+                    Let <m>T\in \mathcal{L}(V)</m> where <m>V</m> is finite dimensional, and suppose all roots of the characteristic polynomial of <m>T</m> lie in <m>\F</m>.
+                    <ol>
+                        <li>
+                            There is a Jordan basis <m>B</m> for <m>T</m>.
+                        </li>
+
+                        <li>
+                            The corresponding Jordan form 
+                            <me> 
+                                A=[T]_B=\begin{bmatrix} J_1\amp \\ \amp J_2\amp \\ \amp    \amp\ddots \\ \amp     \amp     \amp J_r \end{bmatrix}
+                            </me> is unique up to a permutation of the Jordan blocks <m>J_{i}</m>.
+                        </li>
+                    </ol>
+            </p>
+        </statement>
+
+
+        <proof>
+            <p>
+            </p>
+        </proof>
+    </theorem>
+
+    <corollary xml:id="cor_similarity">
+        <title>Similarity</title>
+        <statement>
+            <p>
+               Let <m>A, A'\in \F^{n,n}</m> and suppose both characteristic polynomials factor completely over <m>\F</m>.
+The following statements are equivalent.
+<ol>
+    <li>
+        <p>
+            <m>A</m> and <m>A'</m> are similar (i.e. <m>A'=P^{-1}AP</m> for some invertible <m>P</m>).
+        </p>
+    </li>
+
+    <li>
+        <p>
+            <m>A</m> and <m>A'</m> have the “same” Jordan form.
+        </p>
+    </li>
+</ol>
+            </p>
+        </statement>
+    </corollary>
+
+    <algorithm xml:id="proc_dot_diagram">
+        <title>Dot diagram</title>
+        <statement>
+            <p>
+              Let <m>T\in \mathcal{L}(V)</m>, where <m>V</m> is finite dimensional.
+Fix an eigenvalue <m>\lambda</m>, and let <m>B=B_{1}*B_{2}*\dots * B_{r}</m> be a Jordan basis of <m>G(\lambda, T)</m>, where each <m>B_{i}</m> is a cycle of generalized <m>\lambda</m>-eigenvectors and the lengths <m>\ell_{i}</m> of the cycles satisfy <m>\ell_{1}\geq \ell_{2}\dots \geq \ell_{r}</m>.
+The <term>dot diagram</term> of <m>B</m> is a rectangular array of dots constructed as follows:
+<ul>
+    <li>
+        <p>
+            For all <m>1\leq j\leq r</m>, the <m>j</m>-th column of dots corresponds to the elements of the cycle <m>B_{j}</m>, starting with a dot for the initial vector at the top (row 1), and moving down.
+        </p>
+    </li>
+</ul>
+For all <m>i\geq 1</m>, let <m>r_{i}</m> be the number of dots in the <m>i</m>-th row of the dot diagram.
+<ol>
+    <li>
+        <p>
+            <m>r_{1}=\dim E(\lambda, T)</m>. In other words the number of <m>\lambda</m>-Jordan blocks is equal to <m>\dim E(\lambda, T)</m>.
+        </p>
+    </li>
+
+    <li>
+        <p>
+            For any <m>i\geq 1</m>, the total number of dots in the first <m>i</m> rows of the diagram is equal to <m>\dim \NS (T-\lambda I)^{i}</m>.
+        </p>
+    </li>
+
+    <li>
+        <p>
+            For any <m>i\geq 1</m>, the number of dots in row <m>i</m> is given by
+            <me>
+                \dim \NS(T-\lambda I)^{i}-\dim\NS(T-\lambda I)^{i-1}.
+            </me>
+        </p>
+    </li>
+</ol>
+            </p>
+        </statement>
+    </algorithm>
+</section>
