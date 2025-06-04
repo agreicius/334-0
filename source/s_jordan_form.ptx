@@ -231,10 +231,10 @@ The following statements are equivalent.
     </theorem>
     
     <theorem xml:id="th_square_roots">
-    <title>Square-roots of matrices</title>
+    <title>Square-roots of complex matrices</title>
     <statement>
     <p>
-    Let <m>A\in F^{n,n}</m> be an invertible matrix whose characteristic polynomial splits completely over <m>F</m>. There is a matrix <m>B</m> such that <m>B^2=A</m>. In other words, if <m>A</m> is invertible and the characteristic polynomial of <m>A</m> splits completely over <m>F</m>, then <m>A</m> has a square root. 
+    Let <m>A\in \C^{n,n}</m> be an invertible matrix. There is a matrix <m>B</m> such that <m>B^2=A</m>. In other words, every invertible complex matrix has a square root. 
     </p>
     </statement>
     <proof>
