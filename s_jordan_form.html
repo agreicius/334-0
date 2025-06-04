@@ -674,9 +674,27 @@ r=r_1=\dim \NS(T-\lambda I)\text{.}
 </div></li>
 <li id="proc_dot_diagram-2-1-16-2"><div class="para" id="proc_dot_diagram-2-1-16-2-1">For each <span class="process-math">\(1\leq j\leq r\text{,}\)</span> the number of dots <span class="process-math">\(c_j\)</span> in the <span class="process-math">\(j\)</span>-th column of the diagram is equal to the length of <span class="process-math">\(B_j\text{.}\)</span> Equivalently, <span class="process-math">\(c_j\)</span> is the size of the <span class="process-math">\(j\)</span>-th <span class="process-math">\(\lambda\)</span>-Jordan block.</div></li>
 </ul>
-</div></article><div class="para" id="s_jordan_form-9">We illustrate how to compute a normal form for a matrix transformation <span class="process-math">\(T_A\colon F^n\rightarrow F^n\)</span> in <a href="s_jordan_form.html#eg_jordan_form_1" class="xref" data-knowl="./knowl/xref/eg_jordan_form_1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.26.11: Computing Jordan form">Example 1.26.11–1.26.12</a>. Since those examples take up quite a lot of space, we place them at the end of the section. In the meantime, we list some interesting theoretical consequences of <a href="s_jordan_form.html#th_jordan_form" class="xref" data-knowl="./knowl/xref/th_jordan_form.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.26.5: Jordan form">Theorem 1.26.5</a>.</div>
-<article class="theorem theorem-like" id="th_similarity"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.26.8</span><span class="period">.</span><span class="space"> </span><span class="title">Similarity.</span>
+</div></article><div class="para" id="s_jordan_form-9">We illustrate how to compute a normal form for a matrix transformation <span class="process-math">\(T_A\colon F^n\rightarrow F^n\)</span> in <a href="s_jordan_form.html#eg_jordan_form_1" class="xref" data-knowl="./knowl/xref/eg_jordan_form_1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.26.12: Computing Jordan form">Example 1.26.12–1.26.13</a>. Since those examples take up quite a lot of space, we place them at the end of the section. In the meantime, we list some interesting theoretical consequences of <a href="s_jordan_form.html#th_jordan_form" class="xref" data-knowl="./knowl/xref/th_jordan_form.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.26.5: Jordan form">Theorem 1.26.5</a>.</div>
+<article class="theorem theorem-like" id="th_min_poly_Jordan"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.26.8</span><span class="period">.</span><span class="space"> </span><span class="title">Minimal polynomial from Jordan form.</span>
+</h3>
+<div class="para logical" id="th_min_poly_Jordan-2-1">
+<div class="para">Let <span class="process-math">\(T\in \mathcal{L}(V)\text{,}\)</span> where <span class="process-math">\(V\)</span> is finite dimensional, and suppose the characteristic polynomial <span class="process-math">\(f\)</span> of <span class="process-math">\(T\)</span> factors as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(x)=\prod_{i=1}^r(x-\lambda_i)^{n_i}\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\lambda_i\ne \lambda_j\)</span> for <span class="process-math">\(i\ne j\text{,}\)</span> and <span class="process-math">\(\lambda_i\in F\text{.}\)</span> Let <span class="process-math">\(m(x)\)</span> be the minimal polynomial of <span class="process-math">\(f\text{.}\)</span> We have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+m(x)=\prod_{i=1}^r(x-\lambda_i)^{m_i}\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(m_i\)</span> is the maximum size of a  <span class="process-math">\(\lambda_i\)</span>-Jordan block appearing in a Jordan form for <span class="process-math">\(T\text{.}\)</span>
+</div>
+</div></article><details id="th_min_poly_Jordan-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_min_poly_Jordan-3-1"></div></article></details><article class="theorem theorem-like" id="th_similarity"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.26.9</span><span class="period">.</span><span class="space"> </span><span class="title">Similarity.</span>
 </h3>
 <div class="para logical" id="th_similarity-2-1">
 <div class="para">Let <span class="process-math">\(A, A'\in \F^{n,n}\)</span> and suppose both characteristic polynomials factor completely over <span class="process-math">\(\F\text{.}\)</span> The following statements are equivalent.</div>
@@ -687,7 +705,7 @@ r=r_1=\dim \NS(T-\lambda I)\text{.}
 <span class="process-math">\(A\)</span> and <span class="process-math">\(A'\)</span> have the same Jordan form.</div></li>
 </ol>
 </div></article><article class="theorem theorem-like" id="th_diagable_plus_nilpotent"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.26.9</span><span class="period">.</span><span class="space"> </span><span class="title">Diagonal plus nilpotent.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.26.10</span><span class="period">.</span><span class="space"> </span><span class="title">Diagonal plus nilpotent.</span>
 </h3>
 <div class="para logical" id="th_diagable_plus_nilpotent-2-1">
 <div class="para">Let <span class="process-math">\(T\in \mathcal{L}(V)\text{,}\)</span> where <span class="process-math">\(V\)</span> is finite-dimensional, and assume the characteristic polynomial of <span class="process-math">\(T\)</span> splits completely over the base field. There are operators <span class="process-math">\(S,N\in \mathcal{L}(V)\)</span> satisfying the following conditions:</div>
@@ -700,11 +718,11 @@ r=r_1=\dim \NS(T-\lambda I)\text{.}
 </ul>
 <div class="para">In other words <span class="process-math">\(T\)</span> is the sum of a diagonalizable and a nilpotent operator.</div>
 </div></article><details id="th_diagable_plus_nilpotent-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_diagable_plus_nilpotent-3-1"></div></article></details><article class="theorem theorem-like" id="th_square_roots"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.26.10</span><span class="period">.</span><span class="space"> </span><span class="title">Square-roots of matrices.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.26.11</span><span class="period">.</span><span class="space"> </span><span class="title">Square-roots of complex matrices.</span>
 </h3>
-<div class="para" id="th_square_roots-2-1">Let <span class="process-math">\(A\in F^{n,n}\)</span> be an invertible matrix whose characteristic polynomial splits completely over <span class="process-math">\(F\text{.}\)</span> There is a matrix <span class="process-math">\(B\)</span> such that <span class="process-math">\(B^2=A\text{.}\)</span> In other words, if <span class="process-math">\(A\)</span> is invertible and the characteristic polynomial of <span class="process-math">\(A\)</span> splits completely over <span class="process-math">\(F\text{,}\)</span> then <span class="process-math">\(A\)</span> has a square root.</div></article><details id="th_square_roots-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_square_roots-3-1"></div></article></details><div class="para" id="s_jordan_form-13">In order to illustrate the subtleties of the Jordan form analysis, we need to work with larger matrices than usual, and this in turn compels us to reach for some computing technology. The wonderful open source computer algebra system Sage serves our needs for this task.</div>
+<div class="para" id="th_square_roots-2-1">Let <span class="process-math">\(A\in \C^{n,n}\)</span> be an invertible matrix. There is a matrix <span class="process-math">\(B\)</span> such that <span class="process-math">\(B^2=A\text{.}\)</span> In other words, every invertible complex matrix has a square root.</div></article><details id="th_square_roots-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_square_roots-3-1"></div></article></details><div class="para" id="s_jordan_form-14">In order to illustrate the subtleties of the Jordan form analysis, we need to work with larger matrices than usual, and this in turn compels us to reach for some computing technology. The wonderful open source computer algebra system Sage serves our needs for this task.</div>
 <article class="example example-like" id="eg_jordan_form_1"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.26.11</span><span class="period">.</span><span class="space"> </span><span class="title">Computing Jordan form.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.26.12</span><span class="period">.</span><span class="space"> </span><span class="title">Computing Jordan form.</span>
 </h3>
 <div class="para logical" id="eg_jordan_form_1-2-1">
 <div class="para">Consider the matrix transformation <span class="process-math">\(T=T_A\colon \R^8\rightarrow \R^8\text{,}\)</span> where</div>
@@ -842,7 +860,7 @@ B_4 \amp =((T+I)^3(v_4),(T+I)^2(v_4),(T+I)(v_4),v_4)
 <div class="para">Let us confirm with Sage.</div>
 </div> <div id="eg_jordan_form_1-2-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">show(A.jordan_form())
 </script></div></article><article class="example example-like" id="eg_jordan_form"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.26.12</span><span class="period">.</span><span class="space"> </span><span class="title">Computing Jordan form.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.26.13</span><span class="period">.</span><span class="space"> </span><span class="title">Computing Jordan form.</span>
 </h3>
 <div class="para logical" id="eg_jordan_form-2-1">
 <div class="para">Let <span class="process-math">\(T=T_A\colon \R^8\rightarrow \R^8\text{,}\)</span> where</div>
@@ -862,7 +880,7 @@ A=\begin{amatrix}[rrrrrrrr]
 </div>
 <ol class="decimal" id="eg_jordan_form-2-1-3">
 <li id="eg_jordan_form-2-1-3-1">
-<div class="para" id="eg_jordan_form-2-1-3-1-1">Use the SageCells below to compute a Jordan normal form of <span class="process-math">\(T\)</span> in a step-by-step fashion, as in <a href="s_jordan_form.html#eg_jordan_form_1" class="xref" data-knowl="./knowl/xref/eg_jordan_form_1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.26.11: Computing Jordan form">Example 1.26.11</a>. Confirm your answer using the <code class="code-inline tex2jax_ignore">jordan_form()</code> command.</div>
+<div class="para" id="eg_jordan_form-2-1-3-1-1">Use the SageCells below to compute a Jordan normal form of <span class="process-math">\(T\)</span> in a step-by-step fashion, as in <a href="s_jordan_form.html#eg_jordan_form_1" class="xref" data-knowl="./knowl/xref/eg_jordan_form_1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.26.12: Computing Jordan form">Example 1.26.12</a>. Confirm your answer using the <code class="code-inline tex2jax_ignore">jordan_form()</code> command.</div>
 <div id="eg_jordan_form-2-1-3-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A=matrix([(-3/2, 0, 0, -1, 0, -1, 1, -3), (3, 5/2, -4, 4, -1, -2, 4, 1), (-3, -2, 9/2, -4, 1, 1, -6, -3), (-3, -12, 8, -7/2, -3, 8, -18, 5), (-2, -8, 6, -3, -3/2, 6, -12, 4), (1, -9, 2, 2, -5, 13/2, -9, 8), (-1, 0, 2, -2, 1, 1, -1/2, 0), (0, 4, -2, 0, 2, -3, 5, -5/2)])
 show(A)
 # compute the characteristic polynomial of A and factor
@@ -879,9 +897,9 @@ show(A)
 </script></div>
 </li>
 </ol>
-</div></article><div class="para" id="s_jordan_form-16">Having successfully computed a few Jordan <em class="emphasis">forms</em> for linear operators, we should point out that we have <em class="emphasis">not</em> yet computed an actual Jordan <em class="emphasis">basis</em>. An algorithm for computing Jordan bases can be extracted from the proof of <a href="s_jordan_form.html#th_jordan_form" class="xref" data-knowl="./knowl/xref/th_jordan_form.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.26.5: Jordan form">Theorem 1.26.5</a>, though it requires significantly more computational work. We content ourselves with illustrating the method with a manageable example, done systematically.</div>
+</div></article><div class="para" id="s_jordan_form-17">Having successfully computed a few Jordan <em class="emphasis">forms</em> for linear operators, we should point out that we have <em class="emphasis">not</em> yet computed an actual Jordan <em class="emphasis">basis</em>. An algorithm for computing Jordan bases can be extracted from the proof of <a href="s_jordan_form.html#th_jordan_form" class="xref" data-knowl="./knowl/xref/th_jordan_form.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.26.5: Jordan form">Theorem 1.26.5</a>, though it requires significantly more computational work. We content ourselves with illustrating the method with a manageable example, done systematically.</div>
 <article class="example example-like" id="eg_jordan_basis"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.26.13</span><span class="period">.</span><span class="space"> </span><span class="title">Jordan basis.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.26.14</span><span class="period">.</span><span class="space"> </span><span class="title">Jordan basis.</span>
 </h3>
 <div class="para logical" id="eg_jordan_basis-2-1">
 <div class="para">Let <span class="process-math">\(T=T_A\colon \R^6\rightarrow \R^6\text{,}\)</span> where</div>
@@ -971,7 +989,7 @@ W.basis()
 </div>
 </div> <div id="eg_jordan_basis-2-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A1=matrix([[1,-1,-1,0,0,0],[1,5,4,1,5,2]]).transpose()
 A2=N.right_kernel_matrix().transpose()
-A1.augment(A_2)
+A1.augment(A2)
 </script></div> <div class="para logical" id="eg_jordan_basis-2-10">
 <div class="para">Putting it all together, we obtain the following cycles, whose concatenation is a Jordan basis for <span class="process-math">\(T\text{:}\)</span>
 </div>
