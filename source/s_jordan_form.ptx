@@ -79,6 +79,99 @@
 
         <proof>
             <p>
+                <ol>
+                    <li>
+                        <p>
+                            Suppose 
+                            <me>
+                                B=((T-\lambda I)^{k-1}(v),\dots, (T-\lambda I)(v), v)
+                            </me>
+                            is a cycle of generalized eigenvectors of <m>T</m> that is a basis of <m>V</m>. Let <m>N=T-\lambda I</m>, and let 
+                            <me>
+                                v_j=(T-\lambda I)^j(v)=N^j(v)
+                            </me>. 
+                            (In other words, <m>v_j</m> is the <m>k-j</m>-th element of <m>B</m>.) Clearly we have 
+                            <me>
+                                N(v_j)=v_{j+1}
+                            </me>
+                            for all <m>0\leq j\leq k-2</m>. Since <m>B</m> is a cycle, we also have <m>N(v_{k-1})=\boldzero</m>. Thus, using  <xref ref="eq_matrixrep_formula"/>, we have 
+                            <me>
+                                [N]_B=\begin{bmatrix}
+                                0\amp 1 \amp 0\amp \cdots \amp 1 \\
+                                0\amp 0\amp 1 \\
+                                \vdots \amp \amp \ddots \amp \ddots \\
+                                \amp \amp \amp \amp 1 \\
+                                0\amp \dots \amp \amp \amp 0
+                                \end{bmatrix}
+                            </me>.
+                            Since the matrix representation operator <m>[\phantom{A}]_B</m> is linear, we have 
+                            <md>
+                                <mrow>[T]_B \amp =[N+\lambda I]_B</mrow>
+                                <mrow> \amp =[N]_B+\lambda[I]_B</mrow>
+                                <mrow> \amp = \begin{bmatrix}
+                                \lambda\amp 1 \amp 0\amp \cdots \amp 1 \\
+                                0\amp \lambda\amp 1 \\
+                                \vdots \amp \amp \ddots \amp \ddots \amp \\
+                                \amp \amp \amp \amp 1\\
+                                0\amp \dots \amp \amp \amp \lambda
+                                \end{bmatrix}</mrow>
+                            </md>.
+                            The reverse implication (that if <m>[T]_B</m> is a Jordan block, then <m>B</m> is a cycle of generalized eigenvectors), follows essentially from the exact same observations in reverse. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            This follows easily from (1) and the fact that <m>\Span B</m> is <m>T</m>-invariant for any cycle of generalized eigenvectors <m>B</m>. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            This follows from <xref ref="th_Tcyclic_sub"/>, where we showed that if <m>k</m> is the smallest positive integer such that <m>T^k(v)=\boldzero</m>, then <m>(v,T(v),\dots, T^{k-1}(v))</m> is linearly independent.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            We prove the result by induction on the sum of the lengths 
+                            <men xml:id="eq_cycles_gen_eigen">
+                            n=\len B_1+\len B_2+\cdots +\len B_\ell
+                            </men>,
+                            the base case <m>n=1</m> being trivial. Assume now that the result is true for any collection cycles of generalized <m>\lambda</m>-eigenvectors whose lengths sum to <m>k&lt; n</m>, and suppose that we have cycles <m>B_1,B_2,\dots, B_\ell</m> whose initial vectors are linearly independent, and whose lengths satisfy <xref ref="eq_cycles_gen_eigen"/>. Let <m>N=T-\lambda I</m>, and for each <m>1\leq j\leq \ell</m> let 
+                            <me>
+                                B_j=(v_{1,j},v_{2,j},\dots, v_{n_j,j})
+                            </me>.
+                            By definition, this means that 
+                            <me>
+                                N(v_{i,j})=\begin{cases}
+                                v_{i-1,j}\amp  \text{if } i\geq 2\\
+                                \boldzero\amp \text{if } i=1
+                                \end{cases}
+                            </me>.
+                            If <m>\len B_j=1</m> for all <m>j</m>, then clearly the concatenation is linearly independent. Otherwise, 
+                            observe that the collection of <q>shortened</q> tuples 
+                            <me>
+                                \widetilde{B}_j=(v_{1,j},v_{2,j},\dots, v_{n_j-1,j})
+                            </me>
+                            obtained by deleting (<q>popping</q>) the last element of each <m>B_j</m> of length greater than 1 are cycles with the same linearly independent initial vectors. Since the sum of the lengths of these cycles is less than <m>n</m>, the induction hypothesis applies to the <m>\widetilde{B_j}</m>: <ie/>, the concatenation of their elements is linearly independent.  
+                        </p>
+                        <p> 
+                            Now suppose we have a linear combination of the elements of <m>B_i</m> equal to <m>\boldzero</m>: 
+                            <me>
+                               \sum_{j=1}^\ell \sum_{i=1}^{n_j}a_{ij}v_{i,j}=\boldzero 
+                            </me>.
+                            Now apply the linear operator <m>N</m> to both sides of this equation: 
+                            <md>
+                                <mrow>\sum_{j=1}^\ell \sum_{i=1}^{n_j}a_{ij}N(v_{i,j})\amp =\boldzero  </mrow>
+                                <mrow>\sum_{j=1}^\ell \sum_{i=2}^{n_j}a_{ij}v_{i-1,j}=\boldzero  \amp </mrow>
+                            </md>.
+                            Note that this is a linear combination of the elements of the shortened cycles <m>\widetilde{B_j}</m>. Since their concatenation is linearly independent, we conclude that all of the coefficients <m>a_{ij}=0</m> with <m>1\leq j\leq \ell</m>, <m>2\leq i\leq n_j</m> are equal to 0. Thus the original linear combination is of the form 
+                            <me>
+                                \sum_{j=1}^\ell a_{1,j}v_{1,j}=\boldzero
+                            </me>.
+                            By assumption the tuple of initial vectors <m>(v_{1,j})</m> is linearly independent. We conclude that <m>a_{1,j}=0</m> for all <m>j</m>, and thus that the tuple <m>(v_{i,j})</m> is linearly independent, as desired.
+
+                        </p>
+                    </li>
+                </ol>
             </p>
         </proof>
     </theorem>
@@ -106,9 +199,62 @@
 
 
         <proof>
-            <p>
-            </p>
-        </proof>
+            <title>Proof of (1)</title>
+    <p>
+        We first prove that the existence of a Jordan basis. Let <m>V=\oplus_{i=1}^rG(\lambda_i, T)</m> be the decomposition of <m>V</m> into generalized eigenspaces, as per <xref ref="th_gen_eigenspace_decomp"/>. Observe that since each <m>G(\lambda_i, T)</m> is <m>T</m>-invariant, if we can find Jordan bases <m>B_1,B_2,\dots, B_r</m> for <m>T\vert_{G(\lambda_i, T)}</m>, then the concatenation
+        <me>
+            B=B_1*B_2*\cdots *B_r
+        </me>
+        is a Jordan basis for <m>T</m>. Thus it suffices to prove the result for linear operators whose characteristic polynomial splits as <m>(x-\lambda)^n</m>. 
+     </p>       
+    <p>
+        We now prove by induction on <m>n=\dim V</m>, that if <m>T\in\mathcal{L}(V)</m> is a linear operator with characteristic polynomial <m>f(x)=(x-\lambda)^n</m>, <m>\lambda\in F</m>, then <m>T</m> has a Jordan basis. The base case <m>n=1</m> is trivial, since any operator on a <m>1</m>-dimensional space has a matrix representation of the form <m>[T]_B=[\lambda]\in F^{1,1}</m>, which is clearly a Jordan form. 
+    </p>
+    <p>
+        Assume now the result applies for any operator on any <m>k</m>-dimensional vector space, <m>k^lt; n</m>. Given <m>V</m> with <m>\dim V=n</m> and <m>T\in \mathcal{L}(V)</m> with characteristic polynomial <m>f(x)=(x-\lambda)^n</m>, let <m>N=T-\lambda I</m>, and let <m>W=\im N</m>. Since <m>\lambda</m> is an eigenvalue of <m>T</m>, <m>N</m> is non-invertible, and thus <m>\im N\ne V</m>. It follows that <m>\dim \im N=k&lt; n</m>. Moreover, <m>\im N</m> is <m>N</m>- and thus <m>T</m>-invariant, and since the characteristic polynomial of <m>T\vert_{\im N}</m> divides <m>(x-\lambda)^n</m>, we see that <m>T\vert_\{\im N\}</m> has characteristic polynomial <m>(x-\lambda)^k</m>. Thus we may apply the induction hypothesis to conclude that <m>\im N</m> has a Jordan basis that is a concatenation of the cycles of generalized <m>\lambda</m>-eigenvectors <m>B_1,B_2,\dots, B_\ell</m>. Write each <m>B_j</m> as 
+        <me>
+            B_j=(v_{1,j},\dots, v_{n_j, j})
+        </me>,
+        and observe that by definition we have 
+        <me>
+                                N(v_{i,j})=\begin{cases}
+                                v_{i-1,j}\amp  \text{if } i\geq 2\\
+                                \boldzero\amp \text{if } i=1
+                                \end{cases}
+                            </me>
+        for all <m>v_{i,j}</m>. Since the end vector <m>v_{n_j, j}</m> of each cycle <m>B_j</m> is an element of <m>\im N</m>, for all <m>1\leq j\leq \ell</m> we can find a vector <m>v_{n_{j}+1,j}</m> satisfying 
+        <me>N(v_{n_{j}+1,j})=v_{n_j,j}</me>,
+        yielding <q>lengthened</q> cycles of generalized <m>\lambda</m>-eigenvectors 
+        <me>
+            \widetilde{B_j}=(v_{1,j},\dots, v_{n_j, j}, v_{n_j+1, j}) 
+        </me>
+        for all <m>1\leq j\leq \ell</m>.  
+    </p>
+    <p>
+        Lastly, since the concatenation of the original cycles <m>B_i</m> is linearly independent, in particular, the tuple of their initial vectors <m>(v_{1,j})</m> is linearly independent. Since furthermore these elements are elements of <m>\NS N</m> (<m>N(v_{1,j})=\boldzero</m>), we can extend this tuple to a basis 
+        <men xml:id="eq_jordan_form_null">
+            (v_{1,1},\dots, v_{1,\ell}, w_{\ell+1}, \dots, w_{t})
+        </men>
+        of <m>\NS N</m>. We claim that the concatenation <m>B</m> of the cycles 
+        <me>
+            \widetilde{B_1}, \widetilde{B_1}, \dots, \widetilde{B_1}, (w_{\ell+1}), (w_{\ell+2}), \dots, (w_t)
+        </me>
+        is our desired Jordan basis of <m>T</m>. Since the initial vectors of these cycles is precisely the linearly independent tuple in <xref ref="eq_jordan_form_null"/>, it follows from <xref ref="th_jordan_cycles"/> that <m>B</m> is linearly independent. To prove <m>B</m> is a basis it suffices to show that <m>\len B=\dim V=n</m>. Let <m>B'=B_1*B_2*\cdots *B_\ell</m>, the starting Jordan basis of <m>\im N</m>.  We created <m>B</m> by adding one extra vector for each of the <m>\ell</m> cycles <m>B_j</m>, as well as the <m>r-\ell</m> vectors <m>w_j</m> added to get a basis of the <m>r</m>-dimensional subspace <m>\NS N</m>. Thus we have 
+        <md>
+            <mrow>\len B \amp = \len B'+\ell+r-\ell </mrow>
+            <mrow> \amp =\dim \im N+r  (\dim \im N=\len B')</mrow>
+            <mrow> \amp =\dim \im N+\dim \NS N</mrow>
+            <mrow> \amp = n \amp (\text{rank-nullity})</mrow>
+        </md>,
+        as desired.
+    </p>
+    </proof>
+    <proof>
+        <title>Proof of (2)</title>
+        <p>
+            The uniqueness of the Jordan form follows from the fact that for each generalized eigenspace <m>W_\lambda=E(\lambda, T)</m> the number <m>\ell</m> of Jordan blocks for <m>T\vert_{W_\lambda}</m> as well as the list of lengths of these sequences can be expressed solely in terms of <m>\dim \NS (T-\lambda I)^j</m> for various <m>j\in \Z_+</m>, and hence depend solely on <m>T</m> itself and not on the manner of choosing a Jordan basis. 
+        </p>
+    </proof>
     </theorem>
 <definition xml:id="d_Jordan_form">
 <title>Jordan form</title>
