@@ -390,9 +390,7 @@ Let us confirm with Sage.
         
     </output>
 </sage>
-<p>
-    Having successfully computed a Jordan form for <m>T</m>, we should point out that we did <em>not</em> compute an actual Jordan basis for <m>T</m>. That would involve computing explicit vectors <m>v_1,v_2,v_3,v_4</m> that generate the cycles <m>B_1,B_2,B_3,B_4</m> above. Of course, there is an algorithm for doing this, and this can be extracted from our proof of <xref ref="th_jordan_form"/>, but we omit that computation here. 
-</p>
+
 </statement>
 
 </example>
@@ -466,4 +464,160 @@ Let us confirm with Sage.
 </statement>
 
 </example>
+<p>
+    Having successfully computed a few Jordan <em>forms</em> for linear operators, we should point out that we have <em>not</em> yet computed an actual Jordan <em>basis</em>. An algorithm for computing Jordan bases can be extracted from the proof of <xref ref="th_jordan_form"/>, though it requires significantly more computational work. We content ourselves with illustrating the method with a manageable example, done systematically.
+</p>
+<example xml:id="eg_jordan_basis">
+<title>Jordan basis</title>
+<statement>
+<p>
+Let <m>T=T_A\colon \R^6\rightarrow \R^6</m>, where
+<me>
+    A=\left[\begin{array}{rrrrrr}
+2 \amp -1 \amp 1 \amp 2 \amp -1 \amp 2 \\
+-3 \amp 3 \amp -4 \amp -8 \amp 10 \amp -14 \\
+-2 \amp 1 \amp -1 \amp -7 \amp 8 \amp -12 \\
+0 \amp 0 \amp 0 \amp 1 \amp 1 \amp -2 \\
+-2 \amp 0 \amp -2 \amp -5 \amp 9 \amp -10 \\
+-1 \amp 0 \amp -1 \amp -2 \amp 3 \amp -2
+\end{array}\right]
+</me>.
+Proceeding as in the examples above, we find that the characteristic polynomial of <m>T</m> is <m>f(x)=(x-2)^6</m>, and that a normal form of <m>T</m> is 
+<me>
+    \left[\begin{array}{rrr|rr|r}
+2 \amp 1 \amp 0 \amp 0 \amp 0 \amp 0 \\
+0 \amp 2 \amp 1 \amp 0 \amp 0 \amp 0 \\
+0 \amp 0 \amp 2 \amp 0 \amp 0 \amp 0 \\
+\hline
+ 0 \amp 0 \amp 0 \amp 2 \amp 1 \amp 0 \\
+0 \amp 0 \amp 0 \amp 0 \amp 2 \amp 0 \\
+\hline
+ 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 2
+\end{array}\right]
+</me>.
+A Jordan basis of <m>T</m> will thus consist of three cycles 
+<md>
+    <mrow>B_1 \amp =(N^2(v_1),N(v_1),v_1)</mrow>
+    <mrow>B_2 \amp =(N(v_2),v_2)</mrow>
+    <mrow>B_3 \amp =(v_3)</mrow>
+</md>.
+It is illuminating to arrange this basis as in our dot diagrams: 
+<me>
+    \begin{array}{ccc}
+    N^2(v_1) \amp N(v_2) \amp v_3\\
+    N(v_1) \amp v_2 \amp \\
+    v_1 \amp \amp
+    \end{array}
+</me>
+Following the argument in <xref ref="th_jordan_form"/>, we will first compute a Jordan basis for <m>\im N^2</m>, then modify this appropriately to get a Jordan basis of <m>\im N</m>, then repeat the previous step to get a Jordan basis of <m>\im T^0=\R^6</m>.  
+</p>
+<p>
+    From the diagram above, we see that <m>\dim \im N^2=1</m>, and that <m>\im N^2\subseteq \NS N=E(2, T)</m>. Thus any basis of <m>\im N^2=\CS (A-2I)^2</m> will consist of a single eigenvector, and thus will automatically be a Jordan basis. As we see below, we can choose <m>w_1=(1,-1,-1,0,0)</m> for the sole element of this basis.
+</p>
+<sage>
+    <input>
+        A=matrix([(2, -1, 1, 2, -1, 2), (-3, 3, -4, -8, 10, -14), (-2, 1, -1, -7, 8, -12), (0, 0, 0, 1, 1, -2), (-2, 0, -2, -5, 9, -10), (-1, 0, -1, -2, 3, -2)])
+        N=A-2
+        show(N)
+        show(N^2)
+    </input>
+    <output>
+        
+    </output>
+</sage>
+<p>
+    Following the induction argument in the proof of <xref ref="th_jordan_form"/>, to create a Jordan basis of <m>\im N^2</m>, we (a) lengthen the cycle <m>(w_1)</m> to a cycle <m>(T(u_1), u_1)</m>, where <m>u_1\in \im N</m> and <m>T(u_1)=w_1</m>, (b) extend <m>(w_1)</m> to a basis <m>(w_1,w_2)</m> of <m>\NS T\cap \im N</m>, producing the two cycles of generalized eigenvectors <m>(T(u_1),u_1), (w_2)</m>, which form a basis of <m>\im N</m>. From the computation of <m>N^2</m> above, we see that <m>N^2\bolde_1=w_1</m>. Thus we can pick 
+    <me>
+        u_1=N\bolde_1=(0,-3,-2,0,-2,-1)
+    </me>.
+    To extend <m>(w_1)</m> to a basis of <m>\NS N\cap \im N</m>, we first use Sage to compute a basis of this space. 
+</p>
+<sage>
+    <input>
+        W1=N.right_kernel()
+        W2=N.column_space()
+        W=W1.intersection(W2)
+        W.basis()
+    </input>
+    <output>
+        
+    </output>
+</sage>
+<p>
+    Since <m>\dim \NS N\cap \im N=2</m>, we see that we can add either of the basis elements above to <m>w_1</m> to get a basis. We choose <m>w_2=(1,5,4,1,5,2)</m>. A Jordan basis of <m>\im N</m> is then obtained by concatenating the two cyles of generalized eigenvectors below
+    <md>
+        <mrow>(N^2\bolde_1,N\bolde_1) \amp = ((1,-1,-1,0,0,0),(0,-3,-2,0,-2,-1)) </mrow>
+        <mrow>(w_2) \amp = (1,5,4,1,5,2)</mrow>
+    </md>.
+    We now repeat this process to transform the Jordan basis of <m>\im N</m> into a Jordan basis of <m>\R^6</m>. First we lengthen the two cycles above. Clearly the first cycle can be lengthened by appending <m>\bolde_1</m>. For the second we find <m>v_2</m> satisfying <m>Nv_2=w_2</m>. As we show below, we can choose <m>v_2=(0,-3,0,-1,0,0)</m>. 
+</p>
+<sage>
+    <input>
+        N.solve_right(vector([1,5,4,1,5,2]))
+    </input>
+    <output>
+        
+    </output>
+</sage>
+<p>This yields the two cycles 
+    <md>
+        <mrow>(N^2\bolde_1, N\bolde_1, \bolde_1) \amp = ((1,-1,-1,0,0,0),(2,-3,-2,0,-2,1),(1,0,0,0,0,0)) </mrow>
+        <mrow>(Nv_2,v_2) \amp = ((1,5,4,1,5,2),(0,-3,0,-1,0,0))</mrow>
+    </md>.
+    Lastly, we extend <m>(N^2\bolde_1, N\boldv_2)</m> to a basis <m>(N^2\bolde_1, N\boldv_2,v_3)</m> of <m>\NS N</m>. This can be done systematically by putting <m>N^2\bolde_1, N\boldv_2</m> in as the first two columns of a matrix, followed by a complete basis for <m>\NS N</m>, and then using the column space algorithm to contract to a basis. The computation below creates this augmented matrix; we see by inspection that we can pick <m>v_3=(1,1,0,1,1,0)</m>.
+</p>
+<sage>
+    <input>
+        A1=matrix([[1,-1,-1,0,0,0],[1,5,4,1,5,2]]).transpose()
+        A2=N.right_kernel_matrix().transpose()
+        A1.augment(A2)
+    </input>
+    <output>
+        
+    </output>
+</sage>
+<p>
+    Putting it all together, we obtain the following cycles, whose concatenation is a Jordan basis for <m>T</m>: 
+    <md>
+        <mrow>(N^2(v_1),N(v_1),v_1)\amp= ((1,-1,-1,0,0,0),(0,-3,-2,0,-2,-1),(1,0,0,0,0,0)) </mrow>
+        <mrow>(N(v_2),v_2) \amp= ((1,5,4,1,5,2), (0,-3,0,-1,0,0)) </mrow>
+        <mrow> (v_3) \amp=(1,1,0,1,1,0) </mrow>
+    </md>
+    Time to put our theory to the test. We should obtain the Jordan form of <m>T</m> by the change of basis formula 
+    <me>
+        P^{-1}AP
+    </me>,
+    where 
+    <me>
+        P=\left[\begin{array}{rrrrrr}
+1 \amp 0 \amp 1 \amp 1 \amp 0 \amp 1 \\
+-1 \amp -3 \amp 0 \amp 5 \amp -3 \amp 1 \\
+-1 \amp -2 \amp 0 \amp 4 \amp 0 \amp 0 \\
+0 \amp 0 \amp 0 \amp 1 \amp -1 \amp 1 \\
+0 \amp -2 \amp 0 \amp 5 \amp 0 \amp 1 \\
+0 \amp -1 \amp 0 \amp 2 \amp 0 \amp 0
+\end{array}\right]
+    </me>
+</p>
+<sage>
+    <input>
+        P=matrix([(1, 0, 1, 1, 0, 1),
+ (-1, -3, 0, 5, -3, 1),
+ (-1, -2, 0, 4, 0, 0),
+ (0, 0, 0, 1, -1, 1),
+ (0, -2, 0, 5, 0, 1),
+ (0, -1, 0, 2, 0, 0)])
+ show(P^-1*A*P)
+    </input>
+    <output>
+        
+    </output>
+</sage>
+<p>
+    We did it!
+</p>
+</statement>
+
+</example>
+
 </section>
