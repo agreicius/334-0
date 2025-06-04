@@ -185,9 +185,9 @@ Let <m>T\in \mathcal{L}(V)</m>, where <m>V</m> is finite dimensional, and suppos
 <me>
     f(x)=\prod_{i=1}^r(x-\lambda_i)^{n_i}
 </me>,
-where <m>\lambda_i\ne \lambda_j</m> for <m>i\ne j</m>, and <m>\lambda_i\in F</m>. Let <m>m(x)</m> be the minimal polynomial of <m>f</m>. We have 
+where <m>\lambda_i\ne \lambda_j</m> for <m>i\ne j</m>, and <m>\lambda_i\in F</m>. Let <m>m_T(x)</m> be the minimal polynomial of <m>T</m>. We have 
 <me>
-    m(x)=\prod_{i=1}^r(x-\lambda_i)^{m_i}
+    m_T(x)=\prod_{i=1}^r(x-\lambda_i)^{m_i}
 </me>,
 where <m>m_i</m> is the maximum size of a  <m>\lambda_i</m>-Jordan block appearing in a Jordan form for <m>T</m>. 
 </p>
