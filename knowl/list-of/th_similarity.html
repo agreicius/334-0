@@ -20,8 +20,49 @@
 <li><div class="para">
 <span class="process-math">\(A\)</span> and <span class="process-math">\(A'\)</span> are similar (i.e. <span class="process-math">\(A'=P^{-1}AP\)</span> for some invertible <span class="process-math">\(P\)</span>).</div></li>
 <li><div class="para">
-<span class="process-math">\(A\)</span> and <span class="process-math">\(A'\)</span> have the same Jordan form.</div></li>
+<span class="process-math">\(T_A\)</span> and <span class="process-math">\(T_A'\)</span> have the same Jordan form.</div></li>
 </ol>
-</div></article><span class="incontext"><a class="internal" href="s_jordan_form.html#th_similarity">in-context</a></span>
+</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">Assume <span class="process-math">\(A\)</span> and <span class="process-math">\(A'\)</span> are similar, and thus that there is an invertible matrix <span class="process-math">\(Q\)</span> such that <span class="process-math">\(A=Q^{-1}A'Q\text{.}\)</span> Let <span class="process-math">\(J\)</span> be a Jordan form for <span class="process-math">\(T_A\text{.}\)</span> By definition, there is a basis <span class="process-math">\(B'\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[T_A]_{B'}=J\text{.}
+\end{equation*}
+</div>
+<div class="para">Let <span class="process-math">\(B\)</span> be the standard basis, and let <span class="process-math">\(P=\underset{B'\to B}{P}\text{.}\)</span> Using the change of basis formula, we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+J=P^{-1}AP\text{,}
+\end{equation*}
+</div>
+<div class="para">and thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+J=P^{-1}Q^{-1}A'QP=(QP)^{-1}A'(QP)\text{.}
+\end{equation*}
+</div>
+<div class="para">Equivalently, letting <span class="process-math">\(B''\)</span> be the basis consisting of the columns of <span class="process-math">\(QP\text{,}\)</span> we see that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+J=[T_{A'}]_{B''}\text{.}
+\end{equation*}
+</div>
+<div class="para">Thus <span class="process-math">\(A\)</span> and <span class="process-math">\(A'\)</span> have the same Jordan form.</div>
+</div>
+<div class="para logical">
+<div class="para">Now assume <span class="process-math">\(A\)</span> and <span class="process-math">\(A'\)</span> have the same Jordan form <span class="process-math">\(J\text{.}\)</span> Reasoning as above, this implies that there are invertible matrices <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+J=P^{-1}AP=Q^{-1}A'Q\text{.}
+\end{equation*}
+</div>
+<div class="para">It follows that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=PQ^{-1}A'QP^{-1}=(QP^{-1})^{-1}A'(QP^{-1})\text{,}
+\end{equation*}
+</div>
+<div class="para">showing that <span class="process-math">\(A\)</span> and <span class="process-math">\(A'\)</span> are similar.</div>
+</div></article></details><span class="incontext"><a class="internal" href="s_jordan_form.html#th_similarity">in-context</a></span>
 </body>
 </html>

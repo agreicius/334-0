@@ -14,6 +14,50 @@
 <article class="theorem theorem-like"><h3 class="heading">
 <span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.26.11</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Square-roots of complex matrices.</span>
 </h3>
-<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">Let <span class="process-math">\(A\in \C^{n,n}\)</span> be an invertible matrix. There is a matrix <span class="process-math">\(B\)</span> such that <span class="process-math">\(B^2=A\text{.}\)</span> In other words, every invertible complex matrix has a square root.</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para"></div></article></details><span class="incontext"><a class="internal" href="s_jordan_form.html#th_square_roots">in-context</a></span>
+<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">Let <span class="process-math">\(A\in \C^{n,n}\)</span> be an invertible matrix. There is a matrix <span class="process-math">\(B\)</span> such that <span class="process-math">\(B^2=A\text{.}\)</span> In other words, every invertible complex matrix has a square root.</div> <div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">It follows that any invertible operator on a finite-dimensional complex vector space (<span class="process-math">\(F=\C\)</span>) has a square-root.</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">From calculus we learn that the infinite series</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{i=0}^\infty {1/2\choose i}x^i=1+\frac{1}{2}x-\frac{1}{8}x^2+\frac{1}{16}x^3-\cdots 
+\end{equation*}
+</div>
+<div class="para">converges to <span class="process-math">\(\sqrt{1+x}\)</span> for all <span class="process-math">\(x\in (-1,1)\text{.}\)</span> It follows from power series theory that for all <span class="process-math">\(N\text{,}\)</span> the truncated series</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f_m(x)=\sum_{i=0}^m{1/2\choose i}x^i
+\end{equation*}
+</div>
+<div class="para">satisfies</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f_m(x)f_m(x)=1+x+x^{m+1}h_m(x)
+\end{equation*}
+</div>
+<div class="para">for some polynomial <span class="process-math">\(h_m(x)\text{.}\)</span> Thus if <span class="process-math">\(A=I+N\)</span> where <span class="process-math">\(N\)</span> is a nilpotent matrix satisfying</div>
+<div class="displaymath process-math">
+\begin{equation*}
+N^{m+1}=\boldzero\text{,}
+\end{equation*}
+</div>
+<div class="para">then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f_m(N)f_m(N)=I+N+N^{m+1}h_m(N)=I+N,
+\end{equation*}
+</div>
+<div class="para">since <span class="process-math">\(N^{m+1}=\boldzero\text{.}\)</span> This proves that any matrix of the form <span class="process-math">\(I+N\)</span> has a square root <span class="process-math">\(B\text{,}\)</span> and that in fact we may take <span class="process-math">\(B=f_m(N)\)</span> for <span class="process-math">\(m\)</span> sufficiently large.</div>
+</div>
+<div class="para logical">
+<div class="para">Now assume <span class="process-math">\(A\)</span> is invertible. From <a href="s_jordan_form.html#th_diagable_plus_nilpotent" class="xref" data-knowl="./knowl/xref/th_diagable_plus_nilpotent.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.26.10: Diagonal plus nilpotent">Theorem 1.26.10</a> and Jordan theory, we can write <span class="process-math">\(A=D+N\text{,}\)</span> where <span class="process-math">\(D\)</span> is diagonal and <span class="process-math">\(N\)</span> is nilpotent, and furthermore the diagonal entries of <span class="process-math">\(D\)</span> are the eigenvalues of <span class="process-math">\(A\text{,}\)</span> which are all nonzero. It follows that <span class="process-math">\(D\)</span> is diagonal. Write <span class="process-math">\(A=D(I+D^{-1}N)\text{.}\)</span> Since <span class="process-math">\(D^{-1}\)</span> is diagonal, it commutes with all matrices, and it follows that <span class="process-math">\(D^{-1}N\)</span> is also nilpotent. By the previous paragraph there is a square-root <span class="process-math">\(B\)</span> of <span class="process-math">\(I+D^{-1}N\text{.}\)</span> Let <span class="process-math">\(E\)</span> be a diagonal square-root of <span class="process-math">\(D\)</span> (it is easy to see such a matrix exists), and let <span class="process-math">\(C=EB\text{.}\)</span> We have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_diagable_plus_nilpotent.html">
+\begin{align*}
+C^2 \amp =EBEB\\
+\amp =EEBB \amp (E \text{ diagonal})\\
+\amp =E^2B^2\\
+\amp =D(I+D^{-1}N)\\
+\amp =A\text{.}
+\end{align*}
+</div>
+</div></article></details><span class="incontext"><a class="internal" href="s_jordan_form.html#th_square_roots">in-context</a></span>
 </body>
 </html>
