@@ -617,7 +617,113 @@ A=\begin{bmatrix}J_{1}\amp \\ \amp J_{2}\amp \\ \amp \amp \ddots \\ \amp \amp \a
 <li id="th_jordan_cycles-2-1-3-3"><div class="para" id="p-derived-th_jordan_cycles-2-1-3-3">A cycle of generalized eigenvectors is linearly independent, and its initial vector is an eigenvector.</div></li>
 <li id="th_jordan_cycles-2-1-3-4"><div class="para" id="p-derived-th_jordan_cycles-2-1-3-4">If <span class="process-math">\(B_1, B_2, \dots, B_\ell\)</span> are cycles of generalized eigenvectors corresponding to a fixed <span class="process-math">\(\lambda\)</span> whose initial vectors are linearly independent, then the concatenation <span class="process-math">\(B_1*B_2*\cdots * B_\ell\)</span> is linearly independent.</div></li>
 </ol>
-</div></article><details id="th_jordan_cycles-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_jordan_cycles-3-1"></div></article></details><article class="theorem theorem-like" id="th_jordan_form"><h3 class="heading">
+</div></article><details id="th_jordan_cycles-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_jordan_cycles-3-1"><ol class="decimal" id="th_jordan_cycles-3-1-1">
+<li id="th_jordan_cycles-3-1-1-1"><div class="para logical" id="th_jordan_cycles-3-1-1-1-1">
+<div class="para">Suppose</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_matrixrep_formula.html">
+\begin{equation*}
+B=((T-\lambda I)^{k-1}(v),\dots, (T-\lambda I)(v), v)
+\end{equation*}
+</div>
+<div class="para">is a cycle of generalized eigenvectors of <span class="process-math">\(T\)</span> that is a basis of <span class="process-math">\(V\text{.}\)</span> Let <span class="process-math">\(N=T-\lambda I\text{,}\)</span> and let</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_matrixrep_formula.html">
+\begin{equation*}
+v_j=(T-\lambda I)^j(v)=N^j(v)\text{.}
+\end{equation*}
+</div>
+<div class="para">(In other words, <span class="process-math">\(v_j\)</span> is the <span class="process-math">\(k-j\)</span>-th element of <span class="process-math">\(B\text{.}\)</span>) Clearly we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_matrixrep_formula.html">
+\begin{equation*}
+N(v_j)=v_{j+1}
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(0\leq j\leq k-2\text{.}\)</span> Since <span class="process-math">\(B\)</span> is a cycle, we also have <span class="process-math">\(N(v_{k-1})=\boldzero\text{.}\)</span> Thus, using  <a href="s_matrix_reps.html#eq_matrixrep_formula" class="xref" data-knowl="./knowl/xref/eq_matrixrep_formula.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.34">(1.34)</a>, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_matrixrep_formula.html">
+\begin{equation*}
+[N]_B=\begin{bmatrix}
+0\amp 1 \amp 0\amp \cdots \amp 1 \\
+0\amp 0\amp 1 \\
+\vdots \amp \amp \ddots \amp \ddots \\
+\amp \amp \amp \amp 1 \\
+0\amp \dots \amp \amp \amp 0
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Since the matrix representation operator <span class="process-math">\([\phantom{A}]_B\)</span> is linear, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_matrixrep_formula.html" id="th_jordan_cycles-3-1-1-1-1-16">
+\begin{align*}
+[T]_B \amp =[N+\lambda I]_B\\
+\amp =[N]_B+\lambda[I]_B\\
+\amp = \begin{bmatrix}
+\lambda\amp 1 \amp 0\amp \cdots \amp 1 \\
+0\amp \lambda\amp 1 \\
+\vdots \amp \amp \ddots \amp \ddots \amp \\
+\amp \amp \amp \amp 1\\
+0\amp \dots \amp \amp \amp \lambda
+\end{bmatrix}\text{.}
+\end{align*}
+</div>
+<div class="para">The reverse implication (that if <span class="process-math">\([T]_B\)</span> is a Jordan block, then <span class="process-math">\(B\)</span> is a cycle of generalized eigenvectors), follows essentially from the exact same observations in reverse.</div>
+</div></li>
+<li id="th_jordan_cycles-3-1-1-2"><div class="para" id="th_jordan_cycles-3-1-1-2-1">This follows easily from (1) and the fact that <span class="process-math">\(\Span B\)</span> is <span class="process-math">\(T\)</span>-invariant for any cycle of generalized eigenvectors <span class="process-math">\(B\text{.}\)</span>
+</div></li>
+<li id="th_jordan_cycles-3-1-1-3"><div class="para" id="th_jordan_cycles-3-1-1-3-1">This follows from <a href="s_caylet_ham.html#th_Tcyclic_sub" class="xref" data-knowl="./knowl/xref/th_Tcyclic_sub.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.24.4: T-cyclic subspace">Theorem 1.24.4</a>, where we showed that if <span class="process-math">\(k\)</span> is the smallest positive integer such that <span class="process-math">\(T^k(v)=\boldzero\text{,}\)</span> then <span class="process-math">\((v,T(v),\dots, T^{k-1}(v))\)</span> is linearly independent.</div></li>
+<li id="th_jordan_cycles-3-1-1-4">
+<div class="para logical" id="th_jordan_cycles-3-1-1-4-1">
+<div class="para">We prove the result by induction on the sum of the lengths</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_cycles_gen_eigen.html" id="eq_cycles_gen_eigen">
+\begin{equation}
+n=\len B_1+\len B_2+\cdots +\len B_\ell\text{,}\tag{1.129}
+\end{equation}
+</div>
+<div class="para">the base case <span class="process-math">\(n=1\)</span> being trivial. Assume now that the result is true for any collection cycles of generalized <span class="process-math">\(\lambda\)</span>-eigenvectors whose lengths sum to <span class="process-math">\(k&lt; n\text{,}\)</span> and suppose that we have cycles <span class="process-math">\(B_1,B_2,\dots, B_\ell\)</span> whose initial vectors are linearly independent, and whose lengths satisfy <a href="s_jordan_form.html#eq_cycles_gen_eigen" class="xref" data-knowl="./knowl/xref/eq_cycles_gen_eigen.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.129">(1.129)</a>. Let <span class="process-math">\(N=T-\lambda I\text{,}\)</span> and for each <span class="process-math">\(1\leq j\leq \ell\)</span> let</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_cycles_gen_eigen.html">
+\begin{equation*}
+B_j=(v_{1,j},v_{2,j},\dots, v_{n_j,j})\text{.}
+\end{equation*}
+</div>
+<div class="para">By definition, this means that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_cycles_gen_eigen.html">
+\begin{equation*}
+N(v_{i,j})=\begin{cases}
+v_{i-1,j}\amp  \text{if } i\geq 2\\
+\boldzero\amp \text{if } i=1
+\end{cases}\text{.}
+\end{equation*}
+</div>
+<div class="para">If <span class="process-math">\(\len B_j=1\)</span> for all <span class="process-math">\(j\text{,}\)</span> then clearly the concatenation is linearly independent. Otherwise, observe that the collection of “shortened” tuples</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_cycles_gen_eigen.html">
+\begin{equation*}
+\widetilde{B}_j=(v_{1,j},v_{2,j},\dots, v_{n_j-1,j})
+\end{equation*}
+</div>
+<div class="para">obtained by deleting (“popping”) the last element of each <span class="process-math">\(B_j\)</span> of length greater than 1 are cycles with the same linearly independent initial vectors. Since the sum of the lengths of these cycles is less than <span class="process-math">\(n\text{,}\)</span> the induction hypothesis applies to the <span class="process-math">\(\widetilde{B_j}\text{:}\)</span> i.e., the concatenation of their elements is linearly independent.</div>
+</div>
+<div class="para logical" id="th_jordan_cycles-3-1-1-4-2">
+<div class="para">Now suppose we have a linear combination of the elements of <span class="process-math">\(B_i\)</span> equal to <span class="process-math">\(\boldzero\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{j=1}^\ell \sum_{i=1}^{n_j}a_{ij}v_{i,j}=\boldzero \text{.}
+\end{equation*}
+</div>
+<div class="para">Now apply the linear operator <span class="process-math">\(N\)</span> to both sides of this equation:</div>
+<div class="displaymath process-math" id="th_jordan_cycles-3-1-1-4-2-5">
+\begin{align*}
+\sum_{j=1}^\ell \sum_{i=1}^{n_j}a_{ij}N(v_{i,j})\amp =\boldzero  \\
+\sum_{j=1}^\ell \sum_{i=2}^{n_j}a_{ij}v_{i-1,j}=\boldzero  \amp \text{.}
+\end{align*}
+</div>
+<div class="para">Note that this is a linear combination of the elements of the shortened cycles <span class="process-math">\(\widetilde{B_j}\text{.}\)</span> Since their concatenation is linearly independent, we conclude that all of the coefficients <span class="process-math">\(a_{ij}=0\)</span> with <span class="process-math">\(1\leq j\leq \ell\text{,}\)</span> <span class="process-math">\(2\leq i\leq n_j\)</span> are equal to 0. Thus the original linear combination is of the form</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{j=1}^\ell a_{1,j}v_{1,j}=\boldzero\text{.}
+\end{equation*}
+</div>
+<div class="para">By assumption the tuple of initial vectors <span class="process-math">\((v_{1,j})\)</span> is linearly independent. We conclude that <span class="process-math">\(a_{1,j}=0\)</span> for all <span class="process-math">\(j\text{,}\)</span> and thus that the tuple <span class="process-math">\((v_{i,j})\)</span> is linearly independent, as desired.</div>
+</div>
+</li>
+</ol></div></article></details><article class="theorem theorem-like" id="th_jordan_form"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.26.5</span><span class="period">.</span><span class="space"> </span><span class="title">Jordan form.</span>
 </h3>
 <div class="para logical" id="th_jordan_form-2-1">
@@ -633,7 +739,71 @@ A=[T]_B=\begin{bmatrix} J_1\amp \\ \amp J_2\amp \\ \amp    \amp\ddots \\ \amp   
 </div>is unique up to a permutation of the Jordan blocks <span class="process-math">\(J_{i}\text{.}\)</span>
 </div></li>
 </ol>
-</div></article><details id="th_jordan_form-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_jordan_form-3-1"></div></article></details><article class="definition definition-like" id="d_Jordan_form"><h3 class="heading">
+</div></article><details id="th_jordan_form-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="title">Proof of (1).</span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_jordan_form-3-2">
+<div class="para">We first prove that the existence of a Jordan basis. Let <span class="process-math">\(V=\oplus_{i=1}^rG(\lambda_i, T)\)</span> be the decomposition of <span class="process-math">\(V\)</span> into generalized eigenspaces, as per <a href="s_gen_eigenspace.html#th_gen_eigenspace_decomp" class="xref" data-knowl="./knowl/xref/th_gen_eigenspace_decomp.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.25.3: Generalized eigenspace decomposition">Theorem 1.25.3</a>. Observe that since each <span class="process-math">\(G(\lambda_i, T)\)</span> is <span class="process-math">\(T\)</span>-invariant, if we can find Jordan bases <span class="process-math">\(B_1,B_2,\dots, B_r\)</span> for <span class="process-math">\(T\vert_{G(\lambda_i, T)}\text{,}\)</span> then the concatenation</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_gen_eigenspace_decomp.html">
+\begin{equation*}
+B=B_1*B_2*\cdots *B_r
+\end{equation*}
+</div>
+<div class="para">is a Jordan basis for <span class="process-math">\(T\text{.}\)</span> Thus it suffices to prove the result for linear operators whose characteristic polynomial splits as <span class="process-math">\((x-\lambda)^n\text{.}\)</span>
+</div>
+</div>
+<div class="para" id="th_jordan_form-3-3">We now prove by induction on <span class="process-math">\(n=\dim V\text{,}\)</span> that if <span class="process-math">\(T\in\mathcal{L}(V)\)</span> is a linear operator with characteristic polynomial <span class="process-math">\(f(x)=(x-\lambda)^n\text{,}\)</span> <span class="process-math">\(\lambda\in F\text{,}\)</span> then <span class="process-math">\(T\)</span> has a Jordan basis. The base case <span class="process-math">\(n=1\)</span> is trivial, since any operator on a <span class="process-math">\(1\)</span>-dimensional space has a matrix representation of the form <span class="process-math">\([T]_B=[\lambda]\in F^{1,1}\text{,}\)</span> which is clearly a Jordan form.</div>
+<div class="para logical" id="th_jordan_form-3-4">
+<div class="para">Assume now the result applies for any operator on any <span class="process-math">\(k\)</span>-dimensional vector space, <span class="process-math">\(k^lt; n\text{.}\)</span> Given <span class="process-math">\(V\)</span> with <span class="process-math">\(\dim V=n\)</span> and <span class="process-math">\(T\in \mathcal{L}(V)\)</span> with characteristic polynomial <span class="process-math">\(f(x)=(x-\lambda)^n\text{,}\)</span> let <span class="process-math">\(N=T-\lambda I\text{,}\)</span> and let <span class="process-math">\(W=\im N\text{.}\)</span> Since <span class="process-math">\(\lambda\)</span> is an eigenvalue of <span class="process-math">\(T\text{,}\)</span> <span class="process-math">\(N\)</span> is non-invertible, and thus <span class="process-math">\(\im N\ne V\text{.}\)</span> It follows that <span class="process-math">\(\dim \im N=k&lt; n\text{.}\)</span> Moreover, <span class="process-math">\(\im N\)</span> is <span class="process-math">\(N\)</span>- and thus <span class="process-math">\(T\)</span>-invariant, and since the characteristic polynomial of <span class="process-math">\(T\vert_{\im N}\)</span> divides <span class="process-math">\((x-\lambda)^n\text{,}\)</span> we see that <span class="process-math">\(T\vert_\{\im N\}\)</span> has characteristic polynomial <span class="process-math">\((x-\lambda)^k\text{.}\)</span> Thus we may apply the induction hypothesis to conclude that <span class="process-math">\(\im N\)</span> has a Jordan basis that is a concatenation of the cycles of generalized <span class="process-math">\(\lambda\)</span>-eigenvectors <span class="process-math">\(B_1,B_2,\dots, B_\ell\text{.}\)</span> Write each <span class="process-math">\(B_j\)</span> as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+B_j=(v_{1,j},\dots, v_{n_j, j})\text{,}
+\end{equation*}
+</div>
+<div class="para">and observe that by definition we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+N(v_{i,j})=\begin{cases}
+v_{i-1,j}\amp  \text{if } i\geq 2\\
+\boldzero\amp \text{if } i=1
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(v_{i,j}\text{.}\)</span> Since the end vector <span class="process-math">\(v_{n_j, j}\)</span> of each cycle <span class="process-math">\(B_j\)</span> is an element of <span class="process-math">\(\im N\text{,}\)</span> for all <span class="process-math">\(1\leq j\leq \ell\)</span> we can find a vector <span class="process-math">\(v_{n_{j}+1,j}\)</span> satisfying</div>
+<div class="displaymath process-math">
+\begin{equation*}
+N(v_{n_{j}+1,j})=v_{n_j,j}\text{,}
+\end{equation*}
+</div>
+<div class="para">yielding “lengthened” cycles of generalized <span class="process-math">\(\lambda\)</span>-eigenvectors</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\widetilde{B_j}=(v_{1,j},\dots, v_{n_j, j}, v_{n_j+1, j}) 
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(1\leq j\leq \ell\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="th_jordan_form-3-5">
+<div class="para">Lastly, since the concatenation of the original cycles <span class="process-math">\(B_i\)</span> is linearly independent, in particular, the tuple of their initial vectors <span class="process-math">\((v_{1,j})\)</span> is linearly independent. Since furthermore these elements are elements of <span class="process-math">\(\NS N\)</span> (<span class="process-math">\(N(v_{1,j})=\boldzero\)</span>), we can extend this tuple to a basis</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_jordan_form_null.html ./knowl/xref/th_jordan_cycles.html" id="eq_jordan_form_null">
+\begin{equation}
+(v_{1,1},\dots, v_{1,\ell}, w_{\ell+1}, \dots, w_{t})\tag{1.130}
+\end{equation}
+</div>
+<div class="para">of <span class="process-math">\(\NS N\text{.}\)</span> We claim that the concatenation <span class="process-math">\(B\)</span> of the cycles</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_jordan_form_null.html ./knowl/xref/th_jordan_cycles.html">
+\begin{equation*}
+\widetilde{B_1}, \widetilde{B_1}, \dots, \widetilde{B_1}, (w_{\ell+1}), (w_{\ell+2}), \dots, (w_t)
+\end{equation*}
+</div>
+<div class="para">is our desired Jordan basis of <span class="process-math">\(T\text{.}\)</span> Since the initial vectors of these cycles is precisely the linearly independent tuple in <a href="s_jordan_form.html#eq_jordan_form_null" class="xref" data-knowl="./knowl/xref/eq_jordan_form_null.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.130">(1.130)</a>, it follows from <a href="s_jordan_form.html#th_jordan_cycles" class="xref" data-knowl="./knowl/xref/th_jordan_cycles.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.26.4: Jordan blocks">Theorem 1.26.4</a> that <span class="process-math">\(B\)</span> is linearly independent. To prove <span class="process-math">\(B\)</span> is a basis it suffices to show that <span class="process-math">\(\len B=\dim V=n\text{.}\)</span> Let <span class="process-math">\(B'=B_1*B_2*\cdots *B_\ell\text{,}\)</span> the starting Jordan basis of <span class="process-math">\(\im N\text{.}\)</span>  We created <span class="process-math">\(B\)</span> by adding one extra vector for each of the <span class="process-math">\(\ell\)</span> cycles <span class="process-math">\(B_j\text{,}\)</span> as well as the <span class="process-math">\(r-\ell\)</span> vectors <span class="process-math">\(w_j\)</span> added to get a basis of the <span class="process-math">\(r\)</span>-dimensional subspace <span class="process-math">\(\NS N\text{.}\)</span> Thus we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_jordan_form_null.html ./knowl/xref/th_jordan_cycles.html" id="th_jordan_form-3-5-24">
+\begin{align*}
+\len B \amp = \len B'+\ell+r-\ell \\
+\amp =\dim \im N+r  (\dim \im N=\len B')\\
+\amp =\dim \im N+\dim \NS N\\
+\amp = n \amp (\text{rank-nullity})\text{.}
+\end{align*}
+</div>
+</div></article></details><details id="th_jordan_form-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="title">Proof of (2).</span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_jordan_form-4-2">The uniqueness of the Jordan form follows from the fact that for each generalized eigenspace <span class="process-math">\(W_\lambda=E(\lambda, T)\)</span> the number <span class="process-math">\(\ell\)</span> of Jordan blocks for <span class="process-math">\(T\vert_{W_\lambda}\)</span> as well as the list of lengths of these sequences can be expressed solely in terms of <span class="process-math">\(\dim \NS (T-\lambda I)^j\)</span> for various <span class="process-math">\(j\in \Z_+\text{,}\)</span> and hence depend solely on <span class="process-math">\(T\)</span> itself and not on the manner of choosing a Jordan basis.</div></article></details><article class="definition definition-like" id="d_Jordan_form"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.26.6</span><span class="period">.</span><span class="space"> </span><span class="title">Jordan form.</span>
 </h3>
 <div class="para" id="d_Jordan_form-2-1">Let <span class="process-math">\(T,S\in \mathcal{L}(V)\text{,}\)</span> where <span class="process-math">\(V\)</span> is finite dimensional. Assume that the characteristic polynomials of <span class="process-math">\(T\)</span> and <span class="process-math">\(S\)</span> both split completely over the base field. We say <span class="process-math">\(T\)</span> and <span class="process-math">\(S\)</span> have the <dfn class="terminology">same Jordan form</dfn> if they have Jordan forms that differ by a permutation of the Jordan blocks.</div></article><article class="algorithm theorem-like" id="proc_dot_diagram"><h3 class="heading">
