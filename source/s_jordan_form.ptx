@@ -177,6 +177,26 @@ The dot diagram is interpreted as follows.
 We illustrate how to compute a normal form for a matrix transformation <m>T_A\colon F^n\rightarrow F^n</m> in <xref first="eg_jordan_form_1" last="eg_jordan_form"/>. Since those examples take up quite a lot of space, we place them at the end of the section. In the meantime, we list some interesting theoretical consequences of <xref ref="th_jordan_form"/>.  
 
 </p>
+<theorem xml:id="th_min_poly_Jordan">
+<title>Minimal polynomial from Jordan form</title>
+<statement>
+<p>
+Let <m>T\in \mathcal{L}(V)</m>, where <m>V</m> is finite dimensional, and suppose the characteristic polynomial <m>f</m> of <m>T</m> factors as 
+<me>
+    f(x)=\prod_{i=1}^r(x-\lambda_i)^{n_i}
+</me>,
+where <m>\lambda_i\ne \lambda_j</m> for <m>i\ne j</m>, and <m>\lambda_i\in F</m>. Let <m>m(x)</m> be the minimal polynomial of <m>f</m>. We have 
+<me>
+    m(x)=\prod_{i=1}^r(x-\lambda_i)^{m_i}
+</me>,
+where <m>m_i</m> is the maximum size of a  <m>\lambda_i</m>-Jordan block appearing in a Jordan form for <m>T</m>. 
+</p>
+</statement>
+<proof>
+<p>
+</p>
+</proof>
+</theorem>
      <theorem xml:id="th_similarity">
         <title>Similarity</title>
         <statement>
