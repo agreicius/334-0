@@ -252,7 +252,68 @@
     <proof>
         <title>Proof of (2)</title>
         <p>
-            The uniqueness of the Jordan form follows from the fact that for each generalized eigenspace <m>W_\lambda=E(\lambda, T)</m> the number <m>\ell</m> of Jordan blocks for <m>T\vert_{W_\lambda}</m> as well as the list of lengths of these sequences can be expressed solely in terms of <m>\dim \NS (T-\lambda I)^j</m> for various <m>j\in \Z_+</m>, and hence depend solely on <m>T</m> itself and not on the manner of choosing a Jordan basis. 
+            The uniqueness of the Jordan form follows from the fact that for each generalized eigenspace <m>W_\lambda=E(\lambda, T)</m> the number <m>\ell</m> of Jordan blocks for <m>T\vert_{W_\lambda}</m> as well as the list of lengths of these sequences can be expressed solely in terms of <m>\dim \NS (T-\lambda I)^j</m> for various <m>j\in \Z_+</m>, and hence depend solely on <m>T</m> itself and not on the particular manner of choosing a Jordan basis. Let's see why this is so. 
+        </p>
+        <p>
+            Assume <m>T\in \mathcal{L}(V)</m> has characteristic polynomial <m>f(x)=(x-\lambda)^n</m>, let <m>N=T-\lambda I</m>, and suppose <m>B=B_1*B_2*\cdots *B_\ell</m> is a Jordan basis of <m>T</m>. Without loss of generality, we may assume that <m>\len B_j\geq \len B_{j+1}</m> for all <m>1\leq j\leq \ell</m>. Since the <m>B_j</m> are cycles of generalized <m>\lambda</m>-eigenvectors, we have 
+            <me>
+                B_j=(N^{n_j-1}(v_j),\dots, N(v_j),v_j)
+            </me>,
+            where <m>N^{n_j}(v_j)=\boldzero</m> for all <m>1\leq j</m>. The cycle structure allows us to easily choose subtuples of the Jordan basis <m>B=(N^{i}(v_j))</m> that serve as bases of <m>\dim \NS N^k</m> for various <m>k\in \Z_+</m>. Consider <m>\NS N</m> first. We claim that the tuple 
+            <men xml:id="eq_jordan_unique_null">
+                (N^{n_1-1}(v_1),N^{n_2-1}(v_2),\dots, N^{n_\ell-1}(v_\ell))
+            </men>
+            consisting of initial vectors of the <m>B_j</m> is a basis of <m>\NS N</m>. Indeed, given any <m>v\in V</m>, since <m>B=(N^i(v_j))</m> is a basis of <m>V</m>, we can write 
+            <me>
+                v=\sum_{j=1}^\ell\sum_{i=0}^{n_j-1} a_{ij}N^{i}(v_j)
+            </me>
+            for some <m>a_{ij}\in F</m>, whence 
+            <md>
+                <mrow>v\in \NS N \iff \amp \sum_{j=1}^\ell\sum_{i=0}^{n_j-1}a_{i,j}N(N^{i}(v_j))=\boldzero</mrow>
+                <mrow>\amp \iff \sum_{j=1}^\ell\sum_{i=0}^{n_j-1}a_{i,j}N^{i+1}(v_j)=\boldzero \amp </mrow>
+                <mrow> \amp \iff \sum_{j=1}^\ell\sum_{i=0}^{n_j-2}a_{i,j}N^{i+1}(v_j)=\boldzero \amp (N^{n_j}(v_j)=\boldzero)</mrow>
+                <mrow> \amp \iff a_{i,j}=0 \text{ for } 1\leq j\leq \ell, 1\leq i\leq n_j-2</mrow>
+            </md>,
+            where the last line follows from linear independence. Thus <m>v\in \NS N</m> if and only if <m>v=\sum_{j=1}^\ell a_{n_j-1, j}N^{n_{j}-1}(v_j)</m>, showing that the tuple in <xref ref="eq_jordan_unique_null"/> spans <m>\NS N</m>. Since that tuple is linearly independent, we conclude it is a basis, as claimed.
+        </p>
+        <p>
+            A similar argument, replacing <m>N</m> with <m>N^k</m> in our computations above, shows that the tuple 
+            <me>
+                (N^{i}(v_j))_{\substack{1\leq j\leq \ell\\ n_j-k+1\leq i\leq n_j}}
+            </me>
+            is a basis of <m>\NS N^k</m>. 
+            The idea behind these arguments is nicely visualized by arranging the cycles <m>B_j</m> in vertical columns as follows:
+            <me>
+                \begin{array}{cccc}
+                B_1 \amp B_2\amp \dots \amp B_\ell\\
+                \hline
+                N^{n_1-1}(v_1) \amp N^{n_2-1}(v_2) \amp \dots \amp N^{n_\ell-1}(v_\ell)\\
+                N^{n_1-2}(v_1) \amp N^{n_2-2}(v_2) \amp  \amp \vdots \\
+                N^{n_1-3}(v_1) \amp \vdots \amp  \amp v_\ell  \\
+                \vdots \amp v_2\amp \amp \\
+                v_1 \amp  \amp \amp 
+                \end{array}
+            </me>.
+            Applying <m>N</m> to the basis <m>B</m> moves vectors in the top row to <m>\boldzero</m> and moves all other vectors up one row. Moreover, from our discussion above, we see that the top <m>k</m> rows of the array form a basis for <m>\NS N^{k}</m>, and thus that the number <m>r_k</m> of vectors in the <m>k</m>-th row of the array is given by 
+            <men xml:id="eq_jordan_rows">
+                \dim \NS N^k-\dim \NS N^{k-1}
+            </men>,
+            for all <m>1\leq k\leq n</m>. This means the precise shape of the array is determined by the values 
+            <xref ref="eq_jordan_rows"/>, which depend only on <m>T</m>. Knowing the precise shape of this array tells us in turn the essential details of the Jordan block decomposition. For example, we have 
+            <me>
+                \dim \NS N=r_1=\ell=\# (\text{cycles }B_j)=\#(\text{Jordan blocks})
+            </me>.
+            Similarly, we can deduce the length of each column in our array, and hence <m>\len B_j</m> (equivalently, the size of the <m>j</m>-th Jordan block), from the sequence <m>r_1,r_2,\dots, r_n</m>. Indeed, we have 
+            <me>
+                \len B_j=\max\{k \colon r_k\geq j\}
+            </me>,
+            as one easily verifies. 
+            For example, if the sequence is 
+            <me>
+                r_1=5, r_2=4, r_3=2, r_4=2, r_5=0
+            </me>,
+            then we deduce that 
+            <me>\len B_1=4, \len B_2=4, \len B_3=2, \len B_4=2, \len B_5=1</me>.
         </p>
     </proof>
     </theorem>
@@ -340,6 +401,51 @@ where <m>m_i</m> is the maximum size of a  <m>\lambda_i</m>-Jordan block appeari
 </statement>
 <proof>
 <p>
+    Let <m>V=\bigoplus_{i=1}^{r}G(\lambda_i, T)</m>, and for each <m>1\leq i\leq r</m>, let <m>T_i=T\vert_{G(\lambda_i, T)}</m> and let <m>m_i(x)</m> be the minimal polynomial of <m>T_i</m>. Since <m>m_T(T)=0_V</m>, we have 
+    <me>
+        m_i(T)=m_i(T_i)=0_{G(\lambda_i,T)}
+    </me>
+    for all <m>i</m>, and hence <m>m_i\mid m</m> for all <m>i</m>; since further, we have <m>m_i(x)=(x-\lambda_i)^{m_i}</m> for some <m>m_i\in \Z</m> with <m>\lambda_i\ne \lambda_j</m>, it follows that 
+    <me>
+        \prod_{i=1}^{r}m_i(x)\mid m_T(x)
+    </me>.
+    Lastly, using a decomposition <m>v=w_1+w_2+\cdots +w_r</m>, with <m>w_r\in G(\lambda_i, T)</m>, we see easily that 
+    <me>
+       \prod_{i=1}^{r}m_i(T)v=\sum_{i=1}^{r}\prod_{i=1}^{r}m_i(T)w_i=\boldzero 
+    </me>,
+    and hence that <m>m_T(x)\mid \prod_{i=1}^{r}m_i(x)</m>. Since <m>m_T(x)</m> and <m>\prod_{i=1}^{r}m_i(x)</m> are both monic, and are each a factor of the other, it follows that <m>m_T(x)=\prod_{i=1}^{r}m_i(x)</m>. In other words, the minimal polynomial of <m>T</m> is the product of the minimal polynomials of the restrictions <m>T\vert_{G(\lambda_i, T)}</m>.
+</p>
+<p>
+  Since we compute a Jordan form of <m>T</m> be computing Jordan forms for each restriction <m>T\vert_{G(\lambda_i, T)}</m>, it now suffices to prove the claim for <m>T\vert_{G(\lambda_i, T)}</m>. Thus without loss of generality, we may assume that <m>T</m> has characteristic polynomial <m>f(x)=(x-\lambda)^n</m>. Let <m>B</m> be a Jordan basis of <m>T</m>, and let 
+  <me>
+    A=[T]_B=\begin{bmatrix}
+    J_1\amp 0 \amp \dots \amp \amp 0  \\
+    0\amp J_2\amp 0 \\
+    \vdots \amp \amp \vdots \amp  \\
+    0\amp \dots \amp \amp \amp J_\ell
+    \end{bmatrix}
+  </me>
+  be the corresponding Jordan form of <m>T</m>,
+  where each <m>J_i</m> is a <m>\lambda</m>-Jordan block of dimension <m>k_i\times k_i</m>. Since each <m>J_i</m> has characteristic polynomial <m>(x-\lambda)^{k_i}</m>, we see that the minimal polynomial of <m>J_i</m> is of the form <m>(x-\lambda)^{j_i}</m> for some <m>j_i\leq k_i</m>. An easy proof by induction now shows that 
+  <me>
+    (J_i-\lambda I)^\ell=\boldzero \iff \ell \geq k_i
+  </me>. 
+  In other words, in general the minimal polynomial of a <m>\lambda</m>-Jordan block of dimension <m>k\times k</m> is <m>(x-\lambda)^k</m>, as is easily shown. Lastly, from the block diagonal description of <m>A=[T]_B</m>, it follows that 
+  <me>
+    g(A)=\begin{bmatrix}
+    g(J_1)\amp 0 \amp \dots \amp 0  \\
+    0\amp g(J_2)\amp 0 \\
+    \vdots \amp \amp \vdots \amp  \\
+    0\amp \dots \amp \amp \amp g(J_k)
+    \end{bmatrix}
+  </me>,
+  for any polynomial <m>g\in P(F)</m>. We conclude that 
+  <md>
+    <mrow>g(A)=\boldzero \amp \iff g(J_i)=\boldzero \text{ for all } 1\leq i\leq \ell</mrow>
+    <mrow> \amp \iff (x-\lambda)^{k_j}\mid g(x) \text{ for all } 1\leq i\leq \ell</mrow>
+    <mrow> \amp \iff (x-\lambda)^m\mid g(x) \text{ where } m=\max\{k_j\}</mrow>
+  </md>.
+  It follows that the minimal polynomial of <m>A</m>, and hence of <m>T</m> is <m>(x-\lambda)^m</m>, where <m>m</m> is the maximum size of the Jordan blocks <m>J_i</m>, as desired. 
 </p>
 </proof>
 </theorem>
@@ -358,12 +464,44 @@ The following statements are equivalent.
 
     <li>
         <p>
-            <m>A</m> and <m>A'</m> have the same Jordan form.
+            <m>T_A</m> and <m>T_A'</m> have the same Jordan form.
         </p>
     </li>
 </ol>
             </p>
         </statement>
+    <proof>
+        <p>
+            Assume <m>A</m> and <m>A'</m> are similar, and thus that there is an invertible matrix <m>Q</m> such that <m>A=Q^{-1}A'Q</m>. Let <m>J</m> be a Jordan form for <m>T_A</m>. By definition, there is a basis <m>B'</m> such that 
+            <me>
+                [T_A]_{B'}=J
+            </me>.
+            Let <m>B</m> be the standard basis, and let <m>P=\underset{B'\to B}{P}</m>. Using the change of basis formula, we have 
+            <me>
+                J=P^{-1}AP
+            </me>,
+            and thus 
+            <me>
+                J=P^{-1}Q^{-1}A'QP=(QP)^{-1}A'(QP)
+            </me>.
+            Equivalently, letting <m>B''</m> be the basis consisting of the columns of <m>QP</m>, we see that 
+            <me>
+                J=[T_{A'}]_{B''}
+            </me>.
+            Thus <m>A</m> and <m>A'</m> have the same Jordan form. 
+        </p>
+        <p>
+            Now assume <m>A</m> and <m>A'</m> have the same Jordan form <m>J</m>. Reasoning as above, this implies that there are invertible matrices <m>P</m> and <m>Q</m> such that 
+            <me>
+                J=P^{-1}AP=Q^{-1}A'Q
+            </me>.
+            It follows that 
+            <me>
+                A=PQ^{-1}A'QP^{-1}=(QP^{-1})^{-1}A'(QP^{-1})
+            </me>,
+            showing that <m>A</m> and <m>A'</m> are similar.
+        </p>
+    </proof>
     </theorem>
     <theorem xml:id="th_diagable_plus_nilpotent">
     <title>Diagonal plus nilpotent</title>
@@ -392,6 +530,23 @@ The following statements are equivalent.
     </statement>
     <proof>
     <p>
+        Let <m>B</m> be a Jordan basis of <m>T</m>, and let 
+        <me>
+            J=[T]_B=\begin{bmatrix}J_{1}\amp \\ \amp J_{2}\amp \\ \amp \amp \ddots \\ \amp \amp \amp J_{\ell} \end{bmatrix}
+        </me>
+        be its corresponding Jordan form. It is not difficult to see that we can write 
+        <me>
+            J=D+M
+        </me>,
+        where <m>D</m> is diagonal and <m>M</m> is upper triangular with zeros along the diagonal. Moreover, this implies that <m>M^k=\boldzero</m> for some <m>k\in \Z</m>: <ie/>, any such <m>M</m> is nilpotent. Since the matrix representation operator <m>[\phantom{A}]_B</m> is an isomorphism of <m>\mathcal{L}(V)</m> to <m>F^{n,n}</m>, <m>n=\dim V</m>, there are operators <m>S, N\in \mathcal{L}(V)</m> satisfying 
+        <me>
+            [S]_B=D, [N]_B=M
+        </me>.
+        Furthermore, since <m>D</m> is diagonal and <m>M</m> is a nilpotent matrix,  it follows that <m>S</m> is diagonalizable and <m>N</m> is a nilpotent operator. Lastly, since 
+        <me>
+            [S+N]_B=[S]_B+[N]_B=D+M=J=[T]_B
+        </me>,
+        and since <m>[\phantom{A}]_B</m> is bijective, it follows that <m>T=S+N</m>. 
     </p>
     </proof>
     </theorem>
@@ -402,14 +557,48 @@ The following statements are equivalent.
     <p>
     Let <m>A\in \C^{n,n}</m> be an invertible matrix. There is a matrix <m>B</m> such that <m>B^2=A</m>. In other words, every invertible complex matrix has a square root. 
     </p>
+    <p>
+        It follows that any invertible operator on a finite-dimensional complex vector space (<m>F=\C</m>) has a square-root. 
+    </p>
     </statement>
     <proof>
     <p>
+        From calculus we learn that the infinite series 
+        <me>
+            \sum_{i=0}^\infty {1/2\choose i}x^i=1+\frac{1}{2}x-\frac{1}{8}x^2+\frac{1}{16}x^3-\cdots 
+        </me>
+        converges to <m>\sqrt{1+x}</m> for all <m>x\in (-1,1)</m>. It follows from power series theory that for all <m>N</m>, the truncated series 
+        <me>
+            f_m(x)=\sum_{i=0}^m{1/2\choose i}x^i
+        </me>
+        satisfies 
+        <me>
+            f_m(x)f_m(x)=1+x+x^{m+1}h_m(x)
+        </me>
+        for some polynomial <m>h_m(x)</m>. Thus if <m>A=I+N</m> where <m>N</m> is a nilpotent matrix satisfying 
+        <me>
+            N^{m+1}=\boldzero
+        </me>,
+        then 
+        <me>
+            f_m(N)f_m(N)=I+N+N^{m+1}h_m(N)=I+N,
+        </me>
+        since <m>N^{m+1}=\boldzero</m>. This proves that any matrix of the form <m>I+N</m> has a square root <m>B</m>, and that in fact we may take <m>B=f_m(N)</m> for <m>m</m> sufficiently large. 
+    </p>
+    <p>
+        Now assume <m>A</m> is invertible. From <xref ref="th_diagable_plus_nilpotent"/> and Jordan theory, we can write <m>A=D+N</m>, where <m>D</m> is diagonal and <m>N</m> is nilpotent, and furthermore the diagonal entries of <m>D</m> are the eigenvalues of <m>A</m>, which are all nonzero. It follows that <m>D</m> is diagonal. Write <m>A=D(I+D^{-1}N)</m>. Since <m>D^{-1}</m> is diagonal, it commutes with all matrices, and it follows that <m>D^{-1}N</m> is also nilpotent. By the previous paragraph there is a square-root <m>B</m> of <m>I+D^{-1}N</m>. Let <m>E</m> be a diagonal square-root of <m>D</m> (it is easy to see such a matrix exists), and let <m>C=EB</m>. We have 
+        <md>
+            <mrow>C^2 \amp =EBEB</mrow>
+            <mrow> \amp =EEBB \amp (E \text{ diagonal})</mrow>
+            <mrow> \amp =E^2B^2</mrow>
+            <mrow> \amp =D(I+D^{-1}N)</mrow>
+            <mrow> \amp =A</mrow>
+        </md>.
     </p>
     </proof>
     </theorem>
 <p>
-    In order to illustrate the subtleties of the Jordan form analysis, we need to work with larger matrices than usual, and this in turn compels us to reach for some computing technology. The wonderful open source computer algebra system Sage serves our needs for this task. 
+    At last we are ready to do some computations around Jordan forms and bases. In order to illustrate the subtleties of this analysis we need to work with larger matrices than usual, and this in turn compels us to reach for some computing technology. The wonderful open source computer algebra system Sage serves our needs for this task. 
 </p>
 <example xml:id="eg_jordan_form_1">
 <title>Computing Jordan form</title>
