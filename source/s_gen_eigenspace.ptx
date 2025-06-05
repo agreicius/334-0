@@ -2,77 +2,15 @@
 
 <section xml:id="s_gen_eigenspace" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Generalized eigenspaces</title>
-    <definition xml:id="d_gen_eigenspace">
-    <title>Generalized eigenspace</title>
-    <statement>
     <p>
-    Let <m>T\in \mathcal{L}(V)</m>, where <m>V</m> is finite dimensional. Given <m>\lambda\in F</m> we define the <term>generalized eigenspace</term> <m>G(\lambda, T)</m> associated to <m>\lambda</m> (or <m>\lambda</m>-generalized eigenspace) to be 
-    <men xml:id="eq_gen_eigenspace">
-        G(\lambda, T)=\{v\in V\colon (T-\lambda I)^k(v)=\boldzero \text{ for some } k\in \Z_+\}
-    </men>.
-    A <term>generalized <m>\lambda</m>-eigenvector</term> of <m>T</m> is a nonzero element of <m>G(\lambda, T)</m>.
+        Let <m>T\in \mathcal{L}(V)</m>, where <m>V</m> is finite dimensional. When <m>T</m> is diagonalizable, we can decompose <m>V</m> into the <m>T</m>-invariant subspaces <m>E(\lambda_i, T)</m> as a direct sum <m>V=\oplus_{i=1}^rE(\lambda_i, T)</m>. This fact aids our understanding of <m>T</m> as its restriction <m>T\vert_{E(\lambda_i, T)}</m> to any one of these subspaces is as as simple as we could hope for. In more detail, fixing an eigenvalue <m>\lambda</m> and eigenspace <m>W=E(\lambda, T)</m>, we have <m>T\vert_W=\lambda_W</m>, the scaling by <m>\lambda</m> operation.
     </p>
-    </statement>
-    </definition>
-    <theorem xml:id="th_gen_eigenspace">
-    <title>Generalized eigenspaces</title>
-    <statement>
     <p>
-    Let <m>T\in \mathcal{L}(V)</m>, where <m>V</m> is finite dimensional. 
-    <ol>
-        <li>
-            <p>
-                For all <m>\lambda\in F</m>, <m>G(\lambda, T)</m> is a <m>T</m>-invariant subspace and <m>E(\lambda, T)\subseteq G(\lambda, T)</m>. 
-            </p>
-        </li>
-        <li>
-            <p>
-                <m>G(\lambda, T)\cap G(\lambda', T)=\{\boldzero\}</m> for <m>\lambda\be \lambda'\in F</m>. 
-            </p>
-        </li>
-        <li>
-            <p>
-                Let <m>\lambda</m> be an eigenvalue of <m>T</m> of algebraic multiplicty <m>m</m>. We have 
-                <men xml:id="eq_gen_eigenspace_dim_bounds">
-                    1\leq \dim E(\lamdba, T)\leq \dim G(\lambda, T)\leq m
-                </men> and 
-                <men xml:id="eq_gen_eigenspace_null">
-                    G(\lambda, T)=\NS(T-\lambda I)^m
-                </men>.
-                
-            </p>
-        </li>
-    </ol>
+        Of course, the downside of this whole discussion is that not all linear operators are diagonalizable! In the next two sections we will address this issue with the theory of generalized eigenspaces and Jordan forms. In this section we will show that although we may not always have a direct sum decomposition <m>V=\oplus_{i=1}^r</m> of <m>V</m> into eigenspaces, we do have a direct sum <m>V=\oplus_{i=1}^rG(\lambda_i, T)</m> into <em>generalized eigenspaces</em> (as long as the characteristic polynomial of <m>T</m> splits completely over <m>F</m>). Generalized eigenspaces, like their less generalized brothers, are <m>T</m>-invariant subspaces; furthermore, the restriction of <m>T</m> to one of these generalized eigenspaces, though not as simple as a restriction to an eigenspace, can be thoroughly analyzed with the theory of Jordan forms and bases: the topic of the next section. 
     </p>
-    </statement>
-    <proof>
     <p>
+        Before getting to the heart of the matter generalized eigenspaces, we introduce some more notions and results from the general theory of polynomials over fields that will prove essential in our discussion. 
     </p>
-    </proof>
-    </theorem>
-    
-
-    <theorem xml:id="th_gen_eigenspace_decomp">
-    <title>Generalized eigenspace decomposition</title>
-    <statement>
-    <p>
-    Let <m>T\in \mathcal{L}(V)</m>, where <m>V</m> is finite dimensional, and assume the characteristic polynomial <m>f</m> of <m>T</m> factors as
-    <me>
-        f(x)=\prod_{i=1}^r(x-\lambda_i)^{n_i}
-    </me>,
-    where <m>\lambda_1,\lambda_2,\dots, \lambda_r</m> are the distinct eigenvalues of <m>T</m>. We have the following direct sum decomposition of <m>V</m>: 
-    <men xml:id="eq_gen_eigenspaces_decomp">
-        V=\oplus_{i=1}^rG(\lambda_i, T)
-    </men>.
-    </p>
-    </statement>
-    <proof>
-    <p>
-    </p>
-    </proof>
-    </theorem>
-    
-
 
 
     <definition xml:id="d_relatively_prime">
@@ -134,6 +72,190 @@
     </p>
     </proof>
     </theorem>
+    <definition xml:id="d_gen_eigenspace">
+    <title>Generalized eigenspace</title>
+    <statement>
+    <p>
+    Let <m>T\in \mathcal{L}(V)</m>, where <m>V</m> is finite dimensional. Given <m>\lambda\in F</m> we define the <term>generalized eigenspace</term> <m>G(\lambda, T)</m> associated to <m>\lambda</m> (or <m>\lambda</m>-generalized eigenspace) to be 
+    <men xml:id="eq_gen_eigenspace">
+        G(\lambda, T)=\{v\in V\colon (T-\lambda I)^k(v)=\boldzero \text{ for some } k\in \Z_+\}
+    </men>.
+    A <term>generalized <m>\lambda</m>-eigenvector</term> of <m>T</m> is a nonzero element of <m>G(\lambda, T)</m>.
+    </p>
+    </statement>
+    </definition>
+    <remark>
+        <title>Generalized eigenspace</title>
+        <p>
+            Let <m>T\in \mathcal{L}</m> and fix <m>\lambda\in F</m>. The definition of <m>G(\lambda, T)</m> makes clear why we call this a generalized eigenspaces: whereas an eigenvector is a nonzero vector <m>v</m> satisfying <m>(T-\lambda I)(v)=\boldzero</m>, a generalized eigenvector is a nonzero vector satisfying <m>(T-\lambda I)^k(v)=\boldzero</m> for some <m>k\in \Z_+</m>. 
+        </p>
+    </remark>
+    <theorem xml:id="th_gen_eigenspace">
+    <title>Generalized eigenspaces</title>
+    <statement>
+    <p>
+    Let <m>T\in \mathcal{L}(V)</m>, where <m>V</m> is finite dimensional, and assume the characteristic polynomial of <m>f</m> splits completely over the base field <m>F</m>.  
+    <ol>
+        <li>
+            <p>
+                For all <m>\lambda\in F</m>, <m>G(\lambda, T)</m> is a <m>T</m>-invariant subspace and <m>E(\lambda, T)\subseteq G(\lambda, T)</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>G(\lambda, T)\cap G(\lambda', T)=\{\boldzero\}</m> for <m>\lambda\ne \lambda'\in F</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                Let <m>\lambda</m> be an eigenvalue of <m>T</m> of algebraic multiplicity <m>m</m>. We have 
+                <men xml:id="eq_gen_eigenspace_dim_bounds">
+                    1\leq \dim E(\lambda, T)\leq \dim G(\lambda, T)\leq m
+                </men> and 
+                <men xml:id="eq_gen_eigenspace_null">
+                    G(\lambda, T)=\NS(T-\lambda I)^m
+                </men>.
+                
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <proof>
+    <p>
+        <ol>
+            <li>
+                <p>
+                    For each <m>k\in \Z_+</m> define <m>W_k=\NS(T-\lambda I)^k</m>, which is a subspace by <xref ref="th_nullspace_image"/>. It is easy to see that 
+                    <me>
+                        W_k\subseteq W_{k+1}
+                    </me>
+                    and that <m>G(\lambda, T)=\bigcup_{k=0}^{\infty} W_k</m>. Although in general the union of subspaces is not a subspace, the union of <em>nested</em> subspaces is a subspace, as we have had occasion to prove elsewhere. Thus <m>W</m> is a subspace. In general <m>\NS S^k</m> is <m>S</m>-invariant for any linear transformation <m>S</m>. Thus, letting <m>N=T-\lambda I</m>, we see that <m>W_k</m> is <m>N</m>-invariant for all <m>k</m>. It follows easily that the nested union <m>G(\lambda, T)=\bigcup_{k=0}^\infty W_k</m> is also <m>N</m>-invariant. Lastly, since a subspace being <m>N</m>-invariant implies it is <m>g(N)</m>-invariant for any polynomial <m>g\in P(F)</m>, and since <m>T=g(N)</m>, where <m>g(x)=x+\lambda</m>, we see that <m>G(\lambda, T)</m> is <m>T</m>-invariant.
+                </p>
+                <p>
+                    Lastly, since <m>E(\lambda, T)=\NS (T-\lambda I)=W_1</m>, we see that <m>E(\lambda, T)\subseteq G(\lambda, T)</m>. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Fix scalars <m>\lambda\ne \lambda'</m>, and suppose <m>v\in G(\lambda, T)\cap G(\lambda', T)</m>. By definition, this means that <m>(T-\lambda I)^k(v)=(T-\lambda'I)^{\ell}(v)=\boldzero</m> for some positive integers <m>k</m> and <m>\ell</m>. Since <m>\lambda\ne\lambda'</m>, the polynomials <m>(x-\lambda)^k</m> and <m>(x-\lambda')^\ell</m> are relatively prime. By <xref ref="th_relatively_prime_polys"/>, we have  
+                    <me>
+                        1=f(x)(x-\lambda)^k+g(x)(x-\lambda')^\ell
+                    </me>
+                    for some polynomials <m>f,g\in P(F)</m>, and thus also
+                    <me>
+                        I_V=f(T)(T-\lambda)^k+g(T)(T-\lambda')^\ell
+                    </me>. 
+                    It follows that 
+                    <md>
+                        <mrow>v \amp =I_V(v)</mrow>
+                        <mrow> \amp =f(T)(T-\lambda)^k(v)+g(T)(T-\lambda')^\ell(v)</mrow>
+                        <mrow> \amp =\boldzero+\boldzero</mrow>
+                        <mrow> \amp =\boldzero</mrow>
+                    </md>.
+                    We conclude that <m>G(\lambda, T)\cap G(\lambda', T)=\{\boldzero\}</m>.                 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Since <m>E(\lambda, T)\subseteq G(\lambda, T)</m>, and since <m>\lambda</m> is an eigenvalue, we have 
+                    <me>
+                        1\leq \dim E(\lambda, T)\leq \dim G(\lambda, T)
+                    </me>.
+                     Since <m>\lambda</m> is an eigenvalue of algebraic multiplicity <m>m</m>, and since the characteristic polynomial <m>f</m> splits completely, we have a factorization of the form 
+                    <me>
+                        f(x)=(x-\lambda)^m\prod_{i=2}^r(x-\lambda_i)^{m_i}
+                    </me>,
+                    where <m>\lambda</m> and the <m>\lambda_i</m> are all distinct. Let <m>W=G(\lambda, T)</m>. Since <m>W</m> is <m>T</m>-invariant, the characteristic polynomial <m>h</m> of <m>T\vert_W</m> divides <m>f</m> (<xref ref="th_invar_char_poly"/>). Since <m>G(\lambda, T)\cap G(\lambda_i, T)=\{\boldzero\}</m>, <m>\lambda_i</m> cannot be an eigenvalue of <m>T\vert_W</m> for all <m>i\geq 2</m>, and thus <m>(x-\lambda_i)\nmid h(x)</m> for all <m>i\geq 2</m>. It follows that <m>h(x)=(x-\lambda)^{\dim W}</m>. Lastly, since 
+                    <me>
+                        (x-\lambda)^{\dim W}\mid f(x)=(x-\lambda)^m\prod_{i=2}^r(x-\lambda_i)^{m_i}
+                    </me>,
+                    it follows from the uniqueness claim in <xref ref="th_factorization_polynomials"/>, that <m>\dim W\leq m</m>, as desired. 
+                </p>
+            </li>
+        </ol>
+    </p>
+    </proof>
+    </theorem>
+    
+
+    <theorem xml:id="th_gen_eigenspace_decomp">
+    <title>Generalized eigenspace decomposition</title>
+    <statement>
+    <p>
+    Let <m>T\in \mathcal{L}(V)</m>, where <m>V</m> is finite dimensional, and assume the characteristic polynomial <m>f</m> of <m>T</m> factors as
+    <me>
+        f(x)=\prod_{i=1}^r(x-\lambda_i)^{n_i}
+    </me>,
+    where <m>\lambda_1,\lambda_2,\dots, \lambda_r</m> are the distinct eigenvalues of <m>T</m>. We have the following direct sum decomposition of <m>V</m>: 
+    <men xml:id="eq_gen_eigenspaces_decomp">
+        V=\oplus_{i=1}^rG(\lambda_i, T)
+    </men>.
+    It follows that 
+    <men xml:id="eq_dim_gen_eigenspace">
+        \dim G(\lambda_i, T)=n_i
+    </men>
+    for all <m>1\leq i\leq r</m>. In other words, the dimension of the generalized <m>\lambda</m>-eigenspace is equal to the algebraic multiplicity of the eigenvalue <m>\lambda_i</m>. 
+    
+    </p>
+    </statement>
+    <proof>
+    <p>
+        We will first show that <m>V=\sum_{i=1}^r G(\lambda_i, T)</m>. For each <m>1\leq i\leq r</m>, define 
+        <me>
+            f_i(x)=\prod_{j\ne i}(x-\lambda_j)^{n_j}=\frac{f(x)}{(x-\lambda_i)^{n_i}}
+        </me>.
+        The list <m>f_1,f_2,\dots, f_r</m> is easily seen to be relatively prime: any nonconstant monic common irreducible factor of all the <m>f_i</m> is an irreducible factor of <m>f</m> (since <m>f_i\mid f</m>), and thus must be <m>x-\lambda_k</m> for some <m>k</m>; however, by design <m>(x-\lambda_k)\mid f_k(x)</m>; thus there is no nonconstant irreducible factor common to all the <m>f_i</m>. By <xref ref="th_relatively_prime_polys"/>, it follows that we have 
+        <me>
+            1=\sum_{i=1}^rg_i(x)f_i(x)
+        </me>
+        for some polynomials <m>g_i\in P(F)</m>, and hence (evaluating the left- and right-side polynomials above at <m>T</m>)
+        <me>
+            I_V=\sum_{i=1}^rg_i(T)f_i(T)
+        </me>.
+        It follows that for all <m>v\in V</m>, we have 
+        <md>
+            <mrow>v \amp = I_V(v)</mrow>
+            <mrow> \amp = sum_{i=1}^rg_i(T)f_i(T)(v)</mrow>
+        </md>.
+        Let <m>w_i=f_i(T)(v)</m>. We have 
+        <md>
+            <mrow>(T-\lambda I)^{n_i}w_i \amp = (T-\lambda I)^{n_i}f_i(T)(v)</mrow>
+            <mrow> \amp =f(T)v \amp ((x-\lambda_i)^{n_i}f_i(x)=f(x))</mrow>
+            <mrow> \amp =\boldzero \amp (\text{Cayley-Ham.})</mrow>
+        </md>.
+        Thus <m>w_i=f_i(T)(v)\in G(\lambda_i, T)</m>. Since <m>G(\lambda_i, T)</m> is <m>T</m>-invariant, it follows that <m>g_i(T)(w_i)=g_i(T)f_i(T)(v)\in G(\lambda_i, T)</m>. Setting <m>v_i=g_i(T)f_i(T)(v)</m>,  we conclude that we can write
+        <me>
+            v=\sum_{i=1}^rv_i
+        </me>
+        with <m>v_i\in G(\lambda_i, T)</m> for all <m>1\leq i\leq r</m>. This proves <m>V=\sum_{i=1}^rG(\lambda_i, T)</m>.
+    </p>
+    <p>
+        Finally we show that this subspace sum is in fact a direct sum. Letting <m>n=\dim V</m>, we have  
+
+        <md>
+            <mrow>\dim V\amp =\dim \sum_{i=1}^rG(\lambda_i, T) \amp (V=\sum_{i=1}^rG(\lambda_i, T)) </mrow>
+            <mrow> \amp \leq \sum_{i=1}^r\dim G(\lambda_i, T) </mrow>
+            <mrow> \amp \leq \sum_{i=1}^rn_i (<xref ref="th_gen_eigenspace" text="global"/>) </mrow>
+            <mrow> \amp = n </mrow>
+            <mrow> \amp = \dim V</mrow>
+        </md>,
+        where the last line follows from the fact that 
+        <me>
+            n=\deg f=\sum_{i=1}^r \deg (x-\lambda_i)^{n_i}=\sum_{i=1}^{r}n_i
+        </me>.
+        Since the beginning and end of our chain of equalities above are in equal, we conclude that all the inequalities involved are in fact equalities, and hence that 
+        <md>
+            <mrow>\dim \sum_{i=1}^rG(\lambda_i, T) \amp = \sum_{i=1}^r\dim G(\lambda_i, T) </mrow>
+            <mrow> \sum_{i=1}^r\dim G(\lambda_i, T) \amp = \sum_{i=1}^rn_i </mrow>
+        </md>.
+        The first equality implies <m>V=\oplus_{i=1}^rG(\lambda_i, T)</m> by <xref ref="th_direct_sum_dim"/>; the second equality implies that <m>\dim G(\lambda_i, T)=n_i</m> for all <m>i</m>. 
+    </p>
+    </proof>
+    </theorem>
+    
+
+
     
     
 
