@@ -12,10 +12,10 @@
 </head>
 <body class="ignore-math">
 <article class="theorem theorem-like"><h4 class="heading">
-<span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.24.4</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="process-math">\(T\)</span>-cyclic subspace.</span>
+<span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.24.7</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="process-math">\(T\)</span>-cyclic subspace.</span>
 </h4>
 <div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
-<div class="para">Let <span class="process-math">\(T\in \mathcal{L}(V)\text{,}\)</span> let <span class="process-math">\(v\in V\text{,}\)</span> and let <span class="process-math">\(W=\Span(T^i(v))_{i=0}^\infty\text{.}\)</span>
+<div class="para">Let <span class="process-math">\(T\in \mathcal{L}(V)\text{,}\)</span> let <span class="process-math">\(v\in V\)</span> be nonzero, and let <span class="process-math">\(W=\Span(T^i(v))_{i=0}^\infty\text{.}\)</span>
 </div>
 <ol class="decimal" id="th_Tcyclic_sub-2-1-4">
 <li><div class="para">
@@ -34,6 +34,26 @@ B=(T^{i}(v))_{i=0}^{k-1}=(v,T(v),\dots, T^{k-1}(v))
 </div>
 </div></li>
 </ol>
-</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para"></div></article></details><span class="incontext"><a class="internal" href="s_caylet_ham.html#th_Tcyclic_sub">in-context</a></span>
+</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical"><ol class="decimal" id="th_Tcyclic_sub-3-1-1">
+<li><div class="para">This is left to the reader.</div></li>
+<li><div class="para logical">
+<div class="para">Assume <span class="process-math">\(W'\)</span> is a <span class="process-math">\(T\)</span>-invariant subspace containing <span class="process-math">\(v\text{.}\)</span> Since <span class="process-math">\(W'\)</span> is <span class="process-math">\(T\)</span>-invariant, it contains <span class="process-math">\(T^{i}(v)\)</span> for all <span class="process-math">\(i\in \Z_{\geq 0}\text{.}\)</span> By <a href="s_span_ind.html#th_span" class="xref" data-knowl="./knowl/xref/th_span.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.6.6: Spans are subspaces">Theorem 1.6.6</a>, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_span.html">
+\begin{equation*}
+W=\Span(T^i(v))_{i=0}^\infty\subseteq W'\text{.}
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">If <span class="process-math">\(W\)</span> is finite dimensional, then the tuple <span class="process-math">\((T^i(v))_{i=0}^\infty\)</span> must be linearly dependent. It follows that  <span class="process-math">\(T^k(v)\)</span> can be written as a linear combination of the previous <span class="process-math">\(T^i(v)\)</span> for some <span class="process-math">\(k\in \Z_{\geq 1}\)</span> (<span class="process-math">\(v\)</span> is assumed to be nonzero). Let <span class="process-math">\(k\)</span> be minimal in this respect. The tuple <span class="process-math">\(B=(v,T(v),\dots, T^{k-1}(v))\)</span> is then linearly independent by <a href="s_span_ind.html#cor_span_ind" class="xref" data-knowl="./knowl/xref/cor_span_ind.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.6.14: Span and independence">Corollary 1.6.14</a>.  We claim <span class="process-math">\(B\)</span> spans <span class="process-math">\(W\text{,}\)</span> and hence is a basis. Since <span class="process-math">\(\Span B\subseteq W\)</span> by definition, we need only show that <span class="process-math">\(W\subseteq \Span B\text{.}\)</span> By the previous result it suffices to show that <span class="process-math">\(W\)</span> is <span class="process-math">\(T\)</span>-invariant (since <span class="process-math">\(v\in W\)</span>). This is easy: given any <span class="process-math">\(v\in \Span B\text{,}\)</span> we have <span class="process-math">\(v=\sum_{i=0}^{k-1}a_iT^i(v)\)</span> for some <span class="process-math">\(a_i\text{,}\)</span> in which case</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_span_ind.html">
+\begin{equation*}
+T(v)=\sum_{i=0}^{k-1}a_iT^{i+1}(v_i)=\sum_{i=1}^{k-1}a_{i-1}T^i(v)+T^k(v)\in \Span B\text{,}
+\end{equation*}
+</div>
+<div class="para">since <span class="process-math">\(\sum_{i=1}^{k-1}a_{i-1}T^i(v)\in \Span B\)</span> and <span class="process-math">\(T^k(v)\in \Span B\text{.}\)</span>
+</div>
+</div></li>
+</ol></div></article></details><span class="incontext"><a class="internal" href="s_caylet_ham.html#th_Tcyclic_sub">in-context</a></span>
 </body>
 </html>

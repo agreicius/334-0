@@ -12,7 +12,7 @@
 </head>
 <body class="ignore-math">
 <article class="theorem theorem-like"><h3 class="heading">
-<span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.25.4</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Generalized eigenspace decomposition.</span>
+<span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.25.7</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Generalized eigenspace decomposition.</span>
 </h3>
 <div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
 <div class="para">Let <span class="process-math">\(T\in \mathcal{L}(V)\text{,}\)</span> where <span class="process-math">\(V\)</span> is finite dimensional, and assume the characteristic polynomial <span class="process-math">\(f\)</span> of <span class="process-math">\(T\)</span> factors as</div>
@@ -25,13 +25,13 @@ f(x)=\prod_{i=1}^r(x-\lambda_i)^{n_i}\text{,}
 </div>
 <div class="displaymath process-math">
 \begin{equation}
-V=\oplus_{i=1}^rG(\lambda_i, T)\text{.}\tag{1.126}
+V=\oplus_{i=1}^rG(\lambda_i, T)\text{.}\tag{1.128}
 \end{equation}
 </div>
 <div class="para">It follows that</div>
 <div class="displaymath process-math">
 \begin{equation}
-\dim G(\lambda_i, T)=n_i\tag{1.127}
+\dim G(\lambda_i, T)=n_i\tag{1.129}
 \end{equation}
 </div>
 <div class="para">for all <span class="process-math">\(1\leq i\leq r\text{.}\)</span> In other words, the dimension of the generalized <span class="process-math">\(\lambda\)</span>-eigenspace is equal to the algebraic multiplicity of the eigenvalue <span class="process-math">\(\lambda_i\text{.}\)</span>
@@ -43,7 +43,7 @@ V=\oplus_{i=1}^rG(\lambda_i, T)\text{.}\tag{1.126}
 f_i(x)=\prod_{j\ne i}(x-\lambda_j)^{n_j}=\frac{f(x)}{(x-\lambda_i)^{n_i}}\text{.}
 \end{equation*}
 </div>
-<div class="para">The list <span class="process-math">\(f_1,f_2,\dots, f_r\)</span> is easily seen to be relatively prime: any nonconstant monic common irreducible factor of all the <span class="process-math">\(f_i\)</span> is an irreducible factor of <span class="process-math">\(f\)</span> (since <span class="process-math">\(f_i\mid f\)</span>), and thus must be <span class="process-math">\(x-\lambda_k\)</span> for some <span class="process-math">\(k\text{;}\)</span> however, by design <span class="process-math">\((x-\lambda_k)\mid f_k(x)\text{;}\)</span> thus there is no nonconstant irreducible factor common to all the <span class="process-math">\(f_i\text{.}\)</span> By <a href="s_gen_eigenspace.html#th_relatively_prime_polys" class="xref" data-knowl="./knowl/xref/th_relatively_prime_polys.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.25.6: Relatively prime polynomials">Theorem 1.25.6</a>, it follows that we have</div>
+<div class="para">The list <span class="process-math">\(f_1,f_2,\dots, f_r\)</span> is easily seen to be relatively prime: any nonconstant monic common irreducible factor of all the <span class="process-math">\(f_i\)</span> is an irreducible factor of <span class="process-math">\(f\)</span> (since <span class="process-math">\(f_i\mid f\)</span>), and thus must be <span class="process-math">\(x-\lambda_k\)</span> for some <span class="process-math">\(k\text{;}\)</span> however, by design <span class="process-math">\((x-\lambda_k)\mid f_k(x)\text{;}\)</span> thus there is no nonconstant irreducible factor common to all the <span class="process-math">\(f_i\text{.}\)</span> By <a href="s_gen_eigenspace.html#th_relatively_prime_polys" class="xref" data-knowl="./knowl/xref/th_relatively_prime_polys.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.25.2: Relatively prime polynomials">Theorem 1.25.2</a>, it follows that we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_relatively_prime_polys.html">
 \begin{equation*}
 1=\sum_{i=1}^rg_i(x)f_i(x)
@@ -85,7 +85,7 @@ v=\sum_{i=1}^rv_i
 \begin{align*}
 \dim V\amp =\dim \sum_{i=1}^rG(\lambda_i, T) \amp (V=\sum_{i=1}^rG(\lambda_i, T)) \\
 \amp \leq \sum_{i=1}^r\dim G(\lambda_i, T) \\
-\amp \leq \sum_{i=1}^rn_i (\knowl{./knowl/xref/th_gen_eigenspace.html}{\text{1.25.3}}) \\
+\amp \leq \sum_{i=1}^rn_i (\knowl{./knowl/xref/th_gen_eigenspace.html}{\text{1.25.6}}) \\
 \amp = n \\
 \amp = \dim V\text{,}
 \end{align*}

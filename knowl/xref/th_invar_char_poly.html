@@ -14,6 +14,29 @@
 <article class="theorem theorem-like"><h4 class="heading">
 <span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.24.2</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Invariant subspaces and characteristic polynomial.</span>
 </h4>
-<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">Let <span class="process-math">\(V\)</span> be a finite-dimensional vector space. Given an operator <span class="process-math">\(T\in \mathcal{L}(V)\text{,}\)</span> and let <span class="process-math">\(W\subseteq V\)</span> be a <span class="process-math">\(T\)</span>-invariant subspace.</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para"></div></article></details><span class="incontext"><a class="internal" href="s_caylet_ham.html#th_invar_char_poly">in-context</a></span>
+<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">Let <span class="process-math">\(T\in \mathcal{L}(V)\text{,}\)</span> where <span class="process-math">\(V\)</span> is finite dimensional, and suppose <span class="process-math">\(W\)</span> be a <span class="process-math">\(T\)</span>-invariant subspace of <span class="process-math">\(V\text{.}\)</span> Let <span class="process-math">\(f\)</span> be the characteristic polynomial of <span class="process-math">\(T\text{,}\)</span> and let <span class="process-math">\(g\)</span> be the characteristic polynomial of the restriction <span class="process-math">\(T\vert_W\text{.}\)</span> We have <span class="process-math">\(g\mid f\text{:}\)</span> i.e., the characteristic polynomial of <span class="process-math">\(T\vert_W\)</span> divides the characteristic polynomial of <span class="process-math">\(T\)</span> for any <span class="process-math">\(T\)</span>-invariant subspace <span class="process-math">\(W\text{.}\)</span>
+</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">Let <span class="process-math">\(B'=(v_1,v_2,\dots, v_k)\)</span> be a basis of <span class="process-math">\(W\text{,}\)</span> and extend to a basis <span class="process-math">\(B=(v_1,v_2,\dots, v_n)\text{.}\)</span> Since <span class="process-math">\(W\)</span> is <span class="process-math">\(T\)</span>-invariant, it follows easily from <a href="s_matrix_reps.html#eq_matrixrep_formula" class="xref" data-knowl="./knowl/xref/eq_matrixrep_formula.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.34">(1.34)</a> that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_matrixrep_formula.html">
+\begin{equation*}
+[T]_B=\begin{bmatrix}
+\underset{k\times k}{C} \amp \underset{k\times (n-k)}{D}\\
+\underset{(n-k)\times k}{\boldzero} \amp \underset{(n-k)\times (n-k)}{E}
+\end{bmatrix}\text{,}
+\end{equation*}
+</div>
+<div class="para">and that furthermore, <span class="process-math">\(C=[T\vert_W]_{B'}\text{.}\)</span>  A matrix of the form <span class="process-math">\(A=[T]_B\)</span> above is called <em class="emphasis">block upper diagonal</em>. An easy induction argument shows that in general the determinant of block upper diagonal matrices is the product of the determinants of the block matrices along the diagonal. As a result we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_matrixrep_formula.html">
+\begin{align*}
+\det(xI-A)\amp =\det \begin{bmatrix}
+\underset{k\times k}{xI-C} \amp \underset{k\times (n-k)}{-D}\\
+\underset{(n-k)\times k}{\boldzero} \amp \underset{(n-k)\times (n-k)}{xI-E}
+\end{bmatrix} \amp \\
+\amp =\det(xI-C)\det(cI-E)\text{.}
+\end{align*}
+</div>
+<div class="para">Since the characteristic polynomial of <span class="process-math">\(T\)</span> is <span class="process-math">\(f(x)=\det(xI-A)\text{,}\)</span> and the characteristic polynomial of <span class="process-math">\(T\vert_W\)</span> is <span class="process-math">\(g(x)=\det(xI-C)\)</span> (<span class="process-math">\(C=[T\vert_W]_{B'}\)</span>), we conclude that <span class="process-math">\(g\mid f\text{.}\)</span>
+</div>
+</div></article></details><span class="incontext"><a class="internal" href="s_caylet_ham.html#th_invar_char_poly">in-context</a></span>
 </body>
 </html>
