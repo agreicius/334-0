@@ -12,7 +12,7 @@
 </head>
 <body class="ignore-math">
 <article class="theorem theorem-like"><h3 class="heading">
-<span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.25.3</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Generalized eigenspace decomposition.</span>
+<span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.25.4</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Generalized eigenspace decomposition.</span>
 </h3>
 <div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
 <div class="para">Let <span class="process-math">\(T\in \mathcal{L}(V)\text{,}\)</span> where <span class="process-math">\(V\)</span> is finite dimensional, and assume the characteristic polynomial <span class="process-math">\(f\)</span> of <span class="process-math">\(T\)</span> factors as</div>
@@ -28,6 +28,83 @@ f(x)=\prod_{i=1}^r(x-\lambda_i)^{n_i}\text{,}
 V=\oplus_{i=1}^rG(\lambda_i, T)\text{.}\tag{1.126}
 \end{equation}
 </div>
-</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para"></div></article></details><span class="incontext"><a class="internal" href="s_gen_eigenspace.html#th_gen_eigenspace_decomp">in-context</a></span>
+<div class="para">It follows that</div>
+<div class="displaymath process-math">
+\begin{equation}
+\dim G(\lambda_i, T)=n_i\tag{1.127}
+\end{equation}
+</div>
+<div class="para">for all <span class="process-math">\(1\leq i\leq r\text{.}\)</span> In other words, the dimension of the generalized <span class="process-math">\(\lambda\)</span>-eigenspace is equal to the algebraic multiplicity of the eigenvalue <span class="process-math">\(\lambda_i\text{.}\)</span>
+</div>
+</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">We will first show that <span class="process-math">\(V=\sum_{i=1}^r G(\lambda_i, T)\text{.}\)</span> For each <span class="process-math">\(1\leq i\leq r\text{,}\)</span> define</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_relatively_prime_polys.html">
+\begin{equation*}
+f_i(x)=\prod_{j\ne i}(x-\lambda_j)^{n_j}=\frac{f(x)}{(x-\lambda_i)^{n_i}}\text{.}
+\end{equation*}
+</div>
+<div class="para">The list <span class="process-math">\(f_1,f_2,\dots, f_r\)</span> is easily seen to be relatively prime: any nonconstant monic common irreducible factor of all the <span class="process-math">\(f_i\)</span> is an irreducible factor of <span class="process-math">\(f\)</span> (since <span class="process-math">\(f_i\mid f\)</span>), and thus must be <span class="process-math">\(x-\lambda_k\)</span> for some <span class="process-math">\(k\text{;}\)</span> however, by design <span class="process-math">\((x-\lambda_k)\mid f_k(x)\text{;}\)</span> thus there is no nonconstant irreducible factor common to all the <span class="process-math">\(f_i\text{.}\)</span> By <a href="s_gen_eigenspace.html#th_relatively_prime_polys" class="xref" data-knowl="./knowl/xref/th_relatively_prime_polys.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.25.6: Relatively prime polynomials">Theorem 1.25.6</a>, it follows that we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_relatively_prime_polys.html">
+\begin{equation*}
+1=\sum_{i=1}^rg_i(x)f_i(x)
+\end{equation*}
+</div>
+<div class="para">for some polynomials <span class="process-math">\(g_i\in P(F)\text{,}\)</span> and hence (evaluating the left- and right-side polynomials above at <span class="process-math">\(T\)</span>)</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_relatively_prime_polys.html">
+\begin{equation*}
+I_V=\sum_{i=1}^rg_i(T)f_i(T)\text{.}
+\end{equation*}
+</div>
+<div class="para">It follows that for all <span class="process-math">\(v\in V\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_relatively_prime_polys.html">
+\begin{align*}
+v \amp = I_V(v)\\
+\amp = sum_{i=1}^rg_i(T)f_i(T)(v)\text{.}
+\end{align*}
+</div>
+<div class="para">Let <span class="process-math">\(w_i=f_i(T)(v)\text{.}\)</span> We have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_relatively_prime_polys.html">
+\begin{align*}
+(T-\lambda I)^{n_i}w_i \amp = (T-\lambda I)^{n_i}f_i(T)(v)\\
+\amp =f(T)v \amp ((x-\lambda_i)^{n_i}f_i(x)=f(x))\\
+\amp =\boldzero \amp (\text{Cayley-Ham.})\text{.}
+\end{align*}
+</div>
+<div class="para">Thus <span class="process-math">\(w_i=f_i(T)(v)\in G(\lambda_i, T)\text{.}\)</span> Since <span class="process-math">\(G(\lambda_i, T)\)</span> is <span class="process-math">\(T\)</span>-invariant, it follows that <span class="process-math">\(g_i(T)(w_i)=g_i(T)f_i(T)(v)\in G(\lambda_i, T)\text{.}\)</span> Setting <span class="process-math">\(v_i=g_i(T)f_i(T)(v)\text{,}\)</span>  we conclude that we can write</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_relatively_prime_polys.html">
+\begin{equation*}
+v=\sum_{i=1}^rv_i
+\end{equation*}
+</div>
+<div class="para">with <span class="process-math">\(v_i\in G(\lambda_i, T)\)</span> for all <span class="process-math">\(1\leq i\leq r\text{.}\)</span> This proves <span class="process-math">\(V=\sum_{i=1}^rG(\lambda_i, T)\text{.}\)</span>
+</div>
+</div>
+<div class="para logical">
+<div class="para">Finally we show that this subspace sum is in fact a direct sum. Letting <span class="process-math">\(n=\dim V\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_gen_eigenspace.html ./knowl/xref/th_direct_sum_dim.html">
+\begin{align*}
+\dim V\amp =\dim \sum_{i=1}^rG(\lambda_i, T) \amp (V=\sum_{i=1}^rG(\lambda_i, T)) \\
+\amp \leq \sum_{i=1}^r\dim G(\lambda_i, T) \\
+\amp \leq \sum_{i=1}^rn_i (\knowl{./knowl/xref/th_gen_eigenspace.html}{\text{1.25.3}}) \\
+\amp = n \\
+\amp = \dim V\text{,}
+\end{align*}
+</div>
+<div class="para">where the last line follows from the fact that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_gen_eigenspace.html ./knowl/xref/th_direct_sum_dim.html">
+\begin{equation*}
+n=\deg f=\sum_{i=1}^r \deg (x-\lambda_i)^{n_i}=\sum_{i=1}^{r}n_i\text{.}
+\end{equation*}
+</div>
+<div class="para">Since the beginning and end of our chain of equalities above are in equal, we conclude that all the inequalities involved are in fact equalities, and hence that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_gen_eigenspace.html ./knowl/xref/th_direct_sum_dim.html">
+\begin{align*}
+\dim \sum_{i=1}^rG(\lambda_i, T) \amp = \sum_{i=1}^r\dim G(\lambda_i, T) \\
+\sum_{i=1}^r\dim G(\lambda_i, T) \amp = \sum_{i=1}^rn_i \text{.}
+\end{align*}
+</div>
+<div class="para">The first equality implies <span class="process-math">\(V=\oplus_{i=1}^rG(\lambda_i, T)\)</span> by <a href="s_dimention.html#th_direct_sum_dim" class="xref" data-knowl="./knowl/xref/th_direct_sum_dim.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.8.13: Direct sums">Theorem 1.8.13</a>; the second equality implies that <span class="process-math">\(\dim G(\lambda_i, T)=n_i\)</span> for all <span class="process-math">\(i\text{.}\)</span>
+</div>
+</div></article></details><span class="incontext"><a class="internal" href="s_gen_eigenspace.html#th_gen_eigenspace_decomp">in-context</a></span>
 </body>
 </html>

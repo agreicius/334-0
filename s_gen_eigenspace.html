@@ -559,6 +559,8 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:xlink="http://www.w3.org/1999/xlink" class="section" id="s_gen_eigenspace"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">1.25</span><span class="space"> </span><span class="title">Generalized eigenspaces</span>
 </h2>
+<div class="para" id="s_gen_eigenspace-2">Let <span class="process-math">\(T\in \mathcal{L}(V)\text{,}\)</span> where <span class="process-math">\(V\)</span> is finite dimensional. When <span class="process-math">\(T\)</span> is diagonalizable, we can decompose <span class="process-math">\(V\)</span> into the <span class="process-math">\(T\)</span>-invariant subspaces <span class="process-math">\(E(\lambda_i, T)\)</span> as a direct sum <span class="process-math">\(V=\oplus_{i=1}^rE(\lambda_i, T)\text{.}\)</span> This fact aids our understanding of <span class="process-math">\(T\)</span> as its restriction <span class="process-math">\(T\vert_{E(\lambda_i, T)}\)</span> to any one of these subspaces is as as simple as we could hope for. In more detail, fixing an eigenvalue <span class="process-math">\(\lambda\)</span> and eigenspace <span class="process-math">\(W=E(\lambda, T)\text{,}\)</span> we have <span class="process-math">\(T\vert_W=\lambda_W\text{,}\)</span> the scaling by <span class="process-math">\(\lambda\)</span> operation.</div>
+<div class="para" id="s_gen_eigenspace-3">Of course, the downside of this whole discussion is that not all linear operators are diagonalizable! In the next two sections we will address this issue with the theory of generalized eigenspaces and Jordan forms. In this section we will show that although we may not always have a direct sum decomposition <span class="process-math">\(V=\oplus_{i=1}^r\)</span> of <span class="process-math">\(V\)</span> into eigenspaces, we do have a direct sum <span class="process-math">\(V=\oplus_{i=1}^rG(\lambda_i, T)\)</span> into <em class="emphasis">generalized eigenspaces</em> (as long as the characteristic polynomial of <span class="process-math">\(T\)</span> splits completely over <span class="process-math">\(F\)</span>). Generalized eigenspaces, like their less generalized brothers, are <span class="process-math">\(T\)</span>-invariant subspaces; furthermore, the restriction of <span class="process-math">\(T\)</span> to one of these generalized eigenspaces, though not as simple as a restriction to an eigenspace, can be thoroughly analyzed with the theory of Jordan forms and bases: the topic of the next section.</div>
 <article class="definition definition-like" id="d_gen_eigenspace"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.25.1</span><span class="period">.</span><span class="space"> </span><span class="title">Generalized eigenspace.</span>
 </h3>
@@ -571,22 +573,27 @@ G(\lambda, T)=\{v\in V\colon (T-\lambda I)^k(v)=\boldzero \text{ for some } k\in
 </div>
 <div class="para">A <dfn class="terminology">generalized <span class="process-math">\(\lambda\)</span>-eigenvector</dfn> of <span class="process-math">\(T\)</span> is a nonzero element of <span class="process-math">\(G(\lambda, T)\text{.}\)</span>
 </div>
+</div></article><article class="remark remark-like" id="s_gen_eigenspace-5"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.25.2</span><span class="period">.</span><span class="space"> </span><span class="title">Generalized eigenspace.</span>
+</h3>
+<div class="para" id="s_gen_eigenspace-5-2">Let <span class="process-math">\(T\in \mathcal{L}\)</span> and fix <span class="process-math">\(\lambda\in F\text{.}\)</span> The definition of <span class="process-math">\(G(\lambda, T)\)</span> makes clear why we call this a generalized eigenspaces: whereas an eigenvector is a nonzero vector <span class="process-math">\(v\)</span> satisfying <span class="process-math">\((T-\lambda I)(v)=\boldzero\text{,}\)</span> a generalized eigenvector is a nonzero vector satisfying <span class="process-math">\((T-\lambda I)^k(v)=\boldzero\)</span> for some <span class="process-math">\(k\in \Z_+\text{.}\)</span>
 </div></article><article class="theorem theorem-like" id="th_gen_eigenspace"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.25.2</span><span class="period">.</span><span class="space"> </span><span class="title">Generalized eigenspaces.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.25.3</span><span class="period">.</span><span class="space"> </span><span class="title">Generalized eigenspaces.</span>
 </h3>
 <div class="para logical" id="th_gen_eigenspace-2-1">
-<div class="para">Let <span class="process-math">\(T\in \mathcal{L}(V)\text{,}\)</span> where <span class="process-math">\(V\)</span> is finite dimensional.</div>
-<ol class="decimal" id="th_gen_eigenspace-2-1-3">
-<li id="th_gen_eigenspace-2-1-3-1"><div class="para" id="th_gen_eigenspace-2-1-3-1-1">For all <span class="process-math">\(\lambda\in F\text{,}\)</span> <span class="process-math">\(G(\lambda, T)\)</span> is a <span class="process-math">\(T\)</span>-invariant subspace and <span class="process-math">\(E(\lambda, T)\subseteq G(\lambda, T)\text{.}\)</span>
+<div class="para">Let <span class="process-math">\(T\in \mathcal{L}(V)\text{,}\)</span> where <span class="process-math">\(V\)</span> is finite dimensional, and assume the characteristic polynomial of <span class="process-math">\(f\)</span> splits completely over the base field <span class="process-math">\(F\text{.}\)</span>
+</div>
+<ol class="decimal" id="th_gen_eigenspace-2-1-5">
+<li id="th_gen_eigenspace-2-1-5-1"><div class="para" id="th_gen_eigenspace-2-1-5-1-1">For all <span class="process-math">\(\lambda\in F\text{,}\)</span> <span class="process-math">\(G(\lambda, T)\)</span> is a <span class="process-math">\(T\)</span>-invariant subspace and <span class="process-math">\(E(\lambda, T)\subseteq G(\lambda, T)\text{.}\)</span>
 </div></li>
-<li id="th_gen_eigenspace-2-1-3-2"><div class="para" id="th_gen_eigenspace-2-1-3-2-1">
-<span class="process-math">\(G(\lambda, T)\cap G(\lambda', T)=\{\boldzero\}\)</span> for <span class="process-math">\(\lambda\be \lambda'\in F\text{.}\)</span>
+<li id="th_gen_eigenspace-2-1-5-2"><div class="para" id="th_gen_eigenspace-2-1-5-2-1">
+<span class="process-math">\(G(\lambda, T)\cap G(\lambda', T)=\{\boldzero\}\)</span> for <span class="process-math">\(\lambda\ne \lambda'\in F\text{.}\)</span>
 </div></li>
-<li id="th_gen_eigenspace-2-1-3-3"><div class="para logical" id="th_gen_eigenspace-2-1-3-3-1">
-<div class="para">Let <span class="process-math">\(\lambda\)</span> be an eigenvalue of <span class="process-math">\(T\)</span> of algebraic multiplicty <span class="process-math">\(m\text{.}\)</span> We have</div>
+<li id="th_gen_eigenspace-2-1-5-3"><div class="para logical" id="th_gen_eigenspace-2-1-5-3-1">
+<div class="para">Let <span class="process-math">\(\lambda\)</span> be an eigenvalue of <span class="process-math">\(T\)</span> of algebraic multiplicity <span class="process-math">\(m\text{.}\)</span> We have</div>
 <div class="displaymath process-math" id="eq_gen_eigenspace_dim_bounds">
 \begin{equation}
-1\leq \dim E(\lamdba, T)\leq \dim G(\lambda, T)\leq m\tag{1.124}
+1\leq \dim E(\lambda, T)\leq \dim G(\lambda, T)\leq m\tag{1.124}
 \end{equation}
 </div>
 <div class="para">and</div>
@@ -597,8 +604,68 @@ G(\lambda, T)=\NS(T-\lambda I)^m\text{.}\tag{1.125}
 </div>
 </div></li>
 </ol>
-</div></article><details id="th_gen_eigenspace-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_gen_eigenspace-3-1"></div></article></details><article class="theorem theorem-like" id="th_gen_eigenspace_decomp"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.25.3</span><span class="period">.</span><span class="space"> </span><span class="title">Generalized eigenspace decomposition.</span>
+</div></article><details id="th_gen_eigenspace-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_gen_eigenspace-3-1"><ol class="decimal" id="th_gen_eigenspace-3-1-1">
+<li id="th_gen_eigenspace-3-1-1-1">
+<div class="para logical" id="th_gen_eigenspace-3-1-1-1-1">
+<div class="para">For each <span class="process-math">\(k\in \Z_+\)</span> define <span class="process-math">\(W_k=\NS(T-\lambda I)^k\text{,}\)</span> which is a subspace by <a href="s_null_image.html#th_nullspace_image" class="xref" data-knowl="./knowl/xref/th_nullspace_image.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.10.4: Null space and image">Theorem 1.10.4</a>. It is easy to see that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_nullspace_image.html">
+\begin{equation*}
+W_k\subseteq W_{k+1}
+\end{equation*}
+</div>
+<div class="para">and that <span class="process-math">\(G(\lambda, T)=\bigcup_{k=0}^{\infty} W_k\text{.}\)</span> Although in general the union of subspaces is not a subspace, the union of <em class="emphasis">nested</em> subspaces is a subspace, as we have had occasion to prove elsewhere. Thus <span class="process-math">\(W\)</span> is a subspace. In general <span class="process-math">\(\NS S^k\)</span> is <span class="process-math">\(S\)</span>-invariant for any linear transformation <span class="process-math">\(S\text{.}\)</span> Thus, letting <span class="process-math">\(N=T-\lambda I\text{,}\)</span> we see that <span class="process-math">\(W_k\)</span> is <span class="process-math">\(N\)</span>-invariant for all <span class="process-math">\(k\text{.}\)</span> It follows easily that the nested union <span class="process-math">\(G(\lambda, T)=\bigcup_{k=0}^\infty W_k\)</span> is also <span class="process-math">\(N\)</span>-invariant. Lastly, since a subspace being <span class="process-math">\(N\)</span>-invariant implies it is <span class="process-math">\(g(N)\)</span>-invariant for any polynomial <span class="process-math">\(g\in P(F)\text{,}\)</span> and since <span class="process-math">\(T=g(N)\text{,}\)</span> where <span class="process-math">\(g(x)=x+\lambda\text{,}\)</span> we see that <span class="process-math">\(G(\lambda, T)\)</span> is <span class="process-math">\(T\)</span>-invariant.</div>
+</div>
+<div class="para" id="th_gen_eigenspace-3-1-1-1-2">Lastly, since <span class="process-math">\(E(\lambda, T)=\NS (T-\lambda I)=W_1\text{,}\)</span> we see that <span class="process-math">\(E(\lambda, T)\subseteq G(\lambda, T)\text{.}\)</span>
+</div>
+</li>
+<li id="th_gen_eigenspace-3-1-1-2"><div class="para logical" id="th_gen_eigenspace-3-1-1-2-1">
+<div class="para">Fix scalars <span class="process-math">\(\lambda\ne \lambda'\text{,}\)</span> and suppose <span class="process-math">\(v\in G(\lambda, T)\cap G(\lambda', T)\text{.}\)</span> By definition, this means that <span class="process-math">\((T-\lambda I)^k(v)=(T-\lambda'I)^{\ell}(v)=\boldzero\)</span> for some positive integers <span class="process-math">\(k\)</span> and <span class="process-math">\(\ell\text{.}\)</span> Since <span class="process-math">\(\lambda\ne\lambda'\text{,}\)</span> the polynomials <span class="process-math">\((x-\lambda)^k\)</span> and <span class="process-math">\((x-\lambda')^\ell\)</span> are relatively prime. By <a href="s_gen_eigenspace.html#th_relatively_prime_polys" class="xref" data-knowl="./knowl/xref/th_relatively_prime_polys.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.25.6: Relatively prime polynomials">Theorem 1.25.6</a>, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_relatively_prime_polys.html">
+\begin{equation*}
+1=f(x)(x-\lambda)^k+g(x)(x-\lambda')^\ell
+\end{equation*}
+</div>
+<div class="para">for some polynomials <span class="process-math">\(f,g\in P(F)\text{,}\)</span> and thus also</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_relatively_prime_polys.html">
+\begin{equation*}
+I_V=f(T)(T-\lambda)^k+g(T)(T-\lambda')^\ell\text{.}
+\end{equation*}
+</div>
+<div class="para">It follows that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_relatively_prime_polys.html" id="th_gen_eigenspace-3-1-1-2-1-13">
+\begin{align*}
+v \amp =I_V(v)\\
+\amp =f(T)(T-\lambda)^k(v)+g(T)(T-\lambda')^\ell(v)\\
+\amp =\boldzero+\boldzero\\
+\amp =\boldzero\text{.}
+\end{align*}
+</div>
+<div class="para">We conclude that <span class="process-math">\(G(\lambda, T)\cap G(\lambda', T)=\{\boldzero\}\text{.}\)</span>
+</div>
+</div></li>
+<li id="th_gen_eigenspace-3-1-1-3"><div class="para logical" id="th_gen_eigenspace-3-1-1-3-1">
+<div class="para">Since <span class="process-math">\(E(\lambda, T)\subseteq G(\lambda, T)\text{,}\)</span> and since <span class="process-math">\(\lambda\)</span> is an eigenvalue, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_invar_char_poly.html ./knowl/xref/th_factorization_polynomials.html">
+\begin{equation*}
+1\leq \dim E(\lambda, T)\leq \dim G(\lambda, T)\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\lambda\)</span> is an eigenvalue of algebraic multiplicity <span class="process-math">\(m\text{,}\)</span> and since the characteristic polynomial <span class="process-math">\(f\)</span> splits completely, we have a factorization of the form</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_invar_char_poly.html ./knowl/xref/th_factorization_polynomials.html">
+\begin{equation*}
+f(x)=(x-\lambda)^m\prod_{i=2}^r(x-\lambda_i)^{m_i}\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\lambda\)</span> and the <span class="process-math">\(\lambda_i\)</span> are all distinct. Let <span class="process-math">\(W=G(\lambda, T)\text{.}\)</span> Since <span class="process-math">\(W\)</span> is <span class="process-math">\(T\)</span>-invariant, the characteristic polynomial <span class="process-math">\(h\)</span> of <span class="process-math">\(T\vert_W\)</span> divides <span class="process-math">\(f\)</span> (<a href="s_caylet_ham.html#th_invar_char_poly" class="xref" data-knowl="./knowl/xref/th_invar_char_poly.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.24.2: Invariant subspaces and characteristic polynomial">Theorem 1.24.2</a>). Since <span class="process-math">\(G(\lambda, T)\cap G(\lambda_i, T)=\{\boldzero\}\text{,}\)</span> <span class="process-math">\(\lambda_i\)</span> cannot be an eigenvalue of <span class="process-math">\(T\vert_W\)</span> for all <span class="process-math">\(i\geq 2\text{,}\)</span> and thus <span class="process-math">\((x-\lambda_i)\nmid h(x)\)</span> for all <span class="process-math">\(i\geq 2\text{.}\)</span> It follows that <span class="process-math">\(h(x)=(x-\lambda)^{\dim W}\text{.}\)</span> Lastly, since</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_invar_char_poly.html ./knowl/xref/th_factorization_polynomials.html">
+\begin{equation*}
+(x-\lambda)^{\dim W}\mid f(x)=(x-\lambda)^m\prod_{i=2}^r(x-\lambda_i)^{m_i}\text{,}
+\end{equation*}
+</div>
+<div class="para">it follows from the uniqueness claim in <a href="s_gen_eigenspace.html#th_factorization_polynomials" class="xref" data-knowl="./knowl/xref/th_factorization_polynomials.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.25.7: Factorization of polynomials">Theorem 1.25.7</a>, that <span class="process-math">\(\dim W\leq m\text{,}\)</span> as desired.</div>
+</div></li>
+</ol></div></article></details><article class="theorem theorem-like" id="th_gen_eigenspace_decomp"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.25.4</span><span class="period">.</span><span class="space"> </span><span class="title">Generalized eigenspace decomposition.</span>
 </h3>
 <div class="para logical" id="th_gen_eigenspace_decomp-2-1">
 <div class="para">Let <span class="process-math">\(T\in \mathcal{L}(V)\text{,}\)</span> where <span class="process-math">\(V\)</span> is finite dimensional, and assume the characteristic polynomial <span class="process-math">\(f\)</span> of <span class="process-math">\(T\)</span> factors as</div>
@@ -614,24 +681,101 @@ f(x)=\prod_{i=1}^r(x-\lambda_i)^{n_i}\text{,}
 V=\oplus_{i=1}^rG(\lambda_i, T)\text{.}\tag{1.126}
 \end{equation}
 </div>
-</div></article><details id="th_gen_eigenspace_decomp-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_gen_eigenspace_decomp-3-1"></div></article></details><article class="definition definition-like" id="d_relatively_prime"><h3 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.25.4</span><span class="period">.</span><span class="space"> </span><span class="title">Relatively prime polynomials.</span>
+<div class="para">It follows that</div>
+<div class="displaymath process-math" id="eq_dim_gen_eigenspace">
+\begin{equation}
+\dim G(\lambda_i, T)=n_i\tag{1.127}
+\end{equation}
+</div>
+<div class="para">for all <span class="process-math">\(1\leq i\leq r\text{.}\)</span> In other words, the dimension of the generalized <span class="process-math">\(\lambda\)</span>-eigenspace is equal to the algebraic multiplicity of the eigenvalue <span class="process-math">\(\lambda_i\text{.}\)</span>
+</div>
+</div></article><details id="th_gen_eigenspace_decomp-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_gen_eigenspace_decomp-3-1">
+<div class="para">We will first show that <span class="process-math">\(V=\sum_{i=1}^r G(\lambda_i, T)\text{.}\)</span> For each <span class="process-math">\(1\leq i\leq r\text{,}\)</span> define</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_relatively_prime_polys.html">
+\begin{equation*}
+f_i(x)=\prod_{j\ne i}(x-\lambda_j)^{n_j}=\frac{f(x)}{(x-\lambda_i)^{n_i}}\text{.}
+\end{equation*}
+</div>
+<div class="para">The list <span class="process-math">\(f_1,f_2,\dots, f_r\)</span> is easily seen to be relatively prime: any nonconstant monic common irreducible factor of all the <span class="process-math">\(f_i\)</span> is an irreducible factor of <span class="process-math">\(f\)</span> (since <span class="process-math">\(f_i\mid f\)</span>), and thus must be <span class="process-math">\(x-\lambda_k\)</span> for some <span class="process-math">\(k\text{;}\)</span> however, by design <span class="process-math">\((x-\lambda_k)\mid f_k(x)\text{;}\)</span> thus there is no nonconstant irreducible factor common to all the <span class="process-math">\(f_i\text{.}\)</span> By <a href="s_gen_eigenspace.html#th_relatively_prime_polys" class="xref" data-knowl="./knowl/xref/th_relatively_prime_polys.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.25.6: Relatively prime polynomials">Theorem 1.25.6</a>, it follows that we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_relatively_prime_polys.html">
+\begin{equation*}
+1=\sum_{i=1}^rg_i(x)f_i(x)
+\end{equation*}
+</div>
+<div class="para">for some polynomials <span class="process-math">\(g_i\in P(F)\text{,}\)</span> and hence (evaluating the left- and right-side polynomials above at <span class="process-math">\(T\)</span>)</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_relatively_prime_polys.html">
+\begin{equation*}
+I_V=\sum_{i=1}^rg_i(T)f_i(T)\text{.}
+\end{equation*}
+</div>
+<div class="para">It follows that for all <span class="process-math">\(v\in V\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_relatively_prime_polys.html" id="th_gen_eigenspace_decomp-3-1-18">
+\begin{align*}
+v \amp = I_V(v)\\
+\amp = sum_{i=1}^rg_i(T)f_i(T)(v)\text{.}
+\end{align*}
+</div>
+<div class="para">Let <span class="process-math">\(w_i=f_i(T)(v)\text{.}\)</span> We have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_relatively_prime_polys.html" id="th_gen_eigenspace_decomp-3-1-20">
+\begin{align*}
+(T-\lambda I)^{n_i}w_i \amp = (T-\lambda I)^{n_i}f_i(T)(v)\\
+\amp =f(T)v \amp ((x-\lambda_i)^{n_i}f_i(x)=f(x))\\
+\amp =\boldzero \amp (\text{Cayley-Ham.})\text{.}
+\end{align*}
+</div>
+<div class="para">Thus <span class="process-math">\(w_i=f_i(T)(v)\in G(\lambda_i, T)\text{.}\)</span> Since <span class="process-math">\(G(\lambda_i, T)\)</span> is <span class="process-math">\(T\)</span>-invariant, it follows that <span class="process-math">\(g_i(T)(w_i)=g_i(T)f_i(T)(v)\in G(\lambda_i, T)\text{.}\)</span> Setting <span class="process-math">\(v_i=g_i(T)f_i(T)(v)\text{,}\)</span>  we conclude that we can write</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_relatively_prime_polys.html">
+\begin{equation*}
+v=\sum_{i=1}^rv_i
+\end{equation*}
+</div>
+<div class="para">with <span class="process-math">\(v_i\in G(\lambda_i, T)\)</span> for all <span class="process-math">\(1\leq i\leq r\text{.}\)</span> This proves <span class="process-math">\(V=\sum_{i=1}^rG(\lambda_i, T)\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="th_gen_eigenspace_decomp-3-2">
+<div class="para">Finally we show that this subspace sum is in fact a direct sum. Letting <span class="process-math">\(n=\dim V\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_gen_eigenspace.html ./knowl/xref/th_direct_sum_dim.html" id="th_gen_eigenspace_decomp-3-2-2">
+\begin{align*}
+\dim V\amp =\dim \sum_{i=1}^rG(\lambda_i, T) \amp (V=\sum_{i=1}^rG(\lambda_i, T)) \\
+\amp \leq \sum_{i=1}^r\dim G(\lambda_i, T) \\
+\amp \leq \sum_{i=1}^rn_i (\knowl{./knowl/xref/th_gen_eigenspace.html}{\text{1.25.3}}) \\
+\amp = n \\
+\amp = \dim V\text{,}
+\end{align*}
+</div>
+<div class="para">where the last line follows from the fact that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_gen_eigenspace.html ./knowl/xref/th_direct_sum_dim.html">
+\begin{equation*}
+n=\deg f=\sum_{i=1}^r \deg (x-\lambda_i)^{n_i}=\sum_{i=1}^{r}n_i\text{.}
+\end{equation*}
+</div>
+<div class="para">Since the beginning and end of our chain of equalities above are in equal, we conclude that all the inequalities involved are in fact equalities, and hence that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_gen_eigenspace.html ./knowl/xref/th_direct_sum_dim.html" id="th_gen_eigenspace_decomp-3-2-4">
+\begin{align*}
+\dim \sum_{i=1}^rG(\lambda_i, T) \amp = \sum_{i=1}^r\dim G(\lambda_i, T) \\
+\sum_{i=1}^r\dim G(\lambda_i, T) \amp = \sum_{i=1}^rn_i \text{.}
+\end{align*}
+</div>
+<div class="para">The first equality implies <span class="process-math">\(V=\oplus_{i=1}^rG(\lambda_i, T)\)</span> by <a href="s_dimention.html#th_direct_sum_dim" class="xref" data-knowl="./knowl/xref/th_direct_sum_dim.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.8.13: Direct sums">Theorem 1.8.13</a>; the second equality implies that <span class="process-math">\(\dim G(\lambda_i, T)=n_i\)</span> for all <span class="process-math">\(i\text{.}\)</span>
+</div>
+</div></article></details><article class="definition definition-like" id="d_relatively_prime"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.25.5</span><span class="period">.</span><span class="space"> </span><span class="title">Relatively prime polynomials.</span>
 </h3>
 <div class="para" id="d_relatively_prime-2-1">Let <span class="process-math">\(F\)</span> be a field. Polynomials <span class="process-math">\(f,g\in P(F)\)</span> are <dfn class="terminology">relatively prime</dfn> if they have no nonconstant common factor: i.e., if <span class="process-math">\(q\in P(F)\)</span> satisfies <span class="process-math">\(q\mid f\)</span> and <span class="process-math">\(q\mid g\text{,}\)</span> then <span class="process-math">\(q(x)=c\)</span> for some <span class="process-math">\(c\in F\text{.}\)</span>
 </div> <div class="para" id="d_relatively_prime-2-2">More generally a finite list <span class="process-math">\(f_1,f_2,\dots, f_n\)</span> of polynomials <span class="process-math">\(f_i\in P(F)\)</span> is <dfn class="terminology">relatively prime</dfn> if there is no nonconstant factor common to all the <span class="process-math">\(f_i\text{:}\)</span> i.e., if <span class="process-math">\(q\in P(F)\)</span> satisfies <span class="process-math">\(q\mid f_i\)</span> for all <span class="process-math">\(i\text{,}\)</span> then <span class="process-math">\(q(x)=c\)</span> for some <span class="process-math">\(c\in F\text{.}\)</span>
 </div></article><article class="theorem theorem-like" id="th_relatively_prime_polys"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.25.5</span><span class="period">.</span><span class="space"> </span><span class="title">Relatively prime polynomials.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.25.6</span><span class="period">.</span><span class="space"> </span><span class="title">Relatively prime polynomials.</span>
 </h3>
 <div class="para logical" id="th_relatively_prime_polys-2-1">
 <div class="para">Let <span class="process-math">\(F\)</span> be a field, and let <span class="process-math">\(f_1,f_2,\dots, f_r\)</span> be a relatively prime list of polynomials. There are polynomials <span class="process-math">\(g_1,g_2,\dots, g_r\)</span> such that</div>
 <div class="displaymath process-math" id="eq_relatively_prime_poly">
 \begin{equation}
-1=g_1(x)f_1(x)+g_2(x)f_2(x)+\cdots +g_r(x)f_r(x)\text{.}\tag{1.127}
+1=g_1(x)f_1(x)+g_2(x)f_2(x)+\cdots +g_r(x)f_r(x)\text{.}\tag{1.128}
 \end{equation}
 </div>
 </div></article><details id="th_relatively_prime_polys-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_relatively_prime_polys-3-1">The proof, though not difficult, lies somewhat outside the scope of this course. This and other results about the theory of polynomials is covered in the <em class="emphasis">ring theory</em> portion of a course in abstract algebra. Moreover, it is an instance of a more general result involving the <em class="emphasis">greatest common divisor</em> of the polynomials <span class="process-math">\(f_1,f_2,\dots, f_r\text{.}\)</span>
 </div></article></details><article class="theorem theorem-like" id="th_factorization_polynomials"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.25.6</span><span class="period">.</span><span class="space"> </span><span class="title">Factorization of polynomials.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.25.7</span><span class="period">.</span><span class="space"> </span><span class="title">Factorization of polynomials.</span>
 </h3>
 <div class="para logical" id="th_factorization_polynomials-2-1">
 <div class="para">Let <span class="process-math">\(F\)</span> be a field, and let <span class="process-math">\(f\in P(F)\)</span> be a nonzero polynomial.</div>
@@ -641,7 +785,7 @@ V=\oplus_{i=1}^rG(\lambda_i, T)\text{.}\tag{1.126}
 <div class="para">We can factor <span class="process-math">\(f\)</span> in the form</div>
 <div class="displaymath process-math" id="th_factorization_polynomials-2-1-3-1-2-2">
 \begin{equation}
-f(x)=cf_1(x)^{n_1}f_2(x)^{n_2}\cdots f_r^{n_r}(x)\text{,}\tag{1.128}
+f(x)=cf_1(x)^{n_1}f_2(x)^{n_2}\cdots f_r^{n_r}(x)\text{,}\tag{1.129}
 \end{equation}
 </div>
 <div class="para">where the factors <span class="process-math">\(f_i\)</span> are pairwise relatively prime, monic irreducible polynomials.</div>

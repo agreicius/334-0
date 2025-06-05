@@ -673,10 +673,10 @@ N(v_j)=v_{j+1}
 <div class="para">We prove the result by induction on the sum of the lengths</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_cycles_gen_eigen.html" id="eq_cycles_gen_eigen">
 \begin{equation}
-n=\len B_1+\len B_2+\cdots +\len B_\ell\text{,}\tag{1.129}
+n=\len B_1+\len B_2+\cdots +\len B_\ell\text{,}\tag{1.130}
 \end{equation}
 </div>
-<div class="para">the base case <span class="process-math">\(n=1\)</span> being trivial. Assume now that the result is true for any collection cycles of generalized <span class="process-math">\(\lambda\)</span>-eigenvectors whose lengths sum to <span class="process-math">\(k&lt; n\text{,}\)</span> and suppose that we have cycles <span class="process-math">\(B_1,B_2,\dots, B_\ell\)</span> whose initial vectors are linearly independent, and whose lengths satisfy <a href="s_jordan_form.html#eq_cycles_gen_eigen" class="xref" data-knowl="./knowl/xref/eq_cycles_gen_eigen.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.129">(1.129)</a>. Let <span class="process-math">\(N=T-\lambda I\text{,}\)</span> and for each <span class="process-math">\(1\leq j\leq \ell\)</span> let</div>
+<div class="para">the base case <span class="process-math">\(n=1\)</span> being trivial. Assume now that the result is true for any collection cycles of generalized <span class="process-math">\(\lambda\)</span>-eigenvectors whose lengths sum to <span class="process-math">\(k&lt; n\text{,}\)</span> and suppose that we have cycles <span class="process-math">\(B_1,B_2,\dots, B_\ell\)</span> whose initial vectors are linearly independent, and whose lengths satisfy <a href="s_jordan_form.html#eq_cycles_gen_eigen" class="xref" data-knowl="./knowl/xref/eq_cycles_gen_eigen.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.130">(1.130)</a>. Let <span class="process-math">\(N=T-\lambda I\text{,}\)</span> and for each <span class="process-math">\(1\leq j\leq \ell\)</span> let</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_cycles_gen_eigen.html">
 \begin{equation*}
 B_j=(v_{1,j},v_{2,j},\dots, v_{n_j,j})\text{.}
@@ -740,7 +740,7 @@ A=[T]_B=\begin{bmatrix} J_1\amp \\ \amp J_2\amp \\ \amp    \amp\ddots \\ \amp   
 </div></li>
 </ol>
 </div></article><details id="th_jordan_form-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="title">Proof of (1).</span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_jordan_form-3-2">
-<div class="para">We first prove that the existence of a Jordan basis. Let <span class="process-math">\(V=\oplus_{i=1}^rG(\lambda_i, T)\)</span> be the decomposition of <span class="process-math">\(V\)</span> into generalized eigenspaces, as per <a href="s_gen_eigenspace.html#th_gen_eigenspace_decomp" class="xref" data-knowl="./knowl/xref/th_gen_eigenspace_decomp.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.25.3: Generalized eigenspace decomposition">Theorem 1.25.3</a>. Observe that since each <span class="process-math">\(G(\lambda_i, T)\)</span> is <span class="process-math">\(T\)</span>-invariant, if we can find Jordan bases <span class="process-math">\(B_1,B_2,\dots, B_r\)</span> for <span class="process-math">\(T\vert_{G(\lambda_i, T)}\text{,}\)</span> then the concatenation</div>
+<div class="para">We first prove that the existence of a Jordan basis. Let <span class="process-math">\(V=\oplus_{i=1}^rG(\lambda_i, T)\)</span> be the decomposition of <span class="process-math">\(V\)</span> into generalized eigenspaces, as per <a href="s_gen_eigenspace.html#th_gen_eigenspace_decomp" class="xref" data-knowl="./knowl/xref/th_gen_eigenspace_decomp.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.25.4: Generalized eigenspace decomposition">Theorem 1.25.4</a>. Observe that since each <span class="process-math">\(G(\lambda_i, T)\)</span> is <span class="process-math">\(T\)</span>-invariant, if we can find Jordan bases <span class="process-math">\(B_1,B_2,\dots, B_r\)</span> for <span class="process-math">\(T\vert_{G(\lambda_i, T)}\text{,}\)</span> then the concatenation</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_gen_eigenspace_decomp.html">
 \begin{equation*}
 B=B_1*B_2*\cdots *B_r
@@ -785,7 +785,7 @@ N(v_{n_{j}+1,j})=v_{n_j,j}\text{,}
 <div class="para">Lastly, since the concatenation of the original cycles <span class="process-math">\(B_i\)</span> is linearly independent, in particular, the tuple of their initial vectors <span class="process-math">\((v_{1,j})\)</span> is linearly independent. Since furthermore these elements are elements of <span class="process-math">\(\NS N\)</span> (<span class="process-math">\(N(v_{1,j})=\boldzero\)</span>), we can extend this tuple to a basis</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_jordan_form_null.html ./knowl/xref/th_jordan_cycles.html" id="eq_jordan_form_null">
 \begin{equation}
-(v_{1,1},\dots, v_{1,\ell}, w_{\ell+1}, \dots, w_{t})\tag{1.130}
+(v_{1,1},\dots, v_{1,\ell}, w_{\ell+1}, \dots, w_{t})\tag{1.131}
 \end{equation}
 </div>
 <div class="para">of <span class="process-math">\(\NS N\text{.}\)</span> We claim that the concatenation <span class="process-math">\(B\)</span> of the cycles</div>
@@ -794,7 +794,7 @@ N(v_{n_{j}+1,j})=v_{n_j,j}\text{,}
 \widetilde{B_1}, \widetilde{B_1}, \dots, \widetilde{B_1}, (w_{\ell+1}), (w_{\ell+2}), \dots, (w_t)
 \end{equation*}
 </div>
-<div class="para">is our desired Jordan basis of <span class="process-math">\(T\text{.}\)</span> Since the initial vectors of these cycles is precisely the linearly independent tuple in <a href="s_jordan_form.html#eq_jordan_form_null" class="xref" data-knowl="./knowl/xref/eq_jordan_form_null.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.130">(1.130)</a>, it follows from <a href="s_jordan_form.html#th_jordan_cycles" class="xref" data-knowl="./knowl/xref/th_jordan_cycles.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.26.4: Jordan blocks">Theorem 1.26.4</a> that <span class="process-math">\(B\)</span> is linearly independent. To prove <span class="process-math">\(B\)</span> is a basis it suffices to show that <span class="process-math">\(\len B=\dim V=n\text{.}\)</span> Let <span class="process-math">\(B'=B_1*B_2*\cdots *B_\ell\text{,}\)</span> the starting Jordan basis of <span class="process-math">\(\im N\text{.}\)</span>  We created <span class="process-math">\(B\)</span> by adding one extra vector for each of the <span class="process-math">\(\ell\)</span> cycles <span class="process-math">\(B_j\text{,}\)</span> as well as the <span class="process-math">\(r-\ell\)</span> vectors <span class="process-math">\(w_j\)</span> added to get a basis of the <span class="process-math">\(r\)</span>-dimensional subspace <span class="process-math">\(\NS N\text{.}\)</span> Thus we have</div>
+<div class="para">is our desired Jordan basis of <span class="process-math">\(T\text{.}\)</span> Since the initial vectors of these cycles is precisely the linearly independent tuple in <a href="s_jordan_form.html#eq_jordan_form_null" class="xref" data-knowl="./knowl/xref/eq_jordan_form_null.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.131">(1.131)</a>, it follows from <a href="s_jordan_form.html#th_jordan_cycles" class="xref" data-knowl="./knowl/xref/th_jordan_cycles.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.26.4: Jordan blocks">Theorem 1.26.4</a> that <span class="process-math">\(B\)</span> is linearly independent. To prove <span class="process-math">\(B\)</span> is a basis it suffices to show that <span class="process-math">\(\len B=\dim V=n\text{.}\)</span> Let <span class="process-math">\(B'=B_1*B_2*\cdots *B_\ell\text{,}\)</span> the starting Jordan basis of <span class="process-math">\(\im N\text{.}\)</span>  We created <span class="process-math">\(B\)</span> by adding one extra vector for each of the <span class="process-math">\(\ell\)</span> cycles <span class="process-math">\(B_j\text{,}\)</span> as well as the <span class="process-math">\(r-\ell\)</span> vectors <span class="process-math">\(w_j\)</span> added to get a basis of the <span class="process-math">\(r\)</span>-dimensional subspace <span class="process-math">\(\NS N\text{.}\)</span> Thus we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_jordan_form_null.html ./knowl/xref/th_jordan_cycles.html" id="th_jordan_form-3-5-24">
 \begin{align*}
 \len B \amp = \len B'+\ell+r-\ell \\
@@ -815,7 +815,7 @@ B_j=(N^{n_j-1}(v_j),\dots, N(v_j),v_j)\text{,}
 <div class="para">where <span class="process-math">\(N^{n_j}(v_j)=\boldzero\)</span> for all <span class="process-math">\(1\leq j\text{.}\)</span> The cycle structure allows us to easily choose subtuples of the Jordan basis <span class="process-math">\(B=(N^{i}(v_j))\)</span> that serve as bases of <span class="process-math">\(\dim \NS N^k\)</span> for various <span class="process-math">\(k\in \Z_+\text{.}\)</span> Consider <span class="process-math">\(\NS N\)</span> first. We claim that the tuple</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_jordan_unique_null.html" id="eq_jordan_unique_null">
 \begin{equation}
-(N^{n_1-1}(v_1),N^{n_2-1}(v_2),\dots, N^{n_\ell-1}(v_\ell))\tag{1.131}
+(N^{n_1-1}(v_1),N^{n_2-1}(v_2),\dots, N^{n_\ell-1}(v_\ell))\tag{1.132}
 \end{equation}
 </div>
 <div class="para">consisting of initial vectors of the <span class="process-math">\(B_j\)</span> is a basis of <span class="process-math">\(\NS N\text{.}\)</span> Indeed, given any <span class="process-math">\(v\in V\text{,}\)</span> since <span class="process-math">\(B=(N^i(v_j))\)</span> is a basis of <span class="process-math">\(V\text{,}\)</span> we can write</div>
@@ -833,7 +833,7 @@ v\in \NS N \iff \amp \sum_{j=1}^\ell\sum_{i=0}^{n_j-1}a_{i,j}N(N^{i}(v_j))=\bold
 \amp \iff a_{i,j}=0 \text{ for } 1\leq j\leq \ell, 1\leq i\leq n_j-2\text{,}
 \end{align*}
 </div>
-<div class="para">where the last line follows from linear independence. Thus <span class="process-math">\(v\in \NS N\)</span> if and only if <span class="process-math">\(v=\sum_{j=1}^\ell a_{n_j-1, j}N^{n_{j}-1}(v_j)\text{,}\)</span> showing that the tuple in <a href="s_jordan_form.html#eq_jordan_unique_null" class="xref" data-knowl="./knowl/xref/eq_jordan_unique_null.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.131">(1.131)</a> spans <span class="process-math">\(\NS N\text{.}\)</span> Since that tuple is linearly independent, we conclude it is a basis, as claimed.</div>
+<div class="para">where the last line follows from linear independence. Thus <span class="process-math">\(v\in \NS N\)</span> if and only if <span class="process-math">\(v=\sum_{j=1}^\ell a_{n_j-1, j}N^{n_{j}-1}(v_j)\text{,}\)</span> showing that the tuple in <a href="s_jordan_form.html#eq_jordan_unique_null" class="xref" data-knowl="./knowl/xref/eq_jordan_unique_null.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.132">(1.132)</a> spans <span class="process-math">\(\NS N\text{.}\)</span> Since that tuple is linearly independent, we conclude it is a basis, as claimed.</div>
 </div>
 <div class="para logical" id="th_jordan_form-4-4">
 <div class="para">A similar argument, replacing <span class="process-math">\(N\)</span> with <span class="process-math">\(N^k\)</span> in our computations above, shows that the tuple</div>
@@ -859,10 +859,10 @@ v_1 \amp  \amp \amp
 <div class="para">Applying <span class="process-math">\(N\)</span> to the basis <span class="process-math">\(B\)</span> moves vectors in the top row to <span class="process-math">\(\boldzero\)</span> and moves all other vectors up one row. Moreover, from our discussion above, we see that the top <span class="process-math">\(k\)</span> rows of the array form a basis for <span class="process-math">\(\NS N^{k}\text{,}\)</span> and thus that the number <span class="process-math">\(r_k\)</span> of vectors in the <span class="process-math">\(k\)</span>-th row of the array is given by</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_jordan_rows.html" id="eq_jordan_rows">
 \begin{equation}
-\dim \NS N^k-\dim \NS N^{k-1}\text{,}\tag{1.132}
+\dim \NS N^k-\dim \NS N^{k-1}\text{,}\tag{1.133}
 \end{equation}
 </div>
-<div class="para">for all <span class="process-math">\(1\leq k\leq n\text{.}\)</span> This means the precise shape of the array is determined by the values <a href="s_jordan_form.html#eq_jordan_rows" class="xref" data-knowl="./knowl/xref/eq_jordan_rows.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.132">(1.132)</a>, which depend only on <span class="process-math">\(T\text{.}\)</span> Knowing the precise shape of this array tells us in turn the essential details of the Jordan block decomposition. For example, we have</div>
+<div class="para">for all <span class="process-math">\(1\leq k\leq n\text{.}\)</span> This means the precise shape of the array is determined by the values <a href="s_jordan_form.html#eq_jordan_rows" class="xref" data-knowl="./knowl/xref/eq_jordan_rows.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.133">(1.133)</a>, which depend only on <span class="process-math">\(T\text{.}\)</span> Knowing the precise shape of this array tells us in turn the essential details of the Jordan block decomposition. For example, we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_jordan_rows.html">
 \begin{equation*}
 \dim \NS N=r_1=\ell=\# (\text{cycles }B_j)=\#(\text{Jordan blocks})\text{.}
