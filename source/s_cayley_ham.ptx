@@ -325,7 +325,7 @@
                 for some subset <m>J\subseteq I=\{1,2,\dots, r\}</m>, and exponents <m>m_{j}\leq n_{j}</m>. We will show that <m>J=I</m>: equivalently, we will show that <m>(x-\lambda_i)\mid m_T(x)</m> for all <m>1\leq i\leq r</m>. Fix <m>1\leq i\leq r</m> and eigenvector <m>v\in E(\lambda_i, T)</m>. Since <m>T(v)=\lambda_i v</m>, we have <m>(T-\lambda I)v=(\lambda_i-\lambda)v</m>, and hence <m>(T-\lambda I)^k(v)=(\lambda_i-\lambda)^kv</m>. It follows that 
                 <md>
                     <mrow>m_T(T)(v) \amp =\prod_{j\in J}(T-\lambda_j)^{m_{j}}(v)</mrow>
-                    <mrow> \amp = \left(\prod_{j\in J}(\lambda_i-\lambda_{j})^{m_{j}}\right)v</mrow>.
+                    <mrow> \amp = \left(\prod_{j\in J}(\lambda_i-\lambda_{j})^{m_{j}}\right)v</mrow>
                 </md>
                 Since <m>m_T(T)(v)=\boldzero</m>, and since <m>v\ne \boldzero</m>, we must have 
                 <me>
