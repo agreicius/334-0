@@ -687,6 +687,7 @@ and moreover (looking at the multiplicities), that <me>\dim G(2,T)=\dim G(-1,T)=
         
     </output>
 </sage>
+
 <p>
     The corresponding dot diagram now consists of a single column
     <me>

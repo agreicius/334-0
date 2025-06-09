@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_perron_frob" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Stochastic matrices and the Perron-Frobenius theorem</title>
+
+    <definition xml:id="d_positive_matrix">
+    <title>Positive matrices</title>
+    <statement>
+    <p>
+    Let <m>A=[a_{ij}]\in \C^{n,n}</m>. 
+    <ul>
+        <li>
+            <p>
+                <m>A</m> is <term>nonnegative</term>, denoted <m>A\geq 0</m>, if <m>a_{ij}\geq 0</m> for all <m>1\leq i,j\leq n</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>A</m> is <term>positive</term>, denoted <m>A&gt; 0</m> if <m>a_{ij}&gt;  0</m> for all <m>1\leq i,j\leq n</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>A</m> is regular if <m>A^k</m> is positive for some <m>k\in \Z_+</m>. 
+            </p>
+        </li>
+    </ul>
+    </p>
+    </statement>
+    </definition>
+    <definition xml:id="d_stoch_mat">
+    <title>Probability vectors and stochastic matrices</title>
+    <statement>   
+    <p>
+    A vector <m>\boldp\in \C^n</m> is a <term>probability vector</term> if <m>\boldp</m> is nonnegative and the entries of <m>\boldp</m> sum to one: <ie/>, <m>\boldp\geq 0</m> and <m>\boldp\cdot (1,1,\dots, 1)=1</m>. 
+    </p>
+    <p>
+        A matrix <m>A\in \C^{n,n}</m> is a <term>stochastic matrix</term> (or <term>probability matrix</term>) if <m>A</m> is nonnegative and the sum of the entries in each column of <m>A</m> is equal to 1: <ie/>, if <m>A\geq 0</m> and 
+        <me>
+            \rowvec{1,1,\dots ,1}A=\rowvec{1,1,\dots, 1}
+        </me>.
+    </p>
+    </statement>
+    </definition>
+    
+    
+
+</section>

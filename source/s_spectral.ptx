@@ -643,5 +643,59 @@
     </theorem>
     
     </subsection>
+    <subsection xml:id="ss_unitary_operators">
+    <title>Unitary operators</title>
+    <p>
+        Recall that an operator <m>T\in \mathcal{L}(V)</m> is unitary if it is invertible and <m>T^{-1}=T^*</m>. We collect here two important results about unitary operators that were proved in a homework assignment.
+    </p>
+    <theorem xml:id="th_unitary">
+    <title>Unitary operators</title>
+    <statement>
+    <p>
+    Let <m>F\in \{\R, \C\}</m>, let <m>(V, \angvec{\, ,})</m> be a finite-dimensional inner product space, and let <m>T\in \mathcal{L}(V)</m>. The following statements are equivalent. 
+    <ol>
+        <li>
+            <p>
+                <m>T</m> is unitary.
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>\norm{T(v)}=\norm{v}</m> for all <m>v\in V</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>\angvec{T(v),T(w)}=\angvec{v,w}</m> for all <m>v,w\in V</m>. 
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    </theorem>
+    <theorem xml:id="th_spectral_unitary">
+    <title>Spectral theorem for unitary operators: <m>F=\C</m></title>
+    <statement>
+    <p>
+    Let <m>F=\C</m>, let <m>(V,\angvec{\, ,})</m> be a finite-dimensional complex inner product space, and let <m>T\in \mathcal{L}(V)</m>. The following statements are equivalent. 
+    <ol>
+        <li>
+            <p>
+                <m>T</m> is unitary
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>T</m> is normal and <m>\abs{\lambda}=1</m> for all eigenvalues <m>\lambda</m> of <m>T</m>. 
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+
+    </theorem>
+    
+    
+    </subsection>
 
 </section>
