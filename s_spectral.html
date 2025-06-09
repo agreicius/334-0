@@ -113,7 +113,7 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.7.3';
+eBookConfig.runestone_version = '7.7.5';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
@@ -531,6 +531,7 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_spectral.html#ss_spectral_normal" class="internal"><span class="title">Spectral theorem for normal operators</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_spectral.html#ss_spectral_selfadjoint" class="internal"><span class="title">Self-adjoint operators</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_spectral.html#ss_unitary_operators" class="internal"><span class="title">Unitary operators</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -1050,7 +1051,38 @@ g(x)=(x-\lambda_1)^{n_1}\cdots (x-\lambda_r)^{n_r}
 <li id="th_spectral_selfadj-3-2-11-5"><div class="para" id="th_spectral_selfadj-3-2-11-5-1">The induction hypothesis then applies to the smaller space <span class="process-math">\(W=E(\lambda_1,T)^\perp\text{,}\)</span> allowing us to decompose <span class="process-math">\(W=E(\lambda_1,T)^\perp\)</span> into further eigenspaces of <span class="process-math">\(T\text{,}\)</span> and giving us the full decomposition of <span class="process-math">\(V\)</span> into eigenspaces of <span class="process-math">\(T\text{.}\)</span>
 </div></li>
 </ul>
-</div></article></details></section></section></div>
+</div></article></details></section><section class="subsection" id="ss_unitary_operators"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Unitary operators</span>
+</h3>
+<div class="para" id="ss_unitary_operators-2">Recall that an operator <span class="process-math">\(T\in \mathcal{L}(V)\)</span> is unitary if it is invertible and <span class="process-math">\(T^{-1}=T^*\text{.}\)</span> We collect here two important results about unitary operators that were proved in a homework assignment.</div>
+<article class="theorem theorem-like" id="th_unitary"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.23.14</span><span class="period">.</span><span class="space"> </span><span class="title">Unitary operators.</span>
+</h4>
+<div class="para logical" id="th_unitary-2-1">
+<div class="para">Let <span class="process-math">\(F\in \{\R, \C\}\text{,}\)</span> let <span class="process-math">\((V, \angvec{\, ,})\)</span> be a finite-dimensional inner product space, and let <span class="process-math">\(T\in \mathcal{L}(V)\text{.}\)</span> The following statements are equivalent.</div>
+<ol class="decimal" id="th_unitary-2-1-4">
+<li id="th_unitary-2-1-4-1"><div class="para" id="th_unitary-2-1-4-1-1">
+<span class="process-math">\(T\)</span> is unitary.</div></li>
+<li id="th_unitary-2-1-4-2"><div class="para" id="th_unitary-2-1-4-2-1">
+<span class="process-math">\(\norm{T(v)}=\norm{v}\)</span> for all <span class="process-math">\(v\in V\text{.}\)</span>
+</div></li>
+<li id="th_unitary-2-1-4-3"><div class="para" id="th_unitary-2-1-4-3-1">
+<span class="process-math">\(\angvec{T(v),T(w)}=\angvec{v,w}\)</span> for all <span class="process-math">\(v,w\in V\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><article class="theorem theorem-like" id="th_spectral_unitary"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.23.15</span><span class="period">.</span><span class="space"> </span><span class="title">Spectral theorem for unitary operators: <span class="process-math">\(F=\C\)</span>.</span>
+</h4>
+<div class="para logical" id="th_spectral_unitary-2-1">
+<div class="para">Let <span class="process-math">\(F=\C\text{,}\)</span> let <span class="process-math">\((V,\angvec{\, ,})\)</span> be a finite-dimensional complex inner product space, and let <span class="process-math">\(T\in \mathcal{L}(V)\text{.}\)</span> The following statements are equivalent.</div>
+<ol class="decimal" id="th_spectral_unitary-2-1-4">
+<li id="th_spectral_unitary-2-1-4-1"><div class="para" id="th_spectral_unitary-2-1-4-1-1">
+<span class="process-math">\(T\)</span> is unitary</div></li>
+<li id="th_spectral_unitary-2-1-4-2"><div class="para" id="th_spectral_unitary-2-1-4-2-1">
+<span class="process-math">\(T\)</span> is normal and <span class="process-math">\(\abs{\lambda}=1\)</span> for all eigenvalues <span class="process-math">\(\lambda\)</span> of <span class="process-math">\(T\text{.}\)</span>
+</div></li>
+</ol>
+</div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="s_normal.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_caylet_ham.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
